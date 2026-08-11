@@ -2,7 +2,7 @@
 
 **Status:** REFERENCE_IMPLEMENTATION / FOUNDATION_V0_1
 
-This adapter registers FECH.AI with SES. It intentionally contains pointers, not copied FECH.AI operational truth.
+This adapter describes the FECH.AI project registered in the SES Project Registry and points to its project-owned canonical sources. It intentionally contains pointers, not copied FECH.AI operational truth.
 
 ```text
 PROJECT_ID: fechai
