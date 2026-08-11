@@ -205,18 +205,18 @@ Expected: this only supplies `PROJECT_IDENTIFIER`; it does not itself establish 
 
 ### T16 — tool capability and authority separation
 
-Fixture: the specialist has a write-capable GitHub or database tool, project authority rules are readable, but the current task did not authorize a mutation.
+Fixture: the specialist has a write-capable GitHub or database tool, project authority rules are readable, and the current task requests read-only/context work with no mutation requested.
 
 Expected:
 
 ```text
 AUTHORITY_MODEL_STATUS: RESOLVED
-MUTATION_AUTHORIZATION_STATUS: NOT_REQUESTED or NOT_AUTHORIZED
-CONTEXT_STATUS: READY may still be valid for read-only/context work
+MUTATION_AUTHORIZATION_STATUS: NOT_REQUESTED
+CONTEXT_STATUS: READY may still be valid for the bounded read-only/context task
 TOOL_CAPABILITY != AUTHORIZATION
 ```
 
-A later mutation request requires separate authorization evaluation even if project context remains otherwise ready.
+If a later task requests a mutation without applicable authorization, the expected mutation state is `NOT_AUTHORIZED`; that is a new authorization evaluation, not an alternative passing output for this fixture.
 
 ## 7. Cross-project isolation cases
 
