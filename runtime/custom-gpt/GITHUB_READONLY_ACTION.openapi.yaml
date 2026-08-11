@@ -1,7 +1,7 @@
 openapi: 3.1.0
 info:
   title: SES GitHub READ_ONLY
-  version: 0.1.0
+  version: 0.1.1
   description: >-
     Read-only GitHub REST operations used by the SES hybrid specialist runtime
     candidate to resolve canonical refs, retrieve repository content and inspect
@@ -12,24 +12,12 @@ servers:
 security:
   - bearerAuth: []
 components:
+  schemas: {}
   securitySchemes:
     bearerAuth:
       type: http
       scheme: bearer
       bearerFormat: GitHub fine-grained token
-  parameters:
-    owner:
-      name: owner
-      in: path
-      required: true
-      schema:
-        type: string
-    repo:
-      name: repo
-      in: path
-      required: true
-      schema:
-        type: string
 paths:
   /repos/{owner}/{repo}/commits/{ref}:
     get:
@@ -37,8 +25,16 @@ paths:
       summary: Resolve a branch, tag or SHA to a GitHub commit
       description: Read-only. Use to resolve live main and inspect exact commit metadata.
       parameters:
-        - $ref: '#/components/parameters/owner'
-        - $ref: '#/components/parameters/repo'
+        - name: owner
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: repo
+          in: path
+          required: true
+          schema:
+            type: string
         - name: ref
           in: path
           required: true
@@ -56,8 +52,16 @@ paths:
         Read-only GitHub Contents API. For files, GitHub commonly returns content
         encoded as base64; preserve the returned SHA and ref as evidence.
       parameters:
-        - $ref: '#/components/parameters/owner'
-        - $ref: '#/components/parameters/repo'
+        - name: owner
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: repo
+          in: path
+          required: true
+          schema:
+            type: string
         - name: path
           in: path
           required: true
@@ -70,7 +74,7 @@ paths:
             type: string
       responses:
         '200':
-          description: File or directory content/metadata.
+          description: File or directory content and metadata.
 
   /repos/{owner}/{repo}/git/blobs/{file_sha}:
     get:
@@ -78,8 +82,16 @@ paths:
       summary: Read a Git blob by exact SHA
       description: Read-only. Use when exact blob retrieval is required by the evidence contract.
       parameters:
-        - $ref: '#/components/parameters/owner'
-        - $ref: '#/components/parameters/repo'
+        - name: owner
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: repo
+          in: path
+          required: true
+          schema:
+            type: string
         - name: file_sha
           in: path
           required: true
@@ -95,8 +107,16 @@ paths:
       summary: Read a repository tree
       description: Read-only. Can retrieve a tree recursively when requested.
       parameters:
-        - $ref: '#/components/parameters/owner'
-        - $ref: '#/components/parameters/repo'
+        - name: owner
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: repo
+          in: path
+          required: true
+          schema:
+            type: string
         - name: tree_sha
           in: path
           required: true
@@ -107,7 +127,8 @@ paths:
           required: false
           schema:
             type: string
-            enum: ['1']
+            enum:
+              - '1'
       responses:
         '200':
           description: Tree entries and metadata.
@@ -118,8 +139,16 @@ paths:
       summary: Read pull-request metadata
       description: Read-only. Use for state, base/head refs and mergeability evidence.
       parameters:
-        - $ref: '#/components/parameters/owner'
-        - $ref: '#/components/parameters/repo'
+        - name: owner
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: repo
+          in: path
+          required: true
+          schema:
+            type: string
         - name: pull_number
           in: path
           required: true
@@ -135,8 +164,16 @@ paths:
       summary: List files changed by a pull request
       description: Read-only. Supports paginated changed-file evidence.
       parameters:
-        - $ref: '#/components/parameters/owner'
-        - $ref: '#/components/parameters/repo'
+        - name: owner
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: repo
+          in: path
+          required: true
+          schema:
+            type: string
         - name: pull_number
           in: path
           required: true
@@ -167,8 +204,16 @@ paths:
       summary: Compare two commits or refs
       description: Read-only. Use for drift and bounded delta analysis.
       parameters:
-        - $ref: '#/components/parameters/owner'
-        - $ref: '#/components/parameters/repo'
+        - name: owner
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: repo
+          in: path
+          required: true
+          schema:
+            type: string
         - name: base
           in: path
           required: true
