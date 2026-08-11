@@ -1,6 +1,6 @@
 # Specialist Engineering System — Bootstrap Index
 
-**Status:** FOUNDATION_V0_1 / DOCUMENTATION_ONLY
+**Status:** RUNTIME_CANDIDATE_V0_1 / BOOTSTRAP_INDEX
 **Repository:** `wagnerjfjunior/Specialist-Engineering-System`
 
 This index defines the minimum reconstruction order for material work on SES itself and for SES-mediated work on a registered consumer project.
@@ -21,12 +21,14 @@ If the required SES bootstrap cannot be resolved on the applicable effective ref
 
 `CANDIDATE_HEAD != CANONICAL_MAIN`
 
-## 2. Material SES foundation sources
+## 2. Material SES sources
 
 Read when applicable:
 
 - `docs/architecture/ARCHITECTURE_BOUNDARY.md`
 - `projects/REGISTRY.md`
+- `archetypes/REGISTRY.md` for specialist/archetype resolution
+- the exact archetype contract resolved by `archetypes/REGISTRY.md`
 - `core/protocols/PROJECT_ADAPTER_CONTRACT.md`
 - `core/protocols/PROJECT_BOOTSTRAP_CONTRACT.md`
 - `core/protocols/PROJECT_CONTINUITY_CONTRACT.md`
@@ -36,9 +38,35 @@ Behavioral validation of the hybrid bootstrap contract is defined in:
 
 - `tests/behavioral/HYBRID_SPECIALIST_BOOTSTRAP_TESTS.md`
 
+For the first Custom GPT runtime candidate (`ARCHETYPE_ID: saas-architect`), also read when validating/applying/testing the candidate:
+
+- `runtime/custom-gpt/SAAS_ARCHITECT_BUILDER_PROFILE.md`
+- `runtime/custom-gpt/UNIVERSAL_BUILDER_KERNEL.md`
+- `runtime/custom-gpt/GITHUB_READONLY_ACTION.openapi.yaml`
+- `tests/runtime/HYBRID_SAAS_ARCHITECT_RUNTIME_RUNBOOK.md`
+- `tests/runtime/HYBRID_SAAS_ARCHITECT_FIXTURES.md`
+
 Future archetype, specialist, validation and versioning contracts must be reached from this bootstrap rather than becoming independent entrypoints.
 
-## 3. Consumer-project resolution
+## 3. Archetype resolution
+
+Before a reusable SES specialist performs material specialist work:
+
+1. read `archetypes/REGISTRY.md` on `SES_EFFECTIVE_REF`;
+2. resolve the requested `ARCHETYPE_ID` deterministically;
+3. read the exact `CONTRACT_PATH` returned by the registry;
+4. fail closed if no unique active archetype resolves;
+5. for project-specific work, continue to project resolution rather than treating archetype resolution as project readiness.
+
+```text
+ARCHETYPE_RESOLVED
+!=
+PROJECT_CONTEXT_READY
+```
+
+A project-local specialist identity/override must be resolved from the consumer project's canonical sources after project bootstrap. Do not freeze consumer-project specialist identities into the universal archetype registry.
+
+## 4. Consumer-project resolution
 
 Before project-specific specialist work:
 
@@ -72,7 +100,7 @@ Do not use fuzzy project-name guessing for material resolution. Zero matches = `
 
 A conversation starter such as "Which project are we working on?" is UX only. It is not a security boundary and does not replace registry/adapter/bootstrap resolution.
 
-## 4. Task-bound readiness semantics
+## 5. Task-bound readiness semantics
 
 A readiness receipt applies only to the exact task, effective scope, target, environment and material evidence to which it was bound.
 
@@ -100,7 +128,7 @@ means a material gap/conflict prevents the requested decision and no safe reduce
 
 An irrelevant source classified `NOT_REQUIRED_FOR_THIS_TASK` does not by itself make a task `LIMITED`.
 
-## 5. Receipt invalidation and proportional revalidation
+## 6. Receipt invalidation and proportional revalidation
 
 Do not reuse a prior `READY` as session-wide project certification.
 
@@ -115,6 +143,7 @@ When any of the following becomes material, re-evaluate the receipt and revalida
 - specialist source/ref change;
 - continuity invalidation event;
 - authority model or mutation-scope change;
+- Builder/kernel/action/model change affecting a runtime behavioral claim;
 - new contradictory or superseding evidence.
 
 Use:
@@ -127,11 +156,12 @@ until the newly material/invalidated evidence has been resolved and a new receip
 
 Revalidation must be proportional. Do not replay unrelated gates or reread immutable evidence solely because an unrelated ref changed.
 
-## 6. Fail-closed project entry
+## 7. Fail-closed project entry
 
 Project-specific work must not proceed as established project context when any of the following is unresolved and material to the task:
 
 - SES bootstrap on the applicable effective ref;
+- requested archetype when archetype behavior is required;
 - project identity;
 - project registry mapping;
 - project adapter;
@@ -167,9 +197,9 @@ For hybrid specialists:
 
 `NO VERIFIED PROJECT CONTEXT -> NO PROJECT-SPECIFIC SUBSTANTIVE WORK`
 
-## 7. Source-of-truth and authority boundary
+## 8. Source-of-truth and authority boundary
 
-SES owns reusable engineering contracts and project registration metadata.
+SES owns reusable engineering contracts, archetype contracts, runtime-candidate configuration specifications and project registration metadata.
 
 The consumer project owns its own:
 
@@ -195,7 +225,27 @@ MUTATION_AUTHORIZATION_STATUS
 
 A write-capable tool does not authorize a mutation. A requested mutation without explicit applicable authorization must not execute.
 
-## 8. Proof-level integrity
+The first `SES — SaaS Architect` runtime candidate intentionally uses a GitHub READ_ONLY Action; its schema contains no write operations.
+
+## 9. Runtime-candidate integrity
+
+Keep these lifecycle states separate:
+
+```text
+VERSIONED_PROFILE
+BUILDER_APPLIED
+PREVIEW_TESTED
+RUNTIME_BEHAVIORAL_PROOF
+PUBLISHED
+```
+
+Versioning a Builder profile/kernel/action schema in SES does not prove it has been applied externally.
+
+Before runtime testing of the first SaaS Architect candidate, capture the Builder fingerprint required by `runtime/custom-gpt/SAAS_ARCHITECT_BUILDER_PROFILE.md` and execute `tests/runtime/HYBRID_SAAS_ARCHITECT_RUNTIME_RUNBOOK.md`.
+
+No Builder secret/token may be committed to SES.
+
+## 10. Proof-level integrity
 
 Keep these conclusions separate:
 
@@ -218,10 +268,10 @@ A coherent specification or successful read-only resolution chain on a candidate
 
 `RUNTIME_BEHAVIORAL_PROOF = PASS` requires the actual specialist/loading mechanism to execute every runtime-required canonical case in `tests/behavioral/HYBRID_SPECIALIST_BOOTSTRAP_TESTS.md`. Any required `NOT_EXECUTED`, `SKIPPED`, `INDETERMINATE` or failed case prevents runtime PASS.
 
-## 9. Change discipline
+## 11. Change discipline
 
 For material SES changes:
 
 `one PR = one primary risk = one simple rollback`
 
-Creating or updating SES documentation does not authorize mutation in any consumer project. Central evolution does not automatically mutate or upgrade registered projects.
+Creating or updating SES documentation/runtime specifications does not authorize mutation in any consumer project or external GPT Builder. Central evolution does not automatically mutate or upgrade registered projects.
