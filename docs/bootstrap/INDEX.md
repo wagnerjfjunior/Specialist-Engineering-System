@@ -17,6 +17,8 @@ Before material architecture, protocol, specialist, validation, project-adapter 
 
 If the required repository state cannot be resolved, declare `SES_BOOTSTRAP_UNAVAILABLE` and do not make a material canonical claim.
 
+When validating a contract that exists only on a PR head, identify that explicitly as candidate-head evidence. Do not call the candidate canonical on SES `main` until merged.
+
 ## 2. Material SES foundation sources
 
 Read when applicable:
@@ -39,23 +41,55 @@ Future archetype, specialist, validation and versioning contracts must be reache
 Before project-specific specialist work:
 
 1. collect or identify the project name/ID explicitly;
-2. resolve that identifier through `projects/REGISTRY.md`;
-3. obtain one unique `PROJECT_ID` and `ADAPTER_PATH` from the registry;
-4. read the registered Project Adapter at that exact path;
-5. use the adapter only to locate the consumer project's canonical source and entrypoints;
-6. resolve the consumer project's live canonical ref;
-7. execute the project-local bootstrap protocol;
-8. execute the project-local continuity protocol when current-state continuity is material;
-9. resolve the applicable specialist/project-local rules;
-10. resolve live evidence material to the task;
-11. for hybrid specialists, emit the Context Readiness Receipt required by `core/protocols/HYBRID_SPECIALIST_BOOTSTRAP_CONTRACT.md`;
-12. only then perform project-specific substantive work.
+2. define the current bounded `TASK_SCOPE`;
+3. resolve the project identifier through `projects/REGISTRY.md`;
+4. obtain one unique `PROJECT_ID` and `ADAPTER_PATH` from the registry;
+5. read the registered Project Adapter at that exact path;
+6. use the adapter only to locate the consumer project's canonical source and entrypoints;
+7. resolve the consumer project's live canonical ref;
+8. execute the project-local bootstrap protocol;
+9. execute the project-local continuity protocol when current-state continuity is material;
+10. resolve the applicable specialist/project-local rules;
+11. resolve project authority sources material to the task;
+12. resolve live evidence material to the task;
+13. for hybrid specialists, emit the task-bound Context Readiness Receipt required by `core/protocols/HYBRID_SPECIALIST_BOOTSTRAP_CONTRACT.md`;
+14. only then perform project-specific substantive work within that receipt's scope.
 
 Do not use fuzzy project-name guessing for material resolution. Zero matches = `PROJECT_NOT_REGISTERED`; multiple matches = `PROJECT_ID_AMBIGUOUS`.
 
 A conversation starter such as "Which project are we working on?" is UX only. It is not a security boundary and does not replace registry/adapter/bootstrap resolution.
 
-## 4. Fail-closed project entry
+## 4. Task-bound readiness and revalidation
+
+A readiness receipt applies only to the exact task and material evidence to which it was bound.
+
+`READY_FOR_TASK_A != READY_FOR_TASK_B`
+
+Do not reuse a prior `READY` as session-wide project certification.
+
+When any of the following becomes material, re-evaluate the receipt and revalidate the affected dependencies:
+
+- project switch;
+- material task/scope change;
+- SES contract/ref change affecting the task;
+- consumer-project live-ref change affecting current-state work;
+- specialist source/ref change;
+- continuity invalidation event;
+- authority model or mutation-scope change;
+- material environment/target-ref change;
+- new contradictory or superseding evidence.
+
+Use:
+
+```text
+RECEIPT_VALIDITY: STALE_REVALIDATION_REQUIRED
+```
+
+until the newly material/invalidated evidence has been resolved and a new receipt is emitted.
+
+Revalidation must be proportional. Do not replay unrelated gates or reread immutable evidence solely because an unrelated ref changed.
+
+## 5. Fail-closed project entry
 
 Project-specific work must not proceed as established project context when any of the following is unresolved and material to the task:
 
@@ -65,7 +99,7 @@ Project-specific work must not proceed as established project context when any o
 - canonical source;
 - project bootstrap entrypoint;
 - specialist/project-local rules;
-- required authority/boundary source;
+- required authority model/boundary source;
 - material current-state source when continuity is required;
 - live evidence required for the requested decision.
 
@@ -79,9 +113,11 @@ Use explicit states such as:
 - `PROJECT_BOOTSTRAP_UNAVAILABLE`
 - `SPECIALIST_RULES_UNRESOLVED`
 - `PROJECT_CONTINUITY_UNAVAILABLE`
-- `AUTHORITY_UNRESOLVED`
+- `AUTHORITY_MODEL_UNRESOLVED`
+- `MUTATION_NOT_AUTHORIZED`
 - `MISSING_EVIDENCE`
 - `CONFLICTING_PROJECT_SOURCES`
+- `STALE_REVALIDATION_REQUIRED`
 
 Do not invent missing project context.
 
@@ -89,7 +125,7 @@ For hybrid specialists:
 
 `NO VERIFIED PROJECT CONTEXT -> NO PROJECT-SPECIFIC SUBSTANTIVE WORK`
 
-## 5. Source-of-truth boundary
+## 6. Source-of-truth and authority boundary
 
 SES owns reusable engineering contracts and project registration metadata.
 
@@ -107,9 +143,29 @@ The Project Registry maps identifiers to adapters. A Project Adapter points to p
 
 A successful bootstrap establishes context only. It does not grant mutation authority.
 
+```text
+AUTHORITY_MODEL_STATUS
+!=
+MUTATION_AUTHORIZATION_STATUS
+```
+
 `CONTEXT_READY != AUTHORIZED_TO_MUTATE`
 
-## 6. Change discipline
+## 7. Proof-level integrity
+
+Keep these conclusions separate:
+
+```text
+SPEC_CONFORMANCE
+CANDIDATE_HEAD_PROTOCOL_PROOF
+RUNTIME_BEHAVIORAL_PROOF
+```
+
+A coherent specification or successful read-only resolution chain on a candidate PR head does not prove that a future Custom GPT, Action/API loader or other runtime mechanism actually satisfies the behavior.
+
+Runtime behavioral PASS requires execution by the actual specialist/loading mechanism under the test conditions, including fresh-conversation proof where required.
+
+## 8. Change discipline
 
 For material SES changes:
 
