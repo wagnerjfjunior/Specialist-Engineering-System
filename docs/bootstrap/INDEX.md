@@ -26,6 +26,11 @@ Read when applicable:
 - `core/protocols/PROJECT_ADAPTER_CONTRACT.md`
 - `core/protocols/PROJECT_BOOTSTRAP_CONTRACT.md`
 - `core/protocols/PROJECT_CONTINUITY_CONTRACT.md`
+- `core/protocols/HYBRID_SPECIALIST_BOOTSTRAP_CONTRACT.md` for hybrid/multi-project specialist work
+
+Behavioral validation of the hybrid bootstrap contract is defined in:
+
+- `tests/behavioral/HYBRID_SPECIALIST_BOOTSTRAP_TESTS.md`
 
 Future archetype, specialist, validation and versioning contracts must be reached from this bootstrap rather than becoming independent entrypoints.
 
@@ -42,7 +47,9 @@ Before project-specific specialist work:
 7. execute the project-local bootstrap protocol;
 8. execute the project-local continuity protocol when current-state continuity is material;
 9. resolve the applicable specialist/project-local rules;
-10. only then perform project-specific substantive work.
+10. resolve live evidence material to the task;
+11. for hybrid specialists, emit the Context Readiness Receipt required by `core/protocols/HYBRID_SPECIALIST_BOOTSTRAP_CONTRACT.md`;
+12. only then perform project-specific substantive work.
 
 Do not use fuzzy project-name guessing for material resolution. Zero matches = `PROJECT_NOT_REGISTERED`; multiple matches = `PROJECT_ID_AMBIGUOUS`.
 
@@ -50,15 +57,17 @@ A conversation starter such as "Which project are we working on?" is UX only. It
 
 ## 4. Fail-closed project entry
 
-Project-specific work must not proceed as established project context when any of the following is unresolved:
+Project-specific work must not proceed as established project context when any of the following is unresolved and material to the task:
 
 - project identity;
 - project registry mapping;
 - project adapter;
 - canonical source;
 - project bootstrap entrypoint;
+- specialist/project-local rules;
 - required authority/boundary source;
-- material current-state source when continuity is required.
+- material current-state source when continuity is required;
+- live evidence required for the requested decision.
 
 Use explicit states such as:
 
@@ -66,11 +75,19 @@ Use explicit states such as:
 - `PROJECT_NOT_REGISTERED`
 - `PROJECT_ID_AMBIGUOUS`
 - `PROJECT_ADAPTER_UNRESOLVED`
+- `CANONICAL_SOURCE_UNRESOLVED`
 - `PROJECT_BOOTSTRAP_UNAVAILABLE`
+- `SPECIALIST_RULES_UNRESOLVED`
 - `PROJECT_CONTINUITY_UNAVAILABLE`
+- `AUTHORITY_UNRESOLVED`
 - `MISSING_EVIDENCE`
+- `CONFLICTING_PROJECT_SOURCES`
 
 Do not invent missing project context.
+
+For hybrid specialists:
+
+`NO VERIFIED PROJECT CONTEXT -> NO PROJECT-SPECIFIC SUBSTANTIVE WORK`
 
 ## 5. Source-of-truth boundary
 
@@ -87,6 +104,10 @@ The consumer project owns its own:
 - project-local specialist rules.
 
 The Project Registry maps identifiers to adapters. A Project Adapter points to project-owned sources. Neither may duplicate consumer-project truth.
+
+A successful bootstrap establishes context only. It does not grant mutation authority.
+
+`CONTEXT_READY != AUTHORIZED_TO_MUTATE`
 
 ## 6. Change discipline
 
