@@ -1,127 +1,186 @@
 openapi: 3.1.0
 info:
   title: SES GitHub READ_ONLY
-  version: 0.1.1
+  version: 0.2.0
   description: >-
-    Read-only GitHub REST operations used by the SES hybrid specialist runtime
-    candidate to resolve canonical refs, retrieve repository content and inspect
-    pull-request/code evidence. This schema intentionally exposes no mutation
-    endpoint.
+    Read-only GitHub REST operations for the SES hybrid-specialist runtime.
+    Authentication is configured separately in the GPT Builder. The schema exposes
+    no mutation endpoint. Dynamic owner/repo values must come from SES canonical
+    registry/adapter resolution or an explicit task target; do not invent them.
 servers:
   - url: https://api.github.com
-security:
-  - bearerAuth: []
+    description: GitHub REST API
 components:
   schemas: {}
-  securitySchemes:
-    bearerAuth:
-      type: http
-      scheme: bearer
-      bearerFormat: GitHub fine-grained token
 paths:
-  /repos/{owner}/{repo}/commits/{ref}:
+  /user:
     get:
-      operationId: getCommit
-      summary: Resolve a branch, tag or SHA to a GitHub commit
-      description: Read-only. Use to resolve live main and inspect exact commit metadata.
-      parameters:
-        - name: owner
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: repo
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: ref
-          in: path
-          required: true
-          schema:
-            type: string
+      operationId: getAuthenticatedGitHubUser
+      summary: Verify the authenticated GitHub user
+      description: >-
+        Small health-check request. Use to confirm that Builder authentication and
+        api.github.com access work. This does not prove access to any repository.
+      x-openai-isConsequential: false
       responses:
         '200':
-          description: Commit metadata and changed-file information when returned by GitHub.
+          description: Authenticated user metadata.
 
-  /repos/{owner}/{repo}/contents/{path}:
+  /repos/{owner}/{repo}:
     get:
-      operationId: getRepositoryContent
-      summary: Read a repository file or directory at an exact ref
+      operationId: getRepositoryMetadata
+      summary: Get repository metadata
       description: >-
-        Read-only GitHub Contents API. For files, GitHub commonly returns content
-        encoded as base64; preserve the returned SHA and ref as evidence.
+        Read-only repository metadata. owner/repo must come from a canonical SES
+        project locator or an explicit bounded test target.
+      x-openai-isConsequential: false
       parameters:
         - name: owner
           in: path
           required: true
           schema:
             type: string
+            minLength: 1
         - name: repo
           in: path
           required: true
           schema:
             type: string
-        - name: path
+            minLength: 1
+      responses:
+        '200':
+          description: Repository metadata.
+
+  /repos/{owner}/{repo}/branches:
+    get:
+      operationId: listRepositoryBranches
+      summary: List repository branches
+      x-openai-isConsequential: false
+      parameters:
+        - name: owner
           in: path
           required: true
           schema:
             type: string
-        - name: ref
+            minLength: 1
+        - name: repo
+          in: path
+          required: true
+          schema:
+            type: string
+            minLength: 1
+        - name: protected
           in: query
           required: false
           schema:
-            type: string
+            type: boolean
+        - name: per_page
+          in: query
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            default: 30
+        - name: page
+          in: query
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            default: 1
       responses:
         '200':
-          description: File or directory content and metadata.
+          description: Repository branches.
 
-  /repos/{owner}/{repo}/git/blobs/{file_sha}:
+  /repos/{owner}/{repo}/branches/{branch}:
     get:
-      operationId: getBlob
-      summary: Read a Git blob by exact SHA
-      description: Read-only. Use when exact blob retrieval is required by the evidence contract.
+      operationId: getRepositoryBranch
+      summary: Resolve a branch and its head commit SHA
+      description: >-
+        Preferred operation for resolving a live branch such as main. This compact
+        endpoint should be used before requesting an enriched repository commit.
+      x-openai-isConsequential: false
       parameters:
         - name: owner
           in: path
           required: true
           schema:
             type: string
+            minLength: 1
         - name: repo
           in: path
           required: true
           schema:
             type: string
-        - name: file_sha
+            minLength: 1
+        - name: branch
           in: path
           required: true
           schema:
             type: string
+            minLength: 1
       responses:
         '200':
-          description: Blob metadata and encoded content.
+          description: Branch metadata including head commit SHA.
+
+  /repos/{owner}/{repo}/git/commits/{commit_sha}:
+    get:
+      operationId: getGitCommitObject
+      summary: Get a Git commit object and root tree SHA
+      description: >-
+        Use after resolving an exact commit SHA. This returns the Git commit object
+        and its tree locator without relying on the larger enriched commit endpoint.
+      x-openai-isConsequential: false
+      parameters:
+        - name: owner
+          in: path
+          required: true
+          schema:
+            type: string
+            minLength: 1
+        - name: repo
+          in: path
+          required: true
+          schema:
+            type: string
+            minLength: 1
+        - name: commit_sha
+          in: path
+          required: true
+          schema:
+            type: string
+            minLength: 7
+      responses:
+        '200':
+          description: Git commit object including root tree SHA.
 
   /repos/{owner}/{repo}/git/trees/{tree_sha}:
     get:
-      operationId: getTree
-      summary: Read a repository tree
-      description: Read-only. Can retrieve a tree recursively when requested.
+      operationId: getGitTree
+      summary: Get a Git tree
+      description: >-
+        Read-only tree retrieval. If GitHub returns truncated=true, the response
+        does not prove a complete recursive tree.
+      x-openai-isConsequential: false
       parameters:
         - name: owner
           in: path
           required: true
           schema:
             type: string
+            minLength: 1
         - name: repo
           in: path
           required: true
           schema:
             type: string
+            minLength: 1
         - name: tree_sha
           in: path
           required: true
           schema:
             type: string
+            minLength: 7
         - name: recursive
           in: query
           required: false
@@ -131,54 +190,177 @@ paths:
               - '1'
       responses:
         '200':
-          description: Tree entries and metadata.
+          description: Tree entries and truncation metadata.
 
-  /repos/{owner}/{repo}/pulls/{pull_number}:
+  /repos/{owner}/{repo}/contents/{path}:
     get:
-      operationId: getPullRequest
-      summary: Read pull-request metadata
-      description: Read-only. Use for state, base/head refs and mergeability evidence.
+      operationId: getRepositoryFileRawByPath
+      summary: Read a file by path at an exact ref
+      description: >-
+        Preferred path-based final-file reader. Use an exact ref for material
+        versioned evidence. An incomplete response does not prove full-file reading.
+      x-openai-isConsequential: false
       parameters:
         - name: owner
           in: path
           required: true
           schema:
             type: string
+            minLength: 1
         - name: repo
           in: path
           required: true
           schema:
             type: string
+            minLength: 1
+        - name: path
+          in: path
+          required: true
+          schema:
+            type: string
+            minLength: 1
+        - name: ref
+          in: query
+          required: true
+          schema:
+            type: string
+            minLength: 1
+        - name: Accept
+          in: header
+          required: false
+          schema:
+            type: string
+            enum:
+              - application/vnd.github.raw+json
+            default: application/vnd.github.raw+json
+      responses:
+        '200':
+          description: Raw file contents when the target is a file.
+
+  /repos/{owner}/{repo}/git/blobs/{blob_sha}:
+    get:
+      operationId: getGitBlobRaw
+      summary: Read a raw Git blob by exact SHA
+      description: >-
+        Exact-blob reader for evidence coverage. An empty or truncated response does
+        not prove complete blob reading.
+      x-openai-isConsequential: false
+      parameters:
+        - name: owner
+          in: path
+          required: true
+          schema:
+            type: string
+            minLength: 1
+        - name: repo
+          in: path
+          required: true
+          schema:
+            type: string
+            minLength: 1
+        - name: blob_sha
+          in: path
+          required: true
+          schema:
+            type: string
+            minLength: 7
+        - name: Accept
+          in: header
+          required: false
+          schema:
+            type: string
+            enum:
+              - application/vnd.github.raw+json
+            default: application/vnd.github.raw+json
+      responses:
+        '200':
+          description: Raw blob contents.
+
+  /repos/{owner}/{repo}/commits/{ref}:
+    get:
+      operationId: getRepositoryCommit
+      summary: Get an enriched repository commit and changed files
+      description: >-
+        Secondary evidence operation. Prefer getRepositoryBranch for resolving live
+        main. This endpoint may return a larger response because it can include
+        changed-file information; patches do not replace reading final files.
+      x-openai-isConsequential: false
+      parameters:
+        - name: owner
+          in: path
+          required: true
+          schema:
+            type: string
+            minLength: 1
+        - name: repo
+          in: path
+          required: true
+          schema:
+            type: string
+            minLength: 1
+        - name: ref
+          in: path
+          required: true
+          schema:
+            type: string
+            minLength: 1
+      responses:
+        '200':
+          description: Enriched repository commit metadata.
+
+  /repos/{owner}/{repo}/pulls/{pull_number}:
+    get:
+      operationId: getPullRequest
+      summary: Get pull request metadata
+      x-openai-isConsequential: false
+      parameters:
+        - name: owner
+          in: path
+          required: true
+          schema:
+            type: string
+            minLength: 1
+        - name: repo
+          in: path
+          required: true
+          schema:
+            type: string
+            minLength: 1
         - name: pull_number
           in: path
           required: true
           schema:
             type: integer
+            minimum: 1
       responses:
         '200':
-          description: Pull-request metadata.
+          description: Pull request metadata including base/head/state when returned by GitHub.
 
   /repos/{owner}/{repo}/pulls/{pull_number}/files:
     get:
       operationId: listPullRequestFiles
       summary: List files changed by a pull request
-      description: Read-only. Supports paginated changed-file evidence.
+      description: Patches do not replace reading final files at the exact PR head.
+      x-openai-isConsequential: false
       parameters:
         - name: owner
           in: path
           required: true
           schema:
             type: string
+            minLength: 1
         - name: repo
           in: path
           required: true
           schema:
             type: string
+            minLength: 1
         - name: pull_number
           in: path
           required: true
           schema:
             type: integer
+            minimum: 1
         - name: per_page
           in: query
           required: false
@@ -196,49 +378,171 @@ paths:
             default: 1
       responses:
         '200':
-          description: Changed files and patches when GitHub returns them.
+          description: Pull request changed files.
 
-  /repos/{owner}/{repo}/compare/{base}...{head}:
+  /repos/{owner}/{repo}/pulls/{pull_number}/reviews:
     get:
-      operationId: compareCommits
-      summary: Compare two commits or refs
-      description: Read-only. Use for drift and bounded delta analysis.
+      operationId: listPullRequestReviews
+      summary: List pull request reviews
+      x-openai-isConsequential: false
       parameters:
         - name: owner
           in: path
           required: true
           schema:
             type: string
+            minLength: 1
         - name: repo
           in: path
           required: true
           schema:
             type: string
-        - name: base
+            minLength: 1
+        - name: pull_number
           in: path
           required: true
           schema:
-            type: string
-        - name: head
-          in: path
-          required: true
+            type: integer
+            minimum: 1
+        - name: per_page
+          in: query
+          required: false
           schema:
-            type: string
+            type: integer
+            minimum: 1
+            maximum: 100
+            default: 100
+        - name: page
+          in: query
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            default: 1
       responses:
         '200':
-          description: Compare metadata, commits and changed files.
+          description: Pull request reviews.
 
-  /search/code:
+  /repos/{owner}/{repo}/pulls/{pull_number}/comments:
     get:
-      operationId: searchCode
-      summary: Search code available to the configured GitHub credential
-      description: >-
-        Read-only GitHub code search. Search results locate candidate evidence but
-        do not prove complete-file reading.
+      operationId: listPullRequestReviewComments
+      summary: List inline pull request review comments
+      description: REST review comments do not by themselves prove GraphQL thread resolution state.
+      x-openai-isConsequential: false
       parameters:
-        - name: q
-          in: query
+        - name: owner
+          in: path
           required: true
+          schema:
+            type: string
+            minLength: 1
+        - name: repo
+          in: path
+          required: true
+          schema:
+            type: string
+            minLength: 1
+        - name: pull_number
+          in: path
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+        - name: per_page
+          in: query
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            default: 100
+        - name: page
+          in: query
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            default: 1
+      responses:
+        '200':
+          description: Inline pull request review comments.
+
+  /repos/{owner}/{repo}/commits/{ref}/check-runs:
+    get:
+      operationId: listCommitCheckRuns
+      summary: List check runs for a commit
+      x-openai-isConsequential: false
+      parameters:
+        - name: owner
+          in: path
+          required: true
+          schema:
+            type: string
+            minLength: 1
+        - name: repo
+          in: path
+          required: true
+          schema:
+            type: string
+            minLength: 1
+        - name: ref
+          in: path
+          required: true
+          schema:
+            type: string
+            minLength: 1
+        - name: filter
+          in: query
+          required: false
+          schema:
+            type: string
+            enum:
+              - latest
+              - all
+            default: latest
+        - name: per_page
+          in: query
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            default: 100
+      responses:
+        '200':
+          description: Check runs for the commit.
+
+  /repos/{owner}/{repo}/actions/runs:
+    get:
+      operationId: listWorkflowRuns
+      summary: List GitHub Actions workflow runs
+      x-openai-isConsequential: false
+      parameters:
+        - name: owner
+          in: path
+          required: true
+          schema:
+            type: string
+            minLength: 1
+        - name: repo
+          in: path
+          required: true
+          schema:
+            type: string
+            minLength: 1
+        - name: branch
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: event
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: status
+          in: query
+          required: false
           schema:
             type: string
         - name: per_page
@@ -258,4 +562,69 @@ paths:
             default: 1
       responses:
         '200':
-          description: Code-search results.
+          description: Workflow runs.
+
+  /repos/{owner}/{repo}/compare/{basehead}:
+    get:
+      operationId: compareRepositoryRefs
+      summary: Compare two refs using base...head syntax
+      description: >-
+        Pass basehead as a single path value such as main...feature-branch or SHA1...SHA2.
+      x-openai-isConsequential: false
+      parameters:
+        - name: owner
+          in: path
+          required: true
+          schema:
+            type: string
+            minLength: 1
+        - name: repo
+          in: path
+          required: true
+          schema:
+            type: string
+            minLength: 1
+        - name: basehead
+          in: path
+          required: true
+          schema:
+            type: string
+            minLength: 3
+      responses:
+        '200':
+          description: Compare metadata and changed files when returned by GitHub.
+
+  /search/code:
+    get:
+      operationId: searchGitHubCode
+      summary: Search GitHub code visible to the configured credential
+      description: >-
+        Search locates candidate evidence only. The query should include an explicit
+        repo:owner/repo qualifier derived from canonical project resolution when the
+        search is project-specific. Search results do not prove complete-file reading.
+      x-openai-isConsequential: false
+      parameters:
+        - name: q
+          in: query
+          required: true
+          schema:
+            type: string
+            minLength: 1
+        - name: per_page
+          in: query
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            default: 30
+        - name: page
+          in: query
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            default: 1
+      responses:
+        '200':
+          description: Code search results.
