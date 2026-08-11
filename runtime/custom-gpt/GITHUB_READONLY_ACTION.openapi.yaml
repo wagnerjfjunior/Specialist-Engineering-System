@@ -1,0 +1,216 @@
+openapi: 3.1.0
+info:
+  title: SES GitHub READ_ONLY
+  version: 0.1.0
+  description: >-
+    Read-only GitHub REST operations used by the SES hybrid specialist runtime
+    candidate to resolve canonical refs, retrieve repository content and inspect
+    pull-request/code evidence. This schema intentionally exposes no mutation
+    endpoint.
+servers:
+  - url: https://api.github.com
+security:
+  - bearerAuth: []
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: GitHub fine-grained token
+  parameters:
+    owner:
+      name: owner
+      in: path
+      required: true
+      schema:
+        type: string
+    repo:
+      name: repo
+      in: path
+      required: true
+      schema:
+        type: string
+paths:
+  /repos/{owner}/{repo}/commits/{ref}:
+    get:
+      operationId: getCommit
+      summary: Resolve a branch, tag or SHA to a GitHub commit
+      description: Read-only. Use to resolve live main and inspect exact commit metadata.
+      parameters:
+        - $ref: '#/components/parameters/owner'
+        - $ref: '#/components/parameters/repo'
+        - name: ref
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Commit metadata and changed-file information when returned by GitHub.
+
+  /repos/{owner}/{repo}/contents/{path}:
+    get:
+      operationId: getRepositoryContent
+      summary: Read a repository file or directory at an exact ref
+      description: >-
+        Read-only GitHub Contents API. For files, GitHub commonly returns content
+        encoded as base64; preserve the returned SHA and ref as evidence.
+      parameters:
+        - $ref: '#/components/parameters/owner'
+        - $ref: '#/components/parameters/repo'
+        - name: path
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: ref
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: File or directory content/metadata.
+
+  /repos/{owner}/{repo}/git/blobs/{file_sha}:
+    get:
+      operationId: getBlob
+      summary: Read a Git blob by exact SHA
+      description: Read-only. Use when exact blob retrieval is required by the evidence contract.
+      parameters:
+        - $ref: '#/components/parameters/owner'
+        - $ref: '#/components/parameters/repo'
+        - name: file_sha
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Blob metadata and encoded content.
+
+  /repos/{owner}/{repo}/git/trees/{tree_sha}:
+    get:
+      operationId: getTree
+      summary: Read a repository tree
+      description: Read-only. Can retrieve a tree recursively when requested.
+      parameters:
+        - $ref: '#/components/parameters/owner'
+        - $ref: '#/components/parameters/repo'
+        - name: tree_sha
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: recursive
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: ['1']
+      responses:
+        '200':
+          description: Tree entries and metadata.
+
+  /repos/{owner}/{repo}/pulls/{pull_number}:
+    get:
+      operationId: getPullRequest
+      summary: Read pull-request metadata
+      description: Read-only. Use for state, base/head refs and mergeability evidence.
+      parameters:
+        - $ref: '#/components/parameters/owner'
+        - $ref: '#/components/parameters/repo'
+        - name: pull_number
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Pull-request metadata.
+
+  /repos/{owner}/{repo}/pulls/{pull_number}/files:
+    get:
+      operationId: listPullRequestFiles
+      summary: List files changed by a pull request
+      description: Read-only. Supports paginated changed-file evidence.
+      parameters:
+        - $ref: '#/components/parameters/owner'
+        - $ref: '#/components/parameters/repo'
+        - name: pull_number
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: per_page
+          in: query
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            default: 100
+        - name: page
+          in: query
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            default: 1
+      responses:
+        '200':
+          description: Changed files and patches when GitHub returns them.
+
+  /repos/{owner}/{repo}/compare/{base}...{head}:
+    get:
+      operationId: compareCommits
+      summary: Compare two commits or refs
+      description: Read-only. Use for drift and bounded delta analysis.
+      parameters:
+        - $ref: '#/components/parameters/owner'
+        - $ref: '#/components/parameters/repo'
+        - name: base
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: head
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Compare metadata, commits and changed files.
+
+  /search/code:
+    get:
+      operationId: searchCode
+      summary: Search code available to the configured GitHub credential
+      description: >-
+        Read-only GitHub code search. Search results locate candidate evidence but
+        do not prove complete-file reading.
+      parameters:
+        - name: q
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: per_page
+          in: query
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            default: 30
+        - name: page
+          in: query
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            default: 1
+      responses:
+        '200':
+          description: Code-search results.
