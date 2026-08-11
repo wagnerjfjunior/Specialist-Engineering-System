@@ -1,12 +1,13 @@
 openapi: 3.1.0
 info:
   title: SES GitHub READ_ONLY
-  version: 0.2.0
+  version: 0.2.1
   description: >-
     Read-only GitHub REST operations for the SES hybrid-specialist runtime.
     Authentication is configured separately in the GPT Builder. The schema exposes
-    no mutation endpoint. Dynamic owner/repo values must come from SES canonical
-    registry/adapter resolution or an explicit task target; do not invent them.
+    no mutation endpoint and no credential-global code-search operation. Dynamic
+    owner/repo values must come from SES canonical registry/adapter resolution or an
+    explicit bounded task target; do not invent them.
 servers:
   - url: https://api.github.com
     description: GitHub REST API
@@ -508,6 +509,13 @@ paths:
             minimum: 1
             maximum: 100
             default: 100
+        - name: page
+          in: query
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            default: 1
       responses:
         '200':
           description: Check runs for the commit.
@@ -593,38 +601,3 @@ paths:
       responses:
         '200':
           description: Compare metadata and changed files when returned by GitHub.
-
-  /search/code:
-    get:
-      operationId: searchGitHubCode
-      summary: Search GitHub code visible to the configured credential
-      description: >-
-        Search locates candidate evidence only. The query should include an explicit
-        repo:owner/repo qualifier derived from canonical project resolution when the
-        search is project-specific. Search results do not prove complete-file reading.
-      x-openai-isConsequential: false
-      parameters:
-        - name: q
-          in: query
-          required: true
-          schema:
-            type: string
-            minLength: 1
-        - name: per_page
-          in: query
-          required: false
-          schema:
-            type: integer
-            minimum: 1
-            maximum: 100
-            default: 30
-        - name: page
-          in: query
-          required: false
-          schema:
-            type: integer
-            minimum: 1
-            default: 1
-      responses:
-        '200':
-          description: Code search results.

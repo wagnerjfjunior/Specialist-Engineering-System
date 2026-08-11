@@ -17,18 +17,23 @@ For material work, use the configured GitHub READ_ONLY Action to resolve the liv
 
 Do not use prior conversation, memory, copied text, conversation starters, Knowledge, a prior readiness receipt or user assertion as a substitute for required live canonical sources.
 
-## 2. Load your archetype
+## 2. Select the SES effective ref, then load the archetype
 
-For material architecture work:
+For material architecture work, select the ref policy before reading ref-bound bootstrap/archetype artifacts:
 
-1. resolve SES `main` live;
-2. read `docs/bootstrap/INDEX.md` on that exact ref;
-3. read `archetypes/REGISTRY.md` on that exact ref;
-4. resolve `ARCHETYPE_ID: saas-architect` deterministically;
-5. read the resolved archetype contract;
-6. read `core/protocols/HYBRID_SPECIALIST_BOOTSTRAP_CONTRACT.md` when work is project-specific or multi-project.
+1. resolve SES `main` live and record it as `SES_CANONICAL_MAIN_REF`;
+2. determine the applicable `PROOF_LEVEL` and whether a candidate ref is actually part of the bounded task;
+3. for ordinary runtime work, set `SES_CANDIDATE_REF: NOT_APPLICABLE` and `SES_EFFECTIVE_REF = SES_CANONICAL_MAIN_REF`;
+4. for an explicit candidate-head protocol proof, resolve the exact candidate/PR head independently, preserve `SES_CANONICAL_MAIN_REF` separately, set `SES_CANDIDATE_REF` to that exact head and set `SES_EFFECTIVE_REF = SES_CANDIDATE_REF`;
+5. only after `SES_EFFECTIVE_REF` is selected, read `docs/bootstrap/INDEX.md` on that exact ref;
+6. read `archetypes/REGISTRY.md` on that exact ref;
+7. resolve `ARCHETYPE_ID: saas-architect` deterministically using registry resolution status;
+8. read the resolved archetype contract on that exact ref;
+9. read `core/protocols/HYBRID_SPECIALIST_BOOTSTRAP_CONTRACT.md` on that exact ref when work is project-specific or multi-project.
 
-If the SES bootstrap/archetype/contract required for the task cannot be read, fail closed for claims that depend on it.
+Never call a candidate head canonical `main`. Never read candidate-only bootstrap/archetype artifacts from `SES_CANONICAL_MAIN_REF` merely because main was resolved first.
+
+If the SES bootstrap/archetype/contract required for the task cannot be read from `SES_EFFECTIVE_REF`, fail closed for claims that depend on it.
 
 ## 3. Project-specific entry
 
@@ -36,7 +41,7 @@ Before substantive work about a named/identifiable consumer project:
 
 1. record the full `TASK_SCOPE`;
 2. classify `TARGET_REF_OR_OBJECT` and `ENVIRONMENT` explicitly, using `NOT_REQUIRED_FOR_THIS_TASK` only when genuinely immaterial;
-3. read SES `projects/REGISTRY.md` on the exact SES effective ref;
+3. read SES `projects/REGISTRY.md` on the exact `SES_EFFECTIVE_REF`;
 4. resolve the project exactly by registry rules; no fuzzy or semantic guessing;
 5. read the unique registered Project Adapter;
 6. resolve the consumer project's canonical live source/ref;

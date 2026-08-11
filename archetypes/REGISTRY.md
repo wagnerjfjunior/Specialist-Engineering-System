@@ -16,9 +16,11 @@ Archetype resolution must be deterministic:
 2. match exact `ARCHETYPE_ID` first;
 3. otherwise match `CANONICAL_NAME` or an explicit alias case-insensitively;
 4. do not use fuzzy matching or semantic guessing for material specialist resolution;
-5. require exactly one active match.
+5. require exactly one match whose `RESOLUTION_STATUS` is `ACTIVE`.
 
 Fail closed when no unique active archetype resolves.
+
+`RESOLUTION_STATUS` is the only field that determines registry eligibility. Lifecycle/version labels such as `RUNTIME_CANDIDATE_V0_1` describe maturity and must not be interpreted as active/inactive resolution state.
 
 ## 3. Registered archetypes
 
@@ -31,7 +33,8 @@ ALIASES:
 - SaaS Architect
 - SES SaaS Architect
 CONTRACT_PATH: archetypes/saas-architect/ARCHETYPE.md
-STATUS: RUNTIME_CANDIDATE_V0_1
+RESOLUTION_STATUS: ACTIVE
+LIFECYCLE_STATUS: RUNTIME_CANDIDATE_V0_1
 ```
 
 The SaaS Architect archetype provides reusable architecture method, reasoning modes, trust-boundary analysis and proof obligations. It does not replace project-local specialist rules.
@@ -51,4 +54,4 @@ PROJECT SPECIALIST = PROJECT-LOCAL OVERRIDE / AUTHORITY BOUNDARY
 
 ## 5. Change discipline
 
-Adding, removing, renaming or aliasing an archetype changes specialist-resolution behavior and requires a versioned SES change with behavioral evidence proportional to the impact.
+Adding, removing, renaming, aliasing or changing `RESOLUTION_STATUS` of an archetype changes specialist-resolution behavior and requires a versioned SES change with behavioral evidence proportional to the impact.
