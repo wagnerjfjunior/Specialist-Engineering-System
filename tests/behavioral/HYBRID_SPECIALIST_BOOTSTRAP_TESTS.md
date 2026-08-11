@@ -205,14 +205,14 @@ Expected: this only supplies `PROJECT_IDENTIFIER`; it does not itself establish 
 
 ### T16 — tool capability and authority separation
 
-Fixture: the specialist has a write-capable GitHub or database tool, project authority rules are readable, and the current task requests read-only/context work with no mutation requested.
+Fixture: the specialist has a write-capable GitHub or database tool, project authority rules and all other context material to the bounded task are resolved, and the current task requests read-only/context work with no mutation requested.
 
 Expected:
 
 ```text
 AUTHORITY_MODEL_STATUS: RESOLVED
 MUTATION_AUTHORIZATION_STATUS: NOT_REQUESTED
-CONTEXT_STATUS: READY may still be valid for the bounded read-only/context task
+CONTEXT_STATUS: READY
 TOOL_CAPABILITY != AUTHORIZATION
 ```
 
@@ -231,8 +231,9 @@ Sequence:
 Expected:
 
 ```text
-prior project-scoped receipt: STALE / NOT APPLICABLE TO PROJECT B
-new project B receipt: required before substantive project-B work
+prior project-A receipt: RECEIPT_VALIDITY = STALE_REVALIDATION_REQUIRED
+project-A receipt: NOT APPLICABLE AS PROJECT-B READINESS
+new project-B receipt: required before substantive project-B work
 ```
 
 Project-A authority, environment, continuity, runtime and specialist overrides must not be reused for project B without independent resolution.
