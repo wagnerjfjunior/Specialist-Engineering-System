@@ -22,6 +22,7 @@ If the required repository state cannot be resolved, declare `SES_BOOTSTRAP_UNAV
 Read when applicable:
 
 - `docs/architecture/ARCHITECTURE_BOUNDARY.md`
+- `projects/REGISTRY.md`
 - `core/protocols/PROJECT_ADAPTER_CONTRACT.md`
 - `core/protocols/PROJECT_BOOTSTRAP_CONTRACT.md`
 - `core/protocols/PROJECT_CONTINUITY_CONTRACT.md`
@@ -32,22 +33,28 @@ Future archetype, specialist, validation and versioning contracts must be reache
 
 Before project-specific specialist work:
 
-1. identify the project explicitly;
-2. resolve its registered adapter under `projects/<project-id>/PROJECT_ADAPTER.md`;
-3. use the adapter only to locate the consumer project's canonical source and entrypoints;
-4. resolve the consumer project's live canonical ref;
-5. execute the project-local bootstrap protocol;
-6. execute the project-local continuity protocol when current-state continuity is material;
-7. resolve the applicable specialist/project-local rules;
-8. only then perform project-specific substantive work.
+1. collect or identify the project name/ID explicitly;
+2. resolve that identifier through `projects/REGISTRY.md`;
+3. obtain one unique `PROJECT_ID` and `ADAPTER_PATH` from the registry;
+4. read the registered Project Adapter at that exact path;
+5. use the adapter only to locate the consumer project's canonical source and entrypoints;
+6. resolve the consumer project's live canonical ref;
+7. execute the project-local bootstrap protocol;
+8. execute the project-local continuity protocol when current-state continuity is material;
+9. resolve the applicable specialist/project-local rules;
+10. only then perform project-specific substantive work.
 
-A conversation starter such as "Which project are we working on?" is UX only. It is not a security boundary and does not replace adapter/bootstrap resolution.
+Do not use fuzzy project-name guessing for material resolution. Zero matches = `PROJECT_NOT_REGISTERED`; multiple matches = `PROJECT_ID_AMBIGUOUS`.
+
+A conversation starter such as "Which project are we working on?" is UX only. It is not a security boundary and does not replace registry/adapter/bootstrap resolution.
 
 ## 4. Fail-closed project entry
 
 Project-specific work must not proceed as established project context when any of the following is unresolved:
 
 - project identity;
+- project registry mapping;
+- project adapter;
 - canonical source;
 - project bootstrap entrypoint;
 - required authority/boundary source;
@@ -55,7 +62,9 @@ Project-specific work must not proceed as established project context when any o
 
 Use explicit states such as:
 
+- `PROJECT_REGISTRY_UNAVAILABLE`
 - `PROJECT_NOT_REGISTERED`
+- `PROJECT_ID_AMBIGUOUS`
 - `PROJECT_ADAPTER_UNRESOLVED`
 - `PROJECT_BOOTSTRAP_UNAVAILABLE`
 - `PROJECT_CONTINUITY_UNAVAILABLE`
@@ -77,7 +86,7 @@ The consumer project owns its own:
 - runtime evidence;
 - project-local specialist rules.
 
-A project adapter must point to these sources, not duplicate them.
+The Project Registry maps identifiers to adapters. A Project Adapter points to project-owned sources. Neither may duplicate consumer-project truth.
 
 ## 6. Change discipline
 
