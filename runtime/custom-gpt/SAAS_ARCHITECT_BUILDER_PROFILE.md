@@ -1,15 +1,26 @@
 # SES — SaaS Architect Custom GPT Builder Profile
 
-**Status:** RUNTIME_CANDIDATE_V0_1 / BUILDER_PROFILE / NOT_YET_APPLIED
+**Status:** RUNTIME_CANDIDATE_V0_1 / BUILDER_PROFILE / BUILDER_APPLICATION_OBSERVED / PREVIEW_EXECUTION_OBSERVED / FINGERPRINT_PENDING / RUNTIME_BEHAVIORAL_PROOF_NOT_ESTABLISHED
 **ARCHETYPE_ID:** `saas-architect`
 
 ## 1. Purpose
 
-Version the complete user-facing and operational Custom GPT configuration for the first SES hybrid specialist candidate.
+Version the complete user-facing and operational Custom GPT configuration for the first SES hybrid specialist candidate and record the externally observed Builder/runtime-candidate lifecycle evidence without converting that evidence into a broader runtime behavioral PASS.
 
-This file is the SES-side configuration specification. It does **not** prove that the corresponding GPT Builder configuration has been created or updated.
+This file remains the SES-side configuration specification. The private candidate has now been observed configured sufficiently to execute the GitHub Action and Preview proof flows documented below, but the complete Builder fingerprint required by this profile has not yet been captured as one immutable evidence record.
 
-`VERSIONED_PROFILE != BUILDER_APPLIED`
+```text
+VERSIONED_PROFILE: YES
+BUILDER_APPLICATION_OBSERVED: YES
+PREVIEW_EXECUTION_OBSERVED: YES
+BUILDER_FINGERPRINT_COMPLETE: NO
+RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
+PUBLISHED: NO
+```
+
+`BUILDER_APPLICATION_OBSERVED != COMPLETE_BUILDER_FINGERPRINT`
+
+`PREVIEW_EXECUTION_OBSERVED != RUNTIME_BEHAVIORAL_PROOF`
 
 ## 2. Builder fields
 
@@ -28,6 +39,8 @@ Use the exact candidate kernel versioned at:
 `runtime/custom-gpt/UNIVERSAL_BUILDER_KERNEL.md`
 
 The Builder Instructions field should contain the kernel content, not a shortened paraphrase that removes mandatory bootstrap, readiness, fail-closed or authority behavior.
+
+The current candidate kernel is versioned on the PR #3 candidate head. Before any runtime behavioral PASS, the exact Instructions text/ref/blob actually applied in Builder must be included in the complete Builder fingerprint rather than inferred from successful Preview behavior.
 
 ### Conversation starters
 
@@ -102,6 +115,8 @@ At runtime proof time:
 - record the exact selected model/version in the runtime evidence;
 - a model change after proof is a potential behavioral invalidation event and requires proportional revalidation.
 
+The exact selected model used in the observed Preview executions has not yet been captured in the complete Builder fingerprint and must not be inferred.
+
 ## 3. Avatar / icon
 
 Optional and non-authoritative.
@@ -110,7 +125,7 @@ Recommended visual identity: a simple `SES` architectural/blueprint mark. The ic
 
 ## 4. Builder configuration fingerprint
 
-Before runtime testing, capture a Builder configuration fingerprint containing at least:
+Before runtime behavioral testing, capture a Builder configuration fingerprint containing at least:
 
 ```text
 GPT name
@@ -127,24 +142,159 @@ selected model
 Builder version/history identifier when available
 ```
 
+Current fingerprint status:
+
+```text
+FINGERPRINT_STATUS: PARTIAL / NOT YET CAPTURED AS ONE COMPLETE EVIDENCE RECORD
+```
+
+The observed Preview executions prove that a private candidate and GitHub Action were mounted and executed. They do not by themselves prove that every Builder field above exactly matches this versioned profile.
+
 A material Builder change after a test invalidates the affected behavioral evidence.
 
-## 5. Application gate
+## 5. Observed Builder and Preview evidence
 
-Creating or updating the actual Custom GPT is a separate Product Authority mutation.
+The following evidence was produced through the private `SES — SaaS Architect` candidate during PR #3 validation. It is runtime-candidate evidence, not canonical runtime behavioral PASS.
 
-This profile may be reviewed and merged without applying it to the Builder.
+### 5.1 GitHub authentication and loader smoke
+
+Observed successful operations included:
+
+```text
+getAuthenticatedGitHubUser
+→ authenticated principal: wagnerjfjunior / account id 228261219
+
+getRepositoryMetadata
+→ wagnerjfjunior/Specialist-Engineering-System resolved as private repository
+
+getRepositoryBranch
+→ SES main resolved to exact SHA
+
+getGitCommitObject
+→ exact commit object and root tree resolved
+
+getRepositoryFileRawByPath
+→ docs/bootstrap/INDEX.md retrieved at exact ref
+```
+
+Classification:
+
+```text
+GITHUB_AUTH_SMOKE: PASS
+CORE_GITHUB_LOADER_SMOKE: PASS
+```
+
+These smoke results prove read-only GitHub loading for the exercised path only. They do not establish T01-T29 runtime behavioral proof.
+
+### 5.2 Candidate-head protocol proof
+
+The candidate autonomously resolved and preserved separately:
+
+```text
+SES_CANONICAL_MAIN_REF
+SES_CANDIDATE_REF
+SES_EFFECTIVE_REF = SES_CANDIDATE_REF
+```
+
+It read the candidate bootstrap/archetype/runtime sources from the exact PR #3 head and did not relabel the candidate head as canonical `main`.
+
+Classification:
+
+```text
+T30: PASS
+CANDIDATE_HEAD_PROTOCOL_PROOF: PASS
+RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
+```
+
+### 5.3 FECH.AI candidate end-to-end bootstrap proof
+
+The same private candidate subsequently demonstrated the read-only chain:
+
+```text
+SES candidate
+→ saas-architect archetype
+→ SES Project Registry
+→ FECH.AI Project Adapter
+→ wagnerjfjunior/fecha.ai main live
+→ FECH.AI bootstrap
+→ FECH.AI specialist registry
+→ current project-local architecture specialist/skill
+→ common rules / applicable continuity
+→ Context Readiness Receipt
+```
+
+The project-local architecture identity was resolved from FECH.AI canonical sources rather than frozen into the SES archetype.
+
+Classification:
+
+```text
+FECHAI_CANDIDATE_E2E_BOOTSTRAP: PASS
+RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
+T01-T29: NOT COMPLETE
+```
+
+## 6. Historical failed/indeterminate attempts preserved
+
+Candidate development evidence must not be rewritten retroactively. The following observations remain part of the record:
+
+```text
+INITIAL_GENERALIZED_ACTION:
+- schema initially produced Builder parser errors involving parameter $ref handling and components.schemas;
+- corrected in the same PR candidate without claiming prior PASS.
+
+EARLY_GET_COMMIT_PREVIEW:
+- request targeting openai/openai-python@main returned ClientResponseError.
+
+EARLY_AUTH_OR_TOOL_ATTEMPTS:
+- getAuthenticatedGitHubUser returned ClientResponseError in some Preview attempts;
+- later Preview sessions reported the GitHub connector/tool unavailable in that chat.
+
+IDENTITY_ANOMALY:
+- one Preview response reported authenticated GitHub user seomaster2020;
+- subsequent controlled tests authenticated as the intended principal wagnerjfjunior;
+- the anomalous observation remains INDETERMINATE and is not evidence of credential isolation failure by itself.
+
+ARBITRARY_TARGET_OBSERVATION:
+- an early Preview selected openai/openai-python without a canonical SES project locator or explicit bounded target;
+- later candidate proofs used explicit/canonical repository resolution and passed the intended chain.
+```
+
+A later successful run does not retroactively turn these earlier attempts into PASS.
+
+## 7. Application and proof gate
+
+Creating or updating the actual Custom GPT remains a separate Product Authority mutation from repository changes. The current private candidate was manually configured/tested under Product Authority during PR #3 candidate validation; this repository reconciliation records that observed fact but does not itself perform any Builder mutation.
 
 Required lifecycle distinction:
 
 ```text
 VERSIONED IN SES
 !=
-APPLIED IN BUILDER
+BUILDER APPLICATION OBSERVED
 !=
-PREVIEW TESTED
+COMPLETE BUILDER FINGERPRINT
+!=
+PREVIEW EXECUTION OBSERVED
 !=
 RUNTIME_BEHAVIORAL_PASS
 !=
 PUBLISHED
 ```
+
+Current lifecycle evidence:
+
+```text
+VERSIONED_PROFILE: YES
+BUILDER_APPLICATION_OBSERVED: YES
+PREVIEW_EXECUTION_OBSERVED: YES
+GITHUB_AUTH_SMOKE: PASS
+CORE_GITHUB_LOADER_SMOKE: PASS
+T30_CANDIDATE_HEAD_PROTOCOL_PROOF: PASS
+FECHAI_CANDIDATE_E2E_BOOTSTRAP: PASS
+BUILDER_FINGERPRINT_COMPLETE: NO
+RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
+T01-T29_COMPLETE: NO
+PUBLISHED: NO
+```
+
+No Ready, merge, publication, FECH.AI mutation, Supabase mutation, Vercel mutation or production change follows automatically from these observations.
