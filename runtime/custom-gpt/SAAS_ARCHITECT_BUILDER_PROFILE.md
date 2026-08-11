@@ -198,13 +198,15 @@ SES_EFFECTIVE_REF = SES_CANDIDATE_REF
 
 It read the candidate bootstrap/archetype/runtime sources from the exact PR #3 head and did not relabel the candidate head as canonical `main`.
 
-Classification:
+Classification at the tested head:
 
 ```text
 T30: PASS
 CANDIDATE_HEAD_PROTOCOL_PROOF: PASS
 RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
 ```
+
+Any later PR head change invalidates reuse of that exact-head PASS until proportional delta revalidation confirms the new head did not alter the tested semantics.
 
 ### 5.3 FECH.AI candidate end-to-end bootstrap proof
 
@@ -225,13 +227,15 @@ SES candidate
 
 The project-local architecture identity was resolved from FECH.AI canonical sources rather than frozen into the SES archetype.
 
-Classification:
+Classification at the tested head:
 
 ```text
 FECHAI_CANDIDATE_E2E_BOOTSTRAP: PASS
 RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
 T01-T29: NOT COMPLETE
 ```
+
+A later documentation-only reconciliation of this profile changes the PR head and therefore requires proportional exact-head delta revalidation before those candidate-head PASS results are used for a Ready decision. The prior evidence remains historical and must not be rewritten.
 
 ## 6. Historical failed/indeterminate attempts preserved
 
@@ -289,12 +293,12 @@ BUILDER_APPLICATION_OBSERVED: YES
 PREVIEW_EXECUTION_OBSERVED: YES
 GITHUB_AUTH_SMOKE: PASS
 CORE_GITHUB_LOADER_SMOKE: PASS
-T30_CANDIDATE_HEAD_PROTOCOL_PROOF: PASS
-FECHAI_CANDIDATE_E2E_BOOTSTRAP: PASS
 BUILDER_FINGERPRINT_COMPLETE: NO
 RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
 T01-T29_COMPLETE: NO
 PUBLISHED: NO
 ```
+
+Candidate-head T30 and FECH.AI E2E PASS evidence exists for a prior exact PR head and must be revalidated proportionally after any head change before being relied on for a Ready gate.
 
 No Ready, merge, publication, FECH.AI mutation, Supabase mutation, Vercel mutation or production change follows automatically from these observations.
