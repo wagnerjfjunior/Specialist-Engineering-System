@@ -4,9 +4,9 @@
 
 ## 1. Purpose
 
-A Project Adapter registers a consumer project with SES and tells specialists where to find the project's own canonical context.
+A Project Adapter describes one consumer project already registered in SES and tells specialists where to find that project's own canonical context.
 
-The adapter is a locator/manifest. It is not the source of truth for the consumer project.
+The Project Registry performs SES-side project-name/ID resolution. The adapter is the next locator/manifest in the chain. It is not the source of truth for the consumer project.
 
 ## 2. Required fields
 
@@ -53,7 +53,9 @@ If provenance of adapter creation is recorded, it must be clearly historical and
 For project-specific work:
 
 ```text
-PROJECT NAME/ID
+USER-SUPPLIED PROJECT NAME/ID
+→ SES PROJECT REGISTRY
+→ UNIQUE PROJECT_ID + ADAPTER_PATH
 → SES PROJECT ADAPTER
 → CANONICAL PROJECT SOURCE
 → LIVE REF RESOLUTION
@@ -63,9 +65,13 @@ PROJECT NAME/ID
 → TASK WORK
 ```
 
-If the project is not registered, use `PROJECT_NOT_REGISTERED` rather than guessing an adapter.
+Project-name/ID mapping must be resolved by `projects/REGISTRY.md`. The adapter must not be guessed from a folder name or inferred alias.
 
-If the adapter points to an unavailable or contradictory source, use `PROJECT_ADAPTER_UNRESOLVED` and fail closed for claims that depend on that source.
+If no unique registry entry resolves, use `PROJECT_NOT_REGISTERED` or `PROJECT_ID_AMBIGUOUS` rather than guessing an adapter.
+
+If the registry is unavailable, use `PROJECT_REGISTRY_UNAVAILABLE`.
+
+If the resolved adapter points to an unavailable or contradictory source, use `PROJECT_ADAPTER_UNRESOLVED` and fail closed for claims that depend on that source.
 
 ## 5. Authority boundary
 
@@ -79,6 +85,8 @@ Project-local authority must be resolved from the project-owned authority/bootst
 
 ## 6. Versioning
 
-Adapters are versioned in SES. Changing an adapter changes project resolution metadata only; it must not silently change consumer-project content.
+Registry entries and adapters are versioned in SES.
+
+Changing registry metadata changes how SES resolves a project identifier. Changing an adapter changes project-resolution pointers. Neither change may silently change consumer-project content or authority.
 
 A consumer project does not automatically adopt unrelated SES changes merely because SES `main` advances.
