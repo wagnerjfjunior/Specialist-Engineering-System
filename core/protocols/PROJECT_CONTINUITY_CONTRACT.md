@@ -78,7 +78,15 @@ Lessons that may be reused include:
 
 These are reference-derived patterns and remain subject to SES validation before promotion to broader universal principles.
 
-## 6. Anti-loop rule
+## 6. Foundation v0.1 adoption status
+
+The anti-loop and historical-integrity rules below are adopted as **provisional SES v0.1 design invariants** because they materially protect continuity correctness in the current architecture.
+
+Their inclusion in this contract does not claim that cross-domain empirical evidence has already proven them universally optimal. Future evidence from additional projects may preserve, refine, scope or replace them through a versioned SES change.
+
+`PROVISIONAL DESIGN DECISION != EMPIRICALLY PROVEN UNIVERSAL PRINCIPLE`
+
+## 7. Anti-loop rule
 
 A new conversation, ordinary commit, documentation-only closure or lifecycle transition must not automatically force a continuity rewrite.
 
@@ -86,13 +94,13 @@ Update continuity when evidence or a decision materially changes the meaning req
 
 `NEW EVENT != AUTOMATIC CONTINUITY MUTATION`
 
-## 7. Historical integrity
+## 8. Historical integrity
 
 Continuity must preserve material historical observations without silently rewriting them into a different past state.
 
 Later reassessment may invalidate, supersede or reinterpret a prior conclusion, but should link the new assessment to the prior record rather than erase provenance.
 
-## 8. Fail-closed behavior
+## 9. Fail-closed behavior
 
 If continuity is material to the requested decision and the project continuity entrypoint cannot be resolved, declare `PROJECT_CONTINUITY_UNAVAILABLE` and limit or block conclusions that depend on current recorded state.
 
