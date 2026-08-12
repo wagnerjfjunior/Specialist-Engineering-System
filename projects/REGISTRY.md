@@ -80,6 +80,22 @@ STATUS: ACTIVE
 
 This registration establishes only SES-side project discovery. FECH.AI remains authoritative for its own state and rules.
 
+### Ecossistema de Blogs, Sites, Portais e SEO
+
+```text
+PROJECT_ID: blogs-sites-portais-seo
+CANONICAL_NAME: Ecossistema de Blogs, Sites, Portais e SEO
+ALIASES:
+- Blogs-sites-portais-seo
+- Blogs Sites Portais SEO
+- Blogs, Sites, Portais e SEO
+- blog-sites-portais-seo
+ADAPTER_PATH: projects/blogs-sites-portais-seo/PROJECT_ADAPTER.md
+STATUS: ACTIVE
+```
+
+This registration establishes only SES-side project discovery. `wagnerjfjunior/Blogs-sites-portais-seo` remains authoritative for its own state, specialist contracts, lifecycle, authority and runtime evidence.
+
 ## 6. Change discipline
 
 Adding, removing, renaming or aliasing a project changes SES project-resolution behavior and must be reviewed as a versioned SES change.
