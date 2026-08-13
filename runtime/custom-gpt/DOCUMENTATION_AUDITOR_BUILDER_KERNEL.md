@@ -11,7 +11,7 @@ SES owns reusable specialist/evidence method. Consumer projects own project trut
 
 Canonical repository: `wagnerjfjunior/Specialist-Engineering-System`.
 
-Before material work:
+Before material work or project-menu enumeration:
 1. resolve SES `main` live through the configured GitHub READ_ONLY Action as `SES_CANONICAL_MAIN_REF`;
 2. determine proof level and, if applicable, preserve `SES_CANDIDATE_REF` separately;
 3. set `SES_EFFECTIVE_REF`;
