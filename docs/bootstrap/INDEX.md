@@ -33,18 +33,28 @@ Read when applicable:
 - `core/protocols/PROJECT_BOOTSTRAP_CONTRACT.md`
 - `core/protocols/PROJECT_CONTINUITY_CONTRACT.md`
 - `core/protocols/HYBRID_SPECIALIST_BOOTSTRAP_CONTRACT.md` for hybrid/multi-project specialist work
+- `core/protocols/EVIDENCE_RETRIEVAL_RESILIENCE_CONTRACT.md` when large-file, large-tree, truncation, incomplete transport or context-budget risk is material
 
 Behavioral validation of the hybrid bootstrap contract is defined in:
 
 - `tests/behavioral/HYBRID_SPECIALIST_BOOTSTRAP_TESTS.md`
 
-For the first Custom GPT runtime candidate (`ARCHETYPE_ID: saas-architect`), also read when validating/applying/testing the candidate:
+For the `saas-architect` Custom GPT runtime candidate, also read when validating/applying/testing that candidate:
 
 - `runtime/custom-gpt/SAAS_ARCHITECT_BUILDER_PROFILE.md`
 - `runtime/custom-gpt/UNIVERSAL_BUILDER_KERNEL.md`
 - `runtime/custom-gpt/GITHUB_READONLY_ACTION.openapi.yaml`
 - `tests/runtime/HYBRID_SAAS_ARCHITECT_RUNTIME_RUNBOOK.md`
 - `tests/runtime/HYBRID_SAAS_ARCHITECT_FIXTURES.md`
+
+For the `documentation-auditor` Custom GPT runtime candidate, also read when validating/applying/testing that candidate:
+
+- `runtime/custom-gpt/DOCUMENTATION_AUDITOR_BUILDER_PROFILE.md`
+- `runtime/custom-gpt/DOCUMENTATION_AUDITOR_BUILDER_KERNEL.md`
+- `runtime/custom-gpt/GITHUB_READONLY_ACTION.openapi.yaml`
+- `tests/runtime/DOCUMENTATION_AUDITOR_RUNTIME_RUNBOOK.md`
+- `tests/behavioral/DOCUMENTATION_AUDITOR_TESTS.md`
+- `core/protocols/EVIDENCE_RETRIEVAL_RESILIENCE_CONTRACT.md` when the task or runtime case exercises retrieval resilience
 
 Future archetype, specialist, validation and versioning contracts must be reached from this bootstrap rather than becoming independent entrypoints.
 
@@ -241,7 +251,27 @@ PUBLISHED
 
 Versioning a Builder profile/kernel/action schema in SES does not prove it has been applied externally.
 
-Before runtime testing of the first SaaS Architect candidate, capture the Builder fingerprint required by `runtime/custom-gpt/SAAS_ARCHITECT_BUILDER_PROFILE.md` and execute `tests/runtime/HYBRID_SAAS_ARCHITECT_RUNTIME_RUNBOOK.md`.
+Before runtime testing of any SES Custom GPT candidate:
+
+1. resolve the applicable archetype from `archetypes/REGISTRY.md`;
+2. read that archetype's versioned Builder profile and kernel listed in this bootstrap;
+3. capture the Builder fingerprint required by that profile;
+4. resolve the Action schema actually applied;
+5. execute the runtime runbook and canonical behavioral suite applicable to that archetype;
+6. keep any archetype-specific resilience/fixture requirements separate and explicit.
+
+For `saas-architect`, use:
+
+- `runtime/custom-gpt/SAAS_ARCHITECT_BUILDER_PROFILE.md`
+- `tests/runtime/HYBRID_SAAS_ARCHITECT_RUNTIME_RUNBOOK.md`
+- `tests/behavioral/HYBRID_SPECIALIST_BOOTSTRAP_TESTS.md`
+
+For `documentation-auditor`, use:
+
+- `runtime/custom-gpt/DOCUMENTATION_AUDITOR_BUILDER_PROFILE.md`
+- `tests/runtime/DOCUMENTATION_AUDITOR_RUNTIME_RUNBOOK.md`
+- `tests/behavioral/DOCUMENTATION_AUDITOR_TESTS.md`
+- `core/protocols/EVIDENCE_RETRIEVAL_RESILIENCE_CONTRACT.md` when resilience cases are material
 
 No Builder secret/token may be committed to SES.
 
@@ -266,7 +296,9 @@ and identify `SES_EFFECTIVE_REF` explicitly.
 
 A coherent specification or successful read-only resolution chain on a candidate PR head does not prove that a future Custom GPT, Action/API loader or other runtime mechanism satisfies the behavior.
 
-`RUNTIME_BEHAVIORAL_PROOF = PASS` requires the actual specialist/loading mechanism to execute every runtime-required canonical case in `tests/behavioral/HYBRID_SPECIALIST_BOOTSTRAP_TESTS.md`. Any required `NOT_EXECUTED`, `SKIPPED`, `INDETERMINATE` or failed case prevents runtime PASS.
+`RUNTIME_BEHAVIORAL_PROOF = PASS` requires the actual configured specialist/loading mechanism to execute every runtime-required canonical case in the behavioral suite applicable to the resolved archetype, plus any additional runtime/resilience cases that the applicable runbook marks mandatory for the claimed readiness scope. Any required `NOT_EXECUTED`, `SKIPPED`, `INDETERMINATE` or failed case prevents the corresponding runtime/readiness PASS.
+
+Do not substitute one archetype's behavioral suite for another archetype's runtime proof.
 
 ## 11. Change discipline
 
