@@ -1,13 +1,13 @@
 # Specialist Engineering System — Bootstrap Index
 
-**Status:** RUNTIME_CANDIDATE_V0_1 / BOOTSTRAP_INDEX
+**Status:** RUNTIME_CANDIDATE_V0_2 / BOOTSTRAP_INDEX
 **Repository:** `wagnerjfjunior/Specialist-Engineering-System`
 
 This index defines the minimum reconstruction order for material work on SES itself and for SES-mediated work on a registered consumer project.
 
 ## 1. Resolve SES live state
 
-Before material architecture, protocol, specialist, validation, project-adapter or release decisions:
+Before material architecture, protocol, specialist, validation, project-adapter or release decisions, and before a hybrid specialist presents a live project menu:
 
 1. resolve the live SHA of SES `main` as `SES_CANONICAL_MAIN_REF`;
 2. determine the declared proof level;
@@ -17,7 +17,7 @@ Before material architecture, protocol, specialist, validation, project-adapter 
 6. do not substitute memory, prior conversation, screenshots or copied project state for repository evidence;
 7. keep SES state distinct from consumer-project state.
 
-If the required SES bootstrap cannot be resolved on the applicable effective ref, declare `SES_BOOTSTRAP_UNAVAILABLE` and do not make a material canonical/readiness claim.
+If the required SES bootstrap cannot be resolved on the applicable effective ref, declare `SES_BOOTSTRAP_UNAVAILABLE` and do not make a material canonical/readiness claim or fabricate a project menu.
 
 `CANDIDATE_HEAD != CANONICAL_MAIN`
 
@@ -32,7 +32,7 @@ Read when applicable:
 - `core/protocols/PROJECT_ADAPTER_CONTRACT.md`
 - `core/protocols/PROJECT_BOOTSTRAP_CONTRACT.md`
 - `core/protocols/PROJECT_CONTINUITY_CONTRACT.md`
-- `core/protocols/HYBRID_SPECIALIST_BOOTSTRAP_CONTRACT.md` for hybrid/multi-project specialist work
+- `core/protocols/HYBRID_SPECIALIST_BOOTSTRAP_CONTRACT.md` for hybrid/multi-project specialist work, including the standardized project-resolution interaction stage
 - `core/protocols/EVIDENCE_RETRIEVAL_RESILIENCE_CONTRACT.md` when large-file, large-tree, truncation, incomplete transport or context-budget risk is material
 
 Behavioral validation of the hybrid bootstrap contract is defined in:
@@ -60,7 +60,7 @@ Future archetype, specialist, validation and versioning contracts must be reache
 
 ## 3. Archetype resolution
 
-Before a reusable SES specialist performs material specialist work:
+Before a reusable SES specialist performs material specialist work or presents its registered-project menu:
 
 1. read `archetypes/REGISTRY.md` on `SES_EFFECTIVE_REF`;
 2. resolve the requested `ARCHETYPE_ID` deterministically;
@@ -78,25 +78,37 @@ A project-local specialist identity/override must be resolved from the consumer 
 
 ## 4. Consumer-project resolution
 
+Every hybrid specialist uses one project-entry flow. The project input may already be supplied by the user or may initially be absent; this changes only the input state, not the bootstrap sequence.
+
 Before project-specific specialist work:
 
-1. collect or identify the project name/ID explicitly;
-2. define the full requested `TASK_SCOPE`;
+1. classify `PROJECT_IDENTIFIER` as the user-supplied identifier or `NOT_SUPPLIED`;
+2. define the requested `TASK_SCOPE`; when the user requested only initialization/connection, use a bounded connection/bootstrap scope rather than inventing future work;
 3. classify `TARGET_REF_OR_OBJECT` and `ENVIRONMENT`, using `NOT_REQUIRED_FOR_THIS_TASK` only when genuinely immaterial;
-4. resolve the project identifier through `projects/REGISTRY.md`;
-5. obtain one unique `PROJECT_ID` and `ADAPTER_PATH` from the registry;
-6. read the registered Project Adapter at that exact path;
-7. use the adapter only to locate the consumer project's canonical source and entrypoints;
-8. resolve the consumer project's live canonical ref;
-9. execute the project-local bootstrap protocol;
-10. resolve the applicable specialist/project-local rules and overrides;
-11. read project-local common rules and authority/governance sources when applicable;
-12. execute the project-local continuity protocol when current-state continuity is material;
-13. resolve live evidence material to the exact task/target/environment;
-14. for hybrid specialists, emit the task-bound Context Readiness Receipt required by `core/protocols/HYBRID_SPECIALIST_BOOTSTRAP_CONTRACT.md`;
-15. only then perform project-specific substantive work within the receipt's effective scope.
+4. read `projects/REGISTRY.md` on the exact `SES_EFFECTIVE_REF`;
+5. execute the project-resolution stage defined by `core/protocols/HYBRID_SPECIALIST_BOOTSTRAP_CONTRACT.md`;
+6. when `PROJECT_IDENTIFIER: NOT_SUPPLIED`, including `# CLIQUE PARA INICIAR`, display the current `ACTIVE` registered projects by `CANONICAL_NAME` as a numbered list and wait for a valid numeric selection;
+7. when a project identifier was already supplied, validate it through the same project-resolution stage; the menu is unnecessary, but no bootstrap stage is skipped;
+8. obtain one unique `PROJECT_ID` and `ADAPTER_PATH` from the registry;
+9. read the registered Project Adapter at that exact path;
+10. use the adapter only to locate the consumer project's canonical source and entrypoints;
+11. resolve the consumer project's live canonical ref;
+12. execute the project-local bootstrap protocol;
+13. resolve the applicable specialist/project-local rules and overrides;
+14. read project-local common rules and authority/governance sources when applicable;
+15. execute the project-local continuity protocol when current-state continuity is material;
+16. resolve live evidence material to the exact task/target/environment;
+17. emit the task-bound Context Readiness Receipt required by `core/protocols/HYBRID_SPECIALIST_BOOTSTRAP_CONTRACT.md`;
+18. only then perform project-specific substantive work within the receipt's effective scope.
 
-This order is normative for hybrid SES-mediated work and aligns with `core/protocols/PROJECT_BOOTSTRAP_CONTRACT.md`:
+The numbered menu is UX over the live registry. It must never hard-code project numbers. Menu presence proves only that SES currently registers the project for hybrid resolution; project-local specialist applicability remains subject to the later project-local specialist-resolution step.
+
+```text
+PROJECT_LISTED != PROJECT_SPECIALIST_READY
+PROJECT_SELECTED != PROJECT_CONTEXT_READY
+```
+
+This order remains normative for hybrid SES-mediated work and aligns with `core/protocols/PROJECT_BOOTSTRAP_CONTRACT.md`:
 
 ```text
 PROJECT BOOTSTRAP
@@ -108,7 +120,7 @@ PROJECT BOOTSTRAP
 
 Do not use fuzzy project-name guessing for material resolution. Zero matches = `PROJECT_NOT_REGISTERED`; multiple matches = `PROJECT_ID_AMBIGUOUS`.
 
-A conversation starter such as "Which project are we working on?" is UX only. It is not a security boundary and does not replace registry/adapter/bootstrap resolution.
+A conversation starter such as `# CLIQUE PARA INICIAR` is UX input only. It is not a security boundary, project configuration, readiness proof or authority grant.
 
 ## 5. Task-bound readiness semantics
 
@@ -137,6 +149,10 @@ CONTEXT_STATUS: BLOCKED
 means a material gap/conflict prevents the requested decision and no safe reduced scope has been established.
 
 An irrelevant source classified `NOT_REQUIRED_FOR_THIS_TASK` does not by itself make a task `LIMITED`.
+
+A connection/bootstrap-only receipt must not be promoted into readiness for a later unspecified task.
+
+`READY_FOR_PROJECT_CONNECTION != READY_FOR_UNSPECIFIED_FUTURE_TASKS`
 
 ## 6. Receipt invalidation and proportional revalidation
 
@@ -271,6 +287,7 @@ For `documentation-auditor`, use:
 - `runtime/custom-gpt/DOCUMENTATION_AUDITOR_BUILDER_PROFILE.md`
 - `tests/runtime/DOCUMENTATION_AUDITOR_RUNTIME_RUNBOOK.md`
 - `tests/behavioral/DOCUMENTATION_AUDITOR_TESTS.md`
+- `tests/behavioral/HYBRID_SPECIALIST_BOOTSTRAP_TESTS.md` for the shared hybrid entry/bootstrap cases
 - `core/protocols/EVIDENCE_RETRIEVAL_RESILIENCE_CONTRACT.md` when resilience cases are material
 
 No Builder secret/token may be committed to SES.
