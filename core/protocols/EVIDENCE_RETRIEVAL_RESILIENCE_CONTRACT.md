@@ -50,11 +50,28 @@ When a material file may exceed tool/runtime output limits:
 7. maintain a coverage ledger for every chunk/range actually retrieved;
 8. detect gaps and overlaps explicitly;
 9. only promote to `INTEGRAL_READ` when coverage proves start-through-EOF with no material gap;
-10. if no technical chunk mechanism is available, use `CHUNKED_READ_UNAVAILABLE` and request an approved alternate source/manual attachment when the claim truly requires complete reading.
+10. if complete reading remains material after either a zero-content failure or a partial read, continue through the best actually available bounded/alternate retrieval path; if no technical chunk mechanism is available, state `CHUNKED_READ_UNAVAILABLE` and request an approved alternate source/manual attachment rather than stopping at the coverage classification alone.
 
 `ZERO_CONTENT_FAILURE = NOT_READ + TOOL/RETRIEVAL_FAILURE`
 
 `SOME_CONTENT_WITHOUT_EOF = PARTIAL_READ`
+
+Coverage classification and fallback state are independent dimensions:
+
+```text
+COVERAGE_STATE
+=
+NOT_READ + TOOL/RETRIEVAL_FAILURE
+OR
+PARTIAL_READ
+
+IF COMPLETE_READING_IS_MATERIAL
+AND NO_CONFIGURED_BOUNDED_READER_IS_AVAILABLE
+THEN
+CHUNKED_READ_UNAVAILABLE
++
+MANUAL_OR_ALTERNATE_SOURCE_REQUIRED
+```
 
 Conceptual coverage record:
 
@@ -158,17 +175,24 @@ Do not claim a chunk loader exists merely because the desired protocol specifies
 
 The current SES GitHub READ_ONLY Action provides exact-ref file/blob/tree readers but does not define a dedicated server-side line-range/chunk operation.
 
-Therefore, when a file exceeds the runtime's safe single-response capacity and no other configured bounded reader is available:
+Therefore, when a file exceeds the runtime's safe single-response capacity and no other configured bounded reader is available, first preserve the actual coverage outcome:
 
 ```text
-NOT_READ + TOOL/RETRIEVAL_FAILURE
-OR
-PARTIAL_READ
-+
+COVERAGE_STATE =
+  NOT_READ + TOOL/RETRIEVAL_FAILURE
+  OR
+  PARTIAL_READ
+```
+
+Then, for **either** coverage outcome, if complete reading is material:
+
+```text
 CHUNKED_READ_UNAVAILABLE
 +
-MANUAL_OR_ALTERNATE_SOURCE_REQUIRED when full reading is material
+MANUAL_OR_ALTERNATE_SOURCE_REQUIRED
 ```
+
+Do not attach fallback obligations only to `PARTIAL_READ`; a zero-content failure requires the same fail-closed continuation when the proof obligation still requires the complete file.
 
 A future bounded read operation may be added only through a separately versioned Action/runtime change with its own safety and behavioral evidence.
 
