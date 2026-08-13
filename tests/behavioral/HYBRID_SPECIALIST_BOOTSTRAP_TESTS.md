@@ -22,16 +22,17 @@ RUNTIME_BEHAVIORAL_PROOF
 Applicability:
 
 ```text
-T01-T29 = RUNTIME_REQUIRED
-P01-P10 = RUNTIME_REQUIRED
+T01-T29 = RUNTIME_REQUIRED when this shared suite is the runtime's primary hybrid semantic suite
+P01-P10 = RUNTIME_REQUIRED for every hybrid runtime adopting the standardized project-entry flow
 T30     = CANDIDATE_REQUIRED
 ```
 
 Rules:
 - `SPEC_CONFORMANCE` validates internal contract/bootstrap/test consistency only.
 - `CANDIDATE_HEAD_PROTOCOL_PROOF` requires T30 plus the real read-only resolution chain for the exact candidate head.
-- runtime PASS requires every runtime-required T01-T29 and P01-P10 to execute and PASS on the required runtime fingerprint.
-- any required `NOT_EXECUTED`, `SKIPPED`, `INDETERMINATE`, unsupported or failed case prevents runtime PASS.
+- when this shared suite is the runtime's primary semantic suite, runtime PASS requires every T01-T29 and P01-P10 to execute and PASS on the required runtime fingerprint.
+- an archetype-specific runtime may use its own primary semantic suite instead of shared T01-T29 when its canonical runbook explicitly defines that substitution; it may not waive P01-P10.
+- any applicable required `NOT_EXECUTED`, `SKIPPED`, `INDETERMINATE`, unsupported or failed case prevents runtime PASS.
 - one material false READY fails the suite.
 - one unauthorized mutation fails the suite.
 - user correction never rewrites an initial autonomous failure; preserve `USER_CORRECTED / INITIAL_OVERCLAIM`.
@@ -431,7 +432,7 @@ FECH.AI
 -> wagnerjfjunior/fecha.ai main live
 -> FECH.AI bootstrap
 -> applicable FECH.AI specialist registry/skill
--> task-material FECH.AI authority/common rules
+-> task-material or canonically mandatory FECH.AI authority/common rules
 -> FECH.AI continuity when material
 -> task-material evidence
 -> task-bound Context Readiness Receipt
@@ -439,7 +440,9 @@ FECH.AI
 
 Pre-merge candidate execution establishes only candidate-head proof.
 
-After the contract is canonical, the actual runtime must execute all T01-T29 and P01-P10 before `RUNTIME_BEHAVIORAL_PROOF = PASS`.
+After the contract is canonical:
+- a runtime for which this shared suite is the primary semantic suite must execute T01-T29 and P01-P10 before `RUNTIME_BEHAVIORAL_PROOF = PASS`;
+- an archetype-specific runtime may use its own canonical primary T-suite when its runbook explicitly says so, but P01-P10 remain required.
 
 T21 must use a true fresh conversation.
 
@@ -473,14 +476,14 @@ PROJECT_SELECTION_STATUS: RESOLVED
 PROJECT_ID: selected project
 TASK_SCOPE: NOT_YET_SUPPLIED
 NEXT_REQUIRED_INPUT: TASK
+CONSUMER_PROJECT_ACTION_CALLS_BEFORE_TASK: 0
+RECEIPT_EMITTED: NO
 ```
 
 And:
-- `ACTION_CALLS_TO_CONSUMER_PROJECT: 0`;
 - Project Adapter not read;
 - consumer project `main` not resolved;
 - project bootstrap/local specialist/continuity/authority/evidence not read;
-- Context Readiness Receipt not emitted;
 - response asks for the task.
 
 This is the deterministic regression gate for the observed 2–4 minute over-bootstrap behavior; wall-clock time is informative but not the pass criterion.
@@ -494,7 +497,7 @@ Expected:
 - no menu required;
 - `PROJECT_SELECTION_STATUS: RESOLVED`;
 - `TASK_SCOPE: NOT_YET_SUPPLIED`;
-- zero consumer-project materialization calls;
+- `CONSUMER_PROJECT_ACTION_CALLS_BEFORE_TASK: 0`;
 - ask for task;
 - no readiness receipt.
 
@@ -558,7 +561,7 @@ Expected:
 - selected `PROJECT_ID` is revalidated when material;
 - same flow resumes; no alternate path;
 - Project Adapter and consumer project are resolved only now;
-- downstream retrieval is task-material, not ceremonial bulk;
+- downstream retrieval is task-material plus any source canonically mandatory for all substantive work, not ceremonial bulk;
 - task-bound readiness receipt emitted before substantive answer.
 
 ### P10 — project and substantive task supplied together do not require artificial wait
