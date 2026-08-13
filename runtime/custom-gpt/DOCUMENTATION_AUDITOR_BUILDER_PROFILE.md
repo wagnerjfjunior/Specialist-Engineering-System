@@ -58,6 +58,18 @@ Reuse the existing read-only schema:
 
 No Action mutation is part of this profile.
 
+### Action authentication
+
+Configure authentication separately in the Builder UI:
+
+```text
+Type: API key
+Mode: Bearer
+Secret value: Builder UI only / never committed
+```
+
+The secret/token must never be written to SES, consumer repositories, prompts, logs or evidence records. Authentication configuration is part of the runtime fingerprint, but the secret value is not.
+
 ### Visibility
 
 `PRIVATE / APENAS PARA MIM` until runtime behavioral certification and separate publication decision.
@@ -75,6 +87,8 @@ Before runtime behavioral proof, the candidate must apply:
 Mandatory behaviors include:
 
 - fail-closed large-file handling;
+- `NOT_READ` when a retrieval fails before any file content is recovered;
+- `PARTIAL_READ` only when some content was recovered but complete reading/EOF was not proven;
 - no `INTEGRAL_READ` without start-to-EOF proof;
 - chunk coverage union semantics;
 - manual/alternate-source fallback when chunked live retrieval is unavailable;
@@ -104,7 +118,9 @@ SELECTED_MODEL
 BUILDER_VERSION_IDENTIFIER when available
 ```
 
-A material Builder/kernel/action/model change invalidates affected runtime evidence.
+`ACTION_AUTH_MODE` must record the non-secret configuration (`API_KEY / BEARER`) and never the credential value.
+
+A material Builder/kernel/action/model/auth-mode change invalidates affected runtime evidence.
 
 ## 5. Lifecycle separation
 

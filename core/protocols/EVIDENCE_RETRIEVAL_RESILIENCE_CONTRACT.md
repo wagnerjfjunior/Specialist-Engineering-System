@@ -42,13 +42,19 @@ When a material file may exceed tool/runtime output limits:
 1. resolve repository, exact ref and path;
 2. capture blob/object identity and size when available;
 3. attempt the normal exact-ref final-file reader;
-4. if the response errors, truncates, omits a material suffix, or the runtime cannot prove EOF, classify the file `PARTIAL_READ`;
+4. classify the result by content actually recovered:
+   - if the reader fails before returning any file content, preserve `NOT_READ` and record the retrieval/tool failure explicitly;
+   - if some file content is recovered but the response truncates, omits a material suffix, or cannot prove EOF, classify `PARTIAL_READ`;
 5. do not retry the same oversized operation indefinitely;
 6. use a deterministic bounded-chunk mechanism when the configured tool surface supports one;
 7. maintain a coverage ledger for every chunk/range actually retrieved;
 8. detect gaps and overlaps explicitly;
 9. only promote to `INTEGRAL_READ` when coverage proves start-through-EOF with no material gap;
 10. if no technical chunk mechanism is available, use `CHUNKED_READ_UNAVAILABLE` and request an approved alternate source/manual attachment when the claim truly requires complete reading.
+
+`ZERO_CONTENT_FAILURE = NOT_READ + TOOL/RETRIEVAL_FAILURE`
+
+`SOME_CONTENT_WITHOUT_EOF = PARTIAL_READ`
 
 Conceptual coverage record:
 
@@ -155,9 +161,13 @@ The current SES GitHub READ_ONLY Action provides exact-ref file/blob/tree reader
 Therefore, when a file exceeds the runtime's safe single-response capacity and no other configured bounded reader is available:
 
 ```text
+NOT_READ + TOOL/RETRIEVAL_FAILURE
+OR
 PARTIAL_READ
-+ CHUNKED_READ_UNAVAILABLE
-+ MANUAL_OR_ALTERNATE_SOURCE_REQUIRED when full reading is material
++
+CHUNKED_READ_UNAVAILABLE
++
+MANUAL_OR_ALTERNATE_SOURCE_REQUIRED when full reading is material
 ```
 
 A future bounded read operation may be added only through a separately versioned Action/runtime change with its own safety and behavioral evidence.
