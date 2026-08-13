@@ -1,27 +1,26 @@
 # SES — SaaS Architect Custom GPT Builder Profile
 
-**Status:** RUNTIME_CANDIDATE_V0_2 / BUILDER_PROFILE / TARGET_KERNEL_VERSIONED / STARTER_BUILDER_OBSERVED / V0_2_FINGERPRINT_NOT_YET_COMPLETE
+**Status:** RUNTIME_CANDIDATE_V0_3 / BUILDER_PROFILE / TARGET_KERNEL_VERSIONED / EXTERNAL_BUILDER_UPDATE_REQUIRED
 **ARCHETYPE_ID:** `saas-architect`
 
 ## 1. Purpose
 
-Version the current intended Custom GPT configuration for `SES — SaaS Architect` after adoption of the standardized SES hybrid project-entry interaction.
+Version the intended Custom GPT configuration for `SES — SaaS Architect` after the project-selection latency finding demonstrated that project selection must stop before consumer-project materialization when no substantive task exists.
 
-This profile does not rewrite, erase or promote prior runtime evidence. The certified v0.1 runtime baseline remains historical `RUNTIME_BEHAVIORAL_PROOF = PASS` evidence bound to its exact certified fingerprint. The v0.2 starter/kernel/shared-suite change is a material runtime-version change and requires a fresh Builder fingerprint plus proportional behavioral revalidation before any v0.2 runtime PASS may be claimed.
+This profile preserves prior evidence without rewriting it:
+- v0.1 remains historically certified;
+- v0.2 remains a versioned but not runtime-proven target;
+- v0.3 is the new target and requires fresh Builder application/fingerprint plus proportional behavioral revalidation.
 
 ```text
-TARGET_PROFILE_VERSION: V0_2
-TARGET_KERNEL_VERSIONED: YES
-STARTER_CHANGE_OBSERVED_IN_BUILDER: YES
-FULL_V0_2_BUILDER_APPLICATION: NOT_YET_ESTABLISHED
-V0_2_BUILDER_FINGERPRINT_COMPLETE: NO
+V0_1_RUNTIME_BEHAVIORAL_PROOF: PASS / HISTORICAL / PRESERVED
 V0_2_RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
-PUBLISHED: NO
+V0_3_RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
 ```
 
-`HISTORICAL_V0_1_RUNTIME_PASS != V0_2_RUNTIME_PASS`
+`HISTORICAL_V0_1_RUNTIME_PASS != V0_2_RUNTIME_PASS != V0_3_RUNTIME_PASS`
 
-## 2. Builder fields — v0.2 target
+## 2. Builder fields — v0.3 target
 
 ### Name
 
@@ -40,20 +39,23 @@ Use the exact compact kernel versioned at:
 The Builder Instructions field must contain the complete kernel content, not a path reference, paraphrase or truncated copy.
 
 ```text
-TARGET_KERNEL_STATUS: RUNTIME_CANDIDATE_V0_2
+TARGET_KERNEL_STATUS: RUNTIME_CANDIDATE_V0_3
 BUILDER_INSTRUCTIONS_HARD_LIMIT: <= 8000 characters
 SES_OPERATIONAL_BUDGET: <= 7500 characters
-CURRENT_COMPACT_KERNEL_MEASURED_COUNT: 6475 characters
+CURRENT_COMPACT_KERNEL_MEASURED_COUNT: 6810 characters
 COUNT_METHOD: Unicode code-point count of repository text content
+SCOPE_OF_SIZE_CONSTRAINT: Builder Instructions field only
 ```
 
-The kernel loads the reusable method live through SES bootstrap, archetype resolution and `core/protocols/HYBRID_SPECIALIST_BOOTSTRAP_CONTRACT.md`.
+The 8,000-character Builder constraint applies only to content copied into **Instructions**. It does not constrain SES Core contracts, archetypes, profiles, tests, continuity or project files loaded later.
+
+`BUILDER_INSTRUCTIONS_SIZE_CONSTRAINT != SES_DOCUMENT_SIZE_CONSTRAINT`
+
+The kernel loads reusable method live through SES bootstrap, archetype resolution and `core/protocols/HYBRID_SPECIALIST_BOOTSTRAP_CONTRACT.md`.
 
 ### Conversation starters
 
 1. `# CLIQUE PARA INICIAR`
-
-This starter is UX input only. It supplies `PROJECT_IDENTIFIER: NOT_SUPPLIED` to the same ordered hybrid bootstrap flow used when the user names a project directly.
 
 No project supplied:
 
@@ -64,26 +66,42 @@ No project supplied:
 → live Project Registry
 → numbered ACTIVE project list
 → numeric selection
-→ normal Project Adapter/bootstrap/local-specialist flow
+→ PROJECT_SELECTED
+→ wait for substantive task
 ```
 
-Project already supplied:
+Project supplied directly without task:
 
 ```text
 "Trabalhe no FECH.AI"
-→ PROJECT_IDENTIFIER = FECH.AI
-→ same project-resolution stage
-→ normal Project Adapter/bootstrap/local-specialist flow
+→ deterministic project resolution
+→ PROJECT_SELECTED
+→ wait for substantive task
 ```
 
-The menu is unnecessary when the identifier is already supplied; no mandatory bootstrap stage is skipped.
+Project plus substantive task:
 
-Project numbers must never be hard-coded. A listed/selected project is not project-local architecture readiness:
+```text
+"Audite a arquitetura do FECH.AI"
+→ same project-resolution stage
+→ task materiality classification
+→ Project Adapter / project bootstrap / local specialist
+→ only task-material sources
+→ Context Readiness Receipt
+→ bounded architecture work
+```
+
+No alternate path or bypass exists.
+
+When no substantive task exists after selection, do **not** read Project Adapter, consumer-project main, project bootstrap, project-local specialist rules, continuity, authority/governance or project evidence, and do not emit a Context Readiness Receipt.
 
 ```text
 PROJECT_LISTED != PROJECT_SPECIALIST_READY
+PROJECT_SELECTED != PROJECT_BOOTSTRAPPED
 PROJECT_SELECTED != PROJECT_CONTEXT_READY
 ```
+
+Project numbers are transient and menu-bound.
 
 ### Knowledge
 
@@ -100,10 +118,10 @@ Web Search: ENABLED
 Code Interpreter / Data Analysis: ENABLED
 Image Generation: DISABLED
 Actions: ENABLED
-Apps: record actual Builder UI state; do not invent a toggle when the UI does not expose one
+Apps: record actual Builder UI state; use NOT_PRESENT_IN_CURRENT_BUILDER_UI when appropriate
 ```
 
-Web Search is supplementary only and does not replace canonical project sources.
+Web Search is supplementary only.
 
 ### Actions
 
@@ -115,7 +133,7 @@ Schema source:
 
 `runtime/custom-gpt/GITHUB_READONLY_ACTION.openapi.yaml`
 
-No mutation endpoint belongs in the baseline publishable candidate.
+No mutation endpoint belongs in the baseline candidate.
 
 ### Authentication
 
@@ -125,19 +143,17 @@ Mode: Bearer
 Secret: Builder UI only / never committed or reproduced in evidence
 ```
 
-Before v0.2 runtime proof capture non-secret principal/access evidence, including authenticated login/id and bounded required-repository access smokes when scope/allowlist metadata is not exposed.
+Before v0.3 runtime proof capture non-secret principal/access evidence and bounded repository-access smokes when scope/allowlist metadata is not exposed.
 
 ### Visibility
 
-Target remains non-public until runtime proof and a separate publication decision.
-
-The current user-supplied Builder screenshot after the starter update shows `Apenas convidados`. Treat that as an observed current access state, not as proof of publication authorization or v0.2 runtime readiness.
+Keep non-public until runtime proof and separate publication authorization.
 
 ### Model
 
-Record the actual selected model in the v0.2 fingerprint. Current user-supplied Builder screenshots show `GPT-5.6 Sol` as creator-recommended model.
+Record the actual selected model in the v0.3 fingerprint. A model change is a potential behavioral invalidation event.
 
-## 3. V0.2 fingerprint required before testing
+## 3. V0.3 fingerprint required before testing
 
 Capture:
 
@@ -175,11 +191,9 @@ KNOWLEDGE: EMPTY
 STARTER_OVERFLOW_SUBSTITUTE: NO
 ```
 
-Any material Builder/kernel/action/model/auth/principal/access-scope change invalidates affected v0.2 evidence.
-
 ## 4. Historical v0.1 evidence — certified PASS preserved
 
-The v0.1 runtime behavioral certification is preserved exactly as a prior-version proof obligation already satisfied. Canonical durable evidence:
+Canonical durable evidence:
 
 `tests/runtime/evidence/HYBRID_SAAS_ARCHITECT_RUNTIME_PROOF_2026-08-12.md`
 
@@ -200,58 +214,52 @@ HISTORICAL_FINAL_ACTION_SURFACE: READ_ONLY / GET-only
 HISTORICAL_BASELINE_RESTORED_AFTER_T16_T28: YES
 ```
 
-Earlier candidate-head evidence that preceded the canonical runtime certification also remains preserved:
+Later target changes do not downgrade this historical PASS.
+
+## 5. v0.2 target and observed failure — preserved
+
+v0.2 standardized the single starter and project-entry flow but was not fully applied to the external Builder before being superseded.
+
+User-supplied Builder evidence on 2026-08-13 established:
 
 ```text
-HISTORICAL_CANDIDATE_EFFECTIVE_REF: f55a6edc9674f8aa96438082e5ca3166a6df7e03
-HISTORICAL_BUILDER_APPLICATION_OBSERVED: YES
-HISTORICAL_PREVIEW_EXECUTION_OBSERVED: YES
-HISTORICAL_BUILDER_FINGERPRINT_COMPLETE: YES
-HISTORICAL_GITHUB_AUTH_SMOKE: PASS
-HISTORICAL_CORE_GITHUB_LOADER_SMOKE: PASS
-HISTORICAL_T30: PASS @ f55a6edc9674f8aa96438082e5ca3166a6df7e03
-HISTORICAL_FECHAI_CANDIDATE_E2E: PASS @ f55a6edc9674f8aa96438082e5ca3166a6df7e03
-```
-
-The v0.2 starter/kernel/shared-suite change does not invalidate the historical truth of the v0.1 PASS. It invalidates only silent reuse of that PASS as proof for v0.2.
-
-```text
-V0_1_RUNTIME_BEHAVIORAL_PROOF: PASS / HISTORICAL / PRESERVED
+STARTER: # CLIQUE PARA INICIAR
+BUILDER_INSTRUCTIONS: v0.1 kernel still applied
+FULL_V0_2_BUILDER_APPLICATION: NO
 V0_2_RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
 ```
 
-## 5. Historical failed/indeterminate observations — preserved
+A runtime attempt using `# CLIQUE PARA INICIAR` with the old v0.1 Instructions returned a generic request for the user to provide a project instead of the live numbered project menu.
 
-The following earlier observations remain historical:
+Preserve:
 
 ```text
-INITIAL_GENERALIZED_ACTION:
-- Builder parser failures occurred before schema correction.
-
-EARLY_GET_COMMIT_PREVIEW:
-- one request targeting openai/openai-python@main returned ClientResponseError.
-
-EARLY_AUTH_OR_TOOL_ATTEMPTS:
-- some getAuthenticatedGitHubUser attempts failed;
-- some Preview sessions reported the GitHub tool unavailable.
-
-IDENTITY_ANOMALY:
-- one Preview response reported authenticated user seomaster2020;
-- later controlled tests authenticated the intended principal wagnerjfjunior;
-- the anomaly remains INDETERMINATE, not retroactively PASS or proven credential-isolation failure.
-
-ARBITRARY_TARGET_OBSERVATION:
-- one early Preview selected openai/openai-python without canonical SES project resolution;
-- later controlled evidence used canonical/explicit targets.
+V0_2_P01_ATTEMPT_1: FAIL
+FAILURE_CLASS: BUILDER_KERNEL_DRIFT / OLD_V0_1_INSTRUCTIONS
+RETROACTIVE_PASS: PROHIBITED
 ```
 
-A later successful run never retroactively converts these historical attempts into PASS. Conversely, a later target-version change never retroactively downgrades the separately certified v0.1 PASS.
+A later successful v0.3 execution will not rewrite this failure.
 
-## 6. V0.2 proof gate
+## 6. Project-selection latency finding
 
-The actual configured v0.2 runtime must pass the runtime-required cases in `tests/behavioral/HYBRID_SPECIALIST_BOOTSTRAP_TESTS.md`, including standardized project-entry cases P01–P08, under the v0.2 fingerprint before a v0.2 behavioral PASS may be considered.
+User-run tests after Core v0.2 showed that once selection did work, both specialists materialized consumer projects before a substantive task existed. User-observed waits were approximately:
+- Documentation Auditor selections: about two minutes;
+- SaaS Architect Blogs/SEO selection: 4 minutes 10 seconds.
 
-Creating/updating the Custom GPT is a Product Authority mutation separate from repository versioning.
+These are user-observed wall times, not independently instrumented platform timings.
+
+The architectural finding is nevertheless evidence-supported by the returned behavior: selection triggered project `main`, bootstrap, local specialist and authority/continuity resolution before any substantive task.
+
+v0.3 corrects this by requiring:
+
+`NO SUBSTANTIVE TASK -> NO CONSUMER-PROJECT MATERIALIZATION`
+
+## 7. v0.3 proof gate
+
+The actual configured v0.3 runtime must pass the runtime-required cases in `tests/behavioral/HYBRID_SPECIALIST_BOOTSTRAP_TESTS.md`, including the selection-deferral cases P01–P10, under the v0.3 fingerprint before v0.3 behavioral PASS may be considered.
+
+Creating/updating the external Custom GPT is a separate Product Authority mutation.
 
 ```text
 PROFILE_VERSIONED
@@ -262,4 +270,4 @@ PROFILE_VERSIONED
 != PUBLISHED
 ```
 
-No Ready, merge, publication, consumer-project mutation, Supabase/Vercel mutation, legacy retirement or production claim follows automatically from this profile.
+No publication, consumer-project mutation, legacy retirement or production claim follows automatically.
