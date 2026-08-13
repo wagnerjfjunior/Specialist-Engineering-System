@@ -20,7 +20,7 @@ Archetype resolution must be deterministic:
 
 Fail closed when no unique active archetype resolves.
 
-`RESOLUTION_STATUS` is the only field that determines registry eligibility. Lifecycle/version labels such as `RUNTIME_CANDIDATE_V0_1` describe maturity and must not be interpreted as active/inactive resolution state.
+`RESOLUTION_STATUS` is the only field that determines registry eligibility. Lifecycle/version labels such as `RUNTIME_CANDIDATE_V0_1` or `SPEC_CANDIDATE_V0_1` describe maturity and must not be interpreted as active/inactive resolution state.
 
 ## 3. Registered archetypes
 
@@ -41,17 +41,41 @@ The SaaS Architect archetype provides reusable architecture method, reasoning mo
 
 For project-specific work, the runtime must resolve the consumer project's own specialist/override sources after project bootstrap. A project-local architectural specialist may refine or restrict this archetype; its identity must be resolved from that project's canonical sources and must not be frozen in this registry.
 
+### Documentation Auditor
+
+```text
+ARCHETYPE_ID: documentation-auditor
+CANONICAL_NAME: SES — Documentation Auditor
+ALIASES:
+- Documentation Auditor
+- SES Documentation Auditor
+CONTRACT_PATH: archetypes/documentation-auditor/ARCHETYPE.md
+RESOLUTION_STATUS: ACTIVE
+LIFECYCLE_STATUS: SPEC_CANDIDATE_V0_1 / RUNTIME_NOT_CERTIFIED
+```
+
+The Documentation Auditor archetype provides reusable evidence-engineering method for claim decomposition, claim-to-evidence traceability, provenance, proof obligations, contradiction handling, freshness/invalidation, bounded negative evidence, final-state verification and reproducible documentation/evidence verdicts.
+
+It does not own project truth, project-local source precedence, lifecycle authority, runtime state or specialist routing. Those remain consumer-project responsibilities and must be resolved after project bootstrap.
+
+`RESOLUTION_STATUS: ACTIVE` means the versioned archetype contract can be resolved by SES. It does **not** mean an external Builder exists, has been configured, has passed runtime behavioral certification or is eligible to replace any project-bound specialist.
+
 ## 4. Boundary
 
 ```text
-ARCHETYPE = REUSABLE METHOD
+SES CORE = REUSABLE INFRASTRUCTURE / COMMON CONTRACTS
+ARCHETYPE = REUSABLE SPECIALIST METHOD
 PROJECT SPECIALIST = PROJECT-LOCAL OVERRIDE / AUTHORITY BOUNDARY
 ```
 
 `ARCHETYPE_RESOLVED != PROJECT_CONTEXT_READY`
+
+`ARCHETYPE_RESOLVED != RUNTIME_BEHAVIORAL_PROOF`
 
 `ARCHETYPE_RESOLVED != AUTHORIZED_TO_MUTATE`
 
 ## 5. Change discipline
 
 Adding, removing, renaming, aliasing or changing `RESOLUTION_STATUS` of an archetype changes specialist-resolution behavior and requires a versioned SES change with behavioral evidence proportional to the impact.
+
+Runtime profile, Builder kernel, Action surface, external Builder configuration, project-local equivalence and legacy retirement remain separate lifecycle scopes and require their own evidence and authorization.
