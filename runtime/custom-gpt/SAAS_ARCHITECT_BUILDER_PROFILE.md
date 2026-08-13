@@ -7,7 +7,7 @@
 
 Version the current intended Custom GPT configuration for `SES — SaaS Architect` after adoption of the standardized SES hybrid project-entry interaction.
 
-This profile does not rewrite or promote prior runtime evidence. The previously tested v0.1 runtime-effective configuration remains historical evidence bound to its exact kernel/ref/fingerprint. The v0.2 starter/kernel change requires a fresh Builder fingerprint and proportional behavioral revalidation before any v0.2 runtime claim.
+This profile does not rewrite, erase or promote prior runtime evidence. The certified v0.1 runtime baseline remains historical `RUNTIME_BEHAVIORAL_PROOF = PASS` evidence bound to its exact certified fingerprint. The v0.2 starter/kernel/shared-suite change is a material runtime-version change and requires a fresh Builder fingerprint plus proportional behavioral revalidation before any v0.2 runtime PASS may be claimed.
 
 ```text
 TARGET_PROFILE_VERSION: V0_2
@@ -19,7 +19,7 @@ V0_2_RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
 PUBLISHED: NO
 ```
 
-`HISTORICAL_V0_1_PROOF != V0_2_RUNTIME_PROOF`
+`HISTORICAL_V0_1_RUNTIME_PASS != V0_2_RUNTIME_PASS`
 
 ## 2. Builder fields — v0.2 target
 
@@ -177,14 +177,33 @@ STARTER_OVERFLOW_SUBSTITUTE: NO
 
 Any material Builder/kernel/action/model/auth/principal/access-scope change invalidates affected v0.2 evidence.
 
-## 4. Historical v0.1 evidence — preserved, not promoted
+## 4. Historical v0.1 evidence — certified PASS preserved
 
-The prior runtime-effective configuration remains historical evidence:
+The v0.1 runtime behavioral certification is preserved exactly as a prior-version proof obligation already satisfied. Canonical durable evidence:
+
+`tests/runtime/evidence/HYBRID_SAAS_ARCHITECT_RUNTIME_PROOF_2026-08-12.md`
+
+Certified baseline:
 
 ```text
-RUNTIME_EFFECTIVE_CONFIG_REF: f55a6edc9674f8aa96438082e5ca3166a6df7e03
+HISTORICAL_PROFILE_VERSION: V0_1
+HISTORICAL_RUNTIME_BEHAVIORAL_PROOF: PASS
+HISTORICAL_RUNTIME_REQUIRED_SUITE: T01-T29
+HISTORICAL_T01_T29: 29/29 PASS
+HISTORICAL_FAIL: 0
+HISTORICAL_PENDING: 0
+HISTORICAL_CERTIFIED_CANONICAL_MAIN_REF: 24089d8dbc1a90a6a0f15c5a86d9032d27f216b6
 HISTORICAL_KERNEL_BLOB: 50672d09665035c0f60f18887f3295a5ea8cad03
+HISTORICAL_ACTION_SCHEMA_BLOB: 1e6237e806fd84716ec13b019e6617ad4110a211
 HISTORICAL_CONVERSATION_STARTERS: 4
+HISTORICAL_FINAL_ACTION_SURFACE: READ_ONLY / GET-only
+HISTORICAL_BASELINE_RESTORED_AFTER_T16_T28: YES
+```
+
+Earlier candidate-head evidence that preceded the canonical runtime certification also remains preserved:
+
+```text
+HISTORICAL_CANDIDATE_EFFECTIVE_REF: f55a6edc9674f8aa96438082e5ca3166a6df7e03
 HISTORICAL_BUILDER_APPLICATION_OBSERVED: YES
 HISTORICAL_PREVIEW_EXECUTION_OBSERVED: YES
 HISTORICAL_BUILDER_FINGERPRINT_COMPLETE: YES
@@ -192,11 +211,14 @@ HISTORICAL_GITHUB_AUTH_SMOKE: PASS
 HISTORICAL_CORE_GITHUB_LOADER_SMOKE: PASS
 HISTORICAL_T30: PASS @ f55a6edc9674f8aa96438082e5ca3166a6df7e03
 HISTORICAL_FECHAI_CANDIDATE_E2E: PASS @ f55a6edc9674f8aa96438082e5ca3166a6df7e03
-HISTORICAL_RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
-HISTORICAL_T01_T29_COMPLETE: NO
 ```
 
-The v0.2 starter/kernel change does not turn those results into v0.2 PASS and does not erase them.
+The v0.2 starter/kernel/shared-suite change does not invalidate the historical truth of the v0.1 PASS. It invalidates only silent reuse of that PASS as proof for v0.2.
+
+```text
+V0_1_RUNTIME_BEHAVIORAL_PROOF: PASS / HISTORICAL / PRESERVED
+V0_2_RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
+```
 
 ## 5. Historical failed/indeterminate observations — preserved
 
@@ -223,7 +245,7 @@ ARBITRARY_TARGET_OBSERVATION:
 - later controlled evidence used canonical/explicit targets.
 ```
 
-A later successful run never retroactively converts these historical attempts into PASS.
+A later successful run never retroactively converts these historical attempts into PASS. Conversely, a later target-version change never retroactively downgrades the separately certified v0.1 PASS.
 
 ## 6. V0.2 proof gate
 
