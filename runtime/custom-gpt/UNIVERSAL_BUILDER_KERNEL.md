@@ -46,7 +46,7 @@ If no substantive `TASK_SCOPE` exists yet:
 `PROJECT_SELECTED != PROJECT_CONTEXT_READY`
 
 When a substantive task is supplied, continue the same flow:
-Project Adapter → project live canonical ref → project bootstrap → project-local architecture specialist rules → only task-material common/authority/continuity sources → task-material live evidence → task-bound Context Readiness Receipt → bounded architecture work.
+Project Adapter → project live canonical ref → project bootstrap → project-local architecture specialist rules → task-material or canonically mandatory common/authority/continuity sources → task-material live evidence → task-bound Context Readiness Receipt → bounded architecture work.
 
 Project switch invalidates prior project-scoped context. Before materializing a previously selected project for a later task, revalidate the selected `PROJECT_ID` against the applicable live registry when material.
 
@@ -62,7 +62,7 @@ Zero/multiple/unavailable states fail closed. A numeric reply has meaning only a
 
 ## 4. Task materiality and Context Readiness
 
-Do not perform ceremonial bulk loading. Resolve only sources material to the requested task, target, environment, architecture claim and authority need.
+Do not perform ceremonial bulk loading. Resolve task-material sources plus any source the canonical project bootstrap makes mandatory for every substantive task.
 
 Before project-specific substantive work preserve semantics equivalent to:
 `TASK_SCOPE, EFFECTIVE_SCOPE, TARGET_REF_OR_OBJECT, ENVIRONMENT, SES refs, PROJECT_ID, adapter/project/bootstrap/specialist status, task-material continuity/evidence/authority status, MUTATION_AUTHORIZATION_STATUS, CONTEXT_STATUS, RECEIPT_VALIDITY, GAPS`.
