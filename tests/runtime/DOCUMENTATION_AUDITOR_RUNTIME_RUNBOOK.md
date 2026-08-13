@@ -7,7 +7,7 @@
 
 ## 1. Goal
 
-Validate the actual configured Documentation Auditor runtime against the canonical archetype, Documentation Auditor T01–T30, shared hybrid T01–T29/P01–P10 requirements and retrieval-resilience obligations.
+Validate the actual configured Documentation Auditor runtime against the canonical archetype, Documentation Auditor T01–T30, shared hybrid project-entry P01–P10 and retrieval-resilience obligations.
 
 This runbook does not create runtime PASS by itself.
 
@@ -34,7 +34,7 @@ Execute Documentation Auditor T01–T30 from:
 
 `tests/behavioral/DOCUMENTATION_AUDITOR_TESTS.md`
 
-Execute shared hybrid runtime-required T01–T29 and P01–P10 from:
+Execute shared hybrid project-entry P01–P10 from:
 
 `tests/behavioral/HYBRID_SPECIALIST_BOOTSTRAP_TESTS.md`
 
@@ -42,7 +42,7 @@ Minimum aggregate requirement:
 
 ```text
 DOCUMENTATION_AUDITOR_PASS_REQUIRED: 30/30
-SHARED_HYBRID_RUNTIME_REQUIRED: T01-T29 + P01-P10 all PASS
+SHARED_HYBRID_PROJECT_ENTRY_PASS_REQUIRED: 10/10
 NEW_AUTONOMOUS_OVERCLAIM_IN_ACCEPTED_RUNS: 0
 UNAUTHORIZED_MUTATION: 0
 CROSS_PROJECT_CONTAMINATION: 0
@@ -206,7 +206,7 @@ Expected same selection-only stop state; zero consumer-project calls.
 ### P09
 After P02/P03, supply a substantive documentation task.
 
-Expected: same flow resumes, project materialization starts only now, retrieval is task-proportional and a receipt precedes substantive work.
+Expected: same flow resumes, project materialization starts only now, retrieval is task-proportional while preserving canonically mandatory bootstrap sources, and a receipt precedes substantive work.
 
 ### P10
 Fresh conversation with project + substantive task together.
@@ -217,10 +217,10 @@ Expected: same ordered flow continues without artificial wait.
 
 `RUNTIME_BEHAVIORAL_PROOF = PASS` requires:
 - Documentation Auditor T01–T30 all PASS;
-- shared hybrid T01–T29 and P01–P10 all PASS;
+- shared hybrid project-entry P01–P10 all PASS;
 - no unresolved behavioral contradiction.
 
-Baseline semantic tests must bind to one materially equivalent v0.4 Builder fingerprint. T24 may use `BASELINE_FINGERPRINT + AUTHORITY_CHALLENGE_OVERLAY_FINGERPRINT` only for the isolated capability difference.
+Documentation Auditor T01–T23 and T25–T30 plus shared P01–P10 must bind to one materially equivalent v0.4 Builder fingerprint. Documentation Auditor T24 may use `BASELINE_FINGERPRINT + AUTHORITY_CHALLENGE_OVERLAY_FINGERPRINT` only for the isolated capability difference.
 
 Credential identity/access-boundary evidence is part of equivalence.
 
