@@ -1,33 +1,27 @@
 # SES — SaaS Architect Custom GPT Builder Profile
 
-**Status:** RUNTIME_CANDIDATE_V0_1 / BUILDER_PROFILE / CURRENT_VERSION_BUILDER_APPLICATION_OBSERVED / CURRENT_VERSION_PREVIEW_EXECUTION_OBSERVED / FINGERPRINT_COMPLETE / RUNTIME_BEHAVIORAL_PROOF_NOT_ESTABLISHED
+**Status:** RUNTIME_CANDIDATE_V0_2 / BUILDER_PROFILE / TARGET_KERNEL_VERSIONED / STARTER_BUILDER_OBSERVED / V0_2_FINGERPRINT_NOT_YET_COMPLETE
 **ARCHETYPE_ID:** `saas-architect`
 
 ## 1. Purpose
 
-Version the complete user-facing and operational Custom GPT configuration for the first SES hybrid specialist candidate and record Builder/runtime-candidate lifecycle evidence without converting candidate-head Preview evidence into canonical runtime behavioral proof.
+Version the current intended Custom GPT configuration for `SES — SaaS Architect` after adoption of the standardized SES hybrid project-entry interaction.
 
-The private candidate has now been observed with the current runtime-effective Kernel and GitHub Action schema applied in Builder, with a complete Builder fingerprint captured for the candidate proof stage. GitHub Action smoke, candidate-head T30 and the FECH.AI candidate end-to-end bootstrap were executed successfully against the exact tested runtime-effective candidate head identified below.
-
-The final reconciliation in this file is documentation/evidence only. It does not change the runtime-effective Kernel, Action schema, archetype or test semantics. Because this reconciliation itself creates a new GitHub head, the candidate runtime proofs remain exact-head-bound to their tested head and a documentation-only delta gate is required before any merge decision.
+This profile does not rewrite, erase or promote prior runtime evidence. The certified v0.1 runtime baseline remains historical `RUNTIME_BEHAVIORAL_PROOF = PASS` evidence bound to its exact certified fingerprint. The v0.2 starter/kernel/shared-suite change is a material runtime-version change and requires a fresh Builder fingerprint plus proportional behavioral revalidation before any v0.2 runtime PASS may be claimed.
 
 ```text
-VERSIONED_PROFILE: YES
-CURRENT_VERSION_BUILDER_APPLICATION_OBSERVED: YES
-CURRENT_VERSION_PREVIEW_EXECUTION_OBSERVED: YES
-BUILDER_FINGERPRINT_COMPLETE: YES
-RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
-T01-T29_COMPLETE: NO
+TARGET_PROFILE_VERSION: V0_2
+TARGET_KERNEL_VERSIONED: YES
+STARTER_CHANGE_OBSERVED_IN_BUILDER: YES
+FULL_V0_2_BUILDER_APPLICATION: NOT_YET_ESTABLISHED
+V0_2_BUILDER_FINGERPRINT_COMPLETE: NO
+V0_2_RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
 PUBLISHED: NO
 ```
 
-`BUILDER_APPLICATION_OBSERVED != RUNTIME_BEHAVIORAL_PROOF`
+`HISTORICAL_V0_1_RUNTIME_PASS != V0_2_RUNTIME_PASS`
 
-`PREVIEW_EXECUTION_OBSERVED != RUNTIME_BEHAVIORAL_PROOF`
-
-`CANDIDATE_HEAD_PROTOCOL_PROOF != CANONICAL_RUNTIME_PROOF`
-
-## 2. Builder fields
+## 2. Builder fields — v0.2 target
 
 ### Name
 
@@ -39,54 +33,81 @@ PUBLISHED: NO
 
 ### Instructions
 
-Use the exact current kernel versioned at:
+Use the exact compact kernel versioned at:
 
 `runtime/custom-gpt/UNIVERSAL_BUILDER_KERNEL.md`
 
-The Builder Instructions field contains the kernel content, not a shortened path reference or paraphrase.
-
-The runtime-effective Kernel used by the successful current candidate proofs was:
+The Builder Instructions field must contain the complete kernel content, not a path reference, paraphrase or truncated copy.
 
 ```text
-SES_CANDIDATE_REF: f55a6edc9674f8aa96438082e5ca3166a6df7e03
-KERNEL_PATH: runtime/custom-gpt/UNIVERSAL_BUILDER_KERNEL.md
-KERNEL_BLOB: 50672d09665035c0f60f18887f3295a5ea8cad03
+TARGET_KERNEL_STATUS: RUNTIME_CANDIDATE_V0_2
+BUILDER_INSTRUCTIONS_HARD_LIMIT: <= 8000 characters
+SES_OPERATIONAL_BUDGET: <= 7500 characters
+CURRENT_COMPACT_KERNEL_MEASURED_COUNT: 6475 characters
+COUNT_METHOD: Unicode code-point count of repository text content
 ```
 
-A future material Kernel change makes the affected Builder fingerprint/runtime evidence stale and requires proportional revalidation.
+The kernel loads the reusable method live through SES bootstrap, archetype resolution and `core/protocols/HYBRID_SPECIALIST_BOOTSTRAP_CONTRACT.md`.
 
 ### Conversation starters
 
-1. `Reconstrua o contexto live do projeto que eu indicar e faça um Deep Architecture Audit do fluxo especificado.`
-2. `Compare a arquitetura atual deste projeto com alternativas e recomende uma target architecture com trade-offs, migração e rollback.`
-3. `Audite este fluxo multi-tenant de ponta a ponta: identidade → autorização → tenant → persistência → side effects.`
-4. `Revalide uma decisão arquitetural atual usando evidência live e diga o que mudou, o que continua válido e a próxima ação segura.`
+1. `# CLIQUE PARA INICIAR`
 
-Conversation starters are universal UX examples only. They never establish project configuration, project identity, readiness or authority. FECH.AI remains a registered reference consumer, not a hard-coded UX dependency of the universal specialist.
+This starter is UX input only. It supplies `PROJECT_IDENTIFIER: NOT_SUPPLIED` to the same ordered hybrid bootstrap flow used when the user names a project directly.
+
+No project supplied:
+
+```text
+# CLIQUE PARA INICIAR
+→ SES live/bootstrap
+→ saas-architect archetype
+→ live Project Registry
+→ numbered ACTIVE project list
+→ numeric selection
+→ normal Project Adapter/bootstrap/local-specialist flow
+```
+
+Project already supplied:
+
+```text
+"Trabalhe no FECH.AI"
+→ PROJECT_IDENTIFIER = FECH.AI
+→ same project-resolution stage
+→ normal Project Adapter/bootstrap/local-specialist flow
+```
+
+The menu is unnecessary when the identifier is already supplied; no mandatory bootstrap stage is skipped.
+
+Project numbers must never be hard-coded. A listed/selected project is not project-local architecture readiness:
+
+```text
+PROJECT_LISTED != PROJECT_SPECIALIST_READY
+PROJECT_SELECTED != PROJECT_CONTEXT_READY
+```
 
 ### Knowledge
 
 `EMPTY`
 
-Do not upload SES, FECH.AI or project files as Builder Knowledge for this runtime candidate. The candidate must prove deterministic live loading rather than succeed from a stale uploaded copy.
+Do not upload SES or consumer-project files as permanent Builder Knowledge. Live canonical loading remains required.
 
 ### Capabilities
 
-Observed current candidate settings:
+Target baseline:
 
 ```text
 Web Search: ENABLED
 Code Interpreter / Data Analysis: ENABLED
 Image Generation: DISABLED
-Apps: DISABLED
 Actions: ENABLED
+Apps: record actual Builder UI state; do not invent a toggle when the UI does not expose one
 ```
 
-Web Search is supplementary only. It must not replace canonical project sources when a project-specific claim depends on those sources.
+Web Search is supplementary only and does not replace canonical project sources.
 
 ### Actions
 
-One custom action:
+One custom Action:
 
 `SES GitHub READ_ONLY`
 
@@ -94,233 +115,151 @@ Schema source:
 
 `runtime/custom-gpt/GITHUB_READONLY_ACTION.openapi.yaml`
 
-Runtime-effective schema used by the successful current candidate proofs:
+No mutation endpoint belongs in the baseline publishable candidate.
 
-```text
-SES_CANDIDATE_REF: f55a6edc9674f8aa96438082e5ca3166a6df7e03
-ACTION_SCHEMA_VERSION: 0.2.1
-ACTION_SCHEMA_BLOB: 1e6237e806fd84716ec13b019e6617ad4110a211
-```
-
-The schema exposes GET/read operations only, includes pagination for pageable lifecycle evidence endpoints, and intentionally exposes no credential-global `/search/code` operation. No POST, PUT, PATCH, DELETE, merge, comment, branch-update or repository-write operation belongs in this runtime candidate.
-
-### Action authentication
-
-Observed current candidate authentication:
+### Authentication
 
 ```text
 Type: API key
 Mode: Bearer
-Secret: configured only in Builder authentication UI / value hidden
-Repository copy of secret/token: PROHIBITED
+Secret: Builder UI only / never committed or reproduced in evidence
 ```
 
-The successful current GitHub smoke authenticated the intended principal as `wagnerjfjunior` / account id `228261219` and accessed the private SES repository read-only through the configured Action.
+Before v0.2 runtime proof capture non-secret principal/access evidence, including authenticated login/id and bounded required-repository access smokes when scope/allowlist metadata is not exposed.
 
-Credential visibility in Builder or repository-level account permissions do not grant project mutation authority. The Action surface itself remains GET-only.
+### Visibility
 
-### Visibility during proof
+Target remains non-public until runtime proof and a separate publication decision.
 
-`PRIVATE / ONLY PRODUCT AUTHORITY` (`Apenas para mim` observed in Builder)
-
-Do not publish or broadly share the candidate before `RUNTIME_BEHAVIORAL_PROOF = PASS` and an explicit publication decision.
+The current user-supplied Builder screenshot after the starter update shows `Apenas convidados`. Treat that as an observed current access state, not as proof of publication authorization or v0.2 runtime readiness.
 
 ### Model
 
-Do not freeze a transient model name as a permanent SES architectural dependency. The selected model is nevertheless part of the exact runtime evidence fingerprint.
+Record the actual selected model in the v0.2 fingerprint. Current user-supplied Builder screenshots show `GPT-5.6 Sol` as creator-recommended model.
 
-Observed selected/recommended model for the current candidate proof stage:
+## 3. V0.2 fingerprint required before testing
 
-`GPT-5.6 Sol (gpt-5-6)`
-
-The Builder Preview explicitly showed that the creator-recommended model was being used.
-
-A model change after proof is a potential behavioral invalidation event and requires proportional revalidation.
-
-## 3. Avatar / icon
-
-Optional and non-authoritative.
-
-Recommended visual identity: a simple `SES` architectural/blueprint mark. The icon has no effect on project resolution, specialist identity, safety or behavioral PASS.
-
-## 4. Builder configuration fingerprint
-
-The current candidate fingerprint captured from Builder configuration, Preview behavior and version history is:
+Capture:
 
 ```text
-FINGERPRINT_STATUS: COMPLETE_FOR_CANDIDATE_PROOF_STAGE
-GPT_NAME: SES — SaaS Architect
-GPT_DESCRIPTION: exact profile description above
-INSTRUCTIONS_REF: f55a6edc9674f8aa96438082e5ca3166a6df7e03
-INSTRUCTIONS_BLOB: 50672d09665035c0f60f18887f3295a5ea8cad03
-CONVERSATION_STARTERS: 4 / universal set above
+GPT_NAME
+GPT_DESCRIPTION
+INSTRUCTIONS_REF
+INSTRUCTIONS_BLOB
+INSTRUCTIONS_CHARACTER_COUNT
+CONVERSATION_STARTERS
+KNOWLEDGE
+CAPABILITIES
+ACTION_NAME
+ACTION_SCHEMA_REF
+ACTION_SCHEMA_BLOB
+ACTION_AUTH_MODE
+AUTHENTICATED_PRINCIPAL_LOGIN
+AUTHENTICATED_PRINCIPAL_ID
+CREDENTIAL_SCOPE_SUMMARY
+REPOSITORY_ACCESS_SCOPE
+REQUIRED_REPOSITORY_ACCESS_SMOKE[]
+ACCESS_SCOPE_EVIDENCE_LIMITATION
+VISIBILITY
+SELECTED_MODEL
+BUILDER_VERSION_IDENTIFIER when available
+```
+
+Required before behavioral execution:
+
+```text
+INSTRUCTIONS_COMPLETE_COPY: YES
+INSTRUCTIONS_CHARACTER_COUNT <= 7500
+CONVERSATION_STARTERS: exactly 1 / # CLIQUE PARA INICIAR
 KNOWLEDGE: EMPTY
-WEB_SEARCH: ENABLED
-CODE_INTERPRETER_DATA_ANALYSIS: ENABLED
-IMAGE_GENERATION: DISABLED
-APPS: DISABLED
-ACTIONS: ENABLED
-ACTION_NAME: SES GitHub READ_ONLY
-ACTION_SCHEMA_REF: f55a6edc9674f8aa96438082e5ca3166a6df7e03
-ACTION_SCHEMA_BLOB: 1e6237e806fd84716ec13b019e6617ad4110a211
-ACTION_SCHEMA_VERSION: 0.2.1
-AUTHENTICATION: API_KEY / BEARER
-VISIBILITY: PRIVATE / APENAS_PARA_MIM
-SELECTED_MODEL: GPT-5.6 Sol (gpt-5-6)
-BUILDER_VERSION_HISTORY: OBSERVED
-BUILDER_CURRENT_HISTORY_ENTRY: 2026-08-11 17:30 local Builder UI
-IMMUTABLE_BUILDER_VERSION_ID: NOT_EXPOSED_IN_OBSERVED_UI
+STARTER_OVERFLOW_SUBSTITUTE: NO
 ```
 
-The lack of an immutable Builder version ID is not treated as an invented identifier. The available version-history entry plus exact visible configuration and actual Preview execution form the candidate-stage fingerprint evidence.
+Any material Builder/kernel/action/model/auth/principal/access-scope change invalidates affected v0.2 evidence.
 
-A material Builder change after a test invalidates the affected behavioral evidence.
+## 4. Historical v0.1 evidence — certified PASS preserved
 
-## 5. Current candidate Builder and Preview evidence
+The v0.1 runtime behavioral certification is preserved exactly as a prior-version proof obligation already satisfied. Canonical durable evidence:
 
-### 5.1 GitHub authentication and loader smoke
+`tests/runtime/evidence/HYBRID_SAAS_ARCHITECT_RUNTIME_PROOF_2026-08-12.md`
 
-Observed successful current-version operations included:
+Certified baseline:
 
 ```text
-getAuthenticatedGitHubUser
-→ authenticated principal: wagnerjfjunior / account id 228261219
-
-getRepositoryBranch
-→ wagnerjfjunior/Specialist-Engineering-System main
-→ a89dd0c56d9762c9cc226afbdb16761d13293c28
+HISTORICAL_PROFILE_VERSION: V0_1
+HISTORICAL_RUNTIME_BEHAVIORAL_PROOF: PASS
+HISTORICAL_RUNTIME_REQUIRED_SUITE: T01-T29
+HISTORICAL_T01_T29: 29/29 PASS
+HISTORICAL_FAIL: 0
+HISTORICAL_PENDING: 0
+HISTORICAL_CERTIFIED_CANONICAL_MAIN_REF: 24089d8dbc1a90a6a0f15c5a86d9032d27f216b6
+HISTORICAL_KERNEL_BLOB: 50672d09665035c0f60f18887f3295a5ea8cad03
+HISTORICAL_ACTION_SCHEMA_BLOB: 1e6237e806fd84716ec13b019e6617ad4110a211
+HISTORICAL_CONVERSATION_STARTERS: 4
+HISTORICAL_FINAL_ACTION_SURFACE: READ_ONLY / GET-only
+HISTORICAL_BASELINE_RESTORED_AFTER_T16_T28: YES
 ```
 
-Current classification at the tested runtime-effective configuration:
+Earlier candidate-head evidence that preceded the canonical runtime certification also remains preserved:
 
 ```text
-GITHUB_AUTH_SMOKE: PASS
-PRIVATE_REPOSITORY_ACCESS: PASS
-CORE_GITHUB_LOADER_SMOKE: PASS
+HISTORICAL_CANDIDATE_EFFECTIVE_REF: f55a6edc9674f8aa96438082e5ca3166a6df7e03
+HISTORICAL_BUILDER_APPLICATION_OBSERVED: YES
+HISTORICAL_PREVIEW_EXECUTION_OBSERVED: YES
+HISTORICAL_BUILDER_FINGERPRINT_COMPLETE: YES
+HISTORICAL_GITHUB_AUTH_SMOKE: PASS
+HISTORICAL_CORE_GITHUB_LOADER_SMOKE: PASS
+HISTORICAL_T30: PASS @ f55a6edc9674f8aa96438082e5ca3166a6df7e03
+HISTORICAL_FECHAI_CANDIDATE_E2E: PASS @ f55a6edc9674f8aa96438082e5ca3166a6df7e03
 ```
 
-### 5.2 Candidate-head protocol proof
-
-The current candidate autonomously resolved and preserved separately:
+The v0.2 starter/kernel/shared-suite change does not invalidate the historical truth of the v0.1 PASS. It invalidates only silent reuse of that PASS as proof for v0.2.
 
 ```text
-SES_CANONICAL_MAIN_REF: a89dd0c56d9762c9cc226afbdb16761d13293c28
-SES_CANDIDATE_REF: f55a6edc9674f8aa96438082e5ca3166a6df7e03
-SES_EFFECTIVE_REF: f55a6edc9674f8aa96438082e5ca3166a6df7e03
+V0_1_RUNTIME_BEHAVIORAL_PROOF: PASS / HISTORICAL / PRESERVED
+V0_2_RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
 ```
 
-It selected `SES_EFFECTIVE_REF` before reading candidate ref-bound bootstrap/archetype artifacts, resolved `saas-architect` through `RESOLUTION_STATUS: ACTIVE`, confirmed the Action remained READ_ONLY, confirmed `/search/code` absent and confirmed `page` pagination for `listCommitCheckRuns`.
+## 5. Historical failed/indeterminate observations — preserved
 
-Current exact-head classification:
-
-```text
-T30: PASS @ f55a6edc9674f8aa96438082e5ca3166a6df7e03
-CANDIDATE_HEAD_PROTOCOL_PROOF: PASS @ f55a6edc9674f8aa96438082e5ca3166a6df7e03
-RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
-```
-
-### 5.3 FECH.AI candidate end-to-end bootstrap proof
-
-The current private candidate demonstrated the read-only chain:
-
-```text
-SES candidate
-→ saas-architect archetype
-→ SES Project Registry
-→ FECH.AI Project Adapter
-→ wagnerjfjunior/fecha.ai main live
-→ FECH.AI bootstrap
-→ FECH.AI specialist registry
-→ current project-local architecture specialist/skill
-→ common rules / task-applicable continuity classification
-→ Context Readiness Receipt
-```
-
-Exact project ref used and revalidated during the proof:
-
-`wagnerjfjunior/fecha.ai main@5c36ded26a0d675fd080a72ecde50f407566b309`
-
-Current exact-head classification:
-
-```text
-FECHAI_CANDIDATE_E2E_BOOTSTRAP: PASS @ SES f55a6edc9674f8aa96438082e5ca3166a6df7e03
-RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
-T01-T29: NOT COMPLETE
-```
-
-FECH.AI is evidence that the universal hybrid mechanism can resolve a registered consumer and its project-local specialist rules. It is not embedded as the universal archetype's fixed project identity.
-
-## 6. Historical failed/indeterminate attempts preserved
-
-Candidate development evidence must not be rewritten retroactively. The following observations remain part of the record:
+The following earlier observations remain historical:
 
 ```text
 INITIAL_GENERALIZED_ACTION:
-- schema initially produced Builder parser errors involving parameter $ref handling and components.schemas;
-- corrected in the same PR candidate without claiming prior PASS.
+- Builder parser failures occurred before schema correction.
 
 EARLY_GET_COMMIT_PREVIEW:
-- request targeting openai/openai-python@main returned ClientResponseError.
+- one request targeting openai/openai-python@main returned ClientResponseError.
 
 EARLY_AUTH_OR_TOOL_ATTEMPTS:
-- getAuthenticatedGitHubUser returned ClientResponseError in some Preview attempts;
-- later Preview sessions reported the GitHub connector/tool unavailable in that chat.
+- some getAuthenticatedGitHubUser attempts failed;
+- some Preview sessions reported the GitHub tool unavailable.
 
 IDENTITY_ANOMALY:
-- one Preview response reported authenticated GitHub user seomaster2020;
-- subsequent controlled tests authenticated as the intended principal wagnerjfjunior;
-- the anomalous observation remains INDETERMINATE and is not evidence of credential isolation failure by itself.
+- one Preview response reported authenticated user seomaster2020;
+- later controlled tests authenticated the intended principal wagnerjfjunior;
+- the anomaly remains INDETERMINATE, not retroactively PASS or proven credential-isolation failure.
 
 ARBITRARY_TARGET_OBSERVATION:
-- an early Preview selected openai/openai-python without a canonical SES project locator or explicit bounded target;
-- later candidate proofs used explicit/canonical repository resolution and passed the intended chain.
+- one early Preview selected openai/openai-python without canonical SES project resolution;
+- later controlled evidence used canonical/explicit targets.
 ```
 
-A later successful run does not retroactively turn these earlier attempts into PASS.
+A later successful run never retroactively converts these historical attempts into PASS. Conversely, a later target-version change never retroactively downgrades the separately certified v0.1 PASS.
 
-## 7. Application and proof gate
+## 6. V0.2 proof gate
 
-Creating or updating the actual Custom GPT remains a separate Product Authority mutation from repository changes. The current external Builder configuration was applied manually under Product Authority control; this repository record documents that observed state but does not itself mutate Builder.
+The actual configured v0.2 runtime must pass the runtime-required cases in `tests/behavioral/HYBRID_SPECIALIST_BOOTSTRAP_TESTS.md`, including standardized project-entry cases P01–P08, under the v0.2 fingerprint before a v0.2 behavioral PASS may be considered.
 
-Required lifecycle distinction:
+Creating/updating the Custom GPT is a Product Authority mutation separate from repository versioning.
 
 ```text
-VERSIONED IN SES
-!=
-BUILDER APPLICATION OBSERVED FOR CURRENT RUNTIME-EFFECTIVE CONFIGURATION
-!=
-COMPLETE BUILDER FINGERPRINT
-!=
-PREVIEW EXECUTION OBSERVED
-!=
-RUNTIME_BEHAVIORAL_PASS
-!=
-PUBLISHED
+PROFILE_VERSIONED
+!= BUILDER_APPLIED
+!= FINGERPRINT_COMPLETE
+!= PREVIEW_TESTED
+!= RUNTIME_BEHAVIORAL_PROOF
+!= PUBLISHED
 ```
 
-Current lifecycle evidence before the final documentation-only reconciliation commit:
-
-```text
-VERSIONED_PROFILE: YES
-RUNTIME_EFFECTIVE_CONFIG_REF: f55a6edc9674f8aa96438082e5ca3166a6df7e03
-CURRENT_VERSION_BUILDER_APPLICATION_OBSERVED: YES
-CURRENT_VERSION_PREVIEW_EXECUTION_OBSERVED: YES
-BUILDER_FINGERPRINT_COMPLETE: YES
-GITHUB_AUTH_SMOKE: PASS
-CORE_GITHUB_LOADER_SMOKE: PASS
-CANDIDATE_HEAD_T30: PASS @ f55a6edc9674f8aa96438082e5ca3166a6df7e03
-FECHAI_CANDIDATE_E2E: PASS @ f55a6edc9674f8aa96438082e5ca3166a6df7e03
-RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
-T01-T29_COMPLETE: NO
-PUBLISHED: NO
-```
-
-Because this file reconciliation creates a new candidate GitHub head while leaving Kernel/Action/archetype/tests unchanged, the next required gate is:
-
-```text
-POST_RECONCILIATION_DELTA_GATE: REQUIRED
-T30_RERUN_AFTER_DOC_ONLY_RECONCILIATION: NOT_REQUIRED_UNLESS_DELTA_GATE_FINDS_MATERIAL_RUNTIME_CHANGE
-FECHAI_E2E_RERUN_AFTER_DOC_ONLY_RECONCILIATION: NOT_REQUIRED_UNLESS_DELTA_GATE_FINDS_MATERIAL_RUNTIME_CHANGE
-```
-
-No Ready, merge, publication, FECH.AI mutation, Supabase mutation, Vercel mutation or production change follows automatically from these observations.
+No Ready, merge, publication, consumer-project mutation, Supabase/Vercel mutation, legacy retirement or production claim follows automatically from this profile.
