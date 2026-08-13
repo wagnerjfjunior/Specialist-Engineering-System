@@ -36,7 +36,7 @@ Runtime packaging constraints:
 ```text
 BUILDER_INSTRUCTIONS_HARD_LIMIT: <= 8000 characters
 SES_OPERATIONAL_BUDGET: <= 7500 characters
-CURRENT_COMPACT_KERNEL_MEASURED_COUNT: 7389 characters
+CURRENT_COMPACT_KERNEL_MEASURED_COUNT: 7417 characters
 COUNT_METHOD: Unicode code-point count of repository text content
 ```
 
