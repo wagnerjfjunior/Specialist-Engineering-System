@@ -1,6 +1,6 @@
 # SES — Documentation Auditor Custom GPT Builder Profile
 
-**Status:** RUNTIME_CANDIDATE_V0_2 / BUILDER_PROFILE / NOT_YET_APPLIED
+**Status:** RUNTIME_CANDIDATE_V0_3 / BUILDER_PROFILE / NOT_YET_APPLIED
 **ARCHETYPE_ID:** `documentation-auditor`
 
 ## 1. Purpose
@@ -11,7 +11,7 @@ The Builder Instructions field has a hard operational size constraint. Therefore
 
 `COMPACT_KERNEL != FULL_ARCHETYPE`
 
-The compact kernel must be sufficient to resolve and enforce the canonical loader, authority, evidence-integrity, retrieval-resilience, mutation and anti-overclaim boundaries before material work. Detailed Evidence Engineering method remains versioned in the archetype/Core contracts and is loaded live.
+The compact kernel must be sufficient to resolve and enforce the canonical loader, project-selection UX, authority, evidence-integrity, retrieval-resilience, mutation and anti-overclaim boundaries before material work. Detailed Evidence Engineering method remains versioned in the archetype/Core contracts and is loaded live.
 
 ## 2. Builder fields
 
@@ -36,7 +36,7 @@ Runtime packaging constraints:
 ```text
 BUILDER_INSTRUCTIONS_HARD_LIMIT: <= 8000 characters
 SES_OPERATIONAL_BUDGET: <= 7500 characters
-CURRENT_COMPACT_KERNEL_MEASURED_COUNT: 6358 characters
+CURRENT_COMPACT_KERNEL_MEASURED_COUNT: 7389 characters
 COUNT_METHOD: Unicode code-point count of repository text content
 ```
 
@@ -46,16 +46,25 @@ The compact Instructions kernel must bootstrap the full method live through:
 
 `SES main → docs/bootstrap/INDEX.md → archetypes/REGISTRY.md → documentation-auditor archetype → applicable Core protocols → registered consumer-project bootstrap/rules when project-specific`.
 
+For initial project selection, the candidate must apply:
+
+`core/protocols/HYBRID_PROJECT_SELECTION_UX_CONTRACT.md`
+
 Do not move overflow instructions into Conversation Starters or permanent Builder Knowledge as a substitute for the canonical live loader.
 
 ### Conversation starters
 
-1. `Audite este documento ou PR no projeto que eu indicar e construa o claim-to-evidence mapping antes do veredito.`
-2. `Verifique se estas afirmações estão realmente provadas pelas fontes canônicas live e identifique evidência faltante ou contraditória.`
-3. `Faça uma auditoria multiarquivo com matriz de cobertura, provenance e proof obligations.`
-4. `Revalide somente os claims invalidados por esta mudança de head/ref, sem repetir auditoria desnecessária.`
+1. `# CLIQUE PARA INICIAR`
 
-Conversation starters are UX examples only. They are not configuration authority and must not carry required kernel behavior.
+The starter is a UX trigger only. When used without a supplied project identifier, the runtime must resolve SES live, read `projects/REGISTRY.md`, enumerate only `ACTIVE` projects by `CANONICAL_NAME`, display them as a numbered list, retain the exact `PROJECT_ID` mapping for that displayed menu and wait for the user's numeric selection.
+
+A valid explicit project identifier supplied directly by the user may bypass the menu and resolve through the canonical Project Registry. Unknown/ambiguous identifiers must not be guessed; when the registry is available, the runtime may present the current active-project menu as recovery.
+
+`PROJECT_SELECTED != PROJECT_CONTEXT_READY`.
+
+If the user requested only project connection/bootstrap, the runtime must not emit blanket readiness for unspecified future work. A later substantive task requires task-specific scope and a new or revalidated task-bound readiness receipt.
+
+Conversation starters are UX only. They are not configuration authority and must not carry required kernel behavior that is absent from canonical SES contracts/Instructions.
 
 ### Knowledge
 
