@@ -11,7 +11,7 @@ The Builder Instructions field has a hard operational size constraint. Therefore
 
 `COMPACT_KERNEL != FULL_ARCHETYPE`
 
-The compact kernel must be sufficient to resolve and enforce the canonical loader, project-selection UX, authority, evidence-integrity, retrieval-resilience, mutation and anti-overclaim boundaries before material work. Detailed Evidence Engineering method remains versioned in the archetype/Core contracts and is loaded live.
+The compact kernel must be sufficient to resolve and enforce the canonical loader, standardized hybrid project-entry flow, authority, evidence-integrity, retrieval-resilience, mutation and anti-overclaim boundaries before material work. Detailed Evidence Engineering method remains versioned in the archetype/Core contracts and is loaded live.
 
 ## 2. Builder fields
 
@@ -36,7 +36,7 @@ Runtime packaging constraints:
 ```text
 BUILDER_INSTRUCTIONS_HARD_LIMIT: <= 8000 characters
 SES_OPERATIONAL_BUDGET: <= 7500 characters
-CURRENT_COMPACT_KERNEL_MEASURED_COUNT: 7417 characters
+CURRENT_COMPACT_KERNEL_MEASURED_COUNT: 7321 characters
 COUNT_METHOD: Unicode code-point count of repository text content
 ```
 
@@ -44,11 +44,7 @@ The operational budget intentionally leaves margin for Builder/UI counting diffe
 
 The compact Instructions kernel must bootstrap the full method live through:
 
-`SES main → docs/bootstrap/INDEX.md → archetypes/REGISTRY.md → documentation-auditor archetype → applicable Core protocols → registered consumer-project bootstrap/rules when project-specific`.
-
-For initial project selection, the candidate must apply:
-
-`core/protocols/HYBRID_PROJECT_SELECTION_UX_CONTRACT.md`
+`SES main → docs/bootstrap/INDEX.md → archetypes/REGISTRY.md → documentation-auditor archetype → HYBRID_SPECIALIST_BOOTSTRAP_CONTRACT when project work is involved → registered consumer-project bootstrap/rules → task evidence`.
 
 Do not move overflow instructions into Conversation Starters or permanent Builder Knowledge as a substitute for the canonical live loader.
 
@@ -56,15 +52,21 @@ Do not move overflow instructions into Conversation Starters or permanent Builde
 
 1. `# CLIQUE PARA INICIAR`
 
-The starter is a UX trigger only. When used without a supplied project identifier, the runtime must resolve SES live, read `projects/REGISTRY.md`, enumerate only `ACTIVE` projects by `CANONICAL_NAME`, display them as a numbered list, retain the exact `PROJECT_ID` mapping for that displayed menu and wait for the user's numeric selection.
+The starter is UX input only. It supplies `PROJECT_IDENTIFIER: NOT_SUPPLIED` to the same ordered hybrid bootstrap flow used when a user names a project directly.
 
-A valid explicit project identifier supplied directly by the user may bypass the menu and resolve through the canonical Project Registry. Unknown/ambiguous identifiers must not be guessed; when the registry is available, the runtime may present the current active-project menu as recovery.
+When no project identifier is supplied, the runtime resolves SES live, reads the current Project Registry and displays the `ACTIVE` registered projects by `CANONICAL_NAME` as a numbered menu. The numeric mapping is transient and bound to that exact menu; project numbers must never be hard-coded.
 
-`PROJECT_SELECTED != PROJECT_CONTEXT_READY`.
+When the user already names a project, that identifier enters the same project-resolution stage. The menu is unnecessary, but no mandatory bootstrap stage is skipped.
+
+A project appearing in the menu is not by itself proof that project-local specialist rules, task readiness or authority are established:
+
+`PROJECT_LISTED != PROJECT_SPECIALIST_READY`
+
+`PROJECT_SELECTED != PROJECT_CONTEXT_READY`
 
 If the user requested only project connection/bootstrap, the runtime must not emit blanket readiness for unspecified future work. A later substantive task requires task-specific scope and a new or revalidated task-bound readiness receipt.
 
-Conversation starters are UX only. They are not configuration authority and must not carry required kernel behavior that is absent from canonical SES contracts/Instructions.
+Conversation starters are UX only. They are not configuration authority and must not carry required behavior that is absent from canonical SES contracts/Instructions.
 
 ### Knowledge
 
@@ -80,9 +82,11 @@ Target baseline:
 Web Search: ENABLED (supplementary only)
 Code Interpreter / Data Analysis: ENABLED
 Image Generation: DISABLED
-Apps: DISABLED
+Apps: NOT_PRESENT_IN_CURRENT_BUILDER_UI when the control is not exposed
 Actions: ENABLED
 ```
+
+Do not invent an Apps toggle state when the current Builder UI does not expose that control.
 
 ### Actions
 
