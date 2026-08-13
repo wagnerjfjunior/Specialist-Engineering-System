@@ -12,7 +12,7 @@ Its primary safety property is:
 
 A hybrid specialist must not treat a user-supplied project name, numeric choice, conversation starter, prior chat, memory, copied context, prior readiness receipt or tool capability as proof that the correct project configuration is ready for the current task.
 
-The hybrid bootstrap is one ordered flow. Project-identification inputs may differ, but they do not create alternate bootstrap paths or bypass mandatory stages.
+The hybrid bootstrap is one ordered flow. Different user inputs change only the state supplied to a stage; they do not create alternate paths or skip mandatory stages.
 
 `ONE FLOW / DIFFERENT INPUT STATES`
 
@@ -27,7 +27,7 @@ TASK_CONTEXT
 TASK_SCOPE
 ```
 
-`PROJECT_IDENTIFIER` may initially be `NOT_SUPPLIED`. That state does not authorize guessing a project; it activates the project-selection stage defined in section 5.
+`PROJECT_IDENTIFIER` may initially be `NOT_SUPPLIED`. That state does not authorize guessing a project; the project-resolution stage must obtain a valid registered project before project-specific bootstrap can continue.
 
 `TASK_SCOPE` is the full material objective requested by the user for which readiness is being evaluated. It must be specific enough to distinguish conceptual/read-only work from current-state, lifecycle or mutation work.
 
@@ -87,9 +87,9 @@ For hybrid project work, execute the following in order:
 RESOLVE SES CANONICAL MAIN LIVE
 -> SELECT SES EFFECTIVE REF FOR THE DECLARED PROOF LEVEL
 -> READ SES BOOTSTRAP ON SES EFFECTIVE REF
--> RESOLVE SPECIALIST / ARCHETYPE AS APPLICABLE
+-> RESOLVE SPECIALIST / ARCHETYPE
 -> READ SES PROJECT REGISTRY ON SES EFFECTIVE REF
--> EXECUTE PROJECT-SELECTION / PROJECT-RESOLUTION STAGE
+-> RESOLVE PROJECT IDENTIFIER
 -> RESOLVE UNIQUE PROJECT_ID + ADAPTER_PATH
 -> READ PROJECT ADAPTER
 -> RESOLVE CONSUMER PROJECT CANONICAL SOURCE LIVE
@@ -102,27 +102,29 @@ RESOLVE SES CANONICAL MAIN LIVE
 -> ONLY THEN BEGIN PROJECT-SPECIFIC SUBSTANTIVE WORK
 ```
 
-No valid project identifier, conversation starter or numeric choice skips this sequence. A supplied identifier changes only how the project-selection/project-resolution stage resolves its input.
+No project name, conversation starter or numeric choice skips this sequence. The project-resolution stage may receive an identifier directly from the user or may need to collect one interactively, but the stage itself is always executed.
 
 The Project Registry remains the SES-side authority for project mapping. The Project Adapter remains a locator, not project truth.
 
-## 5. Project-selection / project-resolution stage
+## 5. Project-resolution stage
 
-Every hybrid project entry passes through this stage after the applicable SES ref and Project Registry are resolved.
+Every hybrid project entry passes through this stage after the applicable SES ref, specialist/archetype and Project Registry have been resolved.
 
-### 5.1 Identifier already supplied
+### 5.1 Project identifier supplied
 
-When `PROJECT_IDENTIFIER` is supplied, validate it through the current registry using the resolver semantics in section 6. If exactly one active project resolves, continue to the next mandatory stage with that `PROJECT_ID` and `ADAPTER_PATH`.
+When `PROJECT_IDENTIFIER` is supplied — for example, `Trabalhe no FECH.AI` — validate that identifier through the current registry using the resolver semantics in section 6.
 
-The menu need not be rendered when a valid identifier is already available, but the project-selection/project-resolution stage is still executed. This is not a bypass.
+If exactly one active project resolves, preserve its `PROJECT_ID` and `ADAPTER_PATH` and continue to the next mandatory stage.
 
-### 5.2 Identifier not supplied
+The numbered menu is unnecessary when the identifier is already resolved, but no bootstrap stage is skipped.
 
-When `PROJECT_IDENTIFIER: NOT_SUPPLIED` — including entry through a starter such as `# CLIQUE PARA INICIAR` — the specialist must:
+### 5.2 Project identifier not supplied
+
+When `PROJECT_IDENTIFIER: NOT_SUPPLIED` — including entry through `# CLIQUE PARA INICIAR` — the specialist must:
 
 1. use the already-resolved `projects/REGISTRY.md` on the current `SES_EFFECTIVE_REF`;
 2. enumerate only entries whose `STATUS` is `ACTIVE`;
-3. display each active project once using `CANONICAL_NAME` in a numbered list;
+3. display each eligible registered project once using `CANONICAL_NAME` in a numbered list;
 4. retain the exact `PROJECT_ID` associated with each displayed number;
 5. ask the user to choose one displayed number;
 6. wait for a valid selection before resolving the Project Adapter;
@@ -139,7 +141,11 @@ Selecione o projeto em que deseja trabalhar:
 Digite o número do projeto.
 ```
 
-The numeric mapping is transient and bound to the exact menu instance and SES effective ref that produced it.
+The menu is the specialist's SES-known registered project surface. Menu presence establishes only that SES currently registers the project for hybrid resolution; it does not by itself prove project-local specialist compatibility, task readiness or authority.
+
+Actual project-local applicability is established later in the same mandatory flow when the project bootstrap and project-local specialist rules/overrides are resolved. If required specialist rules cannot be resolved, use `SPECIALIST_RULES_UNRESOLVED` and fail closed for work that depends on them.
+
+`PROJECT_LISTED != PROJECT_SPECIALIST_READY`
 
 ### 5.3 Numeric selection
 
@@ -153,7 +159,7 @@ If the applicable SES ref or registry materially changed after the menu was disp
 
 If an explicitly supplied identifier produces zero or multiple active matches, preserve the failed resolution as `PROJECT_NOT_REGISTERED` or `PROJECT_ID_AMBIGUOUS`.
 
-When the registry is available, the same stage may present the current active-project list as a recovery mechanism and wait for a new selection. The recovery attempt is new evidence; it does not rewrite the original failed attempt as PASS.
+When the registry is available, the same project-resolution stage may present the current active-project list as a recovery mechanism and wait for a new valid identifier. The recovery attempt is new evidence; it does not rewrite the original failed attempt as PASS.
 
 ### 5.5 Selection is not readiness
 
@@ -258,7 +264,7 @@ A source that is genuinely irrelevant to the requested task does not by itself m
 
 ### 7.3 `CONTEXT_STATUS = BLOCKED`
 
-Use `BLOCKED` when a missing or conflicting source is material to the requested decision and no safe reduced scope has been explicitly established. A user instruction to "continue anyway" does not convert a blocked material context into ready context.
+Use `BLOCKED` when a missing or conflicting source is material to the requested decision and no safe reduced scope has been explicitly established. A user instruction to `continue anyway` does not convert a blocked material context into ready context.
 
 ## 8. Receipt validity and invalidation
 
@@ -402,18 +408,19 @@ A hybrid specialist bootstrap is behaviorally acceptable only if it can demonstr
 2. deterministic project resolution from registered identifiers;
 3. live numbered enumeration when no project identifier is supplied;
 4. transient menu-bound numeric mapping with no hard-coded project numbers;
-5. no fuzzy project inference for material work;
-6. fail-closed behavior for every mandatory state in section 9;
-7. exact separation between project selection, project context readiness and mutation authorization;
-8. no cross-project context contamination after a project switch;
-9. explicit task/target/environment-bound readiness receipt before substantive project-specific work;
-10. bounded connection/bootstrap readiness when no substantive task has yet been supplied;
-11. deterministic and mutually distinguishable `READY`, `LIMITED` and `BLOCKED` semantics;
-12. receipt invalidation/revalidation after material task/ref/target/environment/authority/evidence changes;
-13. no retroactive `READY` after a failed bootstrap unless the missing evidence is actually resolved in a new attempt;
-14. explicit dual-ref treatment for candidate-head proof;
-15. fresh-conversation repeatability;
-16. explicit separation between spec/candidate-head proof and runtime behavioral proof;
-17. no runtime PASS while any runtime-required canonical case remains unexecuted or failed.
+5. explicit separation between project listing, project-local specialist readiness and task readiness;
+6. no fuzzy project inference for material work;
+7. fail-closed behavior for every mandatory state in section 9;
+8. exact separation between project selection, project context readiness and mutation authorization;
+9. no cross-project context contamination after a project switch;
+10. explicit task/target/environment-bound readiness receipt before substantive project-specific work;
+11. bounded connection/bootstrap readiness when no substantive task has yet been supplied;
+12. deterministic and mutually distinguishable `READY`, `LIMITED` and `BLOCKED` semantics;
+13. receipt invalidation/revalidation after material task/ref/target/environment/authority/evidence changes;
+14. no retroactive `READY` after a failed bootstrap unless the missing evidence is actually resolved in a new attempt;
+15. explicit dual-ref treatment for candidate-head proof;
+16. fresh-conversation repeatability;
+17. explicit separation between spec/candidate-head proof and runtime behavioral proof;
+18. no runtime PASS while any runtime-required canonical case remains unexecuted or failed.
 
 The canonical behavioral cases are defined in `tests/behavioral/HYBRID_SPECIALIST_BOOTSTRAP_TESTS.md`.
