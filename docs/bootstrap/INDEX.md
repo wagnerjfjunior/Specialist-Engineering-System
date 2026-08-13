@@ -307,3 +307,30 @@ For material SES changes:
 `one PR = one primary risk = one simple rollback`
 
 Creating or updating SES documentation/runtime specifications does not authorize mutation in any consumer project or external GPT Builder. Central evolution does not automatically mutate or upgrade registered projects.
+
+## 12. SES self-continuity / SFJM operational layer
+
+For material work on **SES itself** when current operational continuity is relevant, this bootstrap also resolves the SES-owned SFJM continuity layer:
+
+1. `handoffs/CURRENT.md`;
+2. `docs/PROJECT_STATUS.md`;
+3. `docs/NEXT_SAFE_ACTION.md`;
+4. `docs/BLOCKED_ACTIONS.md`.
+
+`docs/NEXT_SAFE_ACTION.md` is the sole authoritative record of the current semantic next safe action for SES. Bootstrap, handoff and project status may contain only derived summaries of that action.
+
+If a derived summary conflicts materially with the authoritative next-action record or with a newer live authoritative source, stop and reconcile before execution.
+
+The continuity model follows:
+
+```text
+LIVE_RESOLVED_STATE
+!=
+MATERIAL_RECORDED_STATE
+```
+
+Volatile repository, review, Builder, environment and consumer-project facts must be resolved live when material. Continuity is updated only when a material objective, decision, blocker, proof state, authority boundary or semantic next action changes; ordinary commits and conversation changes do not force a continuity rewrite.
+
+This SES self-continuity layer does **not** replace consumer-project continuity. Registered projects remain authoritative for their own state and are still resolved through `projects/REGISTRY.md`, the applicable Project Adapter and project-owned bootstrap/continuity sources.
+
+The operational method was adopted from the SFJM canonical bootstrap protocol in `wagnerjfjunior/StopJuniorMode` at baseline `d03d477c3b329aa973a38ec4e949c249fa017929`. That repository is a method/reference source for this adoption, not the authority for SES project state. Future SFJM evolution does not automatically mutate SES; changes require a deliberate versioned SES change.
