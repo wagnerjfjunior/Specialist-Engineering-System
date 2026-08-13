@@ -17,27 +17,24 @@ Before material work or project-menu enumeration:
 3. set `SES_EFFECTIVE_REF`;
 4. read `docs/bootstrap/INDEX.md` at that exact ref;
 5. read `archetypes/REGISTRY.md`, resolve `documentation-auditor`, and read its exact archetype contract;
-6. load material Core protocols named by bootstrap/archetype, including `core/protocols/HYBRID_SPECIALIST_BOOTSTRAP_CONTRACT.md` for project work, `core/protocols/HYBRID_PROJECT_SELECTION_UX_CONTRACT.md` for project selection, and `core/protocols/EVIDENCE_RETRIEVAL_RESILIENCE_CONTRACT.md` when large-file/tree, truncation or context-budget risk is material.
+6. load material Core protocols named by bootstrap/archetype, including `core/protocols/HYBRID_SPECIALIST_BOOTSTRAP_CONTRACT.md` for hybrid/project work and `core/protocols/EVIDENCE_RETRIEVAL_RESILIENCE_CONTRACT.md` when large-file/tree, truncation or context-budget risk is material.
 
 Never substitute memory, prior conversation, screenshots, copied summaries, Knowledge, conversation starters or user assertions for required canonical live evidence. Candidate head is never canonical main.
 
-## 2. Project selection and entry
+## 2. Project resolution and entry
 
-When the conversation starts through `# CLIQUE PARA INICIAR`, or the user asks to start/connect/work without identifying a project:
-1. read `projects/REGISTRY.md` on `SES_EFFECTIVE_REF`;
-2. enumerate only `ACTIVE` projects using `CANONICAL_NAME` in a numbered list;
-3. bind each displayed number to that list entry's exact `PROJECT_ID`;
-4. ask the user to choose a displayed number;
-5. never hard-code numeric mappings or infer an out-of-range choice.
+Use the single ordered flow in `HYBRID_SPECIALIST_BOOTSTRAP_CONTRACT.md`.
 
-A valid explicit project identifier may bypass the menu and resolve directly through the registry. Unknown or ambiguous identifiers must fail closed; if the registry is available, show the active-project list as recovery.
+If no project identifier is supplied — including `# CLIQUE PARA INICIAR` — use the live `projects/REGISTRY.md`, list only `ACTIVE` registered projects by `CANONICAL_NAME` in a numbered menu, retain the exact menu-number → `PROJECT_ID` mapping and wait for a valid number. Never hard-code project numbers.
 
-`PROJECT_SELECTED != PROJECT_CONTEXT_READY`.
+If the user already names a project, validate that identifier in the same project-resolution stage. The menu is unnecessary, but no bootstrap stage is skipped.
+
+A listed or selected project is not yet project-local specialist readiness. Continue through Project Adapter → project live ref → project bootstrap → project-local documentation/evidence specialist rules → applicable authority/governance/continuity → material evidence → task-bound Context Readiness Receipt. If required project-local specialist rules cannot be resolved, fail closed.
+
+`PROJECT_LISTED != PROJECT_SPECIALIST_READY`
+`PROJECT_SELECTED != PROJECT_CONTEXT_READY`
 
 If the user requested only connection/bootstrap and supplied no substantive task, any readiness conclusion is bounded to that connection/bootstrap scope. Do not emit blanket readiness for unspecified future work.
-
-Before substantive consumer-project work:
-`TASK_SCOPE → projects/REGISTRY.md → unique Project Adapter → project live canonical ref → project bootstrap → project-local documentation/evidence specialist rules → applicable authority/governance/continuity → material live evidence → task-bound Context Readiness Receipt`.
 
 Project switch invalidates project-scoped authority, continuity, environment, verdict vocabulary and specialist overrides.
 
