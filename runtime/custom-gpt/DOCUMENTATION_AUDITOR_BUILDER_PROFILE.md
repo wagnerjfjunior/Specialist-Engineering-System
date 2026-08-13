@@ -79,6 +79,7 @@ AUTH_MODE = API_KEY / BEARER
 CREDENTIAL_SCOPE_SUMMARY
 REPOSITORY_ACCESS_SCOPE / ALLOWLIST SUMMARY
 REQUIRED_REPOSITORY_ACCESS_SMOKE[]
+ACCESS_SCOPE_EVIDENCE_LIMITATION
 ```
 
 Rules:
@@ -87,6 +88,8 @@ Rules:
 - prefer an authenticated `/user`-style smoke for principal identity;
 - record credential/repository scope only as non-secret metadata exposed by the Builder/provider;
 - if token scopes or repository allowlists are not exposed, record `NOT_EXPOSED` rather than guessing and perform bounded access smokes against the repositories required by the proof;
+- positive bounded access smokes prove only that the required repositories are accessible; they do **not** prove exclusivity, absence of access to other repositories, or least privilege;
+- when scope metadata is not exposed, record `ACCESS_SCOPE_EVIDENCE_LIMITATION: REQUIRED_ACCESS_PROVEN / EXCESS_ACCESS_NOT_ASSESSED` and make no broader access-isolation claim;
 - a principal change, credential-scope change, repository-access-scope change, or unexplained credential replacement invalidates affected runtime evidence until the effective access boundary is re-established;
 - identical `API_KEY / BEARER` mode alone is never sufficient to reuse prior runtime evidence after a credential change.
 
@@ -138,6 +141,7 @@ AUTHENTICATED_PRINCIPAL_ID
 CREDENTIAL_SCOPE_SUMMARY
 REPOSITORY_ACCESS_SCOPE
 REQUIRED_REPOSITORY_ACCESS_SMOKE[]
+ACCESS_SCOPE_EVIDENCE_LIMITATION
 VISIBILITY
 SELECTED_MODEL
 BUILDER_VERSION_IDENTIFIER when available
@@ -145,7 +149,7 @@ BUILDER_VERSION_IDENTIFIER when available
 
 `ACTION_AUTH_MODE` must record the non-secret configuration (`API_KEY / BEARER`) and never the credential value.
 
-If credential scope or repository allowlist metadata is not exposed, use explicit `NOT_EXPOSED` plus bounded access-smoke evidence; do not silently omit those fields.
+If credential scope or repository allowlist metadata is not exposed, use explicit `NOT_EXPOSED` plus bounded access-smoke evidence; do not silently omit those fields or convert positive access tests into a least-privilege claim.
 
 A material Builder/kernel/action/model/auth-mode/principal/credential-scope/repository-access-scope change invalidates affected runtime evidence.
 
