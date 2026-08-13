@@ -13,10 +13,10 @@ SES is project-agnostic specialist-engineering infrastructure. SES owns reusable
 
 ## 2. Current durable objective
 
-Adopt and reconcile the standardized hybrid project-entry flow without collapsing lifecycle states or rewriting prior evidence.
+Correct the hybrid project-entry flow so project selection remains lightweight and consumer-project materialization begins only after a substantive task exists.
 
-Primary runtime target: `SES — Documentation Auditor` v0.3.  
-Affected runtime target: `SES — SaaS Architect` v0.2.
+Primary runtime target: `SES — Documentation Auditor` v0.4.  
+Affected runtime target: `SES — SaaS Architect` v0.3.
 
 ## 3. Version-separated runtime state
 
@@ -25,45 +25,87 @@ Affected runtime target: `SES — SaaS Architect` v0.2.
 | SaaS Architect archetype | ACTIVE for resolution |
 | SaaS Architect v0.1 | historical `RUNTIME_BEHAVIORAL_PROOF = PASS`, T01–T29 = 29/29 |
 | SaaS Architect v0.1 evidence | `tests/runtime/evidence/HYBRID_SAAS_ARCHITECT_RUNTIME_PROOF_2026-08-12.md` |
-| SaaS Architect v0.2 | target profile/kernel versioned; runtime proof `NOT_ESTABLISHED` |
+| SaaS Architect v0.2 | versioned target, not fully applied, runtime proof `NOT_ESTABLISHED`; P01 attempt 1 FAIL due old v0.1 Instructions |
+| SaaS Architect v0.3 | new deferred-materialization target; runtime proof `NOT_ESTABLISHED` |
 | Documentation Auditor archetype | ACTIVE for resolution / runtime not certified |
-| Documentation Auditor v0.3 | target profile/kernel versioned; runtime proof `NOT_ESTABLISHED` |
-| Shared hybrid project entry | single flow with P01–P08 as runtime-required cases for affected targets |
+| Documentation Auditor v0.3 | prior target; external Builder still observed with older v0.2 Instructions |
+| Documentation Auditor v0.4 | new deferred-materialization target; runtime proof `NOT_ESTABLISHED` |
+| Shared hybrid project entry | one ordered flow; P01–P10 runtime-required for new targets |
 
-`SAAS_V0_1_RUNTIME_PASS != SAAS_V0_2_RUNTIME_PASS`
+`SAAS_V0_1_RUNTIME_PASS != SAAS_V0_2_RUNTIME_PASS != SAAS_V0_3_RUNTIME_PASS`
 
-The new SaaS target does not erase or downgrade the v0.1 certification. The v0.1 certification does not automatically satisfy v0.2.
+## 4. Runtime finding that caused v0.4/v0.3
 
-## 4. External Builder state
+User-run exploratory tests on 2026-08-13 showed:
+- Documentation Auditor could display the live project menu and select both registered projects;
+- SaaS Architect with old v0.1 Instructions initially failed P01 by returning generic onboarding rather than the menu;
+- when selection did proceed, both specialists could materialize project `main`, bootstrap/local specialist and related sources before any substantive task existed;
+- user-observed waits were roughly two minutes for Documentation Auditor selections and 4m10s for SaaS Architect Blogs/SEO.
 
-User-supplied Builder evidence shows `# CLIQUE PARA INICIAR` has been introduced in both current hybrid GPTs. That establishes only the starter field, not complete application of the new target kernels/profiles.
+The timings are user observations, not independently instrumented platform measurements.
 
-`TARGET_PROFILE_VERSIONED != BUILDER_APPLIED != FINGERPRINT_COMPLETE != RUNTIME_BEHAVIORAL_PROOF`
+The deterministic defect is:
 
-The next safe action is to reconcile the actual Documentation Auditor v0.3 target first and SaaS Architect v0.2 second after this change is canonical on SES `main`.
+`PROJECT_SELECTED + TASK_SCOPE_NOT_SUPPLIED -> PREMATURE_CONSUMER_PROJECT_IO`
 
-## 5. Active risks
+The corrected invariant is:
 
-- historical SaaS v0.1 PASS being silently downgraded or silently promoted to v0.2;
-- starter change being mistaken for complete Builder adoption;
-- project registration being mistaken for project-local specialist readiness;
-- stale Builder/model/access fingerprints being reused across target versions;
-- temporary authority-test capability not being removed before final proof aggregation;
-- consumer-project state or authority being copied into SES;
-- central SES evolution being mistaken for automatic external Builder or consumer-project mutation.
+`NO SUBSTANTIVE TASK -> NO CONSUMER-PROJECT MATERIALIZATION`
 
-Controls include version-bound proof, `PROJECT_LISTED != PROJECT_SPECIALIST_READY`, current-target fingerprint reconciliation, fail-closed project bootstrap, mandatory authority-test cleanup and explicit adoption authorization.
+## 5. External Builder state
 
-## 6. Material gaps
+User-supplied screenshots establish:
+- Documentation Auditor Builder Instructions remained `RUNTIME_CANDIDATE_V0_2`;
+- SaaS Architect Builder Instructions remained `RUNTIME_CANDIDATE_V0_1`;
+- both starters were changed to `# CLIQUE PARA INICIAR`.
 
-Documentation Auditor v0.3 still requires complete target-bound Builder reconciliation, fingerprint completion, shared P01–P08, its canonical T01–T30 suite, applicable resilience evidence and runtime certification.
+Therefore:
 
-SaaS Architect v0.2 still requires complete target-bound Builder reconciliation, fingerprint completion, shared P01–P08 and proportional runtime revalidation. These gaps do not alter the historical v0.1 PASS.
+`STARTER_APPLIED != TARGET_KERNEL_APPLIED`
+
+New target application/fingerprint remains required.
+
+## 6. Active risks
+
+- premature consumer-project I/O after mere selection;
+- treating project selection as readiness;
+- historical SaaS v0.1 PASS being downgraded/promoted across versions;
+- starter change being mistaken for full Builder adoption;
+- registered project being mistaken for project-local specialist readiness;
+- stale Builder/model/access fingerprints;
+- authority-test overlay not being removed after controlled tests;
+- consumer-project state/authority copied into SES;
+- automatic propagation of SES changes into external Builders or consumer projects.
+
+Controls include:
+- `PROJECT_SELECTED != PROJECT_BOOTSTRAPPED`;
+- task-activated project materialization;
+- targeted retrieval by materiality;
+- version-bound proof;
+- fresh Builder fingerprints;
+- explicit adoption authorization;
+- mandatory authority-test cleanup.
+
+## 7. Material gaps
+
+Documentation Auditor v0.4 requires:
+- exact kernel application;
+- fresh fingerprint;
+- P01–P10, especially P02/P03 no-consumer-I/O gates;
+- Documentation Auditor T01–T30;
+- applicable resilience evidence;
+- runtime certification.
+
+SaaS Architect v0.3 requires:
+- exact kernel application;
+- fresh fingerprint;
+- P01–P10;
+- proportional runtime revalidation.
 
 Publication, consumer-project mutation, project-local equivalence promotion and legacy retirement remain separate gates.
 
-## 7. Continuity policy
+## 8. Continuity policy
 
 `docs/NEXT_SAFE_ACTION.md` is the sole authoritative semantic next action. This document is derived state only.
 
-If this status conflicts materially with `docs/NEXT_SAFE_ACTION.md` or a newer live authoritative source, stop and reconcile before execution.
+If this status conflicts materially with `docs/NEXT_SAFE_ACTION.md` or newer live authority, stop and reconcile.

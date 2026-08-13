@@ -1,58 +1,57 @@
 # SES — Hybrid Specialist Bootstrap Contract
 
-**Status:** FOUNDATION_V0_2 / CANDIDATE_CONTRACT
+**Status:** FOUNDATION_V0_3 / CANDIDATE_CONTRACT
 
 ## 1. Purpose
 
 This contract defines the mandatory pre-work protocol for a hybrid SES specialist that can operate across multiple registered consumer projects.
 
-Its primary safety property is:
+Primary safety properties:
 
 `NO VERIFIED PROJECT CONTEXT -> NO PROJECT-SPECIFIC SUBSTANTIVE WORK`
 
-A hybrid specialist must not treat a user-supplied project name, numeric choice, conversation starter, prior chat, memory, copied context, prior readiness receipt or tool capability as proof that the correct project configuration is ready for the current task.
+`NO SUBSTANTIVE TASK -> NO CONSUMER-PROJECT MATERIALIZATION`
 
-The hybrid bootstrap is one ordered flow. Different user inputs change only the state supplied to a stage; they do not create alternate paths or skip mandatory stages.
+A user-supplied project name, numeric choice, conversation starter, prior chat, memory, copied context, prior receipt or tool capability is never proof that project-specific context is ready for a substantive task.
+
+The hybrid bootstrap is one ordered flow. Different user inputs change stage state; they do not create alternate bootstrap paths or bypass mandatory stages.
 
 `ONE FLOW / DIFFERENT INPUT STATES`
 
-## 2. Inputs
+## 2. Inputs and staged completeness
 
-A hybrid bootstrap consumes, at minimum:
+The flow tracks:
 
 ```text
 PROJECT_IDENTIFIER
 SPECIALIST_ID_OR_ARCHETYPE
 TASK_CONTEXT
 TASK_SCOPE
+TARGET_REF_OR_OBJECT
+ENVIRONMENT
 ```
 
-`PROJECT_IDENTIFIER` may initially be `NOT_SUPPLIED`. That state does not authorize guessing a project; the project-resolution stage must obtain a valid registered project before project-specific bootstrap can continue.
+`PROJECT_IDENTIFIER` may initially be `NOT_SUPPLIED`. That state does not authorize project guessing.
 
-`TASK_SCOPE` is the full material objective requested by the user for which readiness is being evaluated. It must be specific enough to distinguish conceptual/read-only work from current-state, lifecycle or mutation work.
+`TASK_SCOPE` may initially be `NOT_YET_SUPPLIED` while the user is only starting the specialist or choosing a project. `TASK_SCOPE: NOT_YET_SUPPLIED` is not a material task and must not be converted into an artificial connection/bootstrap task.
 
-When the user requests only initialization, connection or project selection and has not yet supplied a substantive task, use a bounded connection/bootstrap scope rather than inventing future work, for example:
+Do not invent:
 
 ```text
 TASK_SCOPE: PROJECT_CONNECTION_BOOTSTRAP
 ```
 
-The bootstrap must also classify, and bind into the receipt, the following dimensions even when they are not material:
+merely to justify loading a consumer project before the user has asked for substantive work.
 
-```text
-TARGET_REF_OR_OBJECT
-ENVIRONMENT
-```
+A substantive `TASK_SCOPE` is required before consumer-project materialization, task-bound readiness evaluation or substantive project-specific work.
 
-Use `NOT_REQUIRED_FOR_THIS_TASK` when either dimension is genuinely immaterial. A material target/ref/environment must never remain implicit inside a broad task description.
-
-Optional inputs may include mode or additional bounded-scope detail, but they never override project-owned authority or source precedence.
+`TARGET_REF_OR_OBJECT` and `ENVIRONMENT` are classified when a substantive task makes them relevant. Use `NOT_REQUIRED_FOR_THIS_TASK` only when genuinely immaterial.
 
 ## 3. Proof-ref resolution
 
 SES canonical state and a candidate PR/head are different evidence classes.
 
-Every material bootstrap must first resolve:
+Before a live project menu or material SES/project work, resolve:
 
 ```text
 SES_CANONICAL_MAIN_REF
@@ -75,60 +74,73 @@ SES_CANDIDATE_REF: <exact candidate PR/head>
 SES_EFFECTIVE_REF: SES_CANDIDATE_REF
 ```
 
-The candidate ref may be used to read the candidate contract/bootstrap under review, but it must never be mislabeled as canonical SES `main`. Both refs must remain visible in the evidence record when they differ.
+A candidate ref may be used to read candidate artifacts under review but must never be called canonical `main`.
 
 `CANDIDATE_HEAD != CANONICAL_MAIN`
 
-## 4. Mandatory resolution flow
+## 4. One ordered resolution flow
 
-For hybrid project work, execute the following in order:
+Execute the following state machine in order:
 
 ```text
 RESOLVE SES CANONICAL MAIN LIVE
--> SELECT SES EFFECTIVE REF FOR THE DECLARED PROOF LEVEL
+-> SELECT SES EFFECTIVE REF
 -> READ SES BOOTSTRAP ON SES EFFECTIVE REF
 -> RESOLVE SPECIALIST / ARCHETYPE
 -> READ SES PROJECT REGISTRY ON SES EFFECTIVE REF
 -> RESOLVE PROJECT IDENTIFIER
 -> RESOLVE UNIQUE PROJECT_ID + ADAPTER_PATH
+-> PROJECT_SELECTED
+-> IF TASK_SCOPE = NOT_YET_SUPPLIED: WAIT FOR TASK
+-> IF SUBSTANTIVE TASK_SCOPE EXISTS: CLASSIFY TASK MATERIALITY
 -> READ PROJECT ADAPTER
 -> RESOLVE CONSUMER PROJECT CANONICAL SOURCE LIVE
 -> READ PROJECT-LOCAL BOOTSTRAP
 -> RESOLVE PROJECT-LOCAL SPECIALIST RULES / OVERRIDES
--> READ PROJECT-LOCAL COMMON RULES AND AUTHORITY SOURCES WHEN APPLICABLE
--> READ PROJECT CONTINUITY WHEN CURRENT STATE IS MATERIAL
--> RESOLVE LIVE OBJECTS MATERIAL TO THE TASK/TARGET/ENVIRONMENT
+-> READ TASK-MATERIAL + CANONICALLY MANDATORY COMMON / AUTHORITY / GOVERNANCE SOURCES
+-> READ PROJECT CONTINUITY ONLY WHEN CURRENT STATE IS MATERIAL
+-> RESOLVE LIVE OBJECTS / EVIDENCE MATERIAL TO TASK/TARGET/ENVIRONMENT
 -> EMIT TASK-BOUND CONTEXT READINESS RECEIPT
 -> ONLY THEN BEGIN PROJECT-SPECIFIC SUBSTANTIVE WORK
 ```
 
-No project name, conversation starter or numeric choice skips this sequence. The project-resolution stage may receive an identifier directly from the user or may need to collect one interactively, but the stage itself is always executed.
+The `WAIT FOR TASK` state is not a bypass. It is the canonical stopping condition when the next mandatory stage lacks a substantive `TASK_SCOPE`.
 
-The Project Registry remains the SES-side authority for project mapping. The Project Adapter remains a locator, not project truth.
+A project name supplied directly and a project selected from a numbered menu both enter the same project-resolution stage.
+
+The Project Registry is the SES-side authority for project mapping. A Project Adapter is a locator, not project truth.
 
 ## 5. Project-resolution stage
 
-Every hybrid project entry passes through this stage after the applicable SES ref, specialist/archetype and Project Registry have been resolved.
+Every hybrid project entry passes through this stage after the applicable SES ref, specialist/archetype and Project Registry are resolved.
 
 ### 5.1 Project identifier supplied
 
-When `PROJECT_IDENTIFIER` is supplied — for example, `Trabalhe no FECH.AI` — validate that identifier through the current registry using the resolver semantics in section 6.
+When `PROJECT_IDENTIFIER` is supplied, validate it through the current registry using section 7 resolver semantics.
 
-If exactly one active project resolves, preserve its `PROJECT_ID` and `ADAPTER_PATH` and continue to the next mandatory stage.
+If exactly one active project resolves, preserve:
 
-The numbered menu is unnecessary when the identifier is already resolved, but no bootstrap stage is skipped.
+```text
+PROJECT_RESOLUTION_STATUS: RESOLVED
+PROJECT_ID
+ADAPTER_PATH
+PROJECT_SELECTION_STATUS: RESOLVED
+```
+
+If no substantive task exists, stop at `PROJECT_SELECTED` and ask for the task.
 
 ### 5.2 Project identifier not supplied
 
-When `PROJECT_IDENTIFIER: NOT_SUPPLIED` — including entry through `# CLIQUE PARA INICIAR` — the specialist must:
+When `PROJECT_IDENTIFIER: NOT_SUPPLIED`, including `# CLIQUE PARA INICIAR`:
 
-1. use the already-resolved `projects/REGISTRY.md` on the current `SES_EFFECTIVE_REF`;
-2. enumerate only entries whose `STATUS` is `ACTIVE`;
-3. display each eligible registered project once using `CANONICAL_NAME` in a numbered list;
-4. retain the exact `PROJECT_ID` associated with each displayed number;
-5. ask the user to choose one displayed number;
-6. wait for a valid selection before resolving the Project Adapter;
-7. never hard-code a permanent numeric mapping.
+1. use `projects/REGISTRY.md` on current `SES_EFFECTIVE_REF`;
+2. enumerate only `STATUS: ACTIVE`;
+3. display each project once using `CANONICAL_NAME`;
+4. number the displayed list;
+5. bind each displayed number to that exact `PROJECT_ID`;
+6. ask the user to choose one displayed number;
+7. wait for a valid selection;
+8. never hard-code a permanent number-to-project mapping.
 
 Recommended rendering:
 
@@ -141,65 +153,99 @@ Selecione o projeto em que deseja trabalhar:
 Digite o número do projeto.
 ```
 
-The menu is the specialist's SES-known registered project surface. Menu presence establishes only that SES currently registers the project for hybrid resolution; it does not by itself prove project-local specialist compatibility, task readiness or authority.
-
-Actual project-local applicability is established later in the same mandatory flow when the project bootstrap and project-local specialist rules/overrides are resolved. If required specialist rules cannot be resolved, use `SPECIALIST_RULES_UNRESOLVED` and fail closed for work that depends on them.
+Menu presence proves only current SES registration for hybrid resolution.
 
 `PROJECT_LISTED != PROJECT_SPECIALIST_READY`
 
 ### 5.3 Numeric selection
 
-A numeric reply has project meaning only when a current menu was previously displayed by this stage. Resolve the number against that exact menu and recover the corresponding `PROJECT_ID`.
+A numeric reply has project meaning only against the exact menu instance previously displayed.
 
-An out-of-range or otherwise invalid number must not be guessed. Re-present the current active-project list or regenerate it when its source is stale.
+Invalid/out-of-range numbers are not guessed. Re-present or regenerate the list.
 
-If the applicable SES ref or registry materially changed after the menu was displayed and before the user selected, invalidate the old numeric mapping and regenerate the menu from the applicable current evidence.
+If the applicable SES ref or registry materially changes between menu display and selection, invalidate the old numeric mapping and regenerate the menu.
 
 ### 5.4 Unknown or ambiguous identifier
 
-If an explicitly supplied identifier produces zero or multiple active matches, preserve the failed resolution as `PROJECT_NOT_REGISTERED` or `PROJECT_ID_AMBIGUOUS`.
+Zero active matches -> `PROJECT_NOT_REGISTERED`.
 
-When the registry is available, the same project-resolution stage may present the current active-project list as a recovery mechanism and wait for a new valid identifier. The recovery attempt is new evidence; it does not rewrite the original failed attempt as PASS.
+Multiple active matches -> `PROJECT_ID_AMBIGUOUS`.
 
-### 5.5 Selection is not readiness
+When registry evidence is available, the same stage may present the current active list as recovery. A later successful recovery does not rewrite the failed attempt as PASS.
 
-A successful project selection establishes only the project identity needed to continue the mandatory bootstrap flow.
+## 6. Project selection versus project materialization
+
+A successful selection establishes project identity only.
 
 ```text
+PROJECT_SELECTED != PROJECT_BOOTSTRAPPED
+PROJECT_SELECTED != PROJECT_SPECIALIST_READY
 PROJECT_SELECTED != PROJECT_CONTEXT_READY
 PROJECT_CONTEXT_READY != AUTHORIZED_TO_MUTATE
 ```
 
-If the current task is only `PROJECT_CONNECTION_BOOTSTRAP`, any readiness conclusion is bounded to that scope. It must not be promoted into readiness for unspecified future documentation, architecture, lifecycle, security or mutation work.
+When `TASK_SCOPE: NOT_YET_SUPPLIED`, the specialist must not:
+
+- read the Project Adapter;
+- resolve the consumer project's live ref;
+- read project bootstrap;
+- resolve project-local specialist rules;
+- read continuity;
+- read authority/governance;
+- read project evidence;
+- emit a Context Readiness Receipt.
+
+Expected interaction after selection is bounded:
 
 ```text
-READY_FOR_PROJECT_CONNECTION != READY_FOR_UNSPECIFIED_FUTURE_TASKS
+PROJECT_SELECTION_STATUS: RESOLVED
+PROJECT_ID: <selected>
+TASK_SCOPE: NOT_YET_SUPPLIED
+NEXT_REQUIRED_INPUT: TASK
 ```
 
-A later substantive task requires task-specific `TASK_SCOPE`, material dependency classification and a new or proportionally revalidated task-bound receipt.
+The specialist may render this naturally, e.g. `Projeto selecionado. Envie a tarefa.`
 
-## 6. Project resolver semantics
+### 6.1 Task activation
 
-The hybrid specialist must apply the registry rules exactly:
+When a substantive task is later supplied, continue the same flow from the selected project. Before materialization, revalidate the selected `PROJECT_ID` against the applicable live registry when the registry/ref may have changed materially.
+
+Then classify material dependencies before retrieval.
+
+`TASK -> MATERIAL DEPENDENCIES -> TARGETED PROJECT BOOTSTRAP`
+
+Do not perform ceremonial bulk loading. The canonical SES `PROJECT_BOOTSTRAP_CONTRACT` and the consumer project's authoritative bootstrap define mandatory stages, source classes and precedence. Task materiality may narrow only downstream sources that are not made mandatory for every substantive task by either authority; it must never suppress a canonically mandatory source or source class.
+
+### 6.2 Project and task supplied together
+
+If the initial user request already contains both a resolvable project identifier and a substantive task, the same flow continues through materialization without stopping at `WAIT FOR TASK`.
+
+This is not a bypass: all stages are still executed in order with the required inputs already present.
+
+## 7. Project resolver semantics
+
+Apply registry rules exactly:
 
 1. trim surrounding whitespace;
-2. match exact `PROJECT_ID` first;
-3. otherwise match `CANONICAL_NAME` or an explicit `ALIAS` case-insensitively;
-4. do not use fuzzy matching, semantic guessing, inferred aliases or folder-name guessing for material project resolution;
-5. require exactly one active registry match.
+2. exact `PROJECT_ID` first;
+3. otherwise exact `CANONICAL_NAME` or explicit `ALIAS` case-insensitively;
+4. no fuzzy matching, semantic guessing, inferred alias or folder-name guessing;
+5. require exactly one active match.
 
-Resolution outcomes:
+Outcomes:
 
 - zero matches -> `PROJECT_NOT_REGISTERED`;
 - multiple matches -> `PROJECT_ID_AMBIGUOUS`;
 - unavailable registry -> `PROJECT_REGISTRY_UNAVAILABLE`;
-- resolved registry entry but unavailable/contradictory adapter -> `PROJECT_ADAPTER_UNRESOLVED`.
+- adapter problems are evaluated only after task activation, when adapter resolution becomes material.
 
-A conversation starter supplies interaction input only. It is not configuration authority and does not alter these resolver rules.
+A conversation starter is interaction input only. It is not configuration authority, readiness or mutation authority.
 
-## 7. Task-bound Context Readiness Receipt
+## 8. Task-bound Context Readiness Receipt
 
-Before substantive project-specific work, the specialist must be able to state a receipt equivalent to:
+A Context Readiness Receipt exists only for a substantive task.
+
+Before substantive project-specific work, preserve semantics equivalent to:
 
 ```text
 PROOF_LEVEL
@@ -230,79 +276,64 @@ RECEIPT_VALIDITY
 GAPS
 ```
 
-The representation may be prose, structured text or machine-readable output, but the semantics are mandatory. A field may be `NOT_REQUIRED_FOR_THIS_TASK`, `NOT_REQUESTED` or `NOT_APPLICABLE` only when that classification is justified by the exact task/proof level.
+Fields may be `NOT_REQUIRED_FOR_THIS_TASK`, `NOT_REQUESTED` or `NOT_APPLICABLE` only when justified by the exact task/proof level.
 
 A receipt proves readiness only for the task, effective scope, target, environment and evidence set to which it is bound.
 
 `READY_FOR_TASK_A != READY_FOR_TASK_B`
 
-### 7.1 `CONTEXT_STATUS = READY`
+### 8.1 `CONTEXT_STATUS = READY`
 
-`READY` is allowed only when:
+Allowed only when:
 
 - the entire requested `TASK_SCOPE` can be completed safely;
 - `EFFECTIVE_SCOPE` is materially equivalent to `TASK_SCOPE`;
-- every source required for that task/target/environment has been resolved on the applicable authoritative ref;
+- every source material to that task/target/environment is resolved;
 - no material contradiction remains unresolved.
 
-`READY` is not a session-wide project certification and is not reusable as a blanket approval for later work.
+### 8.2 `CONTEXT_STATUS = LIMITED`
 
-### 7.2 `CONTEXT_STATUS = LIMITED`
-
-`LIMITED` is allowed only when the full requested `TASK_SCOPE` cannot be safely completed, but an explicitly reduced `EFFECTIVE_SCOPE` can be completed without relying on the unresolved material dependency.
-
-For `LIMITED`:
+Allowed only when a strict, explicit safe subset can be completed independently.
 
 ```text
 EFFECTIVE_SCOPE must be a strict subset of TASK_SCOPE
 GAPS must identify what prevents the full scope
 ```
 
-The specialist must state the excluded portion and must not silently answer beyond `EFFECTIVE_SCOPE`.
+### 8.3 `CONTEXT_STATUS = BLOCKED`
 
-A source that is genuinely irrelevant to the requested task does not by itself make the result `LIMITED`; it may be `NOT_REQUIRED_FOR_THIS_TASK` while the task remains `READY`.
+Use when a missing/conflicting material dependency prevents the requested conclusion and no safe reduced scope exists.
 
-### 7.3 `CONTEXT_STATUS = BLOCKED`
+A user instruction to `continue anyway` does not convert material blockage into readiness.
 
-Use `BLOCKED` when a missing or conflicting source is material to the requested decision and no safe reduced scope has been explicitly established. A user instruction to `continue anyway` does not convert a blocked material context into ready context.
+## 9. Receipt validity and proportional revalidation
 
-## 8. Receipt validity and invalidation
-
-A current receipt must declare:
-
-```text
-RECEIPT_VALIDITY: VALID
-```
-
-when its task, effective scope, target, environment and material evidence remain applicable.
-
-The receipt becomes:
+A valid receipt becomes:
 
 ```text
 RECEIPT_VALIDITY: STALE_REVALIDATION_REQUIRED
 ```
 
-when an event can materially change the correctness of the readiness claim.
-
-Mandatory revalidation triggers include, when material:
+when a material event can change its correctness, including:
 
 - project switch;
-- material change in `TASK_SCOPE` or `EFFECTIVE_SCOPE`;
-- material change in `TARGET_REF_OR_OBJECT`;
-- material change in `ENVIRONMENT`;
-- SES canonical/effective ref change affecting a contract used by the task;
-- consumer-project live ref change when the task depends on current state or changed content;
+- material task/effective-scope change;
+- target/object/ref change;
+- environment change;
+- SES contract/ref change affecting the task;
+- consumer-project live-ref change affecting the task;
 - specialist source/ref change;
-- continuity invalidation event;
-- authority model change;
-- new mutation request or changed mutation scope;
-- new evidence that contradicts or supersedes a material premise.
+- continuity invalidation;
+- authority or mutation-scope change;
+- new contradictory/superseding evidence.
 
-A stale receipt must not be silently reused. Revalidate only the sources invalidated or made newly material by the new task/event; do not replay unrelated gates.
+Revalidate only invalidated or newly material dependencies.
 
 `STALE_RECEIPT -> REVALIDATE MATERIAL DEPENDENCIES -> NEW RECEIPT`
 
-## 9. Mandatory fail-closed states
+A mere project selection has no readiness receipt to invalidate.
+
+## 10. Mandatory fail-closed states
 
 Use explicit states when applicable:
 
@@ -321,70 +352,51 @@ Use explicit states when applicable:
 - `CONFLICTING_PROJECT_SOURCES`
 - `STALE_REVALIDATION_REQUIRED`
 
-Missing evidence must never be converted into an inferred project fact or broad PASS.
+Adapter/project/bootstrap/specialist/continuity/authority states become applicable only after a substantive task activates project materialization.
 
-## 10. Project-switch isolation
+Missing evidence must never become inferred project fact or broad PASS.
 
-When a hybrid specialist switches projects, project-scoped context from the previous project must be treated as invalid for the new project unless independently resolved from the new project's canonical sources.
+## 11. Project-switch isolation
+
+A project switch invalidates prior project-scoped context for the new project.
 
 `PROJECT_SWITCH -> INVALIDATE PRIOR PROJECT-SCOPED CONTEXT`
 
-The specialist must not carry over:
+Do not carry over authority, environments, decisions, runtime state, specialist overrides, security assumptions, continuity or project-local facts.
 
-- authority;
-- environments;
-- current decisions;
-- tenant/user facts;
-- runtime state;
-- specialist overrides;
-- security assumptions;
-- continuity state;
-- project-local terminology asserted as fact.
+For multi-project substantive tasks, resolve each project independently and preserve source boundaries. Each materialized project receives its own receipt or independently identifiable receipt section.
 
-For an explicitly multi-project task, each project must be resolved independently and conclusions must preserve source boundaries. Each project receives its own receipt or independently identifiable receipt section.
+## 12. Evidence binding and retrieval proportionality
 
-## 11. Evidence binding
+Material claims bind to evidence sufficient for the task.
 
-A readiness claim must be bound to concrete evidence sufficient for the task. Material work must preserve the exact SES canonical/effective refs and exact consumer-project live ref used.
+Preserve exact SES refs and, after project materialization, exact consumer-project refs used for material evidence.
 
-When target or environment is material, the receipt must bind the exact target/ref/object and environment. A change to either is an invalidation event unless the evidence establishes that the change is immaterial to the task.
+Search results, snippets, prior summaries, prior receipts and user assertions do not prove canonical source reading.
 
-When the consumer project uses versioned bootstrap, specialist or continuity documents, the receipt should identify the exact file/ref or equivalent immutable locator when available.
+Use progressive disclosure:
 
-A search result, snippet, prior summary, prior receipt or user-supplied assertion is not by itself proof that a required canonical source was read.
+`TASK -> CLAIMS -> PROOF OBLIGATIONS -> MATERIAL SURFACES -> TARGETED RETRIEVAL`
 
-## 12. Authority boundary
+Do not ingest an entire repository merely because a project was selected.
 
-Hybrid context resolution grants context, not authority.
+## 13. Authority boundary
 
-Two states must remain distinct:
+Context grants context only.
 
 ```text
-AUTHORITY_MODEL_STATUS
-MUTATION_AUTHORIZATION_STATUS
+AUTHORITY_MODEL_STATUS != MUTATION_AUTHORIZATION_STATUS
+CONTEXT_READY != AUTHORIZED_TO_MUTATE
+TOOL_CAPABILITY != AUTHORIZATION
 ```
 
-`AUTHORITY_MODEL_STATUS` answers whether the project-owned authority model required for the task was resolved.
+Resolve project-owned authority only when material to the substantive task. A mutation request always requires explicit applicable authorization for exact scope/target/environment.
 
-`MUTATION_AUTHORIZATION_STATUS` answers whether the current requested mutation, if any, has explicit and applicable authorization for the exact mutation scope, target and environment.
+A write-capable tool never grants authority by itself.
 
-A task may have `CONTEXT_STATUS: READY` while mutation remains prohibited.
+## 14. Proof levels and runtime mechanism boundary
 
-`CONTEXT_READY != AUTHORIZED_TO_MUTATE`
-
-`TOOL_CAPABILITY != AUTHORIZATION`
-
-When a mutation is requested without applicable authorization, the specialist must not mutate and must emit `MUTATION_AUTHORIZATION_STATUS: NOT_AUTHORIZED` (or the project-specific equivalent) for that mutation attempt.
-
-Mutation authority must still be resolved from the consumer project's own authority/governance sources and the current task authorization. A new mutation request or changed mutation scope/target/environment requires authorization re-evaluation even if contextual evidence otherwise remains valid.
-
-## 13. Proof levels and runtime mechanism boundary
-
-This contract defines required behavior, not the final loading technology.
-
-Potential implementations may include external API/Action loading, generated project-bound instances or another deterministic loader. Knowledge retrieval alone must not be assumed equivalent to fixed project authority or safety configuration.
-
-Evidence must distinguish:
+Keep separate:
 
 ```text
 SPEC_CONFORMANCE
@@ -392,35 +404,37 @@ CANDIDATE_HEAD_PROTOCOL_PROOF
 RUNTIME_BEHAVIORAL_PROOF
 ```
 
-- `SPEC_CONFORMANCE` means the contract, bootstrap and tests are internally coherent.
-- `CANDIDATE_HEAD_PROTOCOL_PROOF` means an exact candidate PR/head can demonstrate the resolution chain against real read-only sources while preserving both canonical-main and candidate refs.
-- `RUNTIME_BEHAVIORAL_PROOF` means the actual specialist/loading mechanism executes every runtime-required canonical case and demonstrates the required behavior, including fresh-conversation execution, without relying on hidden prior state.
+- `SPEC_CONFORMANCE`: contract/bootstrap/tests are internally coherent.
+- `CANDIDATE_HEAD_PROTOCOL_PROOF`: exact candidate head demonstrates the required read-only resolution behavior while preserving canonical and candidate refs.
+- `RUNTIME_BEHAVIORAL_PROOF`: actual specialist/loading mechanism executes every runtime-required canonical case, including fresh conversation behavior.
 
-A runtime-required case that is `NOT_EXECUTED`, `SKIPPED`, `INDETERMINATE` or otherwise lacks expected behavioral evidence prevents `RUNTIME_BEHAVIORAL_PROOF = PASS`.
+Required cases that are `NOT_EXECUTED`, `SKIPPED`, `INDETERMINATE` or failed prevent runtime PASS.
 
-Neither specification quality nor candidate-head feasibility may be relabeled as runtime behavioral PASS.
+Specification quality or candidate-head feasibility is not runtime PASS.
 
-## 14. Acceptance criteria
+## 15. Acceptance criteria
 
-A hybrid specialist bootstrap is behaviorally acceptable only if it can demonstrate all of the following:
+A hybrid specialist is acceptable only if it demonstrates:
 
-1. one ordered hybrid bootstrap flow regardless of how project identity is supplied;
-2. deterministic project resolution from registered identifiers;
-3. live numbered enumeration when no project identifier is supplied;
-4. transient menu-bound numeric mapping with no hard-coded project numbers;
-5. explicit separation between project listing, project-local specialist readiness and task readiness;
-6. no fuzzy project inference for material work;
-7. fail-closed behavior for every mandatory state in section 9;
-8. exact separation between project selection, project context readiness and mutation authorization;
-9. no cross-project context contamination after a project switch;
-10. explicit task/target/environment-bound readiness receipt before substantive project-specific work;
-11. bounded connection/bootstrap readiness when no substantive task has yet been supplied;
-12. deterministic and mutually distinguishable `READY`, `LIMITED` and `BLOCKED` semantics;
-13. receipt invalidation/revalidation after material task/ref/target/environment/authority/evidence changes;
-14. no retroactive `READY` after a failed bootstrap unless the missing evidence is actually resolved in a new attempt;
-15. explicit dual-ref treatment for candidate-head proof;
-16. fresh-conversation repeatability;
-17. explicit separation between spec/candidate-head proof and runtime behavioral proof;
-18. no runtime PASS while any runtime-required canonical case remains unexecuted or failed.
+1. one ordered flow regardless of how project identity/task are supplied;
+2. deterministic project resolution;
+3. live numbered enumeration when project is absent;
+4. transient menu-bound numeric mapping;
+5. project selection stops before consumer-project materialization when task is absent;
+6. no Context Readiness Receipt for selection-only interaction;
+7. task arrival resumes the same flow and triggers only task-material project loading without suppressing canonically mandatory project-bootstrap sources;
+8. project+task supplied together traverses the same stages without an artificial wait;
+9. explicit separation among project listing, selection, bootstrap, specialist readiness, context readiness and authority;
+10. no fuzzy project inference;
+11. fail-closed behavior for material unresolved states;
+12. cross-project isolation;
+13. task/target/environment-bound receipts only for substantive work;
+14. deterministic `READY`, `LIMITED`, `BLOCKED`;
+15. proportional revalidation after material changes;
+16. historical failures preserved without retroactive PASS;
+17. candidate/canonical refs preserved when applicable;
+18. fresh-conversation repeatability;
+19. proof-level separation;
+20. no runtime PASS while any runtime-required case remains unexecuted or failed.
 
-The canonical behavioral cases are defined in `tests/behavioral/HYBRID_SPECIALIST_BOOTSTRAP_TESTS.md`.
+Canonical behavioral cases are defined in `tests/behavioral/HYBRID_SPECIALIST_BOOTSTRAP_TESTS.md`.

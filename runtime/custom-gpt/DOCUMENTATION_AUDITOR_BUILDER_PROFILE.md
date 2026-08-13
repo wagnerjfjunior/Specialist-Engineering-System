@@ -1,17 +1,19 @@
 # SES — Documentation Auditor Custom GPT Builder Profile
 
-**Status:** RUNTIME_CANDIDATE_V0_3 / BUILDER_PROFILE / NOT_YET_APPLIED
+**Status:** RUNTIME_CANDIDATE_V0_4 / BUILDER_PROFILE / NOT_YET_APPLIED
 **ARCHETYPE_ID:** `documentation-auditor`
 
 ## 1. Purpose
 
-Version the intended Custom GPT configuration for the SES Documentation Auditor without claiming external Builder application or runtime behavioral PASS.
+Version the intended Custom GPT configuration for `SES — Documentation Auditor` without claiming external Builder application or runtime behavioral PASS.
 
-The Builder Instructions field has a hard operational size constraint. Therefore the runtime uses a compact bootstrap/guardrail kernel in Instructions and loads the full specialist method live from canonical SES sources.
+The Builder uses a compact bootstrap/guardrail kernel in the **Instructions** field and loads the full specialist method live from canonical SES sources.
 
 `COMPACT_KERNEL != FULL_ARCHETYPE`
 
-The compact kernel must be sufficient to resolve and enforce the canonical loader, standardized hybrid project-entry flow, authority, evidence-integrity, retrieval-resilience, mutation and anti-overclaim boundaries before material work. Detailed Evidence Engineering method remains versioned in the archetype/Core contracts and is loaded live.
+The Builder Instructions size constraint applies only to the text actually copied into the Builder **Instructions** field. It does not impose an 8,000-character limit on SES Core contracts, archetypes, profiles, tests, continuity files, Project Adapters or consumer-project sources loaded later by the runtime.
+
+`BUILDER_INSTRUCTIONS_SIZE_CONSTRAINT != SES_DOCUMENT_SIZE_CONSTRAINT`
 
 ## 2. Builder fields
 
@@ -36,37 +38,54 @@ Runtime packaging constraints:
 ```text
 BUILDER_INSTRUCTIONS_HARD_LIMIT: <= 8000 characters
 SES_OPERATIONAL_BUDGET: <= 7500 characters
-CURRENT_COMPACT_KERNEL_MEASURED_COUNT: 7321 characters
+CURRENT_COMPACT_KERNEL_MEASURED_COUNT: 7396 characters
 COUNT_METHOD: Unicode code-point count of repository text content
+SCOPE_OF_SIZE_CONSTRAINT: Builder Instructions field only
 ```
 
-The operational budget intentionally leaves margin for Builder/UI counting differences and future bounded maintenance. Any kernel edit must re-measure the complete final file before Builder application. A kernel over the 7,500-character SES budget requires deliberate review; a kernel over the Builder hard limit must not be applied.
+The operational budget leaves margin for Builder/UI counting differences.
 
-The compact Instructions kernel must bootstrap the full method live through:
+The compact kernel must bootstrap the full method live through:
 
-`SES main → docs/bootstrap/INDEX.md → archetypes/REGISTRY.md → documentation-auditor archetype → HYBRID_SPECIALIST_BOOTSTRAP_CONTRACT when project work is involved → registered consumer-project bootstrap/rules → task evidence`.
+`SES main → docs/bootstrap/INDEX.md → archetypes/REGISTRY.md → documentation-auditor archetype → HYBRID_SPECIALIST_BOOTSTRAP_CONTRACT → task-activated project bootstrap/rules → task evidence`.
 
-Do not move overflow instructions into Conversation Starters or permanent Builder Knowledge as a substitute for the canonical live loader.
+Do not move overflow behavioral requirements into Conversation Starters or permanent Builder Knowledge.
 
 ### Conversation starters
 
 1. `# CLIQUE PARA INICIAR`
 
-The starter is UX input only. It supplies `PROJECT_IDENTIFIER: NOT_SUPPLIED` to the same ordered hybrid bootstrap flow used when a user names a project directly.
+The starter supplies only `PROJECT_IDENTIFIER: NOT_SUPPLIED`.
 
-When no project identifier is supplied, the runtime resolves SES live, reads the current Project Registry and displays the `ACTIVE` registered projects by `CANONICAL_NAME` as a numbered menu. The numeric mapping is transient and bound to that exact menu; project numbers must never be hard-coded.
+No project supplied:
+- resolve SES live/bootstrap/archetype;
+- read the live Project Registry;
+- show `ACTIVE` projects by `CANONICAL_NAME`;
+- bind menu numbers transiently to `PROJECT_ID`;
+- wait for a valid selection.
 
-When the user already names a project, that identifier enters the same project-resolution stage. The menu is unnecessary, but no mandatory bootstrap stage is skipped.
+Project already supplied:
+- validate it in the same project-resolution stage;
+- no alternate bootstrap path is created.
 
-A project appearing in the menu is not by itself proof that project-local specialist rules, task readiness or authority are established:
+After project selection, if no substantive task exists:
 
-`PROJECT_LISTED != PROJECT_SPECIALIST_READY`
+```text
+PROJECT_SELECTION_STATUS: RESOLVED
+TASK_SCOPE: NOT_YET_SUPPLIED
+```
 
-`PROJECT_SELECTED != PROJECT_CONTEXT_READY`
+the runtime must stop before consumer-project materialization and ask for the task.
 
-If the user requested only project connection/bootstrap, the runtime must not emit blanket readiness for unspecified future work. A later substantive task requires task-specific scope and a new or revalidated task-bound readiness receipt.
+It must **not** yet read the Project Adapter, consumer-project main, project bootstrap, local specialist rules, continuity, authority/governance or project evidence, and must not emit a Context Readiness Receipt.
 
-Conversation starters are UX only. They are not configuration authority and must not carry required behavior that is absent from canonical SES contracts/Instructions.
+```text
+PROJECT_SELECTED != PROJECT_BOOTSTRAPPED
+PROJECT_SELECTED != PROJECT_SPECIALIST_READY
+PROJECT_SELECTED != PROJECT_CONTEXT_READY
+```
+
+When a substantive task arrives, the same flow continues into task-proportional project materialization, preserving every source that the canonical project bootstrap marks mandatory for all substantive work, and a task-bound readiness receipt.
 
 ### Knowledge
 
@@ -90,7 +109,7 @@ Do not invent an Apps toggle state when the current Builder UI does not expose t
 
 ### Actions
 
-Reuse the existing read-only schema:
+Reuse:
 
 `runtime/custom-gpt/GITHUB_READONLY_ACTION.openapi.yaml`
 
@@ -98,17 +117,15 @@ No Action mutation is part of this profile.
 
 ### Action authentication
 
-Configure authentication separately in the Builder UI:
-
 ```text
 Type: API key
 Mode: Bearer
 Secret value: Builder UI only / never committed
 ```
 
-The secret/token must never be written to SES, consumer repositories, prompts, logs or evidence records.
+Never record the credential value.
 
-Authentication evidence must capture the **non-secret effective identity and access boundary**, not merely the transport mode. Before runtime proof, record when observable:
+Before runtime proof capture, when observable:
 
 ```text
 AUTHENTICATED_PRINCIPAL_LOGIN
@@ -121,44 +138,39 @@ ACCESS_SCOPE_EVIDENCE_LIMITATION
 ```
 
 Rules:
-
-- never record the credential value;
-- prefer an authenticated `/user`-style smoke for principal identity;
-- record credential/repository scope only as non-secret metadata exposed by the Builder/provider;
-- if token scopes or repository allowlists are not exposed, record `NOT_EXPOSED` rather than guessing and perform bounded access smokes against the repositories required by the proof;
-- positive bounded access smokes prove only that the required repositories are accessible; they do **not** prove exclusivity, absence of access to other repositories, or least privilege;
-- when scope metadata is not exposed, record `ACCESS_SCOPE_EVIDENCE_LIMITATION: REQUIRED_ACCESS_PROVEN / EXCESS_ACCESS_NOT_ASSESSED` and make no broader access-isolation claim;
-- a principal change, credential-scope change, repository-access-scope change, or unexplained credential replacement invalidates affected runtime evidence until the effective access boundary is re-established;
-- identical `API_KEY / BEARER` mode alone is never sufficient to reuse prior runtime evidence after a credential change.
+- prefer authenticated `/user`-style identity smoke;
+- scope/allowlist metadata not exposed -> `NOT_EXPOSED`, never guess;
+- use bounded access smokes against repositories required by the proof;
+- positive access proves required access only, not exclusivity/least privilege;
+- when broader scope is not exposed, record `REQUIRED_ACCESS_PROVEN / EXCESS_ACCESS_NOT_ASSESSED`;
+- material principal/auth/scope/access changes invalidate affected runtime evidence.
 
 ### Visibility
 
-`PRIVATE / APENAS PARA MIM` until runtime behavioral certification and separate publication decision.
+`PRIVATE / APENAS PARA MIM` until runtime behavioral certification and a separate publication decision.
 
 ### Model
 
-Record the actually selected Builder model in the fingerprint. Do not freeze a transient model name as a permanent SES architectural dependency.
+Record the actually selected Builder model in the fingerprint. Do not freeze a transient model name as a permanent SES dependency.
 
 ## 3. Runtime resilience requirements
 
-Before runtime behavioral proof, the candidate must apply:
+Before runtime behavioral proof, apply:
 
 `core/protocols/EVIDENCE_RETRIEVAL_RESILIENCE_CONTRACT.md`
 
-Mandatory behaviors include:
-
+Required behaviors include:
 - fail-closed large-file handling;
-- `NOT_READ` when a retrieval fails before any file content is recovered;
-- `PARTIAL_READ` only when some content was recovered but complete reading/EOF was not proven;
+- `NOT_READ` when no file content is recovered;
+- `PARTIAL_READ` when some content is recovered but complete/EOF proof is absent;
 - no `INTEGRAL_READ` without start-to-EOF proof;
-- chunk coverage union semantics;
-- manual/alternate-source fallback when chunked live retrieval is unavailable;
-- recursive-tree truncation detection;
-- directory-by-directory tree fallback;
-- progressive disclosure under context-budget pressure;
+- chunk coverage semantics only when real bounded chunk capability exists;
+- manual/alternate-source fallback when needed;
+- recursive-tree truncation detection and directory walk fallback;
+- progressive disclosure under context pressure;
 - no repository-wide ingestion by default.
 
-The current Action does not expose a dedicated bounded line-range/chunk loader. The Builder must not pretend otherwise.
+The current Action does not expose a dedicated bounded line-range/chunk loader. Do not pretend otherwise.
 
 ## 4. Fingerprint to capture before testing
 
@@ -187,22 +199,30 @@ SELECTED_MODEL
 BUILDER_VERSION_IDENTIFIER when available
 ```
 
-Before testing, verify:
+Before testing verify:
 
 ```text
 INSTRUCTIONS_COMPLETE_COPY: YES
 INSTRUCTIONS_CHARACTER_COUNT <= 7500
+CONVERSATION_STARTERS: exactly 1 / # CLIQUE PARA INICIAR
 KNOWLEDGE_OVERFLOW_SUBSTITUTE: NO
 STARTER_OVERFLOW_SUBSTITUTE: NO
 ```
 
-`ACTION_AUTH_MODE` must record the non-secret configuration (`API_KEY / BEARER`) and never the credential value.
+A material Builder/kernel/action/model/auth/principal/access change invalidates affected evidence.
 
-If credential scope or repository allowlist metadata is not exposed, use explicit `NOT_EXPOSED` plus bounded access-smoke evidence; do not silently omit those fields or convert positive access tests into a least-privilege claim.
+## 5. Observed pre-v0.4 runtime evidence
 
-A material Builder/kernel/action/model/auth-mode/principal/credential-scope/repository-access-scope change invalidates affected runtime evidence. A character-budget failure or truncated Instructions copy blocks Builder fingerprint completeness and runtime certification.
+User-supplied runtime observations on 2026-08-13 showed the then-configured Documentation Auditor using older Builder Instructions could:
+- render the new live project menu after Core v0.2 became canonical;
+- resolve FECH.AI and Blogs/SEO after numeric selection;
+- bound readiness to connection/bootstrap.
 
-## 5. Lifecycle separation
+Those observations are preserved as evidence that live Core loading influenced runtime behavior, but they do **not** prove v0.4 Builder application.
+
+They also exposed an operational defect: numeric project selection triggered consumer-project bootstrap before a substantive task existed, causing user-observed waits of roughly two minutes. That behavior is superseded by v0.4 target semantics and must not be promoted to v0.4 PASS.
+
+## 6. Lifecycle separation
 
 ```text
 PROFILE_VERSIONED

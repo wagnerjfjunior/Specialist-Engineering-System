@@ -6,13 +6,13 @@
 **SFJM method source:** `wagnerjfjunior/StopJuniorMode@d03d477c3b329aa973a38ec4e949c249fa017929`  
 **Continuity contract:** `core/protocols/PROJECT_CONTINUITY_CONTRACT.md`  
 **Authoritative next action:** `docs/NEXT_SAFE_ACTION.md`  
-**Next action ID:** `reconcile-standardized-project-entry-runtime-targets-v1`
+**Next action ID:** `apply-deferred-project-materialization-runtime-targets-v1`
 
 ## 1. Purpose
 
-Preserve the minimum durable operational meaning required to resume SES work without turning conversation history into authority or duplicating volatile live state.
+Preserve minimum durable operational meaning for SES without making conversation history authoritative or duplicating volatile consumer-project state.
 
-This handoff is for SES itself. Consumer-project bootstrap, truth, continuity and authority remain project-owned.
+Consumer-project truth, continuity and authority remain project-owned.
 
 ## 2. Reading order
 
@@ -21,50 +21,71 @@ This handoff is for SES itself. Consumer-project bootstrap, truth, continuity an
 3. read `docs/PROJECT_STATUS.md`;
 4. read `docs/NEXT_SAFE_ACTION.md`;
 5. read `docs/BLOCKED_ACTIONS.md`;
-6. then read task-material contracts, runtime files and live evidence.
-
-For project-specific work, return to the SES bootstrap flow and resolve the project through `projects/REGISTRY.md` and its Project Adapter.
+6. then read task-material contracts/runtime evidence.
 
 ## 3. Confirmed durable state
 
-1. SES remains project-agnostic specialist-engineering infrastructure.
-2. Active archetypes are `saas-architect` and `documentation-auditor`.
-3. `SES — SaaS Architect` v0.1 has a preserved versioned `RUNTIME_BEHAVIORAL_PROOF = PASS`, T01–T29 = 29/29, recorded in `tests/runtime/evidence/HYBRID_SAAS_ARCHITECT_RUNTIME_PROOF_2026-08-12.md`.
-4. SaaS Architect v0.2 is a new target caused by standardized project-entry changes; its runtime proof is not established and must not borrow the v0.1 PASS.
-5. `SES — Documentation Auditor` v0.3 is the primary current runtime target; its runtime proof is not established.
-6. Both affected target Builders standardize the starter `# CLIQUE PARA INICIAR`, but a starter observation does not establish complete target-kernel application.
-7. The standardized hybrid entry model is one ordered flow: a missing project identifier produces a live numbered project menu; a supplied identifier enters the same resolution stage. No mandatory bootstrap stage is skipped.
-8. Project registration is discovery only: `PROJECT_LISTED != PROJECT_SPECIALIST_READY`.
-9. Runtime proof, external Builder application, publication, consumer-project equivalence and legacy retirement remain separate lifecycle states.
+1. SES remains project-agnostic.
+2. Active archetypes: `saas-architect`, `documentation-auditor`.
+3. SaaS Architect v0.1 historical runtime PASS remains preserved at T01–T29 = 29/29.
+4. SaaS Architect v0.2 was a target version but was not fully applied; user evidence shows external Builder Instructions remained v0.1 and the first new-starter P01 attempt failed.
+5. SaaS Architect v0.3 is the new target.
+6. Documentation Auditor external Builder was observed with v0.2 Instructions while later Core behavior enabled the new menu; v0.4 is the new target.
+7. Both external Builders use `# CLIQUE PARA INICIAR`.
+8. Runtime exploration showed project selection could trigger consumer-project materialization before a substantive task, creating avoidable latency.
+9. New canonical intent: selection resolves only `PROJECT_ID`; no Project Adapter/project main/bootstrap/local specialist/continuity/authority/evidence or readiness receipt until a substantive task exists.
+10. Shared runtime-required project-entry cases are P01–P10 for the new targets.
+11. External Builder application, runtime proof, publication, consumer equivalence and retirement remain separate lifecycle states.
 
-## 4. Live state versus recorded state
+## 4. Core interaction invariant
+
+```text
+# CLIQUE PARA INICIAR
+-> SES live/bootstrap/archetype
+-> Project Registry
+-> numbered menu
+-> user selects
+-> PROJECT_SELECTED
+-> WAIT FOR TASK
+
+TASK ARRIVES
+-> same flow resumes
+-> task-proportional project materialization
+-> task-bound Context Readiness Receipt
+-> work
+```
+
+Direct project identifier without task reaches the same `PROJECT_SELECTED / WAIT FOR TASK` state.
+
+`NO SUBSTANTIVE TASK -> NO CONSUMER-PROJECT MATERIALIZATION`
+
+## 5. Historical runtime evidence preserved
+
+User observations on 2026-08-13:
+- Documentation Auditor menu/selection worked with older Builder Instructions after Core v0.2 was canonical;
+- SaaS Architect first starter attempt with v0.1 Instructions failed to present the project menu;
+- later selections that materialized projects before task showed user-observed waits around two minutes (Documentation Auditor) and 4m10s (SaaS Architect Blogs/SEO).
+
+These timings are not independently instrumented. They are preserved as user-observed evidence; P02/P03 use zero pre-task consumer-project calls as the deterministic regression criterion.
+
+## 6. Live state versus recorded state
 
 `LIVE_RESOLVED_STATE != MATERIAL_RECORDED_STATE`
 
-Resolve live whenever material, including SES refs, PR state, external Builder configuration, selected model, access boundary, publication state and consumer-project refs.
+Resolve live when material: SES refs, PR state, external Builder config, model, access boundary, publication state and consumer-project refs.
 
-Do not rewrite historical proof because a new target version exists. Do not promote historical proof into a new target version without new evidence.
+Do not rewrite historical proof because a new target version exists.
 
-## 5. Active risks
+## 7. Current next action
 
-- confusing active archetype resolution with runtime certification;
-- treating a starter/profile/kernel target as proof of external Builder application;
-- reusing v0.1 SaaS proof as v0.2 proof or downgrading the historical v0.1 PASS;
-- treating registered projects as automatically compatible with a specialist before project-local rules resolve;
-- retaining temporary authority-test capability after controlled tests;
-- importing consumer-project truth or authority into SES;
-- automatic propagation of SES changes into external Builders or consumer projects.
+Authoritative source: `docs/NEXT_SAFE_ACTION.md`.
 
-## 6. Current next action
+Derived summary: after this change is canonical, apply/reconcile Documentation Auditor v0.4 then SaaS Architect v0.3, with explicit Product Authority required for external Builder mutation, then run targeted P01/P02/P03/P09/P10 regressions before broader proof.
 
-The authoritative record is `docs/NEXT_SAFE_ACTION.md`.
+This handoff does not authorize publication, consumer-project mutation, runtime certification or legacy retirement.
 
-Derived summary: after the standardized project-entry change is canonical on SES `main`, reconcile the actual external Builders against Documentation Auditor v0.3 first and SaaS Architect v0.2 second, preserving the historical SaaS v0.1 PASS separately.
-
-This continuity record does not authorize external Builder mutation, publication, consumer-project mutation, runtime certification or legacy retirement.
-
-## 7. Short resume prompt
+## 8. Short resume prompt
 
 ```text
-SES → resolve main live → bootstrap → continuity → authoritative NEXT_SAFE_ACTION → preserve version-bound historical proof → reconcile DA v0.3 then SaaS v0.2 external Builders → no automatic mutation or runtime PASS.
+SES -> resolve main live -> bootstrap -> continuity -> preserve SaaS v0.1 PASS + v0.2 FAIL history -> new targets DA v0.4 / SaaS v0.3 -> no task means no consumer-project materialization -> apply Builders only with explicit authorization -> run P01/P02/P03/P09/P10 -> no automatic runtime PASS.
 ```
