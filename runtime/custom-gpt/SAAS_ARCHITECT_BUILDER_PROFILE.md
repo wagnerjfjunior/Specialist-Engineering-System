@@ -42,7 +42,7 @@ The Builder Instructions field must contain the complete kernel content, not a p
 TARGET_KERNEL_STATUS: RUNTIME_CANDIDATE_V0_3
 BUILDER_INSTRUCTIONS_HARD_LIMIT: <= 8000 characters
 SES_OPERATIONAL_BUDGET: <= 7500 characters
-CURRENT_COMPACT_KERNEL_MEASURED_COUNT: 6810 characters
+CURRENT_COMPACT_KERNEL_MEASURED_COUNT: 6839 characters
 COUNT_METHOD: Unicode code-point count of repository text content
 SCOPE_OF_SIZE_CONSTRAINT: Builder Instructions field only
 ```
@@ -86,7 +86,7 @@ Project plus substantive task:
 → same project-resolution stage
 → task materiality classification
 → Project Adapter / project bootstrap / local specialist
-→ only task-material sources
+→ task-material plus canonically mandatory sources
 → Context Readiness Receipt
 → bounded architecture work
 ```
@@ -193,7 +193,7 @@ STARTER_OVERFLOW_SUBSTITUTE: NO
 
 ## 4. Historical v0.1 evidence — certified PASS preserved
 
-Canonical durable evidence:
+The v0.1 runtime behavioral certification remains a prior-version proof obligation already satisfied. Canonical durable evidence:
 
 `tests/runtime/evidence/HYBRID_SAAS_ARCHITECT_RUNTIME_PROOF_2026-08-12.md`
 
@@ -214,9 +214,49 @@ HISTORICAL_FINAL_ACTION_SURFACE: READ_ONLY / GET-only
 HISTORICAL_BASELINE_RESTORED_AFTER_T16_T28: YES
 ```
 
-Later target changes do not downgrade this historical PASS.
+Earlier candidate-head evidence that preceded canonical runtime certification also remains preserved:
 
-## 5. v0.2 target and observed failure — preserved
+```text
+HISTORICAL_CANDIDATE_EFFECTIVE_REF: f55a6edc9674f8aa96438082e5ca3166a6df7e03
+HISTORICAL_BUILDER_APPLICATION_OBSERVED: YES
+HISTORICAL_PREVIEW_EXECUTION_OBSERVED: YES
+HISTORICAL_BUILDER_FINGERPRINT_COMPLETE: YES
+HISTORICAL_GITHUB_AUTH_SMOKE: PASS
+HISTORICAL_CORE_GITHUB_LOADER_SMOKE: PASS
+HISTORICAL_T30: PASS @ f55a6edc9674f8aa96438082e5ca3166a6df7e03
+HISTORICAL_FECHAI_CANDIDATE_E2E: PASS @ f55a6edc9674f8aa96438082e5ca3166a6df7e03
+```
+
+Later target changes do not downgrade this historical PASS and do not promote it into v0.2/v0.3 proof.
+
+## 5. Historical failed/indeterminate observations — preserved
+
+The following earlier development observations remain historical evidence:
+
+```text
+INITIAL_GENERALIZED_ACTION:
+- Builder parser failures occurred before schema correction.
+
+EARLY_GET_COMMIT_PREVIEW:
+- one request targeting openai/openai-python@main returned ClientResponseError.
+
+EARLY_AUTH_OR_TOOL_ATTEMPTS:
+- some getAuthenticatedGitHubUser attempts failed;
+- some Preview sessions reported the GitHub tool unavailable.
+
+IDENTITY_ANOMALY:
+- one Preview response reported authenticated user seomaster2020;
+- later controlled tests authenticated the intended principal wagnerjfjunior;
+- the anomaly remains INDETERMINATE, not retroactively PASS or proven credential-isolation failure.
+
+ARBITRARY_TARGET_OBSERVATION:
+- one early Preview selected openai/openai-python without canonical SES project resolution;
+- later controlled evidence used canonical/explicit targets.
+```
+
+A later successful run never retroactively converts these attempts into PASS.
+
+## 6. v0.2 target and observed failure — preserved
 
 v0.2 standardized the single starter and project-entry flow but was not fully applied to the external Builder before being superseded.
 
@@ -229,7 +269,7 @@ FULL_V0_2_BUILDER_APPLICATION: NO
 V0_2_RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
 ```
 
-A runtime attempt using `# CLIQUE PARA INICIAR` with the old v0.1 Instructions returned a generic request for the user to provide a project instead of the live numbered project menu.
+A runtime attempt using `# CLIQUE PARA INICIAR` with the old v0.1 Instructions returned generic onboarding rather than the required live numbered project menu.
 
 Preserve:
 
@@ -241,7 +281,7 @@ RETROACTIVE_PASS: PROHIBITED
 
 A later successful v0.3 execution will not rewrite this failure.
 
-## 6. Project-selection latency finding
+## 7. Project-selection latency finding
 
 User-run tests after Core v0.2 showed that once selection did work, both specialists materialized consumer projects before a substantive task existed. User-observed waits were approximately:
 - Documentation Auditor selections: about two minutes;
@@ -249,15 +289,15 @@ User-run tests after Core v0.2 showed that once selection did work, both special
 
 These are user-observed wall times, not independently instrumented platform timings.
 
-The architectural finding is nevertheless evidence-supported by the returned behavior: selection triggered project `main`, bootstrap, local specialist and authority/continuity resolution before any substantive task.
+The architectural finding is evidence-supported by the returned behavior: selection triggered project `main`, bootstrap, local specialist and authority/continuity resolution before any substantive task.
 
 v0.3 corrects this by requiring:
 
 `NO SUBSTANTIVE TASK -> NO CONSUMER-PROJECT MATERIALIZATION`
 
-## 7. v0.3 proof gate
+## 8. v0.3 proof gate
 
-The actual configured v0.3 runtime must pass the runtime-required cases in `tests/behavioral/HYBRID_SPECIALIST_BOOTSTRAP_TESTS.md`, including the selection-deferral cases P01–P10, under the v0.3 fingerprint before v0.3 behavioral PASS may be considered.
+The actual configured v0.3 runtime must pass the runtime-required cases in `tests/behavioral/HYBRID_SPECIALIST_BOOTSTRAP_TESTS.md`, including selection-deferral cases P01–P10, under the v0.3 fingerprint before v0.3 behavioral PASS may be considered.
 
 Creating/updating the external Custom GPT is a separate Product Authority mutation.
 
