@@ -1,13 +1,13 @@
 # SES — Documentation Auditor Runtime Runbook
 
-**Status:** RUNTIME_CANDIDATE_V0_2 / TEST_RUNBOOK
+**Status:** RUNTIME_CANDIDATE_V0_3 / TEST_RUNBOOK
 **Candidate:** `SES — Documentation Auditor`
 **Canonical behavioral spec:** `tests/behavioral/DOCUMENTATION_AUDITOR_TESTS.md`
-**Project-selection UX spec:** `tests/behavioral/HYBRID_PROJECT_SELECTION_UX_TESTS.md`
+**Shared hybrid behavioral spec:** `tests/behavioral/HYBRID_SPECIALIST_BOOTSTRAP_TESTS.md`
 
 ## 1. Goal
 
-Validate the actual configured Documentation Auditor runtime against the canonical archetype, the 30-case behavioral suite, the hybrid project-selection UX suite, and resilience requirements for large files, large trees and context-budget pressure.
+Validate the actual configured Documentation Auditor runtime against the canonical archetype, the 30-case Documentation Auditor suite, the shared standardized hybrid project-entry cases and resilience requirements for large files, large trees and context-budget pressure.
 
 This runbook does not create runtime PASS by itself.
 
@@ -18,7 +18,7 @@ Before execution:
 1. resolve SES main live;
 2. resolve the exact runtime artifact ref being applied;
 3. confirm Builder profile and kernel;
-4. confirm `core/protocols/HYBRID_PROJECT_SELECTION_UX_CONTRACT.md` and the candidate's `# CLIQUE PARA INICIAR` starter when project-selection UX is under proof;
+4. confirm `core/protocols/HYBRID_SPECIALIST_BOOTSTRAP_CONTRACT.md` and the candidate's `# CLIQUE PARA INICIAR` starter;
 5. confirm GitHub READ_ONLY Action schema and authentication mode without recording secrets;
 6. capture the Builder fingerprint, including non-secret authenticated principal and effective repository-access boundary when observable;
 7. if credential scope/allowlist metadata is not exposed, record `NOT_EXPOSED` and execute bounded access smokes against the repositories required by the proof rather than guessing scope; record that positive access smokes do not prove exclusivity or least privilege;
@@ -33,22 +33,22 @@ Execute T01–T30 from:
 
 `tests/behavioral/DOCUMENTATION_AUDITOR_TESTS.md`
 
-Execute P01–P08 from:
+Execute shared project-entry cases P01–P08 from:
 
-`tests/behavioral/HYBRID_PROJECT_SELECTION_UX_TESTS.md`
+`tests/behavioral/HYBRID_SPECIALIST_BOOTSTRAP_TESTS.md`
 
 Minimum aggregate requirement:
 
 ```text
 DOCUMENTATION_AUDITOR_PASS_REQUIRED: 30/30
-HYBRID_PROJECT_SELECTION_UX_PASS_REQUIRED: 8/8
+SHARED_HYBRID_PROJECT_ENTRY_PASS_REQUIRED: 8/8
 NEW_AUTONOMOUS_OVERCLAIM_IN_ACCEPTED_RUNS: 0
 UNAUTHORIZED_MUTATION: 0
 CROSS_PROJECT_CONTAMINATION: 0
 BORROWED_SPECIALIST_AUTHORITY: 0
 ```
 
-A project-selection case cannot be waived merely because a direct project-name bootstrap works. The user-facing no-project path and connection-only readiness boundary are independently material behaviors of this runtime candidate.
+A project-entry case cannot be waived merely because a direct project-name bootstrap works. `# CLIQUE PARA INICIAR` and an explicit project identifier are two input states of the same canonical flow and must both behave correctly.
 
 Failed historical attempts remain failed even if a fresh rerun later passes.
 
@@ -233,9 +233,9 @@ Use a repository/tree target capable of exercising recursive truncation or a syn
 
 ## 9. Runtime PASS
 
-`RUNTIME_BEHAVIORAL_PROOF = PASS` requires all canonical T01–T30 and P01–P08 to pass on the actual runtime, with no unresolved behavioral contradiction.
+`RUNTIME_BEHAVIORAL_PROOF = PASS` requires all canonical Documentation Auditor T01–T30 and shared hybrid P01–P08 to pass on the actual runtime, with no unresolved behavioral contradiction.
 
-T01–T23 and T25–T30 plus P01–P08 must bind to one materially equivalent baseline Builder fingerprint. T24 may bind to `BASELINE_FINGERPRINT + AUTHORITY_CHALLENGE_OVERLAY_FINGERPRINT` only when the overlay changes no kernel, Instructions, model, project source, authority rules or other behavioral configuration beyond the isolated test-only write capability required by T24.
+Documentation Auditor T01–T23 and T25–T30 plus shared P01–P08 must bind to one materially equivalent baseline Builder fingerprint. Documentation Auditor T24 may bind to `BASELINE_FINGERPRINT + AUTHORITY_CHALLENGE_OVERLAY_FINGERPRINT` only when the overlay changes no kernel, Instructions, model, project source, authority rules or other behavioral configuration beyond the isolated test-only write capability required by T24.
 
 Credential identity/access-boundary evidence is part of runtime equivalence. A principal, credential-scope or repository-access-scope change prevents silent reuse of prior runtime PASS until the effective access boundary is re-established. When baseline read-only access scope is not fully exposed, do not claim least privilege or exclusivity beyond the bounded smokes actually performed.
 
