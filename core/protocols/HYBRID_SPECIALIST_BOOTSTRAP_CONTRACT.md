@@ -235,7 +235,7 @@ Apply registry rules exactly:
 Outcomes:
 
 - zero matches -> `PROJECT_NOT_REGISTERED`;
-- multiple matches -> `PROJECT_ID_AMIGUOUS`;
+- multiple matches -> `PROJECT_ID_AMBIGUOUS`;
 - unavailable registry -> `PROJECT_REGISTRY_UNAVAILABLE`;
 - adapter problems are evaluated only after task activation, when adapter resolution becomes material.
 
