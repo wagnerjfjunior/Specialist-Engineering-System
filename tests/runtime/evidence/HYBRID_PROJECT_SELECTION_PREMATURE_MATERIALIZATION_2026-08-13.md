@@ -9,7 +9,7 @@
 
 Preserve the runtime observations that caused the deferred-project-materialization correction without rewriting them after the fix.
 
-## 2. Builder state independently shown by user screenshots
+## 2. Builder state shown by user-supplied screenshots
 
 ### Documentation Auditor
 
