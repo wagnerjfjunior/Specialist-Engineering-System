@@ -68,7 +68,27 @@ Mode: Bearer
 Secret value: Builder UI only / never committed
 ```
 
-The secret/token must never be written to SES, consumer repositories, prompts, logs or evidence records. Authentication configuration is part of the runtime fingerprint, but the secret value is not.
+The secret/token must never be written to SES, consumer repositories, prompts, logs or evidence records.
+
+Authentication evidence must capture the **non-secret effective identity and access boundary**, not merely the transport mode. Before runtime proof, record when observable:
+
+```text
+AUTHENTICATED_PRINCIPAL_LOGIN
+AUTHENTICATED_PRINCIPAL_ID
+AUTH_MODE = API_KEY / BEARER
+CREDENTIAL_SCOPE_SUMMARY
+REPOSITORY_ACCESS_SCOPE / ALLOWLIST SUMMARY
+REQUIRED_REPOSITORY_ACCESS_SMOKE[]
+```
+
+Rules:
+
+- never record the credential value;
+- prefer an authenticated `/user`-style smoke for principal identity;
+- record credential/repository scope only as non-secret metadata exposed by the Builder/provider;
+- if token scopes or repository allowlists are not exposed, record `NOT_EXPOSED` rather than guessing and perform bounded access smokes against the repositories required by the proof;
+- a principal change, credential-scope change, repository-access-scope change, or unexplained credential replacement invalidates affected runtime evidence until the effective access boundary is re-established;
+- identical `API_KEY / BEARER` mode alone is never sufficient to reuse prior runtime evidence after a credential change.
 
 ### Visibility
 
@@ -113,6 +133,11 @@ ACTION_NAME
 ACTION_SCHEMA_REF
 ACTION_SCHEMA_BLOB
 ACTION_AUTH_MODE
+AUTHENTICATED_PRINCIPAL_LOGIN
+AUTHENTICATED_PRINCIPAL_ID
+CREDENTIAL_SCOPE_SUMMARY
+REPOSITORY_ACCESS_SCOPE
+REQUIRED_REPOSITORY_ACCESS_SMOKE[]
 VISIBILITY
 SELECTED_MODEL
 BUILDER_VERSION_IDENTIFIER when available
@@ -120,7 +145,9 @@ BUILDER_VERSION_IDENTIFIER when available
 
 `ACTION_AUTH_MODE` must record the non-secret configuration (`API_KEY / BEARER`) and never the credential value.
 
-A material Builder/kernel/action/model/auth-mode change invalidates affected runtime evidence.
+If credential scope or repository allowlist metadata is not exposed, use explicit `NOT_EXPOSED` plus bounded access-smoke evidence; do not silently omit those fields.
+
+A material Builder/kernel/action/model/auth-mode/principal/credential-scope/repository-access-scope change invalidates affected runtime evidence.
 
 ## 5. Lifecycle separation
 
