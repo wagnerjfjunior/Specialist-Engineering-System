@@ -1,11 +1,17 @@
 # SES — Documentation Auditor Custom GPT Builder Profile
 
-**Status:** RUNTIME_CANDIDATE_V0_1 / BUILDER_PROFILE / NOT_YET_APPLIED
+**Status:** RUNTIME_CANDIDATE_V0_2 / BUILDER_PROFILE / NOT_YET_APPLIED
 **ARCHETYPE_ID:** `documentation-auditor`
 
 ## 1. Purpose
 
 Version the intended Custom GPT configuration for the SES Documentation Auditor without claiming external Builder application or runtime behavioral PASS.
+
+The Builder Instructions field has a hard operational size constraint. Therefore the runtime uses a compact bootstrap/guardrail kernel in Instructions and loads the full specialist method live from canonical SES sources.
+
+`COMPACT_KERNEL != FULL_ARCHETYPE`
+
+The compact kernel must be sufficient to resolve and enforce the canonical loader, authority, evidence-integrity, retrieval-resilience, mutation and anti-overclaim boundaries before material work. Detailed Evidence Engineering method remains versioned in the archetype/Core contracts and is loaded live.
 
 ## 2. Builder fields
 
@@ -19,11 +25,28 @@ Version the intended Custom GPT configuration for the SES Documentation Auditor 
 
 ### Instructions
 
-Use the exact kernel versioned at:
+Use the exact compact kernel versioned at:
 
 `runtime/custom-gpt/DOCUMENTATION_AUDITOR_BUILDER_KERNEL.md`
 
-The Builder Instructions field must contain the kernel content, not a path-only placeholder or paraphrase.
+The Builder Instructions field must contain the **complete compact kernel content**, not a path-only placeholder, paraphrase, truncated copy or the full archetype.
+
+Runtime packaging constraints:
+
+```text
+BUILDER_INSTRUCTIONS_HARD_LIMIT: <= 8000 characters
+SES_OPERATIONAL_BUDGET: <= 7500 characters
+CURRENT_COMPACT_KERNEL_MEASURED_COUNT: 6358 characters
+COUNT_METHOD: Unicode code-point count of repository text content
+```
+
+The operational budget intentionally leaves margin for Builder/UI counting differences and future bounded maintenance. Any kernel edit must re-measure the complete final file before Builder application. A kernel over the 7,500-character SES budget requires deliberate review; a kernel over the Builder hard limit must not be applied.
+
+The compact Instructions kernel must bootstrap the full method live through:
+
+`SES main → docs/bootstrap/INDEX.md → archetypes/REGISTRY.md → documentation-auditor archetype → applicable Core protocols → registered consumer-project bootstrap/rules when project-specific`.
+
+Do not move overflow instructions into Conversation Starters or permanent Builder Knowledge as a substitute for the canonical live loader.
 
 ### Conversation starters
 
@@ -32,11 +55,13 @@ The Builder Instructions field must contain the kernel content, not a path-only 
 3. `Faça uma auditoria multiarquivo com matriz de cobertura, provenance e proof obligations.`
 4. `Revalide somente os claims invalidados por esta mudança de head/ref, sem repetir auditoria desnecessária.`
 
+Conversation starters are UX examples only. They are not configuration authority and must not carry required kernel behavior.
+
 ### Knowledge
 
 `EMPTY`
 
-Do not upload SES, FECH.AI, SEO or project files as permanent Builder Knowledge for this runtime candidate.
+Do not upload SES, FECH.AI, SEO or project files as permanent Builder Knowledge for this runtime candidate. Knowledge must not be used as an overflow channel for required Instructions or as a substitute for live canonical loading.
 
 ### Capabilities
 
@@ -129,6 +154,8 @@ GPT_NAME
 GPT_DESCRIPTION
 INSTRUCTIONS_REF
 INSTRUCTIONS_BLOB
+INSTRUCTIONS_CHARACTER_COUNT
+INSTRUCTIONS_COUNT_METHOD
 CONVERSATION_STARTERS
 KNOWLEDGE
 CAPABILITIES
@@ -147,11 +174,20 @@ SELECTED_MODEL
 BUILDER_VERSION_IDENTIFIER when available
 ```
 
+Before testing, verify:
+
+```text
+INSTRUCTIONS_COMPLETE_COPY: YES
+INSTRUCTIONS_CHARACTER_COUNT <= 7500
+KNOWLEDGE_OVERFLOW_SUBSTITUTE: NO
+STARTER_OVERFLOW_SUBSTITUTE: NO
+```
+
 `ACTION_AUTH_MODE` must record the non-secret configuration (`API_KEY / BEARER`) and never the credential value.
 
 If credential scope or repository allowlist metadata is not exposed, use explicit `NOT_EXPOSED` plus bounded access-smoke evidence; do not silently omit those fields or convert positive access tests into a least-privilege claim.
 
-A material Builder/kernel/action/model/auth-mode/principal/credential-scope/repository-access-scope change invalidates affected runtime evidence.
+A material Builder/kernel/action/model/auth-mode/principal/credential-scope/repository-access-scope change invalidates affected runtime evidence. A character-budget failure or truncated Instructions copy blocks Builder fingerprint completeness and runtime certification.
 
 ## 5. Lifecycle separation
 
