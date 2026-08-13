@@ -35,10 +35,10 @@ After a project resolves, preserve `PROJECT_ID` as the current selection.
 
 If no substantive `TASK_SCOPE` exists yet:
 - stop at `PROJECT_SELECTED`;
-- do not read the Project Adapter;
-- do not resolve consumer-project `main`;
-- do not read project bootstrap, local specialist rules, continuity, authority/governance or project evidence;
-- do not emit a Context Readiness Receipt;
+- do **not** read the Project Adapter;
+- do **not** resolve consumer-project `main`;
+- do **not** read project bootstrap, local specialist rules, continuity, authority/governance or project evidence;
+- do **not** emit a Context Readiness Receipt;
 - ask the user for the task.
 
 `PROJECT_SELECTED != PROJECT_BOOTSTRAPPED`
