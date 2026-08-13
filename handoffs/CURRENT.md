@@ -6,75 +6,65 @@
 **SFJM method source:** `wagnerjfjunior/StopJuniorMode@d03d477c3b329aa973a38ec4e949c249fa017929`  
 **Continuity contract:** `core/protocols/PROJECT_CONTINUITY_CONTRACT.md`  
 **Authoritative next action:** `docs/NEXT_SAFE_ACTION.md`  
-**Next action ID:** `reconcile-documentation-auditor-runtime-candidate-v1`
+**Next action ID:** `reconcile-standardized-project-entry-runtime-targets-v1`
 
 ## 1. Purpose
 
-Preserve the minimum durable operational meaning required to resume SES work across conversations, specialists and work cycles without turning conversation history into authority and without duplicating volatile live GitHub state.
+Preserve the minimum durable operational meaning required to resume SES work without turning conversation history into authority or duplicating volatile live state.
 
-This handoff is for **SES itself**. It is not a substitute for any registered consumer project's bootstrap, continuity, authority or current state.
+This handoff is for SES itself. Consumer-project bootstrap, truth, continuity and authority remain project-owned.
 
-## 2. Reading order for SES continuity
+## 2. Reading order
 
-1. resolve live SES `main` and read `docs/bootstrap/INDEX.md`;
+1. resolve SES `main` live and read `docs/bootstrap/INDEX.md`;
 2. read `handoffs/CURRENT.md`;
 3. read `docs/PROJECT_STATUS.md`;
 4. read `docs/NEXT_SAFE_ACTION.md`;
 5. read `docs/BLOCKED_ACTIONS.md`;
-6. then read the task-material SES contracts, archetype/runtime files and live objects required by the exact task.
+6. then read task-material contracts, runtime files and live evidence.
 
-For consumer-project work, return to the SES bootstrap flow and resolve the project through `projects/REGISTRY.md` and its Project Adapter. Consumer-project continuity remains project-owned.
+For project-specific work, return to the SES bootstrap flow and resolve the project through `projects/REGISTRY.md` and its Project Adapter.
 
 ## 3. Confirmed durable state
 
-1. SES is a project-agnostic specialist-engineering system; it is not a product/project specialist.
-2. The active archetypes currently resolvable from `archetypes/REGISTRY.md` are `saas-architect` and `documentation-auditor`.
-3. `SES — SaaS Architect` has a versioned `RUNTIME_BEHAVIORAL_PROOF = PASS` for T01–T29.
-4. SaaS Architect consumer-migration evidence is versioned, including the registered `blogs-sites-portais-seo` consumer project.
-5. FECH.AI has a separate versioned SaaS Architect project-local equivalence record.
-6. `documentation-auditor` is active for archetype resolution but its registry lifecycle remains `RUNTIME_NOT_CERTIFIED`.
-7. The Documentation Auditor Builder profile is versioned as a runtime candidate and explicitly does not prove external Builder application or runtime behavioral PASS.
-8. The Documentation Auditor runtime runbook requires an actual configured runtime, Builder fingerprint and the complete canonical runtime suite before runtime certification.
+1. SES remains project-agnostic specialist-engineering infrastructure.
+2. Active archetypes are `saas-architect` and `documentation-auditor`.
+3. `SES — SaaS Architect` v0.1 has a preserved versioned `RUNTIME_BEHAVIORAL_PROOF = PASS`, T01–T29 = 29/29, recorded in `tests/runtime/evidence/HYBRID_SAAS_ARCHITECT_RUNTIME_PROOF_2026-08-12.md`.
+4. SaaS Architect v0.2 is a new target caused by standardized project-entry changes; its runtime proof is not established and must not borrow the v0.1 PASS.
+5. `SES — Documentation Auditor` v0.3 is the primary current runtime target; its runtime proof is not established.
+6. Both affected target Builders standardize the starter `# CLIQUE PARA INICIAR`, but a starter observation does not establish complete target-kernel application.
+7. The standardized hybrid entry model is one ordered flow: a missing project identifier produces a live numbered project menu; a supplied identifier enters the same resolution stage. No mandatory bootstrap stage is skipped.
+8. Project registration is discovery only: `PROJECT_LISTED != PROJECT_SPECIALIST_READY`.
+9. Runtime proof, external Builder application, publication, consumer-project equivalence and legacy retirement remain separate lifecycle states.
 
 ## 4. Live state versus recorded state
 
-```text
-LIVE_RESOLVED_STATE
-!=
-MATERIAL_RECORDED_STATE
-```
+`LIVE_RESOLVED_STATE != MATERIAL_RECORDED_STATE`
 
-Resolve live whenever material:
+Resolve live whenever material, including SES refs, PR state, external Builder configuration, selected model, access boundary, publication state and consumer-project refs.
 
-- SES `main` SHA;
-- PR/head/base/check/review state;
-- actual external Builder configuration;
-- authenticated principal/access scope;
-- currently selected Builder model;
-- publication/visibility state;
-- consumer-project live refs and runtime state.
-
-Do not rewrite this handoff merely because an ordinary commit, PR transition or conversation occurred. Update it when a material decision, blocker, objective, proof state, authority boundary or semantic next action changes.
+Do not rewrite historical proof because a new target version exists. Do not promote historical proof into a new target version without new evidence.
 
 ## 5. Active risks
 
-- confusing an `ACTIVE` archetype with a runtime-certified specialist;
-- treating a versioned Builder profile as proof of the live Builder configuration;
-- reusing stale Builder/auth fingerprints after material configuration changes;
-- importing consumer-project truth into SES continuity;
-- allowing central SES evolution to imply automatic mutation of registered projects;
-- promoting documentation, merge or static observation into runtime proof without execution evidence.
+- confusing active archetype resolution with runtime certification;
+- treating a starter/profile/kernel target as proof of external Builder application;
+- reusing v0.1 SaaS proof as v0.2 proof or downgrading the historical v0.1 PASS;
+- treating registered projects as automatically compatible with a specialist before project-local rules resolve;
+- retaining temporary authority-test capability after controlled tests;
+- importing consumer-project truth or authority into SES;
+- automatic propagation of SES changes into external Builders or consumer projects.
 
 ## 6. Current next action
 
 The authoritative record is `docs/NEXT_SAFE_ACTION.md`.
 
-Derived summary: reconcile the actual configured `SES — Documentation Auditor` runtime candidate against the canonical profile before any runtime behavioral proof is claimed or executed.
+Derived summary: after the standardized project-entry change is canonical on SES `main`, reconcile the actual external Builders against Documentation Auditor v0.3 first and SaaS Architect v0.2 second, preserving the historical SaaS v0.1 PASS separately.
 
-No Builder mutation, publication, consumer-project mutation or legacy retirement is authorized by this continuity record.
+This continuity record does not authorize external Builder mutation, publication, consumer-project mutation, runtime certification or legacy retirement.
 
 ## 7. Short resume prompt
 
 ```text
-SES → resolve main live → read docs/bootstrap/INDEX.md → read handoffs/CURRENT.md → read PROJECT_STATUS + authoritative NEXT_SAFE_ACTION + BLOCKED_ACTIONS → reconcile LIVE_RESOLVED_STATE with MATERIAL_RECORDED_STATE → continue only the single safe action → do not reopen completed proof states without a material invalidation event.
+SES → resolve main live → bootstrap → continuity → authoritative NEXT_SAFE_ACTION → preserve version-bound historical proof → reconcile DA v0.3 then SaaS v0.2 external Builders → no automatic mutation or runtime PASS.
 ```

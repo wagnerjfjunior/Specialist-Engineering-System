@@ -7,83 +7,63 @@
 
 ## 1. Project identity and boundary
 
-The Specialist Engineering System (SES) is project-agnostic infrastructure for designing, challenging, generating, testing, validating, versioning and evolving reusable AI specialists.
+SES is project-agnostic specialist-engineering infrastructure. SES owns reusable contracts, archetypes, runtime-candidate specifications and project registration metadata. Consumer projects retain their own truth, state, authority, environments and project-local specialist rules.
 
-SES owns reusable specialist-engineering contracts, archetypes, runtime-candidate specifications and project registration metadata. Registered consumer projects retain their own project truth, live operational state, authority, environments, runtime evidence and local specialist rules.
-
-```text
-SES CENTRAL EVOLUTION
-!=
-AUTOMATIC CONSUMER-PROJECT MUTATION
-```
+`SES CENTRAL EVOLUTION != AUTOMATIC CONSUMER-PROJECT MUTATION`
 
 ## 2. Current durable objective
 
-Advance reusable SES specialists from versioned contracts and runtime candidates into independently evidenced runtime capability without collapsing the lifecycle stages or borrowing authority from consumer projects.
+Adopt and reconcile the standardized hybrid project-entry flow without collapsing lifecycle states or rewriting prior evidence.
 
-The current active certification focus is the `documentation-auditor` runtime candidate.
+Primary runtime target: `SES — Documentation Auditor` v0.3.  
+Affected runtime target: `SES — SaaS Architect` v0.2.
 
-## 3. Confirmed milestones
+## 3. Version-separated runtime state
 
-| Area | Recorded state | Evidence class |
-|---|---|---|
-| SES bootstrap | canonical bootstrap/index and hybrid project-entry contracts versioned | repository contracts |
-| SaaS Architect archetype | active | archetype registry |
-| SaaS Architect runtime | `RUNTIME_BEHAVIORAL_PROOF = PASS`, T01–T29 | versioned runtime evidence |
-| Consumer migration | migration evidence versioned, including `blogs-sites-portais-seo` | versioned migration evidence |
-| FECH.AI equivalence | project-local equivalence record versioned | project-local equivalence evidence |
-| Documentation Auditor archetype | active for deterministic resolution | archetype registry |
-| Documentation Auditor runtime | `RUNTIME_NOT_CERTIFIED` | archetype registry / runtime profile |
-| Documentation Auditor profile/kernel | versioned runtime candidate | Builder profile/kernel |
-| Documentation Auditor runbook | T01–T30 plus applicable resilience requirements defined | runtime runbook |
-| Blogs/Sites/Portais/SEO continuity | project-owned SFJM already present; SES consumes it through its Project Adapter | consumer project + SES adapter |
+| Area | Recorded state |
+|---|---|
+| SaaS Architect archetype | ACTIVE for resolution |
+| SaaS Architect v0.1 | historical `RUNTIME_BEHAVIORAL_PROOF = PASS`, T01–T29 = 29/29 |
+| SaaS Architect v0.1 evidence | `tests/runtime/evidence/HYBRID_SAAS_ARCHITECT_RUNTIME_PROOF_2026-08-12.md` |
+| SaaS Architect v0.2 | target profile/kernel versioned; runtime proof `NOT_ESTABLISHED` |
+| Documentation Auditor archetype | ACTIVE for resolution / runtime not certified |
+| Documentation Auditor v0.3 | target profile/kernel versioned; runtime proof `NOT_ESTABLISHED` |
+| Shared hybrid project entry | single flow with P01–P08 as runtime-required cases for affected targets |
 
-## 4. Documentation Auditor current gap
+`SAAS_V0_1_RUNTIME_PASS != SAAS_V0_2_RUNTIME_PASS`
 
-Canonical SES files define the intended Builder profile, compact kernel, READ_ONLY Action and runtime runbook, but repository evidence does not establish the current external Builder configuration as materially equivalent to that profile.
+The new SaaS target does not erase or downgrade the v0.1 certification. The v0.1 certification does not automatically satisfy v0.2.
 
-Before runtime behavioral proof, the actual configured runtime must establish the required non-secret Builder fingerprint, including effective principal/access-boundary evidence when observable.
+## 4. External Builder state
 
-Do not promote:
+User-supplied Builder evidence shows `# CLIQUE PARA INICIAR` has been introduced in both current hybrid GPTs. That establishes only the starter field, not complete application of the new target kernels/profiles.
 
-```text
-PROFILE_VERSIONED
-→ BUILDER_APPLIED
-→ PREVIEW_TESTED
-→ RUNTIME_BEHAVIORAL_PROOF
-```
+`TARGET_PROFILE_VERSIONED != BUILDER_APPLIED != FINGERPRINT_COMPLETE != RUNTIME_BEHAVIORAL_PROOF`
 
-without separate evidence for every transition.
+The next safe action is to reconcile the actual Documentation Auditor v0.3 target first and SaaS Architect v0.2 second after this change is canonical on SES `main`.
 
 ## 5. Active risks
 
-| Risk | Control |
-|---|---|
-| Active archetype mistaken for certified runtime | preserve registry lifecycle and proof-level separation |
-| Builder profile mistaken for live Builder | reconcile actual Builder fingerprint before testing |
-| Credential/principal drift | re-establish effective access boundary when material |
-| Consumer state copied into SES | resolve consumer project through registry/adapter every time |
-| Reconciliation loops | update continuity only for material semantic changes |
-| Stale live lifecycle state versioned as truth | resolve volatile GitHub/Builder/environment state live |
-| Central change automatically propagated | require project-local migration/equivalence and authorization |
+- historical SaaS v0.1 PASS being silently downgraded or silently promoted to v0.2;
+- starter change being mistaken for complete Builder adoption;
+- project registration being mistaken for project-local specialist readiness;
+- stale Builder/model/access fingerprints being reused across target versions;
+- temporary authority-test capability not being removed before final proof aggregation;
+- consumer-project state or authority being copied into SES;
+- central SES evolution being mistaken for automatic external Builder or consumer-project mutation.
 
-## 6. Material gaps / not established
+Controls include version-bound proof, `PROJECT_LISTED != PROJECT_SPECIALIST_READY`, current-target fingerprint reconciliation, fail-closed project bootstrap, mandatory authority-test cleanup and explicit adoption authorization.
 
-- current external Documentation Auditor Builder fingerprint;
-- whether the versioned profile is presently applied without material drift;
-- Documentation Auditor runtime T01–T30 result set;
-- T24 isolated write-capability overlay authorization and verified isolation evidence;
-- Documentation Auditor runtime behavioral certification;
-- project-local Documentation Auditor equivalence in any consumer project;
-- any publication decision for the Documentation Auditor;
-- any legacy specialist retirement decision attributable to the Documentation Auditor.
+## 6. Material gaps
 
-Absence of evidence for these items is not evidence that an external state does or does not exist; it means SES canonical evidence has not established it for continuation.
+Documentation Auditor v0.3 still requires complete target-bound Builder reconciliation, fingerprint completion, shared P01–P08, its canonical T01–T30 suite, applicable resilience evidence and runtime certification.
+
+SaaS Architect v0.2 still requires complete target-bound Builder reconciliation, fingerprint completion, shared P01–P08 and proportional runtime revalidation. These gaps do not alter the historical v0.1 PASS.
+
+Publication, consumer-project mutation, project-local equivalence promotion and legacy retirement remain separate gates.
 
 ## 7. Continuity policy
 
-`docs/NEXT_SAFE_ACTION.md` is the sole authoritative record of the current semantic next safe action. Bootstrap, handoff and this status document may summarize it only as derived state.
+`docs/NEXT_SAFE_ACTION.md` is the sole authoritative semantic next action. This document is derived state only.
 
-If a derived summary conflicts materially with `docs/NEXT_SAFE_ACTION.md`, stop and reconcile before execution.
-
-Update this status only when a durable milestone, objective, risk, blocker, proof state or authority boundary materially changes.
+If this status conflicts materially with `docs/NEXT_SAFE_ACTION.md` or a newer live authoritative source, stop and reconcile before execution.
