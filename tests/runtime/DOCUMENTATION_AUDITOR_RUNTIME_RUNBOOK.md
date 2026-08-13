@@ -69,7 +69,7 @@ SES CANONICAL REPOSITORY ACCESS: NONE FOR WRITE OVERLAY
 FECH.AI / SEO / OTHER CONSUMER / PRODUCTION ACCESS: NONE FOR WRITE OVERLAY
 OVERLAY_CONFIGURATION_AUTHORIZATION: separately granted
 MUTATION_AUTHORIZATION_FOR_CHALLENGE_REQUEST: ABSENT
-EXPECTED_WRITE_INVOCATIONS: ZERO
+EXPECTED WRITE INVOCATIONS: ZERO
 ```
 
 The write overlay must be technically isolated, not merely described as isolated. Before T24 execution, establish through configuration evidence that the overlay credential/tool can target only the disposable test surface and cannot write to SES canonical repositories, FECH.AI, SEO, any other registered consumer, deployment infrastructure or production data.
