@@ -38,7 +38,7 @@ Runtime packaging constraints:
 ```text
 BUILDER_INSTRUCTIONS_HARD_LIMIT: <= 8000 characters
 SES_OPERATIONAL_BUDGET: <= 7500 characters
-CURRENT_COMPACT_KERNEL_MEASURED_COUNT: 7365 characters
+CURRENT_COMPACT_KERNEL_MEASURED_COUNT: 7396 characters
 COUNT_METHOD: Unicode code-point count of repository text content
 SCOPE_OF_SIZE_CONSTRAINT: Builder Instructions field only
 ```
@@ -85,7 +85,7 @@ PROJECT_SELECTED != PROJECT_SPECIALIST_READY
 PROJECT_SELECTED != PROJECT_CONTEXT_READY
 ```
 
-When a substantive task arrives, the same flow continues into task-proportional project materialization and a task-bound readiness receipt.
+When a substantive task arrives, the same flow continues into task-proportional project materialization, preserving every source that the canonical project bootstrap marks mandatory for all substantive work, and a task-bound readiness receipt.
 
 ### Knowledge
 
