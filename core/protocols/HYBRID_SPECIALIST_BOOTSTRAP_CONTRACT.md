@@ -214,7 +214,7 @@ Then classify material dependencies before retrieval.
 
 `TASK -> MATERIAL DEPENDENCIES -> TARGETED PROJECT BOOTSTRAP`
 
-Do not perform ceremonial bulk loading. Project-local bootstrap instructions define authority and source ordering, but only task-material downstream sources need to be resolved unless the project bootstrap explicitly makes a source universally mandatory for every substantive task.
+Do not perform ceremonial bulk loading. The canonical SES `PROJECT_BOOTSTRAP_CONTRACT` and the consumer project's authoritative bootstrap define mandatory stages, source classes and precedence. Task materiality may narrow only downstream sources that are not made mandatory for every substantive task by either authority; it must never suppress a canonically mandatory source or source class.
 
 ### 6.2 Project and task supplied together
 
@@ -422,7 +422,7 @@ A hybrid specialist is acceptable only if it demonstrates:
 4. transient menu-bound numeric mapping;
 5. project selection stops before consumer-project materialization when task is absent;
 6. no Context Readiness Receipt for selection-only interaction;
-7. task arrival resumes the same flow and triggers only task-material project loading;
+7. task arrival resumes the same flow and triggers only task-material project loading without suppressing canonically mandatory project-bootstrap sources;
 8. project+task supplied together traverses the same stages without an artificial wait;
 9. explicit separation among project listing, selection, bootstrap, specialist readiness, context readiness and authority;
 10. no fuzzy project inference;
