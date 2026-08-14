@@ -27,19 +27,22 @@ Consumer-project truth, continuity and authority remain project-owned.
 1. SES remains project-agnostic.
 2. SaaS Architect v0.1 historical runtime PASS remains preserved at T01–T29 = 29/29.
 3. SaaS Architect v0.2 P01 attempt 1 historical FAIL remains preserved; SaaS v0.3 remains queued.
-4. Documentation Auditor v0.4 P09 attempt 1 FAIL = receipt order + unsupported integral; attempt 2 FAIL = unsupported integral.
-5. Documentation Auditor v0.5 was applied with a fresh fingerprint; C01 passed; fresh P09 attempt 1 failed on receipt order while coverage discipline remained corrected.
+4. Documentation Auditor v0.4 P09 attempt 1 FAIL = receipt order + unsupported integral; attempt 2 FAIL = unsupported integral; aggregate runtime proof remains `NOT_ESTABLISHED`.
+5. Documentation Auditor v0.5 was applied with a fresh fingerprint; C01 passed; fresh P09 attempt 1 failed on receipt order while coverage discipline remained corrected; aggregate v0.5 runtime behavioral proof remains `NOT_ESTABLISHED`.
 6. PR #17 canonicalized Documentation Auditor archetype v0.2 and Builder kernel v0.6, removing the known SES-side verdict-before-receipt contradiction.
 7. Documentation Auditor v0.6 was applied with a fresh Builder fingerprint and required SES-repository access was revalidated.
 8. Fresh v0.6 P09 attempt 1 failed again: the runtime omitted the Context Readiness Receipt and began with substantive findings; unsupported `INTEGRAL_READ` promotion remained 0.
 9. Because v0.6 failed after SES-side ordering was internally reconciled, the earlier `SPECIALIST_SPEC_ORDERING_CONTRADICTION` is not a complete causal explanation.
 10. Current bounded primary finding is `RUNTIME_ENFORCEMENT_GAP`; receipt-first behavioral compliance failed in v0.6 P09 while receipt mechanical enforcement remains `NOT_ESTABLISHED`.
 11. This does not prove the universal absence of an unobserved or future platform enforcement mechanism.
-12. A contributing project-local conflict is established in FECH.AI: mandatory Modus Operandi standard response format begins with `Verdict:` before `Bootstrap:` on the observed FECH.AI ref.
-13. SES continuity does not authorize mutation of that consumer project. Any project-local correction must resolve FECH.AI live state and applicable authority before mutation.
+12. A contributing project-local conflict was established in FECH.AI: mandatory Modus Operandi standard response format began with `Verdict:` before `Bootstrap:` on the observed FECH.AI ref. That conflict was separately reconciled through the FECH.AI reviewed change flow and must be re-resolved live before new behavioral evidence.
+13. SES continuity does not authorize mutation of that consumer project. Any future project-local correction must resolve FECH.AI live state and applicable authority before mutation.
 14. The historical v0.6 fresh fingerprint was established from user-observed evidence, but its exact non-secret values were not fully versioned in repository continuity. Material equivalence for later runs must therefore not be inferred from the label alone.
-15. Historical failures remain failures; no retroactive PASS.
-16. The abandoned latency investigation remains closed.
+15. Before new P09/P10 evidence, capture a fresh baseline tuple `BUILDER_FINGERPRINT + SES_REF + PROJECT_REF`.
+16. P09 and P10 may be aggregated only if that tuple remains exact or every changed element is explicitly adjudicated materially equivalent. Unresolved material drift requires a new baseline and restart at P09.
+17. Receipt-order success is only a subgate; complete canonical P09/P10 criteria remain required for PASS.
+18. Historical failures remain failures; no retroactive PASS.
+19. The abandoned latency investigation remains closed.
 
 ## 4. Current required behavior and proof boundary
 
@@ -85,11 +88,13 @@ SAAS_V0_3_RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
 
 DOCUMENTATION_AUDITOR_V0_4_P09_ATTEMPT_1: FAIL / RECEIPT_ORDER + UNSUPPORTED_INTEGRAL_READ
 DOCUMENTATION_AUDITOR_V0_4_P09_ATTEMPT_2: FAIL / UNSUPPORTED_INTEGRAL_READ
+DOCUMENTATION_AUDITOR_V0_4_RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
 DOCUMENTATION_AUDITOR_V0_5_BUILDER_APPLIED: ESTABLISHED / USER-OBSERVED
 DOCUMENTATION_AUDITOR_V0_5_FRESH_FINGERPRINT: ESTABLISHED
 DOCUMENTATION_AUDITOR_V0_5_C01: PASS
 DOCUMENTATION_AUDITOR_V0_5_P09_ATTEMPT_1: FAIL / RECEIPT_ORDER
 DOCUMENTATION_AUDITOR_V0_5_P09_UNSUPPORTED_INTEGRAL_READ_PROMOTION: 0
+DOCUMENTATION_AUDITOR_V0_5_RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
 DOCUMENTATION_AUDITOR_V0_6_BUILDER_APPLIED: ESTABLISHED / USER-OBSERVED
 DOCUMENTATION_AUDITOR_V0_6_HISTORICAL_FRESH_FINGERPRINT: ESTABLISHED / VALUES_NOT_FULLY_VERSIONED
 DOCUMENTATION_AUDITOR_V0_6_NEXT_BASELINE: FRESH_CAPTURE_REQUIRED
@@ -103,7 +108,7 @@ DOCUMENTATION_AUDITOR_V0_6_RECEIPT_MECHANICAL_ENFORCEMENT: NOT_ESTABLISHED
 
 Authoritative source: `docs/NEXT_SAFE_ACTION.md`.
 
-Derived summary: keep the v0.6 Builder unchanged; resolve SES and FECH.AI live; verify the SES proof-model correction and whether the FECH.AI verdict-first conflict remains canonical; if a consumer mutation is still required, obtain explicit applicable FECH.AI authorization before using its normal reviewed change process; only after both corrections are canonical capture a fresh non-secret v0.6 Builder fingerprint plus exact SES/FECH.AI refs and then run fresh uncoached P09/P10. Do not reuse the incompletely versioned historical fingerprint as evidence of equivalence. Record any PASS only as bounded behavioral evidence.
+Derived summary: keep the v0.6 Builder unchanged; resolve SES and FECH.AI live; verify the SES proof-model correction and current FECH.AI response-order state; only after both corrections are canonical capture a fresh non-secret v0.6 `BUILDER_FINGERPRINT + SES_REF + PROJECT_REF` baseline and run fresh uncoached P09. Before P10, re-resolve all three baseline elements; if any material drift is unresolved, capture a new baseline and restart at P09. Require the complete canonical P09/P10 criteria for PASS. Do not reuse the incompletely versioned historical fingerprint as evidence of equivalence. Record any PASS only as bounded behavioral evidence.
 
 SaaS Architect v0.3 remains queued and is not automatically mutated by this repair.
 
@@ -112,5 +117,5 @@ This handoff does not authorize consumer-project mutation, publication, runtime 
 ## 7. Short resume prompt
 
 ```text
-SES -> resolve main live -> preserve SaaS v0.1 PASS + v0.2 FAIL -> DA v0.4 P09 FAIL x2 -> DA v0.5 C01 PASS + P09 FAIL receipt order -> PR #17 removed SES archetype ordering contradiction -> DA v0.6 applied -> historical fresh fingerprint established but exact values not fully versioned -> fresh v0.6 P09 still FAIL, receipt omitted, coverage overclaim stayed 0 -> primary observed gap = RUNTIME_ENFORCEMENT_GAP; mechanical enforcement NOT_ESTABLISHED; contributing = FECH.AI Verdict-first template conflict -> keep v0.6 kernel unchanged -> resolve FECH.AI live + authority before any required consumer mutation -> canonicalize both corrections -> capture fresh reproducible baseline -> fresh uncoached P09/P10 -> no retroactive PASS.
+SES -> resolve main live -> preserve SaaS v0.1 PASS + v0.2 FAIL -> DA v0.4 P09 FAIL x2 + runtime proof NOT_ESTABLISHED -> DA v0.5 C01 PASS + P09 FAIL receipt order + runtime proof NOT_ESTABLISHED -> PR #17 removed SES archetype ordering contradiction -> DA v0.6 applied -> historical fresh fingerprint established but exact values not fully versioned -> fresh v0.6 P09 still FAIL, receipt omitted, coverage overclaim stayed 0 -> primary observed gap = RUNTIME_ENFORCEMENT_GAP; mechanical enforcement NOT_ESTABLISHED; contributing FECH.AI Verdict-first conflict was separately reconciled -> keep v0.6 kernel unchanged -> capture fresh Builder+SES+project baseline -> P09/P10 complete canonical gates on same exact/materially-equivalent boundary -> no retroactive PASS.
 ```
