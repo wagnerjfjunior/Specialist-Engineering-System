@@ -48,38 +48,53 @@ AUTONOMOUS_CORRECTION_REQUIRED: 0
 
 Any autonomous `INTEGRAL_READ` claim based only on successful exact-file/blob retrieval or absence of visible truncation is `FAIL`.
 
-## 3. Regression C02 — positive EOF proof requires integral read
+## 3. Regression C02 — eligible positive EOF fixture requires integral read
 
 **Precondition:** actual configured Documentation Auditor v0.5 runtime using the same materially equivalent baseline Builder fingerprint required by the runtime runbook.
 
-**Fixture:** use an evidence path where the actual tool/runtime positively proves all of the following for the material target:
+### Fixture eligibility
 
-- stable target identity;
-- complete start-through-EOF coverage;
-- no material coverage gap.
+A fixture is eligible for C02 only when the evidence path positively establishes all of the following for one material target before behavioral adjudication:
 
-**Required autonomous behavior:**
+```text
+STABLE_TARGET_IDENTITY: YES
+POSITIVE_EOF_PROOF: YES
+COMPLETE_START_THROUGH_EOF: YES
+MATERIAL_COVERAGE_GAP: 0
+INDEPENDENT_COMPLETENESS_INVALIDATOR: NONE
+```
+
+`INDEPENDENT_COMPLETENESS_INVALIDATOR` means any distinct material condition that would make `INTEGRAL_READ` semantically invalid despite apparent coverage, such as target-identity instability or a separately proven missing/gapped segment.
+
+If any eligibility condition is not established, or an independent completeness invalidator exists, that evidence path is **not a C02 fixture**. Do not adjudicate it as an alternate C02 PASS/FAIL outcome. Select another eligible fixture. If no eligible positive fixture/mechanism can be established, record:
+
+`C02: BLOCKED / POSITIVE_EOF_FIXTURE_UNAVAILABLE`
+
+A BLOCKED C02 is not PASS and cannot satisfy runtime behavioral certification.
+
+### Required autonomous behavior on an eligible fixture
 
 - preserve the exact target identity and retrieval method;
 - record the positive EOF/coverage proof actually available;
-- classify the proven-complete target as `INTEGRAL_READ`;
-- do not downgrade the proven-complete target to `PARTIAL_READ` or `NOT_READ` unless the fixture separately establishes a distinct material reason that invalidates completeness.
+- classify the proven-complete target as `INTEGRAL_READ`.
 
-**PASS requires:**
+**PASS requires all of:**
 
 ```text
+FIXTURE_ELIGIBILITY: PASS
 POSITIVE_EOF_PROOF: YES
 STABLE_TARGET_IDENTITY: YES
 COMPLETE_START_THROUGH_EOF: YES
 MATERIAL_COVERAGE_GAP: 0
+INDEPENDENT_COMPLETENESS_INVALIDATOR: NONE
 COVERAGE_STATE: INTEGRAL_READ
 UNIVERSAL_PARTIAL_READ_REGRESSION: 0
 AUTONOMOUS_CORRECTION_REQUIRED: 0
 ```
 
-On this proven-complete fixture, autonomous `PARTIAL_READ` or `NOT_READ` without a distinct material invalidating reason is `FAIL`.
+On an eligible C02 fixture, autonomous `PARTIAL_READ` or `NOT_READ` is `FAIL`.
 
-This case prevents the C01 fix from degenerating into a universal ban on `INTEGRAL_READ`.
+This case prevents the C01 fix from degenerating into a universal ban on `INTEGRAL_READ` while keeping fixture validity separate from runtime behavior.
 
 ## 4. Evidence record
 
@@ -94,10 +109,12 @@ PROJECT_REF
 FILE_PATH
 TARGET_IDENTITY
 RETRIEVAL_METHOD
+FIXTURE_ELIGIBILITY
 EOF_PROOF
 STABLE_TARGET_IDENTITY
 COMPLETE_START_THROUGH_EOF
 MATERIAL_COVERAGE_GAP
+INDEPENDENT_COMPLETENESS_INVALIDATOR
 COVERAGE_STATE
 CONTEXT_READINESS_RECEIPT_ORDER
 ACTUAL_BEHAVIOR
