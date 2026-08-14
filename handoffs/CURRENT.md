@@ -5,7 +5,7 @@
 **Canonical ref rule:** resolve `main` live before material work  
 **Continuity contract:** `core/protocols/PROJECT_CONTINUITY_CONTRACT.md`  
 **Authoritative next action:** `docs/NEXT_SAFE_ACTION.md`  
-**Next action ID:** `repair-documentation-auditor-receipt-order-v06-v1`
+**Next action ID:** `reconcile-documentation-auditor-runtime-enforcement-boundary-v1`
 
 ## 1. Purpose
 
@@ -27,17 +27,20 @@ Consumer-project truth, continuity and authority remain project-owned.
 1. SES remains project-agnostic.
 2. SaaS Architect v0.1 historical runtime PASS remains preserved at T01–T29 = 29/29.
 3. SaaS Architect v0.2 P01 attempt 1 historical FAIL remains preserved; SaaS v0.3 remains queued.
-4. Documentation Auditor v0.4 Builder application was established; P09 attempt 1 FAIL = receipt order + unsupported integral; P09 attempt 2 FAIL = unsupported integral.
-5. Documentation Auditor v0.5 was applied with a fresh user-observed Builder fingerprint.
-6. Documentation Auditor v0.5 C01 passed autonomously; the historical unsupported `INTEGRAL_READ` promotion was not reproduced.
-7. Documentation Auditor v0.5 fresh P09 attempt 1 failed because project-specific verdict/findings preceded the Context Readiness Receipt; coverage discipline remained corrected.
-8. Root-cause analysis found a specialist-specific normative contradiction: Core/shared P09 require receipt before substantive project work, while Documentation Auditor archetype v0.1 minimum output contract placed verdict before receipt.
-9. Documentation Auditor target advances to v0.6; archetype advances to spec candidate v0.2; compact kernel makes the readiness receipt the first project-specific substantive output artifact.
-10. Core bootstrap ordering and GitHub READ_ONLY Action are unchanged because current evidence does not establish defects in those layers.
-11. Historical failures remain failures; no retroactive PASS.
-12. The abandoned latency investigation remains closed.
+4. Documentation Auditor v0.4 P09 attempt 1 FAIL = receipt order + unsupported integral; attempt 2 FAIL = unsupported integral.
+5. Documentation Auditor v0.5 was applied with a fresh fingerprint; C01 passed; fresh P09 attempt 1 failed on receipt order while coverage discipline remained corrected.
+6. PR #17 canonicalized Documentation Auditor archetype v0.2 and Builder kernel v0.6, removing the known SES-side verdict-before-receipt contradiction.
+7. Documentation Auditor v0.6 was applied with a fresh Builder fingerprint and required SES-repository access was revalidated.
+8. Fresh v0.6 P09 attempt 1 failed again: the runtime omitted the Context Readiness Receipt and began with substantive findings; unsupported `INTEGRAL_READ` promotion remained 0.
+9. Because v0.6 failed after SES-side ordering was internally reconciled, the earlier `SPECIALIST_SPEC_ORDERING_CONTRADICTION` is not a complete causal explanation.
+10. Current primary classification is `UNENFORCED_RUNTIME_INVARIANT`: receipt-first is a normative/model-behavior requirement in the current Builder runtime, not a positively proven mechanically enforced transition.
+11. A contributing project-local conflict is established in FECH.AI: mandatory Modus Operandi standard response format begins with `Verdict:` before `Bootstrap:`.
+12. Historical failures remain failures; no retroactive PASS.
+13. The abandoned latency investigation remains closed.
 
-## 4. Current runtime invariants
+## 4. Current required behavior and proof boundary
+
+Required behavior remains:
 
 ```text
 NO SUBSTANTIVE TASK -> NO CONSUMER-PROJECT MATERIALIZATION
@@ -51,6 +54,24 @@ NO_VISIBLE_TRUNCATION != EOF_PROOF
 UNPROVEN_EOF -> PARTIAL_READ
 INTEGRAL_READ -> POSITIVE START-THROUGH-EOF PROOF + STABLE TARGET IDENTITY
 ```
+
+But keep separate:
+
+```text
+NORMATIVE_REQUIREMENT
+BEHAVIORAL_COMPLIANCE
+MECHANICALLY_ENFORCED_INVARIANT
+```
+
+For the current Documentation Auditor Builder-only output ordering:
+
+```text
+RECEIPT_FIRST_NORMATIVE_REQUIREMENT: ESTABLISHED
+RECEIPT_FIRST_BEHAVIORAL_COMPLIANCE: NOT_ESTABLISHED FOR V0_6 P09
+RECEIPT_FIRST_MECHANICAL_ENFORCEMENT: NOT_ESTABLISHED
+```
+
+See `runtime/custom-gpt/DOCUMENTATION_AUDITOR_RUNTIME_ENFORCEMENT_BOUNDARY.md`.
 
 ## 5. Version-bound evidence
 
@@ -66,22 +87,26 @@ DOCUMENTATION_AUDITOR_V0_5_FRESH_FINGERPRINT: ESTABLISHED
 DOCUMENTATION_AUDITOR_V0_5_C01: PASS
 DOCUMENTATION_AUDITOR_V0_5_P09_ATTEMPT_1: FAIL / RECEIPT_ORDER
 DOCUMENTATION_AUDITOR_V0_5_P09_UNSUPPORTED_INTEGRAL_READ_PROMOTION: 0
-DOCUMENTATION_AUDITOR_V0_5_RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
+DOCUMENTATION_AUDITOR_V0_6_BUILDER_APPLIED: ESTABLISHED / USER-OBSERVED
+DOCUMENTATION_AUDITOR_V0_6_FRESH_FINGERPRINT: ESTABLISHED
+DOCUMENTATION_AUDITOR_V0_6_P09_ATTEMPT_1: FAIL / RECEIPT_OMITTED / SUBSTANTIVE_OUTPUT_FIRST
+DOCUMENTATION_AUDITOR_V0_6_P09_UNSUPPORTED_INTEGRAL_READ_PROMOTION: 0
 DOCUMENTATION_AUDITOR_V0_6_RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
+DOCUMENTATION_AUDITOR_V0_6_RECEIPT_MECHANICAL_ENFORCEMENT: NOT_ESTABLISHED
 ```
 
 ## 6. Current next action
 
 Authoritative source: `docs/NEXT_SAFE_ACTION.md`.
 
-Derived summary: resolve canonical v0.6 on live `main`; with explicit Product Authority authorization, apply the exact v0.6 kernel to the external Builder, capture a fresh fingerprint and run a fresh uncoached P09. P09 must demonstrate receipt-first ordering and preserve the v0.5 coverage correction. C01/C02 and the remaining required suite must be rerun/bound to the v0.6 fingerprint before full runtime certification.
+Derived summary: keep the v0.6 Builder unchanged; correct the SES proof model so it does not overclaim deterministic/mechanical enforcement; reconcile the FECH.AI verdict-first response-format conflict in its own repository; independently review both changes; after canonicalization, run fresh uncoached P09 and P10 against the reconciled FECH.AI ref and record any PASS only as bounded behavioral evidence.
 
 SaaS Architect v0.3 remains queued and is not automatically mutated by this repair.
 
-This handoff does not authorize publication, consumer-project mutation, runtime certification, project-local equivalence promotion or legacy retirement.
+This handoff does not authorize publication, runtime certification, project-local equivalence promotion or legacy retirement. FECH.AI mutation authority for this corrective cycle is limited to the identified project-local output-order conflict.
 
 ## 7. Short resume prompt
 
 ```text
-SES -> resolve main live -> preserve SaaS v0.1 PASS + v0.2 FAIL -> DA v0.4 P09 failed twice on coverage/order -> DA v0.5 applied; C01 PASS; fresh P09 FAIL only on receipt order while coverage remained corrected -> root cause = Documentation Auditor archetype v0.1 output-order contradiction with Core/shared flow -> target DA v0.6 + archetype v0.2 -> receipt must precede every project-specific substantive statement -> after canonicalization apply Builder only with explicit authorization -> fresh fingerprint -> fresh uncoached P09 -> rerun same-fingerprint required gates before runtime PASS -> no retroactive PASS.
+SES -> resolve main live -> preserve SaaS v0.1 PASS + v0.2 FAIL -> DA v0.4 P09 FAIL x2 -> DA v0.5 C01 PASS + P09 FAIL receipt order -> PR #17 removed SES archetype ordering contradiction -> DA v0.6 applied/fingerprint established -> fresh v0.6 P09 still FAIL, receipt omitted, coverage overclaim stayed 0 -> complete cause is not more wording -> primary = UNENFORCED_RUNTIME_INVARIANT, contributing = FECH.AI Verdict-first template conflict -> keep v0.6 kernel unchanged -> classify behavioral vs mechanical proof honestly -> reconcile only FECH.AI causal template -> independent review -> fresh uncoached P09/P10 -> no retroactive PASS.
 ```
