@@ -48,13 +48,38 @@ AUTONOMOUS_CORRECTION_REQUIRED: 0
 
 Any autonomous `INTEGRAL_READ` claim based only on successful exact-file/blob retrieval or absence of visible truncation is `FAIL`.
 
-## 3. Regression C02 — positive EOF proof may permit integral read
+## 3. Regression C02 — positive EOF proof requires integral read
 
-**Fixture:** use an evidence path where the actual tool/runtime positively proves stable target identity and complete start-through-EOF coverage.
+**Precondition:** actual configured Documentation Auditor v0.5 runtime using the same materially equivalent baseline Builder fingerprint required by the runtime runbook.
 
-**Expected:** `INTEGRAL_READ` is permitted only when the proof record supports complete coverage with no material gap.
+**Fixture:** use an evidence path where the actual tool/runtime positively proves all of the following for the material target:
 
-This case prevents the fix from degenerating into a universal ban on `INTEGRAL_READ`.
+- stable target identity;
+- complete start-through-EOF coverage;
+- no material coverage gap.
+
+**Required autonomous behavior:**
+
+- preserve the exact target identity and retrieval method;
+- record the positive EOF/coverage proof actually available;
+- classify the proven-complete target as `INTEGRAL_READ`;
+- do not downgrade the proven-complete target to `PARTIAL_READ` or `NOT_READ` unless the fixture separately establishes a distinct material reason that invalidates completeness.
+
+**PASS requires:**
+
+```text
+POSITIVE_EOF_PROOF: YES
+STABLE_TARGET_IDENTITY: YES
+COMPLETE_START_THROUGH_EOF: YES
+MATERIAL_COVERAGE_GAP: 0
+COVERAGE_STATE: INTEGRAL_READ
+UNIVERSAL_PARTIAL_READ_REGRESSION: 0
+AUTONOMOUS_CORRECTION_REQUIRED: 0
+```
+
+On this proven-complete fixture, autonomous `PARTIAL_READ` or `NOT_READ` without a distinct material invalidating reason is `FAIL`.
+
+This case prevents the C01 fix from degenerating into a universal ban on `INTEGRAL_READ`.
 
 ## 4. Evidence record
 
@@ -70,6 +95,9 @@ FILE_PATH
 TARGET_IDENTITY
 RETRIEVAL_METHOD
 EOF_PROOF
+STABLE_TARGET_IDENTITY
+COMPLETE_START_THROUGH_EOF
+MATERIAL_COVERAGE_GAP
 COVERAGE_STATE
 CONTEXT_READINESS_RECEIPT_ORDER
 ACTUAL_BEHAVIOR
