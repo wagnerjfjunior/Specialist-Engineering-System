@@ -13,10 +13,10 @@ SES is project-agnostic specialist-engineering infrastructure. SES owns reusable
 
 ## 2. Current durable objective
 
-Correct the hybrid project-entry flow so project selection remains lightweight and consumer-project materialization begins only after a substantive task exists.
+Repair the reproducible Documentation Auditor runtime coverage overclaim found during v0.4 P09 without reopening Core architecture or the abandoned latency investigation.
 
-Primary runtime target: `SES — Documentation Auditor` v0.4.  
-Affected runtime target: `SES — SaaS Architect` v0.3.
+Primary runtime target: `SES — Documentation Auditor` v0.5.  
+Queued runtime target: `SES — SaaS Architect` v0.3.
 
 ## 3. Version-separated runtime state
 
@@ -24,85 +24,70 @@ Affected runtime target: `SES — SaaS Architect` v0.3.
 |---|---|
 | SaaS Architect archetype | ACTIVE for resolution |
 | SaaS Architect v0.1 | historical `RUNTIME_BEHAVIORAL_PROOF = PASS`, T01–T29 = 29/29 |
-| SaaS Architect v0.1 evidence | `tests/runtime/evidence/HYBRID_SAAS_ARCHITECT_RUNTIME_PROOF_2026-08-12.md` |
-| SaaS Architect v0.2 | versioned target, not fully applied, runtime proof `NOT_ESTABLISHED`; P01 attempt 1 FAIL due old v0.1 Instructions |
-| SaaS Architect v0.3 | new deferred-materialization target; runtime proof `NOT_ESTABLISHED` |
+| SaaS Architect v0.2 | runtime proof `NOT_ESTABLISHED`; P01 attempt 1 historical FAIL due old v0.1 Instructions |
+| SaaS Architect v0.3 | deferred-materialization target; runtime proof `NOT_ESTABLISHED` |
 | Documentation Auditor archetype | ACTIVE for resolution / runtime not certified |
-| Documentation Auditor v0.3 | prior target; external Builder still observed with older v0.2 Instructions |
-| Documentation Auditor v0.4 | new deferred-materialization target; runtime proof `NOT_ESTABLISHED` |
-| Shared hybrid project entry | one ordered flow; P01–P10 runtime-required for new targets |
+| Documentation Auditor v0.4 | external Builder application established by user-observed fingerprint/config evidence; P01/P02/P03 selection-deferral behavior observed; P09 attempt 1 FAIL; P09 attempt 2 FAIL |
+| Documentation Auditor v0.5 | targeted coverage-hardening candidate; runtime proof `NOT_ESTABLISHED` |
+| Shared hybrid project entry | one ordered flow; P01–P10 runtime-required for applicable targets |
 
-`SAAS_V0_1_RUNTIME_PASS != SAAS_V0_2_RUNTIME_PASS != SAAS_V0_3_RUNTIME_PASS`
+`DOCUMENTATION_AUDITOR_V0_4_FAIL != DOCUMENTATION_AUDITOR_V0_5_PASS`
 
-## 4. Runtime finding that caused v0.4/v0.3
+## 4. Reproducible v0.4 failure
 
-User-run exploratory tests on 2026-08-13 showed:
-- Documentation Auditor could display the live project menu and select both registered projects;
-- SaaS Architect with old v0.1 Instructions initially failed P01 by returning generic onboarding rather than the menu;
-- when selection did proceed, both specialists could materialize project `main`, bootstrap/local specialist and related sources before any substantive task existed;
-- user-observed waits were roughly two minutes for Documentation Auditor selections and 4m10s for SaaS Architect Blogs/SEO.
+Fresh v0.4 P09 runs on 2026-08-14 produced the same material coverage overclaim twice:
 
-The timings are user observations, not independently instrumented platform measurements.
+```text
+EXACT PATH RETRIEVAL SUCCEEDED
++ NO VISIBLE TRUNCATION
+-> RUNTIME CLAIMED INTEGRAL_READ
+-> POSITIVE EOF PROOF ABSENT
+```
 
-The deterministic defect is:
+Attempt 1 also placed substantive analysis before the Context Readiness Receipt. Attempt 2 corrected receipt ordering but repeated the unsupported `INTEGRAL_READ` promotion.
 
-`PROJECT_SELECTED + TASK_SCOPE_NOT_SUPPLIED -> PREMATURE_CONSUMER_PROJECT_IO`
+Preserve:
 
-The corrected invariant is:
+```text
+DOCUMENTATION_AUDITOR_V0_4_P09_ATTEMPT_1: FAIL / RECEIPT_ORDER + UNSUPPORTED_INTEGRAL_READ
+DOCUMENTATION_AUDITOR_V0_4_P09_ATTEMPT_2: FAIL / UNSUPPORTED_INTEGRAL_READ
+REPRODUCIBLE_FAILURE_CLASS: EXACT_READER_SUCCESS_WITHOUT_EOF_PROMOTED_TO_INTEGRAL_READ
+```
 
-`NO SUBSTANTIVE TASK -> NO CONSUMER-PROJECT MATERIALIZATION`
+The Core resilience contract already requires start-through-EOF proof. Current evidence therefore supports a runtime-target hardening, not a Core semantic rewrite.
 
-## 5. External Builder state
+## 5. v0.5 target correction
 
-User-supplied screenshots establish:
-- Documentation Auditor Builder Instructions remained `RUNTIME_CANDIDATE_V0_2`;
-- SaaS Architect Builder Instructions remained `RUNTIME_CANDIDATE_V0_1`;
-- both starters were changed to `# CLIQUE PARA INICIAR`.
+The compact kernel now makes explicit:
 
-Therefore:
+```text
+EXACT_READER_SUCCESS != EOF_PROOF
+NO_VISIBLE_TRUNCATION != EOF_PROOF
+UNPROVEN_EOF -> PARTIAL_READ
+```
 
-`STARTER_APPLIED != TARGET_KERNEL_APPLIED`
+A targeted regression is versioned at:
 
-New target application/fingerprint remains required.
+`tests/runtime/DOCUMENTATION_AUDITOR_V05_COVERAGE_REGRESSION.md`
 
-## 6. Active risks
+The corrected kernel remains within the Builder operational budget.
 
-- premature consumer-project I/O after mere selection;
-- treating project selection as readiness;
-- historical SaaS v0.1 PASS being downgraded/promoted across versions;
-- starter change being mistaken for full Builder adoption;
-- registered project being mistaken for project-local specialist readiness;
-- stale Builder/model/access fingerprints;
-- authority-test overlay not being removed after controlled tests;
-- consumer-project state/authority copied into SES;
-- automatic propagation of SES changes into external Builders or consumer projects.
+## 6. External Builder boundary
 
-Controls include:
-- `PROJECT_SELECTED != PROJECT_BOOTSTRAPPED`;
-- task-activated project materialization;
-- targeted retrieval by materiality;
-- version-bound proof;
-- fresh Builder fingerprints;
-- explicit adoption authorization;
-- mandatory authority-test cleanup.
+Documentation Auditor v0.4 Builder application was established through user-supplied evidence including complete kernel coverage, starter, empty Knowledge, capabilities, API-key/Bearer auth, authenticated principal, required SES repository access smoke and private visibility.
 
-## 7. Material gaps
+That does **not** establish v0.5 application. A canonical v0.5 merge, explicit Product Authority authorization, exact Builder application and fresh fingerprint are still required.
 
-Documentation Auditor v0.4 requires:
-- exact kernel application;
-- fresh fingerprint;
-- P01–P10, especially P02/P03 no-consumer-I/O gates;
-- Documentation Auditor T01–T30;
-- applicable resilience evidence;
-- runtime certification.
+`V0_4_BUILDER_APPLIED != V0_5_BUILDER_APPLIED`
 
-SaaS Architect v0.3 requires:
-- exact kernel application;
-- fresh fingerprint;
-- P01–P10;
-- proportional runtime revalidation.
+## 7. Active risks
 
-Publication, consumer-project mutation, project-local equivalence promotion and legacy retirement remain separate gates.
+- unsupported promotion of successful exact reader output to `INTEGRAL_READ`;
+- retroactive PASS of historical v0.4 P09 failures;
+- treating v0.4 Builder application as v0.5 application;
+- conflating target repair with Core redesign;
+- automatic propagation into SaaS Architect or consumer projects;
+- publication/runtime certification without separate gates.
 
 ## 8. Continuity policy
 
