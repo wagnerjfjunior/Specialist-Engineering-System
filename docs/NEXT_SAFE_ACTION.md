@@ -76,6 +76,18 @@ Removing that conflict is necessary for clean behavioral evidence. It is not pro
 
 SES continuity does not authorize that consumer-project mutation. Any FECH.AI change must be resolved through the live project registry/adapter, current FECH.AI canonical source, applicable project bootstrap/continuity/authority, explicit authorization for the exact mutation, and the project's normal reviewed change process.
 
+## Baseline evidence limitation
+
+The v0.6 Builder application and fresh fingerprint were established from user-observed runtime evidence, but the exact non-secret fingerprint values required for later equivalence adjudication were not fully versioned in the repository. The historical P09 attempt therefore remains valid as a FAIL observation, but its Builder baseline must not be reused by assertion alone.
+
+```text
+V0_6_HISTORICAL_FINGERPRINT_STATUS: ESTABLISHED / VALUES_NOT_FULLY_VERSIONED
+V0_6_EQUIVALENCE_REUSE: NOT_PERMITTED_BY_HISTORICAL_LABEL_ALONE
+NEXT_RUNTIME_BASELINE: FRESH_CAPTURE_REQUIRED
+```
+
+A fresh baseline capture does not mutate the Builder. It records the current non-secret Builder fingerprint and exact live refs so subsequent P09/P10 evidence can be bound reproducibly.
+
 ## Action
 
 1. preserve Documentation Auditor Builder v0.6 unchanged; do not create v0.7 wording merely to seek a cosmetic PASS;
@@ -85,15 +97,18 @@ SES continuity does not authorize that consumer-project mutation. Any FECH.AI ch
 5. if the conflict is already canonically reconciled, perform no consumer mutation and continue to step 7;
 6. if a FECH.AI mutation is still required, stop until explicit applicable project-local authorization for that exact mutation is established; only then use the normal FECH.AI reviewed change process to reconcile the response-format conflict, without unrelated cleanup;
 7. require both the SES proof-model correction and FECH.AI response-order reconciliation to be canonical before new behavioral adjudication;
-8. keep the same materially equivalent v0.6 Builder fingerprint unless a real Builder change occurred;
-9. resolve fresh SES and FECH.AI live refs and execute a new uncoached P09 on the reconciled project source;
+8. capture a fresh non-secret v0.6 Builder baseline fingerprint plus exact SES and FECH.AI refs before P09; do not infer equivalence from the historical `FRESH_FINGERPRINT: ESTABLISHED` label;
+9. execute a new uncoached P09 on that recorded baseline and reconciled project source;
 10. adjudicate P09 as behavioral evidence only;
-11. if P09 passes, execute P10 on the same materially equivalent Builder fingerprint and project-source boundary;
+11. if P09 passes, execute P10 only while the Builder fingerprint remains materially equivalent and record the exact project ref used by that case;
 12. continue the remaining required suite without claiming deterministic/mechanical enforcement.
 
 ## Immediate behavioral acceptance criterion
 
 ```text
+BASELINE_FINGERPRINT_CAPTURED: YES
+SES_REF_RECORDED: YES
+PROJECT_REF_RECORDED: YES
 P09_RECEIPT_EMITTED: YES
 P09_RECEIPT_BEFORE_SUBSTANTIVE_OUTPUT: PASS
 P09_UNSUPPORTED_INTEGRAL_READ_PROMOTION: 0
@@ -117,6 +132,8 @@ DOCUMENTATION_AUDITOR_V0_5_P09_ATTEMPT_1: FAIL / RECEIPT_ORDER
 DOCUMENTATION_AUDITOR_V0_5_P09_UNSUPPORTED_INTEGRAL_READ_PROMOTION: 0
 DOCUMENTATION_AUDITOR_V0_6_P09_ATTEMPT_1: FAIL / RECEIPT_OMITTED / SUBSTANTIVE_OUTPUT_FIRST
 DOCUMENTATION_AUDITOR_V0_6_P09_UNSUPPORTED_INTEGRAL_READ_PROMOTION: 0
+DOCUMENTATION_AUDITOR_V0_6_HISTORICAL_FINGERPRINT: ESTABLISHED / VALUES_NOT_FULLY_VERSIONED
+DOCUMENTATION_AUDITOR_V0_6_NEXT_BASELINE: FRESH_CAPTURE_REQUIRED
 DOCUMENTATION_AUDITOR_V0_6_RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
 DOCUMENTATION_AUDITOR_V0_6_RECEIPT_MECHANICAL_ENFORCEMENT: NOT_ESTABLISHED
 ```
@@ -129,7 +146,8 @@ This corrective action is complete when:
 
 - the SES proof model no longer overclaims deterministic/mechanical enforcement for the current Builder runtime;
 - the known FECH.AI verdict-first output conflict is absent from canonical project state through an independently authorized and reviewed project-local change when mutation was required;
-- fresh uncoached P09 and P10 produce receipt-first output on the reconciled project source without coverage regression or user correction.
+- a fresh reproducible v0.6 Builder/project baseline is recorded;
+- fresh uncoached P09 and P10 produce receipt-first output on that baseline without coverage regression or user correction.
 
 Completion establishes only bounded runtime behavioral evidence. It does not establish mechanical enforcement or full runtime certification by itself.
 
@@ -142,6 +160,8 @@ A recorded semantic need to reconcile FECH.AI is not mutation authorization. Pro
 ## Anti-loop
 
 Do not create another Builder kernel version solely by strengthening receipt-order wording.
+
+Do not reuse an incompletely versioned historical fingerprint as if material equivalence were proven.
 
 Do not rerun P09 against an unreconciled FECH.AI source merely to seek a cosmetic PASS.
 
