@@ -1,6 +1,6 @@
 # SES — Documentation Auditor Custom GPT Builder Profile
 
-**Status:** RUNTIME_CANDIDATE_V0_4 / BUILDER_PROFILE / NOT_YET_APPLIED
+**Status:** RUNTIME_CANDIDATE_V0_5 / BUILDER_PROFILE / NOT_YET_APPLIED
 **ARCHETYPE_ID:** `documentation-auditor`
 
 ## 1. Purpose
@@ -38,7 +38,7 @@ Runtime packaging constraints:
 ```text
 BUILDER_INSTRUCTIONS_HARD_LIMIT: <= 8000 characters
 SES_OPERATIONAL_BUDGET: <= 7500 characters
-CURRENT_COMPACT_KERNEL_MEASURED_COUNT: 7396 characters
+CURRENT_COMPACT_KERNEL_MEASURED_COUNT: 7469 characters
 COUNT_METHOD: Unicode code-point count of repository text content
 SCOPE_OF_SIZE_CONSTRAINT: Builder Instructions field only
 ```
@@ -163,6 +163,7 @@ Required behaviors include:
 - fail-closed large-file handling;
 - `NOT_READ` when no file content is recovered;
 - `PARTIAL_READ` when some content is recovered but complete/EOF proof is absent;
+- exact path/blob success or absence of visible truncation is not EOF proof;
 - no `INTEGRAL_READ` without start-to-EOF proof;
 - chunk coverage semantics only when real bounded chunk capability exists;
 - manual/alternate-source fallback when needed;
@@ -211,16 +212,21 @@ STARTER_OVERFLOW_SUBSTITUTE: NO
 
 A material Builder/kernel/action/model/auth/principal/access change invalidates affected evidence.
 
-## 5. Observed pre-v0.4 runtime evidence
+## 5. Observed pre-v0.5 runtime evidence
 
-User-supplied runtime observations on 2026-08-13 showed the then-configured Documentation Auditor using older Builder Instructions could:
-- render the new live project menu after Core v0.2 became canonical;
-- resolve FECH.AI and Blogs/SEO after numeric selection;
-- bound readiness to connection/bootstrap.
+User-supplied runtime observations on 2026-08-13 showed older Documentation Auditor Instructions could render the live project menu and resolve projects but could also materialize consumer-project context before a substantive task. Those observations remain historical and are not promoted to a later target PASS.
 
-Those observations are preserved as evidence that live Core loading influenced runtime behavior, but they do **not** prove v0.4 Builder application.
+User-observed v0.4 runtime evidence on 2026-08-14 established Builder application and correct selection deferral behavior for P01/P02/P03, subject to the runtime UI not exposing a direct consumer-I/O trace. P09 then failed twice independently because the runtime promoted exact-path retrieval with no visible truncation to `INTEGRAL_READ` without positive start-through-EOF proof. Attempt 1 also emitted substantive analysis before its readiness receipt; Attempt 2 corrected receipt ordering but repeated the unsupported `INTEGRAL_READ` promotion.
 
-They also exposed an operational defect: numeric project selection triggered consumer-project bootstrap before a substantive task existed, causing user-observed waits of roughly two minutes. That behavior is superseded by v0.4 target semantics and must not be promoted to v0.4 PASS.
+Preserve:
+
+```text
+DOCUMENTATION_AUDITOR_V0_4_P09_ATTEMPT_1: FAIL / RECEIPT_ORDER + UNSUPPORTED_INTEGRAL_READ
+DOCUMENTATION_AUDITOR_V0_4_P09_ATTEMPT_2: FAIL / UNSUPPORTED_INTEGRAL_READ
+REPRODUCIBLE_FAILURE_CLASS: EXACT_READER_SUCCESS_WITHOUT_EOF_PROMOTED_TO_INTEGRAL_READ
+```
+
+v0.5 is a targeted behavioral hardening of the compact kernel. It does not change Core coverage semantics, the GitHub READ_ONLY Action or consumer-project truth.
 
 ## 6. Lifecycle separation
 
