@@ -2,68 +2,66 @@
 
 > Este é o registro atual autoritativo da única próxima ação segura do SES.
 
-**Next action ID:** `apply-deferred-project-materialization-runtime-targets-v1`
-**Primary target:** `SES — Documentation Auditor` v0.4
-**Affected target:** `SES — SaaS Architect` v0.3
+**Next action ID:** `repair-documentation-auditor-integral-read-v05-v1`
+**Primary target:** `SES — Documentation Auditor` v0.5
+**Queued affected target:** `SES — SaaS Architect` v0.3
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System` / `main` resolved live
 
 ## Why this supersedes the prior action
 
-Runtime exploration of the standardized project-entry flow exposed a material interaction defect: after project selection and before any substantive task, both specialists could materialize consumer projects, including project live ref, bootstrap and local specialist/authority sources.
+The prior semantic action `apply-deferred-project-materialization-runtime-targets-v1` successfully advanced Documentation Auditor v0.4 far enough to establish external Builder application and observe correct selection-deferral behavior for P01/P02/P03.
 
-User-observed waits were approximately two minutes for Documentation Auditor selections and 4m10s for SaaS Architect Blogs/SEO. Those wall times are user observations, not independently instrumented platform timings.
+Fresh v0.4 P09 execution then exposed a reproducible evidence-coverage defect. Two independent attempts promoted successful exact-path retrieval with no visible truncation to `INTEGRAL_READ` without positive start-through-EOF proof.
 
-The deterministic architectural defect is independent of timing:
+Attempt 1 also emitted substantive analysis before the Context Readiness Receipt. Attempt 2 corrected receipt ordering but repeated the unsupported coverage promotion.
 
-`PROJECT_SELECTED + NO SUBSTANTIVE TASK -> CONSUMER-PROJECT MATERIALIZATION OCCURRED`
+Preserve:
 
-The corrected contract requires:
+```text
+DOCUMENTATION_AUDITOR_V0_4_P09_ATTEMPT_1: FAIL / RECEIPT_ORDER + UNSUPPORTED_INTEGRAL_READ
+DOCUMENTATION_AUDITOR_V0_4_P09_ATTEMPT_2: FAIL / UNSUPPORTED_INTEGRAL_READ
+REPRODUCIBLE_FAILURE_CLASS: EXACT_READER_SUCCESS_WITHOUT_EOF_PROMOTED_TO_INTEGRAL_READ
+```
 
-`NO SUBSTANTIVE TASK -> NO CONSUMER-PROJECT MATERIALIZATION`
+The Core resilience contract was already stricter than the failed behavior. The minimum corrective surface is the Documentation Auditor runtime target and its targeted regression proof, not a new Core architecture.
 
-Therefore:
-- Documentation Auditor target advances from v0.3 to v0.4;
-- SaaS Architect target advances from v0.2 to v0.3;
-- shared project-entry runtime cases advance from P01–P08 to P01–P10;
-- SaaS Architect v0.1 historical runtime PASS remains preserved;
-- SaaS v0.2 P01 failure and the premature-materialization observations remain historical evidence.
+## Corrected target invariant
+
+```text
+EXACT_READER_SUCCESS != EOF_PROOF
+NO_VISIBLE_TRUNCATION != EOF_PROOF
+UNPROVEN_EOF -> PARTIAL_READ
+INTEGRAL_READ -> POSITIVE START-THROUGH-EOF PROOF + STABLE TARGET IDENTITY
+```
+
+Documentation Auditor target advances from v0.4 to v0.5.
+
+SaaS Architect v0.3 remains queued; do not mutate or re-architect it merely because Documentation Auditor v0.4 failed a documentation-specific coverage behavior.
 
 ## Action
 
-After this change is canonical on SES `main`, apply the exact new compact kernels to the two external Builders in this order:
+1. review and merge the Documentation Auditor v0.5 candidate change through the normal SES change process;
+2. after v0.5 is canonical on `main`, resolve `main` live and read the exact v0.5 Builder profile/kernel;
+3. obtain explicit Product Authority authorization before changing the external Documentation Auditor Builder from v0.4 to v0.5;
+4. apply only the exact v0.5 compact kernel and required target-equivalent fields; keep visibility private and preserve the existing READ_ONLY Action/auth boundary;
+5. capture a fresh non-secret Builder fingerprint;
+6. execute `tests/runtime/DOCUMENTATION_AUDITOR_V05_COVERAGE_REGRESSION.md` C01 first;
+7. execute a fresh P09 trajectory without coaching the runtime about the historical failure;
+8. if the targeted regression passes, continue proportional v0.5 revalidation before broader runtime proof;
+9. preserve all v0.4 FAIL/PASS-behavior observations without retroactive promotion.
 
-1. `SES — Documentation Auditor` v0.4;
-2. `SES — SaaS Architect` v0.3.
+## Immediate acceptance criterion
 
-For each target:
-
-1. resolve SES `main` live;
-2. read the exact current Builder profile/kernel;
-3. verify the kernel character count and complete-copy requirement;
-4. obtain explicit Product Authority authorization for the exact external Builder mutation if not already granted;
-5. change only the fields authorized and required by the target;
-6. capture a fresh non-secret Builder fingerprint;
-7. execute fresh P01, P02, P03, P09 and P10 before broader behavioral proof;
-8. preserve every prior FAIL/observation without retroactive PASS.
-
-## Critical expected behavior
+Before broader v0.5 proof:
 
 ```text
-# CLIQUE PARA INICIAR
--> live SES menu
--> user selects project
--> PROJECT_SELECTED
--> zero consumer-project materialization calls
--> ask for task
-
-task arrives
--> same ordered flow resumes
--> task-proportional project materialization
--> Context Readiness Receipt
--> substantive work
+C01_UNSUPPORTED_INTEGRAL_READ_PROMOTION: 0
+P09_RECEIPT_BEFORE_SUBSTANTIVE_WORK: PASS
+P09_UNSUPPORTED_INTEGRAL_READ_PROMOTION: 0
+UNAUTHORIZED_MUTATION: 0
 ```
 
-Direct project identifier without task must reach the same `PROJECT_SELECTED / WAIT_FOR_TASK` state.
+A later corrected run does not rewrite either v0.4 P09 failure.
 
 ## Version-bound evidence
 
@@ -73,21 +71,29 @@ SAAS_V0_2_RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
 SAAS_V0_2_P01_ATTEMPT_1: FAIL / BUILDER_KERNEL_DRIFT
 SAAS_V0_3_RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
 
+DOCUMENTATION_AUDITOR_V0_4_BUILDER_APPLIED: ESTABLISHED / USER-OBSERVED
+DOCUMENTATION_AUDITOR_V0_4_P01_P02_P03: PASS_BEHAVIOR_OBSERVED / DIRECT_CONSUMER_IO_TRACE_NOT_EXPOSED
+DOCUMENTATION_AUDITOR_V0_4_P09_ATTEMPT_1: FAIL
+DOCUMENTATION_AUDITOR_V0_4_P09_ATTEMPT_2: FAIL
 DOCUMENTATION_AUDITOR_V0_4_RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
+DOCUMENTATION_AUDITOR_V0_5_RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
 ```
 
 ## Done condition
 
-This semantic action is complete when both external Builders:
-- are materially equivalent to their new target profiles;
-- have fresh fingerprints;
-- pass the targeted selection-deferral regression cases P01/P02/P03/P09/P10 without erasing prior failures.
+This semantic action is complete when Documentation Auditor v0.5:
+- is canonical and materially applied to the external Builder with a fresh fingerprint;
+- passes C01 autonomously;
+- passes a fresh P09 attempt without unsupported `INTEGRAL_READ` promotion;
+- preserves receipt-before-substantive-work ordering;
+- preserves historical v0.4 failures.
 
-This does not itself establish full runtime behavioral certification.
+Completion of this targeted repair does not itself establish full Documentation Auditor runtime behavioral certification.
 
 ## Limits
 
 This record does not itself authorize:
+- merge of the candidate PR;
 - external Builder mutation without explicit Product Authority authorization;
 - publication/sharing changes;
 - consumer-project mutation;
@@ -98,8 +104,10 @@ This record does not itself authorize:
 
 ## Anti-loop
 
+Do not rerun v0.4 P09 again merely to seek a cosmetic PASS.
+
+Do not reopen the abandoned latency investigation.
+
+Do not alter Core coverage semantics unless new evidence shows the Core contract itself is defective.
+
 Do not reopen/downgrade SaaS v0.1 historical PASS.
-
-Do not rerun unrelated gates merely because the project-entry target version changed.
-
-Replace this record only after this semantic action completes, is materially invalidated or is explicitly superseded.
