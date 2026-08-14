@@ -13,7 +13,7 @@ SES is project-agnostic specialist-engineering infrastructure. Consumer projects
 
 ## 2. Current durable objective
 
-Correct the Documentation Auditor proof model after fresh v0.6 P09 demonstrated that receipt-first is specified but not mechanically enforced by the current Builder-only runtime, while reconciling the known FECH.AI verdict-first output conflict.
+Correct the Documentation Auditor proof model after fresh v0.6 P09 demonstrated a receipt-order enforcement gap despite correct SES-side specification, while mechanical enforcement remains unestablished and the known FECH.AI verdict-first output conflict is reconciled.
 
 Primary runtime target: `SES — Documentation Auditor` v0.6.  
 Queued runtime target: `SES — SaaS Architect` v0.3.
@@ -40,16 +40,18 @@ v0.6 removed that contradiction in archetype v0.2 and the Builder kernel. Fresh 
 
 Therefore the earlier finding remains historical but is insufficient as the complete causal explanation.
 
-Current classification:
+Current bounded classification:
 
 ```text
-PRIMARY_ROOT_CAUSE: UNENFORCED_RUNTIME_INVARIANT
+PRIMARY_OBSERVED_GAP: RUNTIME_ENFORCEMENT_GAP
+RECEIPT_MECHANICAL_ENFORCEMENT: NOT_ESTABLISHED
 CONTRIBUTING_CAUSE: CROSS_LAYER_OUTPUT_FORMAT_CONFLICT / FECH.AI VERDICT-FIRST TEMPLATE
 CORE_ORDERING_DEFECT: NOT_ESTABLISHED
 ARCHETYPE_V0_2_ORDERING_DEFECT: NOT_ESTABLISHED
 BUILDER_V0_6_ORDERING_DEFECT: NOT_ESTABLISHED
-RECEIPT_MECHANICAL_ENFORCEMENT: NOT_ESTABLISHED
 ```
+
+The v0.6 P09 proves failure of receipt-first behavioral compliance in that run. It does not by itself prove the universal absence of an unobserved or future platform enforcement mechanism.
 
 ## 5. Runtime enforcement boundary
 
