@@ -28,7 +28,7 @@ Queued runtime target: `SES — SaaS Architect` v0.3.
 | SaaS Architect v0.3 | deferred-materialization target; runtime proof `NOT_ESTABLISHED` |
 | Documentation Auditor archetype | ACTIVE for resolution / runtime not certified |
 | Documentation Auditor v0.4 | external Builder application established by user-observed fingerprint/config evidence; P01/P02/P03 selection-deferral behavior observed; P09 attempt 1 FAIL; P09 attempt 2 FAIL |
-| Documentation Auditor v0.5 | targeted coverage-hardening candidate; runtime proof `NOT_ESTABLISHED` |
+| Documentation Auditor v0.5 | targeted coverage-hardening runtime target; runtime proof `NOT_ESTABLISHED` |
 | Shared hybrid project entry | one ordered flow; P01–P10 runtime-required for applicable targets |
 
 `DOCUMENTATION_AUDITOR_V0_4_FAIL != DOCUMENTATION_AUDITOR_V0_5_PASS`
@@ -58,7 +58,7 @@ The Core resilience contract already requires start-through-EOF proof. Current e
 
 ## 5. v0.5 target correction
 
-The compact kernel now makes explicit:
+The compact kernel makes explicit:
 
 ```text
 EXACT_READER_SUCCESS != EOF_PROOF
@@ -76,7 +76,7 @@ The corrected kernel remains within the Builder operational budget.
 
 Documentation Auditor v0.4 Builder application was established through user-supplied evidence including complete kernel coverage, starter, empty Knowledge, capabilities, API-key/Bearer auth, authenticated principal, required SES repository access smoke and private visibility.
 
-That does **not** establish v0.5 application. A canonical v0.5 merge, explicit Product Authority authorization, exact Builder application and fresh fingerprint are still required.
+That does **not** establish v0.5 application. Once v0.5 is canonical on `main`, explicit Product Authority authorization, exact external Builder application and a fresh fingerprint are still required.
 
 `V0_4_BUILDER_APPLIED != V0_5_BUILDER_APPLIED`
 
