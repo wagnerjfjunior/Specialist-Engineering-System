@@ -308,7 +308,17 @@ RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
 RECEIPT_MECHANICAL_ENFORCEMENT: NOT_ESTABLISHED
 ```
 
-The v0.5 P09 result demonstrated that the coverage correction worked while exposing a receipt-order defect. v0.6 removed the known SES-side archetype ordering contradiction, but fresh v0.6 P09 still failed receipt ordering. Current root-cause classification is therefore `UNENFORCED_RUNTIME_INVARIANT` with a contributing FECH.AI verdict-first response-format conflict. See the runtime enforcement boundary contract.
+The v0.5 P09 result demonstrated that the coverage correction worked while exposing a receipt-order defect. v0.6 removed the known SES-side archetype ordering contradiction, but fresh v0.6 P09 still failed receipt ordering.
+
+Current bounded classification:
+
+```text
+PRIMARY_OBSERVED_GAP: RUNTIME_ENFORCEMENT_GAP
+RECEIPT_MECHANICAL_ENFORCEMENT: NOT_ESTABLISHED
+CONTRIBUTING_CAUSE: CROSS_LAYER_OUTPUT_FORMAT_CONFLICT / FECH.AI VERDICT-FIRST TEMPLATE
+```
+
+The v0.6 P09 proves failure of receipt-first behavioral compliance in that run; it does not prove the universal absence of an unobserved or future platform enforcement mechanism. See the runtime enforcement boundary contract.
 
 Historical failures remain failed.
 
