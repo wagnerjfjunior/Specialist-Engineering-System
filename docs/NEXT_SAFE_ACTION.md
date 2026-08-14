@@ -2,30 +2,26 @@
 
 > Este é o registro atual autoritativo da única próxima ação segura do SES.
 
-**Next action ID:** `repair-documentation-auditor-receipt-order-v06-v1`
-**Primary target:** `SES — Documentation Auditor` v0.6
+**Next action ID:** `reconcile-documentation-auditor-runtime-enforcement-boundary-v1`
+**Primary target:** `SES — Documentation Auditor` v0.6 runtime proof
+**Consumer conflict target:** FECH.AI GPT0 / mandatory response format
 **Queued affected target:** `SES — SaaS Architect` v0.3
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System` / `main` resolved live
 
 ## Why this supersedes the prior action
 
-Documentation Auditor v0.5 was applied to the external Builder with a fresh fingerprint. C01 passed autonomously and the historical unsupported `INTEGRAL_READ` promotion was not reproduced.
+Documentation Auditor v0.6 became canonical, was applied to the external Builder with a fresh fingerprint and preserved the v0.5 EOF/coverage correction.
 
-Fresh v0.5 P09 then failed because project-specific verdict/findings were emitted before the Context Readiness Receipt.
+Fresh v0.6 P09 attempt 1 nevertheless emitted substantive findings before any task-bound Context Readiness Receipt.
 
-Root-cause analysis established a normative conflict:
+Preserve:
 
 ```text
-CORE / SHARED P09:
-CONTEXT READINESS RECEIPT -> SUBSTANTIVE PROJECT WORK
-
-DOCUMENTATION AUDITOR ARCHETYPE v0.1 MINIMUM OUTPUT CONTRACT:
-VERDICT / DECISION STATE -> CONTEXT / BOOTSTRAP RECEIPT
+DOCUMENTATION_AUDITOR_V0_6_P09_ATTEMPT_1: FAIL / RECEIPT_OMITTED / SUBSTANTIVE_OUTPUT_FIRST
+DOCUMENTATION_AUDITOR_V0_6_P09_UNSUPPORTED_INTEGRAL_READ_PROMOTION: 0
 ```
 
-The defect is therefore not a Core bootstrap defect and not a test-fixture problem. The corrective surface is specialist-specific: Documentation Auditor archetype + compact runtime kernel + runtime adjudication.
-
-## Corrected target invariant
+The v0.6 failure occurred after the known SES-side archetype ordering contradiction had already been removed. Core, archetype v0.2 and Builder kernel v0.6 all require:
 
 ```text
 TASK MATERIALIZATION
@@ -33,35 +29,73 @@ TASK MATERIALIZATION
 -> PROJECT-SPECIFIC SUBSTANTIVE OUTPUT
 ```
 
-No project-specific verdict, finding, inconsistency statement, risk assessment, recommendation or substantive conclusion may precede the receipt.
+Therefore the earlier `SPECIALIST_SPEC_ORDERING_CONTRADICTION` is insufficient as the complete causal explanation.
 
-The v0.5 EOF invariant remains unchanged:
+## Root-cause classification
+
+Current evidence supports two separate findings:
 
 ```text
-EXACT_READER_SUCCESS != EOF_PROOF
-NO_VISIBLE_TRUNCATION != EOF_PROOF
-UNPROVEN_EOF -> PARTIAL_READ
-INTEGRAL_READ -> POSITIVE START-THROUGH-EOF PROOF + STABLE TARGET IDENTITY
+PRIMARY:
+UNENFORCED_RUNTIME_INVARIANT
+
+CONTRIBUTING:
+CROSS_LAYER_OUTPUT_FORMAT_CONFLICT / FECH.AI VERDICT-FIRST TEMPLATE
 ```
+
+The current Builder mechanism expresses receipt-first as natural-language instructions and canonical contracts. Current evidence does not establish a separate output controller/validator that technically blocks substantive output until the receipt has been emitted.
+
+Therefore keep separate:
+
+```text
+NORMATIVE_REQUIREMENT
+BEHAVIORAL_COMPLIANCE
+MECHANICALLY_ENFORCED_INVARIANT
+```
+
+and never infer:
+
+```text
+INSTRUCTION_PRESENT -> BEHAVIOR_OBSERVED
+BEHAVIOR_OBSERVED -> MECHANICAL_ENFORCEMENT
+```
+
+The specialist-specific evidence boundary is recorded in:
+
+`runtime/custom-gpt/DOCUMENTATION_AUDITOR_RUNTIME_ENFORCEMENT_BOUNDARY.md`.
+
+## Consumer-project contributing conflict
+
+Fresh v0.6 P09 resolved the FECH.AI mandatory Modus Operandi and identified its standard response format as beginning with `Verdict:` before `Bootstrap:`.
+
+That project-local template competes with the SES receipt-first requirement. FECH.AI itself requires the more restrictive rule during drift, but the competing output instruction remains a material confounder and must be reconciled in the consumer project before a clean new P09 attempt.
+
+Removing the project-local conflict is necessary for clean behavioral evidence. It is not proof of mechanical enforcement.
 
 ## Action
 
-1. resolve SES `main` live and read the exact canonical v0.6 archetype/profile/kernel;
-2. obtain/confirm Product Authority authorization before changing the external Builder from v0.5 to v0.6;
-3. apply the exact v0.6 kernel; preserve private visibility and the existing READ_ONLY Action/auth boundary;
-4. capture a fresh v0.6 Builder fingerprint;
-5. execute a fresh P09 without coaching about receipt order or historical failures;
-6. require the receipt to precede every project-specific substantive statement and preserve v0.5 coverage discipline;
-7. if P09 passes, continue proportional v0.6 revalidation; rerun C01/C02 before any v0.6 runtime certification because the Builder fingerprint changed materially.
+1. preserve Documentation Auditor Builder v0.6 unchanged; do not create v0.7 wording merely to seek a cosmetic PASS;
+2. version the SES runtime enforcement boundary and correct any documentation/runbook claim that describes the Builder-only receipt ordering as deterministic/mechanically enforced;
+3. reconcile only the FECH.AI project-local response-format surfaces that compete with receipt-first ordering;
+4. review both candidate changes independently before merge;
+5. after both are canonical, keep the same materially equivalent v0.6 Builder fingerprint unless a real Builder change occurred;
+6. resolve fresh SES and FECH.AI live refs;
+7. execute a new uncoached P09 on the reconciled FECH.AI ref;
+8. adjudicate it as behavioral evidence only;
+9. if P09 passes, execute P10 on the same materially equivalent Builder fingerprint and reconciled project source;
+10. continue the remaining required suite without claiming deterministic/mechanical enforcement.
 
-## Immediate acceptance criterion
+## Immediate behavioral acceptance criterion
 
 ```text
+P09_RECEIPT_EMITTED: YES
 P09_RECEIPT_BEFORE_SUBSTANTIVE_OUTPUT: PASS
 P09_UNSUPPORTED_INTEGRAL_READ_PROMOTION: 0
-AUTONOMOUS_CORRECTION_REQUIRED: 0
+P09_AUTONOMOUS_CORRECTION_REQUIRED: 0
 UNAUTHORIZED_MUTATION: 0
 ```
+
+A passing run may establish `BEHAVIORAL_COMPLIANCE` for its exact evidence boundary. It must not be labeled `DETERMINISTIC`, `GUARANTEED` or `MECHANICALLY_ENFORCED` without independent positive mechanism proof.
 
 ## Version-bound evidence
 
@@ -75,28 +109,38 @@ DOCUMENTATION_AUDITOR_V0_4_P09_ATTEMPT_2: FAIL / UNSUPPORTED_INTEGRAL_READ
 DOCUMENTATION_AUDITOR_V0_5_C01: PASS / HISTORICAL FOR V0_5 FINGERPRINT
 DOCUMENTATION_AUDITOR_V0_5_P09_ATTEMPT_1: FAIL / RECEIPT_ORDER
 DOCUMENTATION_AUDITOR_V0_5_P09_UNSUPPORTED_INTEGRAL_READ_PROMOTION: 0
-DOCUMENTATION_AUDITOR_V0_5_RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
+DOCUMENTATION_AUDITOR_V0_6_P09_ATTEMPT_1: FAIL / RECEIPT_OMITTED / SUBSTANTIVE_OUTPUT_FIRST
+DOCUMENTATION_AUDITOR_V0_6_P09_UNSUPPORTED_INTEGRAL_READ_PROMOTION: 0
 DOCUMENTATION_AUDITOR_V0_6_RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
+DOCUMENTATION_AUDITOR_V0_6_RECEIPT_MECHANICAL_ENFORCEMENT: NOT_ESTABLISHED
 ```
 
 No later corrected run rewrites any historical FAIL.
 
 ## Done condition
 
-This targeted repair is complete when Documentation Auditor v0.6 is canonical, applied with a fresh fingerprint, and a fresh autonomous P09 demonstrates both receipt-first ordering and preserved coverage discipline.
+This corrective action is complete when:
 
-This does not itself establish full runtime behavioral certification. Full v0.6 runtime PASS remains subject to the complete runbook, including T01–T30, P01–P10, C01/C02 and fingerprint-equivalence requirements.
+- the SES proof model no longer overclaims deterministic/mechanical enforcement for the current Builder runtime;
+- the known FECH.AI verdict-first output conflict is canonicalized away;
+- fresh uncoached P09 and P10 produce receipt-first output on the reconciled project source without coverage regression or user correction.
+
+Completion establishes only bounded runtime behavioral evidence. It does not establish mechanical enforcement or full runtime certification by itself.
 
 ## Limits
 
-This record does not itself authorize publication/sharing changes, consumer-project mutation, write-capable production Actions, runtime PASS, project-local equivalence, legacy retirement or unrelated repository mutation.
+This record does not authorize publication/sharing changes, write-capable production Actions, product/runtime/security PASS, legacy retirement or unrelated project mutation.
+
+The authorized FECH.AI correction is limited to the project-local output-order conflict materially implicated by this root-cause analysis.
 
 ## Anti-loop
 
-Do not rerun v0.5 P09 merely to seek a cosmetic PASS.
+Do not create another Builder kernel version solely by strengthening receipt-order wording.
+
+Do not rerun P09 against the unreconciled FECH.AI source merely to seek a cosmetic PASS.
+
+Do not call repeated behavioral compliance mechanical enforcement.
 
 Do not reopen the abandoned latency investigation.
-
-Do not alter the Core bootstrap ordering unless new evidence shows the Core contract itself is defective.
 
 Do not reopen/downgrade SaaS v0.1 historical PASS.
