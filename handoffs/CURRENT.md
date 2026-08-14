@@ -35,9 +35,10 @@ Consumer-project truth, continuity and authority remain project-owned.
 9. Because v0.6 failed after SES-side ordering was internally reconciled, the earlier `SPECIALIST_SPEC_ORDERING_CONTRADICTION` is not a complete causal explanation.
 10. Current bounded primary finding is `RUNTIME_ENFORCEMENT_GAP`; receipt-first behavioral compliance failed in v0.6 P09 while receipt mechanical enforcement remains `NOT_ESTABLISHED`.
 11. This does not prove the universal absence of an unobserved or future platform enforcement mechanism.
-12. A contributing project-local conflict is established in FECH.AI: mandatory Modus Operandi standard response format begins with `Verdict:` before `Bootstrap:`.
-13. Historical failures remain failures; no retroactive PASS.
-14. The abandoned latency investigation remains closed.
+12. A contributing project-local conflict is established in FECH.AI: mandatory Modus Operandi standard response format begins with `Verdict:` before `Bootstrap:` on the observed FECH.AI ref.
+13. SES continuity does not authorize mutation of that consumer project. Any project-local correction must resolve FECH.AI live state and applicable authority before mutation.
+14. Historical failures remain failures; no retroactive PASS.
+15. The abandoned latency investigation remains closed.
 
 ## 4. Current required behavior and proof boundary
 
@@ -100,14 +101,14 @@ DOCUMENTATION_AUDITOR_V0_6_RECEIPT_MECHANICAL_ENFORCEMENT: NOT_ESTABLISHED
 
 Authoritative source: `docs/NEXT_SAFE_ACTION.md`.
 
-Derived summary: keep the v0.6 Builder unchanged; correct the SES proof model so it does not overclaim deterministic/mechanical enforcement; reconcile the FECH.AI verdict-first response-format conflict in its own repository; independently review both changes; after canonicalization, run fresh uncoached P09 and P10 against the reconciled FECH.AI ref and record any PASS only as bounded behavioral evidence.
+Derived summary: keep the v0.6 Builder unchanged; resolve SES and FECH.AI live; verify the SES proof-model correction and whether the FECH.AI verdict-first conflict remains canonical; if a consumer mutation is still required, obtain explicit applicable FECH.AI authorization before using its normal reviewed change process; only after both corrections are canonical run fresh uncoached P09 and P10, recording any PASS only as bounded behavioral evidence.
 
 SaaS Architect v0.3 remains queued and is not automatically mutated by this repair.
 
-This handoff does not authorize publication, runtime certification, project-local equivalence promotion or legacy retirement. FECH.AI mutation authority for this corrective cycle is limited to the identified project-local output-order conflict.
+This handoff does not authorize consumer-project mutation, publication, runtime certification, project-local equivalence promotion or legacy retirement.
 
 ## 7. Short resume prompt
 
 ```text
-SES -> resolve main live -> preserve SaaS v0.1 PASS + v0.2 FAIL -> DA v0.4 P09 FAIL x2 -> DA v0.5 C01 PASS + P09 FAIL receipt order -> PR #17 removed SES archetype ordering contradiction -> DA v0.6 applied/fingerprint established -> fresh v0.6 P09 still FAIL, receipt omitted, coverage overclaim stayed 0 -> primary observed gap = RUNTIME_ENFORCEMENT_GAP; mechanical enforcement NOT_ESTABLISHED; contributing = FECH.AI Verdict-first template conflict -> keep v0.6 kernel unchanged -> classify behavioral vs mechanical proof honestly -> reconcile only FECH.AI causal template -> independent review -> fresh uncoached P09/P10 -> no retroactive PASS.
+SES -> resolve main live -> preserve SaaS v0.1 PASS + v0.2 FAIL -> DA v0.4 P09 FAIL x2 -> DA v0.5 C01 PASS + P09 FAIL receipt order -> PR #17 removed SES archetype ordering contradiction -> DA v0.6 applied/fingerprint established -> fresh v0.6 P09 still FAIL, receipt omitted, coverage overclaim stayed 0 -> primary observed gap = RUNTIME_ENFORCEMENT_GAP; mechanical enforcement NOT_ESTABLISHED; contributing = FECH.AI Verdict-first template conflict -> keep v0.6 kernel unchanged -> classify behavioral vs mechanical proof honestly -> resolve FECH.AI live + authority before any required consumer mutation -> canonicalize both corrections -> fresh uncoached P09/P10 -> no retroactive PASS.
 ```
