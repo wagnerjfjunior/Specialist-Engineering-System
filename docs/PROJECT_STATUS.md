@@ -7,91 +7,94 @@
 
 ## 1. Project identity and boundary
 
-SES is project-agnostic specialist-engineering infrastructure. SES owns reusable contracts, archetypes, runtime-candidate specifications and project registration metadata. Consumer projects retain their own truth, state, authority, environments and project-local specialist rules.
+SES is project-agnostic specialist-engineering infrastructure. Consumer projects retain project truth, state, authority, environments and local specialist rules.
 
 `SES CENTRAL EVOLUTION != AUTOMATIC CONSUMER-PROJECT MUTATION`
 
 ## 2. Current durable objective
 
-Repair the reproducible Documentation Auditor runtime coverage overclaim found during v0.4 P09 without reopening Core architecture or the abandoned latency investigation.
+Repair the Documentation Auditor receipt-order defect exposed by fresh v0.5 P09 after the v0.5 coverage correction succeeded.
 
-Primary runtime target: `SES — Documentation Auditor` v0.5.  
+Primary runtime target: `SES — Documentation Auditor` v0.6.  
 Queued runtime target: `SES — SaaS Architect` v0.3.
 
 ## 3. Version-separated runtime state
 
 | Area | Recorded state |
 |---|---|
-| SaaS Architect archetype | ACTIVE for resolution |
 | SaaS Architect v0.1 | historical `RUNTIME_BEHAVIORAL_PROOF = PASS`, T01–T29 = 29/29 |
-| SaaS Architect v0.2 | runtime proof `NOT_ESTABLISHED`; P01 attempt 1 historical FAIL due old v0.1 Instructions |
-| SaaS Architect v0.3 | deferred-materialization target; runtime proof `NOT_ESTABLISHED` |
-| Documentation Auditor archetype | ACTIVE for resolution / runtime not certified |
-| Documentation Auditor v0.4 | external Builder application established by user-observed fingerprint/config evidence; P01/P02/P03 output behavior consistent with selection deferral, but deterministic P02/P03 consumer-I/O gate unverified; P09 attempt 1 FAIL; P09 attempt 2 FAIL |
-| Documentation Auditor v0.5 | targeted coverage-hardening runtime target; runtime proof `NOT_ESTABLISHED` |
-| Shared hybrid project entry | one ordered flow; P01–P10 runtime-required for applicable targets |
+| SaaS Architect v0.2 | runtime proof `NOT_ESTABLISHED`; P01 attempt 1 historical FAIL due Builder kernel drift |
+| SaaS Architect v0.3 | queued; runtime proof `NOT_ESTABLISHED` |
+| Documentation Auditor v0.4 | Builder applied; P09 attempt 1 FAIL / receipt order + unsupported integral; attempt 2 FAIL / unsupported integral |
+| Documentation Auditor v0.5 | Builder applied + fresh fingerprint; C01 PASS; fresh P09 attempt 1 FAIL / receipt order; unsupported integral promotion = 0; runtime proof `NOT_ESTABLISHED` |
+| Documentation Auditor v0.6 | candidate receipt-order correction; Builder not yet applied; runtime proof `NOT_ESTABLISHED` |
+| Shared hybrid project entry | one ordered flow; P01–P10 runtime-required |
 
-`DOCUMENTATION_AUDITOR_V0_4_FAIL != DOCUMENTATION_AUDITOR_V0_5_PASS`
+No later version rewrites historical failures.
 
-## 4. Reproducible v0.4 failure
+## 4. Root-cause finding
 
-Fresh v0.4 P09 runs on 2026-08-14 produced the same material coverage overclaim twice:
+Core/shared flow is explicit:
 
 ```text
-EXACT PATH RETRIEVAL SUCCEEDED
-+ NO VISIBLE TRUNCATION
--> RUNTIME CLAIMED INTEGRAL_READ
--> POSITIVE EOF PROOF ABSENT
+TASK MATERIALIZATION
+-> EMIT TASK-BOUND CONTEXT READINESS RECEIPT
+-> ONLY THEN PROJECT-SPECIFIC SUBSTANTIVE WORK
 ```
 
-Attempt 1 also placed substantive analysis before the Context Readiness Receipt. Attempt 2 corrected receipt ordering but repeated the unsupported `INTEGRAL_READ` promotion.
-
-Preserve:
+Documentation Auditor archetype v0.1 contradicted that ordering in its minimum output contract by listing:
 
 ```text
-DOCUMENTATION_AUDITOR_V0_4_P01_P02_P03: OUTPUT_BEHAVIOR_OBSERVED / CONSUMER_IO_UNVERIFIED
+VERDICT / DECISION STATE
+CONTEXT / BOOTSTRAP RECEIPT
+```
+
+Fresh v0.5 P09 reproduced the archetype-side order: verdict and findings appeared before the receipt.
+
+Classification:
+
+```text
+ROOT_CAUSE_CLASS: SPECIALIST_SPEC_ORDERING_CONTRADICTION
+CORE_BOOTSTRAP_DEFECT: NOT_ESTABLISHED
+ACTION_DEFECT: NOT_ESTABLISHED
+CONSUMER_PROJECT_DEFECT: NOT_ESTABLISHED
+```
+
+## 5. v0.6 correction
+
+The v0.6 candidate:
+
+- advances the Documentation Auditor archetype to spec candidate v0.2;
+- makes the receipt a gating output artifact before any project-specific verdict/finding/risk/recommendation;
+- advances compact Builder kernel to v0.6 with the same deterministic order;
+- preserves the v0.5 EOF/coverage hardening;
+- keeps Core and GitHub READ_ONLY Action unchanged;
+- strengthens runtime P09/P10 adjudication so report formatting cannot move substantive output ahead of the receipt.
+
+Kernel measured count: `7452` Unicode code points including trailing newline, within the `<= 7500` operational budget.
+
+## 6. Preserved evidence
+
+```text
 DOCUMENTATION_AUDITOR_V0_4_P09_ATTEMPT_1: FAIL / RECEIPT_ORDER + UNSUPPORTED_INTEGRAL_READ
 DOCUMENTATION_AUDITOR_V0_4_P09_ATTEMPT_2: FAIL / UNSUPPORTED_INTEGRAL_READ
-REPRODUCIBLE_FAILURE_CLASS: EXACT_READER_SUCCESS_WITHOUT_EOF_PROMOTED_TO_INTEGRAL_READ
+DOCUMENTATION_AUDITOR_V0_5_C01: PASS / V0_5 FINGERPRINT
+DOCUMENTATION_AUDITOR_V0_5_P09_ATTEMPT_1: FAIL / RECEIPT_ORDER
+DOCUMENTATION_AUDITOR_V0_5_P09_UNSUPPORTED_INTEGRAL_READ_PROMOTION: 0
+DOCUMENTATION_AUDITOR_V0_5_RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
+DOCUMENTATION_AUDITOR_V0_6_RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
 ```
 
-The Core resilience contract already requires start-through-EOF proof. Current evidence therefore supports a runtime-target hardening, not a Core semantic rewrite.
+Because v0.6 changes archetype/kernel fingerprint, v0.5 C01 remains historical evidence and must be rerun on the v0.6 baseline before contributing to full v0.6 runtime certification.
 
-## 5. v0.5 target correction
+## 7. Active gates
 
-The compact kernel makes explicit:
-
-```text
-EXACT_READER_SUCCESS != EOF_PROOF
-NO_VISIBLE_TRUNCATION != EOF_PROOF
-UNPROVEN_EOF -> PARTIAL_READ
-```
-
-A targeted regression is versioned at:
-
-`tests/runtime/DOCUMENTATION_AUDITOR_V05_COVERAGE_REGRESSION.md`
-
-The corrected kernel remains within the Builder operational budget.
-
-Full runtime certification additionally requires C02 to prove that positive start-through-EOF coverage can still support `INTEGRAL_READ`, and C01/C02 must bind to the same materially equivalent v0.5 Builder fingerprint as the baseline certification suite.
-
-## 6. External Builder boundary
-
-Documentation Auditor v0.4 Builder application was established through user-supplied evidence including complete kernel coverage, starter, empty Knowledge, capabilities, API-key/Bearer auth, authenticated principal, required SES repository access smoke and private visibility.
-
-That does **not** establish v0.5 application. Once v0.5 is canonical on `main`, explicit Product Authority authorization, exact external Builder application and a fresh fingerprint are still required.
-
-`V0_4_BUILDER_APPLIED != V0_5_BUILDER_APPLIED`
-
-## 7. Active risks
-
-- unsupported promotion of successful exact reader output to `INTEGRAL_READ`;
-- regression into a universal ban on valid `INTEGRAL_READ`;
-- retroactive PASS of historical v0.4 P09 failures;
-- treating v0.4 Builder application as v0.5 application;
-- conflating target repair with Core redesign;
-- automatic propagation into SaaS Architect or consumer projects;
-- publication/runtime certification without separate gates.
+- candidate review/merge is not runtime proof;
+- external Builder v0.6 application requires the normal Product Authority gate;
+- fresh v0.6 fingerprint required after application;
+- fresh P09 must autonomously demonstrate receipt-first ordering and preserved coverage discipline;
+- C01/C02 and all other required cases remain necessary before runtime PASS;
+- publication, consumer mutation and SaaS Architect mutation remain separate decisions.
 
 ## 8. Continuity policy
 
