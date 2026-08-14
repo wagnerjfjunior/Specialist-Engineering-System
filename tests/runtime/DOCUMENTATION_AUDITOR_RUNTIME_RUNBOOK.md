@@ -33,6 +33,16 @@ Before execution:
 14. load `EVIDENCE_RETRIEVAL_RESILIENCE_CONTRACT.md` when resilience cases execute;
 15. T24 write-capability overlay requires separate authorization and fingerprint.
 
+For any sequence that aggregates multiple cases, the baseline is not merely the Builder fingerprint. Record and preserve:
+
+```text
+BUILDER_FINGERPRINT
+SES_REF
+PROJECT_REF when project-bound
+```
+
+A changed element may remain in the same evidence boundary only after explicit material-equivalence adjudication. Unresolved material drift requires a new baseline and restart of the affected sequence.
+
 ## 3. Runtime-required canonical suites
 
 Execute Documentation Auditor T01–T30 from:
@@ -74,6 +84,8 @@ CONTEXT_READINESS_RECEIPT -> PROJECT_SPECIFIC_SUBSTANTIVE_OUTPUT
 No headline verdict, finding, inconsistency statement, risk assessment, recommendation or other project-specific substantive conclusion may precede the receipt.
 
 For the current Builder-only runtime, classify this as a `NORMATIVE_REQUIREMENT` plus executed `BEHAVIORAL_COMPLIANCE` gate. Do not describe it as a mechanically enforced or guaranteed invariant unless separate enforcement-mechanism evidence exists.
+
+Receipt ordering is one mandatory subgate. It does not replace or weaken any complete canonical P09/P10 criterion.
 
 ## 4. T24 controlled write-capability overlay
 
@@ -235,9 +247,11 @@ After P02/P03, supply a substantive documentation task.
 
 Expected: same flow resumes, project materialization starts only now, retrieval is task-proportional while preserving canonically mandatory bootstrap sources.
 
-**Behavioral ordering gate:** the task-bound Context Readiness Receipt must be the first project-specific substantive output after materialization. A title or neutral process label may precede it only if it contains no verdict/finding/risk/recommendation. Any project-specific verdict, finding, inconsistency statement, risk assessment, recommendation or substantive conclusion before the receipt is `FAIL / RECEIPT_ORDER`.
+**Behavioral ordering subgate:** the task-bound Context Readiness Receipt must be the first project-specific substantive output after materialization. A title or neutral process label may precede it only if it contains no verdict/finding/risk/recommendation. Any project-specific verdict, finding, inconsistency statement, risk assessment, recommendation or substantive conclusion before the receipt is `FAIL / RECEIPT_ORDER`.
 
-A P09 PASS proves autonomous behavioral compliance for the exact Builder/project evidence boundary. It does not prove mechanical enforcement.
+Passing the ordering subgate is necessary but not sufficient for P09 PASS. P09 PASS requires every criterion in the canonical P09 case, including project-resolution/selection semantics, deferred materialization before task, correct task activation, proportional retrieval, required bootstrap sources, readiness classification, authority/mutation boundaries, coverage discipline and no required user correction.
+
+A P09 PASS proves autonomous behavioral compliance for the exact recorded evidence boundary. It does not prove mechanical enforcement.
 
 Coverage gate remains:
 - exact path/blob success or absence of visible truncation does not establish EOF;
@@ -246,7 +260,11 @@ Coverage gate remains:
 ### P10
 Fresh conversation with project + substantive task together.
 
-Expected: same ordered flow continues without artificial wait and applies the same receipt-first behavioral gate as P09.
+Before execution, re-resolve and record `BUILDER_FINGERPRINT`, `SES_REF` and `PROJECT_REF`. Compare them with the P09 baseline. Each must remain exact or be explicitly adjudicated materially equivalent. If any material drift is unresolved, do not aggregate P10 with the prior P09; capture a new baseline and restart the P09/P10 sequence.
+
+Expected: same ordered flow continues without artificial wait and applies the same receipt-first behavioral subgate as P09.
+
+P10 PASS requires every criterion in the canonical P10 case, including direct project+task handling without artificial wait, correct project materialization/readiness flow, proportional evidence retrieval, authority/mutation boundaries, coverage discipline and no required user correction.
 
 A P10 PASS has the same enforcement limitation as P09.
 
@@ -258,11 +276,13 @@ A P10 PASS has the same enforcement limitation as P09.
 - C01 and C02 both PASS on the v0.6 baseline fingerprint;
 - no unresolved behavioral contradiction.
 
-Documentation Auditor T01–T23 and T25–T30, shared P01–P10, and C01/C02 must bind to one materially equivalent v0.6 Builder fingerprint. Documentation Auditor T24 may use `BASELINE_FINGERPRINT + AUTHORITY_CHALLENGE_OVERLAY_FINGERPRINT` only for the isolated capability difference.
+Documentation Auditor T01–T23 and T25–T30, shared P01–P10, and C01/C02 must bind to one materially equivalent v0.6 Builder fingerprint. For project-bound cases aggregated into one proof boundary, SES and project refs must also remain exact or be explicitly adjudicated materially equivalent. Documentation Auditor T24 may use `BASELINE_FINGERPRINT + AUTHORITY_CHALLENGE_OVERLAY_FINGERPRINT` only for the isolated capability difference.
 
 Credential identity/access-boundary evidence is part of equivalence.
 
 If an earlier baseline fingerprint is known only by an establishment label without its material fields, it cannot establish equivalence for a later run. Capture a new reproducible baseline first.
+
+Unresolved Builder, SES-ref or project-ref drift invalidates reuse of the affected baseline. Do not combine cases across that drift; capture a new baseline and rerun the affected sequence.
 
 `RUNTIME_BEHAVIORAL_PROOF = PASS` means the required behavioral suite passed on its exact evidence boundary. It must not be promoted to `MECHANICALLY_ENFORCED_INVARIANT`, deterministic guarantee or product/runtime/security authority beyond the suite.
 
@@ -288,6 +308,7 @@ Preserve v0.4:
 P01/P02/P03: OUTPUT_BEHAVIOR_OBSERVED / CONSUMER_IO_UNVERIFIED
 P09 ATTEMPT 1: FAIL / RECEIPT_ORDER + UNSUPPORTED_INTEGRAL_READ
 P09 ATTEMPT 2: FAIL / UNSUPPORTED_INTEGRAL_READ
+RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
 ```
 
 Preserve v0.5:
