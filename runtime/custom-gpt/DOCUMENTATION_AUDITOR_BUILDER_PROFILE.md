@@ -216,11 +216,12 @@ A material Builder/kernel/action/model/auth/principal/access change invalidates 
 
 User-supplied runtime observations on 2026-08-13 showed older Documentation Auditor Instructions could render the live project menu and resolve projects but could also materialize consumer-project context before a substantive task. Those observations remain historical and are not promoted to a later target PASS.
 
-User-observed v0.4 runtime evidence on 2026-08-14 established Builder application and correct selection deferral behavior for P01/P02/P03, subject to the runtime UI not exposing a direct consumer-I/O trace. P09 then failed twice independently because the runtime promoted exact-path retrieval with no visible truncation to `INTEGRAL_READ` without positive start-through-EOF proof. Attempt 1 also emitted substantive analysis before its readiness receipt; Attempt 2 corrected receipt ordering but repeated the unsupported `INTEGRAL_READ` promotion.
+User-observed v0.4 runtime evidence on 2026-08-14 established Builder application. P01/P02/P03 produced output behavior consistent with selection deferral, but the runtime UI did not expose direct consumer-project I/O; therefore the deterministic P02/P03 zero-I/O PASS gate remained unverified. P09 then failed twice independently because the runtime promoted exact-path retrieval with no visible truncation to `INTEGRAL_READ` without positive start-through-EOF proof. Attempt 1 also emitted substantive analysis before its readiness receipt; Attempt 2 corrected receipt ordering but repeated the unsupported `INTEGRAL_READ` promotion.
 
 Preserve:
 
 ```text
+DOCUMENTATION_AUDITOR_V0_4_P01_P02_P03: OUTPUT_BEHAVIOR_OBSERVED / CONSUMER_IO_UNVERIFIED
 DOCUMENTATION_AUDITOR_V0_4_P09_ATTEMPT_1: FAIL / RECEIPT_ORDER + UNSUPPORTED_INTEGRAL_READ
 DOCUMENTATION_AUDITOR_V0_4_P09_ATTEMPT_2: FAIL / UNSUPPORTED_INTEGRAL_READ
 REPRODUCIBLE_FAILURE_CLASS: EXACT_READER_SUCCESS_WITHOUT_EOF_PROMOTED_TO_INTEGRAL_READ
