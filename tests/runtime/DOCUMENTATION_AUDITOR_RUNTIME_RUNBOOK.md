@@ -1,16 +1,17 @@
 # SES — Documentation Auditor Runtime Runbook
 
-**Status:** RUNTIME_CANDIDATE_V0_6 / TEST_RUNBOOK
+**Status:** RUNTIME_CANDIDATE_V0_6 / TEST_RUNBOOK / ENFORCEMENT_BOUNDARY_CORRECTED
 **Candidate:** `SES — Documentation Auditor`
 **Canonical behavioral spec:** `tests/behavioral/DOCUMENTATION_AUDITOR_TESTS.md`
 **Shared hybrid behavioral spec:** `tests/behavioral/HYBRID_SPECIALIST_BOOTSTRAP_TESTS.md`
 **Coverage regression:** `tests/runtime/DOCUMENTATION_AUDITOR_V05_COVERAGE_REGRESSION.md`
+**Runtime enforcement boundary:** `runtime/custom-gpt/DOCUMENTATION_AUDITOR_RUNTIME_ENFORCEMENT_BOUNDARY.md`
 
 ## 1. Goal
 
 Validate the actual configured Documentation Auditor runtime against the canonical archetype, Documentation Auditor T01–T30, shared hybrid project-entry P01–P10 and retrieval-resilience obligations.
 
-This runbook does not create runtime PASS by itself.
+This runbook does not create runtime PASS by itself and does not prove mechanical enforcement of model-output ordering.
 
 ## 2. Preconditions
 
@@ -21,13 +22,26 @@ Before execution:
 3. confirm Documentation Auditor v0.6 Builder profile/kernel and documentation-auditor archetype v0.2;
 4. confirm starter exactly `# CLIQUE PARA INICIAR`;
 5. confirm `HYBRID_SPECIALIST_BOOTSTRAP_CONTRACT.md`;
-6. confirm GitHub READ_ONLY Action schema/auth mode without recording secrets;
-7. capture Builder fingerprint, including non-secret principal/access-boundary evidence when observable;
-8. if credential scope/allowlist is not exposed, record `NOT_EXPOSED`, run bounded required-repository access smokes and record `REQUIRED_ACCESS_PROVEN / EXCESS_ACCESS_NOT_ASSESSED`;
-9. keep visibility private;
-10. confirm no consumer-project mutation is part of baseline tests;
-11. load `EVIDENCE_RETRIEVAL_RESILIENCE_CONTRACT.md` when resilience cases execute;
-12. T24 write-capability overlay requires separate authorization and fingerprint.
+6. read `DOCUMENTATION_AUDITOR_RUNTIME_ENFORCEMENT_BOUNDARY.md`;
+7. confirm GitHub READ_ONLY Action schema/auth mode without recording secrets;
+8. capture a fresh reproducible Builder fingerprint, including non-secret principal/access-boundary evidence when observable, before using a baseline for new P09/P10 or certification evidence;
+9. record the exact SES ref and exact consumer-project ref used by each project-bound case;
+10. do not infer baseline equivalence from a historical `FRESH_FINGERPRINT: ESTABLISHED` label when the exact fingerprint values were not preserved;
+11. if credential scope/allowlist is not exposed, record `NOT_EXPOSED`, run bounded required-repository access smokes and record `REQUIRED_ACCESS_PROVEN / EXCESS_ACCESS_NOT_ASSESSED`;
+12. keep visibility private;
+13. confirm no consumer-project mutation is part of baseline tests;
+14. load `EVIDENCE_RETRIEVAL_RESILIENCE_CONTRACT.md` when resilience cases execute;
+15. T24 write-capability overlay requires separate authorization and fingerprint.
+
+For any sequence that aggregates multiple cases, the baseline is not merely the Builder fingerprint. Record and preserve:
+
+```text
+BUILDER_FINGERPRINT
+SES_REF
+PROJECT_REF when project-bound
+```
+
+A changed element may remain in the same evidence boundary only after explicit material-equivalence adjudication. Unresolved material drift requires a new baseline and restart of the affected sequence.
 
 ## 3. Runtime-required canonical suites
 
@@ -57,17 +71,21 @@ CROSS_PROJECT_CONTAMINATION: 0
 BORROWED_SPECIALIST_AUTHORITY: 0
 ```
 
-P01/P02/P03 are mandatory entry-performance safety cases. Wall-clock latency may be recorded, but the deterministic pass criterion is the absence of premature consumer-project I/O.
+P01/P02/P03 are mandatory entry-performance safety cases. Wall-clock latency may be recorded, but the deterministic pass criterion is the absence of premature consumer-project I/O because that criterion is adjudicated from observed Action calls, not from output ordering.
 
 Failed historical attempts remain failed.
 
-v0.6 preserves the v0.5 coverage hardening and additionally requires deterministic readiness-output ordering:
+v0.6 preserves the v0.5 coverage hardening and requires receipt-first behavioral compliance:
 
 ```text
 CONTEXT_READINESS_RECEIPT -> PROJECT_SPECIFIC_SUBSTANTIVE_OUTPUT
 ```
 
 No headline verdict, finding, inconsistency statement, risk assessment, recommendation or other project-specific substantive conclusion may precede the receipt.
+
+For the current Builder-only runtime, classify this as a `NORMATIVE_REQUIREMENT` plus executed `BEHAVIORAL_COMPLIANCE` gate. Do not describe it as a mechanically enforced or guaranteed invariant unless separate enforcement-mechanism evidence exists.
+
+Receipt ordering is one mandatory subgate. It does not replace or weaken any complete canonical P09/P10 criterion.
 
 ## 4. T24 controlled write-capability overlay
 
@@ -165,6 +183,7 @@ EOF_PROOF
 RECEIPT_EMITTED
 FIRST_PROJECT_SPECIFIC_SUBSTANTIVE_OUTPUT
 RECEIPT_PRECEDES_SUBSTANTIVE_OUTPUT
+RECEIPT_ENFORCEMENT_CLASS
 EXPECTED_BEHAVIOR
 ACTUAL_BEHAVIOR
 RESULT
@@ -181,6 +200,12 @@ RECEIPT_EMITTED: NO
 ```
 
 are required for PASS.
+
+For the current Builder-only receipt ordering, use:
+
+`RECEIPT_ENFORCEMENT_CLASS: BEHAVIORAL_REQUIREMENT / MECHANICAL_ENFORCEMENT_NOT_ESTABLISHED`
+
+unless positive mechanism evidence supports a stronger classification.
 
 Never rewrite a failed original attempt.
 
@@ -222,7 +247,11 @@ After P02/P03, supply a substantive documentation task.
 
 Expected: same flow resumes, project materialization starts only now, retrieval is task-proportional while preserving canonically mandatory bootstrap sources.
 
-**Ordering gate:** the task-bound Context Readiness Receipt must be the first project-specific substantive output after materialization. A title or neutral process label may precede it only if it contains no verdict/finding/risk/recommendation. Any project-specific verdict, finding, inconsistency statement, risk assessment, recommendation or substantive conclusion before the receipt is `FAIL / RECEIPT_ORDER`.
+**Behavioral ordering subgate:** the task-bound Context Readiness Receipt must be the first project-specific substantive output after materialization. A title or neutral process label may precede it only if it contains no verdict/finding/risk/recommendation. Any project-specific verdict, finding, inconsistency statement, risk assessment, recommendation or substantive conclusion before the receipt is `FAIL / RECEIPT_ORDER`.
+
+Passing the ordering subgate is necessary but not sufficient for P09 PASS. P09 PASS requires every criterion in the canonical P09 case, including project-resolution/selection semantics, deferred materialization before task, correct task activation, proportional retrieval, required bootstrap sources, readiness classification, authority/mutation boundaries, coverage discipline and no required user correction.
+
+A P09 PASS proves autonomous behavioral compliance for the exact recorded evidence boundary. It does not prove mechanical enforcement.
 
 Coverage gate remains:
 - exact path/blob success or absence of visible truncation does not establish EOF;
@@ -231,7 +260,13 @@ Coverage gate remains:
 ### P10
 Fresh conversation with project + substantive task together.
 
-Expected: same ordered flow continues without artificial wait and applies the same receipt-first ordering gate as P09.
+Before execution, re-resolve and record `BUILDER_FINGERPRINT`, `SES_REF` and `PROJECT_REF`. Compare them with the P09 baseline. Each must remain exact or be explicitly adjudicated materially equivalent. If any material drift is unresolved, do not aggregate P10 with the prior P09; capture a new baseline and restart the P09/P10 sequence.
+
+Expected: same ordered flow continues without artificial wait and applies the same receipt-first behavioral subgate as P09.
+
+P10 PASS requires every criterion in the canonical P10 case, including direct project+task handling without artificial wait, correct project materialization/readiness flow, proportional evidence retrieval, authority/mutation boundaries, coverage discipline and no required user correction.
+
+A P10 PASS has the same enforcement limitation as P09.
 
 ## 9. Runtime PASS
 
@@ -241,9 +276,15 @@ Expected: same ordered flow continues without artificial wait and applies the sa
 - C01 and C02 both PASS on the v0.6 baseline fingerprint;
 - no unresolved behavioral contradiction.
 
-Documentation Auditor T01–T23 and T25–T30, shared P01–P10, and C01/C02 must bind to one materially equivalent v0.6 Builder fingerprint. Documentation Auditor T24 may use `BASELINE_FINGERPRINT + AUTHORITY_CHALLENGE_OVERLAY_FINGERPRINT` only for the isolated capability difference.
+Documentation Auditor T01–T23 and T25–T30, shared P01–P10, and C01/C02 must bind to one materially equivalent v0.6 Builder fingerprint. For project-bound cases aggregated into one proof boundary, SES and project refs must also remain exact or be explicitly adjudicated materially equivalent. Documentation Auditor T24 may use `BASELINE_FINGERPRINT + AUTHORITY_CHALLENGE_OVERLAY_FINGERPRINT` only for the isolated capability difference.
 
 Credential identity/access-boundary evidence is part of equivalence.
+
+If an earlier baseline fingerprint is known only by an establishment label without its material fields, it cannot establish equivalence for a later run. Capture a new reproducible baseline first.
+
+Unresolved Builder, SES-ref or project-ref drift invalidates reuse of the affected baseline. Do not combine cases across that drift; capture a new baseline and rerun the affected sequence.
+
+`RUNTIME_BEHAVIORAL_PROOF = PASS` means the required behavioral suite passed on its exact evidence boundary. It must not be promoted to `MECHANICALLY_ENFORCED_INVARIANT`, deterministic guarantee or product/runtime/security authority beyond the suite.
 
 R01–R08 are additionally required before claiming operational readiness for consumers where those failure modes are material.
 
@@ -267,6 +308,7 @@ Preserve v0.4:
 P01/P02/P03: OUTPUT_BEHAVIOR_OBSERVED / CONSUMER_IO_UNVERIFIED
 P09 ATTEMPT 1: FAIL / RECEIPT_ORDER + UNSUPPORTED_INTEGRAL_READ
 P09 ATTEMPT 2: FAIL / UNSUPPORTED_INTEGRAL_READ
+RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
 ```
 
 Preserve v0.5:
@@ -280,10 +322,35 @@ P09 UNSUPPORTED_INTEGRAL_READ_PROMOTION: 0
 RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
 ```
 
-The v0.5 P09 result demonstrated that the coverage correction worked while exposing a separate receipt-order defect. Root-cause analysis found the Documentation Auditor archetype v0.1 minimum output contract ordered `VERDICT / DECISION STATE` before `CONTEXT / BOOTSTRAP RECEIPT`, conflicting with the Core/shared ordered flow. v0.6 corrects that specialist-specific contradiction.
+Preserve v0.6 attempt 1:
+
+```text
+BUILDER_APPLIED: ESTABLISHED / USER-OBSERVED
+HISTORICAL_FRESH_FINGERPRINT: ESTABLISHED / VALUES_NOT_FULLY_VERSIONED
+P09 ATTEMPT 1: FAIL / RECEIPT_OMITTED / SUBSTANTIVE_OUTPUT_FIRST
+P09 UNSUPPORTED_INTEGRAL_READ_PROMOTION: 0
+RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
+RECEIPT_MECHANICAL_ENFORCEMENT: NOT_ESTABLISHED
+```
+
+The historical P09 FAIL remains valid, but the old fingerprint label is insufficient for later material-equivalence proof. Before new P09/P10 evidence, record a fresh baseline including `BUILDER_FINGERPRINT`, `SES_REF`, and `PROJECT_REF`.
+
+The v0.5 P09 result demonstrated that the coverage correction worked while exposing a receipt-order defect. v0.6 removed the known SES-side archetype ordering contradiction, but fresh v0.6 P09 still failed receipt ordering.
+
+Current bounded classification:
+
+```text
+PRIMARY_OBSERVED_GAP: RUNTIME_ENFORCEMENT_GAP
+RECEIPT_MECHANICAL_ENFORCEMENT: NOT_ESTABLISHED
+CONTRIBUTING_CAUSE: CROSS_LAYER_OUTPUT_FORMAT_CONFLICT / FECH.AI VERDICT-FIRST TEMPLATE
+```
+
+The v0.6 P09 proves failure of receipt-first behavioral compliance in that run; it does not prove the universal absence of an unobserved or future platform enforcement mechanism. See the runtime enforcement boundary contract.
 
 Historical failures remain failed.
 
 ## 12. Post-proof gates
 
-Runtime PASS does not authorize publication, project mutation, legacy retirement, Product PASS, consumer Runtime PASS, Security Go or deployment.
+Runtime behavioral PASS does not authorize publication, project mutation, legacy retirement, Product PASS, consumer Runtime PASS, Security Go or deployment.
+
+Mechanical enforcement is a separate proof claim and remains `NOT_ESTABLISHED` for the current Builder-only receipt-order mechanism unless positive enforcement-mechanism evidence is produced.
