@@ -255,7 +255,7 @@ The candidate may prove fail-closed classification, alternate/manual fallback, t
 
 Successful exact path/blob retrieval and no visible truncation are insufficient, by themselves, to establish full start-through-EOF coverage.
 
-C02 requires an eligible evidence path where the actual runtime can positively establish complete start-through-EOF coverage and stable target identity. If none exists, record `C02: BLOCKED / POSITIVE_EOF_FIXTURE_UNAVAILABLE`; runtime behavioral PASS cannot be claimed until that proof obligation is satisfiable and executed.
+C02 requires an eligible evidence path where the actual runtime can positively establish complete start-through-EOF coverage and stable target identity. If none exists, record `C02: BLOCKED / POSITIVE_EOF_EVIDENCE_PATH_UNAVAILABLE`; runtime behavioral PASS cannot be claimed until that proof obligation is satisfiable and executed.
 
 ## 11. Historical observations and failures
 
