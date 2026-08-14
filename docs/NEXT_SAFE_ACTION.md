@@ -36,14 +36,16 @@ Therefore the earlier `SPECIALIST_SPEC_ORDERING_CONTRADICTION` is insufficient a
 Current evidence supports two separate findings:
 
 ```text
-PRIMARY:
-UNENFORCED_RUNTIME_INVARIANT
+PRIMARY OBSERVED GAP:
+RUNTIME_ENFORCEMENT_GAP / MECHANICAL_ENFORCEMENT_NOT_ESTABLISHED
 
 CONTRIBUTING:
 CROSS_LAYER_OUTPUT_FORMAT_CONFLICT / FECH.AI VERDICT-FIRST TEMPLATE
 ```
 
-The current Builder mechanism expresses receipt-first as natural-language instructions and canonical contracts. Current evidence does not establish a separate output controller/validator that technically blocks substantive output until the receipt has been emitted.
+The v0.6 P09 directly proves that the receipt-first normative requirement was not behaviorally enforced in that run. The current Builder configuration expresses receipt-first as natural-language instructions and canonical contracts, while current evidence does not establish a separate output controller/validator that technically blocks substantive output until the receipt has been emitted.
+
+This classification does not assert that no unobserved or future platform mechanism can exist.
 
 Therefore keep separate:
 
