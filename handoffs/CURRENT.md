@@ -3,10 +3,9 @@
 **Status:** `SFJM_OPERATIONAL_CONTINUITY_V0_1 / MATERIAL_RECORDED_STATE`  
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System`  
 **Canonical ref rule:** resolve `main` live before material work  
-**SFJM method source:** `wagnerjfjunior/StopJuniorMode@d03d477c3b329aa973a38ec4e949c249fa017929`  
 **Continuity contract:** `core/protocols/PROJECT_CONTINUITY_CONTRACT.md`  
 **Authoritative next action:** `docs/NEXT_SAFE_ACTION.md`  
-**Next action ID:** `apply-deferred-project-materialization-runtime-targets-v1`
+**Next action ID:** `repair-documentation-auditor-integral-read-v05-v1`
 
 ## 1. Purpose
 
@@ -28,64 +27,59 @@ Consumer-project truth, continuity and authority remain project-owned.
 1. SES remains project-agnostic.
 2. Active archetypes: `saas-architect`, `documentation-auditor`.
 3. SaaS Architect v0.1 historical runtime PASS remains preserved at T01–T29 = 29/29.
-4. SaaS Architect v0.2 was a target version but was not fully applied; user evidence shows external Builder Instructions remained v0.1 and the first new-starter P01 attempt failed.
-5. SaaS Architect v0.3 is the new target.
-6. Documentation Auditor external Builder was observed with v0.2 Instructions while later Core behavior enabled the new menu; v0.4 is the new target.
-7. Both external Builders use `# CLIQUE PARA INICIAR`.
-8. Runtime exploration showed project selection could trigger consumer-project materialization before a substantive task, creating avoidable latency.
-9. New canonical intent: selection resolves only `PROJECT_ID`; no Project Adapter/project main/bootstrap/local specialist/continuity/authority/evidence or readiness receipt until a substantive task exists.
-10. Shared runtime-required project-entry cases are P01–P10 for the new targets.
-11. External Builder application, runtime proof, publication, consumer equivalence and retirement remain separate lifecycle states.
+4. SaaS Architect v0.2 P01 attempt 1 historical FAIL remains preserved; runtime proof was not established.
+5. SaaS Architect v0.3 remains a queued target.
+6. Documentation Auditor v0.4 external Builder application was established through user-observed configuration/fingerprint evidence.
+7. Documentation Auditor v0.4 P01/P02/P03 showed correct project-selection deferral behavior; direct consumer-project I/O trace was not exposed by the UI.
+8. Documentation Auditor v0.4 P09 attempt 1 failed because substantive analysis preceded the readiness receipt and because `INTEGRAL_READ` was claimed without positive EOF proof.
+9. Documentation Auditor v0.4 P09 attempt 2 corrected receipt ordering but independently repeated the unsupported `INTEGRAL_READ` promotion.
+10. Documentation Auditor target therefore advances to v0.5 with a minimal compact-kernel hardening: exact path/blob success or absence of visible truncation is not EOF proof.
+11. The Core resilience contract already contained the stricter start-through-EOF requirement; no Core semantic redesign is currently justified.
+12. Historical failures remain failures; no retroactive PASS.
+13. The prior latency investigation remains abandoned and is not a blocker or workstream.
 
-## 4. Core interaction invariant
+## 4. Current runtime invariant
 
 ```text
-# CLIQUE PARA INICIAR
--> SES live/bootstrap/archetype
--> Project Registry
--> numbered menu
--> user selects
--> PROJECT_SELECTED
--> WAIT FOR TASK
-
-TASK ARRIVES
--> same flow resumes
--> task-proportional project materialization
--> task-bound Context Readiness Receipt
--> work
+EXACT_READER_SUCCESS != EOF_PROOF
+NO_VISIBLE_TRUNCATION != EOF_PROOF
+UNPROVEN_EOF -> PARTIAL_READ
+INTEGRAL_READ -> POSITIVE START-THROUGH-EOF PROOF + STABLE TARGET IDENTITY
 ```
 
-Direct project identifier without task reaches the same `PROJECT_SELECTED / WAIT FOR TASK` state.
+Project-entry invariant remains:
 
-`NO SUBSTANTIVE TASK -> NO CONSUMER-PROJECT MATERIALIZATION`
+```text
+NO SUBSTANTIVE TASK -> NO CONSUMER-PROJECT MATERIALIZATION
+```
 
-## 5. Historical runtime evidence preserved
+## 5. Version-bound evidence
 
-User observations on 2026-08-13:
-- Documentation Auditor menu/selection worked with older Builder Instructions after Core v0.2 was canonical;
-- SaaS Architect first starter attempt with v0.1 Instructions failed to present the project menu;
-- later selections that materialized projects before task showed user-observed waits around two minutes (Documentation Auditor) and 4m10s (SaaS Architect Blogs/SEO).
+```text
+SAAS_V0_1_RUNTIME_BEHAVIORAL_PROOF: PASS / HISTORICAL / PRESERVED
+SAAS_V0_2_P01_ATTEMPT_1: FAIL / HISTORICAL / PRESERVED
+SAAS_V0_3_RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
 
-These timings are not independently instrumented. They are preserved as user-observed evidence; P02/P03 use zero pre-task consumer-project calls as the deterministic regression criterion.
+DOCUMENTATION_AUDITOR_V0_4_BUILDER_APPLIED: ESTABLISHED / USER-OBSERVED
+DOCUMENTATION_AUDITOR_V0_4_P01_P02_P03: PASS_BEHAVIOR_OBSERVED
+DOCUMENTATION_AUDITOR_V0_4_P09_ATTEMPT_1: FAIL
+DOCUMENTATION_AUDITOR_V0_4_P09_ATTEMPT_2: FAIL
+DOCUMENTATION_AUDITOR_V0_4_RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
+DOCUMENTATION_AUDITOR_V0_5_RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
+```
 
-## 6. Live state versus recorded state
-
-`LIVE_RESOLVED_STATE != MATERIAL_RECORDED_STATE`
-
-Resolve live when material: SES refs, PR state, external Builder config, model, access boundary, publication state and consumer-project refs.
-
-Do not rewrite historical proof because a new target version exists.
-
-## 7. Current next action
+## 6. Current next action
 
 Authoritative source: `docs/NEXT_SAFE_ACTION.md`.
 
-Derived summary: after this change is canonical, apply/reconcile Documentation Auditor v0.4 then SaaS Architect v0.3, with explicit Product Authority required for external Builder mutation, then run targeted P01/P02/P03/P09/P10 regressions before broader proof.
+Derived summary: make the Documentation Auditor v0.5 correction canonical through the normal SES change process; then, with explicit Product Authority authorization, apply v0.5 to the external Builder, capture a fresh fingerprint, execute coverage regression C01 and a fresh P09 before broader proportional revalidation.
 
-This handoff does not authorize publication, consumer-project mutation, runtime certification or legacy retirement.
+SaaS Architect v0.3 remains queued and is not automatically mutated by this repair.
 
-## 8. Short resume prompt
+This handoff does not authorize publication, consumer-project mutation, runtime certification, project-local equivalence promotion or legacy retirement.
+
+## 7. Short resume prompt
 
 ```text
-SES -> resolve main live -> bootstrap -> continuity -> preserve SaaS v0.1 PASS + v0.2 FAIL history -> new targets DA v0.4 / SaaS v0.3 -> no task means no consumer-project materialization -> apply Builders only with explicit authorization -> run P01/P02/P03/P09/P10 -> no automatic runtime PASS.
+SES -> resolve main live -> bootstrap -> continuity -> preserve SaaS v0.1 PASS + v0.2 FAIL -> DA v0.4 applied but P09 failed twice on unsupported INTEGRAL_READ -> target DA v0.5 -> exact reader success/no visible truncation is not EOF proof -> review/merge candidate normally -> apply Builder only with explicit authorization -> C01 + fresh P09 -> no retroactive PASS -> SaaS v0.3 remains queued.
 ```
