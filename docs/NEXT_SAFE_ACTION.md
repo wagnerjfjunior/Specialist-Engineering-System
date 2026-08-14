@@ -40,15 +40,14 @@ SaaS Architect v0.3 remains queued; do not mutate or re-architect it merely beca
 
 ## Action
 
-1. review and merge the Documentation Auditor v0.5 candidate change through the normal SES change process;
-2. after v0.5 is canonical on `main`, resolve `main` live and read the exact v0.5 Builder profile/kernel;
-3. obtain explicit Product Authority authorization before changing the external Documentation Auditor Builder from v0.4 to v0.5;
-4. apply only the exact v0.5 compact kernel and required target-equivalent fields; keep visibility private and preserve the existing READ_ONLY Action/auth boundary;
-5. capture a fresh non-secret Builder fingerprint;
-6. execute `tests/runtime/DOCUMENTATION_AUDITOR_V05_COVERAGE_REGRESSION.md` C01 first;
-7. execute a fresh P09 trajectory without coaching the runtime about the historical failure;
-8. if the targeted regression passes, continue proportional v0.5 revalidation before broader runtime proof;
-9. preserve all v0.4 FAIL/PASS-behavior observations without retroactive promotion.
+1. resolve SES `main` live and read the exact canonical v0.5 Builder profile/kernel;
+2. obtain explicit Product Authority authorization before changing the external Documentation Auditor Builder from v0.4 to v0.5;
+3. apply only the exact v0.5 compact kernel and required target-equivalent fields; keep visibility private and preserve the existing READ_ONLY Action/auth boundary;
+4. capture a fresh non-secret Builder fingerprint;
+5. execute `tests/runtime/DOCUMENTATION_AUDITOR_V05_COVERAGE_REGRESSION.md` C01 first;
+6. execute a fresh P09 trajectory without coaching the runtime about the historical failure;
+7. if the targeted regression passes, continue proportional v0.5 revalidation before broader runtime proof;
+8. preserve all v0.4 FAIL/PASS-behavior observations without retroactive promotion.
 
 ## Immediate acceptance criterion
 
@@ -93,14 +92,14 @@ Completion of this targeted repair does not itself establish full Documentation 
 ## Limits
 
 This record does not itself authorize:
-- merge of the candidate PR;
 - external Builder mutation without explicit Product Authority authorization;
 - publication/sharing changes;
 - consumer-project mutation;
 - write-capable production Actions;
 - runtime behavioral certification;
 - project-local equivalence promotion;
-- legacy specialist retirement.
+- legacy specialist retirement;
+- any future SES merge or unrelated repository mutation.
 
 ## Anti-loop
 
