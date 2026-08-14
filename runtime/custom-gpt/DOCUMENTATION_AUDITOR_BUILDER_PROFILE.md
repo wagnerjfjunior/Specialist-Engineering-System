@@ -1,6 +1,6 @@
 # SES — Documentation Auditor Custom GPT Builder Profile
 
-**Status:** RUNTIME_CANDIDATE_V0_5 / BUILDER_PROFILE / NOT_YET_APPLIED
+**Status:** RUNTIME_CANDIDATE_V0_6 / BUILDER_PROFILE / NOT_YET_APPLIED
 **ARCHETYPE_ID:** `documentation-auditor`
 
 ## 1. Purpose
@@ -38,12 +38,10 @@ Runtime packaging constraints:
 ```text
 BUILDER_INSTRUCTIONS_HARD_LIMIT: <= 8000 characters
 SES_OPERATIONAL_BUDGET: <= 7500 characters
-CURRENT_COMPACT_KERNEL_MEASURED_COUNT: 7469 characters
+CURRENT_COMPACT_KERNEL_MEASURED_COUNT: 7452 characters
 COUNT_METHOD: Unicode code-point count of repository text content
 SCOPE_OF_SIZE_CONSTRAINT: Builder Instructions field only
 ```
-
-The operational budget leaves margin for Builder/UI counting differences.
 
 The compact kernel must bootstrap the full method live through:
 
@@ -79,13 +77,7 @@ the runtime must stop before consumer-project materialization and ask for the ta
 
 It must **not** yet read the Project Adapter, consumer-project main, project bootstrap, local specialist rules, continuity, authority/governance or project evidence, and must not emit a Context Readiness Receipt.
 
-```text
-PROJECT_SELECTED != PROJECT_BOOTSTRAPPED
-PROJECT_SELECTED != PROJECT_SPECIALIST_READY
-PROJECT_SELECTED != PROJECT_CONTEXT_READY
-```
-
-When a substantive task arrives, the same flow continues into task-proportional project materialization, preserving every source that the canonical project bootstrap marks mandatory for all substantive work, and a task-bound readiness receipt.
+When a substantive task arrives, the same ordered flow continues into task-proportional project materialization. The task-bound Context Readiness Receipt is a gating output artifact and must be emitted before any project-specific verdict, finding, inconsistency statement, risk assessment, recommendation or other substantive conclusion.
 
 ### Knowledge
 
@@ -104,8 +96,6 @@ Image Generation: DISABLED
 Apps: NOT_PRESENT_IN_CURRENT_BUILDER_UI when the control is not exposed
 Actions: ENABLED
 ```
-
-Do not invent an Apps toggle state when the current Builder UI does not expose that control.
 
 ### Actions
 
@@ -210,24 +200,34 @@ KNOWLEDGE_OVERFLOW_SUBSTITUTE: NO
 STARTER_OVERFLOW_SUBSTITUTE: NO
 ```
 
-A material Builder/kernel/action/model/auth/principal/access change invalidates affected evidence.
+A material Builder/kernel/archetype/action/model/auth/principal/access change invalidates affected runtime evidence.
 
-## 5. Observed pre-v0.5 runtime evidence
+## 5. Preserved runtime evidence before v0.6
 
-User-supplied runtime observations on 2026-08-13 showed older Documentation Auditor Instructions could render the live project menu and resolve projects but could also materialize consumer-project context before a substantive task. Those observations remain historical and are not promoted to a later target PASS.
-
-User-observed v0.4 runtime evidence on 2026-08-14 established Builder application. P01/P02/P03 produced output behavior consistent with selection deferral, but the runtime UI did not expose direct consumer-project I/O; therefore the deterministic P02/P03 zero-I/O PASS gate remained unverified. P09 then failed twice independently because the runtime promoted exact-path retrieval with no visible truncation to `INTEGRAL_READ` without positive start-through-EOF proof. Attempt 1 also emitted substantive analysis before its readiness receipt; Attempt 2 corrected receipt ordering but repeated the unsupported `INTEGRAL_READ` promotion.
-
-Preserve:
+Historical v0.4:
 
 ```text
 DOCUMENTATION_AUDITOR_V0_4_P01_P02_P03: OUTPUT_BEHAVIOR_OBSERVED / CONSUMER_IO_UNVERIFIED
 DOCUMENTATION_AUDITOR_V0_4_P09_ATTEMPT_1: FAIL / RECEIPT_ORDER + UNSUPPORTED_INTEGRAL_READ
 DOCUMENTATION_AUDITOR_V0_4_P09_ATTEMPT_2: FAIL / UNSUPPORTED_INTEGRAL_READ
-REPRODUCIBLE_FAILURE_CLASS: EXACT_READER_SUCCESS_WITHOUT_EOF_PROMOTED_TO_INTEGRAL_READ
 ```
 
-v0.5 is a targeted behavioral hardening of the compact kernel. It does not change Core coverage semantics, the GitHub READ_ONLY Action or consumer-project truth.
+Observed v0.5 on 2026-08-14:
+
+```text
+DOCUMENTATION_AUDITOR_V0_5_BUILDER_APPLIED: ESTABLISHED / USER-OBSERVED
+DOCUMENTATION_AUDITOR_V0_5_FRESH_FINGERPRINT: ESTABLISHED
+DOCUMENTATION_AUDITOR_V0_5_C01: PASS
+DOCUMENTATION_AUDITOR_V0_5_P09_ATTEMPT_1: FAIL / RECEIPT_ORDER
+DOCUMENTATION_AUDITOR_V0_5_P09_UNSUPPORTED_INTEGRAL_READ_PROMOTION: 0
+DOCUMENTATION_AUDITOR_V0_5_RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
+```
+
+The v0.5 P09 run corrected the historical EOF/coverage overclaim but emitted a project-specific verdict and findings before the Context Readiness Receipt.
+
+Root-cause analysis found a normative conflict across layers: Core/shared P09 require `RECEIPT -> SUBSTANTIVE WORK`, while Documentation Auditor archetype v0.1 listed `VERDICT / DECISION STATE` before `CONTEXT / BOOTSTRAP RECEIPT` in its minimum output contract. v0.6 corrects that specialist-specific contradiction and makes receipt-first ordering explicit in both the archetype and compact kernel.
+
+This correction does **not** change Core coverage semantics, the GitHub READ_ONLY Action or consumer-project truth.
 
 ## 6. Lifecycle separation
 
