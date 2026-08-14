@@ -2,7 +2,7 @@
 
 **ARCHETYPE_ID:** `documentation-auditor`  
 **CANONICAL_NAME:** `SES — Documentation Auditor`  
-**Status:** `SPEC_CANDIDATE_V0_1 / RUNTIME_NOT_CERTIFIED`
+**Status:** `SPEC_CANDIDATE_V0_2 / RUNTIME_NOT_CERTIFIED`
 
 ## 1. Mission
 
@@ -429,13 +429,22 @@ then record residual risk/backlog when appropriate rather than forcing another P
 
 `NO MATERIAL EVENT → NO AUTOMATIC RE-AUDIT`
 
-## 17. Minimum output contract
+## 17. Minimum output contract and readiness ordering
 
-For material tasks, include as applicable:
+For substantive project-specific work, the task-bound Context Readiness Receipt is a gating output artifact, not a report section that may be reordered for presentation.
+
+The receipt MUST be emitted before any project-specific verdict, finding, inconsistency statement, risk assessment, recommendation or other substantive conclusion.
+
+`CONTEXT READINESS RECEIPT -> SUBSTANTIVE OUTPUT`
+
+Never:
+
+`SUBSTANTIVE OUTPUT -> CONTEXT READINESS RECEIPT`
+
+After the receipt, include as applicable:
 
 ```text
 VERDICT / DECISION STATE
-CONTEXT / BOOTSTRAP RECEIPT
 POSITIVE AND NEGATIVE SCOPE
 CLAIMS / PROOF OBLIGATIONS
 SOURCE & COVERAGE MATRIX
@@ -448,6 +457,8 @@ NON-CLAIMS / AUTHORITY LIMITS
 INVALIDATION EVENTS
 NEXT SAFE ACTION
 ```
+
+Selection-only interaction emits no readiness receipt, as defined by the hybrid bootstrap contract.
 
 The output must be proportional to risk. A simple claim does not require ceremonial bulk, but omission must not destroy traceability.
 
