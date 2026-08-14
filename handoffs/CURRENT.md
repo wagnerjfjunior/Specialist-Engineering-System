@@ -33,10 +33,11 @@ Consumer-project truth, continuity and authority remain project-owned.
 7. Documentation Auditor v0.6 was applied with a fresh Builder fingerprint and required SES-repository access was revalidated.
 8. Fresh v0.6 P09 attempt 1 failed again: the runtime omitted the Context Readiness Receipt and began with substantive findings; unsupported `INTEGRAL_READ` promotion remained 0.
 9. Because v0.6 failed after SES-side ordering was internally reconciled, the earlier `SPECIALIST_SPEC_ORDERING_CONTRADICTION` is not a complete causal explanation.
-10. Current primary classification is `UNENFORCED_RUNTIME_INVARIANT`: receipt-first is a normative/model-behavior requirement in the current Builder runtime, not a positively proven mechanically enforced transition.
-11. A contributing project-local conflict is established in FECH.AI: mandatory Modus Operandi standard response format begins with `Verdict:` before `Bootstrap:`.
-12. Historical failures remain failures; no retroactive PASS.
-13. The abandoned latency investigation remains closed.
+10. Current bounded primary finding is `RUNTIME_ENFORCEMENT_GAP`; receipt-first behavioral compliance failed in v0.6 P09 while receipt mechanical enforcement remains `NOT_ESTABLISHED`.
+11. This does not prove the universal absence of an unobserved or future platform enforcement mechanism.
+12. A contributing project-local conflict is established in FECH.AI: mandatory Modus Operandi standard response format begins with `Verdict:` before `Bootstrap:`.
+13. Historical failures remain failures; no retroactive PASS.
+14. The abandoned latency investigation remains closed.
 
 ## 4. Current required behavior and proof boundary
 
@@ -108,5 +109,5 @@ This handoff does not authorize publication, runtime certification, project-loca
 ## 7. Short resume prompt
 
 ```text
-SES -> resolve main live -> preserve SaaS v0.1 PASS + v0.2 FAIL -> DA v0.4 P09 FAIL x2 -> DA v0.5 C01 PASS + P09 FAIL receipt order -> PR #17 removed SES archetype ordering contradiction -> DA v0.6 applied/fingerprint established -> fresh v0.6 P09 still FAIL, receipt omitted, coverage overclaim stayed 0 -> complete cause is not more wording -> primary = UNENFORCED_RUNTIME_INVARIANT, contributing = FECH.AI Verdict-first template conflict -> keep v0.6 kernel unchanged -> classify behavioral vs mechanical proof honestly -> reconcile only FECH.AI causal template -> independent review -> fresh uncoached P09/P10 -> no retroactive PASS.
+SES -> resolve main live -> preserve SaaS v0.1 PASS + v0.2 FAIL -> DA v0.4 P09 FAIL x2 -> DA v0.5 C01 PASS + P09 FAIL receipt order -> PR #17 removed SES archetype ordering contradiction -> DA v0.6 applied/fingerprint established -> fresh v0.6 P09 still FAIL, receipt omitted, coverage overclaim stayed 0 -> primary observed gap = RUNTIME_ENFORCEMENT_GAP; mechanical enforcement NOT_ESTABLISHED; contributing = FECH.AI Verdict-first template conflict -> keep v0.6 kernel unchanged -> classify behavioral vs mechanical proof honestly -> reconcile only FECH.AI causal template -> independent review -> fresh uncoached P09/P10 -> no retroactive PASS.
 ```
