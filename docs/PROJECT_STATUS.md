@@ -27,7 +27,7 @@ Queued runtime target: `SES — SaaS Architect` v0.3.
 | SaaS Architect v0.2 | runtime proof `NOT_ESTABLISHED`; P01 attempt 1 historical FAIL due old v0.1 Instructions |
 | SaaS Architect v0.3 | deferred-materialization target; runtime proof `NOT_ESTABLISHED` |
 | Documentation Auditor archetype | ACTIVE for resolution / runtime not certified |
-| Documentation Auditor v0.4 | external Builder application established by user-observed fingerprint/config evidence; P01/P02/P03 selection-deferral behavior observed; P09 attempt 1 FAIL; P09 attempt 2 FAIL |
+| Documentation Auditor v0.4 | external Builder application established by user-observed fingerprint/config evidence; P01/P02/P03 output behavior consistent with selection deferral, but deterministic P02/P03 consumer-I/O gate unverified; P09 attempt 1 FAIL; P09 attempt 2 FAIL |
 | Documentation Auditor v0.5 | targeted coverage-hardening runtime target; runtime proof `NOT_ESTABLISHED` |
 | Shared hybrid project entry | one ordered flow; P01–P10 runtime-required for applicable targets |
 
@@ -49,6 +49,7 @@ Attempt 1 also placed substantive analysis before the Context Readiness Receipt.
 Preserve:
 
 ```text
+DOCUMENTATION_AUDITOR_V0_4_P01_P02_P03: OUTPUT_BEHAVIOR_OBSERVED / CONSUMER_IO_UNVERIFIED
 DOCUMENTATION_AUDITOR_V0_4_P09_ATTEMPT_1: FAIL / RECEIPT_ORDER + UNSUPPORTED_INTEGRAL_READ
 DOCUMENTATION_AUDITOR_V0_4_P09_ATTEMPT_2: FAIL / UNSUPPORTED_INTEGRAL_READ
 REPRODUCIBLE_FAILURE_CLASS: EXACT_READER_SUCCESS_WITHOUT_EOF_PROMOTED_TO_INTEGRAL_READ
@@ -72,6 +73,8 @@ A targeted regression is versioned at:
 
 The corrected kernel remains within the Builder operational budget.
 
+Full runtime certification additionally requires C02 to prove that positive start-through-EOF coverage can still support `INTEGRAL_READ`, and C01/C02 must bind to the same materially equivalent v0.5 Builder fingerprint as the baseline certification suite.
+
 ## 6. External Builder boundary
 
 Documentation Auditor v0.4 Builder application was established through user-supplied evidence including complete kernel coverage, starter, empty Knowledge, capabilities, API-key/Bearer auth, authenticated principal, required SES repository access smoke and private visibility.
@@ -83,6 +86,7 @@ That does **not** establish v0.5 application. Once v0.5 is canonical on `main`, 
 ## 7. Active risks
 
 - unsupported promotion of successful exact reader output to `INTEGRAL_READ`;
+- regression into a universal ban on valid `INTEGRAL_READ`;
 - retroactive PASS of historical v0.4 P09 failures;
 - treating v0.4 Builder application as v0.5 application;
 - conflating target repair with Core redesign;
