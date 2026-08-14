@@ -13,7 +13,7 @@ SES is project-agnostic specialist-engineering infrastructure. Consumer projects
 
 ## 2. Current durable objective
 
-Repair the Documentation Auditor receipt-order defect exposed by fresh v0.5 P09 after the v0.5 coverage correction succeeded.
+Correct the Documentation Auditor proof model after fresh v0.6 P09 demonstrated that receipt-first is specified but not mechanically enforced by the current Builder-only runtime, while reconciling the known FECH.AI verdict-first output conflict.
 
 Primary runtime target: `SES — Documentation Auditor` v0.6.  
 Queued runtime target: `SES — SaaS Architect` v0.3.
@@ -26,52 +26,53 @@ Queued runtime target: `SES — SaaS Architect` v0.3.
 | SaaS Architect v0.2 | runtime proof `NOT_ESTABLISHED`; P01 attempt 1 historical FAIL due Builder kernel drift |
 | SaaS Architect v0.3 | queued; runtime proof `NOT_ESTABLISHED` |
 | Documentation Auditor v0.4 | Builder applied; P09 attempt 1 FAIL / receipt order + unsupported integral; attempt 2 FAIL / unsupported integral |
-| Documentation Auditor v0.5 | Builder applied + fresh fingerprint; C01 PASS; fresh P09 attempt 1 FAIL / receipt order; unsupported integral promotion = 0; runtime proof `NOT_ESTABLISHED` |
-| Documentation Auditor v0.6 | receipt-order target; Builder not yet applied; runtime proof `NOT_ESTABLISHED` |
-| Shared hybrid project entry | one ordered flow; P01–P10 runtime-required |
+| Documentation Auditor v0.5 | Builder applied + fresh fingerprint; C01 PASS; P09 attempt 1 FAIL / receipt order; unsupported integral promotion = 0 |
+| Documentation Auditor v0.6 | Builder applied + fresh fingerprint; P09 attempt 1 FAIL / receipt omitted / substantive output first; unsupported integral promotion = 0; runtime proof `NOT_ESTABLISHED` |
+| Shared hybrid project entry | one ordered normative flow; P01–P10 runtime-required |
 
 No later version rewrites historical failures.
 
-## 4. Root-cause finding
+## 4. Root-cause evolution
 
-Core/shared flow is explicit:
+The first root-cause finding after v0.5 was a real SES-side normative contradiction: Documentation Auditor archetype v0.1 listed verdict before receipt while Core/shared flow required receipt before substantive work.
 
-```text
-TASK MATERIALIZATION
--> EMIT TASK-BOUND CONTEXT READINESS RECEIPT
--> ONLY THEN PROJECT-SPECIFIC SUBSTANTIVE WORK
-```
+v0.6 removed that contradiction in archetype v0.2 and the Builder kernel. Fresh v0.6 P09 still failed by omitting the receipt and beginning with substantive findings.
 
-Documentation Auditor archetype v0.1 contradicted that ordering in its minimum output contract by listing:
+Therefore the earlier finding remains historical but is insufficient as the complete causal explanation.
+
+Current classification:
 
 ```text
-VERDICT / DECISION STATE
-CONTEXT / BOOTSTRAP RECEIPT
+PRIMARY_ROOT_CAUSE: UNENFORCED_RUNTIME_INVARIANT
+CONTRIBUTING_CAUSE: CROSS_LAYER_OUTPUT_FORMAT_CONFLICT / FECH.AI VERDICT-FIRST TEMPLATE
+CORE_ORDERING_DEFECT: NOT_ESTABLISHED
+ARCHETYPE_V0_2_ORDERING_DEFECT: NOT_ESTABLISHED
+BUILDER_V0_6_ORDERING_DEFECT: NOT_ESTABLISHED
+RECEIPT_MECHANICAL_ENFORCEMENT: NOT_ESTABLISHED
 ```
 
-Fresh v0.5 P09 reproduced the archetype-side order: verdict and findings appeared before the receipt.
+## 5. Runtime enforcement boundary
 
-Classification:
+For the current Documentation Auditor Custom GPT, keep separate:
 
 ```text
-ROOT_CAUSE_CLASS: SPECIALIST_SPEC_ORDERING_CONTRADICTION
-CORE_BOOTSTRAP_DEFECT: NOT_ESTABLISHED
-ACTION_DEFECT: NOT_ESTABLISHED
-CONSUMER_PROJECT_DEFECT: NOT_ESTABLISHED
+NORMATIVE_REQUIREMENT
+BEHAVIORAL_COMPLIANCE
+MECHANICALLY_ENFORCED_INVARIANT
 ```
 
-## 5. v0.6 correction
+Do not infer:
 
-The v0.6 target:
+```text
+INSTRUCTION_PRESENT -> BEHAVIOR_OBSERVED
+BEHAVIOR_OBSERVED -> MECHANICAL_ENFORCEMENT
+```
 
-- advances the Documentation Auditor archetype to spec candidate v0.2;
-- makes the receipt a gating output artifact before any project-specific verdict/finding/risk/recommendation;
-- advances compact Builder kernel to v0.6 with the same deterministic order;
-- preserves the v0.5 EOF/coverage hardening;
-- keeps Core and GitHub READ_ONLY Action unchanged;
-- strengthens runtime P09/P10 adjudication so report formatting cannot move substantive output ahead of the receipt.
+The specialist-specific boundary is versioned in:
 
-Kernel measured count: `7452` Unicode code points including trailing newline, within the `<= 7500` operational budget.
+`runtime/custom-gpt/DOCUMENTATION_AUDITOR_RUNTIME_ENFORCEMENT_BOUNDARY.md`.
+
+This is currently `CANDIDATE_LEARNING`, not a promoted universal SES principle.
 
 ## 6. Preserved evidence
 
@@ -81,20 +82,22 @@ DOCUMENTATION_AUDITOR_V0_4_P09_ATTEMPT_2: FAIL / UNSUPPORTED_INTEGRAL_READ
 DOCUMENTATION_AUDITOR_V0_5_C01: PASS / V0_5 FINGERPRINT
 DOCUMENTATION_AUDITOR_V0_5_P09_ATTEMPT_1: FAIL / RECEIPT_ORDER
 DOCUMENTATION_AUDITOR_V0_5_P09_UNSUPPORTED_INTEGRAL_READ_PROMOTION: 0
-DOCUMENTATION_AUDITOR_V0_5_RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
+DOCUMENTATION_AUDITOR_V0_6_P09_ATTEMPT_1: FAIL / RECEIPT_OMITTED / SUBSTANTIVE_OUTPUT_FIRST
+DOCUMENTATION_AUDITOR_V0_6_P09_UNSUPPORTED_INTEGRAL_READ_PROMOTION: 0
 DOCUMENTATION_AUDITOR_V0_6_RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
+DOCUMENTATION_AUDITOR_V0_6_RECEIPT_MECHANICAL_ENFORCEMENT: NOT_ESTABLISHED
 ```
 
-Because v0.6 changes archetype/kernel fingerprint, v0.5 C01 remains historical evidence and must be rerun on the v0.6 baseline before contributing to full v0.6 runtime certification.
+v0.5 C01 remains historical evidence and must be rerun on the v0.6 baseline before contributing to full v0.6 runtime certification.
 
-## 7. Active gates
+## 7. Current corrective strategy
 
-- repository review/merge is not runtime proof;
-- external Builder v0.6 application requires the normal Product Authority gate;
-- fresh v0.6 fingerprint required after application;
-- fresh P09 must autonomously demonstrate receipt-first ordering and preserved coverage discipline;
-- C01/C02 and all other required cases remain necessary before runtime PASS;
-- publication, consumer mutation and SaaS Architect mutation remain separate decisions.
+- keep the already-correct v0.6 Builder kernel unchanged; no v0.7 wording-only patch;
+- correct SES proof language so Builder behavioral compliance is not mislabeled deterministic/mechanically enforced;
+- reconcile only the FECH.AI project-local response-format conflict materially implicated by P09;
+- after both repository changes are canonical, run fresh uncoached P09 and P10 against the reconciled project ref;
+- treat any PASS as bounded behavioral evidence, not mechanical-enforcement proof;
+- continue C01/C02 and remaining suite before runtime behavioral PASS.
 
 ## 8. Continuity policy
 
