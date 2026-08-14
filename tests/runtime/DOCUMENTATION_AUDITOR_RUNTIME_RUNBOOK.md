@@ -24,12 +24,14 @@ Before execution:
 5. confirm `HYBRID_SPECIALIST_BOOTSTRAP_CONTRACT.md`;
 6. read `DOCUMENTATION_AUDITOR_RUNTIME_ENFORCEMENT_BOUNDARY.md`;
 7. confirm GitHub READ_ONLY Action schema/auth mode without recording secrets;
-8. capture Builder fingerprint, including non-secret principal/access-boundary evidence when observable;
-9. if credential scope/allowlist is not exposed, record `NOT_EXPOSED`, run bounded required-repository access smokes and record `REQUIRED_ACCESS_PROVEN / EXCESS_ACCESS_NOT_ASSESSED`;
-10. keep visibility private;
-11. confirm no consumer-project mutation is part of baseline tests;
-12. load `EVIDENCE_RETRIEVAL_RESILIENCE_CONTRACT.md` when resilience cases execute;
-13. T24 write-capability overlay requires separate authorization and fingerprint.
+8. capture a fresh reproducible Builder fingerprint, including non-secret principal/access-boundary evidence when observable, before using a baseline for new P09/P10 or certification evidence;
+9. record the exact SES ref and exact consumer-project ref used by each project-bound case;
+10. do not infer baseline equivalence from a historical `FRESH_FINGERPRINT: ESTABLISHED` label when the exact fingerprint values were not preserved;
+11. if credential scope/allowlist is not exposed, record `NOT_EXPOSED`, run bounded required-repository access smokes and record `REQUIRED_ACCESS_PROVEN / EXCESS_ACCESS_NOT_ASSESSED`;
+12. keep visibility private;
+13. confirm no consumer-project mutation is part of baseline tests;
+14. load `EVIDENCE_RETRIEVAL_RESILIENCE_CONTRACT.md` when resilience cases execute;
+15. T24 write-capability overlay requires separate authorization and fingerprint.
 
 ## 3. Runtime-required canonical suites
 
@@ -260,6 +262,8 @@ Documentation Auditor T01–T23 and T25–T30, shared P01–P10, and C01/C02 mus
 
 Credential identity/access-boundary evidence is part of equivalence.
 
+If an earlier baseline fingerprint is known only by an establishment label without its material fields, it cannot establish equivalence for a later run. Capture a new reproducible baseline first.
+
 `RUNTIME_BEHAVIORAL_PROOF = PASS` means the required behavioral suite passed on its exact evidence boundary. It must not be promoted to `MECHANICALLY_ENFORCED_INVARIANT`, deterministic guarantee or product/runtime/security authority beyond the suite.
 
 R01–R08 are additionally required before claiming operational readiness for consumers where those failure modes are material.
@@ -301,12 +305,14 @@ Preserve v0.6 attempt 1:
 
 ```text
 BUILDER_APPLIED: ESTABLISHED / USER-OBSERVED
-FRESH_FINGERPRINT: ESTABLISHED
+HISTORICAL_FRESH_FINGERPRINT: ESTABLISHED / VALUES_NOT_FULLY_VERSIONED
 P09 ATTEMPT 1: FAIL / RECEIPT_OMITTED / SUBSTANTIVE_OUTPUT_FIRST
 P09 UNSUPPORTED_INTEGRAL_READ_PROMOTION: 0
 RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
 RECEIPT_MECHANICAL_ENFORCEMENT: NOT_ESTABLISHED
 ```
+
+The historical P09 FAIL remains valid, but the old fingerprint label is insufficient for later material-equivalence proof. Before new P09/P10 evidence, record a fresh baseline including `BUILDER_FINGERPRINT`, `SES_REF`, and `PROJECT_REF`.
 
 The v0.5 P09 result demonstrated that the coverage correction worked while exposing a receipt-order defect. v0.6 removed the known SES-side archetype ordering contradiction, but fresh v0.6 P09 still failed receipt ordering.
 
