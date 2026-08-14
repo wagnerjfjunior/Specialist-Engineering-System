@@ -46,14 +46,13 @@ INTEGRAL_READ -> POSITIVE START-THROUGH-EOF PROOF + STABLE TARGET IDENTITY
 
 ## Action
 
-1. review the v0.6 candidate change through the normal SES PR process;
-2. after canonical merge, resolve SES `main` live and read exact v0.6 archetype/profile/kernel;
-3. obtain/confirm Product Authority authorization before changing the external Builder from v0.5 to v0.6;
-4. apply the exact v0.6 kernel; preserve private visibility and the existing READ_ONLY Action/auth boundary;
-5. capture a fresh v0.6 Builder fingerprint;
-6. execute a fresh P09 without coaching about receipt order or historical failures;
-7. require the receipt to precede every project-specific substantive statement and preserve v0.5 coverage discipline;
-8. if P09 passes, continue proportional v0.6 revalidation; rerun C01/C02 before any v0.6 runtime certification because the Builder fingerprint changed materially.
+1. resolve SES `main` live and read the exact canonical v0.6 archetype/profile/kernel;
+2. obtain/confirm Product Authority authorization before changing the external Builder from v0.5 to v0.6;
+3. apply the exact v0.6 kernel; preserve private visibility and the existing READ_ONLY Action/auth boundary;
+4. capture a fresh v0.6 Builder fingerprint;
+5. execute a fresh P09 without coaching about receipt order or historical failures;
+6. require the receipt to precede every project-specific substantive statement and preserve v0.5 coverage discipline;
+7. if P09 passes, continue proportional v0.6 revalidation; rerun C01/C02 before any v0.6 runtime certification because the Builder fingerprint changed materially.
 
 ## Immediate acceptance criterion
 
