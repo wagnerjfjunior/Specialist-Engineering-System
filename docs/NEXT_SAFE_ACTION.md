@@ -70,22 +70,26 @@ The specialist-specific evidence boundary is recorded in:
 
 Fresh v0.6 P09 resolved the FECH.AI mandatory Modus Operandi and identified its standard response format as beginning with `Verdict:` before `Bootstrap:`.
 
-That project-local template competes with the SES receipt-first requirement. FECH.AI itself requires the more restrictive rule during drift, but the competing output instruction remains a material confounder and must be reconciled in the consumer project before a clean new P09 attempt.
+That project-local template competes with the SES receipt-first requirement. FECH.AI itself requires the more restrictive rule during drift, but the competing output instruction remains a material confounder until reconciled in the consumer project's own canonical state.
 
-Removing the project-local conflict is necessary for clean behavioral evidence. It is not proof of mechanical enforcement.
+Removing that conflict is necessary for clean behavioral evidence. It is not proof of mechanical enforcement.
+
+SES continuity does not authorize that consumer-project mutation. Any FECH.AI change must be resolved through the live project registry/adapter, current FECH.AI canonical source, applicable project bootstrap/continuity/authority, explicit authorization for the exact mutation, and the project's normal reviewed change process.
 
 ## Action
 
 1. preserve Documentation Auditor Builder v0.6 unchanged; do not create v0.7 wording merely to seek a cosmetic PASS;
-2. version the SES runtime enforcement boundary and correct any documentation/runbook claim that describes the Builder-only receipt ordering as deterministic/mechanically enforced;
-3. reconcile only the FECH.AI project-local response-format surfaces that compete with receipt-first ordering;
-4. review both candidate changes independently before merge;
-5. after both are canonical, keep the same materially equivalent v0.6 Builder fingerprint unless a real Builder change occurred;
-6. resolve fresh SES and FECH.AI live refs;
-7. execute a new uncoached P09 on the reconciled FECH.AI ref;
-8. adjudicate it as behavioral evidence only;
-9. if P09 passes, execute P10 on the same materially equivalent Builder fingerprint and reconciled project source;
-10. continue the remaining required suite without claiming deterministic/mechanical enforcement.
+2. resolve SES `main` live and verify the runtime-enforcement-boundary/proof-model correction on the exact canonical ref;
+3. resolve FECH.AI through the live SES Project Registry and Project Adapter, then resolve FECH.AI `main` live;
+4. read the FECH.AI bootstrap plus task-material continuity/authority sources and determine whether the verdict-first conflict is still present in canonical FECH.AI state;
+5. if the conflict is already canonically reconciled, perform no consumer mutation and continue to step 7;
+6. if a FECH.AI mutation is still required, stop until explicit applicable project-local authorization for that exact mutation is established; only then use the normal FECH.AI reviewed change process to reconcile the response-format conflict, without unrelated cleanup;
+7. require both the SES proof-model correction and FECH.AI response-order reconciliation to be canonical before new behavioral adjudication;
+8. keep the same materially equivalent v0.6 Builder fingerprint unless a real Builder change occurred;
+9. resolve fresh SES and FECH.AI live refs and execute a new uncoached P09 on the reconciled project source;
+10. adjudicate P09 as behavioral evidence only;
+11. if P09 passes, execute P10 on the same materially equivalent Builder fingerprint and project-source boundary;
+12. continue the remaining required suite without claiming deterministic/mechanical enforcement.
 
 ## Immediate behavioral acceptance criterion
 
@@ -124,22 +128,22 @@ No later corrected run rewrites any historical FAIL.
 This corrective action is complete when:
 
 - the SES proof model no longer overclaims deterministic/mechanical enforcement for the current Builder runtime;
-- the known FECH.AI verdict-first output conflict is canonicalized away;
+- the known FECH.AI verdict-first output conflict is absent from canonical project state through an independently authorized and reviewed project-local change when mutation was required;
 - fresh uncoached P09 and P10 produce receipt-first output on the reconciled project source without coverage regression or user correction.
 
 Completion establishes only bounded runtime behavioral evidence. It does not establish mechanical enforcement or full runtime certification by itself.
 
 ## Limits
 
-This record does not authorize publication/sharing changes, write-capable production Actions, product/runtime/security PASS, legacy retirement or unrelated project mutation.
+This record does not itself authorize publication/sharing changes, consumer-project mutation, write-capable production Actions, product/runtime/security PASS, legacy retirement or unrelated project mutation.
 
-The authorized FECH.AI correction is limited to the project-local output-order conflict materially implicated by this root-cause analysis.
+A recorded semantic need to reconcile FECH.AI is not mutation authorization. Project-local authorization must be established from the applicable live authority for the exact action.
 
 ## Anti-loop
 
 Do not create another Builder kernel version solely by strengthening receipt-order wording.
 
-Do not rerun P09 against the unreconciled FECH.AI source merely to seek a cosmetic PASS.
+Do not rerun P09 against an unreconciled FECH.AI source merely to seek a cosmetic PASS.
 
 Do not call repeated behavioral compliance mechanical enforcement.
 
