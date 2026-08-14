@@ -74,14 +74,14 @@ DOCUMENTATION_AUDITOR_V0_6_RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
 
 Authoritative source: `docs/NEXT_SAFE_ACTION.md`.
 
-Derived summary: review the v0.6 candidate; after canonical merge and explicit Builder authorization, apply the exact v0.6 kernel, capture a fresh fingerprint, and run a fresh uncoached P09. P09 must demonstrate receipt-first ordering and preserve the v0.5 coverage correction. C01/C02 and the remaining required suite must be rerun/bound to the v0.6 fingerprint before full runtime certification.
+Derived summary: resolve canonical v0.6 on live `main`; with explicit Product Authority authorization, apply the exact v0.6 kernel to the external Builder, capture a fresh fingerprint and run a fresh uncoached P09. P09 must demonstrate receipt-first ordering and preserve the v0.5 coverage correction. C01/C02 and the remaining required suite must be rerun/bound to the v0.6 fingerprint before full runtime certification.
 
 SaaS Architect v0.3 remains queued and is not automatically mutated by this repair.
 
-This handoff does not authorize merge, publication, consumer-project mutation, runtime certification, project-local equivalence promotion or legacy retirement.
+This handoff does not authorize publication, consumer-project mutation, runtime certification, project-local equivalence promotion or legacy retirement.
 
 ## 7. Short resume prompt
 
 ```text
-SES -> resolve main live -> preserve SaaS v0.1 PASS + v0.2 FAIL -> DA v0.4 P09 failed twice on coverage/order -> DA v0.5 applied; C01 PASS; fresh P09 FAIL only on receipt order while coverage remained corrected -> root cause = Documentation Auditor archetype v0.1 output-order contradiction with Core/shared flow -> target DA v0.6 + archetype v0.2 -> receipt must precede every project-specific substantive statement -> review/merge candidate -> apply Builder only with explicit authorization -> fresh fingerprint -> fresh uncoached P09 -> rerun same-fingerprint required gates before runtime PASS -> no retroactive PASS.
+SES -> resolve main live -> preserve SaaS v0.1 PASS + v0.2 FAIL -> DA v0.4 P09 failed twice on coverage/order -> DA v0.5 applied; C01 PASS; fresh P09 FAIL only on receipt order while coverage remained corrected -> root cause = Documentation Auditor archetype v0.1 output-order contradiction with Core/shared flow -> target DA v0.6 + archetype v0.2 -> receipt must precede every project-specific substantive statement -> after canonicalization apply Builder only with explicit authorization -> fresh fingerprint -> fresh uncoached P09 -> rerun same-fingerprint required gates before runtime PASS -> no retroactive PASS.
 ```
