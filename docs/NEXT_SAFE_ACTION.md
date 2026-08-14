@@ -9,7 +9,7 @@
 
 ## Why this supersedes the prior action
 
-The prior semantic action `apply-deferred-project-materialization-runtime-targets-v1` successfully advanced Documentation Auditor v0.4 far enough to establish external Builder application and observe correct selection-deferral behavior for P01/P02/P03.
+The prior semantic action `apply-deferred-project-materialization-runtime-targets-v1` advanced Documentation Auditor v0.4 far enough to establish external Builder application and observe P01/P02/P03 output behavior consistent with selection deferral. The runtime UI did not expose direct consumer-project I/O, so the deterministic P02/P03 zero-I/O PASS gate remained unverified.
 
 Fresh v0.4 P09 execution then exposed a reproducible evidence-coverage defect. Two independent attempts promoted successful exact-path retrieval with no visible truncation to `INTEGRAL_READ` without positive start-through-EOF proof.
 
@@ -18,6 +18,7 @@ Attempt 1 also emitted substantive analysis before the Context Readiness Receipt
 Preserve:
 
 ```text
+DOCUMENTATION_AUDITOR_V0_4_P01_P02_P03: OUTPUT_BEHAVIOR_OBSERVED / CONSUMER_IO_UNVERIFIED
 DOCUMENTATION_AUDITOR_V0_4_P09_ATTEMPT_1: FAIL / RECEIPT_ORDER + UNSUPPORTED_INTEGRAL_READ
 DOCUMENTATION_AUDITOR_V0_4_P09_ATTEMPT_2: FAIL / UNSUPPORTED_INTEGRAL_READ
 REPRODUCIBLE_FAILURE_CLASS: EXACT_READER_SUCCESS_WITHOUT_EOF_PROMOTED_TO_INTEGRAL_READ
@@ -47,7 +48,7 @@ SaaS Architect v0.3 remains queued; do not mutate or re-architect it merely beca
 5. execute `tests/runtime/DOCUMENTATION_AUDITOR_V05_COVERAGE_REGRESSION.md` C01 first;
 6. execute a fresh P09 trajectory without coaching the runtime about the historical failure;
 7. if the targeted regression passes, continue proportional v0.5 revalidation before broader runtime proof;
-8. preserve all v0.4 FAIL/PASS-behavior observations without retroactive promotion.
+8. preserve all v0.4 FAIL/output-behavior observations without retroactive promotion.
 
 ## Immediate acceptance criterion
 
@@ -71,7 +72,7 @@ SAAS_V0_2_P01_ATTEMPT_1: FAIL / BUILDER_KERNEL_DRIFT
 SAAS_V0_3_RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
 
 DOCUMENTATION_AUDITOR_V0_4_BUILDER_APPLIED: ESTABLISHED / USER-OBSERVED
-DOCUMENTATION_AUDITOR_V0_4_P01_P02_P03: PASS_BEHAVIOR_OBSERVED / DIRECT_CONSUMER_IO_TRACE_NOT_EXPOSED
+DOCUMENTATION_AUDITOR_V0_4_P01_P02_P03: OUTPUT_BEHAVIOR_OBSERVED / CONSUMER_IO_UNVERIFIED
 DOCUMENTATION_AUDITOR_V0_4_P09_ATTEMPT_1: FAIL
 DOCUMENTATION_AUDITOR_V0_4_P09_ATTEMPT_2: FAIL
 DOCUMENTATION_AUDITOR_V0_4_RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
@@ -87,7 +88,7 @@ This semantic action is complete when Documentation Auditor v0.5:
 - preserves receipt-before-substantive-work ordering;
 - preserves historical v0.4 failures.
 
-Completion of this targeted repair does not itself establish full Documentation Auditor runtime behavioral certification.
+Completion of this targeted repair does not itself establish full Documentation Auditor runtime behavioral certification. Full runtime PASS additionally remains subject to the complete v0.5 runbook, including C02 and fingerprint-equivalence requirements.
 
 ## Limits
 
