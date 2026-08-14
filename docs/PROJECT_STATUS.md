@@ -27,7 +27,7 @@ Queued runtime target: `SES — SaaS Architect` v0.3.
 | SaaS Architect v0.3 | queued; runtime proof `NOT_ESTABLISHED` |
 | Documentation Auditor v0.4 | Builder applied; P09 attempt 1 FAIL / receipt order + unsupported integral; attempt 2 FAIL / unsupported integral |
 | Documentation Auditor v0.5 | Builder applied + fresh fingerprint; C01 PASS; fresh P09 attempt 1 FAIL / receipt order; unsupported integral promotion = 0; runtime proof `NOT_ESTABLISHED` |
-| Documentation Auditor v0.6 | candidate receipt-order correction; Builder not yet applied; runtime proof `NOT_ESTABLISHED` |
+| Documentation Auditor v0.6 | receipt-order target; Builder not yet applied; runtime proof `NOT_ESTABLISHED` |
 | Shared hybrid project entry | one ordered flow; P01–P10 runtime-required |
 
 No later version rewrites historical failures.
@@ -62,7 +62,7 @@ CONSUMER_PROJECT_DEFECT: NOT_ESTABLISHED
 
 ## 5. v0.6 correction
 
-The v0.6 candidate:
+The v0.6 target:
 
 - advances the Documentation Auditor archetype to spec candidate v0.2;
 - makes the receipt a gating output artifact before any project-specific verdict/finding/risk/recommendation;
@@ -89,7 +89,7 @@ Because v0.6 changes archetype/kernel fingerprint, v0.5 C01 remains historical e
 
 ## 7. Active gates
 
-- candidate review/merge is not runtime proof;
+- repository review/merge is not runtime proof;
 - external Builder v0.6 application requires the normal Product Authority gate;
 - fresh v0.6 fingerprint required after application;
 - fresh P09 must autonomously demonstrate receipt-first ordering and preserved coverage discipline;
