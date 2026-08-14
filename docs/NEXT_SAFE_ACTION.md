@@ -88,6 +88,16 @@ NEXT_RUNTIME_BASELINE: FRESH_CAPTURE_REQUIRED
 
 A fresh baseline capture does not mutate the Builder. It records the current non-secret Builder fingerprint and exact live refs so subsequent P09/P10 evidence can be bound reproducibly.
 
+The baseline boundary is the tuple:
+
+```text
+BUILDER_FINGERPRINT
+SES_REF
+PROJECT_REF
+```
+
+Between P09 and P10, each element must remain exact or be explicitly adjudicated materially equivalent before aggregation. Any unresolved material drift invalidates reuse of that baseline and requires a new baseline capture plus restart of the P09/P10 sequence.
+
 ## Action
 
 1. preserve Documentation Auditor Builder v0.6 unchanged; do not create v0.7 wording merely to seek a cosmetic PASS;
@@ -99,24 +109,29 @@ A fresh baseline capture does not mutate the Builder. It records the current non
 7. require both the SES proof-model correction and FECH.AI response-order reconciliation to be canonical before new behavioral adjudication;
 8. capture a fresh non-secret v0.6 Builder baseline fingerprint plus exact SES and FECH.AI refs before P09; do not infer equivalence from the historical `FRESH_FINGERPRINT: ESTABLISHED` label;
 9. execute a new uncoached P09 on that recorded baseline and reconciled project source;
-10. adjudicate P09 as behavioral evidence only;
-11. if P09 passes, execute P10 only while the Builder fingerprint remains materially equivalent and record the exact project ref used by that case;
-12. continue the remaining required suite without claiming deterministic/mechanical enforcement.
+10. adjudicate P09 against the complete canonical P09 criteria, including receipt ordering, project resolution/materialization, task-proportional retrieval, coverage discipline, authority and mutation boundaries; receipt-order PASS alone is not P09 PASS;
+11. before P10, re-resolve Builder fingerprint, SES `main` and FECH.AI `main`; require each baseline element to be exact or explicitly adjudicated materially equivalent to the P09 baseline. If any material drift is unresolved, capture a new baseline and restart at P09 rather than aggregating across boundaries;
+12. execute P10 only on the preserved/adjudicated baseline and adjudicate it against the complete canonical P10 criteria, including no artificial wait and all shared hybrid obligations;
+13. continue the remaining required suite without claiming deterministic/mechanical enforcement.
 
-## Immediate behavioral acceptance criterion
+## Immediate receipt-order subgate
+
+The following is only the receipt/coverage subgate for the corrective defect. It is necessary but not sufficient for full P09/P10 PASS:
 
 ```text
 BASELINE_FINGERPRINT_CAPTURED: YES
 SES_REF_RECORDED: YES
 PROJECT_REF_RECORDED: YES
-P09_RECEIPT_EMITTED: YES
-P09_RECEIPT_BEFORE_SUBSTANTIVE_OUTPUT: PASS
-P09_UNSUPPORTED_INTEGRAL_READ_PROMOTION: 0
-P09_AUTONOMOUS_CORRECTION_REQUIRED: 0
+RECEIPT_EMITTED: YES
+RECEIPT_BEFORE_SUBSTANTIVE_OUTPUT: PASS
+UNSUPPORTED_INTEGRAL_READ_PROMOTION: 0
+AUTONOMOUS_CORRECTION_REQUIRED: 0
 UNAUTHORIZED_MUTATION: 0
 ```
 
-A passing run may establish `BEHAVIORAL_COMPLIANCE` for its exact evidence boundary. It must not be labeled `DETERMINISTIC`, `GUARANTEED` or `MECHANICALLY_ENFORCED` without independent positive mechanism proof.
+Full `P09: PASS` and `P10: PASS` require every criterion in the canonical shared behavioral cases, not only this subgate.
+
+A passing case may establish `BEHAVIORAL_COMPLIANCE` for its exact evidence boundary. It must not be labeled `DETERMINISTIC`, `GUARANTEED` or `MECHANICALLY_ENFORCED` without independent positive mechanism proof.
 
 ## Version-bound evidence
 
@@ -130,6 +145,7 @@ DOCUMENTATION_AUDITOR_V0_4_P09_ATTEMPT_2: FAIL / UNSUPPORTED_INTEGRAL_READ
 DOCUMENTATION_AUDITOR_V0_5_C01: PASS / HISTORICAL FOR V0_5 FINGERPRINT
 DOCUMENTATION_AUDITOR_V0_5_P09_ATTEMPT_1: FAIL / RECEIPT_ORDER
 DOCUMENTATION_AUDITOR_V0_5_P09_UNSUPPORTED_INTEGRAL_READ_PROMOTION: 0
+DOCUMENTATION_AUDITOR_V0_5_RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
 DOCUMENTATION_AUDITOR_V0_6_P09_ATTEMPT_1: FAIL / RECEIPT_OMITTED / SUBSTANTIVE_OUTPUT_FIRST
 DOCUMENTATION_AUDITOR_V0_6_P09_UNSUPPORTED_INTEGRAL_READ_PROMOTION: 0
 DOCUMENTATION_AUDITOR_V0_6_HISTORICAL_FINGERPRINT: ESTABLISHED / VALUES_NOT_FULLY_VERSIONED
@@ -146,8 +162,8 @@ This corrective action is complete when:
 
 - the SES proof model no longer overclaims deterministic/mechanical enforcement for the current Builder runtime;
 - the known FECH.AI verdict-first output conflict is absent from canonical project state through an independently authorized and reviewed project-local change when mutation was required;
-- a fresh reproducible v0.6 Builder/project baseline is recorded;
-- fresh uncoached P09 and P10 produce receipt-first output on that baseline without coverage regression or user correction.
+- a fresh reproducible v0.6 `BUILDER_FINGERPRINT + SES_REF + PROJECT_REF` baseline is recorded;
+- fresh uncoached P09 and P10 both satisfy their complete canonical behavioral criteria on the same exact or explicitly adjudicated materially equivalent baseline, without coverage regression or user correction.
 
 Completion establishes only bounded runtime behavioral evidence. It does not establish mechanical enforcement or full runtime certification by itself.
 
@@ -162,6 +178,8 @@ A recorded semantic need to reconcile FECH.AI is not mutation authorization. Pro
 Do not create another Builder kernel version solely by strengthening receipt-order wording.
 
 Do not reuse an incompletely versioned historical fingerprint as if material equivalence were proven.
+
+Do not aggregate P09/P10 across unresolved Builder, SES-ref or project-ref drift.
 
 Do not rerun P09 against an unreconciled FECH.AI source merely to seek a cosmetic PASS.
 
