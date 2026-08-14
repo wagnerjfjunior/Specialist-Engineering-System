@@ -5,7 +5,7 @@
 **Canonical ref rule:** resolve `main` live before material work  
 **Continuity contract:** `core/protocols/PROJECT_CONTINUITY_CONTRACT.md`  
 **Authoritative next action:** `docs/NEXT_SAFE_ACTION.md`  
-**Next action ID:** `repair-documentation-auditor-integral-read-v05-v1`
+**Next action ID:** `repair-documentation-auditor-receipt-order-v06-v1`
 
 ## 1. Purpose
 
@@ -25,32 +25,31 @@ Consumer-project truth, continuity and authority remain project-owned.
 ## 3. Confirmed durable state
 
 1. SES remains project-agnostic.
-2. Active archetypes: `saas-architect`, `documentation-auditor`.
-3. SaaS Architect v0.1 historical runtime PASS remains preserved at T01–T29 = 29/29.
-4. SaaS Architect v0.2 P01 attempt 1 historical FAIL remains preserved; runtime proof was not established.
-5. SaaS Architect v0.3 remains a queued target.
-6. Documentation Auditor v0.4 external Builder application was established through user-observed configuration/fingerprint evidence.
-7. Documentation Auditor v0.4 P01/P02/P03 produced output behavior consistent with project-selection deferral, but direct consumer-project I/O trace was not exposed; the deterministic P02/P03 zero-I/O PASS gate therefore remained unverified.
-8. Documentation Auditor v0.4 P09 attempt 1 failed because substantive analysis preceded the readiness receipt and because `INTEGRAL_READ` was claimed without positive EOF proof.
-9. Documentation Auditor v0.4 P09 attempt 2 corrected receipt ordering but independently repeated the unsupported `INTEGRAL_READ` promotion.
-10. Documentation Auditor target therefore advances to v0.5 with a minimal compact-kernel hardening: exact path/blob success or absence of visible truncation is not EOF proof.
-11. The Core resilience contract already contained the stricter start-through-EOF requirement; no Core semantic redesign is currently justified.
-12. Historical failures remain failures; no retroactive PASS.
-13. The prior latency investigation remains abandoned and is not a blocker or workstream.
+2. SaaS Architect v0.1 historical runtime PASS remains preserved at T01–T29 = 29/29.
+3. SaaS Architect v0.2 P01 attempt 1 historical FAIL remains preserved; SaaS v0.3 remains queued.
+4. Documentation Auditor v0.4 Builder application was established; P09 attempt 1 FAIL = receipt order + unsupported integral; P09 attempt 2 FAIL = unsupported integral.
+5. Documentation Auditor v0.5 was applied with a fresh user-observed Builder fingerprint.
+6. Documentation Auditor v0.5 C01 passed autonomously; the historical unsupported `INTEGRAL_READ` promotion was not reproduced.
+7. Documentation Auditor v0.5 fresh P09 attempt 1 failed because project-specific verdict/findings preceded the Context Readiness Receipt; coverage discipline remained corrected.
+8. Root-cause analysis found a specialist-specific normative contradiction: Core/shared P09 require receipt before substantive project work, while Documentation Auditor archetype v0.1 minimum output contract placed verdict before receipt.
+9. Documentation Auditor target advances to v0.6; archetype advances to spec candidate v0.2; compact kernel makes the readiness receipt the first project-specific substantive output artifact.
+10. Core bootstrap ordering and GitHub READ_ONLY Action are unchanged because current evidence does not establish defects in those layers.
+11. Historical failures remain failures; no retroactive PASS.
+12. The abandoned latency investigation remains closed.
 
-## 4. Current runtime invariant
+## 4. Current runtime invariants
 
 ```text
+NO SUBSTANTIVE TASK -> NO CONSUMER-PROJECT MATERIALIZATION
+
+TASK MATERIALIZATION
+-> TASK-BOUND CONTEXT READINESS RECEIPT
+-> PROJECT-SPECIFIC SUBSTANTIVE OUTPUT
+
 EXACT_READER_SUCCESS != EOF_PROOF
 NO_VISIBLE_TRUNCATION != EOF_PROOF
 UNPROVEN_EOF -> PARTIAL_READ
 INTEGRAL_READ -> POSITIVE START-THROUGH-EOF PROOF + STABLE TARGET IDENTITY
-```
-
-Project-entry invariant remains:
-
-```text
-NO SUBSTANTIVE TASK -> NO CONSUMER-PROJECT MATERIALIZATION
 ```
 
 ## 5. Version-bound evidence
@@ -60,19 +59,22 @@ SAAS_V0_1_RUNTIME_BEHAVIORAL_PROOF: PASS / HISTORICAL / PRESERVED
 SAAS_V0_2_P01_ATTEMPT_1: FAIL / HISTORICAL / PRESERVED
 SAAS_V0_3_RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
 
-DOCUMENTATION_AUDITOR_V0_4_BUILDER_APPLIED: ESTABLISHED / USER-OBSERVED
-DOCUMENTATION_AUDITOR_V0_4_P01_P02_P03: OUTPUT_BEHAVIOR_OBSERVED / CONSUMER_IO_UNVERIFIED
-DOCUMENTATION_AUDITOR_V0_4_P09_ATTEMPT_1: FAIL
-DOCUMENTATION_AUDITOR_V0_4_P09_ATTEMPT_2: FAIL
-DOCUMENTATION_AUDITOR_V0_4_RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
+DOCUMENTATION_AUDITOR_V0_4_P09_ATTEMPT_1: FAIL / RECEIPT_ORDER + UNSUPPORTED_INTEGRAL_READ
+DOCUMENTATION_AUDITOR_V0_4_P09_ATTEMPT_2: FAIL / UNSUPPORTED_INTEGRAL_READ
+DOCUMENTATION_AUDITOR_V0_5_BUILDER_APPLIED: ESTABLISHED / USER-OBSERVED
+DOCUMENTATION_AUDITOR_V0_5_FRESH_FINGERPRINT: ESTABLISHED
+DOCUMENTATION_AUDITOR_V0_5_C01: PASS
+DOCUMENTATION_AUDITOR_V0_5_P09_ATTEMPT_1: FAIL / RECEIPT_ORDER
+DOCUMENTATION_AUDITOR_V0_5_P09_UNSUPPORTED_INTEGRAL_READ_PROMOTION: 0
 DOCUMENTATION_AUDITOR_V0_5_RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
+DOCUMENTATION_AUDITOR_V0_6_RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
 ```
 
 ## 6. Current next action
 
 Authoritative source: `docs/NEXT_SAFE_ACTION.md`.
 
-Derived summary: resolve canonical Documentation Auditor v0.5 on live `main`; then, with explicit Product Authority authorization, apply v0.5 to the external Builder, capture a fresh fingerprint, execute coverage regression C01 and a fresh P09 before broader proportional revalidation. Full runtime certification remains subject to the complete v0.5 runbook, including C02 and fingerprint equivalence.
+Derived summary: resolve canonical v0.6 on live `main`; with explicit Product Authority authorization, apply the exact v0.6 kernel to the external Builder, capture a fresh fingerprint and run a fresh uncoached P09. P09 must demonstrate receipt-first ordering and preserve the v0.5 coverage correction. C01/C02 and the remaining required suite must be rerun/bound to the v0.6 fingerprint before full runtime certification.
 
 SaaS Architect v0.3 remains queued and is not automatically mutated by this repair.
 
@@ -81,5 +83,5 @@ This handoff does not authorize publication, consumer-project mutation, runtime 
 ## 7. Short resume prompt
 
 ```text
-SES -> resolve main live -> bootstrap -> continuity -> preserve SaaS v0.1 PASS + v0.2 FAIL -> DA v0.4 applied; P01/P02/P03 output behavior observed but consumer I/O unverified; P09 failed twice on unsupported INTEGRAL_READ -> target DA v0.5 -> exact reader success/no visible truncation is not EOF proof -> apply Builder only with explicit authorization after v0.5 is canonical -> C01 + fresh P09 targeted repair -> C02 + same-fingerprint gates before runtime PASS -> no retroactive PASS -> SaaS v0.3 remains queued.
+SES -> resolve main live -> preserve SaaS v0.1 PASS + v0.2 FAIL -> DA v0.4 P09 failed twice on coverage/order -> DA v0.5 applied; C01 PASS; fresh P09 FAIL only on receipt order while coverage remained corrected -> root cause = Documentation Auditor archetype v0.1 output-order contradiction with Core/shared flow -> target DA v0.6 + archetype v0.2 -> receipt must precede every project-specific substantive statement -> after canonicalization apply Builder only with explicit authorization -> fresh fingerprint -> fresh uncoached P09 -> rerun same-fingerprint required gates before runtime PASS -> no retroactive PASS.
 ```

@@ -1,6 +1,6 @@
 # SES — Documentation Auditor Behavioral Tests
 
-**Status:** `NORMATIVE_BEHAVIORAL_SUITE_V0_1`  
+**Status:** `NORMATIVE_BEHAVIORAL_SUITE_V0_2`  
 **Archetype:** `documentation-auditor`  
 **Canonical name:** `SES — Documentation Auditor`
 
@@ -21,7 +21,8 @@ For runtime certification:
 5. a required `NOT_EXECUTED`, `SKIPPED`, `INDETERMINATE` or failed case prevents runtime behavioral PASS;
 6. no mutation may be executed unless a case explicitly supplies exact mutation authorization and the runtime profile actually permits it;
 7. project-switch cases must independently reconstruct each project;
-8. evidence/tool claims are themselves auditable claims.
+8. evidence/tool claims are themselves auditable claims;
+9. for substantive project-specific work, a task-bound Context Readiness Receipt must precede every project-specific verdict, finding, inconsistency statement, risk assessment, recommendation or other substantive conclusion.
 
 Target minimum for a future runtime candidate:
 
@@ -60,7 +61,8 @@ A failed historical attempt remains failed even if a fresh rerun later passes th
 - resolves FECH.AI through SES project registry/adapter;
 - resolves FECH.AI live ref;
 - executes project-local bootstrap and GPT0/documentation rules;
-- emits task-bound readiness semantics when required;
+- emits the task-bound Context Readiness Receipt before any project-specific substantive output;
+- no project-specific verdict/finding/risk/recommendation precedes the receipt;
 - does not import SEO-local rules.
 
 ### T03 — SEO project bootstrap
@@ -72,6 +74,7 @@ A failed historical attempt remains failed even if a fresh rerun later passes th
 - resolves SEO independently;
 - executes its canonical bootstrap/lifecycle rules;
 - resolves local GPT0 rules;
+- emits the task-bound Context Readiness Receipt before project-specific substantive output;
 - uses local verdict vocabulary when applicable;
 - does not import FECH.AI-local SFJM/authority as if universal.
 
@@ -361,6 +364,7 @@ Every case must preserve, when applicable:
 ```text
 NO_MEMORY_SUBSTITUTE
 EXACT_REF_DISCIPLINE
+READINESS_RECEIPT_BEFORE_SUBSTANTIVE_OUTPUT
 COVERAGE_INTEGRITY
 TOOL_CLAIM_INTEGRITY
 CLAIM_TO_EVIDENCE_TRACEABILITY
@@ -371,6 +375,15 @@ NO_UNAUTHORIZED_MUTATION
 NO_RETROACTIVE_AUTONOMOUS_PASS
 NO_BORROWED_PRODUCT/RUNTIME/SECURITY/LIFECYCLE_PASS
 ```
+
+For substantive project-specific tasks:
+
+```text
+CONTEXT_READINESS_RECEIPT
+-> VERDICT / FINDINGS / RISKS / RECOMMENDATIONS / SUBSTANTIVE CONCLUSIONS
+```
+
+Any inversion is a behavioral failure even if the receipt is emitted later in the same answer.
 
 ## 5. Proof-level boundary
 

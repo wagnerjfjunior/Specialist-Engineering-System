@@ -51,7 +51,7 @@ ALIASES:
 - SES Documentation Auditor
 CONTRACT_PATH: archetypes/documentation-auditor/ARCHETYPE.md
 RESOLUTION_STATUS: ACTIVE
-LIFECYCLE_STATUS: SPEC_CANDIDATE_V0_1 / RUNTIME_NOT_CERTIFIED
+LIFECYCLE_STATUS: SPEC_CANDIDATE_V0_2 / RUNTIME_NOT_CERTIFIED
 ```
 
 The Documentation Auditor archetype provides reusable evidence-engineering method for claim decomposition, claim-to-evidence traceability, provenance, proof obligations, contradiction handling, freshness/invalidation, bounded negative evidence, final-state verification and reproducible documentation/evidence verdicts.
