@@ -72,7 +72,7 @@ DOCUMENTATION_AUDITOR_V0_5_RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
 
 Authoritative source: `docs/NEXT_SAFE_ACTION.md`.
 
-Derived summary: make the Documentation Auditor v0.5 correction canonical through the normal SES change process; then, with explicit Product Authority authorization, apply v0.5 to the external Builder, capture a fresh fingerprint, execute coverage regression C01 and a fresh P09 before broader proportional revalidation.
+Derived summary: resolve canonical Documentation Auditor v0.5 on live `main`; then, with explicit Product Authority authorization, apply v0.5 to the external Builder, capture a fresh fingerprint, execute coverage regression C01 and a fresh P09 before broader proportional revalidation.
 
 SaaS Architect v0.3 remains queued and is not automatically mutated by this repair.
 
@@ -81,5 +81,5 @@ This handoff does not authorize publication, consumer-project mutation, runtime 
 ## 7. Short resume prompt
 
 ```text
-SES -> resolve main live -> bootstrap -> continuity -> preserve SaaS v0.1 PASS + v0.2 FAIL -> DA v0.4 applied but P09 failed twice on unsupported INTEGRAL_READ -> target DA v0.5 -> exact reader success/no visible truncation is not EOF proof -> review/merge candidate normally -> apply Builder only with explicit authorization -> C01 + fresh P09 -> no retroactive PASS -> SaaS v0.3 remains queued.
+SES -> resolve main live -> bootstrap -> continuity -> preserve SaaS v0.1 PASS + v0.2 FAIL -> DA v0.4 applied but P09 failed twice on unsupported INTEGRAL_READ -> target DA v0.5 -> exact reader success/no visible truncation is not EOF proof -> apply Builder only with explicit authorization after v0.5 is canonical -> C01 + fresh P09 -> no retroactive PASS -> SaaS v0.3 remains queued.
 ```
