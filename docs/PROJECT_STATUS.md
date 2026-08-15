@@ -5,6 +5,7 @@
 **Canonical branch:** `main` resolved live
 **Authoritative next action:** `docs/NEXT_SAFE_ACTION.md`
 **Gate 0 evidence:** `tests/runtime/evidence/DOCUMENTATION_AUDITOR_V09_GATE0_2026-08-15.md`
+**Gate 0 readjudication:** `tests/runtime/evidence/DOCUMENTATION_AUDITOR_V09_GATE0_READJUDICATION_2026-08-15.md`
 
 ## 1. Project boundary
 
@@ -64,42 +65,39 @@ Historical evidence is not rewritten.
 | Documentation Auditor v0.7 | abandoned; PR #19 not merged |
 | Documentation Auditor v0.8 | direct FECH.AI and Blogs/SEO observations passed; missing/ambiguous target reproduced retired numbered-menu behavior |
 | Documentation Auditor v0.9 Builder | applied to the private external Builder; non-secret fingerprint captured before formal Gate 0 |
-| Documentation Auditor v0.9 Gate 0 | `6/7`; R01–R05 plus R03A/R03B PASS, R06 FAIL |
+| Documentation Auditor v0.9 Gate 0 | corrected current adjudication `5/7`; R01, R02, R03B, R04, R05 PASS; R03A and R06 FAIL |
+| Documentation Auditor initial R03A adjudication | `PASS / INITIAL_OVERCLAIM_PRESERVED`; corrected by full-transcript ordering review |
 | Documentation Auditor project-target regression | `PROJECT_TARGET_REGRESSION_PASS = NOT_ESTABLISHED` |
 | Documentation Auditor proportional smoke | `BLOCKED_BY_GATE0_FAIL`; old S01–S06 queue is not active |
 | Runtime enforcement | `RUNTIME_ENFORCEMENT_GAP = ESTABLISHED`; prompt-level stop loss triggered |
 
-## 5. v0.9 Gate 0 evidence
+## 5. v0.9 Gate 0 evidence and readjudication
 
-Durable sanitized evidence, including the non-secret Builder fingerprint, exact canonical inputs, preserved observed responses/turn sequence, refs and adjudication, is versioned at:
+Durable sanitized evidence, including the non-secret Builder fingerprint, exact canonical inputs, preserved observed responses/turn sequence, refs and the initial adjudication, is versioned at:
 
 `tests/runtime/evidence/DOCUMENTATION_AUDITOR_V09_GATE0_2026-08-15.md`.
 
-Formal observations on the fingerprinted v0.9 runtime:
+A subsequent full-transcript PR self-review found that R03A had been initially over-adjudicated as PASS because the preserved opening contains project-specific substantive FECH.AI commentary before the receipt. The corrective adjudication is preserved separately rather than silently rewriting history:
+
+`tests/runtime/evidence/DOCUMENTATION_AUDITOR_V09_GATE0_READJUDICATION_2026-08-15.md`.
+
+Corrected current observations on the fingerprinted v0.9 runtime:
 
 ```text
 R01 ambiguous SES-vs-consumer target: PASS
 R02 consumer task with missing project identifier: PASS
-R03A explicit FECH.AI: PASS
+R03A explicit FECH.AI: FAIL / PROJECT-SPECIFIC SUBSTANTIVE OUTPUT BEFORE RECEIPT
 R03B explicit SES: PASS
 R04 informational list → bare number: PASS
 R05 explicit but unregistered identifier: PASS
-R06 substantive FECH.AI ↔ Blogs/SEO multi-project task: FAIL
+R06 substantive FECH.AI ↔ Blogs/SEO multi-project task: FAIL / SUBSTANTIVE COMPARATIVE OUTPUT BEFORE READINESS
+
+PROJECT_TARGET_REGRESSION: 5/7
 ```
 
-R06 demonstrated:
+R03A positive behavior included explicit FECH.AI resolution and READ_ONLY operation, but the ordering gate still failed. R06 independently resolved both projects and preserved source separation/READ_ONLY, but the ordering gate again failed.
 
-```text
-MULTI_PROJECT_TASK: YES
-INFORMATIONAL_LIST_SHORT_CIRCUIT: NO
-FECHAI_INDEPENDENTLY_RESOLVED: YES
-BLOGS_SEO_INDEPENDENTLY_RESOLVED: YES
-READ_ONLY: PRESERVED
-SUBSTANTIVE_COMPARATIVE_OUTPUT_BEFORE_REQUIRED_READINESS_BOUNDARY: YES
-RESULT: FAIL
-```
-
-The later receipt and bounded final comparison do not retroactively erase the ordering failure.
+Later receipts do not retroactively erase either ordering failure.
 
 ## 6. Enforcement conclusion
 
@@ -111,7 +109,7 @@ Current evidence therefore supports:
 RECEIPT_FIRST_NORMATIVE_REQUIREMENT: ESTABLISHED
 RECEIPT_FIRST_BEHAVIORAL_COMPLIANCE: CASE/BOUNDARY DEPENDENT
 RECEIPT_FIRST_MECHANICAL_ENFORCEMENT: NOT_ESTABLISHED
-RUNTIME_ENFORCEMENT_GAP: ESTABLISHED BY R06 FAILURE
+RUNTIME_ENFORCEMENT_GAP: ESTABLISHED BY R03A + R06 FAILURES
 ```
 
 Do not infer that more natural-language prompt wording will create a mechanically enforced invariant.
@@ -147,7 +145,7 @@ Preserve:
 - cross-project isolation;
 - READ_ONLY default and exact mutation authorization;
 - anti-overclaim lifecycle separation;
-- historical FAILs without retroactive promotion.
+- historical FAILs and initial overclaims without silent rewrite.
 
 ## 9. Consumer projects
 
@@ -155,4 +153,4 @@ No FECH.AI or Blogs/SEO mutation follows from this SES runtime failure or the Ga
 
 ## 10. Continuity policy
 
-`docs/NEXT_SAFE_ACTION.md` is the sole authoritative semantic next action. This file is derived state only. If it conflicts materially with that file, the closed runtime runbook, blocked-actions ledger or newer live authority, stop and reconcile.
+`docs/NEXT_SAFE_ACTION.md` is the sole authoritative semantic next action. This file is derived state only. If it conflicts materially with that file, the closed runtime runbook, blocked-actions ledger, evidence/readjudication or newer live authority, stop and reconcile.
