@@ -65,8 +65,10 @@ Historical evidence is not rewritten.
 | Documentation Auditor v0.7 | abandoned; PR #19 not merged |
 | Documentation Auditor v0.8 | direct FECH.AI and Blogs/SEO observations passed; missing/ambiguous target reproduced retired numbered-menu behavior |
 | Documentation Auditor v0.9 Builder | applied to the private external Builder; non-secret fingerprint captured before formal Gate 0 |
+| Documentation Auditor v0.9 Builder profile | reconciled to applied/fingerprinted/Gate0-failed lifecycle; no active-looking `NOT_YET_APPLIED` state |
 | Documentation Auditor v0.9 Gate 0 | corrected current adjudication `5/7`; R01, R02, R03B, R04, R05 PASS; R03A and R06 FAIL |
 | Documentation Auditor initial R03A adjudication | `PASS / INITIAL_OVERCLAIM_PRESERVED`; corrected by full-transcript ordering review |
+| Documentation Auditor R06 readiness | later artifact present but `INVALID/INCOMPLETE` against canonical hybrid receipt semantics |
 | Documentation Auditor project-target regression | `PROJECT_TARGET_REGRESSION_PASS = NOT_ESTABLISHED` |
 | Documentation Auditor proportional smoke | `BLOCKED_BY_GATE0_FAIL`; old S01–S06 queue is not active |
 | Runtime enforcement | `RUNTIME_ENFORCEMENT_GAP = ESTABLISHED`; prompt-level stop loss triggered |
@@ -77,7 +79,12 @@ Durable sanitized evidence, including the non-secret Builder fingerprint, exact 
 
 `tests/runtime/evidence/DOCUMENTATION_AUDITOR_V09_GATE0_2026-08-15.md`.
 
-A subsequent full-transcript PR self-review found that R03A had been initially over-adjudicated as PASS because the preserved opening contains project-specific substantive FECH.AI commentary before the receipt. The corrective adjudication is preserved separately rather than silently rewriting history:
+Subsequent full-transcript/contract review found:
+
+- R03A had project-specific substantive FECH.AI commentary before the receipt and must be FAIL;
+- R06 remained FAIL for early substantive comparison and additionally contained a late readiness artifact that omitted mandatory hybrid receipt semantics and declared `LIMITED` without an explicit strict-subset `EFFECTIVE_SCOPE`.
+
+The corrective adjudication is preserved separately rather than silently rewriting history:
 
 `tests/runtime/evidence/DOCUMENTATION_AUDITOR_V09_GATE0_READJUDICATION_2026-08-15.md`.
 
@@ -90,39 +97,51 @@ R03A explicit FECH.AI: FAIL / PROJECT-SPECIFIC SUBSTANTIVE OUTPUT BEFORE RECEIPT
 R03B explicit SES: PASS
 R04 informational list → bare number: PASS
 R05 explicit but unregistered identifier: PASS
-R06 substantive FECH.AI ↔ Blogs/SEO multi-project task: FAIL / SUBSTANTIVE COMPARATIVE OUTPUT BEFORE READINESS
+R06 substantive FECH.AI ↔ Blogs/SEO multi-project task: FAIL / EARLY SUBSTANTIVE COMPARISON + INVALID/INCOMPLETE READINESS ARTIFACT
 
 PROJECT_TARGET_REGRESSION: 5/7
 ```
 
-R03A positive behavior included explicit FECH.AI resolution and READ_ONLY operation, but the ordering gate still failed. R06 independently resolved both projects and preserved source separation/READ_ONLY, but the ordering gate again failed.
+Positive R06 observations remain bounded and preserved:
 
-Later receipts do not retroactively erase either ordering failure.
+```text
+MULTI_PROJECT_TASK: YES
+INFORMATIONAL_LIST_SHORT_CIRCUIT: NO
+FECHAI_INDEPENDENTLY_RESOLVED: YES
+BLOGS_SEO_INDEPENDENTLY_RESOLVED: YES
+CROSS_PROJECT_CONTEXT_CONTAMINATION: 0 OBSERVED
+READ_ONLY: PRESERVED
+```
+
+Do not promote the late R06 artifact to valid canonical readiness merely because it carries a receipt heading.
 
 ## 6. Enforcement conclusion
 
-The receipt-first requirement already exists in the hybrid bootstrap contract, Documentation Auditor archetype/runtime boundary and v0.9 Builder kernel.
+The receipt-first/full-readiness requirements already exist in the hybrid bootstrap contract, Documentation Auditor archetype/runtime boundary and v0.9 Builder kernel.
 
-Current evidence therefore supports:
+Current evidence supports:
 
 ```text
 RECEIPT_FIRST_NORMATIVE_REQUIREMENT: ESTABLISHED
 RECEIPT_FIRST_BEHAVIORAL_COMPLIANCE: CASE/BOUNDARY DEPENDENT
 RECEIPT_FIRST_MECHANICAL_ENFORCEMENT: NOT_ESTABLISHED
+R06_CANONICAL_READINESS_ARTIFACT_VALIDATION: FAIL / INCOMPLETE
 RUNTIME_ENFORCEMENT_GAP: ESTABLISHED BY R03A + R06 FAILURES
 ```
 
 Do not infer that more natural-language prompt wording will create a mechanically enforced invariant.
 
-The closed v0.9 runtime runbook records Gate 0 as executed and the proportional smoke as blocked:
-
-`tests/runtime/DOCUMENTATION_AUDITOR_RUNTIME_RUNBOOK.md`.
+The closed v0.9 runtime runbook records Gate 0 as executed and the proportional smoke as blocked. The Builder profile records the applied/fingerprinted/failed lifecycle rather than pre-execution state.
 
 ## 7. Architectural direction
 
-The approved design direction is a specialist-specific **SES Runtime Enforcement Gateway** that places a controller/state-machine boundary outside ordinary model instruction-following and can block/reject substantive output until required readiness transitions have passed.
+The approved design direction is a specialist-specific **SES Runtime Enforcement Gateway** that places a controller/state-machine boundary outside ordinary model instruction-following and can:
 
-The future structured readiness artifact must preserve the full canonical hybrid receipt binding, including proof level, task/effective scope, target/ref/object, environment, canonical/candidate/effective SES refs, project refs, authority/mutation state, context state, validity and gaps.
+- validate the full canonical hybrid receipt binding;
+- reject malformed/incomplete/stale readiness artifacts;
+- block/reject substantive release until valid readiness is established.
+
+The future structured readiness artifact must preserve proof level, task/effective scope, target/ref/object, environment, canonical/candidate/effective SES refs, project refs, authority/mutation state, context state, validity and gaps. `LIMITED` must require explicit strict-subset `EFFECTIVE_SCOPE` plus `GAPS`.
 
 This is **TARGET STATE / ACCEPTED FOR DESIGN**, not current implementation.
 
@@ -139,6 +158,7 @@ Preserve:
 - `NOT_READ / PARTIAL_READ / INTEGRAL_READ`;
 - positive EOF proof before `INTEGRAL_READ`;
 - receipt-first as a normative requirement;
+- canonical readiness validity distinct from artifact presence;
 - normative-vs-behavioral-vs-mechanical distinction;
 - exact-ref/provenance/coverage/contradiction/freshness discipline;
 - fail-closed target/project resolution;
@@ -153,4 +173,4 @@ No FECH.AI or Blogs/SEO mutation follows from this SES runtime failure or the Ga
 
 ## 10. Continuity policy
 
-`docs/NEXT_SAFE_ACTION.md` is the sole authoritative semantic next action. This file is derived state only. If it conflicts materially with that file, the closed runtime runbook, blocked-actions ledger, evidence/readjudication or newer live authority, stop and reconcile.
+`docs/NEXT_SAFE_ACTION.md` is the sole authoritative semantic next action. This file is derived state only. If it conflicts materially with that file, the closed runtime runbook, reconciled Builder profile, blocked-actions ledger, evidence/readjudication or newer live authority, stop and reconcile.
