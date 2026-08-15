@@ -1,15 +1,15 @@
 # SES — Current Handoff
 
-**Status:** `SFJM_OPERATIONAL_CONTINUITY_V0_1 / STOP_LOSS_ROLLBACK_STATE`
+**Status:** `SFJM_OPERATIONAL_CONTINUITY_V0_1 / POST_STOP_LOSS_RUNTIME_RECONCILIATION`
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System`
 **Canonical ref rule:** resolve `main` live before material work
 **Continuity contract:** `core/protocols/PROJECT_CONTINUITY_CONTRACT.md`
 **Authoritative next action:** `docs/NEXT_SAFE_ACTION.md`
-**Next action ID:** `reconcile-ses-builders-to-multi-starter-baselines-v1`
+**Next action ID:** `apply-documentation-auditor-v09-project-target-fix-v1`
 
 ## 1. Purpose
 
-Preserve the durable stop-loss decision and safe continuation after retiring the single-starter project-selection feature.
+Preserve the durable stop-loss decision and the bounded correction required after Documentation Auditor v0.8 reproduced a retired numbered-project-menu response when target/project identity was not explicit.
 
 Consumer-project truth, continuity and authority remain project-owned.
 
@@ -26,39 +26,48 @@ Consumer-project truth, continuity and authority remain project-owned.
 
 1. SES remains project-agnostic.
 2. SFJM continuity remains operational; `LIVE_RESOLVED_STATE != MATERIAL_RECORDED_STATE`.
-3. SaaS Architect v0.1 historical runtime PASS T01–T29 = 29/29 remains preserved for its exact historical fingerprint.
-4. PRs #14/#15 introduced the single-starter / selection-first / deferred cross-turn project-entry experiment.
-5. PR #16 fixed EOF/`INTEGRAL_READ` overclaim behavior; preserve it.
-6. PR #17 fixed the Documentation Auditor receipt-order specification contradiction; preserve receipt-before-substantive-output.
-7. PR #18 bounded mechanical-enforcement claims; preserve that learning without more prompt-hardening loops.
-8. PR #19 is closed without merge as `ABANDONED / STOP-LOSS` and remains historical.
-9. PR #20 merged the controlled rollback and retired `# CLIQUE PARA INICIAR → menu → number → PROJECT_SELECTED → WAIT FOR TASK → resume`.
-10. Direct project + substantive-task bootstrap semantics and multi-starter UX are the active interaction model.
-11. Historical v0.4/v0.5/v0.6 failures remain failures; no retroactive PASS.
-12. Documentation Auditor v0.8 is the post-stop-loss repository target.
-13. SaaS Architect historical certified kernel blob `50672d09665035c0f60f18887f3295a5ea8cad03` remains historical evidence but exceeds the present Builder Instructions limit when copied in the current UI.
-14. The current SaaS Builder target is the compact v0.1-semantics kernel `runtime/custom-gpt/SAAS_ARCHITECT_BUILDER_KERNEL.md`, measured at 6182 code points; it is a new Builder fingerprint and requires proportional smoke.
-15. `runtime/custom-gpt/UNIVERSAL_BUILDER_KERNEL.md` is retained only as a deprecated compatibility locator and must not be copied into Builder Instructions.
-16. No consumer project is automatically mutated by SES changes.
+3. SaaS Architect historical v0.1 runtime PASS T01–T29 = 29/29 remains preserved only for its exact historical fingerprint.
+4. PR #19 remains `ABANDONED / STOP-LOSS / NOT_MERGED`.
+5. PR #20 merged the controlled rollback and retired the single-starter/menu/numeric-selection/cross-turn interaction.
+6. PR #21 merged the SaaS Architect Builder-fit kernel/name correction.
+7. Documentation Auditor v0.8 direct FECH.AI and Blogs/SEO tasks demonstrated correct registry/adapter/bootstrap, receipt ordering, project isolation and conservative evidence coverage in the observed runs.
+8. A generic/missing-target v0.8 observation reconstructed a required numbered ACTIVE-project menu and numeric selection. That is a stop-loss behavioral regression.
+9. Another generic-target observation treated SES itself as the target; because the test prompt did not explicitly state consumer-project intent, that observation is `INDETERMINATE / TARGET_AMBIGUOUS`, not a valid missing-consumer-project failure.
+10. v0.9 corrects target acquisition only; it does not reopen selection-first.
+11. Historical v0.4-v0.8 failures/observations remain preserved without retroactive rewrite.
+12. No consumer project is automatically mutated by SES evolution.
 
-## 4. Current required behavior
+## 4. Current required target behavior
 
-For project-specific substantive work:
+Before project materialization classify target identity.
 
 ```text
-TASK_SCOPE + EXPLICIT PROJECT_IDENTIFIER
-→ SES live/bootstrap/archetype
-→ projects/REGISTRY.md
-→ unique Project Adapter
-→ consumer project live/bootstrap/local specialist
-→ task-material/mandatory sources
-→ task-bound Context Readiness Receipt
-→ project-specific substantive work
+EXPLICIT SES TARGET
+→ SES self-work as applicable
+
+EXPLICIT CONSUMER PROJECT TARGET
+→ Project Registry → Adapter → consumer bootstrap/local specialist → receipt → work
+
+MISSING CONSUMER PROJECT IDENTIFIER
+→ direct clarification → STOP
+
+AMBIGUOUS SES OR CONSUMER TARGET
+→ direct clarification → STOP
 ```
 
-If project identity is missing, ask for it directly. Do not require a generated numbered menu or numeric cross-turn selection state.
+Before clarification is answered:
 
-Preserve:
+- do not infer SES;
+- do not infer a consumer project;
+- do not enumerate the registry merely to offer choices;
+- do not generate a numbered menu;
+- do not create numeric bindings;
+- do not materialize a consumer project;
+- do not emit project findings/verdicts.
+
+Project enumeration is informational only when explicitly requested and never creates selection-state authority.
+
+## 5. Preserved evidence/authority behavior
 
 ```text
 CONTEXT_READINESS_RECEIPT
@@ -68,6 +77,9 @@ EXACT_READER_SUCCESS != EOF_PROOF
 NO_VISIBLE_TRUNCATION != EOF_PROOF
 UNPROVEN_EOF -> PARTIAL_READ
 INTEGRAL_READ -> POSITIVE START-THROUGH-EOF PROOF + STABLE TARGET IDENTITY
+
+CONTEXT_READY != AUTHORIZED_TO_MUTATE
+TOOL_CAPABILITY != AUTHORIZATION
 ```
 
 Keep separate:
@@ -78,35 +90,35 @@ BEHAVIORAL_COMPLIANCE
 MECHANICALLY_ENFORCED_INVARIANT
 ```
 
-## 5. Preserved evidence
+## 6. Current candidate
 
 ```text
-SAAS_V0_1_RUNTIME_BEHAVIORAL_PROOF: PASS / HISTORICAL / PRESERVED
-SAAS_HISTORICAL_KERNEL_BLOB: 50672d09665035c0f60f18887f3295a5ea8cad03
-SAAS_CURRENT_BUILDER_FIT_KERNEL: NEW FINGERPRINT / PROPORTIONAL SMOKE REQUIRED
-SAAS_V0_2_V0_3_SELECTION_FIRST_TARGETS: SUPERSEDED_BY_STOP_LOSS
-
-DA_V0_4_P09_ATTEMPT_1: FAIL / PRESERVED
-DA_V0_4_P09_ATTEMPT_2: FAIL / PRESERVED
-DA_V0_5_C01: PASS / HISTORICAL / PRESERVED
-DA_V0_5_P09_ATTEMPT_1: FAIL / PRESERVED
-DA_V0_6_P09_ATTEMPT_1: FAIL / PRESERVED
-DA_V0_6_UNSUPPORTED_INTEGRAL_READ_PROMOTION: 0 / PRESERVED
-DA_V0_6_RECEIPT_MECHANICAL_ENFORCEMENT: NOT_ESTABLISHED / PRESERVED
-DA_V0_7: ABANDONED / STOP_LOSS / PR #19 NOT_MERGED
-DA_V0_8: ROLLBACK_TARGET
+DOCUMENTATION_AUDITOR_TARGET: V0_9
+PROFILE: runtime/custom-gpt/DOCUMENTATION_AUDITOR_BUILDER_PROFILE.md
+KERNEL: runtime/custom-gpt/DOCUMENTATION_AUDITOR_BUILDER_KERNEL.md
+KERNEL_COUNT: 7388
+TARGET_CONTRACT: core/protocols/HYBRID_PROJECT_TARGET_RESOLUTION_CONTRACT.md
+REGRESSION: tests/runtime/DOCUMENTATION_AUDITOR_PROJECT_TARGET_REGRESSION.md
+BUILDER_APPLIED: NOT_YET_ESTABLISHED FOR V0_9
+PROJECT_TARGET_REGRESSION_PASS: NOT_YET_ESTABLISHED
 ```
 
-## 6. Next action
+## 7. Anti-loop stop condition
+
+If v0.9 is demonstrably applied and R01 or R02 still fails in a fresh conversation:
+
+`RUNTIME_ENFORCEMENT_GAP / PROMPT_LEVEL_FIX_STOP_LOSS`.
+
+Do not create v0.10 merely by adding stronger prompt wording. The next decision must use a different enforcement/runtime architecture or explicitly accept the limitation.
+
+## 8. Next action
 
 Authoritative source: `docs/NEXT_SAFE_ACTION.md`.
 
-Reconcile both external private SES Builders to their current multi-starter repository profiles, capture fresh non-secret fingerprints, execute proportional smoke only, then return to ordinary SES development.
+Apply/reconcile the private Documentation Auditor Builder to v0.9, capture the non-secret fingerprint, execute the exact target-resolution regression, then resume proportional smoke only if Gate 0 passes. SaaS Architect proportional smoke remains queued afterward.
 
-For SaaS Architect, copy only `runtime/custom-gpt/SAAS_ARCHITECT_BUILDER_KERNEL.md` into Instructions; do not manually truncate or use the deprecated universal locator.
-
-## 7. Short resume prompt
+## 9. Short resume prompt
 
 ```text
-SES -> resolve main live -> starter/menu/cross-turn selection retired by stop loss -> PR #20 rollback merged -> direct project+task bootstrap active -> SaaS historical v0.1 PASS preserved only for historical fingerprint -> current SaaS Builder-fit kernel is SAAS_ARCHITECT_BUILDER_KERNEL.md (6182 chars) -> DA v0.8 remains rollback target -> next: reconcile both Builders -> proportional smoke -> continue SES; do not reopen starter-menu experiment.
+SES -> resolve main live -> single-starter/menu feature remains retired -> PR #20 rollback + PR #21 SaaS Builder-fit merged -> DA v0.8 direct-project smoke behaved correctly but missing/ambiguous target produced a retired numbered-menu regression -> v0.9 adds deterministic target classification + clarification-only hard stop + exact cold-start regression -> apply v0.9 Builder -> run R01/R02/R03 controls -> if fail, stop prompt hardening; if pass, resume proportional smoke -> then SaaS smoke -> ordinary SES development.
 ```
