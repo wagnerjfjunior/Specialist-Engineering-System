@@ -32,7 +32,15 @@ Being inside an SES specialist, mentioning `bootstrap`, `specialist`, `documenta
 
 ### `EXPLICIT_CONSUMER_PROJECT_TARGET`
 
-Use only when the user supplies a project identifier that can be resolved by the canonical Project Registry rules.
+Use when the user explicitly supplies one or more consumer-project identifiers as the task target, regardless of whether those identifiers ultimately resolve in the canonical Project Registry.
+
+Target classification answers whether the user supplied an identifier; registry resolution separately decides whether each supplied identifier is registered, active, unique and usable.
+
+```text
+IDENTIFIER_SUPPLIED != PROJECT_RESOLVED
+```
+
+A misspelled, inactive, ambiguous or unregistered supplied identifier must continue to the canonical registry resolver and produce the applicable outcome such as `PROJECT_NOT_REGISTERED`, `PROJECT_ID_AMBIGUOUS` or another existing fail-closed state. Do not reclassify a supplied identifier as missing merely because resolution fails.
 
 ### `MISSING_CONSUMER_PROJECT_IDENTIFIER`
 
@@ -40,7 +48,7 @@ Use when the task is substantively about a consumer project but no project ident
 
 ### `AMBIGUOUS_SES_OR_CONSUMER_TARGET`
 
-Use when the requested work could reasonably target SES itself or a registered consumer project and the user did not identify which target is intended.
+Use when the requested work could reasonably target SES itself or a consumer project and the user did not identify which target is intended.
 
 ## 3. Mandatory clarification-only behavior
 
@@ -77,11 +85,13 @@ Before the clarification is answered, do not:
 
 This is a clarification-only interaction, not a project-selection state machine.
 
-## 4. Explicit listing request
+## 4. Explicit informational listing request
 
-Project enumeration is permitted only when the user explicitly asks which registered projects are available or asks for a project list/comparison.
+Project enumeration is permitted only when the user explicitly asks which consumer projects are registered/available, requests a project list, or asks to compare **registry metadata/list membership only**.
 
-Such enumeration is informational only:
+This exception does **not** apply to a substantive task that explicitly identifies two or more consumer projects for comparison, audit, architecture work or another material analysis. Such a multi-project task must follow the multi-project isolation semantics of `core/protocols/HYBRID_SPECIALIST_BOOTSTRAP_CONTRACT.md`: resolve each supplied project independently and preserve independently identifiable readiness/source boundaries.
+
+Informational enumeration is never project selection:
 
 ```text
 PROJECT_LISTED != PROJECT_SELECTED
@@ -90,11 +100,13 @@ PROJECT_LIST_POSITION != PROJECT_IDENTIFIER
 
 Do not persist number-to-project bindings. A later bare numeric reply is not a valid `PROJECT_IDENTIFIER` unless that number is itself an explicit canonical ID/alias in the registry.
 
-If a project-specific task follows, require the user to identify the project by canonical name, `PROJECT_ID`, or explicit alias before materialization.
+If a project-specific task follows an informational list, require the user to identify the project by canonical name, `PROJECT_ID`, or explicit alias before materialization.
 
 ## 5. Consumer-project materialization
 
-Only after an explicit project identifier exists may the hybrid specialist continue to:
+Only after one or more explicit consumer-project identifiers exist may the hybrid specialist continue to canonical registry resolution.
+
+For a single-project task:
 
 ```text
 projects/REGISTRY.md
@@ -106,6 +118,8 @@ projects/REGISTRY.md
 → task-bound Context Readiness Receipt
 → project-specific substantive work
 ```
+
+For an explicitly multi-project substantive task, resolve each supplied project independently through the same chain and preserve separate project-scoped receipt/evidence boundaries before synthesis.
 
 Registry resolution remains exact-ID / exact canonical-name / explicit-alias only. No fuzzy or inferred project resolution is added by this contract.
 
@@ -145,7 +159,7 @@ A conversation starter, clarification answer, project list or prior receipt does
 
 ## 9. Required regression behavior
 
-A runtime target satisfies this contract only if fresh-conversation tests demonstrate all of:
+A runtime target satisfies this contract only if behavioral tests demonstrate all of:
 
 ```text
 GENERIC_OR_AMBIGUOUS_BOOTSTRAP_TASK_WITHOUT_TARGET
@@ -160,9 +174,25 @@ CONSUMER_PROJECT_TASK_WITHOUT_IDENTIFIER
 → PROJECT_IDENTIFIER_REQUIRED
 → DIRECT CLARIFICATION
 → STOP
+
+EXPLICIT_INFORMATIONAL_PROJECT_LIST
+→ LIST MAY BE RETURNED
+→ BARE NUMERIC FOLLOW-UP MUST NOT BECOME PROJECT_IDENTIFIER
+→ NO NUMERIC BINDING
+→ NO PROJECT MATERIALIZATION FROM LIST POSITION
+
+EXPLICIT_BUT_UNREGISTERED_IDENTIFIER
+→ EXPLICIT_CONSUMER_PROJECT_TARGET
+→ CANONICAL REGISTRY RESOLUTION
+→ PROJECT_NOT_REGISTERED or other applicable fail-closed resolver state
+
+EXPLICIT_MULTI_PROJECT_SUBSTANTIVE_TASK
+→ EACH PROJECT RESOLVED INDEPENDENTLY
+→ NO INFORMATIONAL-LIST SHORT-CIRCUIT
+→ PROJECT-SCOPED RECEIPT/EVIDENCE BOUNDARIES PRESERVED
 ```
 
-Any autonomous numbered-menu response used as a required project-entry mechanism is a behavioral failure even if no mutation occurs.
+Any autonomous numbered-menu response used as a required project-entry mechanism or any numeric list-position binding is a behavioral failure even if no mutation occurs.
 
 Canonical contract-level cases are defined in:
 
