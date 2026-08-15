@@ -3,6 +3,7 @@
 **Status:** `SPECIALIST_SPECIFIC_RUNTIME_BOUNDARY_V0_3 / CANDIDATE_LEARNING / V0_9_GATE0_FAILURE_RECORDED`
 **Applies to:** `SES — Documentation Auditor` Custom GPT runtime and any future specialist-specific enforcement wrapper
 **Evidence basis:** Documentation Auditor v0.4–v0.6 runtime observations plus formal v0.9 Gate 0
+**Durable v0.9 evidence:** `tests/runtime/evidence/DOCUMENTATION_AUDITOR_V09_GATE0_2026-08-15.md`
 
 ## 1. Purpose
 
@@ -55,6 +56,10 @@ The v0.9 Builder kernel already requires receipt-first ordering. The shared hybr
 
 Formal v0.9 Gate 0 nevertheless produced a valid R06 failure on a fingerprinted Builder because substantive comparative commentary was emitted before the required readiness boundary.
 
+The non-secret fingerprint, inputs, preserved observed responses/turns, refs and adjudication are recorded in:
+
+`tests/runtime/evidence/DOCUMENTATION_AUDITOR_V09_GATE0_2026-08-15.md`.
+
 Current evidence therefore supports:
 
 ```text
@@ -101,6 +106,7 @@ R06_SUBSTANTIVE_MULTI_PROJECT_TASK: FAIL
 
 PROJECT_TARGET_REGRESSION: 6/7
 PROJECT_TARGET_REGRESSION_PASS: NOT_ESTABLISHED
+DOCUMENTATION_AUDITOR_V0_9_PROPORTIONAL_SMOKE: BLOCKED_BY_GATE0_FAIL
 ```
 
 R06 positive observations:
@@ -123,6 +129,10 @@ RESULT: FAIL
 ```
 
 A later receipt does not retroactively repair the invalid earlier transition.
+
+The v0.9 runtime runbook is closed as executed/blocked rather than remaining an active Gate 0 queue:
+
+`tests/runtime/DOCUMENTATION_AUDITOR_RUNTIME_RUNBOOK.md`.
 
 ## 6. Failure interpretation
 
@@ -151,6 +161,7 @@ Do not:
 - create v0.10 solely by adding stronger receipt-order wording;
 - rerun R06 merely to seek a cosmetic PASS;
 - relabel a later corrected retry as retroactive R06 PASS;
+- proceed with the old v0.9 proportional smoke as if Gate 0 passed;
 - call instruction repetition an enforcement mechanism.
 
 ## 8. Architectural consequence — target state
@@ -168,6 +179,42 @@ TARGET / PROJECT RESOLUTION
 ```
 
 The critical property is that the transition controller, not ordinary model instruction-following, decides whether substantive output may be released.
+
+The readiness artifact must preserve the full mandatory semantic binding of the canonical hybrid receipt, including at minimum:
+
+```text
+PROOF_LEVEL
+TASK_SCOPE
+EFFECTIVE_SCOPE
+TARGET_REF_OR_OBJECT
+ENVIRONMENT
+SES_CANONICAL_MAIN_REF
+SES_CANDIDATE_REF
+SES_EFFECTIVE_REF
+SES_ARCHETYPE_RESOLUTION_STATUS
+SES_ARCHETYPE_ID
+SES_ARCHETYPE_SOURCE_REF
+PROJECT_RESOLUTION_STATUS
+PROJECT_ID
+PROJECT_ADAPTER_STATUS
+PROJECT_ADAPTER_REF
+CANONICAL_PROJECT_SOURCE
+PROJECT_LIVE_REF
+PROJECT_BOOTSTRAP_STATUS
+PROJECT_BOOTSTRAP_REF
+SPECIALIST_RESOLUTION_STATUS
+SPECIALIST_SOURCE_REF
+PROJECT_CONTINUITY_STATUS
+PROJECT_CONTINUITY_REF
+MATERIAL_EVIDENCE_STATUS
+AUTHORITY_MODEL_STATUS
+MUTATION_AUTHORIZATION_STATUS
+CONTEXT_STATUS
+RECEIPT_VALIDITY
+GAPS
+```
+
+A future machine schema may rename or serialize fields differently, but it must not weaken those semantics or their material invalidation/revalidation rules.
 
 This is:
 
@@ -190,11 +237,17 @@ Minimum obligations:
 
 ```text
 TARGET_RESOLUTION_BEFORE_MATERIALIZATION: YES
+FULL_CANONICAL_READINESS_BINDING_PRESERVED: YES
+PROOF_LEVEL_BOUND: YES
+TARGET_REF_OR_OBJECT_BOUND_WHEN_MATERIAL: YES
+ENVIRONMENT_BOUND_WHEN_MATERIAL: YES
+SES_CANONICAL_CANDIDATE_EFFECTIVE_REFS_SEPARATED: YES
 MULTI_PROJECT_INDEPENDENT_RESOLUTION: YES
 PROJECT_SCOPED_READINESS_ARTIFACTS: VALIDATED
 SUBSTANTIVE_OUTPUT_BEFORE_REQUIRED_READINESS: TECHNICALLY_BLOCKED_OR_REJECTED
 INVALID_TRANSITION_CHALLENGE: PASS
 FAIL_CLOSED_ON_INVALID_OR_INCOMPLETE_READINESS: YES
+READINESS_INVALIDATION_REVALIDATION: PROVEN_FOR_MATERIAL_CHANGE
 CROSS_PROJECT_CONTEXT_CONTAMINATION: 0
 READ_ONLY_BY_DEFAULT: YES
 TRANSITION_TRACE: PRESENT
