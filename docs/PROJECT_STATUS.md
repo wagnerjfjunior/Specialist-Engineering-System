@@ -4,6 +4,7 @@
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System`
 **Canonical branch:** `main` resolved live
 **Authoritative next action:** `docs/NEXT_SAFE_ACTION.md`
+**Gate 0 evidence:** `tests/runtime/evidence/DOCUMENTATION_AUDITOR_V09_GATE0_2026-08-15.md`
 
 ## 1. Project boundary
 
@@ -65,9 +66,14 @@ Historical evidence is not rewritten.
 | Documentation Auditor v0.9 Builder | applied to the private external Builder; non-secret fingerprint captured before formal Gate 0 |
 | Documentation Auditor v0.9 Gate 0 | `6/7`; R01–R05 plus R03A/R03B PASS, R06 FAIL |
 | Documentation Auditor project-target regression | `PROJECT_TARGET_REGRESSION_PASS = NOT_ESTABLISHED` |
+| Documentation Auditor proportional smoke | `BLOCKED_BY_GATE0_FAIL`; old S01–S06 queue is not active |
 | Runtime enforcement | `RUNTIME_ENFORCEMENT_GAP = ESTABLISHED`; prompt-level stop loss triggered |
 
 ## 5. v0.9 Gate 0 evidence
+
+Durable sanitized evidence, including the non-secret Builder fingerprint, exact canonical inputs, preserved observed responses/turn sequence, refs and adjudication, is versioned at:
+
+`tests/runtime/evidence/DOCUMENTATION_AUDITOR_V09_GATE0_2026-08-15.md`.
 
 Formal observations on the fingerprinted v0.9 runtime:
 
@@ -110,9 +116,15 @@ RUNTIME_ENFORCEMENT_GAP: ESTABLISHED BY R06 FAILURE
 
 Do not infer that more natural-language prompt wording will create a mechanically enforced invariant.
 
+The closed v0.9 runtime runbook records Gate 0 as executed and the proportional smoke as blocked:
+
+`tests/runtime/DOCUMENTATION_AUDITOR_RUNTIME_RUNBOOK.md`.
+
 ## 7. Architectural direction
 
 The approved design direction is a specialist-specific **SES Runtime Enforcement Gateway** that places a controller/state-machine boundary outside ordinary model instruction-following and can block/reject substantive output until required readiness transitions have passed.
+
+The future structured readiness artifact must preserve the full canonical hybrid receipt binding, including proof level, task/effective scope, target/ref/object, environment, canonical/candidate/effective SES refs, project refs, authority/mutation state, context state, validity and gaps.
 
 This is **TARGET STATE / ACCEPTED FOR DESIGN**, not current implementation.
 
@@ -143,4 +155,4 @@ No FECH.AI or Blogs/SEO mutation follows from this SES runtime failure or the Ga
 
 ## 10. Continuity policy
 
-`docs/NEXT_SAFE_ACTION.md` is the sole authoritative semantic next action. This file is derived state only. If it conflicts materially with that file or newer live authority, stop and reconcile.
+`docs/NEXT_SAFE_ACTION.md` is the sole authoritative semantic next action. This file is derived state only. If it conflicts materially with that file, the closed runtime runbook, blocked-actions ledger or newer live authority, stop and reconcile.
