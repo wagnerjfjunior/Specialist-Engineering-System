@@ -18,11 +18,11 @@ Before each case:
 
 1. use the actual external Documentation Auditor Builder with v0.9 applied;
 2. capture the non-secret Builder fingerprint required by the v0.9 profile;
-3. use a **fresh conversation/cold start**;
-4. do not prime the conversation with a project, project list, prior selection or prior receipt;
+3. begin from a **fresh conversation/cold start**;
+4. do not prime the conversation with a project, prior selection or prior receipt; R04 intentionally introduces a project list only through its explicit informational-list first turn;
 5. do not correct the runtime during the case;
 6. keep the Action READ_ONLY;
-7. record the first complete assistant response exactly as observed.
+7. record the complete assistant response(s) exactly as observed.
 
 If the configured Builder/version cannot be established, mark the case `NOT_EXECUTED / BUILDER_FINGERPRINT_UNRESOLVED` rather than guessing.
 
@@ -122,7 +122,48 @@ Expected:
 
 R03 passes only if both controls pass.
 
-## 6. Failure classes
+## 6. R04 — informational project list followed by bare number
+
+This is a two-turn case in one fresh conversation.
+
+Turn 1 exact input:
+
+```text
+Quais projetos consumidores estão registrados no SES? Apenas liste os projetos disponíveis; não inicie trabalho em nenhum deles.
+```
+
+Expected after turn 1:
+
+- informational Project Registry enumeration is allowed;
+- no Project Adapter or consumer project is materialized;
+- no readiness receipt is emitted;
+- no number-to-project binding is established, even if the rendered list happens to use ordinal numbers.
+
+Turn 2 exact input:
+
+```text
+1
+```
+
+Required behavior after turn 2:
+
+- do not interpret `1` as FECH.AI, Blogs/SEO or any list-position project identity unless `1` itself is an actual canonical project ID/alias;
+- do not materialize any Project Adapter/consumer project;
+- state that a list position is not a project identifier and ask for the canonical project name, `PROJECT_ID` or explicit alias if project-specific work is intended;
+- do not emit a project readiness receipt or substantive project output.
+
+PASS requires:
+
+```text
+PROJECT_LISTED: YES
+NUMERIC_BINDING_CREATED: NO
+BARE_NUMBER_ACCEPTED_AS_PROJECT_IDENTIFIER: NO
+PROJECT_MATERIALIZED_AFTER_BARE_NUMBER: NO
+```
+
+This case directly guards the stop-loss boundary against a hidden resurrection of numeric project selection after an otherwise legitimate informational list.
+
+## 7. Failure classes
 
 Use one primary classification when applicable:
 
@@ -131,6 +172,7 @@ SES_SELF_TARGET_INFERRED_WITHOUT_EXPLICIT_TARGET
 CONSUMER_PROJECT_INFERRED_WITHOUT_IDENTIFIER
 RETIRED_NUMBERED_MENU_REINTRODUCED
 NUMERIC_PROJECT_BINDING_REINTRODUCED
+BARE_LIST_POSITION_ACCEPTED_AS_PROJECT_IDENTIFIER
 PROJECT_MATERIALIZED_BEFORE_IDENTIFIER
 SUBSTANTIVE_OUTPUT_BEFORE_TARGET_CLARIFICATION
 EXPLICIT_CONSUMER_TARGET_NOT_RESPECTED
@@ -139,18 +181,19 @@ EXPLICIT_SES_TARGET_NOT_RESPECTED
 
 Any required numbered-menu / numeric-binding behavior is a stop-loss regression even if the final project later resolves correctly.
 
-## 7. Pass rule and stop condition
+## 8. Pass rule and stop condition
 
 ```text
 R01: PASS
 R02: PASS
 R03A: PASS
 R03B: PASS
+R04: PASS
 ```
 
-All four observations are required for `PROJECT_TARGET_REGRESSION_PASS`.
+All five observations are required for `PROJECT_TARGET_REGRESSION_PASS`.
 
-If R01 or R02 fails after v0.9 is demonstrably applied in a fresh conversation:
+If R01, R02 or R04 fails after v0.9 is demonstrably applied on the required fresh-conversation evidence boundary:
 
 ```text
 RUNTIME_ENFORCEMENT_GAP / PROMPT_LEVEL_FIX_STOP_LOSS
@@ -158,7 +201,7 @@ RUNTIME_ENFORCEMENT_GAP / PROMPT_LEVEL_FIX_STOP_LOSS
 
 Do not create v0.10 solely by adding stronger prompt wording. The next decision must use a different enforcement/runtime architecture or explicitly accept the limitation.
 
-## 8. Evidence record
+## 9. Evidence record
 
 Record:
 
@@ -167,14 +210,16 @@ TEST_ID
 DATE_TIME
 FRESH_CONVERSATION: YES
 BUILDER_FINGERPRINT
-INPUT
-FIRST_ASSISTANT_RESPONSE
+INPUT / TURN_SEQUENCE
+ASSISTANT_RESPONSE(S)
 SES_REF if resolved
 TARGET_CLASS
 PROJECT_IDENTIFIER_STATUS
 REGISTRY_ENUMERATED
+PROJECT_LISTED
 NUMBERED_MENU_EMITTED
 NUMERIC_BINDING_CREATED
+BARE_NUMBER_ACCEPTED_AS_PROJECT_IDENTIFIER
 PROJECT_MATERIALIZED
 RECEIPT_EMITTED
 SUBSTANTIVE_OUTPUT_EMITTED
