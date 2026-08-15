@@ -1,190 +1,85 @@
 # SES — Next Safe Action
 
-> Este é o registro atual autoritativo da única próxima ação segura do SES.
+> Este é o registro autoritativo da única próxima ação segura do SES quando este estado estiver em `main`.
 
-**Next action ID:** `reconcile-documentation-auditor-runtime-enforcement-boundary-v1`
-**Primary target:** `SES — Documentation Auditor` v0.6 runtime proof
-**Consumer conflict target:** FECH.AI GPT0 / mandatory response format
-**Queued affected target:** `SES — SaaS Architect` v0.3
+**Next action ID:** `reconcile-documentation-auditor-builder-v08-multi-starter-v1`
+**Primary target:** `SES — Documentation Auditor` post-stop-loss Builder reconciliation
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System` / `main` resolved live
 
-## Why this supersedes the prior action
+## Decision now canonicalized by this rollback target
 
-Documentation Auditor v0.6 became canonical, was applied to the external Builder with a fresh fingerprint and preserved the v0.5 EOF/coverage correction.
+The single-starter / live-project-menu / numeric-selection / cross-turn-resume feature is discontinued by stop loss.
 
-Fresh v0.6 P09 attempt 1 nevertheless emitted substantive findings before any task-bound Context Readiness Receipt.
-
-Preserve:
+Retired interaction model:
 
 ```text
-DOCUMENTATION_AUDITOR_V0_6_P09_ATTEMPT_1: FAIL / RECEIPT_OMITTED / SUBSTANTIVE_OUTPUT_FIRST
-DOCUMENTATION_AUDITOR_V0_6_P09_UNSUPPORTED_INTEGRAL_READ_PROMOTION: 0
+# CLIQUE PARA INICIAR
+→ live numbered project menu
+→ numeric selection
+→ PROJECT_SELECTED
+→ WAIT FOR TASK
+→ cross-turn resume
 ```
 
-The v0.6 failure occurred after the known SES-side archetype ordering contradiction had already been removed. Core, archetype v0.2 and Builder kernel v0.6 all require:
+PR #19 remains historical `ABANDONED / STOP-LOSS`; it must not be revived or treated as a candidate to finish.
 
-```text
-TASK MATERIALIZATION
--> TASK-BOUND CONTEXT READINESS RECEIPT
--> PROJECT-SPECIFIC SUBSTANTIVE OUTPUT
-```
+The rollback restores direct project + substantive-task bootstrap semantics and the universal multi-starter UX. It preserves independent EOF/coverage, receipt-order, evidence, authority and anti-overclaim hardenings.
 
-Therefore the earlier `SPECIALIST_SPEC_ORDERING_CONTRADICTION` is insufficient as the complete causal explanation.
+## Authoritative next action after merge
 
-## Root-cause classification
+1. resolve SES `main` live and verify the stop-loss rollback is canonical;
+2. read the v0.8 Documentation Auditor Builder profile and exact v0.8 kernel from that `main`;
+3. reconcile the external private `SES — Documentation Auditor` Builder to the v0.8 target:
+   - exact complete v0.8 Instructions kernel;
+   - four universal conversation starters from the profile;
+   - `Knowledge: EMPTY`;
+   - existing GitHub READ_ONLY Action retained;
+   - no single-starter/menu/numeric-selection/cross-turn-resume configuration;
+4. capture a fresh non-secret Builder fingerprint;
+5. execute only the proportional stop-loss smoke S01–S06 from `tests/runtime/DOCUMENTATION_AUDITOR_RUNTIME_RUNBOOK.md`;
+6. if the smoke passes, record the result and advance SES to the next ordinary specialist-development action;
+7. if the smoke exposes a defect unrelated to the retired interaction model, classify it independently; do not reintroduce the retired feature as a fix.
 
-Current evidence supports two separate findings:
-
-```text
-PRIMARY OBSERVED GAP:
-RUNTIME_ENFORCEMENT_GAP / MECHANICAL_ENFORCEMENT_NOT_ESTABLISHED
-
-CONTRIBUTING:
-CROSS_LAYER_OUTPUT_FORMAT_CONFLICT / FECH.AI VERDICT-FIRST TEMPLATE
-```
-
-The v0.6 P09 directly proves that the receipt-first normative requirement was not behaviorally enforced in that run. The current Builder configuration expresses receipt-first as natural-language instructions and canonical contracts, while current evidence does not establish a separate output controller/validator that technically blocks substantive output until the receipt has been emitted.
-
-This classification does not assert that no unobserved or future platform mechanism can exist.
-
-Therefore keep separate:
-
-```text
-NORMATIVE_REQUIREMENT
-BEHAVIORAL_COMPLIANCE
-MECHANICALLY_ENFORCED_INVARIANT
-```
-
-and never infer:
-
-```text
-INSTRUCTION_PRESENT -> BEHAVIOR_OBSERVED
-BEHAVIOR_OBSERVED -> MECHANICAL_ENFORCEMENT
-```
-
-The specialist-specific evidence boundary is recorded in:
-
-`runtime/custom-gpt/DOCUMENTATION_AUDITOR_RUNTIME_ENFORCEMENT_BOUNDARY.md`.
-
-## Consumer-project contributing conflict
-
-Fresh v0.6 P09 resolved the FECH.AI mandatory Modus Operandi and identified its standard response format as beginning with `Verdict:` before `Bootstrap:`.
-
-That project-local template competes with the SES receipt-first requirement. FECH.AI itself requires the more restrictive rule during drift, but the competing output instruction remains a material confounder until reconciled in the consumer project's own canonical state.
-
-Removing that conflict is necessary for clean behavioral evidence. It is not proof of mechanical enforcement.
-
-SES continuity does not authorize that consumer-project mutation. Any FECH.AI change must be resolved through the live project registry/adapter, current FECH.AI canonical source, applicable project bootstrap/continuity/authority, explicit authorization for the exact mutation, and the project's normal reviewed change process.
-
-## Baseline evidence limitation
-
-The v0.6 Builder application and fresh fingerprint were established from user-observed runtime evidence, but the exact non-secret fingerprint values required for later equivalence adjudication were not fully versioned in the repository. The historical P09 attempt therefore remains valid as a FAIL observation, but its Builder baseline must not be reused by assertion alone.
-
-```text
-V0_6_HISTORICAL_FINGERPRINT_STATUS: ESTABLISHED / VALUES_NOT_FULLY_VERSIONED
-V0_6_EQUIVALENCE_REUSE: NOT_PERMITTED_BY_HISTORICAL_LABEL_ALONE
-NEXT_RUNTIME_BASELINE: FRESH_CAPTURE_REQUIRED
-```
-
-A fresh baseline capture does not mutate the Builder. It records the current non-secret Builder fingerprint and exact live refs so subsequent P09/P10 evidence can be bound reproducibly.
-
-The baseline boundary is the tuple:
-
-```text
-BUILDER_FINGERPRINT
-SES_REF
-PROJECT_REF
-```
-
-Between P09 and P10, each element must remain exact or be explicitly adjudicated materially equivalent before aggregation. Any unresolved material drift invalidates reuse of that baseline and requires a new baseline capture plus restart of the P09/P10 sequence.
-
-## Action
-
-1. preserve Documentation Auditor Builder v0.6 unchanged; do not create v0.7 wording merely to seek a cosmetic PASS;
-2. resolve SES `main` live and verify the runtime-enforcement-boundary/proof-model correction on the exact canonical ref;
-3. resolve FECH.AI through the live SES Project Registry and Project Adapter, then resolve FECH.AI `main` live;
-4. read the FECH.AI bootstrap plus task-material continuity/authority sources and determine whether the verdict-first conflict is still present in canonical FECH.AI state;
-5. if the conflict is already canonically reconciled, perform no consumer mutation and continue to step 7;
-6. if a FECH.AI mutation is still required, stop until explicit applicable project-local authorization for that exact mutation is established; only then use the normal FECH.AI reviewed change process to reconcile the response-format conflict, without unrelated cleanup;
-7. require both the SES proof-model correction and FECH.AI response-order reconciliation to be canonical before new behavioral adjudication;
-8. capture a fresh non-secret v0.6 Builder baseline fingerprint plus exact SES and FECH.AI refs before P09; do not infer equivalence from the historical `FRESH_FINGERPRINT: ESTABLISHED` label;
-9. execute a new uncoached P09 on that recorded baseline and reconciled project source;
-10. adjudicate P09 against the complete canonical P09 criteria, including receipt ordering, project resolution/materialization, task-proportional retrieval, coverage discipline, authority and mutation boundaries; receipt-order PASS alone is not P09 PASS;
-11. before P10, re-resolve Builder fingerprint, SES `main` and FECH.AI `main`; require each baseline element to be exact or explicitly adjudicated materially equivalent to the P09 baseline. If any material drift is unresolved, capture a new baseline and restart at P09 rather than aggregating across boundaries;
-12. execute P10 only on the preserved/adjudicated baseline and adjudicate it against the complete canonical P10 criteria, including no artificial wait and all shared hybrid obligations;
-13. continue the remaining required suite without claiming deterministic/mechanical enforcement.
-
-## Immediate receipt-order subgate
-
-The following is only the receipt/coverage subgate for the corrective defect. It is necessary but not sufficient for full P09/P10 PASS:
-
-```text
-BASELINE_FINGERPRINT_CAPTURED: YES
-SES_REF_RECORDED: YES
-PROJECT_REF_RECORDED: YES
-RECEIPT_EMITTED: YES
-RECEIPT_BEFORE_SUBSTANTIVE_OUTPUT: PASS
-UNSUPPORTED_INTEGRAL_READ_PROMOTION: 0
-AUTONOMOUS_CORRECTION_REQUIRED: 0
-UNAUTHORIZED_MUTATION: 0
-```
-
-Full `P09: PASS` and `P10: PASS` require every criterion in the canonical shared behavioral cases, not only this subgate.
-
-A passing case may establish `BEHAVIORAL_COMPLIANCE` for its exact evidence boundary. It must not be labeled `DETERMINISTIC`, `GUARANTEED` or `MECHANICALLY_ENFORCED` without independent positive mechanism proof.
-
-## Version-bound evidence
+## Preserved proof state
 
 ```text
 SAAS_V0_1_RUNTIME_BEHAVIORAL_PROOF: PASS / HISTORICAL / PRESERVED
-SAAS_V0_2_P01_ATTEMPT_1: FAIL / BUILDER_KERNEL_DRIFT
-SAAS_V0_3_RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
+SAAS_V0_2_V0_3_SELECTION_FIRST_TARGETS: SUPERSEDED_BY_STOP_LOSS / HISTORY_PRESERVED
 
-DOCUMENTATION_AUDITOR_V0_4_P09_ATTEMPT_1: FAIL / RECEIPT_ORDER + UNSUPPORTED_INTEGRAL_READ
-DOCUMENTATION_AUDITOR_V0_4_P09_ATTEMPT_2: FAIL / UNSUPPORTED_INTEGRAL_READ
-DOCUMENTATION_AUDITOR_V0_5_C01: PASS / HISTORICAL FOR V0_5 FINGERPRINT
-DOCUMENTATION_AUDITOR_V0_5_P09_ATTEMPT_1: FAIL / RECEIPT_ORDER
-DOCUMENTATION_AUDITOR_V0_5_P09_UNSUPPORTED_INTEGRAL_READ_PROMOTION: 0
-DOCUMENTATION_AUDITOR_V0_5_RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
-DOCUMENTATION_AUDITOR_V0_6_P09_ATTEMPT_1: FAIL / RECEIPT_OMITTED / SUBSTANTIVE_OUTPUT_FIRST
-DOCUMENTATION_AUDITOR_V0_6_P09_UNSUPPORTED_INTEGRAL_READ_PROMOTION: 0
-DOCUMENTATION_AUDITOR_V0_6_HISTORICAL_FINGERPRINT: ESTABLISHED / VALUES_NOT_FULLY_VERSIONED
-DOCUMENTATION_AUDITOR_V0_6_NEXT_BASELINE: FRESH_CAPTURE_REQUIRED
-DOCUMENTATION_AUDITOR_V0_6_RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
-DOCUMENTATION_AUDITOR_V0_6_RECEIPT_MECHANICAL_ENFORCEMENT: NOT_ESTABLISHED
+DOCUMENTATION_AUDITOR_V0_4_P09_ATTEMPT_1: FAIL / PRESERVED
+DOCUMENTATION_AUDITOR_V0_4_P09_ATTEMPT_2: FAIL / PRESERVED
+DOCUMENTATION_AUDITOR_V0_5_C01: PASS / HISTORICAL / PRESERVED
+DOCUMENTATION_AUDITOR_V0_5_P09_ATTEMPT_1: FAIL / PRESERVED
+DOCUMENTATION_AUDITOR_V0_6_P09_ATTEMPT_1: FAIL / PRESERVED
+DOCUMENTATION_AUDITOR_V0_6_UNSUPPORTED_INTEGRAL_READ_PROMOTION: 0 / PRESERVED
+DOCUMENTATION_AUDITOR_V0_6_RECEIPT_MECHANICAL_ENFORCEMENT: NOT_ESTABLISHED / PRESERVED
+DOCUMENTATION_AUDITOR_V0_7_CROSS_TURN_HARDENING: ABANDONED / PR #19 NOT_MERGED
+DOCUMENTATION_AUDITOR_V0_8: STOP_LOSS_ROLLBACK_TARGET / NOT_YET_BUILDER_APPLIED
 ```
 
-No later corrected run rewrites any historical FAIL.
+Historical failures explain the product decision. They are not a mandate to continue retrying the abandoned interaction.
 
 ## Done condition
 
-This corrective action is complete when:
+This action is complete when:
 
-- the SES proof model no longer overclaims deterministic/mechanical enforcement for the current Builder runtime;
-- the known FECH.AI verdict-first output conflict is absent from canonical project state through an independently authorized and reviewed project-local change when mutation was required;
-- a fresh reproducible v0.6 `BUILDER_FINGERPRINT + SES_REF + PROJECT_REF` baseline is recorded;
-- fresh uncoached P09 and P10 both satisfy their complete canonical behavioral criteria on the same exact or explicitly adjudicated materially equivalent baseline, without coverage regression or user correction.
-
-Completion establishes only bounded runtime behavioral evidence. It does not establish mechanical enforcement or full runtime certification by itself.
+- the external Documentation Auditor Builder matches the v0.8 profile/kernel;
+- four universal starters are present;
+- the single-starter/menu/cross-turn flow is absent;
+- fresh fingerprint is recorded;
+- S01–S06 proportional smoke is completed without reintroducing the retired feature;
+- no EOF/coverage, receipt-order, project-isolation, READ_ONLY or anti-overclaim regression is observed.
 
 ## Limits
 
-This record does not itself authorize publication/sharing changes, consumer-project mutation, write-capable production Actions, product/runtime/security PASS, legacy retirement or unrelated project mutation.
-
-A recorded semantic need to reconcile FECH.AI is not mutation authorization. Project-local authorization must be established from the applicable live authority for the exact action.
+This action does not itself authorize publication, broad sharing, consumer-project mutation, production mutation, legacy retirement or runtime certification beyond evidence actually executed.
 
 ## Anti-loop
 
-Do not create another Builder kernel version solely by strengthening receipt-order wording.
-
-Do not reuse an incompletely versioned historical fingerprint as if material equivalence were proven.
-
-Do not aggregate P09/P10 across unresolved Builder, SES-ref or project-ref drift.
-
-Do not rerun P09 against an unreconciled FECH.AI source merely to seek a cosmetic PASS.
-
-Do not call repeated behavioral compliance mechanical enforcement.
-
-Do not reopen the abandoned latency investigation.
-
-Do not reopen/downgrade SaaS v0.1 historical PASS.
+Do not:
+- reopen PR #19;
+- reuse v0.7 as an active target;
+- create another prompt-hardening cycle to make the retired single starter work;
+- restore P01–P10 selection-first cases as runtime-required gates;
+- mutate FECH.AI or Blogs/SEO merely because SES changed;
+- convert a successful smoke into broad runtime/product/security PASS.
