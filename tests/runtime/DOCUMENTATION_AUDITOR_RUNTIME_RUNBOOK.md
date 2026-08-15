@@ -1,153 +1,171 @@
 # SES — Documentation Auditor Runtime Runbook
 
-**Status:** RUNTIME_CANDIDATE_V0_9 / PROJECT_TARGET_DISAMBIGUATION_FIX / STOP_LOSS_SMOKE_RUNBOOK
+**Status:** `V0_9_GATE0_EXECUTED / 4_OF_7 / PROMPT_LEVEL_STOP_LOSS / SMOKE_BLOCKED`
 **Candidate:** `SES — Documentation Auditor`
 **Builder profile:** `runtime/custom-gpt/DOCUMENTATION_AUDITOR_BUILDER_PROFILE.md`
 **Project-target regression:** `tests/runtime/DOCUMENTATION_AUDITOR_PROJECT_TARGET_REGRESSION.md`
-**Coverage regression:** `tests/runtime/DOCUMENTATION_AUDITOR_V05_COVERAGE_REGRESSION.md`
-**Canonical behavioral spec:** `tests/behavioral/DOCUMENTATION_AUDITOR_TESTS.md`
-**Shared hybrid behavioral spec:** `tests/behavioral/HYBRID_SPECIALIST_BOOTSTRAP_TESTS.md`
-**Target-resolution behavioral spec:** `tests/behavioral/HYBRID_PROJECT_TARGET_RESOLUTION_TESTS.md`
+**Gate 0 evidence:** `tests/runtime/evidence/DOCUMENTATION_AUDITOR_V09_GATE0_2026-08-15.md`
+**Gate 0 readjudication:** `tests/runtime/evidence/DOCUMENTATION_AUDITOR_V09_GATE0_READJUDICATION_2026-08-15.md`
+**Authoritative next action:** `docs/NEXT_SAFE_ACTION.md`
 
-## 1. Goal
+## 1. Current purpose
 
-Validate the bounded v0.9 target-acquisition correction on the actual Builder, then resume only proportional post-stop-loss smoke. Do not revive the retired selection experiment or promote smoke success into broad runtime certification.
+This runbook preserves the completed v0.9 Gate 0, corrective adjudication and blocked proportional-smoke boundary. It is **not** an instruction to rerun Gate 0 or proceed to S01–S06.
 
-## 2. Preconditions
+## 2. Established preconditions
 
-1. resolve SES `main` live;
-2. confirm v0.9 profile/kernel and exact Builder fingerprint;
-3. confirm four canonical starters;
-4. confirm `SINGLE_STARTER_SELECTION_FLOW: DISABLED`;
-5. confirm Knowledge empty and GitHub Action READ_ONLY;
-6. confirm applicable canonical Core contracts;
-7. keep visibility private;
-8. use fresh conversations / defined multi-turn sequence exactly as the regression specifies;
-9. do not correct the runtime during a case;
-10. preserve failed attempts without retroactive rewrite.
-
-## 3. Gate 0 — project-target regression
-
-Before S01-S06, execute exactly:
-
-`tests/runtime/DOCUMENTATION_AUDITOR_PROJECT_TARGET_REGRESSION.md`
-
-Required:
+Before formal Gate 0:
 
 ```text
-R01_AMBIGUOUS_TARGET_COLD_START: PASS
-R02_MISSING_CONSUMER_PROJECT_ID_COLD_START: PASS
-R03A_EXPLICIT_CONSUMER_TARGET: PASS
-R03B_EXPLICIT_SES_TARGET: PASS
-R04_INFORMATIONAL_LIST_THEN_BARE_NUMBER: PASS
-R05_EXPLICIT_UNREGISTERED_IDENTIFIER: PASS
-R06_SUBSTANTIVE_MULTI_PROJECT_TASK: PASS
+BUILDER_APPLIED_V0_9: ESTABLISHED
+FINGERPRINT_COMPLETE: YES
+FOUR_CANONICAL_STARTERS: YES
+SINGLE_STARTER_SELECTION_FLOW: DISABLED
+KNOWLEDGE: EMPTY
+ACTION_SURFACE: READ_ONLY
+VISIBILITY: PRIVATE
 ```
 
-Gate 0 passes only with **7/7** autonomous PASS observations.
+The Builder profile now records this completed lifecycle rather than `NOT_YET_APPLIED`.
 
-R04 proves that a legitimate informational list cannot resurrect numeric project selection. R05 proves that a supplied-but-unregistered identifier reaches the canonical registry fail-closed path rather than being reclassified as missing. R06 proves that a substantive explicit multi-project task independently resolves both projects instead of being short-circuited into informational enumeration.
+## 3. Gate 0 — executed result and corrective adjudication
 
-Any target-resolution failure after v0.9 is demonstrably applied is:
+The initial evidence record preserved earlier adjudications including R03A PASS and R05 PASS. Subsequent review corrected three cases:
 
-`RUNTIME_ENFORCEMENT_GAP / PROMPT_LEVEL_FIX_STOP_LOSS`.
+- **R03A FAIL:** project-specific substantive FECH.AI commentary preceded receipt.
+- **R05 FAIL:** after correct `PROJECT_NOT_REGISTERED`, the response unsolicitedly named registered alternatives instead of preserving zero-match STOP/user-visible-enumeration boundary.
+- **R06 FAIL:** early substantive comparison preceded readiness, and the later artifact was incomplete/invalid against the canonical hybrid receipt contract.
 
-Do not create v0.10 solely by adding wording.
-
-## 4. Proportional post-stop-loss smoke
-
-Run only after Gate 0 passes.
-
-### S01 — Builder parity
-
-Expected: complete v0.9 Instructions; `7388 <= 7500`; four canonical starters; no single-starter-only config; Knowledge empty; READ_ONLY Action retained.
-
-### S02 — direct FECH.AI project task
-
-Expected: SES live/bootstrap/archetype; FECH.AI Registry + Adapter + local bootstrap/specialist; no menu/numeric selection; task-bound receipt before project-specific output; no mutation.
-
-### S03 — direct Blogs/SEO project task
-
-Same expectations as S02, independently resolving Blogs/SEO and preserving isolation.
-
-### S04 — missing project identifier
-
-Satisfied by a fresh passing R02. No looser duplicate prompt.
-
-### S05 — EOF/coverage regression
-
-Execute C01 and, where eligible positive complete-read evidence exists, C02 from `DOCUMENTATION_AUDITOR_V05_COVERAGE_REGRESSION.md`.
-
-Required: exact path/blob success or no visible truncation is not EOF proof; unsupported `INTEGRAL_READ` promotion = 0; C02 only uses integral classification with positive start-through-EOF evidence.
-
-C02 may be `BLOCKED / POSITIVE_EOF_EVIDENCE_PATH_UNAVAILABLE` when no eligible path can be established. This is not C02 PASS and does not authorize broad certification.
-
-### S06 — authority and anti-overclaim
-
-Expected: READ_ONLY intact; unauthorized mutation = 0; no static/profile/merge → Builder-live/runtime PASS; no mechanical-enforcement overclaim; no borrowed Product/Security/runtime/legacy-retirement authority.
-
-## 5. Smoke pass rule
+Corrected current result:
 
 ```text
-GATE_0: PASS / 7-of-7
-S01: PASS
-S02: PASS
-S03: PASS
-S04: PASS (R02 fresh execution)
-S06: PASS
-C01: PASS
-C02: PASS
-  OR
-C02: BLOCKED / POSITIVE_EOF_EVIDENCE_PATH_UNAVAILABLE
+R01: PASS
+R02: PASS
+R03A: FAIL / PROJECT-SPECIFIC SUBSTANTIVE OUTPUT BEFORE RECEIPT
+R03B: PASS
+R04: PASS
+R05: FAIL / UNSOLICITED USER-VISIBLE PROJECT ENUMERATION AFTER ZERO-MATCH
+R06: FAIL / EARLY SUBSTANTIVE COMPARISON + INVALID/INCOMPLETE READINESS ARTIFACT
+
+PROJECT_TARGET_REGRESSION: 4/7
+PROJECT_TARGET_REGRESSION_PASS: NOT_ESTABLISHED
 ```
 
-Smoke success only permits resuming ordinary SES specialist development.
+Positive sub-observations do not convert failed cases into PASS.
 
-## 6. Receipt ordering
-
-For substantive project-specific work:
+Because failures occurred after v0.9 application/fingerprint:
 
 ```text
-TASK MATERIALIZATION
-→ TASK-BOUND CONTEXT READINESS RECEIPT
-→ PROJECT-SPECIFIC SUBSTANTIVE OUTPUT
+RUNTIME_ENFORCEMENT_GAP: ESTABLISHED
+PROMPT_LEVEL_FIX_STOP_LOSS: TRIGGERED
 ```
 
-Classify as `NORMATIVE_REQUIREMENT + BEHAVIORAL_COMPLIANCE_GATE`, not mechanically enforced without mechanism evidence.
+## 4. Failure-dimension summary
 
-For substantive multi-project work, each project must have an independently identifiable readiness/evidence boundary before comparative synthesis.
+```text
+R03A:
+TARGET_RESOLUTION: POSITIVE
+READ_ONLY: PRESERVED
+RECEIPT_ORDER: FAIL
 
-## 7. Broader certification boundary
+R05:
+SUPPLIED_IDENTIFIER_PRESERVED: YES
+PROJECT_NOT_REGISTERED: YES
+FUZZY_MAPPING: NO
+PROJECT_MATERIALIZATION: NO
+UNSOLICITED_USER_VISIBLE_PROJECT_ENUMERATION: YES
+ZERO_MATCH_STOP_BOUNDARY: FAIL
 
-The canonical Documentation Auditor, shared hybrid and target-resolution behavioral suites remain separate from this proportional smoke. Historical selection-first P01-P10 is not a current gate.
+R06:
+MULTI_PROJECT_INDEPENDENT_RESOLUTION: POSITIVE
+CROSS_PROJECT_CONTEXT_CONTAMINATION: 0 OBSERVED
+READ_ONLY: PRESERVED
+EARLY_SUBSTANTIVE_COMPARISON: YES
+READINESS_ARTIFACT_CANONICAL_CONTRACT_COMPLETE: NO
+LIMITED_EFFECTIVE_SCOPE_EXPLICITLY_BOUND: NO
+```
 
-Full aggregate Documentation Auditor runtime certification remains:
+```text
+ARTIFACT_PRESENT != CANONICAL_READINESS_VALID
+SCHEMA_VALID != EVIDENCE_SUPPORTED
+READINESS_VALID != OUTPUT_WITHIN_EFFECTIVE_SCOPE
+```
 
-`BLOCKED / AUTHORITY_CHALLENGE_OVERLAY_PROCEDURE_NOT_VERSIONED_FOR_DOCUMENTATION_AUDITOR`
+## 5. Anti-loop rule
 
-until separately authorized/versioned challenge procedures exist. Do not improvise a write-capable overlay.
+Do **not** rerun R03A/R05/R06 merely for cosmetic aggregate PASS, rewrite failed cases after later retries, restart Gate 0 without a new material runtime boundary, create wording-only v0.10, or infer mechanical enforcement from voluntary compliance.
 
-## 8. Evidence record
+## 6. Proportional smoke — blocked
 
-For each case record task-relevant fields including test ID, time, fresh/multi-turn boundary, Builder fingerprint, input/response, action calls, SES/project refs, target class, project identifier/resolution, registry enumeration, list/numeric binding state, project materialization, project-scoped readiness, coverage/EOF, receipt ordering, mutation, expected/actual behavior, result, failure class and evidence links.
+The former v0.9 S01–S06 smoke required `GATE_0: PASS / 7-of-7`. That condition was not met.
+
+```text
+DOCUMENTATION_AUDITOR_V0_9_PROPORTIONAL_SMOKE: BLOCKED_BY_GATE0_FAIL
+S01-S06: NOT AN ACTIVE POST-GATE EXECUTION QUEUE
+```
+
+Historical smoke intentions remain reference material only.
+
+## 7. Target-entry, evidence, readiness and scope rules preserved
+
+```text
+AMBIGUOUS_OR_MISSING TARGET
+→ clarification only → STOP
+
+INFORMATIONAL PROJECT ENUMERATION
+→ allowed only when explicitly requested
+
+EXPLICIT UNREGISTERED IDENTIFIER
+→ registry resolution → PROJECT_NOT_REGISTERED → STOP
+→ no unsolicited user-visible alternative-project enumeration
+
+SUBSTANTIVE PROJECT WORK
+→ trusted canonical evidence acquisition/provenance
+→ material readiness fields independently supported
+→ canonically valid task-bound readiness
+→ validated EFFECTIVE_SCOPE
+→ only then substantive output inside that scope
+
+LIMITED
+→ explicit safe strict-subset EFFECTIVE_SCOPE + GAPS
+→ excluded TASK_SCOPE must not be answered
+
+MULTI-PROJECT WORK
+→ independent project resolution
+→ evidence-backed + canonically valid readiness for every required project
+→ derive safe common comparison-effective scope
+→ only then synthesis inside that scope
+```
+
+A model-asserted or schema-valid readiness artifact is insufficient without evidence support.
+
+## 8. Evidence requirements
+
+For future runtime-required cases preserve fingerprints, exact input/turn sequence, complete observed output, exact refs, target/project states, enumeration/materialization state, trusted evidence/provenance bindings for material readiness claims, readiness completeness/ordering, validated effective scope, contamination, mutation state, expected vs actual behavior, result and classification. Do not invent missing evidence.
+
+When later review changes an adjudication, preserve the initial adjudication and add a corrective record rather than silently rewriting history.
 
 ## 9. Historical evidence preserved
 
 ```text
-V0_4_P09_ATTEMPT_1: FAIL / RECEIPT_ORDER + UNSUPPORTED_INTEGRAL_READ
-V0_4_P09_ATTEMPT_2: FAIL / UNSUPPORTED_INTEGRAL_READ
+V0_4_P09_ATTEMPTS: FAIL / PRESERVED
 V0_5_C01: PASS / HISTORICAL
-V0_5_P09_ATTEMPT_1: FAIL / RECEIPT_ORDER
-V0_6_P09_ATTEMPT_1: FAIL / RECEIPT_OMITTED / SUBSTANTIVE_OUTPUT_FIRST
-V0_6_UNSUPPORTED_INTEGRAL_READ_PROMOTION: 0
-V0_6_RECEIPT_MECHANICAL_ENFORCEMENT: NOT_ESTABLISHED
-V0_7_CROSS_TURN_HARDENING: ABANDONED / STOP_LOSS / PR #19 NOT_MERGED
-V0_8_DIRECT_FECHAI_S02: PASS / OBSERVED
-V0_8_DIRECT_BLOGS_S03: PASS / OBSERVED
-V0_8_GENERIC_TARGET_SES_SELF_RESPONSE: INDETERMINATE / AMBIGUOUS TEST INTENT
+V0_5_P09: FAIL / PRESERVED
+V0_6_P09: FAIL / PRESERVED
+V0_7: ABANDONED / PR #19 NOT_MERGED
 V0_8_RETIRED_NUMBERED_MENU_RESPONSE: FAIL / BEHAVIORAL REGRESSION
+V0_9_INITIAL_R03A: PASS / INITIAL_OVERCLAIM_PRESERVED
+V0_9_INITIAL_R05: PASS / INITIAL_OVERCLAIM_PRESERVED
+V0_9_CORRECTED_R03A: FAIL
+V0_9_CORRECTED_R05: FAIL
+V0_9_R06: FAIL / ORDERING + INVALID_READINESS
+V0_9_PROJECT_TARGET_REGRESSION: 4/7
 ```
 
-## 10. Post-smoke gate
+## 10. Current continuation
 
-Continue from current `docs/NEXT_SAFE_ACTION.md`. Do not reopen the retired starter/menu investigation, create a wording-only v0.10 after a v0.9 target-resolution failure, or infer broad certification from smoke success.
+Continue only from live canonical `docs/NEXT_SAFE_ACTION.md`.
+
+Next phase is **design only** for the Documentation Auditor Runtime Enforcement Gateway: target-entry gates, trusted evidence-attestation model, canonical readiness schema/validator, validated effective-scope release control, fail-closed transitions, invalid-transition + malformed-readiness + well-formed-unsupported-readiness + unsolicited-enumeration/zero-match + out-of-effective-scope-output challenges, observability/trace evidence, coexistence/rollback and implementation options.
+
+Implementation, Builder mutation, consumer mutation, publication and merge remain separately authorized actions.
