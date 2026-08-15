@@ -13,7 +13,7 @@ Absence from this document does not create authorization. Capability, prior appr
 - consumer-project mutation from SES central evolution alone;
 - automatic propagation into registered consumer projects;
 - legacy specialist retirement without required gates;
-- Documentation Auditor runtime certification without required evidence;
+- Documentation Auditor runtime certification without required runtime evidence and authority-challenge prerequisites;
 - static/merged/profile state promoted into external runtime proof;
 - storing secrets in continuity/evidence files;
 - rewriting historical proof/adjudication because later evidence differs;
@@ -55,18 +55,24 @@ Evidence:
 - `tests/runtime/evidence/DOCUMENTATION_AUDITOR_V09_GATE0_2026-08-15.md`
 - `tests/runtime/evidence/DOCUMENTATION_AUDITOR_V09_GATE0_READJUDICATION_2026-08-15.md`
 
-Until a separately reviewed material runtime/enforcement boundary exists, block:
+These **v0.9 historical blocks do not expire merely because an ADR is reviewed, a Gateway is designed, or a later runtime candidate exists**. The v0.9 failed cases and blocked proportional smoke remain historical facts permanently.
+
+A future runtime/enforcement candidate may create a new proof boundary only after separate explicit design/adoption and implementation authorization. It may proceed through its own versioned tests only after the required mechanism is implemented and positively challenged. It does not retroactively unlock or pass v0.9 Gate 0/smoke.
+
+For the current v0.9 boundary, block:
 
 - wording-only Documentation Auditor v0.10 for target-entry/receipt/readiness defects;
 - rerunning R03A/R05/R06 merely for a more favorable aggregate result;
 - relabeling later retries as retroactive repair;
 - old v0.9 proportional smoke as if Gate 0 passed;
-- user-visible project enumeration outside explicit informational-list intent;
+- user-visible project enumeration outside the full Core informational-list exception (registered/available list or registry metadata/list-membership-only request);
+- binding a bare numeric/list-position reply to a previously listed project;
 - treating a correct internal Registry lookup as authority to expose alternative projects after zero-match;
 - treating receipt headings/partial fields as canonical readiness validity;
 - treating a schema-valid or model-asserted receipt as evidence-supported readiness without controller-verifiable trusted retrieval/provenance for material claims;
-- releasing substantive conclusions outside the validated `EFFECTIVE_SCOPE` of a READY/LIMITED artifact;
-- for multi-project work, releasing comparative claims outside the validated common comparison-effective scope supported by every project required for that claim;
+- allowing `CONTEXT_STATUS: BLOCKED` to open project-specific substantive analysis/release;
+- releasing substantive conclusions outside the validated `EFFECTIVE_SCOPE` of READY/LIMITED work;
+- for multi-project work, releasing comparative claims outside the validated common comparison-effective scope supported by every required project;
 - mechanical-enforcement claims from Builder instructions/behavioral success alone;
 - FECH.AI/Blogs mutation because SES runtime failed;
 - Gateway implementation from ADR existence alone;
@@ -74,7 +80,21 @@ Until a separately reviewed material runtime/enforcement boundary exists, block:
 
 Accepted direction is **design only** for `docs/architecture/ADR-001-DOCUMENTATION_AUDITOR_RUNTIME_ENFORCEMENT_GATEWAY.md`.
 
-## 4. Read-only work normally allowed within scope
+## 4. Full runtime-certification authority blocker
+
+Independently of the Gateway design, full aggregate Documentation Auditor runtime certification remains:
+
+```text
+BLOCKED / AUTHORITY_CHALLENGE_OVERLAY_PROCEDURE_NOT_VERSIONED_FOR_DOCUMENTATION_AUDITOR
+```
+
+The canonical behavioral suite includes a write-capable-tool-without-applicable-authorization challenge. Do not improvise or attach an ad hoc write-capable overlay to complete that case.
+
+Before that blocker can be lifted, a **separate explicit authorization** must approve a versioned, disposable-scope challenge procedure with fingerprint capture, constrained write capability, no consumer/SES canonical write access, and teardown/restoration evidence. The procedure must then be executed as required by the applicable certification suite.
+
+Gateway design, Gateway implementation, or successful Gateway mechanical-enforcement challenges do not substitute for this separate full-certification obligation.
+
+## 5. Read-only work normally allowed within scope
 
 When task/tool surface permit:
 
@@ -84,11 +104,11 @@ When task/tool surface permit:
 - compare observations with versioned sources;
 - synthesize bounded status;
 - identify missing evidence/drift/invalidation events;
-- design target-entry gates, trusted evidence-attestation model, readiness schema/validator, effective-scope release validation, invalid-transition/malformed-readiness/unsupported-readiness/unsolicited-enumeration/out-of-scope-output challenges and observability without implementation.
+- design target-entry gates, trusted evidence-attestation model, status-aware readiness schema/validator, effective-scope release validation and adversarial challenges without implementation.
 
 READ_ONLY capability does not authorize subsequent mutation.
 
-## 5. Consumer-project boundary
+## 6. Consumer-project boundary
 
 ```text
 EXPLICIT PROJECT_IDENTIFIER + TASK_SCOPE
@@ -98,16 +118,16 @@ EXPLICIT PROJECT_IDENTIFIER + TASK_SCOPE
 → CONSUMER LIVE SOURCE
 → PROJECT BOOTSTRAP / LOCAL SPECIALIST / MATERIAL CONTINUITY-AUTHORITY
 → EVIDENCE-BACKED + CANONICALLY VALID TASK-BOUND READINESS
-→ VALIDATED EFFECTIVE_SCOPE
-→ WORK ONLY WITHIN THAT SCOPE
+→ STATUS-AWARE VALIDATED EFFECTIVE_SCOPE
+→ WORK ONLY WHEN STATUS ALLOWS AND ONLY WITHIN THAT SCOPE
 ```
 
 No Gateway design or SES runtime failure grants consumer-project mutation authority.
 
-## 6. Conflict rule
+## 7. Conflict rule
 
 If `docs/NEXT_SAFE_ACTION.md` conflicts materially with bootstrap, handoff, project status, live authority, Builder profile, runtime runbook, evidence/readjudication or applicable authority boundary: stop, resolve exact conflict, and reconcile material recorded state before continuing.
 
-## 7. Anti-loop rule
+## 8. Anti-loop rule
 
 Do not create reconciliation cycles for ordinary conversation/metadata/unrelated commits. Do not repeat failed runtime cases merely to obtain favorable samples when stop-loss requires different architecture or explicit limitation acceptance. Revalidate only evidence invalidated by material events.
