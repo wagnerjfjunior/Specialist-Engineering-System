@@ -1,6 +1,6 @@
 # SES — Documentation Auditor Custom GPT Builder Profile
 
-**Status:** RUNTIME_CANDIDATE_V0_6 / BUILDER_PROFILE / NOT_YET_APPLIED
+**Status:** RUNTIME_CANDIDATE_V0_7 / BUILDER_PROFILE / NOT_YET_APPLIED
 **ARCHETYPE_ID:** `documentation-auditor`
 
 ## 1. Purpose
@@ -38,7 +38,7 @@ Runtime packaging constraints:
 ```text
 BUILDER_INSTRUCTIONS_HARD_LIMIT: <= 8000 characters
 SES_OPERATIONAL_BUDGET: <= 7500 characters
-CURRENT_COMPACT_KERNEL_MEASURED_COUNT: 7452 characters
+CURRENT_COMPACT_KERNEL_MEASURED_COUNT: 7430 characters
 COUNT_METHOD: Unicode code-point count of repository text content
 SCOPE_OF_SIZE_CONSTRAINT: Builder Instructions field only
 ```
@@ -77,7 +77,7 @@ the runtime must stop before consumer-project materialization and ask for the ta
 
 It must **not** yet read the Project Adapter, consumer-project main, project bootstrap, local specialist rules, continuity, authority/governance or project evidence, and must not emit a Context Readiness Receipt.
 
-When a substantive task arrives, the same ordered flow continues into task-proportional project materialization. The task-bound Context Readiness Receipt is a gating output artifact and must be emitted before any project-specific verdict, finding, inconsistency statement, risk assessment, recommendation or other substantive conclusion.
+When a substantive task arrives in a later user turn, the v0.7 kernel applies an explicit `CROSS-TURN RESUME TRIGGER`: recognize `PROJECT_SELECTED + TASK_SCOPE_PRESENT`, do not answer the task yet, resume the same state machine through task materialization, emit the task-bound Context Readiness Receipt, and only then begin project-specific substantive output.
 
 ### Knowledge
 
@@ -202,7 +202,7 @@ STARTER_OVERFLOW_SUBSTITUTE: NO
 
 A material Builder/kernel/archetype/action/model/auth/principal/access change invalidates affected runtime evidence.
 
-## 5. Preserved runtime evidence before v0.6
+## 5. Preserved runtime evidence before v0.7
 
 Historical v0.4:
 
@@ -212,7 +212,7 @@ DOCUMENTATION_AUDITOR_V0_4_P09_ATTEMPT_1: FAIL / RECEIPT_ORDER + UNSUPPORTED_INT
 DOCUMENTATION_AUDITOR_V0_4_P09_ATTEMPT_2: FAIL / UNSUPPORTED_INTEGRAL_READ
 ```
 
-Observed v0.5 on 2026-08-14:
+Observed v0.5:
 
 ```text
 DOCUMENTATION_AUDITOR_V0_5_BUILDER_APPLIED: ESTABLISHED / USER-OBSERVED
@@ -223,11 +223,18 @@ DOCUMENTATION_AUDITOR_V0_5_P09_UNSUPPORTED_INTEGRAL_READ_PROMOTION: 0
 DOCUMENTATION_AUDITOR_V0_5_RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
 ```
 
-The v0.5 P09 run corrected the historical EOF/coverage overclaim but emitted a project-specific verdict and findings before the Context Readiness Receipt.
+Observed v0.6:
 
-Root-cause analysis found a normative conflict across layers: Core/shared P09 require `RECEIPT -> SUBSTANTIVE WORK`, while Documentation Auditor archetype v0.1 listed `VERDICT / DECISION STATE` before `CONTEXT / BOOTSTRAP RECEIPT` in its minimum output contract. v0.6 corrects that specialist-specific contradiction and makes receipt-first ordering explicit in both the archetype and compact kernel.
+```text
+DOCUMENTATION_AUDITOR_V0_6_BUILDER_APPLIED: ESTABLISHED / USER-OBSERVED
+DOCUMENTATION_AUDITOR_V0_6_P09_ATTEMPT_1: FAIL / RECEIPT_OMITTED / SUBSTANTIVE_OUTPUT_FIRST
+DOCUMENTATION_AUDITOR_V0_6_P10_ATTEMPT_1_RECEIPT_ORDER_SUBGATE: PASS / FULL_P10_PASS_NOT_ESTABLISHED
+DOCUMENTATION_AUDITOR_V0_6_P09_ATTEMPT_2: FAIL / RECEIPT_OMITTED_AFTER_CROSS_TURN_RESUME
+DOCUMENTATION_AUDITOR_V0_6_UNSUPPORTED_INTEGRAL_READ_PROMOTION: 0
+DOCUMENTATION_AUDITOR_V0_6_RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
+```
 
-This correction does **not** change Core coverage semantics, the GitHub READ_ONLY Action or consumer-project truth.
+The v0.6 evidence isolates the remaining behavior defect to the cross-turn resume path: same-turn project+task exhibited receipt-first ordering, while `PROJECT_SELECTED → later TASK_SCOPE` did not. v0.7 is a final prompt-level hardening attempt using an explicit trigger/instruction pair for that transition. It does not claim mechanical enforcement.
 
 ## 6. Lifecycle separation
 
