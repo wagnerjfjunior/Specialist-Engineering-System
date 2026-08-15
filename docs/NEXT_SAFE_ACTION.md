@@ -9,13 +9,35 @@
 
 ## Why this supersedes the prior action
 
-The SES proof-model correction and the FECH.AI receipt-order reconciliation are already canonical. A fresh v0.6 baseline was then captured with:
+The SES proof-model correction and the FECH.AI receipt-order reconciliation are already canonical. A fresh v0.6 evidence boundary was then captured with the following non-secret Builder fingerprint and exact refs:
 
 ```text
+BUILDER_FINGERPRINT_VERSION: DOCUMENTATION_AUDITOR_V0_6
+GPT_NAME: SES — Documentation Auditor
+INSTRUCTIONS_REF: runtime/custom-gpt/DOCUMENTATION_AUDITOR_BUILDER_KERNEL.md / v0.6
+INSTRUCTIONS_BLOB: 239bdbfe803b8e4e42b22da5b3f988f0b60f1ce3
+CONVERSATION_STARTERS: exactly 1 / # CLIQUE PARA INICIAR
+KNOWLEDGE: EMPTY
+SELECTED_MODEL: GPT-5.6 Sol (gpt-5-6)
+WEB_SEARCH: ENABLED
+IMAGE_GENERATION: DISABLED
+CODE_INTERPRETER_DATA_ANALYSIS: ENABLED
+ACTION_NAME: SES GitHub READ_ONLY
+ACTION_SCHEMA_VERSION: 0.2.1
+ACTION_SCHEMA_BLOB: 1e6237e806fd84716ec13b019e6617ad4110a211
+ACTION_AUTH_MODE: API_KEY / BEARER
+AUTHENTICATED_PRINCIPAL: wagnerjfjunior / 228261219
+REQUIRED_SES_REPOSITORY_ACCESS: PROVEN
+REQUIRED_FECHAI_REPOSITORY_ACCESS: PROVEN
+TOKEN_GLOBAL_SCOPE: NOT_DETERMINED
+EXCESS_REPOSITORY_ACCESS: NOT_ASSESSED
+VISIBILITY: PRIVATE / APENAS PARA MIM
+BUILDER_VERSION_IDENTIFIER: NOT_EXPOSED
 SES_REF: 6d5840beb77fe4437e368f846c0224405c1dd13e
 PROJECT_REF: 8ac128d65d5415cf903f030daa1f37a4d03bbb83
-AUTHENTICATED_PRINCIPAL: wagnerjfjunior / 228261219
 ```
+
+These fields were established from user-observed Builder configuration plus authenticated bounded access smokes. They prove the recorded required configuration/access boundary, not credential least privilege or global token scope.
 
 On that evidence boundary, two new observations were made:
 
