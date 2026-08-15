@@ -19,14 +19,16 @@ TARGET ENTRY
 → zero-match PROJECT_NOT_REGISTERED → STOP
 
 PROJECT WORK
-→ materialize project context
-→ build canonically valid task-bound readiness
+→ materialize project context from trusted canonical sources
+→ build evidence-backed, canonically valid task-bound readiness
+→ bind output to validated EFFECTIVE_SCOPE
 → only then project-specific substantive output
 
 MULTI-PROJECT WORK
 → resolve projects independently
-→ validate each project-scoped readiness boundary
-→ only then comparative synthesis
+→ validate evidence-backed project-scoped readiness
+→ derive valid common comparison-effective scope
+→ only then comparative synthesis inside that scope
 ```
 
 ## 2. Required distinctions
@@ -41,15 +43,17 @@ INTERNAL_REGISTRY_LOOKUP
 
 ARTIFACT_PRESENT
 != CANONICAL_READINESS_VALID
-```
 
-- normative requirement: canonical specification states required behavior;
-- behavioral compliance: actual configured runtime exhibits it in an executed bounded case;
-- mechanically enforced invariant: an external mechanism technically prevents/rejects invalid transitions.
+SCHEMA_VALID
+!= EVIDENCE_SUPPORTED
+
+READINESS_VALID
+!= OUTPUT_WITHIN_EFFECTIVE_SCOPE
+```
 
 ## 3. Corrected v0.9 evidence boundary
 
-The v0.9 Builder was applied and fingerprinted before Gate 0. The first evidence record preserved initial R03A/R05 PASS adjudications and R06 FAIL. Subsequent full transcript/contract review corrected the current state without rewriting the initial record.
+The v0.9 Builder was applied and fingerprinted before Gate 0. The first evidence record preserved initial R03A/R05 PASS adjudications and R06 FAIL. Subsequent full transcript/contract review corrected current state without rewriting the initial record.
 
 ```text
 R01: PASS
@@ -78,57 +82,18 @@ INITIAL_R06: FAIL / ORDERING DEFECT
 
 ### R03A — receipt ordering
 
-Positive:
-
-```text
-EXPLICIT_FECHAI_TARGET_RESPECTED: YES
-PROJECT_REGISTRY/ADAPTER/BOOTSTRAP_RESOLUTION: YES
-READ_ONLY: PRESERVED
-```
-
-Failure:
-
-```text
-PROJECT_SPECIFIC_SUBSTANTIVE_OUTPUT_BEFORE_RECEIPT: YES
-```
+Positive target resolution and READ_ONLY behavior remain bounded observations. Failure: `PROJECT_SPECIFIC_SUBSTANTIVE_OUTPUT_BEFORE_RECEIPT: YES`.
 
 ### R05 — target-entry enumeration boundary
 
-Positive:
-
-```text
-SUPPLIED_IDENTIFIER_PRESERVED: YES
-PROJECT_NOT_REGISTERED: YES
-FUZZY_MAPPING: NO
-PROJECT_MATERIALIZATION: NO
-```
-
-Failure:
-
-```text
-UNSOLICITED_USER_VISIBLE_PROJECT_ENUMERATION: YES
-ZERO_MATCH_STOP_BOUNDARY_PRESERVED: NO
-```
-
-The runtime had to read the Registry internally to resolve zero-match. That does not authorize exposing registered alternatives when the user did not explicitly request a project list. Do not misclassify this as a numbered-menu failure; the evidence-bound defect is a target-contract violation via unsolicited enumeration.
+Positive: supplied identifier preserved, `PROJECT_NOT_REGISTERED`, no fuzzy mapping, no project materialization. Failure: `UNSOLICITED_USER_VISIBLE_PROJECT_ENUMERATION: YES`; correct internal Registry lookup did not authorize exposing alternatives outside the explicit informational-list exception.
 
 ### R06 — ordering + readiness validity
 
-Positive:
-
-```text
-MULTI_PROJECT_TASK: YES
-FECHAI_INDEPENDENTLY_RESOLVED: YES
-BLOGS_SEO_INDEPENDENTLY_RESOLVED: YES
-CROSS_PROJECT_CONTEXT_CONTAMINATION: 0 OBSERVED
-READ_ONLY: PRESERVED
-```
-
-Failures:
+Positive: independent project resolution, no observed cross-project contamination, READ_ONLY. Failures:
 
 ```text
 SUBSTANTIVE_COMPARATIVE_OUTPUT_BEFORE_REQUIRED_READINESS: YES
-READINESS_ARTIFACT_EMITTED_LATER: YES
 READINESS_ARTIFACT_CANONICAL_CONTRACT_COMPLETE: NO
 LIMITED_EFFECTIVE_SCOPE_EXPLICITLY_BOUND: NO
 PROJECT_SCOPED_READINESS_BOUNDARIES: INVALID/INCOMPLETE FOR CANONICAL READINESS
@@ -146,19 +111,19 @@ RECEIPT_FIRST_MECHANICAL_ENFORCEMENT: NOT_ESTABLISHED
 
 CANONICAL_READINESS_VALIDATION_REQUIREMENT: ESTABLISHED
 CANONICAL_READINESS_MECHANICAL_VALIDATION: NOT_ESTABLISHED
+
+READINESS_EVIDENCE_BINDING_REQUIREMENT: ESTABLISHED BY HYBRID CONTRACT
+MATERIAL_FIELD_EVIDENCE_ATTESTATION_MECHANISM: NOT_ESTABLISHED
+
+EFFECTIVE_SCOPE_BOUNDARY_REQUIREMENT: ESTABLISHED BY HYBRID CONTRACT
+MECHANICAL_OUTPUT_SCOPE_ENFORCEMENT: NOT_ESTABLISHED
 ```
 
-Do not describe Builder-only target-entry, receipt ordering or readiness validity as deterministic/guaranteed/mechanically enforced.
+Do not describe Builder-only target-entry, receipt ordering, evidence support, readiness validity or effective-scope confinement as mechanically enforced.
 
 ## 6. Prompt-level stop loss
 
-Do not:
-
-- create v0.10 solely by stronger target/receipt/readiness wording;
-- rerun R03A/R05/R06 merely to seek cosmetic PASS;
-- retroactively relabel later retries as repairing failed evidence;
-- proceed with old v0.9 proportional smoke;
-- treat instruction repetition as an enforcement mechanism.
+Do not create wording-only v0.10, rerun failed cases merely for cosmetic PASS, retroactively relabel later retries, proceed with old smoke, or treat instruction repetition as an enforcement mechanism.
 
 ## 7. Architectural consequence — target state
 
@@ -168,59 +133,35 @@ Accepted specialist-specific design direction: **SES Runtime Enforcement Gateway
 USER TASK
 → TARGET CLASSIFICATION / ENTRY VALIDATION
 → PROJECT RESOLUTION
+→ TRUSTED EVIDENCE ACQUISITION / PROVENANCE BINDING
 → PROJECT-SCOPED READINESS ARTIFACT(S)
-→ CANONICAL READINESS VALIDATION
+→ CANONICAL READINESS + EVIDENCE VALIDATION
+→ VALIDATED EFFECTIVE SCOPE
 → TRANSITION GATE
 → SUBSTANTIVE ANALYSIS
+→ OUTPUT SCOPE VALIDATION
 → ORDERED RELEASE
 ```
 
-Target-entry validation must:
+### Target-entry enforcement
+
+- allow user-visible project enumeration only under explicit informational-list intent;
+- distinguish internal Registry lookup from user-visible enumeration;
+- enforce `PROJECT_NOT_REGISTERED → STOP`;
+- preserve no-fuzzy/no-premature-materialization rules.
+
+### Evidence-backed readiness
+
+A model-proposed field is not trusted merely because it is schema-valid. Material readiness claims must be independently checked against controller-visible trusted retrieval/provenance derived through the applicable SES/project authority chain.
 
 ```text
-- allow project enumeration only under the explicit informational-list exception
-- distinguish internal Registry resolution from user-visible enumeration
-- enforce PROJECT_NOT_REGISTERED → STOP after zero-match
-- preserve no-fuzzy/no-premature-materialization rules
+MODEL_ASSERTED_READY != EVIDENCE_ATTESTED_READY
+SCHEMA_VALID_RECEIPT != EVIDENCE_SUPPORTED_RECEIPT
 ```
 
-Readiness validation must preserve full mandatory hybrid receipt semantics, including:
+### Effective-scope release enforcement
 
-```text
-PROOF_LEVEL
-TASK_SCOPE
-EFFECTIVE_SCOPE
-TARGET_REF_OR_OBJECT
-ENVIRONMENT
-SES_CANONICAL_MAIN_REF
-SES_CANDIDATE_REF
-SES_EFFECTIVE_REF
-SES_ARCHETYPE_RESOLUTION_STATUS / ID / SOURCE_REF
-PROJECT_RESOLUTION_STATUS / ID
-PROJECT_ADAPTER_STATUS / REF
-CANONICAL_PROJECT_SOURCE
-PROJECT_LIVE_REF
-PROJECT_BOOTSTRAP_STATUS / REF
-SPECIALIST_RESOLUTION_STATUS / SOURCE_REF
-PROJECT_CONTINUITY_STATUS / REF
-MATERIAL_EVIDENCE_STATUS
-AUTHORITY_MODEL_STATUS
-MUTATION_AUTHORIZATION_STATUS
-CONTEXT_STATUS
-RECEIPT_VALIDITY
-GAPS
-```
-
-`LIMITED` must require explicit strict-subset `EFFECTIVE_SCOPE` and `GAPS`.
-
-This is:
-
-```text
-ARCHITECTURAL_DIRECTION: ACCEPTED_FOR_DESIGN
-GATEWAY_IMPLEMENTED: NO
-GATEWAY_DEPLOYED: NO
-MECHANICAL_ENFORCEMENT_PROVEN: NO
-```
+For `LIMITED`, output must remain inside the validated strict-subset `EFFECTIVE_SCOPE`; excluded `TASK_SCOPE` claims are blocked. For multi-project work, comparative claims must remain inside a controller-derived safe common comparison-effective scope supported by every project required for that claim. If no material common safe scope exists, the comparison is `BLOCKED`.
 
 ## 8. Future proof obligations
 
@@ -229,15 +170,21 @@ AMBIGUOUS_OR_MISSING_TARGET_CLARIFICATION_ONLY: ENFORCED
 UNSOLICITED_PROJECT_ENUMERATION_OUTSIDE_INFORMATIONAL_EXCEPTION: BLOCKED
 ZERO_MATCH_PROJECT_NOT_REGISTERED_STOP: ENFORCED
 TARGET_RESOLUTION_BEFORE_MATERIALIZATION: YES
+MATERIAL_READINESS_FIELDS_EVIDENCE_ATTESTED: YES
+WELL_FORMED_UNSUPPORTED_READINESS_ARTIFACT: REJECTED
 FULL_CANONICAL_READINESS_BINDING_PRESERVED: YES
 LIMITED_STRICT_SUBSET_SEMANTICS: ENFORCED
+OUTPUT_RELEASE_BOUND_TO_VALIDATED_EFFECTIVE_SCOPE: YES
+MULTI_PROJECT_COMPARISON_EFFECTIVE_SCOPE_DERIVED_AND_ENFORCED: YES
 MULTI_PROJECT_INDEPENDENT_RESOLUTION: YES
 PROJECT_SCOPED_READINESS_ARTIFACTS: CANONICALLY_VALIDATED
 MALFORMED_OR_INCOMPLETE_READINESS_ARTIFACT: REJECTED
 SUBSTANTIVE_OUTPUT_BEFORE_REQUIRED_READINESS: BLOCKED_OR_REJECTED
 UNSOLICITED_ENUMERATION_ZERO_MATCH_CHALLENGE: PASS
 MALFORMED_READINESS_CHALLENGE: PASS
+WELL_FORMED_UNSUPPORTED_READINESS_CHALLENGE: PASS
 INVALID_TRANSITION_CHALLENGE: PASS
+OUT_OF_EFFECTIVE_SCOPE_OUTPUT_CHALLENGE: PASS
 READINESS_INVALIDATION_REVALIDATION: PROVEN
 CROSS_PROJECT_CONTEXT_CONTAMINATION: 0
 READ_ONLY_BY_DEFAULT: YES
