@@ -2,69 +2,107 @@
 
 > Este é o registro autoritativo da única próxima ação segura do SES quando este estado estiver em `main`.
 
-**Next action ID:** `apply-documentation-auditor-v09-project-target-fix-v1`
-**Primary target:** `SES — Documentation Auditor` v0.9 project-target disambiguation
-**Queued target:** `SES — SaaS Architect` proportional Builder-fit smoke
+**Next action ID:** `design-documentation-auditor-runtime-enforcement-gateway-v1`
+**Primary target:** `SES — Documentation Auditor` runtime enforcement architecture
+**Current runtime target:** v0.9 Builder remains unchanged
+**Queued target:** `SES — SaaS Architect` proportional Builder-fit smoke remains deferred
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System` / `main` resolved live
 
-## 1. Product decision preserved
+## 1. Product decisions preserved
 
-The single-starter / live-numbered-project-menu / numeric-selection / `PROJECT_SELECTED → WAIT FOR TASK → cross-turn resume` feature remains discontinued by stop loss. Nothing in v0.9 reauthorizes it.
+The single-starter / live-numbered-project-menu / numeric-selection / `PROJECT_SELECTED → WAIT FOR TASK → cross-turn resume` feature remains discontinued by stop loss.
 
-## 2. Material event
+The v0.9 target-acquisition correction remains the current Documentation Auditor Builder target. Do not create a wording-only v0.10 to seek a cosmetic PASS.
 
-Post-rollback observations:
+## 2. Material event — v0.9 Gate 0 completed
+
+The external private Documentation Auditor Builder was reconciled to v0.9 and fingerprinted before the formal regression. The seven required target-resolution observations produced:
 
 ```text
-V0_8_DIRECT_FECHAI_S02: PASS / OBSERVED
-V0_8_DIRECT_BLOGS_S03: PASS / OBSERVED
-V0_8_GENERIC_TARGET_SES_SELF_RESPONSE: INDETERMINATE / TARGET AMBIGUOUS
-V0_8_RETIRED_NUMBERED_MENU_RESPONSE: FAIL / BEHAVIORAL REGRESSION
+R01_AMBIGUOUS_TARGET_COLD_START: PASS
+R02_MISSING_CONSUMER_PROJECT_ID_COLD_START: PASS
+R03A_EXPLICIT_FECHAI_TARGET: PASS
+R03B_EXPLICIT_SES_TARGET: PASS
+R04_INFORMATIONAL_LIST_THEN_BARE_NUMBER: PASS
+R05_EXPLICIT_UNREGISTERED_IDENTIFIER: PASS
+R06_SUBSTANTIVE_MULTI_PROJECT_TASK: FAIL
+
+PROJECT_TARGET_REGRESSION: 6/7
+PROJECT_TARGET_REGRESSION_PASS: FAIL / NOT_ESTABLISHED
 ```
 
-## 3. Correction boundary
+R06 independently resolved FECH.AI and Blogs/SEO and preserved READ_ONLY behavior, but the runtime emitted substantive comparative commentary before the project-scoped readiness boundary was emitted. A later Context Readiness Receipt does not retroactively repair that ordering failure.
 
-v0.9 addresses target acquisition and must prove all of these on the actual Builder:
+Historical pre-fingerprint observations remain historical and are not rewritten by this Gate 0 result.
 
-- ambiguous SES-vs-consumer target → clarification only;
-- consumer task with missing ID → clarification only;
-- explicit valid consumer target → normal registry/bootstrap path;
-- explicit SES target → SES self-work path;
-- informational project list → later bare list number is not project identity;
-- explicit unregistered identifier → canonical registry zero-match/fail-closed path, not “missing project”;
-- substantive explicit multi-project task → independent resolution/readiness for every project, not informational-list short-circuit.
+## 3. Stop-loss triggered
 
-## 4. Authoritative next action after merge
+Because a required v0.9 case failed after the v0.9 Builder fingerprint had been established on the required evidence boundary:
 
-1. resolve SES `main` live and confirm v0.9 artifacts canonical;
-2. reconcile private Documentation Auditor Builder to the exact complete v0.9 kernel, 7388-character fingerprint target, four existing starters, Knowledge empty, unchanged READ_ONLY Action, private visibility;
-3. capture fresh non-secret Builder fingerprint;
-4. execute `tests/runtime/DOCUMENTATION_AUDITOR_PROJECT_TARGET_REGRESSION.md` exactly:
-   - R01 ambiguous target;
-   - R02 missing consumer-project identifier;
-   - R03A explicit FECH.AI;
-   - R03B explicit SES;
-   - R04 informational list → bare number;
-   - R05 explicit unregistered identifier;
-   - R06 substantive FECH.AI ↔ Blogs/SEO multi-project task;
-5. require **7/7 autonomous PASS** for `PROJECT_TARGET_REGRESSION_PASS`;
-6. only then resume proportional Documentation Auditor smoke;
-7. then execute queued proportional SaaS Architect Builder-fit smoke;
-8. after both proportional smokes pass, record rollback/reconciliation closed and return to ordinary SES development.
+```text
+RUNTIME_ENFORCEMENT_GAP: ESTABLISHED
+PROMPT_LEVEL_FIX_STOP_LOSS: TRIGGERED
+```
 
-## 5. One-shot stop condition
+Do not:
 
-If any required v0.9 target-resolution case fails after v0.9 is demonstrably applied on its required evidence boundary:
+- rerun R06 merely to seek 7/7;
+- rewrite the failed R06 after a later successful retry;
+- create v0.10 solely by strengthening natural-language instructions;
+- resume proportional Documentation Auditor smoke as if Gate 0 had passed;
+- mutate FECH.AI or Blogs/SEO because the SES runtime failed this gate.
 
-`RUNTIME_ENFORCEMENT_GAP / PROMPT_LEVEL_FIX_STOP_LOSS`
+## 4. Architectural decision boundary
 
-Do **not** create v0.10 solely by strengthening prompt wording. Use a different enforcement/runtime architecture or explicitly accept the limitation.
+The receipt-first requirement is already present in Core, the Documentation Auditor archetype/runtime boundary and the v0.9 Builder kernel. The failed R06 therefore does not justify another prompt-only correction.
 
-## 6. Preserved proof state
+The next design direction is a specialist-specific **SES Runtime Enforcement Gateway**: a controller/state-machine boundary outside ordinary model instruction-following that can prevent or reject an invalid transition from project materialization to substantive output before required readiness has been established.
+
+This is a **TARGET STATE / DESIGN DECISION**, not an implemented capability.
+
+Authoritative decision record:
+
+`docs/architecture/ADR-001-DOCUMENTATION_AUDITOR_RUNTIME_ENFORCEMENT_GATEWAY.md`
+
+## 5. Authoritative next action after this closeout merges
+
+Perform a bounded design phase only:
+
+1. resolve SES `main` live and read this file plus the ADR and runtime enforcement boundary;
+2. define the minimum Gateway state machine and interfaces for single-project and multi-project work;
+3. define a structured readiness artifact that can be validated before substantive analysis is released;
+4. define fail-closed transitions for missing/invalid project resolution, incomplete multi-project readiness and invalid output ordering;
+5. define an **invalid-transition challenge** that attempts substantive output before readiness and must be technically blocked/rejected by the future mechanism;
+6. define observability/evidence requirements sufficient to prove which transition was allowed or denied;
+7. define rollback and coexistence with the current private Custom GPT runtime;
+8. evaluate implementation substrates only after the mechanism/proof obligations are explicit;
+9. return the design as a candidate for review and explicit implementation authorization.
+
+Do **not** implement or deploy the Gateway in this closeout step.
+
+## 6. Minimum proof obligations for a future Gateway candidate
+
+A future implementation candidate must demonstrate, at minimum:
+
+```text
+TARGET_RESOLUTION_BEFORE_PROJECT_MATERIALIZATION: YES
+MULTI_PROJECT_INDEPENDENT_RESOLUTION: YES
+PROJECT_SCOPED_READINESS_BOUNDARIES: PRESERVED
+SUBSTANTIVE_OUTPUT_BEFORE_REQUIRED_READINESS: TECHNICALLY_BLOCKED_OR_REJECTED
+INVALID_TRANSITION_CHALLENGE: PASS
+CROSS_PROJECT_CONTEXT_CONTAMINATION: 0
+FAIL_CLOSED_ON_UNRESOLVED_REQUIRED_CONTEXT: YES
+READ_ONLY_BY_DEFAULT: YES
+MECHANISM_TRACE_EVIDENCE: PRESENT
+```
+
+A successful model response alone is not proof of mechanical enforcement.
+
+## 7. Preserved proof state
 
 ```text
 SAAS_V0_1_RUNTIME_BEHAVIORAL_PROOF: PASS / HISTORICAL / EXACT HISTORICAL FINGERPRINT ONLY
-SAAS_CURRENT_BUILDER_FIT_KERNEL: NEW FINGERPRINT / PROPORTIONAL SMOKE REQUIRED
+SAAS_CURRENT_BUILDER_FIT_KERNEL: NEW FINGERPRINT / PROPORTIONAL SMOKE REQUIRED / DEFERRED
 SAAS_V0_2_V0_3_SELECTION_FIRST_TARGETS: SUPERSEDED_BY_STOP_LOSS
 
 DA_V0_4_P09_ATTEMPT_1: FAIL / PRESERVED
@@ -72,17 +110,28 @@ DA_V0_4_P09_ATTEMPT_2: FAIL / PRESERVED
 DA_V0_5_C01: PASS / HISTORICAL / PRESERVED
 DA_V0_5_P09_ATTEMPT_1: FAIL / PRESERVED
 DA_V0_6_P09_ATTEMPT_1: FAIL / PRESERVED
-DA_V0_6_UNSUPPORTED_INTEGRAL_READ_PROMOTION: 0 / PRESERVED
 DA_V0_6_RECEIPT_MECHANICAL_ENFORCEMENT: NOT_ESTABLISHED / PRESERVED
 DA_V0_7: ABANDONED / PR #19 NOT_MERGED
 DA_V0_8: STOP_LOSS ROLLBACK TARGET / NUMBERED-MENU REGRESSION OBSERVED
-DA_V0_9: PROJECT-TARGET DISAMBIGUATION FIX / BUILDER APPLICATION + 7-CASE REGRESSION PENDING
+DA_V0_9_BUILDER_APPLIED: ESTABLISHED ON CAPTURED FINGERPRINT
+DA_V0_9_PROJECT_TARGET_REGRESSION: 6/7
+DA_V0_9_R06: FAIL / SUBSTANTIVE_COMPARATIVE_OUTPUT_BEFORE_READINESS_BOUNDARY
+DA_V0_9_PROJECT_TARGET_REGRESSION_PASS: NOT_ESTABLISHED
+DA_V0_9_RUNTIME_ENFORCEMENT_GAP: ESTABLISHED
 ```
 
-## 7. Limits
+## 8. Limits
 
-No publication, broad sharing, consumer-project mutation, production mutation, legacy retirement or broad runtime certification is authorized by this action. Do not mutate FECH.AI or Blogs/SEO because SES target-resolution behavior changed.
+This action does not authorize:
 
-## 8. Done condition
+- Gateway implementation or deployment;
+- Builder mutation;
+- publication/broad sharing changes;
+- consumer-project mutation;
+- production/security claims;
+- SaaS Architect runtime revalidation;
+- promotion of this specialist-specific learning to a universal SES principle.
 
-Complete only when applied v0.9 passes all seven target-resolution cases, proportional Documentation Auditor smoke passes, queued proportional SaaS smoke completes, retired interaction remains absent, and no new prompt-hardening loop is opened.
+## 9. Done condition
+
+This next action is complete only when a reviewable Gateway design package exists with explicit state transitions, interfaces, proof obligations, invalid-transition challenge, rollback/coexistence plan and no implementation overclaim. Implementation requires a separate explicit authorization and change boundary.
