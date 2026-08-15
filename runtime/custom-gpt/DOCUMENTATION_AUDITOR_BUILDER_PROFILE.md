@@ -160,10 +160,11 @@ Required sequence after Builder application:
 ```text
 R01_AMBIGUOUS_TARGET_COLD_START
 R02_MISSING_CONSUMER_PROJECT_ID_COLD_START
-R03_EXPLICIT_PROJECT_CONTROL
+R03A_EXPLICIT_CONSUMER_TARGET
+R03B_EXPLICIT_SES_TARGET
 ```
 
-All must pass autonomously. Do not correct the runtime during a case.
+All four observations must pass autonomously. Do not correct the runtime during a case.
 
 If R01 or R02 fails after v0.9 is demonstrably applied in a fresh conversation, classify:
 
