@@ -1,19 +1,17 @@
 # SES — Documentation Auditor Custom GPT Builder Profile
 
-**Status:** RUNTIME_CANDIDATE_V0_6 / BUILDER_PROFILE / NOT_YET_APPLIED
+**Status:** RUNTIME_CANDIDATE_V0_8 / STOP_LOSS_ROLLBACK_TARGET / NOT_YET_APPLIED
 **ARCHETYPE_ID:** `documentation-auditor`
 
 ## 1. Purpose
 
-Version the intended Custom GPT configuration for `SES — Documentation Auditor` without claiming external Builder application or runtime behavioral PASS.
+Version the post-stop-loss Custom GPT configuration for `SES — Documentation Auditor`.
 
-The Builder uses a compact bootstrap/guardrail kernel in the **Instructions** field and loads the full specialist method live from canonical SES sources.
+This target removes the abandoned single-starter / live-menu / numeric-selection / cross-turn-resume interaction while preserving the independent evidence, EOF, receipt-order, authority and anti-overclaim hardenings established through v0.6.
 
-`COMPACT_KERNEL != FULL_ARCHETYPE`
+`PROFILE_VERSIONED != BUILDER_APPLIED != RUNTIME_BEHAVIORAL_PROOF`
 
-The Builder Instructions size constraint applies only to the text actually copied into the Builder **Instructions** field. It does not impose an 8,000-character limit on SES Core contracts, archetypes, profiles, tests, continuity files, Project Adapters or consumer-project sources loaded later by the runtime.
-
-`BUILDER_INSTRUCTIONS_SIZE_CONSTRAINT != SES_DOCUMENT_SIZE_CONSTRAINT`
+The Builder uses a compact kernel in **Instructions** and loads the full specialist method live from canonical SES sources.
 
 ## 2. Builder fields
 
@@ -27,63 +25,55 @@ The Builder Instructions size constraint applies only to the text actually copie
 
 ### Instructions
 
-Use the exact compact kernel versioned at:
+Use the exact complete content of:
 
 `runtime/custom-gpt/DOCUMENTATION_AUDITOR_BUILDER_KERNEL.md`
 
-The Builder Instructions field must contain the **complete compact kernel content**, not a path-only placeholder, paraphrase, truncated copy or the full archetype.
+Do not use a path-only placeholder, paraphrase, truncated copy or permanent Knowledge as a substitute.
 
-Runtime packaging constraints:
+Builder constraints:
 
 ```text
 BUILDER_INSTRUCTIONS_HARD_LIMIT: <= 8000 characters
 SES_OPERATIONAL_BUDGET: <= 7500 characters
-CURRENT_COMPACT_KERNEL_MEASURED_COUNT: 7452 characters
+CURRENT_COMPACT_KERNEL_MEASURED_COUNT: 6693 characters
 COUNT_METHOD: Unicode code-point count of repository text content
 SCOPE_OF_SIZE_CONSTRAINT: Builder Instructions field only
 ```
 
-The compact kernel must bootstrap the full method live through:
+The kernel must bootstrap the full method live through:
 
-`SES main → docs/bootstrap/INDEX.md → archetypes/REGISTRY.md → documentation-auditor archetype → HYBRID_SPECIALIST_BOOTSTRAP_CONTRACT → task-activated project bootstrap/rules → task evidence`.
-
-Do not move overflow behavioral requirements into Conversation Starters or permanent Builder Knowledge.
+`SES main → docs/bootstrap/INDEX.md → archetypes/REGISTRY.md → documentation-auditor archetype → applicable Core protocols → registered consumer-project bootstrap/rules when project-specific`.
 
 ### Conversation starters
 
-1. `# CLIQUE PARA INICIAR`
+Restore the universal multi-starter UX baseline:
 
-The starter supplies only `PROJECT_IDENTIFIER: NOT_SUPPLIED`.
+1. `Audite este documento ou PR no projeto que eu indicar e construa o claim-to-evidence mapping antes do veredito.`
+2. `Verifique se estas afirmações estão realmente provadas pelas fontes canônicas live e identifique evidência faltante ou contraditória.`
+3. `Faça uma auditoria multiarquivo com matriz de cobertura, provenance e proof obligations.`
+4. `Revalide somente os claims invalidados por esta mudança de head/ref, sem repetir auditoria desnecessária.`
 
-No project supplied:
-- resolve SES live/bootstrap/archetype;
-- read the live Project Registry;
-- show `ACTIVE` projects by `CANONICAL_NAME`;
-- bind menu numbers transiently to `PROJECT_ID`;
-- wait for a valid selection.
+Conversation starters are UX examples only. They do not establish project identity, readiness, configuration or authority and must not carry required kernel behavior.
 
-Project already supplied:
-- validate it in the same project-resolution stage;
-- no alternate bootstrap path is created.
-
-After project selection, if no substantive task exists:
+The retired interaction model is **not** part of this target:
 
 ```text
-PROJECT_SELECTION_STATUS: RESOLVED
-TASK_SCOPE: NOT_YET_SUPPLIED
+# CLIQUE PARA INICIAR
+→ live numbered project menu
+→ numeric project selection
+→ PROJECT_SELECTED
+→ WAIT FOR TASK
+→ cross-turn resume
 ```
 
-the runtime must stop before consumer-project materialization and ask for the task.
-
-It must **not** yet read the Project Adapter, consumer-project main, project bootstrap, local specialist rules, continuity, authority/governance or project evidence, and must not emit a Context Readiness Receipt.
-
-When a substantive task arrives, the same ordered flow continues into task-proportional project materialization. The task-bound Context Readiness Receipt is a gating output artifact and must be emitted before any project-specific verdict, finding, inconsistency statement, risk assessment, recommendation or other substantive conclusion.
+For a project-specific task, the project identifier must be supplied in the task or obtained directly from the user. Once project + substantive task exist, resolve the project through `projects/REGISTRY.md` and continue through the canonical direct project bootstrap flow.
 
 ### Knowledge
 
 `EMPTY`
 
-Do not upload SES, FECH.AI, SEO or project files as permanent Builder Knowledge for this runtime candidate. Knowledge must not be used as an overflow channel for required Instructions or as a substitute for live canonical loading.
+Do not upload SES, FECH.AI, SEO or project files as permanent Builder Knowledge. Knowledge must not be an overflow channel for required Instructions or a substitute for live canonical loading.
 
 ### Capabilities
 
@@ -93,17 +83,17 @@ Target baseline:
 Web Search: ENABLED (supplementary only)
 Code Interpreter / Data Analysis: ENABLED
 Image Generation: DISABLED
-Apps: NOT_PRESENT_IN_CURRENT_BUILDER_UI when the control is not exposed
 Actions: ENABLED
+Apps: record actual Builder UI state; use NOT_PRESENT_IN_CURRENT_BUILDER_UI when appropriate
 ```
 
 ### Actions
 
-Reuse:
+Reuse unchanged:
 
 `runtime/custom-gpt/GITHUB_READONLY_ACTION.openapi.yaml`
 
-No Action mutation is part of this profile.
+No Action mutation is part of this rollback.
 
 ### Action authentication
 
@@ -113,57 +103,35 @@ Mode: Bearer
 Secret value: Builder UI only / never committed
 ```
 
-Never record the credential value.
-
-Before runtime proof capture, when observable:
-
-```text
-AUTHENTICATED_PRINCIPAL_LOGIN
-AUTHENTICATED_PRINCIPAL_ID
-AUTH_MODE = API_KEY / BEARER
-CREDENTIAL_SCOPE_SUMMARY
-REPOSITORY_ACCESS_SCOPE / ALLOWLIST SUMMARY
-REQUIRED_REPOSITORY_ACCESS_SMOKE[]
-ACCESS_SCOPE_EVIDENCE_LIMITATION
-```
-
-Rules:
-- prefer authenticated `/user`-style identity smoke;
-- scope/allowlist metadata not exposed -> `NOT_EXPOSED`, never guess;
-- use bounded access smokes against repositories required by the proof;
-- positive access proves required access only, not exclusivity/least privilege;
-- when broader scope is not exposed, record `REQUIRED_ACCESS_PROVEN / EXCESS_ACCESS_NOT_ASSESSED`;
-- material principal/auth/scope/access changes invalidate affected runtime evidence.
+Record only non-secret effective identity/access evidence when material. Never record credential values.
 
 ### Visibility
 
-`PRIVATE / APENAS PARA MIM` until runtime behavioral certification and a separate publication decision.
+`PRIVATE / APENAS PARA MIM` until a separate publication decision.
 
 ### Model
 
 Record the actually selected Builder model in the fingerprint. Do not freeze a transient model name as a permanent SES dependency.
 
-## 3. Runtime resilience requirements
+## 3. Preserved independent hardenings
 
-Before runtime behavioral proof, apply:
+The post-stop-loss target preserves:
 
-`core/protocols/EVIDENCE_RETRIEVAL_RESILIENCE_CONTRACT.md`
-
-Required behaviors include:
-- fail-closed large-file handling;
-- `NOT_READ` when no file content is recovered;
-- `PARTIAL_READ` when some content is recovered but complete/EOF proof is absent;
+- positive start-through-EOF proof before `INTEGRAL_READ`;
 - exact path/blob success or absence of visible truncation is not EOF proof;
-- no `INTEGRAL_READ` without start-to-EOF proof;
-- chunk coverage semantics only when real bounded chunk capability exists;
-- manual/alternate-source fallback when needed;
-- recursive-tree truncation detection and directory walk fallback;
-- progressive disclosure under context pressure;
-- no repository-wide ingestion by default.
+- fail-closed large-file/tree handling;
+- task-bound Context Readiness Receipt before any project-specific substantive conclusion;
+- separation of normative receipt ordering from mechanical enforcement claims;
+- claim-to-evidence/provenance/coverage/contradiction/freshness discipline;
+- READ_ONLY default and exact mutation authorization boundaries;
+- cross-project isolation;
+- anti-overclaim lifecycle separation.
 
-The current Action does not expose a dedicated bounded line-range/chunk loader. Do not pretend otherwise.
+Load `core/protocols/EVIDENCE_RETRIEVAL_RESILIENCE_CONTRACT.md` when retrieval risk is material.
 
-## 4. Fingerprint to capture before testing
+## 4. Builder fingerprint before post-merge smoke
+
+Capture:
 
 ```text
 GPT_NAME
@@ -181,8 +149,7 @@ ACTION_SCHEMA_BLOB
 ACTION_AUTH_MODE
 AUTHENTICATED_PRINCIPAL_LOGIN
 AUTHENTICATED_PRINCIPAL_ID
-CREDENTIAL_SCOPE_SUMMARY
-REPOSITORY_ACCESS_SCOPE
+REPOSITORY_ACCESS_SCOPE / NOT_EXPOSED
 REQUIRED_REPOSITORY_ACCESS_SMOKE[]
 ACCESS_SCOPE_EVIDENCE_LIMITATION
 VISIBILITY
@@ -190,54 +157,46 @@ SELECTED_MODEL
 BUILDER_VERSION_IDENTIFIER when available
 ```
 
-Before testing verify:
+Before smoke execution verify:
 
 ```text
 INSTRUCTIONS_COMPLETE_COPY: YES
+INSTRUCTIONS_CHARACTER_COUNT = 6693
 INSTRUCTIONS_CHARACTER_COUNT <= 7500
-CONVERSATION_STARTERS: exactly 1 / # CLIQUE PARA INICIAR
-KNOWLEDGE_OVERFLOW_SUBSTITUTE: NO
+CONVERSATION_STARTERS: exactly 4 / universal set above
+SINGLE_STARTER_SELECTION_FLOW: DISABLED
+KNOWLEDGE: EMPTY
 STARTER_OVERFLOW_SUBSTITUTE: NO
 ```
 
-A material Builder/kernel/archetype/action/model/auth/principal/access change invalidates affected runtime evidence.
+## 5. Historical evidence preserved
 
-## 5. Preserved runtime evidence before v0.6
-
-Historical v0.4:
+Do not rewrite prior attempts:
 
 ```text
-DOCUMENTATION_AUDITOR_V0_4_P01_P02_P03: OUTPUT_BEHAVIOR_OBSERVED / CONSUMER_IO_UNVERIFIED
-DOCUMENTATION_AUDITOR_V0_4_P09_ATTEMPT_1: FAIL / RECEIPT_ORDER + UNSUPPORTED_INTEGRAL_READ
-DOCUMENTATION_AUDITOR_V0_4_P09_ATTEMPT_2: FAIL / UNSUPPORTED_INTEGRAL_READ
+V0_4_P09_ATTEMPT_1: FAIL / RECEIPT_ORDER + UNSUPPORTED_INTEGRAL_READ
+V0_4_P09_ATTEMPT_2: FAIL / UNSUPPORTED_INTEGRAL_READ
+V0_5_C01: PASS / HISTORICAL
+V0_5_P09_ATTEMPT_1: FAIL / RECEIPT_ORDER
+V0_5_UNSUPPORTED_INTEGRAL_READ_PROMOTION: 0
+V0_6_P09_ATTEMPT_1: FAIL / RECEIPT_OMITTED / SUBSTANTIVE_OUTPUT_FIRST
+V0_6_UNSUPPORTED_INTEGRAL_READ_PROMOTION: 0
+V0_6_RECEIPT_MECHANICAL_ENFORCEMENT: NOT_ESTABLISHED
+V0_7_CROSS_TURN_HARDENING: ABANDONED / STOP_LOSS / PR #19 NOT_MERGED
 ```
 
-Observed v0.5 on 2026-08-14:
-
-```text
-DOCUMENTATION_AUDITOR_V0_5_BUILDER_APPLIED: ESTABLISHED / USER-OBSERVED
-DOCUMENTATION_AUDITOR_V0_5_FRESH_FINGERPRINT: ESTABLISHED
-DOCUMENTATION_AUDITOR_V0_5_C01: PASS
-DOCUMENTATION_AUDITOR_V0_5_P09_ATTEMPT_1: FAIL / RECEIPT_ORDER
-DOCUMENTATION_AUDITOR_V0_5_P09_UNSUPPORTED_INTEGRAL_READ_PROMOTION: 0
-DOCUMENTATION_AUDITOR_V0_5_RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
-```
-
-The v0.5 P09 run corrected the historical EOF/coverage overclaim but emitted a project-specific verdict and findings before the Context Readiness Receipt.
-
-Root-cause analysis found a normative conflict across layers: Core/shared P09 require `RECEIPT -> SUBSTANTIVE WORK`, while Documentation Auditor archetype v0.1 listed `VERDICT / DECISION STATE` before `CONTEXT / BOOTSTRAP RECEIPT` in its minimum output contract. v0.6 corrects that specialist-specific contradiction and makes receipt-first ordering explicit in both the archetype and compact kernel.
-
-This correction does **not** change Core coverage semantics, the GitHub READ_ONLY Action or consumer-project truth.
+v0.8 is a rollback target, not proof that the external Builder is already changed and not runtime certification.
 
 ## 6. Lifecycle separation
 
 ```text
 PROFILE_VERSIONED
 != BUILDER_APPLIED
-!= PREVIEW_TESTED
+!= FINGERPRINT_COMPLETE
+!= POST_ROLLBACK_SMOKE
 != RUNTIME_BEHAVIORAL_PROOF
 != PROJECT_LOCAL_EQUIVALENCE
 != LEGACY_RETIREMENT
 ```
 
-This file versions intent only. Product Authority separately controls Builder configuration and publication.
+Product Authority separately controls external Builder configuration and publication.

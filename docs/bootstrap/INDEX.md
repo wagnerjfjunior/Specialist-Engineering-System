@@ -1,23 +1,23 @@
 # Specialist Engineering System — Bootstrap Index
 
-**Status:** RUNTIME_CANDIDATE_V0_3 / BOOTSTRAP_INDEX
+**Status:** RUNTIME_CANDIDATE_V0_1 / BOOTSTRAP_INDEX
 **Repository:** `wagnerjfjunior/Specialist-Engineering-System`
 
-This index defines the minimum reconstruction order for material SES work and SES-mediated work on registered consumer projects.
+This index defines the minimum reconstruction order for material work on SES itself and for SES-mediated work on a registered consumer project.
 
 ## 1. Resolve SES live state
 
-Before material architecture, protocol, specialist, validation, project-adapter or release decisions, and before a hybrid specialist presents a live project menu:
+Before material architecture, protocol, specialist, validation, project-adapter or release decisions:
 
-1. resolve live SES `main` as `SES_CANONICAL_MAIN_REF`;
-2. determine proof level;
-3. ordinary/canonical work -> `SES_EFFECTIVE_REF = SES_CANONICAL_MAIN_REF`;
-4. candidate-head validation -> preserve `SES_CANDIDATE_REF` separately and use it as `SES_EFFECTIVE_REF` without calling it canonical `main`;
-5. read this index and task-material SES contracts on that exact ref;
-6. do not substitute memory, prior chat, screenshots or copied project state for repository evidence;
+1. resolve the live SHA of SES `main` as `SES_CANONICAL_MAIN_REF`;
+2. determine the declared proof level;
+3. for ordinary/canonical work, use `SES_EFFECTIVE_REF = SES_CANONICAL_MAIN_REF`;
+4. for candidate-head validation, preserve the exact candidate head separately as `SES_CANDIDATE_REF` and use it as `SES_EFFECTIVE_REF` without calling it canonical `main`;
+5. read this file and the material SES contracts on the exact `SES_EFFECTIVE_REF`;
+6. do not substitute memory, prior conversation, screenshots or copied project state for repository evidence;
 7. keep SES state distinct from consumer-project state.
 
-If required SES bootstrap cannot be resolved, use `SES_BOOTSTRAP_UNAVAILABLE`; do not fabricate a project menu or material readiness.
+If the required SES bootstrap cannot be resolved on the applicable effective ref, declare `SES_BOOTSTRAP_UNAVAILABLE` and do not make a material canonical/readiness claim.
 
 `CANDIDATE_HEAD != CANONICAL_MAIN`
 
@@ -27,185 +27,162 @@ Read when applicable:
 
 - `docs/architecture/ARCHITECTURE_BOUNDARY.md`
 - `projects/REGISTRY.md`
-- `archetypes/REGISTRY.md`
-- exact archetype contract resolved by the registry
+- `archetypes/REGISTRY.md` for specialist/archetype resolution
+- the exact archetype contract resolved by `archetypes/REGISTRY.md`
 - `core/protocols/PROJECT_ADAPTER_CONTRACT.md`
 - `core/protocols/PROJECT_BOOTSTRAP_CONTRACT.md`
 - `core/protocols/PROJECT_CONTINUITY_CONTRACT.md`
-- `core/protocols/HYBRID_SPECIALIST_BOOTSTRAP_CONTRACT.md`
-- `core/protocols/EVIDENCE_RETRIEVAL_RESILIENCE_CONTRACT.md` when retrieval risk is material
+- `core/protocols/HYBRID_SPECIALIST_BOOTSTRAP_CONTRACT.md` for hybrid/multi-project specialist work
+- `core/protocols/EVIDENCE_RETRIEVAL_RESILIENCE_CONTRACT.md` when large-file, large-tree, truncation, incomplete transport or context-budget risk is material
 
-Hybrid behavioral validation:
+Behavioral validation of the hybrid bootstrap contract is defined in:
+
 - `tests/behavioral/HYBRID_SPECIALIST_BOOTSTRAP_TESTS.md`
 
-SaaS Architect runtime:
+For the `saas-architect` Custom GPT runtime candidate, also read when validating/applying/testing that candidate:
+
 - `runtime/custom-gpt/SAAS_ARCHITECT_BUILDER_PROFILE.md`
 - `runtime/custom-gpt/UNIVERSAL_BUILDER_KERNEL.md`
 - `runtime/custom-gpt/GITHUB_READONLY_ACTION.openapi.yaml`
 - `tests/runtime/HYBRID_SAAS_ARCHITECT_RUNTIME_RUNBOOK.md`
 - `tests/runtime/HYBRID_SAAS_ARCHITECT_FIXTURES.md`
 
-Documentation Auditor runtime:
+For the `documentation-auditor` Custom GPT runtime candidate, also read when validating/applying/testing that candidate:
+
 - `runtime/custom-gpt/DOCUMENTATION_AUDITOR_BUILDER_PROFILE.md`
 - `runtime/custom-gpt/DOCUMENTATION_AUDITOR_BUILDER_KERNEL.md`
 - `runtime/custom-gpt/GITHUB_READONLY_ACTION.openapi.yaml`
 - `tests/runtime/DOCUMENTATION_AUDITOR_RUNTIME_RUNBOOK.md`
 - `tests/behavioral/DOCUMENTATION_AUDITOR_TESTS.md`
-- `tests/behavioral/HYBRID_SPECIALIST_BOOTSTRAP_TESTS.md`
+- `core/protocols/EVIDENCE_RETRIEVAL_RESILIENCE_CONTRACT.md` when the task or runtime case exercises retrieval resilience
 
-Future contracts must remain reachable from this bootstrap rather than become competing entrypoints.
+Future archetype, specialist, validation and versioning contracts must be reached from this bootstrap rather than becoming independent entrypoints.
 
 ## 3. Archetype resolution
 
-Before a reusable SES specialist performs material work or presents its project menu:
+Before a reusable SES specialist performs material specialist work:
 
 1. read `archetypes/REGISTRY.md` on `SES_EFFECTIVE_REF`;
-2. resolve requested `ARCHETYPE_ID` deterministically;
-3. read the exact `CONTRACT_PATH`;
-4. fail closed if no unique active archetype resolves.
-
-`ARCHETYPE_RESOLVED != PROJECT_CONTEXT_READY`
-
-Project-local specialist identity/overrides remain consumer-project owned and are resolved only after a substantive task activates project materialization.
-
-## 4. Consumer-project entry: selection first, materialization only for a task
-
-Every hybrid specialist uses one ordered project-entry flow.
-
-### 4.1 Resolve project identity
-
-1. classify `PROJECT_IDENTIFIER` as user-supplied or `NOT_SUPPLIED`;
-2. classify `TASK_SCOPE` as substantive or `NOT_YET_SUPPLIED`;
-3. read `projects/REGISTRY.md` on exact `SES_EFFECTIVE_REF`;
-4. execute project-resolution semantics from `core/protocols/HYBRID_SPECIALIST_BOOTSTRAP_CONTRACT.md`;
-5. if project is absent, including `# CLIQUE PARA INICIAR`, display current `ACTIVE` projects by `CANONICAL_NAME` as a numbered list and wait for a valid selection;
-6. if project was supplied directly, validate it through the same resolution stage;
-7. obtain one unique `PROJECT_ID` and `ADAPTER_PATH`.
-
-The menu is UX over the live registry. Never hard-code numbers.
+2. resolve the requested `ARCHETYPE_ID` deterministically;
+3. read the exact `CONTRACT_PATH` returned by the registry;
+4. fail closed if no unique active archetype resolves;
+5. for project-specific work, continue to project resolution rather than treating archetype resolution as project readiness.
 
 ```text
-PROJECT_LISTED != PROJECT_SPECIALIST_READY
-PROJECT_SELECTED != PROJECT_BOOTSTRAPPED
-PROJECT_SELECTED != PROJECT_CONTEXT_READY
+ARCHETYPE_RESOLVED
+!=
+PROJECT_CONTEXT_READY
 ```
 
-### 4.2 Stop when the task is absent
+A project-local specialist identity/override must be resolved from the consumer project's canonical sources after project bootstrap. Do not freeze consumer-project specialist identities into the universal archetype registry.
 
-When:
+## 4. Consumer-project resolution
+
+Before project-specific specialist work:
+
+1. collect or identify the project name/ID explicitly;
+2. define the full requested `TASK_SCOPE`;
+3. classify `TARGET_REF_OR_OBJECT` and `ENVIRONMENT`, using `NOT_REQUIRED_FOR_THIS_TASK` only when genuinely immaterial;
+4. resolve the project identifier through `projects/REGISTRY.md`;
+5. obtain one unique `PROJECT_ID` and `ADAPTER_PATH` from the registry;
+6. read the registered Project Adapter at that exact path;
+7. use the adapter only to locate the consumer project's canonical source and entrypoints;
+8. resolve the consumer project's live canonical ref;
+9. execute the project-local bootstrap protocol;
+10. resolve the applicable specialist/project-local rules and overrides;
+11. read project-local common rules and authority/governance sources when applicable;
+12. execute the project-local continuity protocol when current-state continuity is material;
+13. resolve live evidence material to the exact task/target/environment;
+14. for hybrid specialists, emit the task-bound Context Readiness Receipt required by `core/protocols/HYBRID_SPECIALIST_BOOTSTRAP_CONTRACT.md`;
+15. only then perform project-specific substantive work within the receipt's effective scope.
+
+This order is normative for hybrid SES-mediated work and aligns with `core/protocols/PROJECT_BOOTSTRAP_CONTRACT.md`:
 
 ```text
-PROJECT_SELECTION_STATUS: RESOLVED
-TASK_SCOPE: NOT_YET_SUPPLIED
+PROJECT BOOTSTRAP
+-> SPECIALIST / PROJECT-LOCAL RULES
+-> COMMON RULES / AUTHORITY WHEN APPLICABLE
+-> CONTINUITY WHEN CURRENT STATE MATTERS
+-> MATERIAL LIVE OBJECTS
 ```
 
-stop before consumer-project materialization.
+Do not use fuzzy project-name guessing for material resolution. Zero matches = `PROJECT_NOT_REGISTERED`; multiple matches = `PROJECT_ID_AMBIGUOUS`.
 
-Do not yet:
-
-- read the Project Adapter;
-- resolve consumer-project `main`;
-- read project bootstrap;
-- resolve project-local specialist rules;
-- read continuity;
-- read authority/governance;
-- retrieve project evidence;
-- emit a Context Readiness Receipt.
-
-Ask the user for the task.
-
-`NO SUBSTANTIVE TASK -> NO CONSUMER-PROJECT MATERIALIZATION`
-
-This stop is a state-machine gate, not a bypass.
-
-### 4.3 Continue when a substantive task exists
-
-Once a substantive `TASK_SCOPE` exists:
-
-1. revalidate selected `PROJECT_ID` against the applicable live registry when material;
-2. classify `TARGET_REF_OR_OBJECT` and `ENVIRONMENT`;
-3. read the registered Project Adapter;
-4. use it only to locate consumer canonical sources/entrypoints;
-5. resolve consumer-project live canonical ref;
-6. execute project-local bootstrap;
-7. resolve applicable project-local specialist rules/overrides;
-8. classify which downstream sources are material to the task;
-9. read project-local common/authority/governance sources only when task-material or explicitly mandatory for every substantive task;
-10. execute project continuity only when current state is material;
-11. resolve live evidence material to exact task/target/environment;
-12. emit the task-bound Context Readiness Receipt;
-13. only then perform project-specific substantive work within `EFFECTIVE_SCOPE`.
-
-Project bootstrap establishes source ordering and mandatory policy. It does not justify ceremonial retrieval of every referenced document when the task does not depend on it.
-
-Use progressive disclosure:
-
-`TASK -> CLAIMS -> PROOF OBLIGATIONS -> MATERIAL SURFACES -> TARGETED RETRIEVAL`
-
-### 4.4 Project and task supplied together
-
-If the user supplies both a resolvable project and substantive task in one request, traverse the same stages in order and continue directly into materialization. No alternate path is created.
-
-Do not use fuzzy project guessing. Zero matches = `PROJECT_NOT_REGISTERED`; multiple matches = `PROJECT_ID_AMBIGUOUS`.
-
-A starter such as `# CLIQUE PARA INICIAR` is UX input only; it is not project configuration, readiness or authority.
+A conversation starter such as "Which project are we working on?" is UX only. It is not a security boundary and does not replace registry/adapter/bootstrap resolution.
 
 ## 5. Task-bound readiness semantics
 
-A Context Readiness Receipt exists only for substantive work.
+A readiness receipt applies only to the exact task, effective scope, target, environment and material evidence to which it was bound.
 
 `READY_FOR_TASK_A != READY_FOR_TASK_B`
 
-`CONTEXT_STATUS: READY` means full requested `TASK_SCOPE` can be completed safely and `EFFECTIVE_SCOPE` is materially equivalent.
+For hybrid specialists:
 
-`CONTEXT_STATUS: LIMITED` means only an explicit strict safe subset can be completed and excluded scope is identified in `GAPS`.
+```text
+CONTEXT_STATUS: READY
+```
 
-`CONTEXT_STATUS: BLOCKED` means a material gap/conflict prevents the requested conclusion and no safe reduced scope exists.
+means the entire requested `TASK_SCOPE` can be completed safely and `EFFECTIVE_SCOPE` is materially equivalent to it.
 
-An irrelevant source classified `NOT_REQUIRED_FOR_THIS_TASK` does not itself make a task `LIMITED`.
+```text
+CONTEXT_STATUS: LIMITED
+```
 
-Project selection alone does not produce a readiness receipt.
+means the full requested scope cannot be completed, but an explicit strict subset recorded as `EFFECTIVE_SCOPE` can be completed safely and the excluded portion is identified in `GAPS`.
+
+```text
+CONTEXT_STATUS: BLOCKED
+```
+
+means a material gap/conflict prevents the requested decision and no safe reduced scope has been established.
+
+An irrelevant source classified `NOT_REQUIRED_FOR_THIS_TASK` does not by itself make a task `LIMITED`.
 
 ## 6. Receipt invalidation and proportional revalidation
 
-Do not reuse prior `READY` as session-wide project certification.
+Do not reuse a prior `READY` as session-wide project certification.
 
-Re-evaluate when material:
+When any of the following becomes material, re-evaluate the receipt and revalidate the affected dependencies:
 
 - project switch;
-- task/effective-scope change;
-- target/object/ref change;
+- material task/effective-scope change;
+- target ref/object change;
 - environment change;
-- SES contract/ref change affecting task;
-- consumer live-ref change affecting task;
+- SES canonical/effective contract/ref change affecting the task;
+- consumer-project live-ref change affecting current-state work;
 - specialist source/ref change;
-- continuity invalidation;
-- authority or mutation-scope change;
-- Builder/kernel/action/model change affecting runtime proof;
-- new contradictory/superseding evidence.
+- continuity invalidation event;
+- authority model or mutation-scope change;
+- Builder/kernel/action/model change affecting a runtime behavioral claim;
+- new contradictory or superseding evidence.
 
-Use `RECEIPT_VALIDITY: STALE_REVALIDATION_REQUIRED` until affected dependencies are revalidated.
+Use:
 
-Do not replay unrelated gates or reread immutable evidence solely because an unrelated ref changed.
+```text
+RECEIPT_VALIDITY: STALE_REVALIDATION_REQUIRED
+```
 
-A selection-only state has no Context Readiness Receipt to reuse.
+until the newly material/invalidated evidence has been resolved and a new receipt is emitted.
+
+Revalidation must be proportional. Do not replay unrelated gates or reread immutable evidence solely because an unrelated ref changed.
 
 ## 7. Fail-closed project entry
 
-For substantive project-specific work, fail closed when material dependencies are unresolved, including:
+Project-specific work must not proceed as established project context when any of the following is unresolved and material to the task:
 
-- SES bootstrap;
-- archetype;
+- SES bootstrap on the applicable effective ref;
+- requested archetype when archetype behavior is required;
+- project identity;
 - project registry mapping;
-- Project Adapter;
+- project adapter;
 - canonical source;
-- project bootstrap;
-- project-local specialist rules;
-- authority model when material;
-- continuity/current-state source when material;
-- evidence required for decision;
-- unresolved project-source conflict;
-- mutation authorization when mutation is requested.
+- project bootstrap entrypoint;
+- specialist/project-local rules;
+- required authority model/boundary source;
+- material current-state source when continuity is required;
+- live evidence required for the requested decision;
+- unresolved conflict between material project sources;
+- applicable mutation authorization when a mutation is requested.
 
 Use explicit states such as:
 
@@ -226,27 +203,43 @@ Use explicit states such as:
 
 Do not invent missing project context.
 
+For hybrid specialists:
+
 `NO VERIFIED PROJECT CONTEXT -> NO PROJECT-SPECIFIC SUBSTANTIVE WORK`
 
 ## 8. Source-of-truth and authority boundary
 
-SES owns reusable engineering contracts, archetypes, runtime-candidate specifications and project registration metadata.
+SES owns reusable engineering contracts, archetype contracts, runtime-candidate configuration specifications and project registration metadata.
 
-Consumer projects own project truth, live state, authority, environments, decisions, runtime evidence and project-local specialist rules.
+The consumer project owns its own:
 
-Project Registry maps identifiers to adapters. Adapters point to project-owned sources. Neither duplicates consumer truth.
+- product/project truth;
+- live operational state;
+- authority;
+- environments;
+- current decisions;
+- runtime evidence;
+- project-local specialist rules.
 
-Context does not grant mutation authority.
+The Project Registry maps identifiers to adapters. A Project Adapter points to project-owned sources. Neither may duplicate consumer-project truth.
+
+A successful bootstrap establishes context only. It does not grant mutation authority.
 
 ```text
-AUTHORITY_MODEL_STATUS != MUTATION_AUTHORIZATION_STATUS
-CONTEXT_READY != AUTHORIZED_TO_MUTATE
-TOOL_CAPABILITY != AUTHORIZATION
+AUTHORITY_MODEL_STATUS
+!=
+MUTATION_AUTHORIZATION_STATUS
 ```
+
+`CONTEXT_READY != AUTHORIZED_TO_MUTATE`
+
+A write-capable tool does not authorize a mutation. A requested mutation without explicit applicable authorization must not execute.
+
+The first `SES — SaaS Architect` runtime candidate intentionally uses a GitHub READ_ONLY Action; its schema contains no write operations.
 
 ## 9. Runtime-candidate integrity
 
-Keep separate:
+Keep these lifecycle states separate:
 
 ```text
 VERSIONED_PROFILE
@@ -256,20 +249,35 @@ RUNTIME_BEHAVIORAL_PROOF
 PUBLISHED
 ```
 
-Before runtime testing:
+Versioning a Builder profile/kernel/action schema in SES does not prove it has been applied externally.
 
-1. resolve applicable archetype;
-2. read exact Builder profile/kernel;
-3. capture required Builder fingerprint;
-4. resolve actual Action schema;
-5. execute applicable runtime runbook and canonical suites;
-6. preserve archetype-specific resilience/fixture obligations.
+Before runtime testing of any SES Custom GPT candidate:
 
-No Builder secret/token may be committed.
+1. resolve the applicable archetype from `archetypes/REGISTRY.md`;
+2. read that archetype's versioned Builder profile and kernel listed in this bootstrap;
+3. capture the Builder fingerprint required by that profile;
+4. resolve the Action schema actually applied;
+5. execute the runtime runbook and canonical behavioral suite applicable to that archetype;
+6. keep any archetype-specific resilience/fixture requirements separate and explicit.
+
+For `saas-architect`, use:
+
+- `runtime/custom-gpt/SAAS_ARCHITECT_BUILDER_PROFILE.md`
+- `tests/runtime/HYBRID_SAAS_ARCHITECT_RUNTIME_RUNBOOK.md`
+- `tests/behavioral/HYBRID_SPECIALIST_BOOTSTRAP_TESTS.md`
+
+For `documentation-auditor`, use:
+
+- `runtime/custom-gpt/DOCUMENTATION_AUDITOR_BUILDER_PROFILE.md`
+- `tests/runtime/DOCUMENTATION_AUDITOR_RUNTIME_RUNBOOK.md`
+- `tests/behavioral/DOCUMENTATION_AUDITOR_TESTS.md`
+- `core/protocols/EVIDENCE_RETRIEVAL_RESILIENCE_CONTRACT.md` when resilience cases are material
+
+No Builder secret/token may be committed to SES.
 
 ## 10. Proof-level integrity
 
-Keep separate:
+Keep these conclusions separate:
 
 ```text
 SPEC_CONFORMANCE
@@ -277,11 +285,20 @@ CANDIDATE_HEAD_PROTOCOL_PROOF
 RUNTIME_BEHAVIORAL_PROOF
 ```
 
-For candidate-head proof preserve `SES_CANONICAL_MAIN_REF`, `SES_CANDIDATE_REF` and explicit `SES_EFFECTIVE_REF`.
+For candidate-head proof, preserve both:
 
-Runtime PASS requires the actual configured specialist/loading mechanism to execute every runtime-required canonical case applicable to the target version. Any required `NOT_EXECUTED`, `SKIPPED`, `INDETERMINATE` or failed case prevents PASS.
+```text
+SES_CANONICAL_MAIN_REF
+SES_CANDIDATE_REF
+```
 
-Do not substitute one archetype's proof for another.
+and identify `SES_EFFECTIVE_REF` explicitly.
+
+A coherent specification or successful read-only resolution chain on a candidate PR head does not prove that a future Custom GPT, Action/API loader or other runtime mechanism satisfies the behavior.
+
+`RUNTIME_BEHAVIORAL_PROOF = PASS` requires the actual configured specialist/loading mechanism to execute every runtime-required canonical case in the behavioral suite applicable to the resolved archetype, plus any additional runtime/resilience cases that the applicable runbook marks mandatory for the claimed readiness scope. Any required `NOT_EXECUTED`, `SKIPPED`, `INDETERMINATE` or failed case prevents the corresponding runtime/readiness PASS.
+
+Do not substitute one archetype's behavioral suite for another archetype's runtime proof.
 
 ## 11. Change discipline
 
@@ -289,25 +306,31 @@ For material SES changes:
 
 `one PR = one primary risk = one simple rollback`
 
-Repository changes do not authorize mutation in consumer projects or external GPT Builders.
+Creating or updating SES documentation/runtime specifications does not authorize mutation in any consumer project or external GPT Builder. Central evolution does not automatically mutate or upgrade registered projects.
 
-`CENTRAL EVOLUTION != AUTOMATIC RUNTIME MUTATION`
+## 12. SES self-continuity / SFJM operational layer
 
-## 12. SES self-continuity
+For material work on **SES itself** when current operational continuity is relevant, this bootstrap also resolves the SES-owned SFJM continuity layer:
 
-For material work on SES itself when operational continuity is relevant:
+1. `handoffs/CURRENT.md`;
+2. `docs/PROJECT_STATUS.md`;
+3. `docs/NEXT_SAFE_ACTION.md`;
+4. `docs/BLOCKED_ACTIONS.md`.
 
-1. `handoffs/CURRENT.md`
-2. `docs/PROJECT_STATUS.md`
-3. `docs/NEXT_SAFE_ACTION.md`
-4. `docs/BLOCKED_ACTIONS.md`
+`docs/NEXT_SAFE_ACTION.md` is the sole authoritative record of the current semantic next safe action for SES. Bootstrap, handoff and project status may contain only derived summaries of that action.
 
-`docs/NEXT_SAFE_ACTION.md` is the sole authoritative semantic next action. Other continuity files are derived summaries.
+If a derived summary conflicts materially with the authoritative next-action record or with a newer live authoritative source, stop and reconcile before execution.
 
-`LIVE_RESOLVED_STATE != MATERIAL_RECORDED_STATE`
+The continuity model follows:
 
-Resolve volatile repository, review, Builder, environment and consumer-project facts live when material.
+```text
+LIVE_RESOLVED_STATE
+!=
+MATERIAL_RECORDED_STATE
+```
 
-This SES continuity layer does not replace consumer-project continuity.
+Volatile repository, review, Builder, environment and consumer-project facts must be resolved live when material. Continuity is updated only when a material objective, decision, blocker, proof state, authority boundary or semantic next action changes; ordinary commits and conversation changes do not force a continuity rewrite.
 
-The operational method was adopted from `wagnerjfjunior/StopJuniorMode` baseline `d03d477c3b329aa973a38ec4e949c249fa017929` as a reference method, not as authority for SES state. Future SFJM evolution does not automatically mutate SES.
+This SES self-continuity layer does **not** replace consumer-project continuity. Registered projects remain authoritative for their own state and are still resolved through `projects/REGISTRY.md`, the applicable Project Adapter and project-owned bootstrap/continuity sources.
+
+The operational method was adopted from the SFJM canonical bootstrap protocol in `wagnerjfjunior/StopJuniorMode` at baseline `d03d477c3b329aa973a38ec4e949c249fa017929`. That repository is a method/reference source for this adoption, not the authority for SES project state. Future SFJM evolution does not automatically mutate SES; changes require a deliberate versioned SES change.
