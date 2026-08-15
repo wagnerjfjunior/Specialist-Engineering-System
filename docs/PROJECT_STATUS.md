@@ -28,13 +28,11 @@ Retired flow:
 → cross-turn resume
 ```
 
-The target interaction returns to direct project + substantive task entry with multiple universal conversation starters.
+The target interaction is direct project + substantive task entry with multiple universal conversation starters.
 
 ## 3. Rollback strategy
 
-This is a forward rollback, not a repository reset.
-
-Restore exact pre-feature artifacts where no independent later hardening exists. Preserve later corrections that are independent of the retired interaction.
+The rollback is a forward fix, not a repository reset.
 
 Classification:
 
@@ -45,23 +43,41 @@ PR #16: PRESERVE EOF / INTEGRAL_READ hardening
 PR #17: PRESERVE receipt-before-substantive-output correction
 PR #18: PRESERVE runtime-enforcement proof boundary as bounded learning
 PR #19: HISTORICAL ABANDONED / STOP-LOSS / NOT_MERGED
+PR #20: MERGED controlled rollback
 ```
 
 ## 4. Runtime state
 
 | Area | Recorded state |
 |---|---|
-| SaaS Architect v0.1 | historical `RUNTIME_BEHAVIORAL_PROOF = PASS`, T01–T29 = 29/29; restored as active repository baseline by rollback |
+| SaaS Architect historical v0.1 | `RUNTIME_BEHAVIORAL_PROOF = PASS`, T01–T29 = 29/29, bound to historical fingerprint/kernel blob `50672d09665035c0f60f18887f3295a5ea8cad03` |
+| SaaS Architect current Builder target | v0.1 direct-entry semantics preserved in Builder-fit compact kernel `runtime/custom-gpt/SAAS_ARCHITECT_BUILDER_KERNEL.md`; new fingerprint; current runtime equivalence not yet established |
 | SaaS Architect v0.2/v0.3 | selection-first targets superseded by stop loss; historical evidence preserved |
 | Documentation Auditor v0.4 | historical P09 failures preserved; runtime proof `NOT_ESTABLISHED` |
 | Documentation Auditor v0.5 | C01 historical PASS; P09 receipt-order FAIL; coverage hardening preserved |
 | Documentation Auditor v0.6 | receipt omission FAIL; unsupported integral promotion remained 0; mechanical enforcement `NOT_ESTABLISHED` |
 | Documentation Auditor v0.7 | abandoned cross-turn hardening; PR #19 not merged |
-| Documentation Auditor v0.8 | post-stop-loss rollback target; Builder application/runtime proof not yet established |
+| Documentation Auditor v0.8 | post-stop-loss rollback target; Builder reconciliation/smoke remains task-bound |
 
-## 5. Preserved independent hardenings
+## 5. Builder-fit correction
 
-The rollback must preserve:
+The historical SaaS v0.1 kernel text exceeds the current Builder Instructions hard limit when copied in the present UI. Do not manually truncate it.
+
+Current target:
+
+```text
+PROFILE: runtime/custom-gpt/SAAS_ARCHITECT_BUILDER_PROFILE.md
+INSTRUCTIONS: runtime/custom-gpt/SAAS_ARCHITECT_BUILDER_KERNEL.md
+MEASURED_CODE_POINTS: 6182
+SES_OPERATIONAL_BUDGET: <= 7500
+LEGACY_PATH: runtime/custom-gpt/UNIVERSAL_BUILDER_KERNEL.md / DEPRECATED COMPATIBILITY LOCATOR
+```
+
+This correction preserves the architecture/safety semantics but changes the Builder fingerprint; therefore historical v0.1 PASS is not relabeled as current-runtime PASS.
+
+## 6. Preserved independent hardenings
+
+Preserve:
 
 - `NOT_READ / PARTIAL_READ / INTEGRAL_READ` discipline;
 - positive start-through-EOF proof before `INTEGRAL_READ`;
@@ -74,18 +90,10 @@ The rollback must preserve:
 - anti-overclaim lifecycle separation;
 - historical evidence without retroactive PASS.
 
-## 6. Consumer projects
+## 7. Consumer projects
 
-Current SES Project Registry consumers remain project-owned.
+No consumer-project mutation follows automatically from SES changes. FECH.AI and Blogs/Sites/Portais/SEO remain authoritative for their own state and rules.
 
-No consumer-project rollback follows automatically from this SES change.
+## 8. Continuity policy
 
-The FECH.AI response-order correction made in PR #121 is independent of the single-starter UX and remains valid unless FECH.AI itself later changes it through its own authority/process.
-
-Blogs/Sites/Portais/SEO remains independently authoritative for its own GPTs/bootstrap/SFJM state.
-
-## 7. Continuity policy
-
-`docs/NEXT_SAFE_ACTION.md` is the sole authoritative semantic next action. This file is derived state only.
-
-If this status conflicts materially with `docs/NEXT_SAFE_ACTION.md` or newer live authority, stop and reconcile.
+`docs/NEXT_SAFE_ACTION.md` is the sole authoritative semantic next action. This file is derived state only. If it conflicts materially with that file or newer live authority, stop and reconcile.
