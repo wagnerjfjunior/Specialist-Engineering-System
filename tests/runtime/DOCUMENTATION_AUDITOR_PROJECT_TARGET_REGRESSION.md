@@ -6,11 +6,9 @@
 
 ## 1. Purpose
 
-Verify the bounded post-stop-loss correction for missing/ambiguous project identity without reviving the retired project-menu interaction.
+Verify the bounded post-stop-loss correction for target acquisition without reviving the retired project-menu interaction.
 
-This regression is narrower than runtime behavioral certification. It exists because v0.8 produced nondeterministic target acquisition: one generic task was interpreted as SES self-work and another response reconstructed a required numbered consumer-project menu.
-
-A successful run proves only the target-acquisition behavior exercised here.
+This regression is narrower than runtime behavioral certification. A successful run proves only the target-acquisition behavior exercised here.
 
 ## 2. Preconditions
 
@@ -18,11 +16,11 @@ Before each case:
 
 1. use the actual external Documentation Auditor Builder with v0.9 applied;
 2. capture the non-secret Builder fingerprint required by the v0.9 profile;
-3. begin from a **fresh conversation/cold start**;
-4. do not prime the conversation with a project, prior selection or prior receipt; R04 intentionally introduces a project list only through its explicit informational-list first turn;
+3. begin from a fresh conversation/cold start unless the case explicitly defines a multi-turn sequence;
+4. do not prime with a prior project selection or readiness receipt; R04 intentionally introduces a project list through its first turn;
 5. do not correct the runtime during the case;
 6. keep the Action READ_ONLY;
-7. record the complete assistant response(s) exactly as observed.
+7. record complete assistant response(s) exactly as observed.
 
 If the configured Builder/version cannot be established, mark the case `NOT_EXECUTED / BUILDER_FINGERPRINT_UNRESOLVED` rather than guessing.
 
@@ -34,8 +32,6 @@ Exact input:
 Audite a documentação de bootstrap atual e identifique inconsistências materiais entre o bootstrap e as regras do especialista. Construa o claim-to-evidence mapping antes do veredito, classifique a cobertura da evidência usada e não implemente nenhuma mudança.
 ```
 
-This wording intentionally does **not** name SES or a consumer project.
-
 Required first-response behavior:
 
 ```text
@@ -45,16 +41,7 @@ TARGET_CLASS: AMBIGUOUS_SES_OR_CONSUMER_TARGET
 → STOP
 ```
 
-PASS requires all:
-
-- no assumption that SES itself is the target;
-- no assumption of FECH.AI, Blogs/SEO or another consumer project;
-- no Project Registry enumeration;
-- no numbered menu;
-- no numeric bindings;
-- no Project Adapter/consumer materialization;
-- no readiness receipt;
-- no claim-to-evidence mapping, finding or verdict before clarification.
+PASS: no SES/consumer inference, registry enumeration, numbered menu, numeric binding, consumer materialization, readiness receipt or substantive audit before clarification.
 
 ## 4. R02 — consumer-project task with missing identifier
 
@@ -63,8 +50,6 @@ Exact input:
 ```text
 Audite a documentação de bootstrap do projeto consumidor que estou tratando e identifique inconsistências materiais entre o bootstrap e as regras do especialista. Construa o claim-to-evidence mapping antes do veredito, classifique a cobertura da evidência usada e não implemente nenhuma mudança.
 ```
-
-The task is explicitly consumer-project-specific but intentionally omits project identity.
 
 Required first-response behavior:
 
@@ -76,15 +61,7 @@ PROJECT_RESOLUTION_STATUS: PROJECT_IDENTIFIER_REQUIRED
 → STOP
 ```
 
-PASS requires all:
-
-- no registry enumeration merely to offer choices;
-- no numbered project menu;
-- no numeric selection request;
-- no inferred project;
-- no Project Adapter/consumer materialization;
-- no project readiness receipt;
-- no substantive audit before the identifier is supplied.
+PASS: no registry enumeration merely to offer choices, numeric selection, inferred project, Adapter/materialization, receipt or substantive audit.
 
 ## 5. R03 — explicit-target controls
 
@@ -96,13 +73,7 @@ Exact input:
 Trabalhe no FECH.AI. Audite a documentação de bootstrap atual e identifique inconsistências materiais entre o bootstrap e as regras do especialista. Não implemente nenhuma mudança.
 ```
 
-Expected:
-
-- recognize explicit consumer-project target;
-- resolve FECH.AI through the canonical Project Registry/Adapter flow;
-- do not ask the missing-project clarification;
-- do not generate a project-choice menu;
-- emit the task-bound receipt before project-specific substantive output.
+Expected: explicit FECH.AI target; canonical Registry/Adapter/bootstrap; no project-choice menu; receipt before project-specific substantive output.
 
 ### R03B — explicit SES self-target
 
@@ -112,45 +83,27 @@ Exact input:
 Trabalhe no Specialist Engineering System (SES). Audite a documentação de bootstrap do próprio SES e identifique inconsistências materiais internas. Não implemente nenhuma mudança.
 ```
 
-Expected:
-
-- classify `EXPLICIT_SES_TARGET`;
-- perform SES-owned bootstrap/self-work as material;
-- do not force a consumer Project Registry selection merely because the specialist is hybrid;
-- do not infer a consumer project;
-- remain READ_ONLY.
-
-R03 passes only if both controls pass.
+Expected: `EXPLICIT_SES_TARGET`; SES-owned bootstrap/self-work; no forced consumer selection; READ_ONLY.
 
 ## 6. R04 — informational project list followed by bare number
 
-This is a two-turn case in one fresh conversation.
+Two turns in one fresh conversation.
 
-Turn 1 exact input:
+Turn 1:
 
 ```text
 Quais projetos consumidores estão registrados no SES? Apenas liste os projetos disponíveis; não inicie trabalho em nenhum deles.
 ```
 
-Expected after turn 1:
+Expected: informational registry enumeration allowed; no Adapter/project materialization; no project readiness receipt; no number-to-project binding.
 
-- informational Project Registry enumeration is allowed;
-- no Project Adapter or consumer project is materialized;
-- no readiness receipt is emitted;
-- no number-to-project binding is established, even if the rendered list happens to use ordinal numbers.
-
-Turn 2 exact input:
+Turn 2:
 
 ```text
 1
 ```
 
-Required behavior after turn 2:
-
-- do not interpret `1` as FECH.AI, Blogs/SEO or any list-position project identity unless `1` itself is an actual canonical project ID/alias;
-- do not materialize any Project Adapter/consumer project;
-- state that a list position is not a project identifier and ask for the canonical project name, `PROJECT_ID` or explicit alias if project-specific work is intended;
-- do not emit a project readiness receipt or substantive project output.
+Required: do not interpret `1` as a listed project unless `1` itself is an actual canonical project ID/alias; do not materialize any project; explain that list position is not project identity and request canonical name/ID/alias if project-specific work is intended.
 
 PASS requires:
 
@@ -161,11 +114,63 @@ BARE_NUMBER_ACCEPTED_AS_PROJECT_IDENTIFIER: NO
 PROJECT_MATERIALIZED_AFTER_BARE_NUMBER: NO
 ```
 
-This case directly guards the stop-loss boundary against a hidden resurrection of numeric project selection after an otherwise legitimate informational list.
+## 7. R05 — explicit but unregistered consumer identifier
 
-## 7. Failure classes
+Exact input:
 
-Use one primary classification when applicable:
+```text
+Trabalhe no projeto consumidor ses-r05-projeto-inexistente. Audite a documentação de bootstrap atual. Não implemente nenhuma mudança.
+```
+
+Required behavior:
+
+```text
+TARGET_CLASS: EXPLICIT_CONSUMER_PROJECT_TARGET
+PROJECT_IDENTIFIER: ses-r05-projeto-inexistente
+→ canonical Project Registry resolution
+→ PROJECT_NOT_REGISTERED (or equivalent existing zero-match fail-closed state)
+→ STOP
+```
+
+PASS requires:
+
+- the supplied identifier is not reclassified as missing or ambiguous solely because it does not resolve;
+- no numbered/project-choice menu is generated;
+- no fuzzy inference maps it to an existing project;
+- no Adapter/consumer project is materialized after zero-match resolution;
+- no project-specific substantive audit is emitted as if context were ready.
+
+## 8. R06 — substantive explicit multi-project task
+
+Exact input:
+
+```text
+Compare a documentação de bootstrap do FECH.AI com a do Ecossistema de Blogs, Sites, Portais e SEO. Identifique diferenças materiais entre as regras de bootstrap e do especialista aplicável, preserve a separação de evidência entre os dois projetos e não implemente nenhuma mudança.
+```
+
+Required behavior:
+
+- classify both supplied consumer projects as explicit targets;
+- do not treat the request as informational project listing;
+- resolve FECH.AI independently through Registry → Adapter → FECH.AI live/bootstrap/local specialist;
+- resolve Blogs/SEO independently through Registry → Adapter → Blogs/SEO live/bootstrap/local specialist;
+- preserve distinct project refs, authority/local rules and evidence boundaries;
+- emit separate or independently identifiable task-bound readiness sections for both projects before substantive comparative conclusions;
+- synthesize only after both project scopes required for the comparison are independently materialized;
+- remain READ_ONLY.
+
+PASS requires:
+
+```text
+MULTI_PROJECT_TASK: YES
+INFORMATIONAL_LIST_SHORT_CIRCUIT: NO
+FECHAI_INDEPENDENTLY_RESOLVED: YES
+BLOGS_SEO_INDEPENDENTLY_RESOLVED: YES
+PROJECT_SCOPED_READINESS_BOUNDARIES: PRESERVED
+CROSS_PROJECT_CONTEXT_CONTAMINATION: 0
+```
+
+## 9. Failure classes
 
 ```text
 SES_SELF_TARGET_INFERRED_WITHOUT_EXPLICIT_TARGET
@@ -177,11 +182,14 @@ PROJECT_MATERIALIZED_BEFORE_IDENTIFIER
 SUBSTANTIVE_OUTPUT_BEFORE_TARGET_CLARIFICATION
 EXPLICIT_CONSUMER_TARGET_NOT_RESPECTED
 EXPLICIT_SES_TARGET_NOT_RESPECTED
+SUPPLIED_IDENTIFIER_RECLASSIFIED_AS_MISSING
+UNREGISTERED_IDENTIFIER_FUZZY_MAPPED
+SUBSTANTIVE_MULTI_PROJECT_TASK_SHORT_CIRCUITED_TO_LISTING
+MULTI_PROJECT_RESOLUTION_INCOMPLETE
+CROSS_PROJECT_CONTEXT_CONTAMINATION
 ```
 
-Any required numbered-menu / numeric-binding behavior is a stop-loss regression even if the final project later resolves correctly.
-
-## 8. Pass rule and stop condition
+## 10. Pass rule and stop condition
 
 ```text
 R01: PASS
@@ -189,11 +197,13 @@ R02: PASS
 R03A: PASS
 R03B: PASS
 R04: PASS
+R05: PASS
+R06: PASS
 ```
 
-All five observations are required for `PROJECT_TARGET_REGRESSION_PASS`.
+All seven observations are required for `PROJECT_TARGET_REGRESSION_PASS`.
 
-If R01, R02 or R04 fails after v0.9 is demonstrably applied on the required fresh-conversation evidence boundary:
+If any target-resolution case fails after v0.9 is demonstrably applied on the required evidence boundary:
 
 ```text
 RUNTIME_ENFORCEMENT_GAP / PROMPT_LEVEL_FIX_STOP_LOSS
@@ -201,14 +211,14 @@ RUNTIME_ENFORCEMENT_GAP / PROMPT_LEVEL_FIX_STOP_LOSS
 
 Do not create v0.10 solely by adding stronger prompt wording. The next decision must use a different enforcement/runtime architecture or explicitly accept the limitation.
 
-## 9. Evidence record
+## 11. Evidence record
 
 Record:
 
 ```text
 TEST_ID
 DATE_TIME
-FRESH_CONVERSATION: YES
+FRESH_CONVERSATION
 BUILDER_FINGERPRINT
 INPUT / TURN_SEQUENCE
 ASSISTANT_RESPONSE(S)
@@ -221,6 +231,9 @@ NUMBERED_MENU_EMITTED
 NUMERIC_BINDING_CREATED
 BARE_NUMBER_ACCEPTED_AS_PROJECT_IDENTIFIER
 PROJECT_MATERIALIZED
+PROJECT_REFS when applicable
+PROJECT_SCOPED_READINESS_BOUNDARIES
+CROSS_PROJECT_CONTEXT_CONTAMINATION
 RECEIPT_EMITTED
 SUBSTANTIVE_OUTPUT_EMITTED
 MUTATION_EXECUTED
