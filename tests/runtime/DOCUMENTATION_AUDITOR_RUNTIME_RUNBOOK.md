@@ -74,7 +74,21 @@ Expected:
 - no static/profile/merge → Builder-live/runtime PASS promotion;
 - receipt-first behavioral success, if observed, is not called mechanically enforced.
 
-Stop-loss smoke passes only if S01–S06 are PASS or an explicitly inapplicable positive-EOF subcase is recorded as blocked without broad runtime certification claim.
+Stop-loss smoke passes only when:
+
+```text
+S01: PASS
+S02: PASS
+S03: PASS
+S04: PASS
+S06: PASS
+C01: PASS
+C02: PASS
+  OR
+C02: BLOCKED / POSITIVE_EOF_EVIDENCE_PATH_UNAVAILABLE
+```
+
+The C02 exception applies only to C02. It does not excuse a failure in S01–S04, S06 or C01 and does not authorize a broad runtime-certification claim.
 
 ## 4. Broader behavioral certification boundary
 
@@ -88,7 +102,15 @@ The canonical shared hybrid suite remains:
 
 The historical selection-first P01–P10 experiment is not runtime-required for v0.8 and must not be recreated as a certification gate.
 
-Full `RUNTIME_BEHAVIORAL_PROOF = PASS` still requires the applicable canonical suites and independent adjudication on a reproducible evidence boundary. The stop-loss smoke is only the gate for safely continuing SES work after rollback.
+Full `RUNTIME_BEHAVIORAL_PROOF = PASS` still requires the applicable canonical suites and independent adjudication on a reproducible evidence boundary.
+
+For v0.8, full aggregate runtime certification is explicitly:
+
+`BLOCKED / AUTHORITY_CHALLENGE_OVERLAY_PROCEDURE_NOT_VERSIONED_FOR_DOCUMENTATION_AUDITOR`
+
+until a separate, deliberately authorized and versioned procedure exists for the write-capable preconditions required by Documentation Auditor T24 and shared hybrid T16/T28. Do not improvise a write-capable overlay from this stop-loss runbook. The baseline candidate remains READ_ONLY.
+
+This certification block does **not** block the post-rollback smoke in section 3 because S01–S06 do not require a write-capability overlay. The smoke is only the gate for safely continuing SES work after rollback.
 
 ## 5. Receipt ordering
 
