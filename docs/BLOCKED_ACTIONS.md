@@ -37,7 +37,7 @@ Historical evidence about the retired experiment remains readable and must not b
 
 ## 3. Documentation Auditor v0.9 enforcement stop-loss blocks
 
-Formal v0.9 Gate 0 completed on a fingerprinted private Builder. The initial repository evidence record preserved an earlier `R03A: PASS` adjudication. Full-transcript PR self-review later established that R03A emitted project-specific substantive FECH.AI commentary before its receipt, so the current adjudication is corrected without rewriting the initial record.
+Formal v0.9 Gate 0 completed on a fingerprinted private Builder. The initial repository evidence record preserved an earlier `R03A: PASS` adjudication. Full-transcript/contract review later established both the R03A ordering failure and an additional R06 invalid-readiness dimension.
 
 ```text
 R01: PASS
@@ -46,7 +46,7 @@ R03A: FAIL / PROJECT-SPECIFIC SUBSTANTIVE OUTPUT BEFORE RECEIPT
 R03B: PASS
 R04: PASS
 R05: PASS
-R06: FAIL / SUBSTANTIVE MULTI-PROJECT COMPARATIVE OUTPUT BEFORE READINESS
+R06: FAIL / EARLY SUBSTANTIVE COMPARISON + INVALID/INCOMPLETE READINESS ARTIFACT
 PROJECT_TARGET_REGRESSION: 5/7
 PROJECT_TARGET_REGRESSION_PASS: NOT_ESTABLISHED
 RUNTIME_ENFORCEMENT_GAP: ESTABLISHED
@@ -60,11 +60,12 @@ Durable evidence:
 
 Until a separately reviewed material runtime/enforcement boundary exists, block:
 
-- creating Documentation Auditor v0.10 solely by strengthening prompt/kernel wording for receipt order;
+- creating Documentation Auditor v0.10 solely by strengthening prompt/kernel wording for receipt order/readiness validity;
 - rerunning R03A or R06 merely to seek a more favorable aggregate result;
-- relabeling later successful retries as retroactive repair of the formal failed cases;
+- relabeling later successful retries as retroactive repair of formal failed cases;
 - proceeding with the old v0.9 proportional smoke sequence as if Gate 0 passed;
-- claiming receipt-first is deterministic or mechanically enforced from Builder instructions or behavioral success alone;
+- treating a receipt heading or partial receipt fields as proof of canonical readiness validity;
+- claiming receipt-first/readiness validity is deterministic or mechanically enforced from Builder instructions or behavioral success alone;
 - mutating FECH.AI or Blogs/SEO because SES runtime enforcement failed;
 - implementing/deploying the proposed Gateway merely because ADR design direction exists;
 - promoting the Documentation Auditor-specific Gateway learning to a universal SES runtime requirement without independent cross-specialist evidence and architecture review.
@@ -81,7 +82,7 @@ When task and tool surface permit it:
 - compare live observations with versioned SES sources;
 - synthesize bounded project status;
 - identify missing evidence, drift and proof invalidation events;
-- design the Gateway state machine, interfaces, readiness schema, invalid-transition challenge and observability requirements without implementation.
+- design the Gateway state machine, interfaces, readiness schema/validator, invalid-transition challenge, malformed-readiness challenge and observability requirements without implementation.
 
 Read-only capability does not authorize subsequent mutation.
 
@@ -98,7 +99,7 @@ EXPLICIT PROJECT_IDENTIFIER + TASK_SCOPE
 → PROJECT ADAPTER
 → CONSUMER PROJECT LIVE CANONICAL SOURCE
 → PROJECT BOOTSTRAP / LOCAL SPECIALIST / MATERIAL CONTINUITY-AUTHORITY
-→ TASK-BOUND READINESS
+→ CANONICALLY VALID TASK-BOUND READINESS
 → WORK
 ```
 
@@ -108,7 +109,7 @@ No Gateway design or SES runtime failure grants authority to change a consumer p
 
 ## 6. Conflict rule
 
-If `docs/NEXT_SAFE_ACTION.md` conflicts materially with bootstrap, handoff, project status, a live authoritative source, runtime runbook, evidence/readjudication or an applicable authority boundary:
+If `docs/NEXT_SAFE_ACTION.md` conflicts materially with bootstrap, handoff, project status, a live authoritative source, Builder profile, runtime runbook, evidence/readjudication or an applicable authority boundary:
 
 1. stop execution;
 2. resolve the live source and exact conflict;
