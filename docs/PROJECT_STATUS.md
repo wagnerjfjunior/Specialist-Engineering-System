@@ -13,24 +13,13 @@ SES is project-agnostic specialist-engineering infrastructure. Consumer projects
 
 `SES CENTRAL EVOLUTION != AUTOMATIC CONSUMER-PROJECT MUTATION`
 
-SFJM continuity remains an operational continuity mechanism; it is not the owner of this runtime/enforcement decision.
+SFJM remains a continuity mechanism, not the owner of this SES runtime/enforcement decision.
 
 ## 2. Stop-loss decisions
 
-The standardized single-starter / dynamic project-menu / numeric-selection / cross-turn-resume feature remains discontinued.
+The single-starter / numbered-project-menu / numeric-selection / cross-turn-resume feature remains discontinued.
 
-```text
-# CLIQUE PARA INICIAR
-→ numbered ACTIVE project menu
-→ numeric selection
-→ PROJECT_SELECTED
-→ WAIT FOR TASK
-→ cross-turn resume
-```
-
-The active interaction direction remains direct explicit target/project + substantive task entry with multiple universal conversation starters.
-
-A second stop-loss is now active for Documentation Auditor prompt hardening:
+A second stop-loss is active for Documentation Auditor prompt hardening:
 
 ```text
 APPLIED_V0_9_REQUIRED_CASE_FAIL
@@ -49,8 +38,8 @@ PR #17: preserved receipt-before-substantive-output correction
 PR #18: preserved runtime-enforcement proof boundary
 PR #19: ABANDONED / STOP-LOSS / NOT_MERGED
 PR #20: MERGED controlled rollback
-PR #21: MERGED SaaS Architect Builder-fit kernel/name correction
-PR #22: MERGED Documentation Auditor v0.9 project-target disambiguation correction
+PR #21: MERGED SaaS Architect Builder-fit correction
+PR #22: MERGED Documentation Auditor v0.9 target disambiguation
 ```
 
 Historical evidence is not rewritten.
@@ -60,35 +49,28 @@ Historical evidence is not rewritten.
 | Area | Recorded state |
 |---|---|
 | SaaS Architect historical v0.1 | `RUNTIME_BEHAVIORAL_PROOF = PASS`, T01–T29 = 29/29, exact historical fingerprint only |
-| SaaS Architect current target | compact `runtime/custom-gpt/SAAS_ARCHITECT_BUILDER_KERNEL.md`, 6182 code points; proportional smoke still required and currently deferred |
-| Documentation Auditor v0.4-v0.6 | historical receipt/coverage failures preserved; no retroactive PASS |
+| SaaS Architect current target | proportional Builder-fit smoke still required and deferred |
+| Documentation Auditor v0.4-v0.6 | historical receipt/coverage failures preserved |
 | Documentation Auditor v0.7 | abandoned; PR #19 not merged |
-| Documentation Auditor v0.8 | direct FECH.AI and Blogs/SEO observations passed; missing/ambiguous target reproduced retired numbered-menu behavior |
-| Documentation Auditor v0.9 Builder | applied to the private external Builder; non-secret fingerprint captured before formal Gate 0 |
-| Documentation Auditor v0.9 Builder profile | reconciled to applied/fingerprinted/Gate0-failed lifecycle; no active-looking `NOT_YET_APPLIED` state |
-| Documentation Auditor v0.9 Gate 0 | corrected current adjudication `5/7`; R01, R02, R03B, R04, R05 PASS; R03A and R06 FAIL |
-| Documentation Auditor initial R03A adjudication | `PASS / INITIAL_OVERCLAIM_PRESERVED`; corrected by full-transcript ordering review |
-| Documentation Auditor R06 readiness | later artifact present but `INVALID/INCOMPLETE` against canonical hybrid receipt semantics |
-| Documentation Auditor project-target regression | `PROJECT_TARGET_REGRESSION_PASS = NOT_ESTABLISHED` |
-| Documentation Auditor proportional smoke | `BLOCKED_BY_GATE0_FAIL`; old S01–S06 queue is not active |
+| Documentation Auditor v0.8 | direct-project observations passed; missing/ambiguous target reproduced retired menu behavior |
+| Documentation Auditor v0.9 Builder | applied to private external Builder; fingerprint complete |
+| Documentation Auditor v0.9 Builder profile | reconciled to applied/fingerprinted/Gate0-failed lifecycle |
+| Documentation Auditor v0.9 Gate 0 | corrected current adjudication `4/7`; R01, R02, R03B, R04 PASS; R03A, R05, R06 FAIL |
+| Initial adjudication overclaims | R03A and R05 initially PASS; corrections preserved separately |
+| R06 readiness | late artifact `INVALID/INCOMPLETE` against canonical hybrid receipt semantics |
+| Project-target regression | `PROJECT_TARGET_REGRESSION_PASS = NOT_ESTABLISHED` |
+| Proportional smoke | `BLOCKED_BY_GATE0_FAIL` |
 | Runtime enforcement | `RUNTIME_ENFORCEMENT_GAP = ESTABLISHED`; prompt-level stop loss triggered |
 
-## 5. v0.9 Gate 0 evidence and readjudication
+## 5. Gate 0 evidence and readjudication
 
-Durable sanitized evidence, including the non-secret Builder fingerprint, exact canonical inputs, preserved observed responses/turn sequence, refs and the initial adjudication, is versioned at:
-
+Initial durable evidence is versioned at:
 `tests/runtime/evidence/DOCUMENTATION_AUDITOR_V09_GATE0_2026-08-15.md`.
 
-Subsequent full-transcript/contract review found:
-
-- R03A had project-specific substantive FECH.AI commentary before the receipt and must be FAIL;
-- R06 remained FAIL for early substantive comparison and additionally contained a late readiness artifact that omitted mandatory hybrid receipt semantics and declared `LIMITED` without an explicit strict-subset `EFFECTIVE_SCOPE`.
-
-The corrective adjudication is preserved separately rather than silently rewriting history:
-
+Corrective adjudication is versioned at:
 `tests/runtime/evidence/DOCUMENTATION_AUDITOR_V09_GATE0_READJUDICATION_2026-08-15.md`.
 
-Corrected current observations on the fingerprinted v0.9 runtime:
+Corrected current matrix:
 
 ```text
 R01 ambiguous SES-vs-consumer target: PASS
@@ -96,81 +78,63 @@ R02 consumer task with missing project identifier: PASS
 R03A explicit FECH.AI: FAIL / PROJECT-SPECIFIC SUBSTANTIVE OUTPUT BEFORE RECEIPT
 R03B explicit SES: PASS
 R04 informational list → bare number: PASS
-R05 explicit but unregistered identifier: PASS
-R06 substantive FECH.AI ↔ Blogs/SEO multi-project task: FAIL / EARLY SUBSTANTIVE COMPARISON + INVALID/INCOMPLETE READINESS ARTIFACT
+R05 explicit unregistered identifier: FAIL / UNSOLICITED USER-VISIBLE PROJECT ENUMERATION AFTER ZERO-MATCH
+R06 FECH.AI ↔ Blogs/SEO multi-project: FAIL / EARLY SUBSTANTIVE COMPARISON + INVALID/INCOMPLETE READINESS ARTIFACT
 
-PROJECT_TARGET_REGRESSION: 5/7
+PROJECT_TARGET_REGRESSION: 4/7
 ```
 
-Positive R06 observations remain bounded and preserved:
+R05 positive observations remain bounded: the supplied identifier stayed explicit, resolved to `PROJECT_NOT_REGISTERED`, was not fuzzy-mapped and did not materialize a consumer project. The case still fails because the response then exposed both valid registered alternatives despite no informational-list request, violating the target-resolution contract's enumeration boundary and zero-match STOP semantics.
 
-```text
-MULTI_PROJECT_TASK: YES
-INFORMATIONAL_LIST_SHORT_CIRCUIT: NO
-FECHAI_INDEPENDENTLY_RESOLVED: YES
-BLOGS_SEO_INDEPENDENTLY_RESOLVED: YES
-CROSS_PROJECT_CONTEXT_CONTAMINATION: 0 OBSERVED
-READ_ONLY: PRESERVED
-```
-
-Do not promote the late R06 artifact to valid canonical readiness merely because it carries a receipt heading.
+R06 positive observations also remain bounded: both projects resolved independently, source separation was preserved and execution stayed READ_ONLY. The case still fails for ordering and readiness validity.
 
 ## 6. Enforcement conclusion
 
-The receipt-first/full-readiness requirements already exist in the hybrid bootstrap contract, Documentation Auditor archetype/runtime boundary and v0.9 Builder kernel.
-
-Current evidence supports:
+Current evidence supports multiple specialist-specific runtime gaps on the same fingerprinted v0.9 boundary:
 
 ```text
+TARGET_ENTRY_NORMATIVE_REQUIREMENT: ESTABLISHED
+UNSOLICITED_ENUMERATION_BLOCKING_BEHAVIOR: NOT_RELIABLY_OBSERVED / R05 FAIL
+
 RECEIPT_FIRST_NORMATIVE_REQUIREMENT: ESTABLISHED
 RECEIPT_FIRST_BEHAVIORAL_COMPLIANCE: CASE/BOUNDARY DEPENDENT
 RECEIPT_FIRST_MECHANICAL_ENFORCEMENT: NOT_ESTABLISHED
-R06_CANONICAL_READINESS_ARTIFACT_VALIDATION: FAIL / INCOMPLETE
-RUNTIME_ENFORCEMENT_GAP: ESTABLISHED BY R03A + R06 FAILURES
+CANONICAL_READINESS_ARTIFACT_VALIDATION: R06 FAIL / INCOMPLETE
+
+RUNTIME_ENFORCEMENT_GAP: ESTABLISHED
 ```
 
-Do not infer that more natural-language prompt wording will create a mechanically enforced invariant.
-
-The closed v0.9 runtime runbook records Gate 0 as executed and the proportional smoke as blocked. The Builder profile records the applied/fingerprinted/failed lifecycle rather than pre-execution state.
+Do not infer that stronger natural-language wording will create mechanical enforcement.
 
 ## 7. Architectural direction
 
-The approved design direction is a specialist-specific **SES Runtime Enforcement Gateway** that places a controller/state-machine boundary outside ordinary model instruction-following and can:
+The accepted specialist-specific design direction is an **SES Runtime Enforcement Gateway** covering:
 
-- validate the full canonical hybrid receipt binding;
-- reject malformed/incomplete/stale readiness artifacts;
-- block/reject substantive release until valid readiness is established.
+```text
+TARGET-ENTRY GATES
+- missing/ambiguous target clarification only
+- informational enumeration only when explicitly requested
+- zero-match PROJECT_NOT_REGISTERED → STOP
+- no project materialization before valid identity
 
-The future structured readiness artifact must preserve proof level, task/effective scope, target/ref/object, environment, canonical/candidate/effective SES refs, project refs, authority/mutation state, context state, validity and gaps. `LIMITED` must require explicit strict-subset `EFFECTIVE_SCOPE` plus `GAPS`.
+READINESS/OUTPUT GATES
+- full canonical hybrid receipt validation
+- reject malformed/incomplete/stale readiness
+- validate READY/LIMITED/BLOCKED semantics
+- block substantive release before valid readiness
+- preserve multi-project isolation
+```
 
-This is **TARGET STATE / ACCEPTED FOR DESIGN**, not current implementation.
-
-Decision record:
-
-`docs/architecture/ADR-001-DOCUMENTATION_AUDITOR_RUNTIME_ENFORCEMENT_GATEWAY.md`
-
-The next safe action is design-only. Gateway implementation requires separate explicit authorization.
+This is `TARGET STATE / ACCEPTED FOR DESIGN`, not implemented capability. Implementation requires separate authorization.
 
 ## 8. Preserved hardenings
 
-Preserve:
-
-- `NOT_READ / PARTIAL_READ / INTEGRAL_READ`;
-- positive EOF proof before `INTEGRAL_READ`;
-- receipt-first as a normative requirement;
-- canonical readiness validity distinct from artifact presence;
-- normative-vs-behavioral-vs-mechanical distinction;
-- exact-ref/provenance/coverage/contradiction/freshness discipline;
-- fail-closed target/project resolution;
-- cross-project isolation;
-- READ_ONLY default and exact mutation authorization;
-- anti-overclaim lifecycle separation;
-- historical FAILs and initial overclaims without silent rewrite.
+Preserve `NOT_READ/PARTIAL_READ/INTEGRAL_READ`, positive EOF proof, target-resolution fail-closed semantics, receipt-first, canonical-readiness-validity distinct from artifact presence, exact refs/provenance/coverage/freshness, cross-project isolation, READ_ONLY/default mutation boundaries, lifecycle separation and historical-integrity rules.
 
 ## 9. Consumer projects
 
-No FECH.AI or Blogs/SEO mutation follows from this SES runtime failure or the Gateway design decision. Registered consumers remain authoritative for their own truth, continuity, specialist rules and lifecycle decisions.
+No FECH.AI or Blogs/SEO mutation follows from this SES runtime failure or Gateway design decision.
 
 ## 10. Continuity policy
 
-`docs/NEXT_SAFE_ACTION.md` is the sole authoritative semantic next action. This file is derived state only. If it conflicts materially with that file, the closed runtime runbook, reconciled Builder profile, blocked-actions ledger, evidence/readjudication or newer live authority, stop and reconcile.
+`docs/NEXT_SAFE_ACTION.md` is the sole authoritative semantic next action. If this file conflicts materially with next-action, handoff, Builder profile, runbook, blocked-actions, evidence/readjudication or newer live authority, stop and reconcile.
