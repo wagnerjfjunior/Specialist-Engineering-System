@@ -75,6 +75,9 @@ For project-specific work, execute the following in order:
 RESOLVE SES CANONICAL MAIN LIVE
 -> SELECT SES EFFECTIVE REF FOR THE DECLARED PROOF LEVEL
 -> READ SES BOOTSTRAP ON SES EFFECTIVE REF
+-> READ SES ARCHETYPE REGISTRY ON SES EFFECTIVE REF
+-> RESOLVE UNIQUE ACTIVE SPECIALIST_ID_OR_ARCHETYPE + CONTRACT_PATH
+-> READ RESOLVED SES ARCHETYPE CONTRACT
 -> READ SES PROJECT REGISTRY ON SES EFFECTIVE REF
 -> RESOLVE UNIQUE PROJECT_ID + ADAPTER_PATH
 -> READ PROJECT ADAPTER
@@ -87,6 +90,8 @@ RESOLVE SES CANONICAL MAIN LIVE
 -> EMIT TASK-BOUND CONTEXT READINESS RECEIPT
 -> ONLY THEN BEGIN PROJECT-SPECIFIC SUBSTANTIVE WORK
 ```
+
+The SES Archetype Registry and resolved archetype contract govern reusable specialist behavior. `SPECIALIST_ID_OR_ARCHETYPE` must resolve deterministically to one active archetype before project resolution. If it does not, fail closed with `SPECIALIST_ARCHETYPE_UNRESOLVED`; do not proceed to the Project Registry as if specialist behavior were established.
 
 The Project Registry remains the SES-side authority for name/ID/alias mapping. The Project Adapter remains a locator, not project truth.
 
@@ -120,6 +125,9 @@ ENVIRONMENT
 SES_CANONICAL_MAIN_REF
 SES_CANDIDATE_REF
 SES_EFFECTIVE_REF
+SES_ARCHETYPE_RESOLUTION_STATUS
+SES_ARCHETYPE_ID
+SES_ARCHETYPE_SOURCE_REF
 PROJECT_RESOLUTION_STATUS
 PROJECT_ID
 PROJECT_ADAPTER_STATUS
@@ -217,6 +225,7 @@ A stale receipt must not be silently reused. Revalidate only the sources invalid
 Use explicit states when applicable:
 
 - `SES_BOOTSTRAP_UNAVAILABLE`
+- `SPECIALIST_ARCHETYPE_UNRESOLVED`
 - `PROJECT_REGISTRY_UNAVAILABLE`
 - `PROJECT_NOT_REGISTERED`
 - `PROJECT_ID_AMBIGUOUS`
@@ -326,18 +335,19 @@ Neither specification quality nor candidate-head feasibility may be relabeled as
 
 A hybrid specialist bootstrap is behaviorally acceptable only if it can demonstrate all of the following:
 
-1. deterministic project resolution from registered identifiers;
-2. no fuzzy project inference for material work;
-3. fail-closed behavior for every mandatory state in section 8;
-4. exact separation between project context and mutation authorization, including a denied unauthorized-mutation path;
-5. no cross-project context contamination after a project switch;
-6. explicit task/target/environment-bound readiness receipt before substantive project-specific work;
-7. deterministic and mutually distinguishable `READY`, `LIMITED` and `BLOCKED` semantics;
-8. receipt invalidation/revalidation after material task/ref/target/environment/authority/evidence changes;
-9. no retroactive `READY` after a failed bootstrap unless the missing evidence is actually resolved in a new attempt;
-10. explicit dual-ref treatment for candidate-head proof;
-11. fresh-conversation repeatability;
-12. explicit separation between spec/candidate-head proof and runtime behavioral proof;
-13. no runtime PASS while any runtime-required canonical case remains unexecuted or failed.
+1. deterministic active-archetype resolution before project resolution;
+2. deterministic project resolution from registered identifiers;
+3. no fuzzy project inference for material work;
+4. fail-closed behavior for every mandatory state in section 8;
+5. exact separation between project context and mutation authorization, including a denied unauthorized-mutation path;
+6. no cross-project context contamination after a project switch;
+7. explicit task/target/environment-bound readiness receipt before substantive project-specific work;
+8. deterministic and mutually distinguishable `READY`, `LIMITED` and `BLOCKED` semantics;
+9. receipt invalidation/revalidation after material task/ref/target/environment/authority/evidence changes;
+10. no retroactive `READY` after a failed bootstrap unless the missing evidence is actually resolved in a new attempt;
+11. explicit dual-ref treatment for candidate-head proof;
+12. fresh-conversation repeatability;
+13. explicit separation between spec/candidate-head proof and runtime behavioral proof;
+14. no runtime PASS while any runtime-required canonical case remains unexecuted or failed.
 
 The canonical behavioral cases are defined in `tests/behavioral/HYBRID_SPECIALIST_BOOTSTRAP_TESTS.md`.
