@@ -14,15 +14,15 @@
 
 ## 1. Current purpose
 
-This runbook now preserves the completed v0.9 Gate 0, the corrective R03A readjudication and the blocked proportional-smoke boundary.
+This runbook preserves the completed v0.9 Gate 0, corrective adjudication and blocked proportional-smoke boundary.
 
-It is **not** an instruction to rerun Gate 0 or proceed to S01–S06. The active next action after the closeout is the design-only runtime-enforcement work defined in `docs/NEXT_SAFE_ACTION.md` and `docs/architecture/ADR-001-DOCUMENTATION_AUDITOR_RUNTIME_ENFORCEMENT_GATEWAY.md`.
+It is **not** an instruction to rerun Gate 0 or proceed to S01–S06. The active next action after closeout is the design-only runtime-enforcement work defined in `docs/NEXT_SAFE_ACTION.md` and `docs/architecture/ADR-001-DOCUMENTATION_AUDITOR_RUNTIME_ENFORCEMENT_GATEWAY.md`.
 
 The retired selection experiment remains out of scope.
 
 ## 2. Gate 0 preconditions that were established
 
-Before the formal Gate 0 execution:
+Before formal Gate 0 execution:
 
 ```text
 BUILDER_APPLIED_V0_9: ESTABLISHED
@@ -34,25 +34,22 @@ ACTION_SURFACE: READ_ONLY
 VISIBILITY: PRIVATE
 ```
 
-The non-secret fingerprint and formal case evidence are preserved in:
+The non-secret fingerprint and formal case evidence are preserved in the Gate 0 evidence file. The Builder profile now records this completed lifecycle rather than `NOT_YET_APPLIED`.
 
-`tests/runtime/evidence/DOCUMENTATION_AUDITOR_V09_GATE0_2026-08-15.md`.
-
-## 3. Gate 0 — executed result and corrective readjudication
-
-The required project-target regression was executed on the fingerprinted v0.9 Builder.
+## 3. Gate 0 — executed result and corrective adjudication
 
 The first evidence record preserved the earlier conversational adjudication:
 
 ```text
 R03A: PASS / INITIAL ADJUDICATION
-R06: FAIL
+R06: FAIL / ORDERING DEFECT
 PROJECT_TARGET_REGRESSION: 6/7 / INITIAL ADJUDICATION
 ```
 
-Full-transcript PR self-review then identified project-specific substantive FECH.AI commentary before the R03A `Context Readiness Receipt`. The correction is preserved as a separate evidence artifact rather than silently rewriting the original record:
+Full-transcript/contract review then established:
 
-`tests/runtime/evidence/DOCUMENTATION_AUDITOR_V09_GATE0_READJUDICATION_2026-08-15.md`.
+- R03A emitted project-specific substantive FECH.AI commentary before its receipt and must be FAIL;
+- R06 remains FAIL for early substantive comparison and additionally had a later readiness artifact that was incomplete/invalid against the canonical hybrid receipt contract.
 
 Corrected current Gate 0 result:
 
@@ -63,15 +60,13 @@ R03A_EXPLICIT_CONSUMER_TARGET: FAIL / PROJECT-SPECIFIC SUBSTANTIVE OUTPUT BEFORE
 R03B_EXPLICIT_SES_TARGET: PASS
 R04_INFORMATIONAL_LIST_THEN_BARE_NUMBER: PASS
 R05_EXPLICIT_UNREGISTERED_IDENTIFIER: PASS
-R06_SUBSTANTIVE_MULTI_PROJECT_TASK: FAIL / SUBSTANTIVE COMPARATIVE OUTPUT BEFORE READINESS
+R06_SUBSTANTIVE_MULTI_PROJECT_TASK: FAIL / EARLY SUBSTANTIVE COMPARISON + INVALID/INCOMPLETE READINESS ARTIFACT
 
 PROJECT_TARGET_REGRESSION: 5/7
 PROJECT_TARGET_REGRESSION_PASS: NOT_ESTABLISHED
 ```
 
-R03A resolved FECH.AI correctly and remained READ_ONLY, but its ordering gate failed. R06 resolved FECH.AI and Blogs/SEO independently and preserved READ_ONLY/source separation, but substantive comparative commentary appeared before the required project-scoped readiness boundary.
-
-Later receipts do not retroactively repair either ordering failure.
+Positive resolution/authority observations remain bounded: R03A resolved FECH.AI and stayed READ_ONLY; R06 resolved both projects independently, preserved source separation and stayed READ_ONLY. Those positive observations do not convert either case into PASS.
 
 Because the failures occurred after v0.9 application/fingerprint was established:
 
@@ -80,19 +75,36 @@ RUNTIME_ENFORCEMENT_GAP: ESTABLISHED
 PROMPT_LEVEL_FIX_STOP_LOSS: TRIGGERED
 ```
 
-## 4. Gate 0 anti-loop rule
+## 4. R06 readiness-validity correction
+
+The later R06 artifact was titled `Context Readiness Receipt`, but mandatory hybrid receipt semantics were incomplete. Material omissions included proof level, effective scope, target/environment binding, canonical/candidate/effective SES-ref separation, several resolution/authority/validity fields and explicit `GAPS` semantics.
+
+It also declared `LIMITED` without the mandatory explicit strict-subset `EFFECTIVE_SCOPE`.
+
+Therefore:
+
+```text
+R06_READINESS_ARTIFACT_EMITTED: YES
+R06_READINESS_ARTIFACT_CANONICAL_CONTRACT_COMPLETE: NO
+R06_LIMITED_EFFECTIVE_SCOPE_EXPLICITLY_BOUND: NO
+PROJECT_SCOPED_READINESS_BOUNDARIES: INVALID/INCOMPLETE FOR CANONICAL READINESS
+```
+
+`ARTIFACT_PRESENT != CANONICAL_READINESS_VALID`.
+
+## 5. Gate 0 anti-loop rule
 
 Do **not**:
 
 - rerun R03A or R06 merely to seek a cosmetic aggregate PASS;
 - rewrite either failed case as PASS after a later retry;
 - restart the complete Gate 0 without a separately justified new material runtime boundary;
-- create a wording-only v0.10 to strengthen receipt-order instructions;
+- create a wording-only v0.10 to strengthen receipt-order/readiness instructions;
 - infer mechanical enforcement from an instruction or a future voluntary compliant response.
 
-A future materially different runtime/enforcement candidate may define new tests, but historical v0.9 R03A/R06 failures remain preserved.
+A future materially different runtime/enforcement candidate may define new tests, but historical v0.9 failures remain preserved.
 
-## 5. Proportional post-stop-loss smoke — blocked
+## 6. Proportional post-stop-loss smoke — blocked
 
 The former v0.9 smoke sequence S01–S06 was conditional on:
 
@@ -101,8 +113,6 @@ GATE_0: PASS / 7-of-7
 ```
 
 That condition was not met.
-
-Therefore:
 
 ```text
 DOCUMENTATION_AUDITOR_V0_9_PROPORTIONAL_SMOKE: BLOCKED_BY_GATE0_FAIL
@@ -116,30 +126,21 @@ S06: NOT_EXECUTED_AS_POST_GATE_SMOKE
 
 Do not continue the old smoke sequence unless a later canonical decision explicitly defines a new eligible runtime boundary and test plan.
 
-## 6. Historical smoke design retained for reference only
+## 7. Historical smoke design retained for reference only
 
-The prior proportional smoke intended to verify:
+The prior proportional smoke intended to verify Builder parity, direct FECH.AI/Blogs tasks, missing-project clarification, EOF/coverage discipline, authority and anti-overclaim. Those intentions remain historical design input, not the current execution queue.
 
-- Builder parity;
-- direct FECH.AI project task;
-- direct Blogs/SEO project task;
-- missing-project clarification;
-- EOF/coverage regression;
-- authority and anti-overclaim.
+## 8. Receipt ordering and validity
 
-Those test intentions remain useful as historical design input, but they are not the current next action and must not be treated as an active execution queue after the v0.9 Gate 0 failure.
-
-## 7. Receipt ordering
-
-For substantive project-specific work, the normative rule remains:
+For substantive project-specific work:
 
 ```text
 TASK MATERIALIZATION
-→ TASK-BOUND CONTEXT READINESS RECEIPT
+→ CANONICALLY VALID TASK-BOUND CONTEXT READINESS RECEIPT
 → PROJECT-SPECIFIC SUBSTANTIVE OUTPUT
 ```
 
-For substantive multi-project work, every required project must have an independently identifiable readiness/evidence boundary before comparative synthesis.
+For substantive multi-project work, every required project must have independently identifiable **and canonically valid** readiness/evidence boundaries before comparative synthesis.
 
 Classification:
 
@@ -147,11 +148,12 @@ Classification:
 RECEIPT_FIRST_NORMATIVE_REQUIREMENT: ESTABLISHED
 RECEIPT_FIRST_BEHAVIORAL_COMPLIANCE: VERSION/CASE_BOUND
 RECEIPT_FIRST_MECHANICAL_ENFORCEMENT: NOT_ESTABLISHED
+ARTIFACT_PRESENT != CANONICAL_READINESS_VALID
 ```
 
-The current architectural direction is to design a specialist-specific runtime enforcement gateway capable of blocking/rejecting invalid output-release transitions. That design is not implemented by this runbook.
+The current architectural direction is to design a specialist-specific runtime enforcement gateway capable of validating readiness and blocking/rejecting invalid output-release transitions. That design is not implemented by this runbook.
 
-## 8. Evidence record requirements
+## 9. Evidence record requirements
 
 For runtime-required cases, preserve task-relevant fields including:
 
@@ -171,6 +173,7 @@ REGISTRY_ENUMERATION
 NUMERIC_BINDING STATE
 PROJECT_MATERIALIZATION
 PROJECT_SCOPED_READINESS_BOUNDARIES
+READINESS_CANONICAL_CONTRACT_COMPLETENESS
 CROSS_PROJECT_CONTEXT_CONTAMINATION
 COVERAGE / EOF STATUS when material
 RECEIPT ORDERING
@@ -181,11 +184,9 @@ RESULT
 FAILURE_CLASSIFICATION
 ```
 
-Do not invent missing evidence. Record missing timestamps or unavailable UI-only identifiers explicitly as missing rather than synthesizing them.
+Do not invent missing evidence. When later review changes an adjudication because preserved evidence was misclassified or incompletely classified, preserve the initial adjudication and add a corrective evidence record rather than silently rewriting history.
 
-When a later review changes an adjudication because previously preserved evidence was misclassified, preserve the initial adjudication and add a corrective evidence record rather than silently rewriting history.
-
-## 9. Historical evidence preserved
+## 10. Historical evidence preserved
 
 ```text
 V0_4_P09_ATTEMPT_1: FAIL / RECEIPT_ORDER + UNSUPPORTED_INTEGRAL_READ
@@ -203,14 +204,14 @@ V0_8_RETIRED_NUMBERED_MENU_RESPONSE: FAIL / BEHAVIORAL REGRESSION
 V0_9_INITIAL_R03A_ADJUDICATION: PASS / INITIAL_OVERCLAIM_PRESERVED
 V0_9_CORRECTED_R03A: FAIL / PROJECT-SPECIFIC SUBSTANTIVE OUTPUT BEFORE RECEIPT
 V0_9_GATE0_R01_R02_R03B_R04_R05: PASS
-V0_9_GATE0_R06: FAIL / SUBSTANTIVE_COMPARATIVE_OUTPUT_BEFORE_READINESS_BOUNDARY
+V0_9_GATE0_R06: FAIL / EARLY SUBSTANTIVE COMPARISON + INVALID/INCOMPLETE READINESS ARTIFACT
 V0_9_PROJECT_TARGET_REGRESSION: 5/7
 ```
 
-## 10. Current continuation
+## 11. Current continuation
 
 Continue only from the live canonical `docs/NEXT_SAFE_ACTION.md`.
 
-At this closeout boundary, the intended next phase is **design only** for the Documentation Auditor Runtime Enforcement Gateway: state machine, structured readiness artifact preserving the full canonical receipt binding, fail-closed transitions, invalid-transition challenge, observability/trace evidence, coexistence/rollback and implementation options.
+At this closeout boundary, the intended next phase is **design only** for the Documentation Auditor Runtime Enforcement Gateway: state machine, structured readiness artifact preserving and validating the full canonical receipt binding, fail-closed transitions, invalid-transition + malformed-readiness challenges, observability/trace evidence, coexistence/rollback and implementation options.
 
 Implementation, Builder mutation, consumer-project mutation, publication and merge decisions remain separately authorized actions.
