@@ -33,7 +33,7 @@ The Builder profile now records this completed lifecycle rather than `NOT_YET_AP
 The initial evidence record preserved earlier adjudications including R03A PASS and R05 PASS. Subsequent review corrected three cases:
 
 - **R03A FAIL:** project-specific substantive FECH.AI commentary preceded receipt.
-- **R05 FAIL:** after correct `PROJECT_NOT_REGISTERED`, the response unsolicitedly named both registered alternatives instead of preserving the zero-match STOP/user-visible-enumeration boundary.
+- **R05 FAIL:** after correct `PROJECT_NOT_REGISTERED`, the response unsolicitedly named registered alternatives instead of preserving zero-match STOP/user-visible-enumeration boundary.
 - **R06 FAIL:** early substantive comparison preceded readiness, and the later artifact was incomplete/invalid against the canonical hybrid receipt contract.
 
 Corrected current result:
@@ -51,7 +51,7 @@ PROJECT_TARGET_REGRESSION: 4/7
 PROJECT_TARGET_REGRESSION_PASS: NOT_ESTABLISHED
 ```
 
-Positive sub-observations do not convert failed cases into PASS. R05 still preserved the supplied identifier, produced `PROJECT_NOT_REGISTERED`, avoided fuzzy mapping and project materialization; the unsolicited user-visible enumeration is the additional target-contract failure.
+Positive sub-observations do not convert failed cases into PASS.
 
 Because failures occurred after v0.9 application/fingerprint:
 
@@ -85,17 +85,15 @@ READINESS_ARTIFACT_CANONICAL_CONTRACT_COMPLETE: NO
 LIMITED_EFFECTIVE_SCOPE_EXPLICITLY_BOUND: NO
 ```
 
-`ARTIFACT_PRESENT != CANONICAL_READINESS_VALID`.
+```text
+ARTIFACT_PRESENT != CANONICAL_READINESS_VALID
+SCHEMA_VALID != EVIDENCE_SUPPORTED
+READINESS_VALID != OUTPUT_WITHIN_EFFECTIVE_SCOPE
+```
 
 ## 5. Anti-loop rule
 
-Do **not**:
-
-- rerun R03A/R05/R06 merely to seek a cosmetic aggregate PASS;
-- rewrite failed cases after later retries;
-- restart Gate 0 without a separately justified material runtime boundary;
-- create wording-only v0.10;
-- infer mechanical enforcement from future voluntary compliance.
+Do **not** rerun R03A/R05/R06 merely for cosmetic aggregate PASS, rewrite failed cases after later retries, restart Gate 0 without a new material runtime boundary, create wording-only v0.10, or infer mechanical enforcement from voluntary compliance.
 
 ## 6. Proportional smoke — blocked
 
@@ -108,7 +106,7 @@ S01-S06: NOT AN ACTIVE POST-GATE EXECUTION QUEUE
 
 Historical smoke intentions remain reference material only.
 
-## 7. Target-entry and readiness rules preserved
+## 7. Target-entry, evidence, readiness and scope rules preserved
 
 ```text
 AMBIGUOUS_OR_MISSING TARGET
@@ -122,18 +120,28 @@ EXPLICIT UNREGISTERED IDENTIFIER
 → no unsolicited user-visible alternative-project enumeration
 
 SUBSTANTIVE PROJECT WORK
+→ trusted canonical evidence acquisition/provenance
+→ material readiness fields independently supported
 → canonically valid task-bound readiness
-→ only then substantive output
+→ validated EFFECTIVE_SCOPE
+→ only then substantive output inside that scope
+
+LIMITED
+→ explicit safe strict-subset EFFECTIVE_SCOPE + GAPS
+→ excluded TASK_SCOPE must not be answered
 
 MULTI-PROJECT WORK
 → independent project resolution
-→ independently identifiable + canonically valid readiness for all required projects
-→ only then synthesis
+→ evidence-backed + canonically valid readiness for every required project
+→ derive safe common comparison-effective scope
+→ only then synthesis inside that scope
 ```
+
+A model-asserted or schema-valid readiness artifact is insufficient without evidence support.
 
 ## 8. Evidence requirements
 
-For future runtime-required cases preserve fingerprints, exact input/turn sequence, complete observed output, exact refs, target/project states, enumeration/materialization state, readiness completeness/ordering, contamination, mutation state, expected vs actual behavior, result and classification. Do not invent missing evidence.
+For future runtime-required cases preserve fingerprints, exact input/turn sequence, complete observed output, exact refs, target/project states, enumeration/materialization state, trusted evidence/provenance bindings for material readiness claims, readiness completeness/ordering, validated effective scope, contamination, mutation state, expected vs actual behavior, result and classification. Do not invent missing evidence.
 
 When later review changes an adjudication, preserve the initial adjudication and add a corrective record rather than silently rewriting history.
 
@@ -158,6 +166,6 @@ V0_9_PROJECT_TARGET_REGRESSION: 4/7
 
 Continue only from live canonical `docs/NEXT_SAFE_ACTION.md`.
 
-Next phase is **design only** for the Documentation Auditor Runtime Enforcement Gateway: target-entry gates, canonical readiness schema/validator, fail-closed transitions, invalid-transition + malformed-readiness + unsolicited-enumeration/zero-match challenges, observability/trace evidence, coexistence/rollback and implementation options.
+Next phase is **design only** for the Documentation Auditor Runtime Enforcement Gateway: target-entry gates, trusted evidence-attestation model, canonical readiness schema/validator, validated effective-scope release control, fail-closed transitions, invalid-transition + malformed-readiness + well-formed-unsupported-readiness + unsolicited-enumeration/zero-match + out-of-effective-scope-output challenges, observability/trace evidence, coexistence/rollback and implementation options.
 
 Implementation, Builder mutation, consumer mutation, publication and merge remain separately authorized actions.
