@@ -22,7 +22,12 @@ The external private Documentation Auditor Builder was reconciled to v0.9 and fi
 
 `tests/runtime/evidence/DOCUMENTATION_AUDITOR_V09_GATE0_2026-08-15.md`.
 
-A subsequent full-transcript PR self-review found that R03A had been initially over-adjudicated as PASS: its preserved opening contains project-specific substantive FECH.AI commentary before the `Context Readiness Receipt`. The corrective adjudication is preserved separately rather than rewriting history:
+Subsequent full-transcript/contract review found two adjudication limitations without rewriting the original record:
+
+1. R03A had project-specific substantive FECH.AI commentary before the `Context Readiness Receipt`, so its initial PASS was an overclaim.
+2. R06 was already FAIL for pre-readiness substantive comparison, but the later artifact labeled `Context Readiness Receipt` was also incomplete against mandatory hybrid readiness semantics and declared `LIMITED` without an explicit strict-subset `EFFECTIVE_SCOPE`.
+
+The corrections are preserved in:
 
 `tests/runtime/evidence/DOCUMENTATION_AUDITOR_V09_GATE0_READJUDICATION_2026-08-15.md`.
 
@@ -35,13 +40,11 @@ R03A_EXPLICIT_FECHAI_TARGET: FAIL / PROJECT-SPECIFIC SUBSTANTIVE OUTPUT BEFORE R
 R03B_EXPLICIT_SES_TARGET: PASS
 R04_INFORMATIONAL_LIST_THEN_BARE_NUMBER: PASS
 R05_EXPLICIT_UNREGISTERED_IDENTIFIER: PASS
-R06_SUBSTANTIVE_MULTI_PROJECT_TASK: FAIL / SUBSTANTIVE COMPARATIVE OUTPUT BEFORE READINESS
+R06_SUBSTANTIVE_MULTI_PROJECT_TASK: FAIL / EARLY SUBSTANTIVE COMPARISON + INVALID/INCOMPLETE READINESS ARTIFACT
 
 PROJECT_TARGET_REGRESSION: 5/7
 PROJECT_TARGET_REGRESSION_PASS: FAIL / NOT_ESTABLISHED
 ```
-
-R03A still resolved the explicit FECH.AI target correctly and remained READ_ONLY, but the ordering requirement was violated before the receipt. R06 independently resolved FECH.AI and Blogs/SEO and preserved READ_ONLY/source separation, but likewise emitted substantive comparative commentary before the project-scoped readiness boundary. Later receipts do not retroactively repair either ordering failure.
 
 Historical pre-fingerprint observations and the initial R03A PASS adjudication remain preserved as historical evidence; the authoritative current-state adjudication is 5/7.
 
@@ -62,15 +65,17 @@ Do not:
 - resume proportional Documentation Auditor smoke as if Gate 0 had passed;
 - mutate FECH.AI or Blogs/SEO because the SES runtime failed this gate.
 
-The v0.9 runtime runbook is correspondingly closed as `GATE0_EXECUTED / 5_OF_7 / SMOKE_BLOCKED` and is no longer an instruction to rerun the gate:
-
-`tests/runtime/DOCUMENTATION_AUDITOR_RUNTIME_RUNBOOK.md`.
+The v0.9 runtime runbook is closed as `GATE0_EXECUTED / 5_OF_7 / SMOKE_BLOCKED`. The Builder profile is also reconciled to `BUILDER_APPLIED / FINGERPRINT_CAPTURED / GATE0_EXECUTED_FAIL` rather than remaining an active-looking pre-application instruction.
 
 ## 4. Architectural decision boundary
 
-The receipt-first requirement is already present in Core, the Documentation Auditor archetype/runtime boundary and the v0.9 Builder kernel. The R03A and R06 failures therefore do not justify another prompt-only correction.
+The receipt-first/full-readiness requirements already exist in Core, the Documentation Auditor archetype/runtime boundary and the v0.9 Builder kernel. The R03A/R06 failures therefore do not justify another prompt-only correction.
 
-The next design direction is a specialist-specific **SES Runtime Enforcement Gateway**: a controller/state-machine boundary outside ordinary model instruction-following that can prevent or reject an invalid transition from project materialization to substantive output before required readiness has been established.
+The next design direction is a specialist-specific **SES Runtime Enforcement Gateway**: a controller/state-machine boundary outside ordinary model instruction-following that can:
+
+- validate the full canonical readiness artifact;
+- reject missing/stale/malformed/incomplete readiness;
+- prevent or reject substantive output before valid readiness has been established.
 
 This is a **TARGET STATE / DESIGN DECISION**, not an implemented capability.
 
@@ -82,15 +87,17 @@ Authoritative decision record:
 
 Perform a bounded design phase only:
 
-1. resolve SES `main` live and read this file plus the ADR, blocked-actions ledger, closed runtime runbook, Gate 0 evidence, readjudication and runtime enforcement boundary;
+1. resolve SES `main` live and read this file plus the ADR, blocked-actions ledger, closed runtime runbook, reconciled Builder profile, Gate 0 evidence/readjudication and runtime enforcement boundary;
 2. define the minimum Gateway state machine and interfaces for single-project and multi-project work;
 3. define a structured readiness artifact that preserves the full mandatory semantic binding of the canonical hybrid Context Readiness Receipt, including proof level, task/effective scope, target/ref/object, environment and canonical/candidate/effective SES-ref separation;
-4. define fail-closed transitions for missing/invalid project resolution, stale/invalid readiness, incomplete multi-project readiness and invalid output ordering;
-5. define an **invalid-transition challenge** that attempts substantive output before readiness and must be technically blocked/rejected by the future mechanism;
-6. define observability/evidence requirements sufficient to prove which transition was allowed or denied and which readiness binding was active;
-7. define rollback and coexistence with the current private Custom GPT runtime;
-8. evaluate implementation substrates only after the mechanism/proof obligations are explicit;
-9. return the design as a candidate for review and explicit implementation authorization.
+4. define machine validation for `READY`, `LIMITED` and `BLOCKED`, including `LIMITED -> explicit strict-subset EFFECTIVE_SCOPE + GAPS`;
+5. define fail-closed transitions for missing/invalid project resolution, stale/malformed/incomplete readiness, incomplete multi-project readiness and invalid output ordering;
+6. define an **invalid-transition challenge** that attempts substantive output before readiness and must be technically blocked/rejected;
+7. define a **malformed-readiness challenge** whose incomplete artifact must be rejected and must not open the substantive-output transition;
+8. define observability/evidence requirements sufficient to prove which transition was allowed or denied and which readiness binding/validation result was active;
+9. define rollback and coexistence with the current private Custom GPT runtime;
+10. evaluate implementation substrates only after the mechanism/proof obligations are explicit;
+11. return the design as a candidate for review and explicit implementation authorization.
 
 Do **not** implement or deploy the Gateway in this closeout step.
 
@@ -105,10 +112,13 @@ PROOF_LEVEL_BOUND: YES
 TARGET_REF_OR_OBJECT_BOUND_WHEN_MATERIAL: YES
 ENVIRONMENT_BOUND_WHEN_MATERIAL: YES
 SES_CANONICAL_CANDIDATE_EFFECTIVE_REFS_SEPARATED: YES
+LIMITED_REQUIRES_EXPLICIT_STRICT_SUBSET_EFFECTIVE_SCOPE: ENFORCED
 MULTI_PROJECT_INDEPENDENT_RESOLUTION: YES
-PROJECT_SCOPED_READINESS_BOUNDARIES: PRESERVED
+PROJECT_SCOPED_READINESS_BOUNDARIES: CANONICALLY_VALIDATED
+MALFORMED_OR_INCOMPLETE_READINESS_ARTIFACT: REJECTED
 SUBSTANTIVE_OUTPUT_BEFORE_REQUIRED_READINESS: TECHNICALLY_BLOCKED_OR_REJECTED
 INVALID_TRANSITION_CHALLENGE: PASS
+MALFORMED_READINESS_CHALLENGE: PASS
 READINESS_INVALIDATION_REVALIDATION: PROVEN_FOR_MATERIAL_CHANGE
 CROSS_PROJECT_CONTEXT_CONTAMINATION: 0
 FAIL_CLOSED_ON_UNRESOLVED_REQUIRED_CONTEXT: YES
@@ -116,7 +126,7 @@ READ_ONLY_BY_DEFAULT: YES
 MECHANISM_TRACE_EVIDENCE: PRESENT
 ```
 
-A successful model response alone is not proof of mechanical enforcement.
+A successful model response or a receipt heading alone is not proof of mechanical enforcement or valid readiness.
 
 ## 7. Preserved proof state
 
@@ -136,7 +146,7 @@ DA_V0_8: STOP_LOSS ROLLBACK TARGET / NUMBERED-MENU REGRESSION OBSERVED
 DA_V0_9_BUILDER_APPLIED: ESTABLISHED ON CAPTURED FINGERPRINT
 DA_V0_9_INITIAL_R03A_ADJUDICATION: PASS / INITIAL_OVERCLAIM_PRESERVED
 DA_V0_9_CORRECTED_R03A: FAIL / PROJECT-SPECIFIC SUBSTANTIVE OUTPUT BEFORE RECEIPT
-DA_V0_9_R06: FAIL / SUBSTANTIVE_COMPARATIVE_OUTPUT BEFORE READINESS BOUNDARY
+DA_V0_9_R06: FAIL / EARLY SUBSTANTIVE COMPARISON + INVALID/INCOMPLETE READINESS ARTIFACT
 DA_V0_9_PROJECT_TARGET_REGRESSION: 5/7
 DA_V0_9_PROJECT_TARGET_REGRESSION_PASS: NOT_ESTABLISHED
 DA_V0_9_RUNTIME_ENFORCEMENT_GAP: ESTABLISHED
@@ -157,4 +167,4 @@ This action does not authorize:
 
 ## 9. Done condition
 
-This next action is complete only when a reviewable Gateway design package exists with explicit state transitions, interfaces, full canonical readiness binding, proof obligations, invalid-transition challenge, rollback/coexistence plan and no implementation overclaim. Implementation requires a separate explicit authorization and change boundary.
+This next action is complete only when a reviewable Gateway design package exists with explicit state transitions, interfaces, full canonical readiness binding/validation, proof obligations, invalid-transition + malformed-readiness challenges, rollback/coexistence plan and no implementation overclaim. Implementation requires a separate explicit authorization and change boundary.
