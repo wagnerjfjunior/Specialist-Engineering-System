@@ -31,7 +31,7 @@ The numbered-menu response is a real stop-loss regression even though the Builde
 The correction is bounded to target acquisition:
 
 1. **test-design ambiguity:** the prior generic S04 prompt could refer either to SES itself or to a consumer project;
-2. **missing deterministic pre-registry contract:** v0.8 kernel said to ask for a missing project, but no dedicated reusable contract defined the hard stop, SES-self inference boundary, explicit-list exception or numeric-binding prohibition;
+2. **missing deterministic pre-registry contract:** v0.8 kernel said to ask for a missing project, but no dedicated reusable contract defined the hard stop, SES-self inference boundary, supplied-but-invalid identifier path, explicit-list exception, multi-project boundary or numeric-binding prohibition;
 3. **runtime nondeterminism:** under that ambiguity, one response treated SES as the target and another reconstructed the retired numbered menu.
 
 The fix therefore adds a specific Core target-resolution contract plus an exact regression gate. It does not add another selection state machine.
@@ -47,19 +47,20 @@ The fix therefore adds a specific Core target-resolution contract plus an exact 
    - existing GitHub READ_ONLY Action unchanged;
    - visibility private;
 3. capture a fresh non-secret Builder fingerprint;
-4. execute `tests/runtime/DOCUMENTATION_AUDITOR_PROJECT_TARGET_REGRESSION.md` from fresh conversations:
-   - R01 ambiguous target;
-   - R02 missing consumer-project identifier;
+4. execute `tests/runtime/DOCUMENTATION_AUDITOR_PROJECT_TARGET_REGRESSION.md`:
+   - R01 ambiguous target cold start;
+   - R02 missing consumer-project identifier cold start;
    - R03A explicit FECH.AI target;
    - R03B explicit SES self-target;
-5. require all four observations to PASS autonomously;
+   - R04 informational project list followed by bare numeric reply;
+5. require all five observations to PASS autonomously;
 6. if Gate 0 passes, resume the proportional Documentation Auditor smoke from `tests/runtime/DOCUMENTATION_AUDITOR_RUNTIME_RUNBOOK.md` without re-running unrelated historical selection-first cases;
 7. then execute the queued proportional SaaS Architect Builder-fit smoke;
 8. when both proportional smokes pass, record rollback/reconciliation closed and return to ordinary SES specialist development.
 
 ## 5. One-shot stop condition
 
-If Documentation Auditor v0.9 is demonstrably applied and **R01 or R02 still fails in a fresh conversation**, classify:
+If Documentation Auditor v0.9 is demonstrably applied and **R01, R02 or R04** fails on the required evidence boundary, classify:
 
 `RUNTIME_ENFORCEMENT_GAP / PROMPT_LEVEL_FIX_STOP_LOSS`
 
@@ -94,4 +95,4 @@ Do not mutate FECH.AI or Blogs/SEO merely because SES target-resolution behavior
 
 ## 8. Done condition
 
-This action is complete only when the applied v0.9 runtime passes the project-target regression and proportional Documentation Auditor smoke, the queued proportional SaaS smoke is completed, the retired interaction remains absent, and no new prompt-hardening loop is opened.
+This action is complete only when the applied v0.9 runtime passes the project-target regression including the informational-list numeric-follow-up case, the proportional Documentation Auditor smoke passes, the queued proportional SaaS smoke is completed, the retired interaction remains absent, and no new prompt-hardening loop is opened.
