@@ -1,15 +1,15 @@
 # SES — Current Handoff
 
-**Status:** `SFJM_OPERATIONAL_CONTINUITY_V0_1 / POST_STOP_LOSS_RUNTIME_RECONCILIATION`
+**Status:** `SES_RUNTIME_ENFORCEMENT_DECISION / DOCUMENTATION_AUDITOR_GATE0_CLOSEOUT`
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System`
 **Canonical ref rule:** resolve `main` live before material work
 **Continuity contract:** `core/protocols/PROJECT_CONTINUITY_CONTRACT.md`
 **Authoritative next action:** `docs/NEXT_SAFE_ACTION.md`
-**Next action ID:** `apply-documentation-auditor-v09-project-target-fix-v1`
+**Next action ID:** `design-documentation-auditor-runtime-enforcement-gateway-v1`
 
 ## 1. Purpose
 
-Preserve the stop-loss decision and bounded Documentation Auditor target-acquisition correction. Consumer-project truth, continuity and authority remain project-owned.
+Preserve the completed v0.9 target-resolution Gate 0 evidence, the resulting prompt-level stop loss and the bounded architectural decision to design a runtime enforcement gateway. Consumer-project truth, continuity and authority remain project-owned.
 
 ## 2. Reading order
 
@@ -18,18 +18,23 @@ Preserve the stop-loss decision and bounded Documentation Auditor target-acquisi
 3. read `docs/PROJECT_STATUS.md`;
 4. read `docs/NEXT_SAFE_ACTION.md`;
 5. read `docs/BLOCKED_ACTIONS.md`;
-6. then read task-material contracts/runtime evidence.
+6. read `runtime/custom-gpt/DOCUMENTATION_AUDITOR_RUNTIME_ENFORCEMENT_BOUNDARY.md`;
+7. read `docs/architecture/ADR-001-DOCUMENTATION_AUDITOR_RUNTIME_ENFORCEMENT_GATEWAY.md`;
+8. then read task-material contracts/runtime evidence.
 
 ## 3. Durable state
 
-1. SES remains project-agnostic and SFJM continuity remains operational.
+1. SES remains project-agnostic. SFJM continuity remains operational as a continuity mechanism, not as the owner of this SES runtime decision.
 2. SaaS Architect historical v0.1 PASS remains bound to its exact historical fingerprint.
-3. PR #19 remains abandoned/unmerged; PR #20 retired the single-starter/menu/numeric/cross-turn interaction; PR #21 merged the SaaS Builder-fit correction.
-4. Documentation Auditor v0.8 direct FECH.AI and Blogs/SEO observations passed the bounded direct-project smoke aspects.
-5. v0.8 also reproduced a retired numbered ACTIVE-project menu/numeric-selection response under generic/missing target conditions; a separate generic run inferred SES under ambiguous test wording.
-6. v0.9 corrects target acquisition only and does not reopen selection-first.
-7. Codex review exposed required edge paths that are now part of the target gate: informational list → bare number, supplied-but-unregistered identifier, and substantive explicit multi-project work.
-8. Historical failures remain historical; no consumer project is automatically mutated by SES evolution.
+3. PR #19 remains abandoned/unmerged; PR #20 retired the single-starter/menu/numeric/cross-turn interaction; PR #21 merged the SaaS Builder-fit correction; PR #22 merged Documentation Auditor v0.9 target disambiguation.
+4. Documentation Auditor v0.9 was applied to the private external Builder and fingerprinted before formal Gate 0.
+5. Formal Gate 0 result is 6/7: R01, R02, R03A, R03B, R04 and R05 PASS; R06 FAIL.
+6. R06 independently resolved FECH.AI and Blogs/SEO and preserved READ_ONLY behavior, but emitted substantive comparative commentary before the required project-scoped readiness boundary.
+7. `PROJECT_TARGET_REGRESSION_PASS` is not established.
+8. `RUNTIME_ENFORCEMENT_GAP / PROMPT_LEVEL_FIX_STOP_LOSS` is triggered for this applied v0.9 evidence boundary.
+9. No wording-only v0.10 is authorized or justified by this failure.
+10. The approved next direction is design of a specialist-specific SES Runtime Enforcement Gateway; it is not implemented.
+11. Historical failures remain historical; no consumer project is automatically mutated by SES evolution.
 
 ## 4. Current required target behavior
 
@@ -53,13 +58,36 @@ INFORMATIONAL PROJECT LIST
 
 SUBSTANTIVE EXPLICIT MULTI-PROJECT TASK
 → independently resolve every project
-→ preserve project-scoped readiness/evidence boundaries
-→ synthesize only afterward
+→ establish project-scoped readiness boundaries
+→ only then synthesize substantive comparison
 ```
 
-No fuzzy inference, mandatory numbered entry menu, numeric binding, or consumer materialization from a bare list position.
+No fuzzy inference, mandatory numbered entry menu, numeric binding or consumer materialization from a bare list position.
 
-## 5. Preserved evidence/authority behavior
+## 5. Gate 0 record
+
+```text
+DOCUMENTATION_AUDITOR_TARGET: V0_9
+BUILDER_APPLIED: ESTABLISHED ON CAPTURED FINGERPRINT
+FINGERPRINT_COMPLETE: YES
+
+R01: PASS
+R02: PASS
+R03A: PASS
+R03B: PASS
+R04: PASS
+R05: PASS
+R06: FAIL
+
+PROJECT_TARGET_REGRESSION: 6/7
+PROJECT_TARGET_REGRESSION_PASS: NOT_ESTABLISHED
+RUNTIME_ENFORCEMENT_GAP: ESTABLISHED
+PROMPT_LEVEL_FIX_STOP_LOSS: TRIGGERED
+```
+
+Do not retroactively rewrite R06 after a later retry.
+
+## 6. Preserved evidence/authority behavior
 
 ```text
 CONTEXT_READINESS_RECEIPT
@@ -72,53 +100,50 @@ INTEGRAL_READ -> POSITIVE START-THROUGH-EOF PROOF + STABLE TARGET IDENTITY
 
 CONTEXT_READY != AUTHORIZED_TO_MUTATE
 TOOL_CAPABILITY != AUTHORIZATION
+
+NORMATIVE_REQUIREMENT
+!= BEHAVIORAL_COMPLIANCE
+!= MECHANICALLY_ENFORCED_INVARIANT
 ```
 
-Keep normative requirement, behavioral compliance and mechanical enforcement distinct.
+## 7. Runtime enforcement decision
 
-## 6. Current candidate
+Current evidence establishes that the existing natural-language receipt-first rule is not sufficient to claim a mechanically enforced transition boundary.
+
+The accepted design direction is:
 
 ```text
-DOCUMENTATION_AUDITOR_TARGET: V0_9
-PROFILE: runtime/custom-gpt/DOCUMENTATION_AUDITOR_BUILDER_PROFILE.md
-KERNEL: runtime/custom-gpt/DOCUMENTATION_AUDITOR_BUILDER_KERNEL.md
-KERNEL_COUNT: 7388
-TARGET_CONTRACT: core/protocols/HYBRID_PROJECT_TARGET_RESOLUTION_CONTRACT.md
-REGRESSION: tests/runtime/DOCUMENTATION_AUDITOR_PROJECT_TARGET_REGRESSION.md
-BUILDER_APPLIED: NOT_YET_ESTABLISHED FOR V0_9
-PROJECT_TARGET_REGRESSION_PASS: NOT_YET_ESTABLISHED
+TARGET/PROJECT RESOLUTION
+→ PROJECT-SCOPED READINESS ARTIFACT(S)
+→ EXTERNAL VALIDATION / TRANSITION GATE
+→ SUBSTANTIVE ANALYSIS
+→ ORDERED RELEASE/RENDERING
 ```
 
-## 7. Required post-merge Gate 0
+The future mechanism must technically block or reject substantive output before required readiness. A successful model response alone is insufficient proof.
 
-Apply/reconcile v0.9 Builder, capture the non-secret fingerprint, then execute exactly:
+This is `TARGET STATE / ACCEPTED FOR DESIGN / NOT IMPLEMENTED`.
 
-```text
-R01 ambiguous target
-R02 missing consumer ID
-R03A explicit FECH.AI
-R03B explicit SES
-R04 informational list → bare number
-R05 explicit unregistered identifier
-R06 substantive FECH.AI ↔ Blogs/SEO multi-project task
-```
+## 8. Anti-loop / blocked shortcuts
 
-Require **7/7 PASS** before proportional smoke resumes.
+Do not:
 
-## 8. Anti-loop stop condition
-
-If any required target-resolution case fails after v0.9 is demonstrably applied:
-
-`RUNTIME_ENFORCEMENT_GAP / PROMPT_LEVEL_FIX_STOP_LOSS`.
-
-Do not create a wording-only v0.10. Use a different runtime/enforcement architecture or accept the limitation explicitly.
+- rerun R06 merely to seek a cosmetic PASS;
+- create v0.10 by strengthening prompt wording only;
+- call behavioral compliance mechanical enforcement;
+- resume Documentation Auditor proportional smoke as though Gate 0 passed;
+- mutate FECH.AI or Blogs/SEO because of this SES runtime gap;
+- implement/deploy a Gateway without a separate explicit authorization;
+- generalize this specialist-specific candidate learning to all SES specialists without independent evidence.
 
 ## 9. Next action
 
-Authoritative source: `docs/NEXT_SAFE_ACTION.md`. After Gate 0, resume proportional Documentation Auditor smoke, then SaaS Builder-fit smoke, then ordinary SES development only if those gates pass.
+Authoritative source: `docs/NEXT_SAFE_ACTION.md`.
+
+The next step after this closeout is a bounded design package for the SES Runtime Enforcement Gateway: state machine, interfaces, structured readiness contract, invalid-transition challenge, evidence/observability requirements, rollback/coexistence plan and implementation options. Implementation is a later separately authorized action.
 
 ## 10. Short resume prompt
 
 ```text
-SES -> resolve main live -> single-starter/menu feature remains retired -> DA v0.8 direct-project observations passed but missing/ambiguous target exposed numeric-menu regression -> v0.9 target fix now requires R01/R02/R03A/R03B/R04/R05/R06 = 7/7 -> any target case fail => prompt-level stop-loss/no wording-only v0.10 -> if Gate 0 passes, proportional DA smoke -> SaaS smoke -> ordinary SES development.
+SES -> resolve main live -> single-starter/menu feature remains retired -> Documentation Auditor v0.9 Builder applied + fingerprint complete -> Gate 0 R01/R02/R03A/R03B/R04/R05 PASS, R06 FAIL because substantive multi-project commentary preceded readiness boundary -> regression 6/7, no retroactive PASS -> RUNTIME_ENFORCEMENT_GAP + PROMPT_LEVEL_FIX_STOP_LOSS -> no wording-only v0.10 -> next action is design-only SES Runtime Enforcement Gateway with invalid-transition proof obligation; no Gateway/Builder/consumer mutation without separate authorization.
 ```
