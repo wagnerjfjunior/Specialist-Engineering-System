@@ -5,6 +5,7 @@
 **Decision date:** 2026-08-15
 **Evidence boundary:** Documentation Auditor v0.9 formal Gate 0 after Builder fingerprint
 **Runtime evidence:** `tests/runtime/evidence/DOCUMENTATION_AUDITOR_V09_GATE0_2026-08-15.md`
+**Corrective readjudication:** `tests/runtime/evidence/DOCUMENTATION_AUDITOR_V09_GATE0_READJUDICATION_2026-08-15.md`
 
 ## 1. Context
 
@@ -16,24 +17,43 @@ The durable sanitized runtime record is:
 
 `tests/runtime/evidence/DOCUMENTATION_AUDITOR_V09_GATE0_2026-08-15.md`.
 
-The formal result was:
+That first record preserved the original conversational adjudication:
 
 ```text
 R01: PASS
 R02: PASS
-R03A: PASS
+R03A: PASS / INITIAL ADJUDICATION
 R03B: PASS
 R04: PASS
 R05: PASS
 R06: FAIL
 
-PROJECT_TARGET_REGRESSION: 6/7
+PROJECT_TARGET_REGRESSION: 6/7 / INITIAL ADJUDICATION
 PROJECT_TARGET_REGRESSION_PASS: NOT_ESTABLISHED
 ```
 
-R06 independently resolved FECH.AI and Blogs/SEO and preserved READ_ONLY behavior, but user-visible substantive comparative commentary appeared before the required project-scoped Context Readiness boundary.
+A subsequent full-transcript PR self-review identified that R03A had also emitted project-specific substantive FECH.AI commentary before the required `Context Readiness Receipt`. That initial PASS was therefore an adjudication overclaim. The correction is preserved separately rather than rewriting the original evidence:
 
-The later receipt does not retroactively repair the earlier ordering violation.
+`tests/runtime/evidence/DOCUMENTATION_AUDITOR_V09_GATE0_READJUDICATION_2026-08-15.md`.
+
+The authoritative current-state result is:
+
+```text
+R01: PASS
+R02: PASS
+R03A: FAIL / PROJECT-SPECIFIC SUBSTANTIVE OUTPUT BEFORE RECEIPT
+R03B: PASS
+R04: PASS
+R05: PASS
+R06: FAIL / SUBSTANTIVE MULTI-PROJECT COMPARATIVE OUTPUT BEFORE READINESS
+
+PROJECT_TARGET_REGRESSION: 5/7
+PROJECT_TARGET_REGRESSION_PASS: NOT_ESTABLISHED
+```
+
+R03A still resolved FECH.AI correctly and remained READ_ONLY, but the ordering requirement failed. R06 independently resolved FECH.AI and Blogs/SEO and preserved READ_ONLY/source separation, but user-visible substantive comparative commentary likewise appeared before the required project-scoped readiness boundary.
+
+Later receipts do not retroactively repair either earlier ordering violation.
 
 The receipt-first requirement was already present in canonical SES contracts and the v0.9 Builder kernel. Therefore another wording-only prompt revision would violate the one-shot stop-loss and would not establish mechanical enforcement.
 
@@ -50,6 +70,11 @@ PROJECT CONTEXT MATERIALIZED
 ```
 
 Current evidence demonstrates that instruction presence does not guarantee that the runtime will avoid emitting substantive content during evidence acquisition before the readiness artifact is emitted.
+
+This was observed on the same fingerprinted v0.9 runtime boundary in both:
+
+- a single explicit consumer-project audit (`R03A`);
+- an explicit two-project comparison (`R06`).
 
 Keep separate:
 
@@ -248,9 +273,9 @@ The design must include a rollback path that can disable the Gateway candidate w
 
 **Rejected by stop loss.** The requirement is already explicit, and the canonical v0.9 gate says a required failure after applied-fingerprint proof must not trigger another wording-only hardening loop.
 
-### B. Rerun R06 until it passes
+### B. Rerun R03A/R06 until they pass
 
-**Rejected.** A later successful retry would be new evidence, not a retroactive repair of the formal failed attempt, and would not establish mechanical enforcement.
+**Rejected.** Later successful retries would be new evidence, not retroactive repairs of the formal failed cases, and would not establish mechanical enforcement.
 
 ### C. Accept instruction-level best effort permanently
 
@@ -264,7 +289,7 @@ The design must include a rollback path that can disable the Gateway candidate w
 
 This ADR is **SPECIALIST-SPECIFIC** and grounded in Documentation Auditor evidence.
 
-First occurrence/reproduction across versions remains `CANDIDATE_LEARNING`; it is not automatically a universal SES runtime architecture.
+Repeated receipt-order failures within this specialist across versions/cases strengthen the specialist-specific `CANDIDATE_LEARNING`, but they do not automatically establish a universal SES runtime architecture requirement.
 
 Broader promotion requires independent evidence from other specialist domains and explicit SES architecture review.
 
