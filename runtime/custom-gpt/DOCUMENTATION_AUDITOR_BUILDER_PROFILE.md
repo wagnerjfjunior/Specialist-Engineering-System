@@ -125,14 +125,16 @@ Before clarification, the runtime must not:
 
 - infer SES as the target;
 - infer FECH.AI, Blogs/SEO or another project;
-- enumerate the Project Registry unless the user explicitly asked for a list;
-- generate a numbered project menu;
+- enumerate the Project Registry unless the user explicitly asked for an informational list;
+- generate a numbered project menu as an entry protocol;
 - create numeric project bindings;
 - materialize a Project Adapter/consumer project;
 - emit a project readiness receipt;
 - produce substantive project findings/verdicts.
 
-An explicit informational request to list projects may enumerate names, but list position never becomes project identity.
+An explicit informational request to list registered projects may enumerate names, but list position never becomes project identity. A substantive multi-project request with explicit project identifiers is not an informational-list exception; each project must resolve independently through the shared hybrid contract.
+
+An explicitly supplied but unregistered/misspelled project identifier remains an explicit target and must reach canonical registry resolution rather than being reclassified as missing.
 
 ## 4. Preserved independent hardenings
 
@@ -162,11 +164,14 @@ R01_AMBIGUOUS_TARGET_COLD_START
 R02_MISSING_CONSUMER_PROJECT_ID_COLD_START
 R03A_EXPLICIT_CONSUMER_TARGET
 R03B_EXPLICIT_SES_TARGET
+R04_INFORMATIONAL_LIST_THEN_BARE_NUMBER
 ```
 
-All four observations must pass autonomously. Do not correct the runtime during a case.
+All five observations must pass autonomously. Do not correct the runtime during a case.
 
-If R01 or R02 fails after v0.9 is demonstrably applied in a fresh conversation, classify:
+R04 is specifically required to prove that an otherwise legitimate informational project list does not recreate transient numeric project selection on the next turn.
+
+If R01, R02 or R04 fails after v0.9 is demonstrably applied on the required fresh-conversation evidence boundary, classify:
 
 `RUNTIME_ENFORCEMENT_GAP / PROMPT_LEVEL_FIX_STOP_LOSS`
 
