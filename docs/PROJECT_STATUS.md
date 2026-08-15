@@ -1,6 +1,6 @@
 # SES — Project Status
 
-**Status:** `SFJM_OPERATIONAL_CONTINUITY_V0_1 / POST_STOP_LOSS_RUNTIME_RECONCILIATION`
+**Status:** `SES_RUNTIME_ENFORCEMENT_DECISION / DOCUMENTATION_AUDITOR_GATE0_CLOSEOUT`
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System`
 **Canonical branch:** `main` resolved live
 **Authoritative next action:** `docs/NEXT_SAFE_ACTION.md`
@@ -11,7 +11,9 @@ SES is project-agnostic specialist-engineering infrastructure. Consumer projects
 
 `SES CENTRAL EVOLUTION != AUTOMATIC CONSUMER-PROJECT MUTATION`
 
-## 2. Stop-loss decision
+SFJM continuity remains an operational continuity mechanism; it is not the owner of this runtime/enforcement decision.
+
+## 2. Stop-loss decisions
 
 The standardized single-starter / dynamic project-menu / numeric-selection / cross-turn-resume feature remains discontinued.
 
@@ -24,9 +26,18 @@ The standardized single-starter / dynamic project-menu / numeric-selection / cro
 → cross-turn resume
 ```
 
-The active direction is direct explicit target/project + substantive task entry with multiple universal conversation starters.
+The active interaction direction remains direct explicit target/project + substantive task entry with multiple universal conversation starters.
 
-## 3. Rollback history
+A second stop-loss is now active for Documentation Auditor prompt hardening:
+
+```text
+APPLIED_V0_9_REQUIRED_CASE_FAIL
+→ RUNTIME_ENFORCEMENT_GAP
+→ PROMPT_LEVEL_FIX_STOP_LOSS
+→ NO WORDING-ONLY V0_10
+```
+
+## 3. Relevant history
 
 ```text
 PR #14: introduced selection-first + single-starter feature
@@ -37,6 +48,7 @@ PR #18: preserved runtime-enforcement proof boundary
 PR #19: ABANDONED / STOP-LOSS / NOT_MERGED
 PR #20: MERGED controlled rollback
 PR #21: MERGED SaaS Architect Builder-fit kernel/name correction
+PR #22: MERGED Documentation Auditor v0.9 project-target disambiguation correction
 ```
 
 Historical evidence is not rewritten.
@@ -46,57 +58,89 @@ Historical evidence is not rewritten.
 | Area | Recorded state |
 |---|---|
 | SaaS Architect historical v0.1 | `RUNTIME_BEHAVIORAL_PROOF = PASS`, T01–T29 = 29/29, exact historical fingerprint only |
-| SaaS Architect current target | compact `runtime/custom-gpt/SAAS_ARCHITECT_BUILDER_KERNEL.md`, 6182 code points; proportional smoke still required |
+| SaaS Architect current target | compact `runtime/custom-gpt/SAAS_ARCHITECT_BUILDER_KERNEL.md`, 6182 code points; proportional smoke still required and currently deferred |
 | Documentation Auditor v0.4-v0.6 | historical receipt/coverage failures preserved; no retroactive PASS |
 | Documentation Auditor v0.7 | abandoned; PR #19 not merged |
 | Documentation Auditor v0.8 | direct FECH.AI and Blogs/SEO observations passed; missing/ambiguous target reproduced retired numbered-menu behavior |
-| Documentation Auditor v0.9 | bounded target-resolution correction; repository candidate pending Builder application and seven-case Gate 0 |
+| Documentation Auditor v0.9 Builder | applied to the private external Builder; non-secret fingerprint captured before formal Gate 0 |
+| Documentation Auditor v0.9 Gate 0 | `6/7`; R01–R05 plus R03A/R03B PASS, R06 FAIL |
+| Documentation Auditor project-target regression | `PROJECT_TARGET_REGRESSION_PASS = NOT_ESTABLISHED` |
+| Runtime enforcement | `RUNTIME_ENFORCEMENT_GAP = ESTABLISHED`; prompt-level stop loss triggered |
 
-## 5. v0.8 target-acquisition finding
+## 5. v0.9 Gate 0 evidence
 
-```text
-DIRECT FECH.AI TASK: PASS / OBSERVED
-DIRECT BLOGS/SEO TASK: PASS / OBSERVED
-GENERIC TARGET → SES SELF-WORK: INDETERMINATE / test intent ambiguous
-GENERIC TARGET → NUMBERED ACTIVE PROJECT MENU: FAIL / STOP-LOSS REGRESSION
-```
-
-The observed defect is bounded to target/project acquisition; direct-project observations supported registry/adapter/bootstrap, receipt ordering and conservative evidence behavior.
-
-## 6. v0.9 correction boundary
-
-v0.9 adds `core/protocols/HYBRID_PROJECT_TARGET_RESOLUTION_CONTRACT.md` and exact runtime regression coverage for:
+Formal observations on the fingerprinted v0.9 runtime:
 
 ```text
-R01 ambiguous SES-vs-consumer target
-R02 consumer task with missing project identifier
-R03A explicit registered consumer target
-R03B explicit SES self-target
-R04 informational list followed by bare numeric reply
-R05 explicit but unregistered consumer identifier
-R06 substantive explicit multi-project task
+R01 ambiguous SES-vs-consumer target: PASS
+R02 consumer task with missing project identifier: PASS
+R03A explicit FECH.AI: PASS
+R03B explicit SES: PASS
+R04 informational list → bare number: PASS
+R05 explicit but unregistered identifier: PASS
+R06 substantive FECH.AI ↔ Blogs/SEO multi-project task: FAIL
 ```
 
-Required outcome: `PROJECT_TARGET_REGRESSION_PASS = 7/7` on the actual applied Builder before proportional smoke resumes.
+R06 demonstrated:
 
-The correction preserves:
+```text
+MULTI_PROJECT_TASK: YES
+INFORMATIONAL_LIST_SHORT_CIRCUIT: NO
+FECHAI_INDEPENDENTLY_RESOLVED: YES
+BLOGS_SEO_INDEPENDENTLY_RESOLVED: YES
+READ_ONLY: PRESERVED
+SUBSTANTIVE_COMPARATIVE_OUTPUT_BEFORE_REQUIRED_READINESS_BOUNDARY: YES
+RESULT: FAIL
+```
 
-- clarification-only hard stop for missing/ambiguous target;
-- supplied identifier presence distinct from successful registry resolution;
-- informational project listing distinct from selection;
-- list position never becoming project identity;
-- substantive multi-project work resolving every project independently;
-- no fuzzy project inference;
-- one-shot prompt-level stop-loss if applied v0.9 still fails a required target-resolution case.
+The later receipt and bounded final comparison do not retroactively erase the ordering failure.
 
-## 7. Preserved hardenings
+## 6. Enforcement conclusion
 
-Preserve `NOT_READ / PARTIAL_READ / INTEGRAL_READ`, positive EOF proof, receipt-first, normative-vs-mechanical distinction, exact-ref/provenance/coverage/contradiction/freshness discipline, fail-closed resolution, cross-project isolation, READ_ONLY and exact mutation authorization, anti-overclaim lifecycle separation.
+The receipt-first requirement already exists in the hybrid bootstrap contract, Documentation Auditor archetype/runtime boundary and v0.9 Builder kernel.
 
-## 8. Consumer projects
+Current evidence therefore supports:
 
-No FECH.AI or Blogs/SEO mutation follows from this SES correction. Registered consumers remain authoritative for their own truth, continuity, specialist rules and lifecycle decisions.
+```text
+RECEIPT_FIRST_NORMATIVE_REQUIREMENT: ESTABLISHED
+RECEIPT_FIRST_BEHAVIORAL_COMPLIANCE: CASE/BOUNDARY DEPENDENT
+RECEIPT_FIRST_MECHANICAL_ENFORCEMENT: NOT_ESTABLISHED
+RUNTIME_ENFORCEMENT_GAP: ESTABLISHED BY R06 FAILURE
+```
 
-## 9. Continuity policy
+Do not infer that more natural-language prompt wording will create a mechanically enforced invariant.
+
+## 7. Architectural direction
+
+The approved design direction is a specialist-specific **SES Runtime Enforcement Gateway** that places a controller/state-machine boundary outside ordinary model instruction-following and can block/reject substantive output until required readiness transitions have passed.
+
+This is **TARGET STATE / ACCEPTED FOR DESIGN**, not current implementation.
+
+Decision record:
+
+`docs/architecture/ADR-001-DOCUMENTATION_AUDITOR_RUNTIME_ENFORCEMENT_GATEWAY.md`
+
+The next safe action is design-only. Gateway implementation requires separate explicit authorization.
+
+## 8. Preserved hardenings
+
+Preserve:
+
+- `NOT_READ / PARTIAL_READ / INTEGRAL_READ`;
+- positive EOF proof before `INTEGRAL_READ`;
+- receipt-first as a normative requirement;
+- normative-vs-behavioral-vs-mechanical distinction;
+- exact-ref/provenance/coverage/contradiction/freshness discipline;
+- fail-closed target/project resolution;
+- cross-project isolation;
+- READ_ONLY default and exact mutation authorization;
+- anti-overclaim lifecycle separation;
+- historical FAILs without retroactive promotion.
+
+## 9. Consumer projects
+
+No FECH.AI or Blogs/SEO mutation follows from this SES runtime failure or the Gateway design decision. Registered consumers remain authoritative for their own truth, continuity, specialist rules and lifecycle decisions.
+
+## 10. Continuity policy
 
 `docs/NEXT_SAFE_ACTION.md` is the sole authoritative semantic next action. This file is derived state only. If it conflicts materially with that file or newer live authority, stop and reconcile.
