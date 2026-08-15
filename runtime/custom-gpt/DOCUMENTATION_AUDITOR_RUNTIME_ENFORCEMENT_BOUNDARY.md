@@ -23,7 +23,7 @@ For explicit multi-project work:
 ```text
 RESOLVE PROJECT A INDEPENDENTLY
 + RESOLVE PROJECT B INDEPENDENTLY
-→ ESTABLISH INDEPENDENTLY IDENTIFIABLE READINESS BOUNDARIES
+→ ESTABLISH VALID, INDEPENDENTLY IDENTIFIABLE READINESS BOUNDARIES
 → ONLY THEN SYNTHESIZE SUBSTANTIVE COMPARISON
 ```
 
@@ -49,15 +49,19 @@ Therefore:
 INSTRUCTION_PRESENT != BEHAVIOR_OBSERVED
 BEHAVIOR_OBSERVED != MECHANICAL_ENFORCEMENT
 PROMPT_INVARIANT != ENFORCED_RUNTIME_INVARIANT
+ARTIFACT_PRESENT != CANONICAL_READINESS_VALID
 ```
 
 ## 3. Current evidence boundary
 
-The v0.9 Builder kernel already requires receipt-first ordering. The shared hybrid bootstrap contract and project-target resolution contract also require project-scoped readiness before project-specific substantive synthesis.
+The v0.9 Builder kernel already requires receipt-first ordering and delegates task-bound readiness to the shared hybrid bootstrap contract.
 
-The first durable Gate 0 record preserved the earlier conversational adjudication `R03A: PASS` and `R06: FAIL`. Subsequent full-transcript PR self-review found that R03A had also emitted project-specific substantive FECH.AI commentary before the required receipt. The correction is preserved in a separate evidence record rather than rewriting the original artifact.
+The first durable Gate 0 record preserved the earlier conversational adjudication `R03A: PASS` and `R06: FAIL`. Subsequent full-transcript/contract review established two corrections without rewriting that historical record:
 
-Current corrected Gate 0 evidence therefore contains two ordering failures on the same fingerprinted v0.9 Builder boundary: one single-project and one multi-project.
+1. R03A had emitted project-specific substantive FECH.AI commentary before the receipt and must be `FAIL`.
+2. R06 not only emitted substantive comparison before readiness; the later artifact labeled `Context Readiness Receipt` was itself incomplete against mandatory hybrid receipt semantics and cannot be treated as valid canonical readiness.
+
+Current corrected Gate 0 evidence therefore contains two receipt-order failures on the same fingerprinted v0.9 Builder boundary, with an additional R06 readiness-validity defect.
 
 Current evidence supports:
 
@@ -65,11 +69,12 @@ Current evidence supports:
 RECEIPT_FIRST_NORMATIVE_REQUIREMENT: ESTABLISHED
 RECEIPT_FIRST_BEHAVIORAL_COMPLIANCE: VERSION/CASE_BOUND
 RECEIPT_FIRST_MECHANICAL_ENFORCEMENT: NOT_ESTABLISHED
+CANONICAL_READINESS_ARTIFACT_VALIDATION: NOT_ENFORCED_BY_CURRENT_BUILDER_RUNTIME
 RUNTIME_ENFORCEMENT_GAP: ESTABLISHED
 PROMPT_LEVEL_FIX_STOP_LOSS: TRIGGERED
 ```
 
-Do not describe Builder-only receipt ordering as deterministic, guaranteed or mechanically enforced.
+Do not describe Builder-only receipt ordering or receipt validity as deterministic, guaranteed or mechanically enforced.
 
 Absence of observed enforcement is not universal proof that no future mechanism can exist. Any future enforcement claim requires positive mechanism evidence.
 
@@ -107,11 +112,13 @@ R06: FAIL
 PROJECT_TARGET_REGRESSION: 6/7 / INITIAL ADJUDICATION
 ```
 
-Corrective R03A readjudication:
+Corrective readjudication:
 
 ```text
 R03A_EXPLICIT_FECHAI_TARGET: FAIL / PROJECT-SPECIFIC SUBSTANTIVE OUTPUT BEFORE RECEIPT
 INITIAL_R03A_ADJUDICATION: PASS / INITIAL_OVERCLAIM_PRESERVED
+
+R06_RESULT: FAIL / EARLY SUBSTANTIVE COMPARISON + INVALID/INCOMPLETE READINESS ARTIFACT
 ```
 
 Corrected current matrix:
@@ -156,17 +163,20 @@ FECHAI_INDEPENDENTLY_RESOLVED: YES
 BLOGS_SEO_INDEPENDENTLY_RESOLVED: YES
 CROSS_PROJECT_CONTEXT_CONTAMINATION: 0 OBSERVED
 READ_ONLY: PRESERVED
+READINESS_ARTIFACT_EMITTED_LATER: YES
 ```
 
-R06 failure observation:
+R06 failure observations:
 
 ```text
-SUBSTANTIVE_COMPARATIVE_OUTPUT_BEFORE_REQUIRED_READINESS_BOUNDARY: YES
-PROJECT_SCOPED_READINESS_BOUNDARIES: PRESENT LATER / TOO LATE FOR REQUIRED ORDER
+SUBSTANTIVE_COMPARATIVE_OUTPUT_BEFORE_REQUIRED_READINESS: YES
+READINESS_ARTIFACT_CANONICAL_CONTRACT_COMPLETE: NO
+R06_LIMITED_EFFECTIVE_SCOPE_EXPLICITLY_BOUND: NO
+PROJECT_SCOPED_READINESS_BOUNDARIES: INVALID/INCOMPLETE FOR CANONICAL READINESS
 RESULT: FAIL
 ```
 
-Later receipts do not retroactively repair either invalid earlier transition.
+Later receipts do not retroactively repair invalid earlier transitions. A late artifact is also not promoted to valid readiness merely because it carries a receipt heading.
 
 The v0.9 runtime runbook is closed as executed/blocked rather than remaining an active Gate 0 queue:
 
@@ -176,11 +186,11 @@ The v0.9 runtime runbook is closed as executed/blocked rather than remaining an 
 
 The observed v0.9 failures are not evidence that target classification, registry resolution or source isolation broadly failed. Those aspects were positive in R03A and/or R06.
 
-The bounded repeated failure is the transition from context acquisition/materialization to user-visible substantive output before readiness release.
+The bounded repeated failure is the transition from context acquisition/materialization to user-visible substantive output before valid readiness release. R06 additionally demonstrates that the current instruction-driven runtime can emit an artifact labeled as readiness without satisfying the full canonical receipt contract.
 
-Current evidence does **not** establish a separate output controller/validator/transition gate that technically prevents this transition before readiness.
+Current evidence does **not** establish a separate output controller/validator/transition gate that technically validates the readiness artifact and prevents substantive release before that validation succeeds.
 
-This is consistent with the prior specialist-specific learning from v0.6 and now has fresh formal v0.9 reproduction in both a single-project and multi-project runtime case.
+This is consistent with prior specialist-specific learning from v0.6 and now has fresh formal v0.9 reproduction across single-project and multi-project cases.
 
 Do not overclaim a universal root cause beyond the evidence. The established finding is:
 
@@ -196,7 +206,7 @@ PROMPT_LEVEL_FIX_STOP_LOSS: TRIGGERED
 
 Do not:
 
-- create v0.10 solely by adding stronger receipt-order wording;
+- create v0.10 solely by adding stronger receipt-order/readiness wording;
 - rerun R03A or R06 merely to seek a cosmetic PASS;
 - relabel later corrected retries as retroactive PASS;
 - proceed with the old v0.9 proportional smoke as if Gate 0 passed;
@@ -211,12 +221,12 @@ Target transition model:
 ```text
 TARGET / PROJECT RESOLUTION
 → PROJECT-SCOPED READINESS ARTIFACT(S)
-→ EXTERNAL VALIDATOR / TRANSITION GATE
+→ EXTERNAL READINESS VALIDATOR / TRANSITION GATE
 → SUBSTANTIVE ANALYSIS
 → ORDERED RELEASE / RENDERING
 ```
 
-The critical property is that the transition controller, not ordinary model instruction-following, decides whether substantive output may be released.
+The critical property is that the transition controller, not ordinary model instruction-following, decides whether a **canonically valid** readiness artifact exists and whether substantive output may be released.
 
 The readiness artifact must preserve the full mandatory semantic binding of the canonical hybrid receipt, including at minimum:
 
@@ -269,7 +279,7 @@ Decision record:
 
 ## 9. Proof obligations for a future enforcement candidate
 
-A future candidate may claim mechanical enforcement only with positive evidence of an actual mechanism and an executed invalid-transition challenge.
+A future candidate may claim mechanical enforcement only with positive evidence of an actual mechanism and executed invalid-transition/readiness-validation challenges.
 
 Minimum obligations:
 
@@ -280,8 +290,10 @@ PROOF_LEVEL_BOUND: YES
 TARGET_REF_OR_OBJECT_BOUND_WHEN_MATERIAL: YES
 ENVIRONMENT_BOUND_WHEN_MATERIAL: YES
 SES_CANONICAL_CANDIDATE_EFFECTIVE_REFS_SEPARATED: YES
+LIMITED_REQUIRES_EXPLICIT_STRICT_SUBSET_EFFECTIVE_SCOPE: ENFORCED
 MULTI_PROJECT_INDEPENDENT_RESOLUTION: YES
-PROJECT_SCOPED_READINESS_ARTIFACTS: VALIDATED
+PROJECT_SCOPED_READINESS_ARTIFACTS: CANONICALLY VALIDATED
+MALFORMED_OR_INCOMPLETE_READINESS_ARTIFACT: REJECTED
 SUBSTANTIVE_OUTPUT_BEFORE_REQUIRED_READINESS: TECHNICALLY_BLOCKED_OR_REJECTED
 INVALID_TRANSITION_CHALLENGE: PASS
 FAIL_CLOSED_ON_INVALID_OR_INCOMPLETE_READINESS: YES
@@ -291,7 +303,7 @@ READ_ONLY_BY_DEFAULT: YES
 TRANSITION_TRACE: PRESENT
 ```
 
-The invalid-transition challenge must intentionally attempt to release project-specific substantive content before readiness. PASS requires the controller to block/reject that transition; a model voluntarily choosing not to produce early content is insufficient.
+The invalid-transition challenge must intentionally attempt to release project-specific substantive content before valid readiness. A separate malformed-readiness challenge must show that an incomplete artifact cannot open the substantive-output transition. Voluntary model compliance is insufficient.
 
 ## 10. Receipt-order behavioral subgate remains useful
 
@@ -299,12 +311,13 @@ For any substantive project-specific case:
 
 ```text
 RECEIPT_EMITTED: YES
+RECEIPT_CANONICAL_CONTRACT_COMPLETE: YES
 RECEIPT_PRECEDES_SUBSTANTIVE_OUTPUT: YES
 UNSUPPORTED_INTEGRAL_READ_PROMOTION: 0
 AUTONOMOUS_CORRECTION_REQUIRED: 0
 ```
 
-Passing this subgate establishes only receipt-order behavioral compliance for the exact evidence boundary. It does not establish broad runtime/product/security PASS and must not be called mechanically enforced.
+Passing this subgate establishes only bounded behavioral compliance for the exact evidence boundary. It does not establish broad runtime/product/security PASS and must not be called mechanically enforced.
 
 ## 11. Stop-loss interaction boundary
 
