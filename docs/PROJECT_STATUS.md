@@ -15,8 +15,6 @@ SES is project-agnostic specialist-engineering infrastructure. Consumer projects
 
 The standardized single-starter / dynamic project-menu / numeric-selection / cross-turn-resume feature remains discontinued.
 
-Retired flow:
-
 ```text
 # CLIQUE PARA INICIAR
 → numbered ACTIVE project menu
@@ -26,7 +24,7 @@ Retired flow:
 → cross-turn resume
 ```
 
-The active product direction is direct explicit target/project + substantive task entry with multiple universal conversation starters.
+The active direction is direct explicit target/project + substantive task entry with multiple universal conversation starters.
 
 ## 3. Rollback history
 
@@ -48,50 +46,52 @@ Historical evidence is not rewritten.
 | Area | Recorded state |
 |---|---|
 | SaaS Architect historical v0.1 | `RUNTIME_BEHAVIORAL_PROOF = PASS`, T01–T29 = 29/29, exact historical fingerprint only |
-| SaaS Architect current target | compact `runtime/custom-gpt/SAAS_ARCHITECT_BUILDER_KERNEL.md`, 6182 code points; current proportional smoke still required |
+| SaaS Architect current target | compact `runtime/custom-gpt/SAAS_ARCHITECT_BUILDER_KERNEL.md`, 6182 code points; proportional smoke still required |
 | Documentation Auditor v0.4-v0.6 | historical receipt/coverage failures preserved; no retroactive PASS |
 | Documentation Auditor v0.7 | abandoned; PR #19 not merged |
-| Documentation Auditor v0.8 | rollback target; direct FECH.AI and Blogs/SEO observations passed, but a retired numbered-menu response was observed under missing/ambiguous target conditions |
-| Documentation Auditor v0.9 | bounded project-target disambiguation fix; repository candidate pending Builder application/regression |
+| Documentation Auditor v0.8 | direct FECH.AI and Blogs/SEO observations passed; missing/ambiguous target reproduced retired numbered-menu behavior |
+| Documentation Auditor v0.9 | bounded target-resolution correction; repository candidate pending Builder application and seven-case Gate 0 |
 
 ## 5. v0.8 target-acquisition finding
-
-Observed behavior after the rollback Builder configuration was visible:
 
 ```text
 DIRECT FECH.AI TASK: PASS / OBSERVED
 DIRECT BLOGS/SEO TASK: PASS / OBSERVED
-GENERIC TARGET → SES SELF-WORK: INDETERMINATE because the test input did not explicitly establish consumer-project intent
+GENERIC TARGET → SES SELF-WORK: INDETERMINATE / test intent ambiguous
 GENERIC TARGET → NUMBERED ACTIVE PROJECT MENU: FAIL / STOP-LOSS REGRESSION
 ```
 
-The issue is bounded to target/project acquisition; project bootstrap, cross-project isolation, receipt ordering and conservative coverage behaved correctly in the direct-project observations.
+The observed defect is bounded to target/project acquisition; direct-project observations supported registry/adapter/bootstrap, receipt ordering and conservative evidence behavior.
 
-## 6. Root-cause correction
+## 6. v0.9 correction boundary
 
-v0.9 adds:
+v0.9 adds `core/protocols/HYBRID_PROJECT_TARGET_RESOLUTION_CONTRACT.md` and exact runtime regression coverage for:
 
-- `core/protocols/HYBRID_PROJECT_TARGET_RESOLUTION_CONTRACT.md`;
-- explicit distinction between SES self-target, consumer-project target, missing consumer-project identifier and ambiguous SES-vs-consumer target;
-- clarification-only hard stop before registry/project materialization;
-- prohibition on project enumeration unless the user explicitly asks for a list;
-- prohibition on transient numeric bindings;
-- exact cold-start regression cases in `tests/runtime/DOCUMENTATION_AUDITOR_PROJECT_TARGET_REGRESSION.md`;
-- a one-shot anti-loop stop condition if the applied v0.9 runtime still fails target clarification.
+```text
+R01 ambiguous SES-vs-consumer target
+R02 consumer task with missing project identifier
+R03A explicit registered consumer target
+R03B explicit SES self-target
+R04 informational list followed by bare numeric reply
+R05 explicit but unregistered consumer identifier
+R06 substantive explicit multi-project task
+```
+
+Required outcome: `PROJECT_TARGET_REGRESSION_PASS = 7/7` on the actual applied Builder before proportional smoke resumes.
+
+The correction preserves:
+
+- clarification-only hard stop for missing/ambiguous target;
+- supplied identifier presence distinct from successful registry resolution;
+- informational project listing distinct from selection;
+- list position never becoming project identity;
+- substantive multi-project work resolving every project independently;
+- no fuzzy project inference;
+- one-shot prompt-level stop-loss if applied v0.9 still fails a required target-resolution case.
 
 ## 7. Preserved hardenings
 
-Preserve:
-
-- `NOT_READ / PARTIAL_READ / INTEGRAL_READ` discipline;
-- positive start-through-EOF proof before `INTEGRAL_READ`;
-- task-bound Context Readiness Receipt before project-specific substantive conclusions;
-- separation of normative requirement, behavioral compliance and mechanical enforcement;
-- exact-ref/provenance/coverage/contradiction/freshness discipline;
-- fail-closed project resolution;
-- cross-project isolation;
-- READ_ONLY baseline and exact mutation authorization;
-- anti-overclaim lifecycle separation.
+Preserve `NOT_READ / PARTIAL_READ / INTEGRAL_READ`, positive EOF proof, receipt-first, normative-vs-mechanical distinction, exact-ref/provenance/coverage/contradiction/freshness discipline, fail-closed resolution, cross-project isolation, READ_ONLY and exact mutation authorization, anti-overclaim lifecycle separation.
 
 ## 8. Consumer projects
 
