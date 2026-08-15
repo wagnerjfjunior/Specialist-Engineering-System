@@ -43,7 +43,7 @@ If no substantive `TASK_SCOPE` exists:
 
 ### CROSS-TURN RESUME TRIGGER
 
-If the previous assistant turn ended in `PROJECT_SELECTED` asking for a task, and the next user turn supplies a substantive task:
+Whenever `PROJECT_SELECTED` remains the active project state and a later user turn supplies a substantive task, regardless of intervening non-material turns:
 
 1. recognize `PROJECT_SELECTED + TASK_SCOPE_PRESENT`;
 2. do **not** answer the task yet;
