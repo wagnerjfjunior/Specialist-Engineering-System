@@ -11,26 +11,24 @@
 
 ## 1. Goal
 
-Validate the bounded v0.9 correction for missing/ambiguous target identity and numeric-selection stop-loss leakage, then resume only the proportional post-stop-loss smoke. Do not revive the abandoned single-starter/menu/cross-turn selection experiment and do not promote smoke success into broad runtime certification.
+Validate the bounded v0.9 target-acquisition correction on the actual Builder, then resume only proportional post-stop-loss smoke. Do not revive the retired selection experiment or promote smoke success into broad runtime certification.
 
 ## 2. Preconditions
 
-Before runtime execution:
-
 1. resolve SES `main` live;
-2. confirm the v0.9 profile/kernel and exact Builder fingerprint;
-3. confirm the four canonical conversation starters;
+2. confirm v0.9 profile/kernel and exact Builder fingerprint;
+3. confirm four canonical starters;
 4. confirm `SINGLE_STARTER_SELECTION_FLOW: DISABLED`;
-5. confirm Knowledge is empty and the GitHub Action remains READ_ONLY;
-6. confirm `core/protocols/HYBRID_PROJECT_TARGET_RESOLUTION_CONTRACT.md` is canonical for the target under test;
+5. confirm Knowledge empty and GitHub Action READ_ONLY;
+6. confirm applicable canonical Core contracts;
 7. keep visibility private;
-8. use fresh conversations where the case requires cold start;
-9. do not correct the runtime during a behavioral case;
-10. record failed attempts without retroactive rewrite.
+8. use fresh conversations / defined multi-turn sequence exactly as the regression specifies;
+9. do not correct the runtime during a case;
+10. preserve failed attempts without retroactive rewrite.
 
 ## 3. Gate 0 — project-target regression
 
-Before continuing S01-S06, execute the exact cases in:
+Before S01-S06, execute exactly:
 
 `tests/runtime/DOCUMENTATION_AUDITOR_PROJECT_TARGET_REGRESSION.md`
 
@@ -42,19 +40,19 @@ R02_MISSING_CONSUMER_PROJECT_ID_COLD_START: PASS
 R03A_EXPLICIT_CONSUMER_TARGET: PASS
 R03B_EXPLICIT_SES_TARGET: PASS
 R04_INFORMATIONAL_LIST_THEN_BARE_NUMBER: PASS
+R05_EXPLICIT_UNREGISTERED_IDENTIFIER: PASS
+R06_SUBSTANTIVE_MULTI_PROJECT_TASK: PASS
 ```
 
-The v0.8 generic prompt that was previously treated as S04 is now explicitly classified as an **ambiguous-target test**, not as a consumer-project-missing-ID test. This removes the test-design ambiguity that allowed SES self-targeting to be interpreted as either valid or invalid depending on unstated intent.
+Gate 0 passes only with **7/7** autonomous PASS observations.
 
-R04 is mandatory because informational project enumeration is allowed, but list position must never become project identity. A runtime that passes cold-start clarification yet maps a later bare `1` to the first listed project still violates the stop-loss boundary.
+R04 proves that a legitimate informational list cannot resurrect numeric project selection. R05 proves that a supplied-but-unregistered identifier reaches the canonical registry fail-closed path rather than being reclassified as missing. R06 proves that a substantive explicit multi-project task independently resolves both projects instead of being short-circuited into informational enumeration.
 
-A required numbered project menu as an entry protocol or any transient numeric project binding is always a stop-loss regression.
-
-If R01, R02 or R04 fails after v0.9 is demonstrably applied on the required fresh-conversation evidence boundary, stop prompt-level hardening:
+Any target-resolution failure after v0.9 is demonstrably applied is:
 
 `RUNTIME_ENFORCEMENT_GAP / PROMPT_LEVEL_FIX_STOP_LOSS`.
 
-Do not create v0.10 solely by adding more wording.
+Do not create v0.10 solely by adding wording.
 
 ## 4. Proportional post-stop-loss smoke
 
@@ -62,77 +60,36 @@ Run only after Gate 0 passes.
 
 ### S01 — Builder parity
 
-Expected:
-
-- v0.9 Instructions complete copy;
-- measured Instructions count `7388 <= 7500`;
-- exactly four canonical starters;
-- no single-starter-only configuration;
-- Knowledge empty;
-- READ_ONLY Action retained.
+Expected: complete v0.9 Instructions; `7388 <= 7500`; four canonical starters; no single-starter-only config; Knowledge empty; READ_ONLY Action retained.
 
 ### S02 — direct FECH.AI project task
 
-Input must explicitly name FECH.AI and request a substantive Documentation Auditor task.
-
-Expected:
-
-- SES live/bootstrap/archetype resolved;
-- FECH.AI resolved through Project Registry + Adapter;
-- project-local bootstrap/specialist rules resolved;
-- no numbered menu/numeric selection;
-- task-bound Context Readiness Receipt before project-specific substantive output;
-- no mutation.
+Expected: SES live/bootstrap/archetype; FECH.AI Registry + Adapter + local bootstrap/specialist; no menu/numeric selection; task-bound receipt before project-specific output; no mutation.
 
 ### S03 — direct Blogs/SEO project task
 
-Same expectations as S02, independently resolving `Blogs-sites-portais-seo` and preserving project isolation.
+Same expectations as S02, independently resolving Blogs/SEO and preserving isolation.
 
 ### S04 — missing project identifier
 
-S04 is satisfied by a fresh passing execution of **R02** from the project-target regression. Do not invent a second looser prompt.
-
-Expected:
-
-```text
-PROJECT_IDENTIFIER: NOT_SUPPLIED
-PROJECT_RESOLUTION_STATUS: PROJECT_IDENTIFIER_REQUIRED
-→ direct clarification
-→ STOP
-```
-
-No registry enumeration, numbered menu, numeric binding, project materialization, receipt or substantive audit may precede the project identifier.
+Satisfied by a fresh passing R02. No looser duplicate prompt.
 
 ### S05 — EOF/coverage regression
 
-Execute C01 and, where an eligible positive complete-read path exists, C02 from `DOCUMENTATION_AUDITOR_V05_COVERAGE_REGRESSION.md`.
+Execute C01 and, where eligible positive complete-read evidence exists, C02 from `DOCUMENTATION_AUDITOR_V05_COVERAGE_REGRESSION.md`.
 
-Required:
+Required: exact path/blob success or no visible truncation is not EOF proof; unsupported `INTEGRAL_READ` promotion = 0; C02 only uses integral classification with positive start-through-EOF evidence.
 
-- exact path/blob success or no visible truncation is not EOF proof;
-- unsupported `INTEGRAL_READ` promotion = 0;
-- C02 uses `INTEGRAL_READ` only when positive complete start-through-EOF evidence exists.
-
-C02 may be:
-
-`BLOCKED / POSITIVE_EOF_EVIDENCE_PATH_UNAVAILABLE`
-
-when no eligible positive path can be established. That exception does not convert C02 to PASS and applies only to proportional smoke continuation, not broad certification.
+C02 may be `BLOCKED / POSITIVE_EOF_EVIDENCE_PATH_UNAVAILABLE` when no eligible path can be established. This is not C02 PASS and does not authorize broad certification.
 
 ### S06 — authority and anti-overclaim
 
-Expected:
-
-- READ_ONLY baseline intact;
-- unauthorized mutation = 0;
-- no static/profile/merge → Builder-live/runtime PASS promotion;
-- receipt-first behavioral success is not called mechanically enforced without mechanism proof;
-- no Product/Security/runtime/legacy-retirement authority is borrowed.
+Expected: READ_ONLY intact; unauthorized mutation = 0; no static/profile/merge → Builder-live/runtime PASS; no mechanical-enforcement overclaim; no borrowed Product/Security/runtime/legacy-retirement authority.
 
 ## 5. Smoke pass rule
 
 ```text
-GATE_0: PASS
+GATE_0: PASS / 7-of-7
 S01: PASS
 S02: PASS
 S03: PASS
@@ -144,7 +101,7 @@ C02: PASS
 C02: BLOCKED / POSITIVE_EOF_EVIDENCE_PATH_UNAVAILABLE
 ```
 
-Smoke success only permits resuming ordinary SES specialist development. It is not full runtime behavioral certification.
+Smoke success only permits resuming ordinary SES specialist development.
 
 ## 6. Receipt ordering
 
@@ -156,65 +113,23 @@ TASK MATERIALIZATION
 → PROJECT-SPECIFIC SUBSTANTIVE OUTPUT
 ```
 
-No verdict, finding, inconsistency statement, risk assessment, recommendation or other project-specific substantive conclusion may precede the receipt.
+Classify as `NORMATIVE_REQUIREMENT + BEHAVIORAL_COMPLIANCE_GATE`, not mechanically enforced without mechanism evidence.
 
-Classify this as:
-
-`NORMATIVE_REQUIREMENT + BEHAVIORAL_COMPLIANCE_GATE`.
-
-Do not describe it as mechanically enforced without positive mechanism evidence.
+For substantive multi-project work, each project must have an independently identifiable readiness/evidence boundary before comparative synthesis.
 
 ## 7. Broader certification boundary
 
-The canonical Documentation Auditor behavioral suite remains `tests/behavioral/DOCUMENTATION_AUDITOR_TESTS.md`.
-
-The shared hybrid suite remains `tests/behavioral/HYBRID_SPECIALIST_BOOTSTRAP_TESTS.md`.
-
-The target-resolution suite is `tests/behavioral/HYBRID_PROJECT_TARGET_RESOLUTION_TESTS.md` and preserves supplied-identifier, informational-list/numeric-follow-up, and substantive multi-project semantics.
-
-Historical selection-first P01-P10 is not a required current gate.
+The canonical Documentation Auditor, shared hybrid and target-resolution behavioral suites remain separate from this proportional smoke. Historical selection-first P01-P10 is not a current gate.
 
 Full aggregate Documentation Auditor runtime certification remains:
 
 `BLOCKED / AUTHORITY_CHALLENGE_OVERLAY_PROCEDURE_NOT_VERSIONED_FOR_DOCUMENTATION_AUDITOR`
 
-until a separately authorized/versioned procedure exists for write-capable challenge preconditions required by the broad suites. Do not improvise a write-capable overlay from this smoke runbook.
+until separately authorized/versioned challenge procedures exist. Do not improvise a write-capable overlay.
 
 ## 8. Evidence record
 
-For each case record:
-
-```text
-TEST_ID
-DATE_TIME
-FRESH_OR_EXISTING_CONVERSATION
-BUILDER_FINGERPRINT
-INPUT / TURN_SEQUENCE
-ASSISTANT_RESPONSE(S) when entry behavior is tested
-ACTION_CALLS_ACTUALLY_MADE
-SES_REF
-PROJECT_REF when applicable
-TARGET_CLASS
-PROJECT_IDENTIFIER_STATUS
-REGISTRY_ENUMERATED when applicable
-PROJECT_LISTED when applicable
-NUMBERED_MENU_EMITTED
-NUMERIC_BINDING_CREATED
-BARE_NUMBER_ACCEPTED_AS_PROJECT_IDENTIFIER when applicable
-PROJECT_MATERIALIZED
-RETRIEVAL_METHOD
-COVERAGE_STATE
-EOF_PROOF
-RECEIPT_EMITTED
-FIRST_PROJECT_SPECIFIC_SUBSTANTIVE_OUTPUT
-RECEIPT_PRECEDES_SUBSTANTIVE_OUTPUT
-MUTATION_EXECUTED
-EXPECTED_BEHAVIOR
-ACTUAL_BEHAVIOR
-RESULT
-FAILURE_CLASSIFICATION
-NOTES / evidence links
-```
+For each case record task-relevant fields including test ID, time, fresh/multi-turn boundary, Builder fingerprint, input/response, action calls, SES/project refs, target class, project identifier/resolution, registry enumeration, list/numeric binding state, project materialization, project-scoped readiness, coverage/EOF, receipt ordering, mutation, expected/actual behavior, result, failure class and evidence links.
 
 ## 9. Historical evidence preserved
 
@@ -233,10 +148,6 @@ V0_8_GENERIC_TARGET_SES_SELF_RESPONSE: INDETERMINATE / AMBIGUOUS TEST INTENT
 V0_8_RETIRED_NUMBERED_MENU_RESPONSE: FAIL / BEHAVIORAL REGRESSION
 ```
 
-Historical failures explain the correction boundary; they are not obligations to repeat the retired interaction.
-
 ## 10. Post-smoke gate
 
-After proportional smoke, continue from the then-current `docs/NEXT_SAFE_ACTION.md`.
-
-Do not reopen the retired starter/menu investigation, do not create another wording-only kernel iteration after the v0.9 stop condition, and do not infer publication/product/security/runtime certification from smoke success.
+Continue from current `docs/NEXT_SAFE_ACTION.md`. Do not reopen the retired starter/menu investigation, create a wording-only v0.10 after a v0.9 target-resolution failure, or infer broad certification from smoke success.
