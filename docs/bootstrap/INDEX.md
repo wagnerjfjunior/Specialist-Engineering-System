@@ -33,11 +33,13 @@ Read when applicable:
 - `core/protocols/PROJECT_BOOTSTRAP_CONTRACT.md`
 - `core/protocols/PROJECT_CONTINUITY_CONTRACT.md`
 - `core/protocols/HYBRID_SPECIALIST_BOOTSTRAP_CONTRACT.md` for hybrid/multi-project specialist work
+- `core/protocols/HYBRID_PROJECT_TARGET_RESOLUTION_CONTRACT.md` when target/project identity is missing, ambiguous, or project enumeration is requested
 - `core/protocols/EVIDENCE_RETRIEVAL_RESILIENCE_CONTRACT.md` when large-file, large-tree, truncation, incomplete transport or context-budget risk is material
 
-Behavioral validation of the hybrid bootstrap contract is defined in:
+Behavioral validation of hybrid bootstrap/target resolution is defined in:
 
 - `tests/behavioral/HYBRID_SPECIALIST_BOOTSTRAP_TESTS.md`
+- `tests/behavioral/HYBRID_PROJECT_TARGET_RESOLUTION_TESTS.md`
 
 For the `saas-architect` Custom GPT runtime candidate, also read when validating/applying/testing that candidate:
 
@@ -53,6 +55,7 @@ For the `documentation-auditor` Custom GPT runtime candidate, also read when val
 - `runtime/custom-gpt/DOCUMENTATION_AUDITOR_BUILDER_KERNEL.md`
 - `runtime/custom-gpt/GITHUB_READONLY_ACTION.openapi.yaml`
 - `tests/runtime/DOCUMENTATION_AUDITOR_RUNTIME_RUNBOOK.md`
+- `tests/runtime/DOCUMENTATION_AUDITOR_PROJECT_TARGET_REGRESSION.md`
 - `tests/behavioral/DOCUMENTATION_AUDITOR_TESTS.md`
 - `core/protocols/EVIDENCE_RETRIEVAL_RESILIENCE_CONTRACT.md` when the task or runtime case exercises retrieval resilience
 
@@ -76,11 +79,29 @@ PROJECT_CONTEXT_READY
 
 A project-local specialist identity/override must be resolved from the consumer project's canonical sources after project bootstrap. Do not freeze consumer-project specialist identities into the universal archetype registry.
 
-## 4. Consumer-project resolution
+## 4. Target and consumer-project resolution
 
-Before project-specific specialist work:
+Before consumer-project materialization, establish whether the user explicitly targeted SES itself, explicitly identified a consumer project, omitted a required consumer-project identifier, or left the target ambiguous between SES and a consumer project.
 
-1. collect or identify the project name/ID explicitly;
+Apply `core/protocols/HYBRID_PROJECT_TARGET_RESOLUTION_CONTRACT.md` before reading `projects/REGISTRY.md` when target/project identity is missing or ambiguous.
+
+Mandatory pre-registry rule:
+
+```text
+MISSING CONSUMER PROJECT IDENTIFIER
+→ DIRECT CLARIFICATION
+→ STOP
+
+AMBIGUOUS SES OR CONSUMER TARGET
+→ DIRECT CLARIFICATION
+→ STOP
+```
+
+Do not infer SES as the target merely because the specialist belongs to SES. Do not enumerate the Project Registry merely to offer choices. Project enumeration is permitted only when the user explicitly asks which projects are available; list position never becomes project identity.
+
+Once a consumer project is explicit, continue:
+
+1. record the explicit project name/ID;
 2. define the full requested `TASK_SCOPE`;
 3. classify `TARGET_REF_OR_OBJECT` and `ENVIRONMENT`, using `NOT_REQUIRED_FOR_THIS_TASK` only when genuinely immaterial;
 4. resolve the project identifier through `projects/REGISTRY.md`;
@@ -108,7 +129,7 @@ PROJECT BOOTSTRAP
 
 Do not use fuzzy project-name guessing for material resolution. Zero matches = `PROJECT_NOT_REGISTERED`; multiple matches = `PROJECT_ID_AMBIGUOUS`.
 
-A conversation starter such as "Which project are we working on?" is UX only. It is not a security boundary and does not replace registry/adapter/bootstrap resolution.
+A conversation starter is UX only. It is not a security boundary and does not replace explicit target identity, registry/adapter/bootstrap resolution or readiness.
 
 ## 5. Task-bound readiness semantics
 
@@ -172,7 +193,7 @@ Project-specific work must not proceed as established project context when any o
 
 - SES bootstrap on the applicable effective ref;
 - requested archetype when archetype behavior is required;
-- project identity;
+- explicit target/project identity;
 - project registry mapping;
 - project adapter;
 - canonical source;
@@ -187,6 +208,7 @@ Project-specific work must not proceed as established project context when any o
 Use explicit states such as:
 
 - `SES_BOOTSTRAP_UNAVAILABLE`
+- `PROJECT_IDENTIFIER_REQUIRED`
 - `PROJECT_REGISTRY_UNAVAILABLE`
 - `PROJECT_NOT_REGISTERED`
 - `PROJECT_ID_AMBIGUOUS`
@@ -201,7 +223,7 @@ Use explicit states such as:
 - `CONFLICTING_PROJECT_SOURCES`
 - `STALE_REVALIDATION_REQUIRED`
 
-Do not invent missing project context.
+Do not invent missing project context or target identity.
 
 For hybrid specialists:
 
@@ -265,12 +287,15 @@ For `saas-architect`, use:
 - `runtime/custom-gpt/SAAS_ARCHITECT_BUILDER_PROFILE.md`
 - `tests/runtime/HYBRID_SAAS_ARCHITECT_RUNTIME_RUNBOOK.md`
 - `tests/behavioral/HYBRID_SPECIALIST_BOOTSTRAP_TESTS.md`
+- `tests/behavioral/HYBRID_PROJECT_TARGET_RESOLUTION_TESTS.md` when target acquisition is in scope
 
 For `documentation-auditor`, use:
 
 - `runtime/custom-gpt/DOCUMENTATION_AUDITOR_BUILDER_PROFILE.md`
 - `tests/runtime/DOCUMENTATION_AUDITOR_RUNTIME_RUNBOOK.md`
+- `tests/runtime/DOCUMENTATION_AUDITOR_PROJECT_TARGET_REGRESSION.md`
 - `tests/behavioral/DOCUMENTATION_AUDITOR_TESTS.md`
+- `tests/behavioral/HYBRID_PROJECT_TARGET_RESOLUTION_TESTS.md`
 - `core/protocols/EVIDENCE_RETRIEVAL_RESILIENCE_CONTRACT.md` when resilience cases are material
 
 No Builder secret/token may be committed to SES.
