@@ -2,15 +2,15 @@
 
 > Este é o registro autoritativo da única próxima ação segura do SES quando este estado estiver em `main`.
 
-**Next action ID:** `reconcile-documentation-auditor-builder-v08-multi-starter-v1`
-**Primary target:** `SES — Documentation Auditor` post-stop-loss Builder reconciliation
+**Next action ID:** `reconcile-ses-builders-to-multi-starter-baselines-v1`
+**Primary targets:** `SES — Documentation Auditor` v0.8 + `SES — SaaS Architect` restored v0.1 baseline
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System` / `main` resolved live
 
-## Decision now canonicalized by this rollback target
+## Product decision
 
 The single-starter / live-project-menu / numeric-selection / cross-turn-resume feature is discontinued by stop loss.
 
-Retired interaction model:
+Retired interaction:
 
 ```text
 # CLIQUE PARA INICIAR
@@ -21,24 +21,33 @@ Retired interaction model:
 → cross-turn resume
 ```
 
-PR #19 remains historical `ABANDONED / STOP-LOSS`; it must not be revived or treated as a candidate to finish.
-
-The rollback restores direct project + substantive-task bootstrap semantics and the universal multi-starter UX. It preserves independent EOF/coverage, receipt-order, evidence, authority and anti-overclaim hardenings.
+PR #19 remains historical `ABANDONED / STOP-LOSS` and must not be revived.
 
 ## Authoritative next action after merge
 
-1. resolve SES `main` live and verify the stop-loss rollback is canonical;
-2. read the v0.8 Documentation Auditor Builder profile and exact v0.8 kernel from that `main`;
-3. reconcile the external private `SES — Documentation Auditor` Builder to the v0.8 target:
-   - exact complete v0.8 Instructions kernel;
-   - four universal conversation starters from the profile;
-   - `Knowledge: EMPTY`;
+1. resolve SES `main` live and verify this rollback is canonical;
+2. reconcile the external private **Documentation Auditor** Builder to its v0.8 profile/kernel:
+   - exact complete v0.8 Instructions;
+   - four universal Documentation Auditor starters;
+   - Knowledge empty;
    - existing GitHub READ_ONLY Action retained;
-   - no single-starter/menu/numeric-selection/cross-turn-resume configuration;
-4. capture a fresh non-secret Builder fingerprint;
-5. execute only the proportional stop-loss smoke S01–S06 from `tests/runtime/DOCUMENTATION_AUDITOR_RUNTIME_RUNBOOK.md`;
-6. if the smoke passes, record the result and advance SES to the next ordinary specialist-development action;
-7. if the smoke exposes a defect unrelated to the retired interaction model, classify it independently; do not reintroduce the retired feature as a fix.
+   - retired single-starter/menu/cross-turn interaction absent;
+3. reconcile the external private **SaaS Architect** Builder to the restored stable v0.1 profile/kernel:
+   - exact restored v0.1 kernel;
+   - four universal SaaS Architect starters;
+   - Knowledge empty;
+   - existing GitHub READ_ONLY Action retained;
+   - retired interaction absent;
+4. capture fresh non-secret Builder fingerprints for both current external configurations;
+5. execute the Documentation Auditor proportional stop-loss smoke S01–S06;
+6. execute a proportional SaaS smoke limited to:
+   - four starters present;
+   - direct project+substantive-task resolution through registry/adapter/bootstrap;
+   - project switch isolation;
+   - READ_ONLY/authority separation;
+   - no retired menu/numeric-selection/cross-turn requirement;
+7. if both smokes pass, record the rollback closed and continue ordinary SES specialist development;
+8. classify any unrelated defect independently. Do not reintroduce the retired feature as a fix.
 
 ## Preserved proof state
 
@@ -46,33 +55,24 @@ The rollback restores direct project + substantive-task bootstrap semantics and 
 SAAS_V0_1_RUNTIME_BEHAVIORAL_PROOF: PASS / HISTORICAL / PRESERVED
 SAAS_V0_2_V0_3_SELECTION_FIRST_TARGETS: SUPERSEDED_BY_STOP_LOSS / HISTORY_PRESERVED
 
-DOCUMENTATION_AUDITOR_V0_4_P09_ATTEMPT_1: FAIL / PRESERVED
-DOCUMENTATION_AUDITOR_V0_4_P09_ATTEMPT_2: FAIL / PRESERVED
-DOCUMENTATION_AUDITOR_V0_5_C01: PASS / HISTORICAL / PRESERVED
-DOCUMENTATION_AUDITOR_V0_5_P09_ATTEMPT_1: FAIL / PRESERVED
-DOCUMENTATION_AUDITOR_V0_6_P09_ATTEMPT_1: FAIL / PRESERVED
-DOCUMENTATION_AUDITOR_V0_6_UNSUPPORTED_INTEGRAL_READ_PROMOTION: 0 / PRESERVED
-DOCUMENTATION_AUDITOR_V0_6_RECEIPT_MECHANICAL_ENFORCEMENT: NOT_ESTABLISHED / PRESERVED
-DOCUMENTATION_AUDITOR_V0_7_CROSS_TURN_HARDENING: ABANDONED / PR #19 NOT_MERGED
-DOCUMENTATION_AUDITOR_V0_8: STOP_LOSS_ROLLBACK_TARGET / NOT_YET_BUILDER_APPLIED
+DA_V0_4_P09_ATTEMPT_1: FAIL / PRESERVED
+DA_V0_4_P09_ATTEMPT_2: FAIL / PRESERVED
+DA_V0_5_C01: PASS / HISTORICAL / PRESERVED
+DA_V0_5_P09_ATTEMPT_1: FAIL / PRESERVED
+DA_V0_6_P09_ATTEMPT_1: FAIL / PRESERVED
+DA_V0_6_UNSUPPORTED_INTEGRAL_READ_PROMOTION: 0 / PRESERVED
+DA_V0_6_RECEIPT_MECHANICAL_ENFORCEMENT: NOT_ESTABLISHED / PRESERVED
+DA_V0_7_CROSS_TURN_HARDENING: ABANDONED / PR #19 NOT_MERGED
+DA_V0_8: STOP_LOSS_ROLLBACK_TARGET / BUILDER_NOT_YET_RECONCILED
 ```
-
-Historical failures explain the product decision. They are not a mandate to continue retrying the abandoned interaction.
 
 ## Done condition
 
-This action is complete when:
-
-- the external Documentation Auditor Builder matches the v0.8 profile/kernel;
-- four universal starters are present;
-- the single-starter/menu/cross-turn flow is absent;
-- fresh fingerprint is recorded;
-- S01–S06 proportional smoke is completed without reintroducing the retired feature;
-- no EOF/coverage, receipt-order, project-isolation, READ_ONLY or anti-overclaim regression is observed.
+This action is complete when both external SES Builders match their post-stop-loss repository profiles, fresh fingerprints are recorded, proportional smokes pass, and the retired interaction is absent without regression of evidence/receipt/authority/project-isolation controls.
 
 ## Limits
 
-This action does not itself authorize publication, broad sharing, consumer-project mutation, production mutation, legacy retirement or runtime certification beyond evidence actually executed.
+This action does not itself authorize publication, broad sharing, consumer-project mutation, production mutation, legacy retirement or broad runtime certification beyond evidence actually executed.
 
 ## Anti-loop
 
@@ -80,6 +80,6 @@ Do not:
 - reopen PR #19;
 - reuse v0.7 as an active target;
 - create another prompt-hardening cycle to make the retired single starter work;
-- restore P01–P10 selection-first cases as runtime-required gates;
+- restore historical selection-first P01–P10 as runtime-required gates;
 - mutate FECH.AI or Blogs/SEO merely because SES changed;
-- convert a successful smoke into broad runtime/product/security PASS.
+- convert proportional smoke success into broad runtime/product/security PASS.

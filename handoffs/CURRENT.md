@@ -5,7 +5,7 @@
 **Canonical ref rule:** resolve `main` live before material work
 **Continuity contract:** `core/protocols/PROJECT_CONTINUITY_CONTRACT.md`
 **Authoritative next action:** `docs/NEXT_SAFE_ACTION.md`
-**Next action ID:** `reconcile-documentation-auditor-builder-v08-multi-starter-v1`
+**Next action ID:** `reconcile-ses-builders-to-multi-starter-baselines-v1`
 
 ## 1. Purpose
 
@@ -35,8 +35,9 @@ Consumer-project truth, continuity and authority remain project-owned.
 9. Product decision: retire `# CLIQUE PARA INICIAR → menu → number → PROJECT_SELECTED → WAIT FOR TASK → resume`.
 10. Restore direct project + substantive-task bootstrap semantics and multi-starter UX.
 11. Historical v0.4/v0.5/v0.6 failures remain failures; no retroactive PASS.
-12. Documentation Auditor v0.8 is the post-stop-loss repository target and is not yet proof of external Builder application.
-13. No consumer project is automatically mutated by this rollback.
+12. Documentation Auditor v0.8 is the post-stop-loss repository target and is not proof of external Builder application.
+13. SaaS Architect repository target returns to the certified v0.1 kernel/four-starter baseline; current external Builder equivalence must be re-established separately.
+14. No consumer project is automatically mutated by this rollback.
 
 ## 4. Current required behavior
 
@@ -96,12 +97,12 @@ DA_V0_8: ROLLBACK_TARGET / BUILDER_NOT_YET_RECONCILED
 
 Authoritative source: `docs/NEXT_SAFE_ACTION.md`.
 
-Derived summary after this rollback becomes canonical: reconcile the external private Documentation Auditor Builder to the v0.8 multi-starter profile/kernel and execute only the proportional S01–S06 stop-loss smoke before returning to normal SES specialist development.
+Derived summary after this rollback becomes canonical: reconcile **both external private SES Builders** to their multi-starter post-stop-loss repository baselines, capture fresh non-secret fingerprints, execute proportional smoke only, then return to ordinary SES development.
 
 Do not reopen the retired interaction or require its historical P01–P10 selection-first suite.
 
 ## 7. Short resume prompt
 
 ```text
-SES -> resolve main live -> single-starter/menu/cross-turn selection retired by stop loss -> PR #19 remains abandoned -> direct project+task bootstrap restored -> SaaS v0.1 certified baseline preserved -> DA v0.8 rollback target preserves EOF + receipt-first + evidence/authority hardening -> next: reconcile external DA Builder to four starters + v0.8 kernel -> run proportional S01-S06 smoke -> continue SES; do not reopen starter-menu experiment.
+SES -> resolve main live -> single-starter/menu/cross-turn selection retired by stop loss -> PR #19 remains abandoned -> direct project+task bootstrap restored -> SaaS v0.1 certified kernel + four starters restored -> DA v0.8 rollback target preserves EOF + receipt-first + evidence/authority hardening -> next: reconcile both external SES Builders to multi-starter baselines -> proportional smoke -> continue SES; do not reopen starter-menu experiment.
 ```
