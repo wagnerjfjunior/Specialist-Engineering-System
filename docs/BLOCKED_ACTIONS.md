@@ -64,6 +64,9 @@ Until a separately reviewed material runtime/enforcement boundary exists, block:
 - user-visible project enumeration outside explicit informational-list intent;
 - treating a correct internal Registry lookup as authority to expose alternative projects after zero-match;
 - treating receipt headings/partial fields as canonical readiness validity;
+- treating a schema-valid or model-asserted receipt as evidence-supported readiness without controller-verifiable trusted retrieval/provenance for material claims;
+- releasing substantive conclusions outside the validated `EFFECTIVE_SCOPE` of a READY/LIMITED artifact;
+- for multi-project work, releasing comparative claims outside the validated common comparison-effective scope supported by every project required for that claim;
 - mechanical-enforcement claims from Builder instructions/behavioral success alone;
 - FECH.AI/Blogs mutation because SES runtime failed;
 - Gateway implementation from ADR existence alone;
@@ -81,7 +84,7 @@ When task/tool surface permit:
 - compare observations with versioned sources;
 - synthesize bounded status;
 - identify missing evidence/drift/invalidation events;
-- design target-entry gates, readiness schema/validator, invalid-transition/malformed-readiness/unsolicited-enumeration challenges and observability without implementation.
+- design target-entry gates, trusted evidence-attestation model, readiness schema/validator, effective-scope release validation, invalid-transition/malformed-readiness/unsupported-readiness/unsolicited-enumeration/out-of-scope-output challenges and observability without implementation.
 
 READ_ONLY capability does not authorize subsequent mutation.
 
@@ -94,8 +97,9 @@ EXPLICIT PROJECT_IDENTIFIER + TASK_SCOPE
 → PROJECT ADAPTER
 → CONSUMER LIVE SOURCE
 → PROJECT BOOTSTRAP / LOCAL SPECIALIST / MATERIAL CONTINUITY-AUTHORITY
-→ CANONICALLY VALID TASK-BOUND READINESS
-→ WORK
+→ EVIDENCE-BACKED + CANONICALLY VALID TASK-BOUND READINESS
+→ VALIDATED EFFECTIVE_SCOPE
+→ WORK ONLY WITHIN THAT SCOPE
 ```
 
 No Gateway design or SES runtime failure grants consumer-project mutation authority.
