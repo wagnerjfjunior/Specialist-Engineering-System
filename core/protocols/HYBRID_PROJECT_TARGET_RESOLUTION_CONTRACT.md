@@ -163,3 +163,9 @@ CONSUMER_PROJECT_TASK_WITHOUT_IDENTIFIER
 ```
 
 Any autonomous numbered-menu response used as a required project-entry mechanism is a behavioral failure even if no mutation occurs.
+
+Canonical contract-level cases are defined in:
+
+`tests/behavioral/HYBRID_PROJECT_TARGET_RESOLUTION_TESTS.md`
+
+Runtime candidates may add stricter archetype-specific regressions, but they may not weaken this contract.
