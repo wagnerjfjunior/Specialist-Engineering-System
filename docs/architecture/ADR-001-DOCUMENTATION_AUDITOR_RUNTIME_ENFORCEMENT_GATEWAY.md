@@ -46,6 +46,7 @@ The evidence exposes gaps across three control concerns:
 TARGET ENTRY
 - when user-visible Registry enumeration is permitted
 - zero-match PROJECT_NOT_REGISTERED → STOP
+- informational list position never becomes project identity
 
 READINESS VALIDITY
 - mandatory receipt semantics
@@ -55,6 +56,7 @@ READINESS VALIDITY
 OUTPUT RELEASE
 - no substantive output before valid readiness
 - no substantive output outside validated EFFECTIVE_SCOPE
+- BLOCKED context never opens substantive analysis
 ```
 
 Keep separate:
@@ -67,6 +69,9 @@ NORMATIVE_REQUIREMENT
 INTERNAL_REGISTRY_LOOKUP
 != USER_VISIBLE_PROJECT_ENUMERATION
 
+PROJECT_LIST_POSITION
+!= PROJECT_IDENTIFIER
+
 ARTIFACT_PRESENT
 != CANONICAL_READINESS_VALID
 
@@ -74,12 +79,15 @@ SCHEMA_VALID
 != EVIDENCE_SUPPORTED
 
 READINESS_VALID
+!= SUBSTANTIVE_OUTPUT_ALLOWED
+
+READINESS_VALID
 != OUTPUT_WITHIN_EFFECTIVE_SCOPE
 ```
 
 ## 3. Decision
 
-Adopt, for design purposes, a specialist-specific **SES Runtime Enforcement Gateway** that places target-entry validation, evidence-backed readiness validation and substantive-output release behind a controller/state-machine boundary outside ordinary model instruction-following.
+Adopt, for design purposes, a specialist-specific **SES Runtime Enforcement Gateway** that places target-entry validation, evidence-backed readiness validation, context-status transitions and substantive-output release behind a controller/state-machine boundary outside ordinary model instruction-following.
 
 Target architecture:
 
@@ -90,9 +98,10 @@ USER TASK
 → TRUSTED EVIDENCE ACQUISITION + PROVENANCE BINDING
 → STRUCTURED PROJECT-SCOPED READINESS ARTIFACT(S)
 → CANONICAL READINESS + EVIDENCE VALIDATION
-→ VALIDATED EFFECTIVE SCOPE BINDING
+→ CONTEXT_STATUS TRANSITION
+→ VALIDATED EFFECTIVE SCOPE BINDING WHEN OUTPUT IS ALLOWED
 → TRANSITION GATE
-→ SUBSTANTIVE ANALYSIS
+→ SUBSTANTIVE ANALYSIS WHEN ALLOWED
 → OUTPUT SCOPE VALIDATION
 → ORDERED RELEASE / RENDERING
 → USER
@@ -101,13 +110,15 @@ USER TASK
 The controller must be able to block/reject:
 
 - user-visible project enumeration unless the explicit informational-list exception applies;
+- numeric/list-position binding after an informational list;
 - continuation after zero-match when `PROJECT_NOT_REGISTERED → STOP` is required;
 - a syntactically valid readiness artifact whose material claims are unsupported by trusted evidence;
 - malformed, incomplete or stale readiness artifacts;
+- substantive analysis/release when validated `CONTEXT_STATUS = BLOCKED`;
 - project-specific substantive release before valid readiness;
 - substantive conclusions outside the validated `EFFECTIVE_SCOPE`.
 
-For multi-project tasks, every explicit project must independently satisfy resolution, evidence-backed readiness and effective-scope validation before comparative synthesis is released.
+For multi-project tasks, every explicit project must independently satisfy resolution, evidence-backed readiness and status/effective-scope validation before comparative synthesis is released.
 
 ## 4. What this decision does not decide
 
@@ -122,7 +133,10 @@ It also does not:
 - authorize write-capable tools;
 - establish mechanical enforcement;
 - establish `PROJECT_TARGET_REGRESSION_PASS`;
+- establish full aggregate Documentation Auditor runtime certification;
 - generalize Gateway requirements to every SES specialist.
+
+Full aggregate Documentation Auditor runtime certification remains separately blocked until the authority-challenge overlay procedure required to exercise write-capable-tool-without-authorization behavior is explicitly authorized, versioned and executed. The Gateway design/proof does not substitute for that suite requirement, and no ad hoc write-capable overlay is authorized by this ADR.
 
 ## 5. Required state-machine properties
 
@@ -137,8 +151,16 @@ PROJECT_CONTEXTS_MATERIALIZED
 TRUSTED_EVIDENCE_BOUND
 READINESS_ARTIFACTS_BUILT
 READINESS_VALIDATED
-EFFECTIVE_SCOPE_VALIDATED
-SUBSTANTIVE_ANALYSIS_ALLOWED
+
+READINESS_STATUS_READY
+READINESS_STATUS_LIMITED
+READINESS_STATUS_BLOCKED
+
+READY_SCOPE_VALIDATED
+LIMITED_SCOPE_VALIDATED
+SUBSTANTIVE_ANALYSIS_ALLOWED_READY
+SUBSTANTIVE_ANALYSIS_ALLOWED_LIMITED
+SUBSTANTIVE_ANALYSIS_NOT_ALLOWED_BLOCKED
 OUTPUT_SCOPE_VALIDATED
 OUTPUT_RELEASED
 
@@ -154,28 +176,56 @@ OUT_OF_SCOPE_OUTPUT_REJECTED
 INVALID_TRANSITION_REJECTED
 ```
 
+`READINESS_VALIDATED` alone does **not** authorize substantive analysis. Required status-aware transitions are:
+
+```text
+READINESS_VALIDATED + CONTEXT_STATUS: READY
+→ EFFECTIVE_SCOPE materially equivalent to TASK_SCOPE
+→ READY_SCOPE_VALIDATED
+→ SUBSTANTIVE_ANALYSIS_ALLOWED_READY
+
+READINESS_VALIDATED + CONTEXT_STATUS: LIMITED
+→ explicit safe strict-subset EFFECTIVE_SCOPE + GAPS
+→ LIMITED_SCOPE_VALIDATED
+→ SUBSTANTIVE_ANALYSIS_ALLOWED_LIMITED
+→ release only inside EFFECTIVE_SCOPE
+
+READINESS_VALIDATED + CONTEXT_STATUS: BLOCKED
+→ SUBSTANTIVE_ANALYSIS_NOT_ALLOWED_BLOCKED
+→ no project-specific substantive conclusion
+```
+
+A BLOCKED response may explain the blocker/readiness state and missing dependency; it may not emit the blocked substantive conclusion.
+
 Target-entry examples:
 
 ```text
 EXPLICIT_INFORMATIONAL_LIST_REQUEST
+OR EXPLICIT_REGISTRY_METADATA/LIST_MEMBERSHIP_ONLY_REQUEST
 → USER_VISIBLE_ENUMERATION_ALLOWED
+→ NO NUMERIC BINDING CREATED
+
+INFORMATIONAL_LIST
+→ LATER BARE NUMBER
+→ NUMBER IS NOT PROJECT_IDENTIFIER UNLESS IT IS ITSELF A CANONICAL ID/ALIAS
+→ NO PROJECT MATERIALIZATION FROM LIST POSITION
 
 EXPLICIT_UNREGISTERED_IDENTIFIER
 → PROJECT_NOT_REGISTERED
 → STOP
-→ USER_VISIBLE_ALTERNATIVE_PROJECT_ENUMERATION_NOT_ALLOWED
+→ USER_VISIBLE_ALTERNATIVE_PROJECT ENUMERATION NOT ALLOWED
 ```
 
 For a two-project task:
 
 ```text
-PROJECT_A_READINESS_VALID
-AND PROJECT_B_READINESS_VALID
+PROJECT_A_OUTPUT_STATUS_ALLOWS_SCOPE
+AND PROJECT_B_OUTPUT_STATUS_ALLOWS_SCOPE
 AND COMPARISON_EFFECTIVE_SCOPE_VALID
 → COMPARATIVE_ANALYSIS_ALLOWED
 ```
 
-Missing/stale/malformed/unsupported readiness for either required project prevents comparative release.
+Missing/stale/malformed/unsupported readiness or `BLOCKED` status for a project required by a comparative claim prevents that claim from being released.
 
 ## 6. Structured readiness and trusted-evidence boundary
 
@@ -213,16 +263,35 @@ RECEIPT_VALIDITY
 GAPS
 ```
 
-Validation must preserve:
+### 6.1 SES proof-ref semantics
+
+The three SES ref **fields/roles must remain distinct**, but their values are proof-level dependent and are not required to be pairwise different.
+
+For ordinary canonical/runtime work:
 
 ```text
-SES_CANONICAL_MAIN_REF != SES_CANDIDATE_REF != SES_EFFECTIVE_REF
-LIMITED -> explicit strict-subset EFFECTIVE_SCOPE + GAPS
-TARGET_REF_OR_OBJECT / ENVIRONMENT bound when material
-CONTEXT_READY != AUTHORIZED_TO_MUTATE
+SES_CANONICAL_MAIN_REF: <resolved live main>
+SES_CANDIDATE_REF: NOT_APPLICABLE
+SES_EFFECTIVE_REF: SES_CANONICAL_MAIN_REF
 ```
 
-### 6.1 Evidence-backed material fields
+For candidate-head protocol proof:
+
+```text
+SES_CANONICAL_MAIN_REF: <resolved live canonical main>
+SES_CANDIDATE_REF: <exact candidate PR/head>
+SES_EFFECTIVE_REF: SES_CANDIDATE_REF
+```
+
+Therefore:
+
+```text
+DISTINCT_REF_FIELDS/SEMANTICS != VALUES_MUST_DIFFER
+```
+
+The validator must enforce the applicable relationship selected by `PROOF_LEVEL`, while keeping canonical main separately visible when candidate evidence is effective.
+
+### 6.2 Evidence-backed material fields
 
 A model-generated field value is not trusted merely because it is syntactically valid or internally consistent.
 
@@ -242,7 +311,7 @@ MATERIAL_EVIDENCE_STATUS / coverage claims
 → derived from or checked against recorded retrieval/coverage evidence
 
 AUTHORITY_MODEL_STATUS / MUTATION_AUTHORIZATION_STATUS
-→ supported by the applicable project authority evidence and current requested mutation scope
+→ supported by applicable project authority evidence and current requested mutation scope
 ```
 
 The controller may accept a model-proposed readiness artifact as an input candidate, but **must independently verify material fields against trusted evidence handles/provenance before marking readiness valid**.
@@ -256,7 +325,7 @@ SCHEMA_VALID_RECEIPT != EVIDENCE_SUPPORTED_RECEIPT
 
 A well-formed artifact with invented, stale or unsupported refs/statuses must fail closed.
 
-### 6.2 Invalidation
+### 6.3 Invalidation
 
 Material changes to scope, target/environment, SES/project refs, specialist/continuity/authority/mutation state or contradictory/superseding evidence must trigger invalidation/revalidation according to the canonical contract.
 
@@ -264,13 +333,12 @@ The exact serialization and evidence-handle format remain design outputs; canoni
 
 ## 7. Effective-scope and output-release boundary
 
-The enforcement property is about **release after target-entry, evidence-backed readiness and effective-scope validation**, not merely internal reasoning order or the presence of a receipt heading.
+The enforcement property is about **status-aware release after target-entry, evidence-backed readiness and effective-scope validation**, not merely internal reasoning order or a receipt heading.
 
-For a valid receipt:
+For `READY`:
 
 ```text
-CONTEXT_STATUS: READY
-→ EFFECTIVE_SCOPE materially equivalent to TASK_SCOPE
+EFFECTIVE_SCOPE materially equivalent to TASK_SCOPE
 → released substantive output must remain within that validated scope
 ```
 
@@ -283,27 +351,26 @@ GAPS = explicit excluded/unresolved portion
 → conclusions about excluded TASK_SCOPE are blocked/rejected
 ```
 
-For multi-project comparison, the Gateway must derive a **comparison-effective scope** from the portions of the requested comparison supported by **every project whose evidence is required for that comparative claim**. This is a semantic validated common scope, not a lexical string intersection.
+For `BLOCKED`:
 
 ```text
-PROJECT_A_EFFECTIVE_SCOPE
-∩ PROJECT_B_EFFECTIVE_SCOPE
+NO SAFE SUBSTANTIVE SCOPE
+→ no project-specific substantive analysis/release
+→ only blocker/readiness explanation may be returned
+```
+
+For multi-project comparison, the Gateway must derive a **comparison-effective scope** from the requested comparison portions supported by every project whose evidence is required for that comparative claim. This is a semantic validated common scope, not a lexical string intersection.
+
+```text
+PROJECT_A_ALLOWED_EFFECTIVE_SCOPE
+∩ PROJECT_B_ALLOWED_EFFECTIVE_SCOPE
 ∩ REQUESTED_COMPARISON_SCOPE
 → COMPARISON_EFFECTIVE_SCOPE
 ```
 
-If no material safe common comparison scope exists, the comparative task must be `BLOCKED` rather than silently broadening either project's readiness.
+If a required project is `BLOCKED`, or no material safe common comparison scope exists, the affected comparative conclusion is `BLOCKED` rather than silently broadening readiness.
 
 The output validator must reject/suppress substantive claims outside the applicable validated effective scope before user-visible release.
-
-A design fails this ADR if it allows:
-
-- arbitrary user-visible project enumeration outside the explicit exception;
-- post-zero-match continuation that creates a project-choice surface;
-- schema-valid but evidence-unsupported readiness to open the gate;
-- arbitrary substantive streaming before readiness validation;
-- malformed/incomplete readiness to open the substantive-output transition;
-- conclusions outside the validated single-project or comparison-effective scope.
 
 ## 8. Proof obligations
 
@@ -311,16 +378,21 @@ Before any future `MECHANICALLY_ENFORCED_INVARIANT` claim:
 
 ```text
 AMBIGUOUS_OR_MISSING_TARGET_CLARIFICATION_ONLY: ENFORCED
+INFORMATIONAL_LIST_EXCEPTION_MATCHES_CORE_CONTRACT: YES
+INFORMATIONAL_LIST_THEN_BARE_NUMBER_NO_BINDING: ENFORCED
+PROJECT_LIST_POSITION_NEVER_PROJECT_IDENTIFIER: ENFORCED
 UNSOLICITED_PROJECT_ENUMERATION_OUTSIDE_INFORMATIONAL_EXCEPTION: BLOCKED
 ZERO_MATCH_PROJECT_NOT_REGISTERED_STOP: ENFORCED
 TARGET_RESOLUTION_BEFORE_PROJECT_MATERIALIZATION: YES
 MATERIAL_READINESS_FIELDS_EVIDENCE_ATTESTED: YES
 WELL_FORMED_UNSUPPORTED_READINESS_ARTIFACT: REJECTED
 FULL_CANONICAL_READINESS_BINDING_PRESERVED: YES
+SES_REF_FIELDS_PRESENT_AND_PROOF_LEVEL_RELATIONSHIPS_VALIDATED: YES
 PROOF_LEVEL_BOUND: YES
 TARGET_REF_OR_OBJECT_BOUND_WHEN_MATERIAL: YES
 ENVIRONMENT_BOUND_WHEN_MATERIAL: YES
-SES_CANONICAL_CANDIDATE_EFFECTIVE_REFS_SEPARATED: YES
+READY_LIMITED_BLOCKED_TRANSITIONS_DISTINCT: YES
+BLOCKED_CONTEXT_PREVENTS_SUBSTANTIVE_ANALYSIS: YES
 LIMITED_REQUIRES_EXPLICIT_STRICT_SUBSET_EFFECTIVE_SCOPE: ENFORCED
 OUTPUT_RELEASE_BOUND_TO_VALIDATED_EFFECTIVE_SCOPE: YES
 MULTI_PROJECT_COMPARISON_EFFECTIVE_SCOPE_DERIVED_AND_ENFORCED: YES
@@ -328,10 +400,12 @@ MULTI_PROJECT_INDEPENDENT_RESOLUTION: YES
 PROJECT_SCOPED_READINESS_BOUNDARIES: CANONICALLY_VALIDATED
 MALFORMED_OR_INCOMPLETE_READINESS_ARTIFACT: REJECTED
 READINESS_VALIDATION_BEFORE_SUBSTANTIVE_RELEASE: YES
+INFORMATIONAL_LIST_BARE_NUMBER_CHALLENGE: PASS
 UNSOLICITED_ENUMERATION_ZERO_MATCH_CHALLENGE: PASS
 INVALID_TRANSITION_CHALLENGE: PASS
 MALFORMED_READINESS_CHALLENGE: PASS
 WELL_FORMED_UNSUPPORTED_READINESS_CHALLENGE: PASS
+BLOCKED_CONTEXT_SUBSTANTIVE_OUTPUT_CHALLENGE: PASS
 OUT_OF_EFFECTIVE_SCOPE_OUTPUT_CHALLENGE: PASS
 EARLY_SUBSTANTIVE_RELEASE: BLOCKED_OR_REJECTED
 READINESS_INVALIDATION_REVALIDATION: PROVEN
@@ -340,17 +414,18 @@ READ_ONLY_BY_DEFAULT: YES
 TRANSITION_TRACE_EVIDENCE: PRESENT
 ```
 
-The challenges must deliberately attempt the prohibited transitions/claims. Voluntary model compliance is insufficient.
+The challenges must deliberately attempt prohibited transitions/claims. Voluntary model compliance is insufficient.
 
 ## 9. Observability requirements
 
 Without exposing secrets, the future mechanism must make reconstructable:
 
 - task/test ID;
-- target classification and whether informational enumeration was explicitly authorized by user intent;
+- target classification and which informational-list exception, if any, authorized user-visible enumeration;
 - supplied project identifiers and resolver outcome;
-- whether user-visible enumeration was attempted/allowed/rejected;
-- proof level, task scope, validated effective scope and excluded gaps;
+- whether user-visible enumeration/numeric binding was attempted, allowed or rejected;
+- proof level and validated SES ref relationships;
+- task scope, context status, validated effective scope and excluded gaps;
 - comparison-effective scope for multi-project claims;
 - target/environment and SES/project refs;
 - evidence handles/provenance used to attest material readiness fields;
@@ -359,13 +434,23 @@ Without exposing secrets, the future mechanism must make reconstructable:
 - readiness validation result and missing/invalid/unsupported fields;
 - readiness invalidation/revalidation events;
 - whether substantive output was generated internally, released, suppressed or rejected;
-- whether any output claim was rejected for exceeding effective scope;
+- whether output was blocked due to `CONTEXT_STATUS: BLOCKED` or scope excess;
 - mutation-authorization state;
 - exact implementation/runtime version.
 
-## 10. Coexistence and rollback
+## 10. Coexistence, certification boundary and rollback
 
 The private Documentation Auditor Custom GPT may remain available as the current instruction-driven runtime during design/testing. No Gateway candidate may silently replace/mutate it. Adoption requires explicit decision and migration plan.
+
+The current v0.9 failures and proportional-smoke block remain historical facts even if a future Gateway candidate succeeds. A future implementation creates a new evidence boundary; it does not retroactively unlock or pass the v0.9 Gate 0/smoke.
+
+Full aggregate Documentation Auditor runtime certification also remains:
+
+```text
+BLOCKED / AUTHORITY_CHALLENGE_OVERLAY_PROCEDURE_NOT_VERSIONED_FOR_DOCUMENTATION_AUDITOR
+```
+
+until a separate explicit authorization versions a safe challenge procedure for the write-capable-tool/no-mutation-authorization case and the required suite executes it. Do not improvise or attach an ad hoc write-capable overlay merely to complete certification.
 
 Rollback must be able to disable the Gateway candidate without modifying consumer-project canonical state.
 
@@ -391,15 +476,17 @@ This ADR is **SPECIALIST-SPECIFIC**. Repeated Documentation Auditor failures str
 
 ```text
 ADR ACCEPTED FOR DESIGN
-→ DESIGN TARGET-ENTRY + TRUSTED-EVIDENCE + READINESS + EFFECTIVE-SCOPE STATE MACHINE
+→ DESIGN TARGET-ENTRY + TRUSTED-EVIDENCE + STATUS-AWARE READINESS + EFFECTIVE-SCOPE STATE MACHINE
 → DEFINE INTERFACES / READINESS SCHEMA / EVIDENCE-ATTESTATION MODEL
-→ DEFINE UNSOLICITED-ENUMERATION + INVALID-TRANSITION + MALFORMED-READINESS + UNSUPPORTED-READINESS + OUT-OF-SCOPE TESTS
+→ DEFINE INFORMATIONAL-LIST/BARE-NUMBER + UNSOLICITED-ENUMERATION + INVALID-TRANSITION + MALFORMED-READINESS + UNSUPPORTED-READINESS + BLOCKED-CONTEXT + OUT-OF-SCOPE TESTS
 → DEFINE OBSERVABILITY / ROLLBACK
 → REVIEW TRADE-OFFS / IMPLEMENTATION OPTIONS
 → EXPLICIT IMPLEMENTATION AUTHORIZATION
 → IMPLEMENT CANDIDATE
 → EXECUTE MECHANICAL-ENFORCEMENT CHALLENGES
-→ ONLY THEN CONSIDER ADOPTION
+→ ONLY THEN CONSIDER GATEWAY ADOPTION
 ```
 
-`DESIGN ACCEPTED != IMPLEMENTATION AUTHORIZED != DEPLOYED != MECHANICALLY PROVEN`.
+Gateway adoption does not establish full aggregate Documentation Auditor runtime certification; the separately authorized/versioned authority-challenge overlay obligation remains independent.
+
+`DESIGN ACCEPTED != IMPLEMENTATION AUTHORIZED != DEPLOYED != MECHANICALLY PROVEN != FULL RUNTIME CERTIFICATION`.
