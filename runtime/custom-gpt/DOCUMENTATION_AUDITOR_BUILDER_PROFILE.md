@@ -5,9 +5,7 @@
 
 ## 1. Purpose
 
-Version the bounded correction for the post-stop-loss Documentation Auditor after runtime observation showed nondeterministic behavior when a substantive audit request omitted or ambiguously specified the target project.
-
-This candidate does **not** reopen the retired single-starter/menu feature. It strengthens the opposite invariant: missing or ambiguous target identity must produce direct clarification and a hard stop before project materialization.
+Version the bounded post-stop-loss correction for Documentation Auditor target acquisition. This candidate does **not** reopen the retired single-starter/menu feature.
 
 ```text
 V0_8_S02_FECHAI_DIRECT_PROJECT: PASS / OBSERVED
@@ -47,11 +45,7 @@ COUNT_METHOD: Unicode code-point count of repository text content
 CURRENT_KERNEL_BLOB: 6ca9e1d22d7faf0639076e5d43332b3267ec2354
 ```
 
-The kernel loads the reusable target-resolution rule from:
-
-`core/protocols/HYBRID_PROJECT_TARGET_RESOLUTION_CONTRACT.md`
-
-and continues to use the canonical hybrid bootstrap/evidence contracts.
+The kernel loads reusable target/project behavior through canonical SES bootstrap/Core, including `core/protocols/HYBRID_PROJECT_TARGET_RESOLUTION_CONTRACT.md` when applicable and the shared hybrid contract for project/multi-project work.
 
 ### Conversation starters
 
@@ -102,45 +96,26 @@ Secret value: Builder UI only / never committed
 
 Record the actual selected Builder model in the fingerprint. Model changes may invalidate behavioral evidence.
 
-## 3. Missing/ambiguous target invariant
+## 3. Target-acquisition invariant
 
-For consumer-project work without an explicit project identifier:
+- ambiguous SES-vs-consumer target → direct clarification → STOP;
+- consumer-project task without identifier → direct clarification → STOP;
+- explicit supplied identifier remains explicit even when registry resolution fails;
+- informational project listing never creates numeric project identity;
+- substantive multi-project tasks resolve each explicit project independently;
+- no fuzzy project inference;
+- no Adapter/project materialization before the applicable explicit identity/resolution path;
+- receipt-first and READ_ONLY boundaries remain preserved.
 
-```text
-PROJECT_IDENTIFIER: NOT_SUPPLIED
-PROJECT_RESOLUTION_STATUS: PROJECT_IDENTIFIER_REQUIRED
-→ ask one direct clarification
-→ STOP
-```
+The retired interaction remains excluded:
 
-For wording ambiguous between SES itself and a consumer project:
-
-```text
-AMBIGUOUS_SES_OR_CONSUMER_TARGET
-→ ask whether SES itself or which consumer project is intended
-→ STOP
-```
-
-Before clarification, the runtime must not:
-
-- infer SES as the target;
-- infer FECH.AI, Blogs/SEO or another project;
-- enumerate the Project Registry unless the user explicitly asked for an informational list;
-- generate a numbered project menu as an entry protocol;
-- create numeric project bindings;
-- materialize a Project Adapter/consumer project;
-- emit a project readiness receipt;
-- produce substantive project findings/verdicts.
-
-An explicit informational request to list registered projects may enumerate names, but list position never becomes project identity. A substantive multi-project request with explicit project identifiers is not an informational-list exception; each project must resolve independently through the shared hybrid contract.
-
-An explicitly supplied but unregistered/misspelled project identifier remains an explicit target and must reach canonical registry resolution rather than being reclassified as missing.
+`# CLIQUE PARA INICIAR → numbered menu → numeric selection → PROJECT_SELECTED → WAIT FOR TASK → cross-turn resume`.
 
 ## 4. Preserved independent hardenings
 
-v0.9 preserves v0.8 behavior for:
+v0.9 preserves:
 
-- four-starter UX and retired single-starter/menu/cross-turn feature;
+- four-starter UX;
 - positive start-through-EOF proof before `INTEGRAL_READ`;
 - exact path/blob success or absence of visible truncation is not EOF proof;
 - fail-closed retrieval handling;
@@ -165,17 +140,17 @@ R02_MISSING_CONSUMER_PROJECT_ID_COLD_START
 R03A_EXPLICIT_CONSUMER_TARGET
 R03B_EXPLICIT_SES_TARGET
 R04_INFORMATIONAL_LIST_THEN_BARE_NUMBER
+R05_EXPLICIT_UNREGISTERED_IDENTIFIER
+R06_SUBSTANTIVE_MULTI_PROJECT_TASK
 ```
 
-All five observations must pass autonomously. Do not correct the runtime during a case.
+All seven observations must pass autonomously. Do not correct the runtime during a case.
 
-R04 is specifically required to prove that an otherwise legitimate informational project list does not recreate transient numeric project selection on the next turn.
-
-If R01, R02 or R04 fails after v0.9 is demonstrably applied on the required fresh-conversation evidence boundary, classify:
+If any required target-resolution case fails after v0.9 is demonstrably applied on the required evidence boundary, classify:
 
 `RUNTIME_ENFORCEMENT_GAP / PROMPT_LEVEL_FIX_STOP_LOSS`
 
-and **do not create v0.10 merely by adding more wording**. Escalate to a different runtime/enforcement architecture or accept the limitation explicitly.
+Do **not** create v0.10 merely by adding more wording. Escalate to a different runtime/enforcement architecture or accept the limitation explicitly.
 
 ## 6. Fingerprint
 
