@@ -2,63 +2,77 @@
 
 > Este é o registro autoritativo da única próxima ação segura do SES quando este estado estiver em `main`.
 
-**Next action ID:** `reconcile-ses-builders-to-multi-starter-baselines-v1`
-**Primary targets:** `SES — Documentation Auditor` v0.8 + `SES — SaaS Architect` v0.1-semantics Builder-fit revision
+**Next action ID:** `apply-documentation-auditor-v09-project-target-fix-v1`
+**Primary target:** `SES — Documentation Auditor` v0.9 project-target disambiguation
+**Queued target:** `SES — SaaS Architect` proportional Builder-fit smoke
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System` / `main` resolved live
 
-## Product decision
+## 1. Product decision preserved
 
-The single-starter / live-project-menu / numeric-selection / cross-turn-resume feature is discontinued by stop loss.
+The single-starter / live-numbered-project-menu / numeric-selection / `PROJECT_SELECTED → WAIT FOR TASK → cross-turn resume` feature remains discontinued by stop loss.
 
-Retired interaction:
+Nothing in the v0.9 correction reauthorizes that feature.
+
+## 2. Material event that invalidated the prior next action
+
+Post-rollback Documentation Auditor smoke produced these bounded observations:
 
 ```text
-# CLIQUE PARA INICIAR
-→ live numbered project menu
-→ numeric selection
-→ PROJECT_SELECTED
-→ WAIT FOR TASK
-→ cross-turn resume
+V0_8_DIRECT_FECHAI_S02: PASS / OBSERVED
+V0_8_DIRECT_BLOGS_S03: PASS / OBSERVED
+V0_8_GENERIC_TARGET_SES_SELF_RESPONSE: INDETERMINATE / TEST INPUT DID NOT EXPLICITLY ESTABLISH CONSUMER-PROJECT INTENT
+V0_8_RETIRED_NUMBERED_MENU_RESPONSE: FAIL / BEHAVIORAL REGRESSION
 ```
 
-PR #19 remains historical `ABANDONED / STOP-LOSS` and must not be revived.
+The numbered-menu response is a real stop-loss regression even though the Builder configuration visibly contained the v0.8 kernel.
 
-## Authoritative next action
+## 3. Root-cause classification
 
-1. resolve SES `main` live;
-2. reconcile the external private **Documentation Auditor** Builder to its v0.8 profile/kernel:
-   - exact complete v0.8 Instructions;
-   - four universal Documentation Auditor starters;
+The correction is bounded to target acquisition:
+
+1. **test-design ambiguity:** the prior generic S04 prompt could refer either to SES itself or to a consumer project;
+2. **missing deterministic pre-registry contract:** v0.8 kernel said to ask for a missing project, but no dedicated reusable contract defined the hard stop, SES-self inference boundary, explicit-list exception or numeric-binding prohibition;
+3. **runtime nondeterminism:** under that ambiguity, one response treated SES as the target and another reconstructed the retired numbered menu.
+
+The fix therefore adds a specific Core target-resolution contract plus an exact regression gate. It does not add another selection state machine.
+
+## 4. Authoritative next action after merge
+
+1. resolve SES `main` live and confirm the v0.9 artifacts are canonical;
+2. reconcile the private Documentation Auditor Builder to:
+   - exact complete `runtime/custom-gpt/DOCUMENTATION_AUDITOR_BUILDER_KERNEL.md` v0.9;
+   - measured Instructions count `7388 <= 7500`;
+   - exactly four existing universal starters;
    - Knowledge empty;
-   - existing GitHub READ_ONLY Action retained;
-   - retired interaction absent;
-3. reconcile the external private **SaaS Architect** Builder to the current repository profile:
-   - copy the exact complete `runtime/custom-gpt/SAAS_ARCHITECT_BUILDER_KERNEL.md` into Instructions;
-   - verify measured Instructions count `6182 <= 7500`;
-   - use the four canonical SaaS Architect starters;
-   - Knowledge empty;
-   - existing GitHub READ_ONLY Action retained;
-   - retired interaction absent;
-   - do not use `runtime/custom-gpt/UNIVERSAL_BUILDER_KERNEL.md` as Instructions; it is a deprecated compatibility locator;
-4. capture fresh non-secret Builder fingerprints for both external configurations;
-5. execute the Documentation Auditor proportional stop-loss smoke S01–S06;
-6. execute a proportional SaaS smoke limited to:
-   - current compact-kernel fingerprint captured;
-   - four starters present;
-   - direct project+substantive-task resolution through registry/adapter/bootstrap;
-   - project-switch isolation;
-   - READ_ONLY/authority separation;
-   - no retired menu/numeric-selection/cross-turn requirement;
-7. if both smokes pass, record the rollback/reconciliation closed and continue ordinary SES specialist development;
-8. classify unrelated defects independently; do not reintroduce the retired feature as a fix.
+   - existing GitHub READ_ONLY Action unchanged;
+   - visibility private;
+3. capture a fresh non-secret Builder fingerprint;
+4. execute `tests/runtime/DOCUMENTATION_AUDITOR_PROJECT_TARGET_REGRESSION.md` from fresh conversations:
+   - R01 ambiguous target;
+   - R02 missing consumer-project identifier;
+   - R03A explicit FECH.AI target;
+   - R03B explicit SES self-target;
+5. require all four observations to PASS autonomously;
+6. if Gate 0 passes, resume the proportional Documentation Auditor smoke from `tests/runtime/DOCUMENTATION_AUDITOR_RUNTIME_RUNBOOK.md` without re-running unrelated historical selection-first cases;
+7. then execute the queued proportional SaaS Architect Builder-fit smoke;
+8. when both proportional smokes pass, record rollback/reconciliation closed and return to ordinary SES specialist development.
 
-## Preserved proof state
+## 5. One-shot stop condition
+
+If Documentation Auditor v0.9 is demonstrably applied and **R01 or R02 still fails in a fresh conversation**, classify:
+
+`RUNTIME_ENFORCEMENT_GAP / PROMPT_LEVEL_FIX_STOP_LOSS`
+
+Do **not** create v0.10 solely by strengthening prompt wording. The next decision must use a different enforcement/runtime architecture or explicitly accept the limitation.
+
+This is the anti-loop boundary for the current defect.
+
+## 6. Preserved proof state
 
 ```text
-SAAS_V0_1_RUNTIME_BEHAVIORAL_PROOF: PASS / HISTORICAL / PRESERVED / EXACT HISTORICAL FINGERPRINT ONLY
-SAAS_HISTORICAL_KERNEL_BLOB: 50672d09665035c0f60f18887f3295a5ea8cad03
+SAAS_V0_1_RUNTIME_BEHAVIORAL_PROOF: PASS / HISTORICAL / EXACT HISTORICAL FINGERPRINT ONLY
 SAAS_CURRENT_BUILDER_FIT_KERNEL: NEW FINGERPRINT / PROPORTIONAL SMOKE REQUIRED
-SAAS_V0_2_V0_3_SELECTION_FIRST_TARGETS: SUPERSEDED_BY_STOP_LOSS / HISTORY_PRESERVED
+SAAS_V0_2_V0_3_SELECTION_FIRST_TARGETS: SUPERSEDED_BY_STOP_LOSS
 
 DA_V0_4_P09_ATTEMPT_1: FAIL / PRESERVED
 DA_V0_4_P09_ATTEMPT_2: FAIL / PRESERVED
@@ -67,26 +81,17 @@ DA_V0_5_P09_ATTEMPT_1: FAIL / PRESERVED
 DA_V0_6_P09_ATTEMPT_1: FAIL / PRESERVED
 DA_V0_6_UNSUPPORTED_INTEGRAL_READ_PROMOTION: 0 / PRESERVED
 DA_V0_6_RECEIPT_MECHANICAL_ENFORCEMENT: NOT_ESTABLISHED / PRESERVED
-DA_V0_7_CROSS_TURN_HARDENING: ABANDONED / PR #19 NOT_MERGED
-DA_V0_8: STOP_LOSS_ROLLBACK_TARGET
+DA_V0_7: ABANDONED / PR #19 NOT_MERGED
+DA_V0_8: STOP_LOSS ROLLBACK TARGET / NUMBERED-MENU REGRESSION OBSERVED
+DA_V0_9: PROJECT-TARGET DISAMBIGUATION FIX / BUILDER APPLICATION + REGRESSION PENDING
 ```
 
-## Done condition
+## 7. Limits
 
-This action is complete when both external SES Builders match their current repository profiles, fresh fingerprints are recorded, proportional smokes pass, and the retired interaction is absent without regression of evidence/receipt/authority/project-isolation controls.
+This action does not authorize publication, broad sharing, consumer-project mutation, production mutation, legacy retirement or broad runtime certification.
 
-## Limits
+Do not mutate FECH.AI or Blogs/SEO merely because SES target-resolution behavior changed.
 
-This action does not authorize publication, broad sharing, consumer-project mutation, production mutation, legacy retirement or broad runtime certification beyond evidence actually executed.
+## 8. Done condition
 
-## Anti-loop
-
-Do not:
-- reopen PR #19;
-- reuse v0.7 as an active target;
-- create another prompt-hardening cycle to make the retired single starter work;
-- restore historical selection-first P01–P10 as runtime-required gates;
-- manually truncate a versioned Builder kernel to fit the UI;
-- use the deprecated universal kernel locator as Builder Instructions;
-- mutate FECH.AI or Blogs/SEO merely because SES changed;
-- convert proportional smoke success into broad runtime/product/security PASS.
+This action is complete only when the applied v0.9 runtime passes the project-target regression and proportional Documentation Auditor smoke, the queued proportional SaaS smoke is completed, the retired interaction remains absent, and no new prompt-hardening loop is opened.
