@@ -9,9 +9,7 @@
 
 ## 1. Purpose
 
-Preserve the durable stop-loss decision and the bounded correction required after Documentation Auditor v0.8 reproduced a retired numbered-project-menu response when target/project identity was not explicit.
-
-Consumer-project truth, continuity and authority remain project-owned.
+Preserve the stop-loss decision and bounded Documentation Auditor target-acquisition correction. Consumer-project truth, continuity and authority remain project-owned.
 
 ## 2. Reading order
 
@@ -24,53 +22,42 @@ Consumer-project truth, continuity and authority remain project-owned.
 
 ## 3. Durable state
 
-1. SES remains project-agnostic.
-2. SFJM continuity remains operational; `LIVE_RESOLVED_STATE != MATERIAL_RECORDED_STATE`.
-3. SaaS Architect historical v0.1 runtime PASS T01–T29 = 29/29 remains preserved only for its exact historical fingerprint.
-4. PR #19 remains `ABANDONED / STOP-LOSS / NOT_MERGED`.
-5. PR #20 merged the controlled rollback and retired the single-starter/menu/numeric-selection/cross-turn interaction.
-6. PR #21 merged the SaaS Architect Builder-fit kernel/name correction.
-7. Documentation Auditor v0.8 direct FECH.AI and Blogs/SEO tasks demonstrated correct registry/adapter/bootstrap, receipt ordering, project isolation and conservative evidence coverage in the observed runs.
-8. A generic/missing-target v0.8 observation reconstructed a required numbered ACTIVE-project menu and numeric selection. That is a stop-loss behavioral regression.
-9. Another generic-target observation treated SES itself as the target; because the test prompt did not explicitly state consumer-project intent, that observation is `INDETERMINATE / TARGET_AMBIGUOUS`, not a valid missing-consumer-project failure.
-10. v0.9 corrects target acquisition only; it does not reopen selection-first.
-11. Codex review of the first v0.9 PR head identified three material gaps that are now part of the correction boundary: bare numeric follow-up after an informational list, supplied-but-unregistered identifier classification, and preservation of substantive multi-project comparison semantics.
-12. Historical v0.4-v0.8 failures/observations remain preserved without retroactive rewrite.
-13. No consumer project is automatically mutated by SES evolution.
+1. SES remains project-agnostic and SFJM continuity remains operational.
+2. SaaS Architect historical v0.1 PASS remains bound to its exact historical fingerprint.
+3. PR #19 remains abandoned/unmerged; PR #20 retired the single-starter/menu/numeric/cross-turn interaction; PR #21 merged the SaaS Builder-fit correction.
+4. Documentation Auditor v0.8 direct FECH.AI and Blogs/SEO observations passed the bounded direct-project smoke aspects.
+5. v0.8 also reproduced a retired numbered ACTIVE-project menu/numeric-selection response under generic/missing target conditions; a separate generic run inferred SES under ambiguous test wording.
+6. v0.9 corrects target acquisition only and does not reopen selection-first.
+7. Codex review exposed required edge paths that are now part of the target gate: informational list → bare number, supplied-but-unregistered identifier, and substantive explicit multi-project work.
+8. Historical failures remain historical; no consumer project is automatically mutated by SES evolution.
 
 ## 4. Current required target behavior
 
-Before project materialization classify target identity.
-
 ```text
-EXPLICIT SES TARGET
-→ SES self-work as applicable
-
-EXPLICIT CONSUMER PROJECT IDENTIFIER(S) SUPPLIED
-→ canonical Project Registry resolution
-→ if resolved: Adapter → consumer bootstrap/local specialist → receipt → work
-→ if unresolved: canonical fail-closed resolver state
+AMBIGUOUS SES OR CONSUMER TARGET
+→ direct clarification → STOP
 
 MISSING CONSUMER PROJECT IDENTIFIER
 → direct clarification → STOP
 
-AMBIGUOUS SES OR CONSUMER TARGET
-→ direct clarification → STOP
+EXPLICIT CONSUMER IDENTIFIER SUPPLIED
+→ canonical registry resolution
+→ resolved: Adapter/bootstrap/readiness/work
+→ unresolved: canonical fail-closed resolver state
+
+EXPLICIT SES TARGET
+→ SES self-work as applicable
+
+INFORMATIONAL PROJECT LIST
+→ list only; list position never project identity
+
+SUBSTANTIVE EXPLICIT MULTI-PROJECT TASK
+→ independently resolve every project
+→ preserve project-scoped readiness/evidence boundaries
+→ synthesize only afterward
 ```
 
-Before clarification is answered:
-
-- do not infer SES;
-- do not infer a consumer project;
-- do not enumerate the registry merely to offer choices;
-- do not generate a numbered menu as a project-entry protocol;
-- do not create numeric bindings;
-- do not materialize a consumer project;
-- do not emit project findings/verdicts.
-
-Project enumeration is informational only when explicitly requested and never creates selection-state authority. A later bare list position such as `1` is not project identity.
-
-A substantive multi-project task with explicit project identifiers is not an informational-list request: resolve each project independently and preserve project-scoped readiness/evidence boundaries.
+No fuzzy inference, mandatory numbered entry menu, numeric binding, or consumer materialization from a bare list position.
 
 ## 5. Preserved evidence/authority behavior
 
@@ -87,13 +74,7 @@ CONTEXT_READY != AUTHORIZED_TO_MUTATE
 TOOL_CAPABILITY != AUTHORIZATION
 ```
 
-Keep separate:
-
-```text
-NORMATIVE_REQUIREMENT
-BEHAVIORAL_COMPLIANCE
-MECHANICALLY_ENFORCED_INVARIANT
-```
+Keep normative requirement, behavioral compliance and mechanical enforcement distinct.
 
 ## 6. Current candidate
 
@@ -108,22 +89,36 @@ BUILDER_APPLIED: NOT_YET_ESTABLISHED FOR V0_9
 PROJECT_TARGET_REGRESSION_PASS: NOT_YET_ESTABLISHED
 ```
 
-## 7. Anti-loop stop condition
+## 7. Required post-merge Gate 0
 
-If v0.9 is demonstrably applied and R01, R02 or R04 fails on the required fresh-conversation evidence boundary:
+Apply/reconcile v0.9 Builder, capture the non-secret fingerprint, then execute exactly:
+
+```text
+R01 ambiguous target
+R02 missing consumer ID
+R03A explicit FECH.AI
+R03B explicit SES
+R04 informational list → bare number
+R05 explicit unregistered identifier
+R06 substantive FECH.AI ↔ Blogs/SEO multi-project task
+```
+
+Require **7/7 PASS** before proportional smoke resumes.
+
+## 8. Anti-loop stop condition
+
+If any required target-resolution case fails after v0.9 is demonstrably applied:
 
 `RUNTIME_ENFORCEMENT_GAP / PROMPT_LEVEL_FIX_STOP_LOSS`.
 
-Do not create v0.10 merely by adding stronger prompt wording. The next decision must use a different enforcement/runtime architecture or explicitly accept the limitation.
+Do not create a wording-only v0.10. Use a different runtime/enforcement architecture or accept the limitation explicitly.
 
-## 8. Next action
+## 9. Next action
 
-Authoritative source: `docs/NEXT_SAFE_ACTION.md`.
+Authoritative source: `docs/NEXT_SAFE_ACTION.md`. After Gate 0, resume proportional Documentation Auditor smoke, then SaaS Builder-fit smoke, then ordinary SES development only if those gates pass.
 
-Apply/reconcile the private Documentation Auditor Builder to v0.9, capture the non-secret fingerprint, execute R01/R02/R03A/R03B/R04 exactly, then resume proportional smoke only if Gate 0 passes. SaaS Architect proportional smoke remains queued afterward.
-
-## 9. Short resume prompt
+## 10. Short resume prompt
 
 ```text
-SES -> resolve main live -> single-starter/menu feature remains retired -> PR #20 rollback + PR #21 SaaS Builder-fit merged -> DA v0.8 direct-project smoke behaved correctly but missing/ambiguous target produced a retired numbered-menu regression -> v0.9 adds deterministic target classification + clarification-only hard stop + explicit invalid-ID path + multi-project preservation + mandatory list-then-bare-number regression -> apply v0.9 Builder -> run R01/R02/R03A/R03B/R04 -> if R01/R02/R04 fail, stop prompt hardening; if Gate 0 passes, resume proportional smoke -> then SaaS smoke -> ordinary SES development.
+SES -> resolve main live -> single-starter/menu feature remains retired -> DA v0.8 direct-project observations passed but missing/ambiguous target exposed numeric-menu regression -> v0.9 target fix now requires R01/R02/R03A/R03B/R04/R05/R06 = 7/7 -> any target case fail => prompt-level stop-loss/no wording-only v0.10 -> if Gate 0 passes, proportional DA smoke -> SaaS smoke -> ordinary SES development.
 ```
