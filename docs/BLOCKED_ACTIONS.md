@@ -37,17 +37,17 @@ Historical evidence about the retired experiment remains readable and must not b
 
 ## 3. Documentation Auditor v0.9 enforcement stop-loss blocks
 
-Formal v0.9 Gate 0 completed on a fingerprinted private Builder with:
+Formal v0.9 Gate 0 completed on a fingerprinted private Builder. The initial repository evidence record preserved an earlier `R03A: PASS` adjudication. Full-transcript PR self-review later established that R03A emitted project-specific substantive FECH.AI commentary before its receipt, so the current adjudication is corrected without rewriting the initial record.
 
 ```text
 R01: PASS
 R02: PASS
-R03A: PASS
+R03A: FAIL / PROJECT-SPECIFIC SUBSTANTIVE OUTPUT BEFORE RECEIPT
 R03B: PASS
 R04: PASS
 R05: PASS
-R06: FAIL
-PROJECT_TARGET_REGRESSION: 6/7
+R06: FAIL / SUBSTANTIVE MULTI-PROJECT COMPARATIVE OUTPUT BEFORE READINESS
+PROJECT_TARGET_REGRESSION: 5/7
 PROJECT_TARGET_REGRESSION_PASS: NOT_ESTABLISHED
 RUNTIME_ENFORCEMENT_GAP: ESTABLISHED
 PROMPT_LEVEL_FIX_STOP_LOSS: TRIGGERED
@@ -55,13 +55,14 @@ PROMPT_LEVEL_FIX_STOP_LOSS: TRIGGERED
 
 Durable evidence:
 
-`tests/runtime/evidence/DOCUMENTATION_AUDITOR_V09_GATE0_2026-08-15.md`
+- `tests/runtime/evidence/DOCUMENTATION_AUDITOR_V09_GATE0_2026-08-15.md`
+- `tests/runtime/evidence/DOCUMENTATION_AUDITOR_V09_GATE0_READJUDICATION_2026-08-15.md`
 
 Until a separately reviewed material runtime/enforcement boundary exists, block:
 
 - creating Documentation Auditor v0.10 solely by strengthening prompt/kernel wording for receipt order;
-- rerunning R06 merely to seek a cosmetic 7/7;
-- relabeling a later successful retry as retroactive repair of the formal R06 FAIL;
+- rerunning R03A or R06 merely to seek a more favorable aggregate result;
+- relabeling later successful retries as retroactive repair of the formal failed cases;
 - proceeding with the old v0.9 proportional smoke sequence as if Gate 0 passed;
 - claiming receipt-first is deterministic or mechanically enforced from Builder instructions or behavioral success alone;
 - mutating FECH.AI or Blogs/SEO because SES runtime enforcement failed;
@@ -107,7 +108,7 @@ No Gateway design or SES runtime failure grants authority to change a consumer p
 
 ## 6. Conflict rule
 
-If `docs/NEXT_SAFE_ACTION.md` conflicts materially with bootstrap, handoff, project status, a live authoritative source, runtime runbook or an applicable authority boundary:
+If `docs/NEXT_SAFE_ACTION.md` conflicts materially with bootstrap, handoff, project status, a live authoritative source, runtime runbook, evidence/readjudication or an applicable authority boundary:
 
 1. stop execution;
 2. resolve the live source and exact conflict;
