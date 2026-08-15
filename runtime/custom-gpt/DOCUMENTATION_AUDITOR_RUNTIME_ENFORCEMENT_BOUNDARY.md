@@ -1,12 +1,12 @@
 # SES — Documentation Auditor Runtime Enforcement Boundary
 
-**Status:** `SPECIALIST_SPECIFIC_RUNTIME_BOUNDARY_V0_2 / CANDIDATE_LEARNING / STOP_LOSS_RESCOPED`
-**Applies to:** `SES — Documentation Auditor` Custom GPT runtime
-**Evidence basis:** Documentation Auditor v0.4–v0.6 runtime observations
+**Status:** `SPECIALIST_SPECIFIC_RUNTIME_BOUNDARY_V0_3 / CANDIDATE_LEARNING / V0_9_GATE0_FAILURE_RECORDED`
+**Applies to:** `SES — Documentation Auditor` Custom GPT runtime and any future specialist-specific enforcement wrapper
+**Evidence basis:** Documentation Auditor v0.4–v0.6 runtime observations plus formal v0.9 Gate 0
 
 ## 1. Purpose
 
-Preserve the specialist-specific learning exposed by repeated receipt-order failures without preserving the abandoned single-starter/selection-first experiment as an active proof obligation.
+Preserve the specialist-specific learning exposed by repeated receipt-order failures and the formal v0.9 Gate 0 outcome without converting an instruction-level requirement into a mechanical-enforcement claim.
 
 The required substantive ordering remains:
 
@@ -16,7 +16,16 @@ TASK MATERIALIZATION
 → PROJECT-SPECIFIC SUBSTANTIVE OUTPUT
 ```
 
-This document classifies what runtime evidence can prove about that ordering.
+For explicit multi-project work:
+
+```text
+RESOLVE PROJECT A INDEPENDENTLY
++ RESOLVE PROJECT B INDEPENDENTLY
+→ ESTABLISH INDEPENDENTLY IDENTIFIABLE READINESS BOUNDARIES
+→ ONLY THEN SYNTHESIZE SUBSTANTIVE COMPARISON
+```
+
+This document classifies what runtime evidence can prove about that ordering and what architectural boundary is now required for further progress.
 
 ## 2. Required distinction
 
@@ -30,7 +39,7 @@ MECHANICALLY_ENFORCED_INVARIANT
 
 - `NORMATIVE_REQUIREMENT`: canonical specification states required behavior.
 - `BEHAVIORAL_COMPLIANCE`: the actual configured runtime autonomously exhibits required behavior in an executed bounded case.
-- `MECHANICALLY_ENFORCED_INVARIANT`: a mechanism outside ordinary model instruction-following technically prevents/rejects the invalid transition.
+- `MECHANICALLY_ENFORCED_INVARIANT`: a mechanism outside ordinary model instruction-following technically prevents or rejects the invalid transition.
 
 Therefore:
 
@@ -42,21 +51,25 @@ PROMPT_INVARIANT != ENFORCED_RUNTIME_INVARIANT
 
 ## 3. Current evidence boundary
 
-Current evidence does not establish a separate output controller/validator/transition gate that mechanically prevents substantive output before the receipt.
+The v0.9 Builder kernel already requires receipt-first ordering. The shared hybrid bootstrap contract and project-target resolution contract also require project-scoped readiness before project-specific substantive synthesis.
+
+Formal v0.9 Gate 0 nevertheless produced a valid R06 failure on a fingerprinted Builder because substantive comparative commentary was emitted before the required readiness boundary.
+
+Current evidence therefore supports:
 
 ```text
 RECEIPT_FIRST_NORMATIVE_REQUIREMENT: ESTABLISHED
 RECEIPT_FIRST_BEHAVIORAL_COMPLIANCE: VERSION/CASE_BOUND
 RECEIPT_FIRST_MECHANICAL_ENFORCEMENT: NOT_ESTABLISHED
+RUNTIME_ENFORCEMENT_GAP: ESTABLISHED
+PROMPT_LEVEL_FIX_STOP_LOSS: TRIGGERED
 ```
 
 Do not describe Builder-only receipt ordering as deterministic, guaranteed or mechanically enforced.
 
 Absence of observed enforcement is not universal proof that no future mechanism can exist. Any future enforcement claim requires positive mechanism evidence.
 
-## 4. Historical evidence
-
-Preserve:
+## 4. Historical evidence preserved
 
 ```text
 V0_4_P09_ATTEMPT_1: FAIL / RECEIPT_ORDER + UNSUPPORTED_INTEGRAL_READ
@@ -68,44 +81,128 @@ V0_5_RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
 V0_6_P09_ATTEMPT_1: FAIL / RECEIPT_OMITTED / SUBSTANTIVE_OUTPUT_FIRST
 V0_6_RUNTIME_BEHAVIORAL_PROOF: NOT_ESTABLISHED
 V0_7_CROSS_TURN_HARDENING: ABANDONED / STOP_LOSS / PR #19 NOT_MERGED
+V0_8_NUMBERED_MENU_REGRESSION: FAIL / STOP_LOSS TARGET
 ```
 
-The historical P09 labels identify the cases that exposed the issue. They do not make the retired selection-first P01–P10 interaction suite an active v0.8 requirement.
+No later behavior rewrites those observations.
 
-## 5. Cross-layer FECH.AI observation
+## 5. Formal v0.9 Gate 0 evidence
 
-Historical v0.6 evidence found a FECH.AI response-format conflict that placed `Verdict:` before bootstrap/readiness. FECH.AI later reconciled that conflict through its own reviewed project-local process.
-
-Classification:
+The v0.9 private external Builder was reconciled and fingerprinted before formal execution.
 
 ```text
-FECHAI_VERDICT_FIRST_TEMPLATE: CONTRIBUTING_CONFLICT / HISTORICAL
-SES_V06_INTERNAL_ORDER_CONTRADICTION: NOT_ESTABLISHED AFTER V0_6 CORRECTION
+R01_AMBIGUOUS_TARGET_COLD_START: PASS
+R02_MISSING_CONSUMER_PROJECT_ID_COLD_START: PASS
+R03A_EXPLICIT_FECHAI_TARGET: PASS
+R03B_EXPLICIT_SES_TARGET: PASS
+R04_INFORMATIONAL_LIST_THEN_BARE_NUMBER: PASS
+R05_EXPLICIT_UNREGISTERED_IDENTIFIER: PASS
+R06_SUBSTANTIVE_MULTI_PROJECT_TASK: FAIL
+
+PROJECT_TARGET_REGRESSION: 6/7
+PROJECT_TARGET_REGRESSION_PASS: NOT_ESTABLISHED
 ```
 
-The FECH.AI correction is independent of the single-starter UX rollback. It does not prove mechanical enforcement.
-
-## 6. Post-stop-loss proof obligations
-
-A future claim of `BEHAVIORAL_COMPLIANCE` requires fresh autonomous runtime evidence bound to:
+R06 positive observations:
 
 ```text
-BUILDER_FINGERPRINT
-SES_REF
-PROJECT_REF when project-bound
-CANONICAL_TEST_ID / SMOKE_ID
-TASK_SCOPE
+MULTI_PROJECT_TASK: YES
+INFORMATIONAL_LIST_SHORT_CIRCUIT: NO
+FECHAI_INDEPENDENTLY_RESOLVED: YES
+BLOGS_SEO_INDEPENDENTLY_RESOLVED: YES
+CROSS_PROJECT_CONTEXT_CONTAMINATION: 0 OBSERVED
+READ_ONLY: PRESERVED
 ```
 
-For post-stop-loss continuation, use the v0.8 S01–S06 smoke defined by `tests/runtime/DOCUMENTATION_AUDITOR_RUNTIME_RUNBOOK.md` before broader runtime work.
+R06 failure observation:
 
-The smoke must verify direct project+task bootstrap, receipt-before-substantive-output, EOF/coverage discipline, project isolation and authority boundaries without recreating numbered-menu/numeric-selection/cross-turn state.
+```text
+SUBSTANTIVE_COMPARATIVE_OUTPUT_BEFORE_REQUIRED_READINESS_BOUNDARY: YES
+PROJECT_SCOPED_READINESS_BOUNDARIES: PRESENT LATER / TOO LATE FOR REQUIRED ORDER
+RESULT: FAIL
+```
 
-A future claim of `MECHANICALLY_ENFORCED_INVARIANT` additionally requires positive evidence of an actual enforcement mechanism plus an executed invalid-transition challenge.
+A later receipt does not retroactively repair the invalid earlier transition.
 
-Instruction wording or successful behavioral tests alone are insufficient.
+## 6. Failure interpretation
 
-## 7. Receipt-order subgate
+The observed v0.9 failure is not evidence that target classification, registry resolution or multi-project source isolation failed. Those aspects passed in R06.
+
+The bounded failure is the transition from context acquisition/materialization to user-visible substantive synthesis.
+
+Current evidence does **not** establish a separate output controller/validator/transition gate that technically prevents this transition before readiness.
+
+This is consistent with the prior specialist-specific learning from v0.6 and now has a fresh formal v0.9 reproduction under a different runtime case.
+
+Do not overclaim a single universal root cause beyond the evidence. The established finding is:
+
+`RUNTIME_ENFORCEMENT_GAP / MECHANICAL_ENFORCEMENT_NOT_ESTABLISHED`.
+
+## 7. Prompt-level stop loss
+
+Because a required v0.9 case failed after the Builder/version fingerprint had been established:
+
+```text
+PROMPT_LEVEL_FIX_STOP_LOSS: TRIGGERED
+```
+
+Do not:
+
+- create v0.10 solely by adding stronger receipt-order wording;
+- rerun R06 merely to seek a cosmetic PASS;
+- relabel a later corrected retry as retroactive R06 PASS;
+- call instruction repetition an enforcement mechanism.
+
+## 8. Architectural consequence — target state
+
+The accepted specialist-specific design direction is an **SES Runtime Enforcement Gateway**.
+
+Target transition model:
+
+```text
+TARGET / PROJECT RESOLUTION
+→ PROJECT-SCOPED READINESS ARTIFACT(S)
+→ EXTERNAL VALIDATOR / TRANSITION GATE
+→ SUBSTANTIVE ANALYSIS
+→ ORDERED RELEASE / RENDERING
+```
+
+The critical property is that the transition controller, not ordinary model instruction-following, decides whether substantive output may be released.
+
+This is:
+
+```text
+ARCHITECTURAL_DIRECTION: ACCEPTED_FOR_DESIGN
+GATEWAY_IMPLEMENTED: NO
+GATEWAY_DEPLOYED: NO
+MECHANICAL_ENFORCEMENT_PROVEN: NO
+```
+
+Decision record:
+
+`docs/architecture/ADR-001-DOCUMENTATION_AUDITOR_RUNTIME_ENFORCEMENT_GATEWAY.md`
+
+## 9. Proof obligations for a future enforcement candidate
+
+A future candidate may claim mechanical enforcement only with positive evidence of an actual mechanism and an executed invalid-transition challenge.
+
+Minimum obligations:
+
+```text
+TARGET_RESOLUTION_BEFORE_MATERIALIZATION: YES
+MULTI_PROJECT_INDEPENDENT_RESOLUTION: YES
+PROJECT_SCOPED_READINESS_ARTIFACTS: VALIDATED
+SUBSTANTIVE_OUTPUT_BEFORE_REQUIRED_READINESS: TECHNICALLY_BLOCKED_OR_REJECTED
+INVALID_TRANSITION_CHALLENGE: PASS
+FAIL_CLOSED_ON_INVALID_OR_INCOMPLETE_READINESS: YES
+CROSS_PROJECT_CONTEXT_CONTAMINATION: 0
+READ_ONLY_BY_DEFAULT: YES
+TRANSITION_TRACE: PRESENT
+```
+
+The invalid-transition challenge must intentionally attempt to release project-specific substantive content before readiness. PASS requires the controller to block/reject that transition; a model voluntarily choosing not to produce early content is insufficient.
+
+## 10. Receipt-order behavioral subgate remains useful
 
 For any substantive project-specific case:
 
@@ -118,9 +215,9 @@ AUTONOMOUS_CORRECTION_REQUIRED: 0
 
 Passing this subgate establishes only receipt-order behavioral compliance for the exact evidence boundary. It does not establish broad runtime/product/security PASS and must not be called mechanically enforced.
 
-## 8. Stop-loss boundary
+## 11. Stop-loss interaction boundary
 
-Do not use this learning document to recreate or require:
+Do not use this learning document or future Gateway design to recreate or require:
 
 ```text
 # CLIQUE PARA INICIAR
@@ -131,8 +228,10 @@ Do not use this learning document to recreate or require:
 → cross-turn resume
 ```
 
-The feature was retired by product stop loss. Historical evidence remains preserved; active proof obligations move to the direct project+substantive-task flow.
+The feature was retired by product stop loss. Target clarification remains direct and selection-free.
 
-## 9. Generalization boundary
+## 12. Generalization boundary
 
-This remains `CANDIDATE_LEARNING` from one specialist domain. It is not promoted here to a universal SES principle for all specialists or all model runtimes.
+This remains `CANDIDATE_LEARNING` grounded in Documentation Auditor runtime evidence. It is not promoted here to a universal SES principle or mandatory gateway architecture for all specialists.
+
+Independent evidence from other specialists is required before broader generalization.
