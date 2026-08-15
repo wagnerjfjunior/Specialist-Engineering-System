@@ -36,6 +36,7 @@ Builder constraints:
 ```text
 BUILDER_INSTRUCTIONS_HARD_LIMIT: <= 8000 characters
 SES_OPERATIONAL_BUDGET: <= 7500 characters
+CURRENT_COMPACT_KERNEL_MEASURED_COUNT: 6693 characters
 COUNT_METHOD: Unicode code-point count of repository text content
 SCOPE_OF_SIZE_CONSTRAINT: Builder Instructions field only
 ```
@@ -160,6 +161,7 @@ Before smoke execution verify:
 
 ```text
 INSTRUCTIONS_COMPLETE_COPY: YES
+INSTRUCTIONS_CHARACTER_COUNT = 6693
 INSTRUCTIONS_CHARACTER_COUNT <= 7500
 CONVERSATION_STARTERS: exactly 4 / universal set above
 SINGLE_STARTER_SELECTION_FLOW: DISABLED
