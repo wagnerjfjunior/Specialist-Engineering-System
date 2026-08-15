@@ -7,10 +7,11 @@
 **Coverage regression:** `tests/runtime/DOCUMENTATION_AUDITOR_V05_COVERAGE_REGRESSION.md`
 **Canonical behavioral spec:** `tests/behavioral/DOCUMENTATION_AUDITOR_TESTS.md`
 **Shared hybrid behavioral spec:** `tests/behavioral/HYBRID_SPECIALIST_BOOTSTRAP_TESTS.md`
+**Target-resolution behavioral spec:** `tests/behavioral/HYBRID_PROJECT_TARGET_RESOLUTION_TESTS.md`
 
 ## 1. Goal
 
-Validate the bounded v0.9 correction for missing/ambiguous target identity, then resume only the proportional post-stop-loss smoke. Do not revive the abandoned single-starter/menu/cross-turn selection experiment and do not promote smoke success into broad runtime certification.
+Validate the bounded v0.9 correction for missing/ambiguous target identity and numeric-selection stop-loss leakage, then resume only the proportional post-stop-loss smoke. Do not revive the abandoned single-starter/menu/cross-turn selection experiment and do not promote smoke success into broad runtime certification.
 
 ## 2. Preconditions
 
@@ -40,13 +41,16 @@ R01_AMBIGUOUS_TARGET_COLD_START: PASS
 R02_MISSING_CONSUMER_PROJECT_ID_COLD_START: PASS
 R03A_EXPLICIT_CONSUMER_TARGET: PASS
 R03B_EXPLICIT_SES_TARGET: PASS
+R04_INFORMATIONAL_LIST_THEN_BARE_NUMBER: PASS
 ```
 
 The v0.8 generic prompt that was previously treated as S04 is now explicitly classified as an **ambiguous-target test**, not as a consumer-project-missing-ID test. This removes the test-design ambiguity that allowed SES self-targeting to be interpreted as either valid or invalid depending on unstated intent.
 
-A required numbered project menu or transient numeric binding is always a stop-loss regression.
+R04 is mandatory because informational project enumeration is allowed, but list position must never become project identity. A runtime that passes cold-start clarification yet maps a later bare `1` to the first listed project still violates the stop-loss boundary.
 
-If R01 or R02 fails after v0.9 is demonstrably applied in a fresh conversation, stop prompt-level hardening:
+A required numbered project menu as an entry protocol or any transient numeric project binding is always a stop-loss regression.
+
+If R01, R02 or R04 fails after v0.9 is demonstrably applied on the required fresh-conversation evidence boundary, stop prompt-level hardening:
 
 `RUNTIME_ENFORCEMENT_GAP / PROMPT_LEVEL_FIX_STOP_LOSS`.
 
@@ -166,6 +170,8 @@ The canonical Documentation Auditor behavioral suite remains `tests/behavioral/D
 
 The shared hybrid suite remains `tests/behavioral/HYBRID_SPECIALIST_BOOTSTRAP_TESTS.md`.
 
+The target-resolution suite is `tests/behavioral/HYBRID_PROJECT_TARGET_RESOLUTION_TESTS.md` and preserves supplied-identifier, informational-list/numeric-follow-up, and substantive multi-project semantics.
+
 Historical selection-first P01-P10 is not a required current gate.
 
 Full aggregate Documentation Auditor runtime certification remains:
@@ -183,16 +189,18 @@ TEST_ID
 DATE_TIME
 FRESH_OR_EXISTING_CONVERSATION
 BUILDER_FINGERPRINT
-INPUT
-FIRST_ASSISTANT_RESPONSE when entry behavior is tested
+INPUT / TURN_SEQUENCE
+ASSISTANT_RESPONSE(S) when entry behavior is tested
 ACTION_CALLS_ACTUALLY_MADE
 SES_REF
 PROJECT_REF when applicable
 TARGET_CLASS
 PROJECT_IDENTIFIER_STATUS
 REGISTRY_ENUMERATED when applicable
+PROJECT_LISTED when applicable
 NUMBERED_MENU_EMITTED
 NUMERIC_BINDING_CREATED
+BARE_NUMBER_ACCEPTED_AS_PROJECT_IDENTIFIER when applicable
 PROJECT_MATERIALIZED
 RETRIEVAL_METHOD
 COVERAGE_STATE
