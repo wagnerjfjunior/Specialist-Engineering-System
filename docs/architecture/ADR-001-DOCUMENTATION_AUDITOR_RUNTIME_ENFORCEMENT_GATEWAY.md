@@ -9,39 +9,9 @@
 
 ## 1. Context
 
-The Documentation Auditor v0.9 target-resolution correction was applied to the private external Builder and fingerprinted before formal execution of:
+The Documentation Auditor v0.9 target-resolution correction was applied to the private external Builder and fingerprinted before formal Gate 0.
 
-`tests/runtime/DOCUMENTATION_AUDITOR_PROJECT_TARGET_REGRESSION.md`.
-
-The durable sanitized runtime record is:
-
-`tests/runtime/evidence/DOCUMENTATION_AUDITOR_V09_GATE0_2026-08-15.md`.
-
-That first record preserved the original conversational adjudication:
-
-```text
-R01: PASS
-R02: PASS
-R03A: PASS / INITIAL ADJUDICATION
-R03B: PASS
-R04: PASS
-R05: PASS
-R06: FAIL
-
-PROJECT_TARGET_REGRESSION: 6/7 / INITIAL ADJUDICATION
-PROJECT_TARGET_REGRESSION_PASS: NOT_ESTABLISHED
-```
-
-Subsequent full-transcript/contract review identified two material corrections without rewriting the original evidence:
-
-1. R03A had emitted project-specific substantive FECH.AI commentary before the required `Context Readiness Receipt`; its initial PASS was an adjudication overclaim.
-2. R06 not only emitted substantive comparison before readiness; the later artifact labeled `Context Readiness Receipt` omitted mandatory hybrid receipt semantics and declared `LIMITED` without an explicit strict-subset `EFFECTIVE_SCOPE`. It therefore cannot be treated as a valid canonical readiness boundary.
-
-The corrections are preserved in:
-
-`tests/runtime/evidence/DOCUMENTATION_AUDITOR_V09_GATE0_READJUDICATION_2026-08-15.md`.
-
-The authoritative current-state result is:
+The first durable evidence record preserved the original conversational adjudication, including R03A/R05 PASS and R06 FAIL. Subsequent full transcript/contract review corrected current state without rewriting that original record:
 
 ```text
 R01: PASS
@@ -49,37 +19,38 @@ R02: PASS
 R03A: FAIL / PROJECT-SPECIFIC SUBSTANTIVE OUTPUT BEFORE RECEIPT
 R03B: PASS
 R04: PASS
-R05: PASS
+R05: FAIL / UNSOLICITED USER-VISIBLE PROJECT ENUMERATION AFTER ZERO-MATCH
 R06: FAIL / EARLY SUBSTANTIVE COMPARISON + INVALID/INCOMPLETE READINESS ARTIFACT
 
-PROJECT_TARGET_REGRESSION: 5/7
+PROJECT_TARGET_REGRESSION: 4/7
 PROJECT_TARGET_REGRESSION_PASS: NOT_ESTABLISHED
 ```
 
-R03A still resolved FECH.AI correctly and remained READ_ONLY, but the ordering requirement failed. R06 independently resolved FECH.AI and Blogs/SEO and preserved READ_ONLY/source separation, but user-visible substantive comparative commentary appeared before readiness and the later readiness artifact did not satisfy the canonical hybrid receipt contract.
+Three independent failure dimensions are now established on this specialist/runtime boundary:
 
-A later receipt heading does not retroactively repair earlier substantive output, and artifact presence does not by itself establish canonical readiness validity.
+1. **R03A — output-order gap:** project-specific substantive FECH.AI commentary preceded readiness.
+2. **R05 — target-entry gap:** the supplied unregistered identifier correctly resolved to `PROJECT_NOT_REGISTERED`, but the response then unsolicitedly exposed both registered alternatives despite no explicit informational-list request, violating the user-visible enumeration/zero-match STOP boundary.
+3. **R06 — output-order + readiness-validity gap:** substantive comparison preceded readiness, and the later artifact labeled as a receipt was incomplete against mandatory hybrid receipt semantics, including `LIMITED` without explicit strict-subset `EFFECTIVE_SCOPE`.
 
-The receipt-first/full-readiness requirements were already present in canonical SES contracts and the v0.9 Builder kernel. Therefore another wording-only prompt revision would violate the one-shot stop-loss and would not establish mechanical enforcement.
+Positive sub-observations remain bounded: R03A resolved FECH.AI, R05 avoided fuzzy mapping/materialization, and R06 independently resolved both projects with no observed cross-project contamination; all remained READ_ONLY. Those positives do not convert failed cases into PASS.
+
+The relevant requirements already exist in canonical SES contracts and the v0.9 Builder kernel. A wording-only v0.10 is therefore rejected by stop loss and would not establish mechanical enforcement.
 
 ## 2. Problem statement
 
 The current Custom GPT runtime expresses important transition rules primarily as natural-language instructions.
 
-For Documentation Auditor project work, the required transition is:
+The evidence shows instruction-level gaps in two control planes:
 
 ```text
-PROJECT CONTEXT MATERIALIZED
-→ CANONICALLY VALID REQUIRED READINESS ESTABLISHED
-→ SUBSTANTIVE OUTPUT ALLOWED
+TARGET ENTRY
+- when user-visible Registry enumeration is permitted
+- zero-match PROJECT_NOT_REGISTERED → STOP
+
+READINESS / OUTPUT RELEASE
+- canonical readiness completeness/validity
+- substantive output only after valid readiness
 ```
-
-Current evidence demonstrates two distinct instruction-level gaps:
-
-- the runtime may emit project-specific substantive content before readiness;
-- the runtime may emit an artifact labeled as readiness without satisfying all mandatory canonical receipt semantics.
-
-These were observed on the same fingerprinted v0.9 runtime boundary across single-project and multi-project cases.
 
 Keep separate:
 
@@ -88,58 +59,63 @@ NORMATIVE_REQUIREMENT
 != BEHAVIORAL_COMPLIANCE
 != MECHANICALLY_ENFORCED_INVARIANT
 
+INTERNAL_REGISTRY_LOOKUP
+!= USER_VISIBLE_PROJECT_ENUMERATION
+
 ARTIFACT_PRESENT
 != CANONICAL_READINESS_VALID
 ```
 
 ## 3. Decision
 
-Adopt, for design purposes, a specialist-specific **SES Runtime Enforcement Gateway** that places the release decision for substantive Documentation Auditor output behind a controller/state-machine boundary outside ordinary model instruction-following.
+Adopt, for design purposes, a specialist-specific **SES Runtime Enforcement Gateway** that places target-entry validation, readiness validation and substantive-output release behind a controller/state-machine boundary outside ordinary model instruction-following.
 
 Target architecture:
 
 ```text
 USER TASK
-→ TARGET CLASSIFICATION
+→ TARGET CLASSIFICATION / ENTRY VALIDATION
 → PROJECT RESOLUTION / MATERIALIZATION
 → STRUCTURED PROJECT-SCOPED READINESS ARTIFACT(S)
-→ CANONICAL READINESS VALIDATION / TRANSITION GATE
+→ CANONICAL READINESS VALIDATION
+→ TRANSITION GATE
 → SUBSTANTIVE ANALYSIS
 → ORDERED RELEASE / RENDERING
 → USER
 ```
 
-For multi-project tasks, every explicit project must produce an independently identifiable and canonically valid readiness artifact before the comparison transition can be opened.
+The controller must be able to block/reject:
 
-The controller must be able to **block or reject** both:
+- user-visible project enumeration unless the explicit informational-list exception applies;
+- continuation after zero-match when `PROJECT_NOT_REGISTERED → STOP` is required;
+- malformed/incomplete/stale readiness artifacts;
+- project-specific substantive release before valid readiness.
 
-- an attempt to release project-specific substantive content before valid readiness;
-- a malformed/incomplete readiness artifact that does not satisfy the canonical contract.
+For multi-project tasks, every explicit project must independently satisfy resolution and canonical readiness before comparative synthesis is released.
 
 ## 4. What this decision does not decide
 
-This ADR does **not** select a final implementation platform, framework, API, hosting model or deployment topology.
+This ADR does **not** select final framework, API, hosting model or deployment topology.
 
-Potential implementation substrates may be evaluated later, but none is canonical merely because it is technically available today.
+It also does not:
 
-This ADR also does not:
-
-- implement or deploy the Gateway;
-- mutate the existing Documentation Auditor Builder;
-- retire the current private Custom GPT;
+- implement/deploy the Gateway;
+- mutate the existing external Builder;
+- retire the private Custom GPT;
 - mutate FECH.AI or Blogs/SEO;
-- authorize write-capable project or production tools;
+- authorize write-capable tools;
 - establish mechanical enforcement;
 - establish `PROJECT_TARGET_REGRESSION_PASS`;
-- generalize the Gateway requirement to every SES specialist.
+- generalize Gateway requirements to every SES specialist.
 
 ## 5. Required state-machine properties
 
-The design must make at least these states/transitions explicit:
+At minimum:
 
 ```text
 TASK_RECEIVED
 TARGET_CLASSIFIED
+TARGET_ENTRY_VALIDATED
 PROJECT_IDENTIFIERS_RESOLVED
 PROJECT_CONTEXTS_MATERIALIZED
 READINESS_ARTIFACTS_BUILT
@@ -149,9 +125,22 @@ OUTPUT_RELEASED
 
 FAIL_CLOSED_TARGET
 FAIL_CLOSED_PROJECT
+FAIL_CLOSED_ENUMERATION
 FAIL_CLOSED_READINESS
 INVALID_READINESS_REJECTED
 INVALID_TRANSITION_REJECTED
+```
+
+Target-entry examples:
+
+```text
+EXPLICIT_INFORMATIONAL_LIST_REQUEST
+→ USER_VISIBLE_ENUMERATION_ALLOWED
+
+EXPLICIT_UNREGISTERED_IDENTIFIER
+→ PROJECT_NOT_REGISTERED
+→ STOP
+→ USER_VISIBLE_ALTERNATIVE_PROJECT_ENUMERATION_NOT_ALLOWED
 ```
 
 For a two-project task:
@@ -162,13 +151,11 @@ AND PROJECT_B_READINESS_VALID
 → COMPARATIVE_ANALYSIS_ALLOWED
 ```
 
-A missing, stale, malformed or invalid readiness artifact for either required project must prevent comparative synthesis from being released as valid project-specific output.
+Missing/stale/malformed/invalid readiness for either required project prevents comparative release.
 
 ## 6. Structured readiness boundary
 
-The future design must define a machine-validatable readiness artifact that preserves the **full mandatory semantic binding** of the canonical hybrid Context Readiness Receipt. A Gateway schema may add fields or use a different serialization format, but it must not weaken or omit material receipt dimensions.
-
-At minimum, the artifact must represent the canonical semantics for:
+The future machine-validatable artifact must preserve the **full mandatory semantic binding** of the canonical hybrid Context Readiness Receipt. At minimum:
 
 ```text
 PROOF_LEVEL
@@ -176,14 +163,12 @@ TASK_SCOPE
 EFFECTIVE_SCOPE
 TARGET_REF_OR_OBJECT
 ENVIRONMENT
-
 SES_CANONICAL_MAIN_REF
 SES_CANDIDATE_REF
 SES_EFFECTIVE_REF
 SES_ARCHETYPE_RESOLUTION_STATUS
 SES_ARCHETYPE_ID
 SES_ARCHETYPE_SOURCE_REF
-
 PROJECT_RESOLUTION_STATUS
 PROJECT_ID
 PROJECT_ADAPTER_STATUS
@@ -196,7 +181,6 @@ SPECIALIST_RESOLUTION_STATUS
 SPECIALIST_SOURCE_REF
 PROJECT_CONTINUITY_STATUS
 PROJECT_CONTINUITY_REF
-
 MATERIAL_EVIDENCE_STATUS
 AUTHORITY_MODEL_STATUS
 MUTATION_AUTHORIZATION_STATUS
@@ -205,33 +189,38 @@ RECEIPT_VALIDITY
 GAPS
 ```
 
-The validation model must preserve these distinctions when applicable:
+Validation must preserve:
 
 ```text
 SES_CANONICAL_MAIN_REF != SES_CANDIDATE_REF != SES_EFFECTIVE_REF
-TASK_SCOPE != EFFECTIVE_SCOPE when LIMITED
-LIMITED -> EFFECTIVE_SCOPE is explicit strict subset + GAPS explain excluded scope
-TARGET_REF_OR_OBJECT and ENVIRONMENT may be NOT_REQUIRED_FOR_THIS_TASK only when justified
+LIMITED -> explicit strict-subset EFFECTIVE_SCOPE + GAPS
+TARGET_REF_OR_OBJECT / ENVIRONMENT bound when material
 CONTEXT_READY != AUTHORIZED_TO_MUTATE
 ```
 
-A material change to task/effective scope, target/ref/object, environment, SES effective ref, project live ref, specialist source/ref, continuity, authority, mutation scope or contradictory/superseding evidence must invalidate or revalidate the affected readiness artifact according to the canonical hybrid bootstrap contract.
+Material changes to scope, target/environment, refs, specialist/continuity/authority/mutation state or contradictory/superseding evidence must trigger invalidation/revalidation according to the canonical contract.
 
-The exact machine schema remains a design output. This ADR does not freeze field names or serialization format; it freezes the requirement that the schema preserve and validate the canonical receipt semantics rather than define a weaker readiness model.
+The exact serialization remains a design output; the canonical semantics may not be weakened.
 
 ## 7. Output-release boundary
 
-The enforcement property is about **release after readiness validation**, not merely internal reasoning order or the presence of a receipt heading.
+The enforcement property is about **release after target-entry and readiness validation**, not merely internal reasoning order or the presence of a receipt heading.
 
-A future mechanism must ensure that user-visible project-specific substantive content cannot be released before required readiness has passed canonical validation.
+A design fails this ADR if it allows:
 
-Implementation designs that allow the model to stream arbitrary substantive commentary before controller validation, or allow malformed/incomplete readiness artifacts to open the transition, do not satisfy this ADR's enforcement objective.
+- arbitrary user-visible project enumeration outside the explicit exception;
+- post-zero-match continuation that creates a project-choice surface;
+- arbitrary substantive streaming before readiness validation;
+- malformed/incomplete readiness to open the substantive-output transition.
 
 ## 8. Proof obligations
 
-Before any future claim of `MECHANICALLY_ENFORCED_INVARIANT`, positive mechanism evidence must satisfy at minimum:
+Before any future `MECHANICALLY_ENFORCED_INVARIANT` claim:
 
 ```text
+AMBIGUOUS_OR_MISSING_TARGET_CLARIFICATION_ONLY: ENFORCED
+UNSOLICITED_PROJECT_ENUMERATION_OUTSIDE_INFORMATIONAL_EXCEPTION: BLOCKED
+ZERO_MATCH_PROJECT_NOT_REGISTERED_STOP: ENFORCED
 TARGET_RESOLUTION_BEFORE_PROJECT_MATERIALIZATION: YES
 FULL_CANONICAL_READINESS_BINDING_PRESERVED: YES
 PROOF_LEVEL_BOUND: YES
@@ -240,82 +229,68 @@ ENVIRONMENT_BOUND_WHEN_MATERIAL: YES
 SES_CANONICAL_CANDIDATE_EFFECTIVE_REFS_SEPARATED: YES
 LIMITED_REQUIRES_EXPLICIT_STRICT_SUBSET_EFFECTIVE_SCOPE: ENFORCED
 MULTI_PROJECT_INDEPENDENT_RESOLUTION: YES
-PROJECT_SCOPED_READINESS_BOUNDARIES: CANONICALLY VALIDATED
+PROJECT_SCOPED_READINESS_BOUNDARIES: CANONICALLY_VALIDATED
 MALFORMED_OR_INCOMPLETE_READINESS_ARTIFACT: REJECTED
 READINESS_VALIDATION_BEFORE_SUBSTANTIVE_RELEASE: YES
+UNSOLICITED_ENUMERATION_ZERO_MATCH_CHALLENGE: PASS
 INVALID_TRANSITION_CHALLENGE: PASS
 MALFORMED_READINESS_CHALLENGE: PASS
 EARLY_SUBSTANTIVE_RELEASE: BLOCKED_OR_REJECTED
-FAIL_CLOSED_ON_INCOMPLETE_REQUIRED_CONTEXT: YES
-READINESS_INVALIDATION_REVALIDATION: PROVEN_FOR_MATERIAL_CHANGE
+READINESS_INVALIDATION_REVALIDATION: PROVEN
 CROSS_PROJECT_CONTEXT_CONTAMINATION: 0
 READ_ONLY_BY_DEFAULT: YES
 TRANSITION_TRACE_EVIDENCE: PRESENT
 ```
 
-The **invalid-transition challenge** must deliberately attempt the prohibited early-release transition. The **malformed-readiness challenge** must deliberately provide an incomplete/invalid readiness artifact and demonstrate that it cannot open the substantive-output transition. Normal successful runs in which the model voluntarily behaves correctly are insufficient.
+The challenges must deliberately attempt the prohibited transitions. Voluntary model compliance is insufficient.
 
 ## 9. Observability requirements
 
-The future design must make it possible to reconstruct, without exposing secrets:
+Without exposing secrets, the future mechanism must make reconstructable:
 
-- task ID / test ID;
-- proof level;
-- target classification;
-- task scope and effective scope;
-- target ref/object and environment when material;
-- canonical/candidate/effective SES refs;
-- project IDs and refs;
-- state transitions attempted;
-- transition accepted/rejected;
-- readiness artifact validation result and missing/invalid fields;
+- task/test ID;
+- target classification and whether informational enumeration was explicitly authorized by user intent;
+- supplied project identifiers and resolver outcome;
+- whether user-visible enumeration was attempted/allowed/rejected;
+- proof level, task/effective scope, target/environment and SES/project refs;
+- state transitions attempted and accepted/rejected;
+- readiness validation result and missing/invalid fields;
 - readiness invalidation/revalidation events;
 - whether substantive output was generated internally, released, suppressed or rejected;
-- mutation authorization state;
-- exact implementation/runtime version used for the test.
-
-A claim of mechanical enforcement requires trace evidence showing that invalid readiness and invalid release transitions were prevented by the mechanism.
+- mutation-authorization state;
+- exact implementation/runtime version.
 
 ## 10. Coexistence and rollback
 
-The current private Documentation Auditor Custom GPT may remain available as the existing instruction-driven runtime while the Gateway is designed and tested.
+The private Documentation Auditor Custom GPT may remain available as the current instruction-driven runtime during design/testing. No Gateway candidate may silently replace/mutate it. Adoption requires explicit decision and migration plan.
 
-No future Gateway candidate may silently replace or mutate the Builder. Adoption requires an explicit decision and migration plan.
-
-The design must include a rollback path that can disable the Gateway candidate without changing consumer-project canonical state.
+Rollback must be able to disable the Gateway candidate without modifying consumer-project canonical state.
 
 ## 11. Alternatives considered
 
-### A. Strengthen the v0.9 prompt and create v0.10
+### A. Strengthen v0.9 prompt / create v0.10
+**Rejected by stop loss.**
 
-**Rejected by stop loss.** The requirement is already explicit, and the canonical v0.9 gate says a required failure after applied-fingerprint proof must not trigger another wording-only hardening loop.
-
-### B. Rerun R03A/R06 until they pass
-
-**Rejected.** Later successful retries would be new evidence, not retroactive repairs of the formal failed cases, and would not establish mechanical enforcement.
+### B. Rerun R03A/R05/R06 until they pass
+**Rejected.** Later successful samples do not retroactively repair failed evidence or prove mechanical enforcement.
 
 ### C. Accept instruction-level best effort permanently
+**Not selected now.** Remains a possible explicit product decision if Gateway cost/complexity is later judged disproportionate, with proof claims reduced accordingly.
 
-**Not selected as the current direction.** It remains a possible explicit product decision if Gateway cost/complexity is later judged disproportionate, but that would require consciously accepting the limitation and adjusting proof claims.
-
-### D. Add a validator Action but keep unrestricted model output release
-
-**Insufficient by itself for the target proof obligation.** If the model can emit substantive user-visible content before the validator controls release, the invalid transition is still possible. A tool may participate in the Gateway, but tool availability alone is not the enforcement property.
+### D. Add a validator Action but keep unrestricted model output
+**Insufficient by itself.** Tool availability is not the enforcement property if model output can bypass validation/release control.
 
 ## 12. Generalization boundary
 
-This ADR is **SPECIALIST-SPECIFIC** and grounded in Documentation Auditor evidence.
-
-Repeated receipt-order/readiness-validity failures within this specialist strengthen the specialist-specific `CANDIDATE_LEARNING`, but they do not automatically establish a universal SES runtime architecture requirement.
-
-Broader promotion requires independent evidence from other specialist domains and explicit SES architecture review.
+This ADR is **SPECIALIST-SPECIFIC**. Repeated Documentation Auditor failures strengthen this domain's `CANDIDATE_LEARNING` but do not establish a universal SES gateway requirement. Broader promotion requires independent specialist evidence and architecture review.
 
 ## 13. Adoption sequence
 
 ```text
 ADR ACCEPTED FOR DESIGN
-→ DESIGN STATE MACHINE / INTERFACES / READINESS SCHEMA
-→ DEFINE INVALID-TRANSITION + MALFORMED-READINESS TESTS + OBSERVABILITY
+→ DESIGN TARGET-ENTRY + READINESS STATE MACHINE / INTERFACES / SCHEMA
+→ DEFINE UNSOLICITED-ENUMERATION + INVALID-TRANSITION + MALFORMED-READINESS TESTS
+→ DEFINE OBSERVABILITY / ROLLBACK
 → REVIEW TRADE-OFFS / IMPLEMENTATION OPTIONS
 → EXPLICIT IMPLEMENTATION AUTHORIZATION
 → IMPLEMENT CANDIDATE
