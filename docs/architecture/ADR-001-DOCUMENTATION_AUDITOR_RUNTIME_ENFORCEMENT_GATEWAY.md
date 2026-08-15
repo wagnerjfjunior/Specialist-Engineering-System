@@ -4,12 +4,17 @@
 **Decision scope:** `SES — Documentation Auditor`
 **Decision date:** 2026-08-15
 **Evidence boundary:** Documentation Auditor v0.9 formal Gate 0 after Builder fingerprint
+**Runtime evidence:** `tests/runtime/evidence/DOCUMENTATION_AUDITOR_V09_GATE0_2026-08-15.md`
 
 ## 1. Context
 
 The Documentation Auditor v0.9 target-resolution correction was applied to the private external Builder and fingerprinted before formal execution of:
 
 `tests/runtime/DOCUMENTATION_AUDITOR_PROJECT_TARGET_REGRESSION.md`.
+
+The durable sanitized runtime record is:
+
+`tests/runtime/evidence/DOCUMENTATION_AUDITOR_V09_GATE0_2026-08-15.md`.
 
 The formal result was:
 
@@ -124,19 +129,57 @@ A missing/invalid readiness artifact for either required project must prevent co
 
 ## 6. Structured readiness boundary
 
-The future design must define a machine-validatable readiness artifact with enough information to bind the decision to:
+The future design must define a machine-validatable readiness artifact that preserves the **full mandatory semantic binding** of the canonical hybrid Context Readiness Receipt. A Gateway schema may add fields or use a different serialization format, but it must not weaken or omit material receipt dimensions.
 
-- task scope / effective scope;
-- SES ref;
-- project identifier and project live ref;
-- adapter/bootstrap/specialist resolution status;
-- material evidence status;
-- authority/mutation status;
-- context status;
-- gaps;
-- receipt validity.
+At minimum, the artifact must represent the canonical semantics for:
 
-The exact schema remains a design output. This ADR does not freeze field names or serialization format.
+```text
+PROOF_LEVEL
+TASK_SCOPE
+EFFECTIVE_SCOPE
+TARGET_REF_OR_OBJECT
+ENVIRONMENT
+
+SES_CANONICAL_MAIN_REF
+SES_CANDIDATE_REF
+SES_EFFECTIVE_REF
+SES_ARCHETYPE_RESOLUTION_STATUS
+SES_ARCHETYPE_ID
+SES_ARCHETYPE_SOURCE_REF
+
+PROJECT_RESOLUTION_STATUS
+PROJECT_ID
+PROJECT_ADAPTER_STATUS
+PROJECT_ADAPTER_REF
+CANONICAL_PROJECT_SOURCE
+PROJECT_LIVE_REF
+PROJECT_BOOTSTRAP_STATUS
+PROJECT_BOOTSTRAP_REF
+SPECIALIST_RESOLUTION_STATUS
+SPECIALIST_SOURCE_REF
+PROJECT_CONTINUITY_STATUS
+PROJECT_CONTINUITY_REF
+
+MATERIAL_EVIDENCE_STATUS
+AUTHORITY_MODEL_STATUS
+MUTATION_AUTHORIZATION_STATUS
+CONTEXT_STATUS
+RECEIPT_VALIDITY
+GAPS
+```
+
+The validation model must preserve these distinctions when applicable:
+
+```text
+SES_CANONICAL_MAIN_REF != SES_CANDIDATE_REF != SES_EFFECTIVE_REF
+TASK_SCOPE != EFFECTIVE_SCOPE when LIMITED
+TARGET_REF_OR_OBJECT and ENVIRONMENT may be NOT_REQUIRED_FOR_THIS_TASK only when justified
+CONTEXT_READY != AUTHORIZED_TO_MUTATE
+```
+
+A material change to task/effective scope, target/ref/object, environment, SES effective ref, project live ref, specialist source/ref, continuity, authority, mutation scope or contradictory/superseding evidence must invalidate or revalidate the affected readiness artifact according to the canonical hybrid bootstrap contract.
+
+The exact machine schema remains a design output. This ADR does not freeze field names or serialization format; it freezes the requirement that the schema preserve the canonical receipt semantics rather than define a weaker readiness model.
 
 ## 7. Output-release boundary
 
@@ -152,12 +195,18 @@ Before any future claim of `MECHANICALLY_ENFORCED_INVARIANT`, positive mechanism
 
 ```text
 TARGET_RESOLUTION_BEFORE_PROJECT_MATERIALIZATION: YES
+FULL_CANONICAL_READINESS_BINDING_PRESERVED: YES
+PROOF_LEVEL_BOUND: YES
+TARGET_REF_OR_OBJECT_BOUND_WHEN_MATERIAL: YES
+ENVIRONMENT_BOUND_WHEN_MATERIAL: YES
+SES_CANONICAL_CANDIDATE_EFFECTIVE_REFS_SEPARATED: YES
 MULTI_PROJECT_INDEPENDENT_RESOLUTION: YES
 PROJECT_SCOPED_READINESS_BOUNDARIES: PRESERVED
 READINESS_VALIDATION_BEFORE_SUBSTANTIVE_RELEASE: YES
 INVALID_TRANSITION_CHALLENGE: PASS
 EARLY_SUBSTANTIVE_RELEASE: BLOCKED_OR_REJECTED
 FAIL_CLOSED_ON_INCOMPLETE_REQUIRED_CONTEXT: YES
+READINESS_INVALIDATION_REVALIDATION: PROVEN_FOR_MATERIAL_CHANGE
 CROSS_PROJECT_CONTEXT_CONTAMINATION: 0
 READ_ONLY_BY_DEFAULT: YES
 TRANSITION_TRACE_EVIDENCE: PRESENT
@@ -170,11 +219,15 @@ The **invalid-transition challenge** must deliberately attempt the prohibited tr
 The future design must make it possible to reconstruct, without exposing secrets:
 
 - task ID / test ID;
+- proof level;
 - target classification;
+- task scope and effective scope;
+- target ref/object and environment when material;
+- canonical/candidate/effective SES refs;
 - project IDs and refs;
 - state transitions attempted;
 - transition accepted/rejected;
-- readiness validation outcome;
+- readiness validation outcome and invalidation/revalidation events;
 - whether substantive output was generated internally, released, suppressed or rejected;
 - mutation authorization state;
 - exact implementation/runtime version used for the test.
