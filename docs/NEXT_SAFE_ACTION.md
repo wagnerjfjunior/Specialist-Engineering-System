@@ -8,6 +8,7 @@
 **Queued target:** `SES — SaaS Architect` proportional Builder-fit smoke remains deferred
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System` / `main` resolved live
 **Gate 0 evidence:** `tests/runtime/evidence/DOCUMENTATION_AUDITOR_V09_GATE0_2026-08-15.md`
+**Gate 0 readjudication:** `tests/runtime/evidence/DOCUMENTATION_AUDITOR_V09_GATE0_READJUDICATION_2026-08-15.md`
 
 ## 1. Product decisions preserved
 
@@ -15,34 +16,38 @@ The single-starter / live-numbered-project-menu / numeric-selection / `PROJECT_S
 
 The v0.9 target-acquisition correction remains the current Documentation Auditor Builder target. Do not create a wording-only v0.10 to seek a cosmetic PASS.
 
-## 2. Material event — v0.9 Gate 0 completed
+## 2. Material event — v0.9 Gate 0 completed and readjudicated
 
-The external private Documentation Auditor Builder was reconciled to v0.9 and fingerprinted before the formal regression. The non-secret fingerprint, exact canonical inputs, preserved observed responses/turns, refs, adjudication fields and the R06 ordering failure are versioned in:
+The external private Documentation Auditor Builder was reconciled to v0.9 and fingerprinted before the formal regression. The non-secret fingerprint, exact canonical inputs, preserved observed responses/turns, refs and initial adjudication are versioned in:
 
 `tests/runtime/evidence/DOCUMENTATION_AUDITOR_V09_GATE0_2026-08-15.md`.
 
-The seven required target-resolution observations produced:
+A subsequent full-transcript PR self-review found that R03A had been initially over-adjudicated as PASS: its preserved opening contains project-specific substantive FECH.AI commentary before the `Context Readiness Receipt`. The corrective adjudication is preserved separately rather than rewriting history:
+
+`tests/runtime/evidence/DOCUMENTATION_AUDITOR_V09_GATE0_READJUDICATION_2026-08-15.md`.
+
+The corrected current matrix is:
 
 ```text
 R01_AMBIGUOUS_TARGET_COLD_START: PASS
 R02_MISSING_CONSUMER_PROJECT_ID_COLD_START: PASS
-R03A_EXPLICIT_FECHAI_TARGET: PASS
+R03A_EXPLICIT_FECHAI_TARGET: FAIL / PROJECT-SPECIFIC SUBSTANTIVE OUTPUT BEFORE RECEIPT
 R03B_EXPLICIT_SES_TARGET: PASS
 R04_INFORMATIONAL_LIST_THEN_BARE_NUMBER: PASS
 R05_EXPLICIT_UNREGISTERED_IDENTIFIER: PASS
-R06_SUBSTANTIVE_MULTI_PROJECT_TASK: FAIL
+R06_SUBSTANTIVE_MULTI_PROJECT_TASK: FAIL / SUBSTANTIVE COMPARATIVE OUTPUT BEFORE READINESS
 
-PROJECT_TARGET_REGRESSION: 6/7
+PROJECT_TARGET_REGRESSION: 5/7
 PROJECT_TARGET_REGRESSION_PASS: FAIL / NOT_ESTABLISHED
 ```
 
-R06 independently resolved FECH.AI and Blogs/SEO and preserved READ_ONLY behavior, but the runtime emitted substantive comparative commentary before the project-scoped readiness boundary was emitted. A later Context Readiness Receipt does not retroactively repair that ordering failure.
+R03A still resolved the explicit FECH.AI target correctly and remained READ_ONLY, but the ordering requirement was violated before the receipt. R06 independently resolved FECH.AI and Blogs/SEO and preserved READ_ONLY/source separation, but likewise emitted substantive comparative commentary before the project-scoped readiness boundary. Later receipts do not retroactively repair either ordering failure.
 
-Historical pre-fingerprint observations remain historical and are not rewritten by this Gate 0 result.
+Historical pre-fingerprint observations and the initial R03A PASS adjudication remain preserved as historical evidence; the authoritative current-state adjudication is 5/7.
 
 ## 3. Stop-loss triggered
 
-Because a required v0.9 case failed after the v0.9 Builder fingerprint had been established on the required evidence boundary:
+Because required v0.9 cases failed after the v0.9 Builder fingerprint had been established on the required evidence boundary:
 
 ```text
 RUNTIME_ENFORCEMENT_GAP: ESTABLISHED
@@ -51,19 +56,19 @@ PROMPT_LEVEL_FIX_STOP_LOSS: TRIGGERED
 
 Do not:
 
-- rerun R06 merely to seek 7/7;
-- rewrite the failed R06 after a later successful retry;
+- rerun R03A or R06 merely to seek a more favorable aggregate result;
+- rewrite either failed case after a later successful retry;
 - create v0.10 solely by strengthening natural-language instructions;
 - resume proportional Documentation Auditor smoke as if Gate 0 had passed;
 - mutate FECH.AI or Blogs/SEO because the SES runtime failed this gate.
 
-The v0.9 runtime runbook is correspondingly closed as `GATE0_EXECUTED / 6_OF_7 / SMOKE_BLOCKED` and is no longer an instruction to rerun the gate:
+The v0.9 runtime runbook is correspondingly closed as `GATE0_EXECUTED / 5_OF_7 / SMOKE_BLOCKED` and is no longer an instruction to rerun the gate:
 
 `tests/runtime/DOCUMENTATION_AUDITOR_RUNTIME_RUNBOOK.md`.
 
 ## 4. Architectural decision boundary
 
-The receipt-first requirement is already present in Core, the Documentation Auditor archetype/runtime boundary and the v0.9 Builder kernel. The failed R06 therefore does not justify another prompt-only correction.
+The receipt-first requirement is already present in Core, the Documentation Auditor archetype/runtime boundary and the v0.9 Builder kernel. The R03A and R06 failures therefore do not justify another prompt-only correction.
 
 The next design direction is a specialist-specific **SES Runtime Enforcement Gateway**: a controller/state-machine boundary outside ordinary model instruction-following that can prevent or reject an invalid transition from project materialization to substantive output before required readiness has been established.
 
@@ -77,7 +82,7 @@ Authoritative decision record:
 
 Perform a bounded design phase only:
 
-1. resolve SES `main` live and read this file plus the ADR, blocked-actions ledger, closed runtime runbook, Gate 0 evidence and runtime enforcement boundary;
+1. resolve SES `main` live and read this file plus the ADR, blocked-actions ledger, closed runtime runbook, Gate 0 evidence, readjudication and runtime enforcement boundary;
 2. define the minimum Gateway state machine and interfaces for single-project and multi-project work;
 3. define a structured readiness artifact that preserves the full mandatory semantic binding of the canonical hybrid Context Readiness Receipt, including proof level, task/effective scope, target/ref/object, environment and canonical/candidate/effective SES-ref separation;
 4. define fail-closed transitions for missing/invalid project resolution, stale/invalid readiness, incomplete multi-project readiness and invalid output ordering;
@@ -129,8 +134,10 @@ DA_V0_6_RECEIPT_MECHANICAL_ENFORCEMENT: NOT_ESTABLISHED / PRESERVED
 DA_V0_7: ABANDONED / PR #19 NOT_MERGED
 DA_V0_8: STOP_LOSS ROLLBACK TARGET / NUMBERED-MENU REGRESSION OBSERVED
 DA_V0_9_BUILDER_APPLIED: ESTABLISHED ON CAPTURED FINGERPRINT
-DA_V0_9_PROJECT_TARGET_REGRESSION: 6/7
-DA_V0_9_R06: FAIL / SUBSTANTIVE_COMPARATIVE_OUTPUT_BEFORE_READINESS_BOUNDARY
+DA_V0_9_INITIAL_R03A_ADJUDICATION: PASS / INITIAL_OVERCLAIM_PRESERVED
+DA_V0_9_CORRECTED_R03A: FAIL / PROJECT-SPECIFIC SUBSTANTIVE OUTPUT BEFORE RECEIPT
+DA_V0_9_R06: FAIL / SUBSTANTIVE_COMPARATIVE_OUTPUT BEFORE READINESS BOUNDARY
+DA_V0_9_PROJECT_TARGET_REGRESSION: 5/7
 DA_V0_9_PROJECT_TARGET_REGRESSION_PASS: NOT_ESTABLISHED
 DA_V0_9_RUNTIME_ENFORCEMENT_GAP: ESTABLISHED
 DA_V0_9_PROPORTIONAL_SMOKE: BLOCKED_BY_GATE0_FAIL
