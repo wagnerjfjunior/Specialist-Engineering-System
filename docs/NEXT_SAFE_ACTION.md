@@ -18,39 +18,41 @@ The v0.9 target-acquisition correction remains the current Documentation Auditor
 
 ## 2. Material event — v0.9 Gate 0 completed and readjudicated
 
-The external private Documentation Auditor Builder was reconciled to v0.9 and fingerprinted before the formal regression. The non-secret fingerprint, exact canonical inputs, preserved observed responses/turns, refs and initial adjudication are versioned in:
+The private Documentation Auditor Builder was reconciled to v0.9 and fingerprinted before formal regression. The initial transcript/evidence record is preserved at the Gate 0 evidence path above.
 
-`tests/runtime/evidence/DOCUMENTATION_AUDITOR_V09_GATE0_2026-08-15.md`.
+Subsequent full-transcript/contract review found three adjudication limitations without rewriting the original record:
 
-Subsequent full-transcript/contract review found two adjudication limitations without rewriting the original record:
-
-1. R03A had project-specific substantive FECH.AI commentary before the `Context Readiness Receipt`, so its initial PASS was an overclaim.
-2. R06 was already FAIL for pre-readiness substantive comparison, but the later artifact labeled `Context Readiness Receipt` was also incomplete against mandatory hybrid readiness semantics and declared `LIMITED` without an explicit strict-subset `EFFECTIVE_SCOPE`.
-
-The corrections are preserved in:
-
-`tests/runtime/evidence/DOCUMENTATION_AUDITOR_V09_GATE0_READJUDICATION_2026-08-15.md`.
+1. **R03A:** project-specific substantive FECH.AI commentary preceded the receipt; initial PASS was an overclaim.
+2. **R05:** after correct `PROJECT_NOT_REGISTERED`, the response unsolicitedly enumerated both registered alternatives. User-visible project enumeration is allowed only for explicit informational listing requests; the zero-match STOP boundary was not preserved.
+3. **R06:** early substantive comparison preceded readiness, and the later artifact labeled as a receipt was incomplete/invalid against the canonical hybrid receipt contract, including `LIMITED` without explicit strict-subset `EFFECTIVE_SCOPE`.
 
 The corrected current matrix is:
 
 ```text
-R01_AMBIGUOUS_TARGET_COLD_START: PASS
-R02_MISSING_CONSUMER_PROJECT_ID_COLD_START: PASS
-R03A_EXPLICIT_FECHAI_TARGET: FAIL / PROJECT-SPECIFIC SUBSTANTIVE OUTPUT BEFORE RECEIPT
-R03B_EXPLICIT_SES_TARGET: PASS
-R04_INFORMATIONAL_LIST_THEN_BARE_NUMBER: PASS
-R05_EXPLICIT_UNREGISTERED_IDENTIFIER: PASS
-R06_SUBSTANTIVE_MULTI_PROJECT_TASK: FAIL / EARLY SUBSTANTIVE COMPARISON + INVALID/INCOMPLETE READINESS ARTIFACT
+R01: PASS
+R02: PASS
+R03A: FAIL / PROJECT-SPECIFIC SUBSTANTIVE OUTPUT BEFORE RECEIPT
+R03B: PASS
+R04: PASS
+R05: FAIL / UNSOLICITED USER-VISIBLE PROJECT ENUMERATION AFTER ZERO-MATCH
+R06: FAIL / EARLY SUBSTANTIVE COMPARISON + INVALID/INCOMPLETE READINESS ARTIFACT
 
-PROJECT_TARGET_REGRESSION: 5/7
-PROJECT_TARGET_REGRESSION_PASS: FAIL / NOT_ESTABLISHED
+PROJECT_TARGET_REGRESSION: 4/7
+PROJECT_TARGET_REGRESSION_PASS: NOT_ESTABLISHED
 ```
 
-Historical pre-fingerprint observations and the initial R03A PASS adjudication remain preserved as historical evidence; the authoritative current-state adjudication is 5/7.
+Preserve historical integrity:
+
+```text
+INITIAL_R03A_ADJUDICATION: PASS / INITIAL_OVERCLAIM_PRESERVED
+INITIAL_R05_ADJUDICATION: PASS / INITIAL_OVERCLAIM_PRESERVED
+INITIAL_R06_RESULT: FAIL / ORDERING DEFECT
+CORRECTED_CURRENT_RESULT: 4/7
+```
 
 ## 3. Stop-loss triggered
 
-Because required v0.9 cases failed after the v0.9 Builder fingerprint had been established on the required evidence boundary:
+Because required v0.9 cases failed after the Builder fingerprint was established:
 
 ```text
 RUNTIME_ENFORCEMENT_GAP: ESTABLISHED
@@ -59,59 +61,63 @@ PROMPT_LEVEL_FIX_STOP_LOSS: TRIGGERED
 
 Do not:
 
-- rerun R03A or R06 merely to seek a more favorable aggregate result;
-- rewrite either failed case after a later successful retry;
+- rerun R03A/R05/R06 merely to seek a more favorable aggregate result;
+- rewrite failed cases after later successful retries;
 - create v0.10 solely by strengthening natural-language instructions;
-- resume proportional Documentation Auditor smoke as if Gate 0 had passed;
-- mutate FECH.AI or Blogs/SEO because the SES runtime failed this gate.
+- resume proportional Documentation Auditor smoke as if Gate 0 passed;
+- mutate consumer projects because SES runtime behavior failed this gate.
 
-The v0.9 runtime runbook is closed as `GATE0_EXECUTED / 5_OF_7 / SMOKE_BLOCKED`. The Builder profile is also reconciled to `BUILDER_APPLIED / FINGERPRINT_CAPTURED / GATE0_EXECUTED_FAIL` rather than remaining an active-looking pre-application instruction.
+The v0.9 runbook is closed as `GATE0_EXECUTED / 4_OF_7 / SMOKE_BLOCKED`. The Builder profile records applied/fingerprinted/Gate0-failed lifecycle rather than pre-application state.
 
 ## 4. Architectural decision boundary
 
-The receipt-first/full-readiness requirements already exist in Core, the Documentation Auditor archetype/runtime boundary and the v0.9 Builder kernel. The R03A/R06 failures therefore do not justify another prompt-only correction.
+The relevant target-resolution, receipt-first and readiness requirements already exist in Core and the v0.9 runtime configuration. The failures therefore do not justify another prompt-only correction.
 
-The next design direction is a specialist-specific **SES Runtime Enforcement Gateway**: a controller/state-machine boundary outside ordinary model instruction-following that can:
+The next design direction is a specialist-specific **SES Runtime Enforcement Gateway** with controller/state-machine enforcement outside ordinary model instruction-following. The design must address both categories now observed:
 
-- validate the full canonical readiness artifact;
-- reject missing/stale/malformed/incomplete readiness;
-- prevent or reject substantive output before valid readiness has been established.
+```text
+TARGET-ENTRY ENFORCEMENT
+- no unsolicited project enumeration outside the explicit informational-list exception
+- exact zero-match STOP/fail-closed behavior
 
-This is a **TARGET STATE / DESIGN DECISION**, not an implemented capability.
+READINESS/OUTPUT ENFORCEMENT
+- validate the full canonical readiness artifact
+- reject missing/stale/malformed/incomplete readiness
+- block/reject substantive output before valid readiness
+```
+
+This is `TARGET STATE / ACCEPTED FOR DESIGN / NOT IMPLEMENTED`.
 
 Authoritative decision record:
-
 `docs/architecture/ADR-001-DOCUMENTATION_AUDITOR_RUNTIME_ENFORCEMENT_GATEWAY.md`
 
-## 5. Authoritative next action after this closeout merges
+## 5. Authoritative next action after closeout merge
 
-Perform a bounded design phase only:
+Perform design only:
 
-1. resolve SES `main` live and read this file plus the ADR, blocked-actions ledger, closed runtime runbook, reconciled Builder profile, Gate 0 evidence/readjudication and runtime enforcement boundary;
-2. define the minimum Gateway state machine and interfaces for single-project and multi-project work;
-3. define a structured readiness artifact that preserves the full mandatory semantic binding of the canonical hybrid Context Readiness Receipt, including proof level, task/effective scope, target/ref/object, environment and canonical/candidate/effective SES-ref separation;
-4. define machine validation for `READY`, `LIMITED` and `BLOCKED`, including `LIMITED -> explicit strict-subset EFFECTIVE_SCOPE + GAPS`;
-5. define fail-closed transitions for missing/invalid project resolution, stale/malformed/incomplete readiness, incomplete multi-project readiness and invalid output ordering;
-6. define an **invalid-transition challenge** that attempts substantive output before readiness and must be technically blocked/rejected;
-7. define a **malformed-readiness challenge** whose incomplete artifact must be rejected and must not open the substantive-output transition;
-8. define observability/evidence requirements sufficient to prove which transition was allowed or denied and which readiness binding/validation result was active;
-9. define rollback and coexistence with the current private Custom GPT runtime;
-10. evaluate implementation substrates only after the mechanism/proof obligations are explicit;
-11. return the design as a candidate for review and explicit implementation authorization.
+1. resolve SES `main` live and read continuity, blocked actions, reconciled Builder profile, runbook, evidence/readjudication, runtime boundary and ADR;
+2. define Gateway state machine/interfaces for SES self-target, single-project, informational listing, zero-match and multi-project flows;
+3. define a machine-validatable readiness artifact preserving full canonical receipt semantics;
+4. define target-entry validation that permits registry enumeration only under the explicit informational-list exception and stops after zero-match otherwise;
+5. define `READY`, `LIMITED`, `BLOCKED` validation, including `LIMITED -> explicit strict-subset EFFECTIVE_SCOPE + GAPS`;
+6. define fail-closed transitions for target/project/readiness/output violations;
+7. define an invalid-transition challenge for early substantive release;
+8. define a malformed-readiness challenge;
+9. define an unsolicited-enumeration/zero-match challenge;
+10. define observability/trace evidence, rollback and coexistence;
+11. evaluate implementation substrates only after proof obligations are explicit;
+12. return the design for review and separate implementation authorization.
 
 Do **not** implement or deploy the Gateway in this closeout step.
 
-## 6. Minimum proof obligations for a future Gateway candidate
-
-A future implementation candidate must demonstrate, at minimum:
+## 6. Minimum future proof obligations
 
 ```text
+AMBIGUOUS_OR_MISSING_TARGET_CLARIFICATION_ONLY: ENFORCED
+UNSOLICITED_PROJECT_ENUMERATION_OUTSIDE_INFORMATIONAL_EXCEPTION: BLOCKED
+ZERO_MATCH_PROJECT_NOT_REGISTERED_STOP: ENFORCED
 TARGET_RESOLUTION_BEFORE_PROJECT_MATERIALIZATION: YES
 FULL_CANONICAL_READINESS_BINDING_PRESERVED: YES
-PROOF_LEVEL_BOUND: YES
-TARGET_REF_OR_OBJECT_BOUND_WHEN_MATERIAL: YES
-ENVIRONMENT_BOUND_WHEN_MATERIAL: YES
-SES_CANONICAL_CANDIDATE_EFFECTIVE_REFS_SEPARATED: YES
 LIMITED_REQUIRES_EXPLICIT_STRICT_SUBSET_EFFECTIVE_SCOPE: ENFORCED
 MULTI_PROJECT_INDEPENDENT_RESOLUTION: YES
 PROJECT_SCOPED_READINESS_BOUNDARIES: CANONICALLY_VALIDATED
@@ -119,35 +125,34 @@ MALFORMED_OR_INCOMPLETE_READINESS_ARTIFACT: REJECTED
 SUBSTANTIVE_OUTPUT_BEFORE_REQUIRED_READINESS: TECHNICALLY_BLOCKED_OR_REJECTED
 INVALID_TRANSITION_CHALLENGE: PASS
 MALFORMED_READINESS_CHALLENGE: PASS
+UNSOLICITED_ENUMERATION_ZERO_MATCH_CHALLENGE: PASS
 READINESS_INVALIDATION_REVALIDATION: PROVEN_FOR_MATERIAL_CHANGE
 CROSS_PROJECT_CONTEXT_CONTAMINATION: 0
-FAIL_CLOSED_ON_UNRESOLVED_REQUIRED_CONTEXT: YES
 READ_ONLY_BY_DEFAULT: YES
 MECHANISM_TRACE_EVIDENCE: PRESENT
 ```
 
-A successful model response or a receipt heading alone is not proof of mechanical enforcement or valid readiness.
+A successful model response, receipt heading, or correct internal registry lookup alone is not proof of mechanical enforcement.
 
 ## 7. Preserved proof state
 
 ```text
 SAAS_V0_1_RUNTIME_BEHAVIORAL_PROOF: PASS / HISTORICAL / EXACT HISTORICAL FINGERPRINT ONLY
-SAAS_CURRENT_BUILDER_FIT_KERNEL: NEW FINGERPRINT / PROPORTIONAL SMOKE REQUIRED / DEFERRED
-SAAS_V0_2_V0_3_SELECTION_FIRST_TARGETS: SUPERSEDED_BY_STOP_LOSS
+SAAS_CURRENT_BUILDER_FIT_KERNEL: PROPORTIONAL SMOKE REQUIRED / DEFERRED
 
-DA_V0_4_P09_ATTEMPT_1: FAIL / PRESERVED
-DA_V0_4_P09_ATTEMPT_2: FAIL / PRESERVED
+DA_V0_4_P09_ATTEMPTS: FAIL / PRESERVED
 DA_V0_5_C01: PASS / HISTORICAL / PRESERVED
-DA_V0_5_P09_ATTEMPT_1: FAIL / PRESERVED
-DA_V0_6_P09_ATTEMPT_1: FAIL / PRESERVED
-DA_V0_6_RECEIPT_MECHANICAL_ENFORCEMENT: NOT_ESTABLISHED / PRESERVED
+DA_V0_5_P09: FAIL / PRESERVED
+DA_V0_6_P09: FAIL / PRESERVED
 DA_V0_7: ABANDONED / PR #19 NOT_MERGED
 DA_V0_8: STOP_LOSS ROLLBACK TARGET / NUMBERED-MENU REGRESSION OBSERVED
 DA_V0_9_BUILDER_APPLIED: ESTABLISHED ON CAPTURED FINGERPRINT
-DA_V0_9_INITIAL_R03A_ADJUDICATION: PASS / INITIAL_OVERCLAIM_PRESERVED
-DA_V0_9_CORRECTED_R03A: FAIL / PROJECT-SPECIFIC SUBSTANTIVE OUTPUT BEFORE RECEIPT
-DA_V0_9_R06: FAIL / EARLY SUBSTANTIVE COMPARISON + INVALID/INCOMPLETE READINESS ARTIFACT
-DA_V0_9_PROJECT_TARGET_REGRESSION: 5/7
+DA_V0_9_INITIAL_R03A: PASS / INITIAL_OVERCLAIM_PRESERVED
+DA_V0_9_INITIAL_R05: PASS / INITIAL_OVERCLAIM_PRESERVED
+DA_V0_9_CORRECTED_R03A: FAIL
+DA_V0_9_CORRECTED_R05: FAIL
+DA_V0_9_R06: FAIL / ORDERING + INVALID_READINESS
+DA_V0_9_PROJECT_TARGET_REGRESSION: 4/7
 DA_V0_9_PROJECT_TARGET_REGRESSION_PASS: NOT_ESTABLISHED
 DA_V0_9_RUNTIME_ENFORCEMENT_GAP: ESTABLISHED
 DA_V0_9_PROPORTIONAL_SMOKE: BLOCKED_BY_GATE0_FAIL
@@ -155,16 +160,8 @@ DA_V0_9_PROPORTIONAL_SMOKE: BLOCKED_BY_GATE0_FAIL
 
 ## 8. Limits
 
-This action does not authorize:
-
-- Gateway implementation or deployment;
-- Builder mutation;
-- publication/broad sharing changes;
-- consumer-project mutation;
-- production/security claims;
-- SaaS Architect runtime revalidation;
-- promotion of this specialist-specific learning to a universal SES principle.
+This action does not authorize Gateway implementation/deployment, Builder mutation, publication changes, consumer-project mutation, production/security claims, SaaS Architect revalidation or universalization of this specialist-specific learning.
 
 ## 9. Done condition
 
-This next action is complete only when a reviewable Gateway design package exists with explicit state transitions, interfaces, full canonical readiness binding/validation, proof obligations, invalid-transition + malformed-readiness challenges, rollback/coexistence plan and no implementation overclaim. Implementation requires a separate explicit authorization and change boundary.
+Complete only when a reviewable Gateway design package exists with target-entry enforcement, full canonical readiness validation, explicit state transitions, proof obligations, invalid-transition/malformed-readiness/unsolicited-enumeration challenges, rollback/coexistence plan and no implementation overclaim. Implementation requires separate explicit authorization.
