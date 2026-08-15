@@ -32,7 +32,12 @@ PROJECT_TARGET_REGRESSION: 6/7 / INITIAL ADJUDICATION
 PROJECT_TARGET_REGRESSION_PASS: NOT_ESTABLISHED
 ```
 
-A subsequent full-transcript PR self-review identified that R03A had also emitted project-specific substantive FECH.AI commentary before the required `Context Readiness Receipt`. That initial PASS was therefore an adjudication overclaim. The correction is preserved separately rather than rewriting the original evidence:
+Subsequent full-transcript/contract review identified two material corrections without rewriting the original evidence:
+
+1. R03A had emitted project-specific substantive FECH.AI commentary before the required `Context Readiness Receipt`; its initial PASS was an adjudication overclaim.
+2. R06 not only emitted substantive comparison before readiness; the later artifact labeled `Context Readiness Receipt` omitted mandatory hybrid receipt semantics and declared `LIMITED` without an explicit strict-subset `EFFECTIVE_SCOPE`. It therefore cannot be treated as a valid canonical readiness boundary.
+
+The corrections are preserved in:
 
 `tests/runtime/evidence/DOCUMENTATION_AUDITOR_V09_GATE0_READJUDICATION_2026-08-15.md`.
 
@@ -45,17 +50,17 @@ R03A: FAIL / PROJECT-SPECIFIC SUBSTANTIVE OUTPUT BEFORE RECEIPT
 R03B: PASS
 R04: PASS
 R05: PASS
-R06: FAIL / SUBSTANTIVE MULTI-PROJECT COMPARATIVE OUTPUT BEFORE READINESS
+R06: FAIL / EARLY SUBSTANTIVE COMPARISON + INVALID/INCOMPLETE READINESS ARTIFACT
 
 PROJECT_TARGET_REGRESSION: 5/7
 PROJECT_TARGET_REGRESSION_PASS: NOT_ESTABLISHED
 ```
 
-R03A still resolved FECH.AI correctly and remained READ_ONLY, but the ordering requirement failed. R06 independently resolved FECH.AI and Blogs/SEO and preserved READ_ONLY/source separation, but user-visible substantive comparative commentary likewise appeared before the required project-scoped readiness boundary.
+R03A still resolved FECH.AI correctly and remained READ_ONLY, but the ordering requirement failed. R06 independently resolved FECH.AI and Blogs/SEO and preserved READ_ONLY/source separation, but user-visible substantive comparative commentary appeared before readiness and the later readiness artifact did not satisfy the canonical hybrid receipt contract.
 
-Later receipts do not retroactively repair either earlier ordering violation.
+A later receipt heading does not retroactively repair earlier substantive output, and artifact presence does not by itself establish canonical readiness validity.
 
-The receipt-first requirement was already present in canonical SES contracts and the v0.9 Builder kernel. Therefore another wording-only prompt revision would violate the one-shot stop-loss and would not establish mechanical enforcement.
+The receipt-first/full-readiness requirements were already present in canonical SES contracts and the v0.9 Builder kernel. Therefore another wording-only prompt revision would violate the one-shot stop-loss and would not establish mechanical enforcement.
 
 ## 2. Problem statement
 
@@ -65,16 +70,16 @@ For Documentation Auditor project work, the required transition is:
 
 ```text
 PROJECT CONTEXT MATERIALIZED
-→ REQUIRED READINESS ESTABLISHED
+→ CANONICALLY VALID REQUIRED READINESS ESTABLISHED
 → SUBSTANTIVE OUTPUT ALLOWED
 ```
 
-Current evidence demonstrates that instruction presence does not guarantee that the runtime will avoid emitting substantive content during evidence acquisition before the readiness artifact is emitted.
+Current evidence demonstrates two distinct instruction-level gaps:
 
-This was observed on the same fingerprinted v0.9 runtime boundary in both:
+- the runtime may emit project-specific substantive content before readiness;
+- the runtime may emit an artifact labeled as readiness without satisfying all mandatory canonical receipt semantics.
 
-- a single explicit consumer-project audit (`R03A`);
-- an explicit two-project comparison (`R06`).
+These were observed on the same fingerprinted v0.9 runtime boundary across single-project and multi-project cases.
 
 Keep separate:
 
@@ -82,6 +87,9 @@ Keep separate:
 NORMATIVE_REQUIREMENT
 != BEHAVIORAL_COMPLIANCE
 != MECHANICALLY_ENFORCED_INVARIANT
+
+ARTIFACT_PRESENT
+!= CANONICAL_READINESS_VALID
 ```
 
 ## 3. Decision
@@ -95,15 +103,18 @@ USER TASK
 → TARGET CLASSIFICATION
 → PROJECT RESOLUTION / MATERIALIZATION
 → STRUCTURED PROJECT-SCOPED READINESS ARTIFACT(S)
-→ VALIDATION / TRANSITION GATE
+→ CANONICAL READINESS VALIDATION / TRANSITION GATE
 → SUBSTANTIVE ANALYSIS
 → ORDERED RELEASE / RENDERING
 → USER
 ```
 
-For multi-project tasks, every explicit project must produce an independently identifiable readiness artifact before the comparison transition can be opened.
+For multi-project tasks, every explicit project must produce an independently identifiable and canonically valid readiness artifact before the comparison transition can be opened.
 
-The controller must be able to **block or reject** an attempt to release project-specific substantive content before required readiness is valid.
+The controller must be able to **block or reject** both:
+
+- an attempt to release project-specific substantive content before valid readiness;
+- a malformed/incomplete readiness artifact that does not satisfy the canonical contract.
 
 ## 4. What this decision does not decide
 
@@ -139,18 +150,19 @@ OUTPUT_RELEASED
 FAIL_CLOSED_TARGET
 FAIL_CLOSED_PROJECT
 FAIL_CLOSED_READINESS
+INVALID_READINESS_REJECTED
 INVALID_TRANSITION_REJECTED
 ```
 
 For a two-project task:
 
 ```text
-PROJECT_A_READY
-AND PROJECT_B_READY
+PROJECT_A_READINESS_VALID
+AND PROJECT_B_READINESS_VALID
 → COMPARATIVE_ANALYSIS_ALLOWED
 ```
 
-A missing/invalid readiness artifact for either required project must prevent comparative synthesis from being released as valid project-specific output.
+A missing, stale, malformed or invalid readiness artifact for either required project must prevent comparative synthesis from being released as valid project-specific output.
 
 ## 6. Structured readiness boundary
 
@@ -198,21 +210,22 @@ The validation model must preserve these distinctions when applicable:
 ```text
 SES_CANONICAL_MAIN_REF != SES_CANDIDATE_REF != SES_EFFECTIVE_REF
 TASK_SCOPE != EFFECTIVE_SCOPE when LIMITED
+LIMITED -> EFFECTIVE_SCOPE is explicit strict subset + GAPS explain excluded scope
 TARGET_REF_OR_OBJECT and ENVIRONMENT may be NOT_REQUIRED_FOR_THIS_TASK only when justified
 CONTEXT_READY != AUTHORIZED_TO_MUTATE
 ```
 
 A material change to task/effective scope, target/ref/object, environment, SES effective ref, project live ref, specialist source/ref, continuity, authority, mutation scope or contradictory/superseding evidence must invalidate or revalidate the affected readiness artifact according to the canonical hybrid bootstrap contract.
 
-The exact machine schema remains a design output. This ADR does not freeze field names or serialization format; it freezes the requirement that the schema preserve the canonical receipt semantics rather than define a weaker readiness model.
+The exact machine schema remains a design output. This ADR does not freeze field names or serialization format; it freezes the requirement that the schema preserve and validate the canonical receipt semantics rather than define a weaker readiness model.
 
 ## 7. Output-release boundary
 
-The enforcement property is about **release**, not merely internal reasoning order.
+The enforcement property is about **release after readiness validation**, not merely internal reasoning order or the presence of a receipt heading.
 
-A future mechanism must ensure that user-visible project-specific substantive content cannot be released before required readiness has passed the transition gate.
+A future mechanism must ensure that user-visible project-specific substantive content cannot be released before required readiness has passed canonical validation.
 
-Implementation designs that allow the model to stream arbitrary substantive commentary to the user before controller validation do not satisfy this ADR's enforcement objective.
+Implementation designs that allow the model to stream arbitrary substantive commentary before controller validation, or allow malformed/incomplete readiness artifacts to open the transition, do not satisfy this ADR's enforcement objective.
 
 ## 8. Proof obligations
 
@@ -225,10 +238,13 @@ PROOF_LEVEL_BOUND: YES
 TARGET_REF_OR_OBJECT_BOUND_WHEN_MATERIAL: YES
 ENVIRONMENT_BOUND_WHEN_MATERIAL: YES
 SES_CANONICAL_CANDIDATE_EFFECTIVE_REFS_SEPARATED: YES
+LIMITED_REQUIRES_EXPLICIT_STRICT_SUBSET_EFFECTIVE_SCOPE: ENFORCED
 MULTI_PROJECT_INDEPENDENT_RESOLUTION: YES
-PROJECT_SCOPED_READINESS_BOUNDARIES: PRESERVED
+PROJECT_SCOPED_READINESS_BOUNDARIES: CANONICALLY VALIDATED
+MALFORMED_OR_INCOMPLETE_READINESS_ARTIFACT: REJECTED
 READINESS_VALIDATION_BEFORE_SUBSTANTIVE_RELEASE: YES
 INVALID_TRANSITION_CHALLENGE: PASS
+MALFORMED_READINESS_CHALLENGE: PASS
 EARLY_SUBSTANTIVE_RELEASE: BLOCKED_OR_REJECTED
 FAIL_CLOSED_ON_INCOMPLETE_REQUIRED_CONTEXT: YES
 READINESS_INVALIDATION_REVALIDATION: PROVEN_FOR_MATERIAL_CHANGE
@@ -237,7 +253,7 @@ READ_ONLY_BY_DEFAULT: YES
 TRANSITION_TRACE_EVIDENCE: PRESENT
 ```
 
-The **invalid-transition challenge** must deliberately attempt the prohibited transition. A normal successful run in which the model voluntarily behaves correctly is insufficient.
+The **invalid-transition challenge** must deliberately attempt the prohibited early-release transition. The **malformed-readiness challenge** must deliberately provide an incomplete/invalid readiness artifact and demonstrate that it cannot open the substantive-output transition. Normal successful runs in which the model voluntarily behaves correctly are insufficient.
 
 ## 9. Observability requirements
 
@@ -252,12 +268,13 @@ The future design must make it possible to reconstruct, without exposing secrets
 - project IDs and refs;
 - state transitions attempted;
 - transition accepted/rejected;
-- readiness validation outcome and invalidation/revalidation events;
+- readiness artifact validation result and missing/invalid fields;
+- readiness invalidation/revalidation events;
 - whether substantive output was generated internally, released, suppressed or rejected;
 - mutation authorization state;
 - exact implementation/runtime version used for the test.
 
-A claim of mechanical enforcement requires trace evidence showing the invalid transition was prevented by the mechanism.
+A claim of mechanical enforcement requires trace evidence showing that invalid readiness and invalid release transitions were prevented by the mechanism.
 
 ## 10. Coexistence and rollback
 
@@ -289,7 +306,7 @@ The design must include a rollback path that can disable the Gateway candidate w
 
 This ADR is **SPECIALIST-SPECIFIC** and grounded in Documentation Auditor evidence.
 
-Repeated receipt-order failures within this specialist across versions/cases strengthen the specialist-specific `CANDIDATE_LEARNING`, but they do not automatically establish a universal SES runtime architecture requirement.
+Repeated receipt-order/readiness-validity failures within this specialist strengthen the specialist-specific `CANDIDATE_LEARNING`, but they do not automatically establish a universal SES runtime architecture requirement.
 
 Broader promotion requires independent evidence from other specialist domains and explicit SES architecture review.
 
@@ -298,7 +315,7 @@ Broader promotion requires independent evidence from other specialist domains an
 ```text
 ADR ACCEPTED FOR DESIGN
 → DESIGN STATE MACHINE / INTERFACES / READINESS SCHEMA
-→ DEFINE INVALID-TRANSITION TESTS + OBSERVABILITY
+→ DEFINE INVALID-TRANSITION + MALFORMED-READINESS TESTS + OBSERVABILITY
 → REVIEW TRADE-OFFS / IMPLEMENTATION OPTIONS
 → EXPLICIT IMPLEMENTATION AUTHORIZATION
 → IMPLEMENT CANDIDATE
