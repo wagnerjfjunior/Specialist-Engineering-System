@@ -42,7 +42,7 @@ Behavioral validation of the hybrid bootstrap contract is defined in:
 For the `saas-architect` Custom GPT runtime candidate, also read when validating/applying/testing that candidate:
 
 - `runtime/custom-gpt/SAAS_ARCHITECT_BUILDER_PROFILE.md`
-- `runtime/custom-gpt/UNIVERSAL_BUILDER_KERNEL.md`
+- `runtime/custom-gpt/SAAS_ARCHITECT_BUILDER_KERNEL.md`
 - `runtime/custom-gpt/GITHUB_READONLY_ACTION.openapi.yaml`
 - `tests/runtime/HYBRID_SAAS_ARCHITECT_RUNTIME_RUNBOOK.md`
 - `tests/runtime/HYBRID_SAAS_ARCHITECT_FIXTURES.md`
