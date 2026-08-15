@@ -84,9 +84,9 @@ R06 FECH.AI ↔ Blogs/SEO multi-project: FAIL / EARLY SUBSTANTIVE COMPARISON + I
 PROJECT_TARGET_REGRESSION: 4/7
 ```
 
-R05 positive observations remain bounded: the supplied identifier stayed explicit, resolved to `PROJECT_NOT_REGISTERED`, was not fuzzy-mapped and did not materialize a consumer project. The case still fails because the response then exposed both valid registered alternatives despite no informational-list request, violating the target-resolution contract's enumeration boundary and zero-match STOP semantics.
+R05 positive observations remain bounded: the supplied identifier stayed explicit, resolved to `PROJECT_NOT_REGISTERED`, was not fuzzy-mapped and did not materialize a consumer project. The case still fails because the response exposed registered alternatives despite no informational-list request.
 
-R06 positive observations also remain bounded: both projects resolved independently, source separation was preserved and execution stayed READ_ONLY. The case still fails for ordering and readiness validity.
+R06 positive observations remain bounded: both projects resolved independently, source separation was preserved and execution stayed READ_ONLY. The case still fails for ordering and readiness validity.
 
 ## 6. Enforcement conclusion
 
@@ -100,6 +100,12 @@ RECEIPT_FIRST_NORMATIVE_REQUIREMENT: ESTABLISHED
 RECEIPT_FIRST_BEHAVIORAL_COMPLIANCE: CASE/BOUNDARY DEPENDENT
 RECEIPT_FIRST_MECHANICAL_ENFORCEMENT: NOT_ESTABLISHED
 CANONICAL_READINESS_ARTIFACT_VALIDATION: R06 FAIL / INCOMPLETE
+
+READINESS_EVIDENCE_BINDING_REQUIREMENT: ESTABLISHED
+MATERIAL_FIELD_EVIDENCE_ATTESTATION_MECHANISM: NOT_ESTABLISHED
+
+EFFECTIVE_SCOPE_BOUNDARY_REQUIREMENT: ESTABLISHED
+MECHANICAL_OUTPUT_SCOPE_ENFORCEMENT: NOT_ESTABLISHED
 
 RUNTIME_ENFORCEMENT_GAP: ESTABLISHED
 ```
@@ -117,11 +123,18 @@ TARGET-ENTRY GATES
 - zero-match PROJECT_NOT_REGISTERED → STOP
 - no project materialization before valid identity
 
-READINESS/OUTPUT GATES
+EVIDENCE-BACKED READINESS GATES
+- material readiness fields verified against trusted canonical retrieval/provenance
+- schema-valid/model-asserted readiness alone is insufficient
 - full canonical hybrid receipt validation
-- reject malformed/incomplete/stale readiness
+- reject malformed/incomplete/stale/unsupported readiness
 - validate READY/LIMITED/BLOCKED semantics
-- block substantive release before valid readiness
+
+EFFECTIVE-SCOPE OUTPUT GATES
+- bind substantive release to validated EFFECTIVE_SCOPE
+- LIMITED cannot answer excluded TASK_SCOPE
+- multi-project comparison uses a validated safe common comparison-effective scope
+- out-of-scope claims are blocked/rejected before release
 - preserve multi-project isolation
 ```
 
@@ -129,7 +142,7 @@ This is `TARGET STATE / ACCEPTED FOR DESIGN`, not implemented capability. Implem
 
 ## 8. Preserved hardenings
 
-Preserve `NOT_READ/PARTIAL_READ/INTEGRAL_READ`, positive EOF proof, target-resolution fail-closed semantics, receipt-first, canonical-readiness-validity distinct from artifact presence, exact refs/provenance/coverage/freshness, cross-project isolation, READ_ONLY/default mutation boundaries, lifecycle separation and historical-integrity rules.
+Preserve `NOT_READ/PARTIAL_READ/INTEGRAL_READ`, positive EOF proof, target-resolution fail-closed semantics, receipt-first, canonical-readiness-validity distinct from artifact presence, evidence-backed proof claims, effective-scope confinement, exact refs/provenance/coverage/freshness, cross-project isolation, READ_ONLY/default mutation boundaries, lifecycle separation and historical-integrity rules.
 
 ## 9. Consumer projects
 
