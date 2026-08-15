@@ -4,6 +4,7 @@
 **Applies to:** `SES — Documentation Auditor` Custom GPT runtime and any future specialist-specific enforcement wrapper
 **Evidence basis:** Documentation Auditor v0.4–v0.6 runtime observations plus formal v0.9 Gate 0
 **Durable v0.9 evidence:** `tests/runtime/evidence/DOCUMENTATION_AUDITOR_V09_GATE0_2026-08-15.md`
+**Corrective readjudication:** `tests/runtime/evidence/DOCUMENTATION_AUDITOR_V09_GATE0_READJUDICATION_2026-08-15.md`
 
 ## 1. Purpose
 
@@ -54,13 +55,11 @@ PROMPT_INVARIANT != ENFORCED_RUNTIME_INVARIANT
 
 The v0.9 Builder kernel already requires receipt-first ordering. The shared hybrid bootstrap contract and project-target resolution contract also require project-scoped readiness before project-specific substantive synthesis.
 
-Formal v0.9 Gate 0 nevertheless produced a valid R06 failure on a fingerprinted Builder because substantive comparative commentary was emitted before the required readiness boundary.
+The first durable Gate 0 record preserved the earlier conversational adjudication `R03A: PASS` and `R06: FAIL`. Subsequent full-transcript PR self-review found that R03A had also emitted project-specific substantive FECH.AI commentary before the required receipt. The correction is preserved in a separate evidence record rather than rewriting the original artifact.
 
-The non-secret fingerprint, inputs, preserved observed responses/turns, refs and adjudication are recorded in:
+Current corrected Gate 0 evidence therefore contains two ordering failures on the same fingerprinted v0.9 Builder boundary: one single-project and one multi-project.
 
-`tests/runtime/evidence/DOCUMENTATION_AUDITOR_V09_GATE0_2026-08-15.md`.
-
-Current evidence therefore supports:
+Current evidence supports:
 
 ```text
 RECEIPT_FIRST_NORMATIVE_REQUIREMENT: ESTABLISHED
@@ -95,18 +94,57 @@ No later behavior rewrites those observations.
 
 The v0.9 private external Builder was reconciled and fingerprinted before formal execution.
 
+Initial repository evidence record:
+
+```text
+R01: PASS
+R02: PASS
+R03A: PASS / INITIAL ADJUDICATION
+R03B: PASS
+R04: PASS
+R05: PASS
+R06: FAIL
+PROJECT_TARGET_REGRESSION: 6/7 / INITIAL ADJUDICATION
+```
+
+Corrective R03A readjudication:
+
+```text
+R03A_EXPLICIT_FECHAI_TARGET: FAIL / PROJECT-SPECIFIC SUBSTANTIVE OUTPUT BEFORE RECEIPT
+INITIAL_R03A_ADJUDICATION: PASS / INITIAL_OVERCLAIM_PRESERVED
+```
+
+Corrected current matrix:
+
 ```text
 R01_AMBIGUOUS_TARGET_COLD_START: PASS
 R02_MISSING_CONSUMER_PROJECT_ID_COLD_START: PASS
-R03A_EXPLICIT_FECHAI_TARGET: PASS
+R03A_EXPLICIT_FECHAI_TARGET: FAIL
 R03B_EXPLICIT_SES_TARGET: PASS
 R04_INFORMATIONAL_LIST_THEN_BARE_NUMBER: PASS
 R05_EXPLICIT_UNREGISTERED_IDENTIFIER: PASS
 R06_SUBSTANTIVE_MULTI_PROJECT_TASK: FAIL
 
-PROJECT_TARGET_REGRESSION: 6/7
+PROJECT_TARGET_REGRESSION: 5/7
 PROJECT_TARGET_REGRESSION_PASS: NOT_ESTABLISHED
 DOCUMENTATION_AUDITOR_V0_9_PROPORTIONAL_SMOKE: BLOCKED_BY_GATE0_FAIL
+```
+
+R03A positive observations:
+
+```text
+EXPLICIT_FECHAI_TARGET_RESPECTED: YES
+PROJECT_REGISTRY_RESOLUTION: YES
+PROJECT_ADAPTER_RESOLUTION: YES
+PROJECT_BOOTSTRAP_RESOLUTION: YES
+READ_ONLY: PRESERVED
+```
+
+R03A failure observation:
+
+```text
+PROJECT_SPECIFIC_SUBSTANTIVE_OUTPUT_BEFORE_RECEIPT: YES
+RESULT: FAIL
 ```
 
 R06 positive observations:
@@ -128,7 +166,7 @@ PROJECT_SCOPED_READINESS_BOUNDARIES: PRESENT LATER / TOO LATE FOR REQUIRED ORDER
 RESULT: FAIL
 ```
 
-A later receipt does not retroactively repair the invalid earlier transition.
+Later receipts do not retroactively repair either invalid earlier transition.
 
 The v0.9 runtime runbook is closed as executed/blocked rather than remaining an active Gate 0 queue:
 
@@ -136,21 +174,21 @@ The v0.9 runtime runbook is closed as executed/blocked rather than remaining an 
 
 ## 6. Failure interpretation
 
-The observed v0.9 failure is not evidence that target classification, registry resolution or multi-project source isolation failed. Those aspects passed in R06.
+The observed v0.9 failures are not evidence that target classification, registry resolution or source isolation broadly failed. Those aspects were positive in R03A and/or R06.
 
-The bounded failure is the transition from context acquisition/materialization to user-visible substantive synthesis.
+The bounded repeated failure is the transition from context acquisition/materialization to user-visible substantive output before readiness release.
 
 Current evidence does **not** establish a separate output controller/validator/transition gate that technically prevents this transition before readiness.
 
-This is consistent with the prior specialist-specific learning from v0.6 and now has a fresh formal v0.9 reproduction under a different runtime case.
+This is consistent with the prior specialist-specific learning from v0.6 and now has fresh formal v0.9 reproduction in both a single-project and multi-project runtime case.
 
-Do not overclaim a single universal root cause beyond the evidence. The established finding is:
+Do not overclaim a universal root cause beyond the evidence. The established finding is:
 
 `RUNTIME_ENFORCEMENT_GAP / MECHANICAL_ENFORCEMENT_NOT_ESTABLISHED`.
 
 ## 7. Prompt-level stop loss
 
-Because a required v0.9 case failed after the Builder/version fingerprint had been established:
+Because required v0.9 cases failed after the Builder/version fingerprint had been established:
 
 ```text
 PROMPT_LEVEL_FIX_STOP_LOSS: TRIGGERED
@@ -159,8 +197,8 @@ PROMPT_LEVEL_FIX_STOP_LOSS: TRIGGERED
 Do not:
 
 - create v0.10 solely by adding stronger receipt-order wording;
-- rerun R06 merely to seek a cosmetic PASS;
-- relabel a later corrected retry as retroactive R06 PASS;
+- rerun R03A or R06 merely to seek a cosmetic PASS;
+- relabel later corrected retries as retroactive PASS;
 - proceed with the old v0.9 proportional smoke as if Gate 0 passed;
 - call instruction repetition an enforcement mechanism.
 
