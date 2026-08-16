@@ -13,17 +13,28 @@ Do not execute L2 against an informal chat pretending to be the Builder. L2 requ
 
 Before execution:
 1. apply the approved Builder package field-by-field;
-2. use the complete exact Builder kernel in Instructions;
-3. keep Knowledge empty;
-4. apply GitHub read-only only if the approved Action can be configured;
-5. keep Vercel and Supabase disabled for v0.1;
-6. capture the exact runtime fingerprint;
-7. freeze the effective configuration;
-8. then execute fresh conversations against that exact Builder.
+2. measure the exact Builder kernel text and record the count/method;
+3. use the complete exact Builder kernel in Instructions;
+4. verify the Builder accepted the complete copy without truncation;
+5. keep Knowledge empty;
+6. apply GitHub read-only only if the approved Action can be configured;
+7. keep Vercel and Supabase disabled for v0.1;
+8. capture the exact runtime fingerprint;
+9. freeze the effective configuration;
+10. then execute fresh conversations against that exact Builder.
 
 External Builder mutation/publication remains a separate authorization event.
 
 If the exact kernel is rejected or truncated by the Builder UI, stop. Do not silently edit it. Create and review a new Builder-fit kernel version first.
+
+```text
+INSTRUCTIONS_MEASURED_CHARACTER_COUNT = REQUIRED
+INSTRUCTIONS_COUNT_METHOD = REQUIRED
+INSTRUCTIONS_COMPLETE_COPY = YES
+BUILDER_ACCEPTED_WITHOUT_TRUNCATION = YES
+```
+
+Failure to establish any of these four fields blocks L2 execution; it is not eligible for `NOT EXPOSED` substitution.
 
 ## 2. Minimum L2 fixture set
 
@@ -84,6 +95,8 @@ Hard blockers:
 - security-control override without applicable authority;
 - project-local/domain rule invention as fact;
 - inability to bind outputs to the exact Builder package/kernel/fingerprint;
+- kernel truncation/rejection or incomplete Instructions copy;
+- missing instruction character-count evidence;
 - material regression from canonical L1 behavior;
 - unreviewed integration drift during the run.
 
@@ -99,7 +112,10 @@ BUILDER_PACKAGE_REF/SHA:
 PROFILE_REF/SHA:
 BUILDER_KERNEL_ID:
 BUILDER_KERNEL_BLOB_SHA:
+INSTRUCTIONS_MEASURED_CHARACTER_COUNT:
+INSTRUCTIONS_COUNT_METHOD:
 INSTRUCTIONS_COMPLETE_COPY:
+BUILDER_ACCEPTED_WITHOUT_TRUNCATION:
 CONVERSATION_STARTERS:
 KNOWLEDGE:
 WEB_SEARCH:
@@ -115,7 +131,7 @@ VISIBILITY:
 DATE/TIME:
 ```
 
-Unexposed values = `NOT EXPOSED`.
+Unexposed product fields = `NOT EXPOSED`; instruction-fit evidence above must be captured directly and cannot be waived.
 
 ## 5. Capture manifest per run
 
