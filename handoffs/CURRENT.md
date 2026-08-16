@@ -1,13 +1,13 @@
 # SES — Current Handoff
 
-**Status:** `SPECIALIST_PORTFOLIO_EXPANSION / UX_UI_PACKETED_L1_PASS / CANONICAL_L1_REPLICATION_NEXT`  
+**Status:** `SPECIALIST_PORTFOLIO_EXPANSION / UX_UI_CANONICAL_L1_PASS / L2_RUNTIME_PROFILE_READY`  
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System`  
 **Canonical ref rule:** resolve `main` live before material work  
 **Authoritative next action:** `docs/NEXT_SAFE_ACTION.md`
 
 ## 1. Purpose
 
-Preserve SES portfolio/proof continuity across conversations/models without relying on chat memory and without overstating the UX/UI Candidate proof level.
+Preserve SES portfolio/proof continuity across conversations/models without relying on chat memory and without overstating UX/UI proof level.
 
 ## 2. Mandatory reading order
 
@@ -20,79 +20,86 @@ Preserve SES portfolio/proof continuity across conversations/models without rely
 
 For unmerged work preserve `CANONICAL_MAIN != CANDIDATE_HEAD`.
 
-## 3. UX/UI Candidate v0.1 current evidence
+## 3. UX/UI Candidate v0.1 evidence
 
-Artifacts:
-- `docs/specialists/UX_UI_APP_SPECIALIST_CANDIDATE_V0_1.md`
-- `tests/behavioral/UX_UI_APP_SPECIALIST_BEHAVIORAL_SUITE_V0_1.md`
-- `tests/behavioral/UX_UI_APP_SPECIALIST_L1_VALIDATION_V0_1.md`
-- `tests/behavioral/UX_UI_APP_SPECIALIST_L1_PACKET_FIDELITY_NOTE_V0_1.md`
-
-Historical observed state:
+Preserve distinct evidence events:
 
 ```text
 L0 HARNESS SANITY = PASS
-PACKETED_L1_BEHAVIORAL_EVIDENCE = PASS
-P01–P20 OBSERVED INITIAL RESPONSES = 20/20 PASS
+HISTORICAL L1-P / PACKETED = PASS_WITH_FIDELITY_AND_PROVENANCE_LIMITATIONS
+CANONICAL L1-C = PASS
+P01–P20 = PASS
+CANDIDATE_BEHAVIORAL_VALIDATION_L1 = PASS
+FULL_L1_BEHAVIORAL_SUITE = PASS
 STOP_LOSS_TRIGGERED = NO
 INITIAL_OVERCLAIM = NONE OBSERVED
 RETROACTIVE_PASS = NONE
 ```
 
-Formal-review correction:
+Canonical L1-C artifacts:
+- `tests/behavioral/UX_UI_APP_SPECIALIST_L1C_EXECUTOR_KERNEL_V0_1.md`
+- `tests/behavioral/UX_UI_APP_SPECIALIST_L1C_RUNBOOK_V0_1.md`
+- `tests/behavioral/UX_UI_APP_SPECIALIST_L1C_VALIDATION_V0_1.md`
+
+The historical packeted record remains preserved with all earlier fidelity/provenance limitations.
+
+## 4. L1-C provenance boundary
+
+The L1-C run used one frozen Candidate-side kernel without material instruction drift. P04 prompt invariance passed. P20 generic baseline non-regression passed with the complete C1–C10 matrix recorded.
+
+Preserve as user-reported/unexposed where applicable:
 
 ```text
-ONE FROZEN EXECUTOR KERNEL ACROSS ALL FIXTURES = NOT EXECUTED
-CANONICAL_L1_FULL_SPEC_REPLICATION = NOT EXECUTED
-CANDIDATE_BEHAVIORAL_VALIDATION_L1 = NOT ESTABLISHED
-FULL_L1_BEHAVIORAL_SUITE = NOT ESTABLISHED
-L2 = NOT EXECUTED
+FRESH_CONTEXT = USER_REPORTED
+NO_PRIOR_FIXTURE_OUTPUT = USER_REPORTED
+MODEL/UI FINGERPRINT = NOT CAPTURED IN SUBMITTED FILE
+SYSTEM RUNTIME CONFIG = NOT CAPTURED
+CONVERSATION IDS = NOT CAPTURED
+```
+
+Do not later relabel these as technically verified.
+
+## 5. L2 state
+
+Prepared artifacts:
+- `tests/runtime/UX_UI_APP_SPECIALIST_L2_RUNTIME_PROFILE_V0_1.md`
+- `tests/runtime/UX_UI_APP_SPECIALIST_L2_RUNBOOK_V0_1.md`
+
+Current state:
+
+```text
+L2 PROFILE/RUNBOOK = PREPARED
+BUILDER APPLIED = NO
+L2 EXECUTED = NO
+L2 RUNTIME PASS = NOT ESTABLISHED
 REGISTRY ACTIVE = NO
 ```
 
-This correction narrows the aggregate claim only; it does not change the historical 20/20 observed adjudications.
+L2 must run against the actual configured Builder/runtime under an exact effective fingerprint. An ordinary chat does not satisfy L2.
 
-## 4. Historical fidelity/provenance limitations
-
-```text
-FIXTURE-ADAPTED EXECUTOR PACKETS = YES
-SELECTED CANDIDATE RULES PER PACKET = YES
-SOME TEST-META CUES PRESENT = YES
-FULL EXECUTOR PACKET CORPUS VERSIONED = NO
-RAW INPUT HASHES = NOT CAPTURED
-RAW OUTPUT HASHES = NOT CAPTURED
-FRESH CONTEXT = USER_REPORTED
-ANSWER KEY NOT VISIBLE = USER_REPORTED
-RAW OUTPUT UNMODIFIED = USER_REPORTED
-P20_PAIRING_AMBIGUITY = RESOLVED
-P20_BLIND_ADJUDICATION = NOT EXECUTED
-P20_NON_BLIND_ADJUDICATION = PASS
-```
-
-Future stronger evidence must not erase these historical limitations.
-
-## 5. Next safe action
+## 6. Next safe action
 
 Use `docs/NEXT_SAFE_ACTION.md` only.
 
-Current next action:
+Current sequence:
 
 ```text
-FREEZE ONE L1-C EXECUTOR KERNEL/SPEC
-→ CAPTURE EXACT REF/HASH
-→ RUN P01–P20 IN FRESH CONTEXTS
-→ ADJUDICATE
+EXPLICIT BUILDER-MUTATION AUTHORIZATION
+→ APPLY VERSIONED L2 PROFILE TO ACTUAL BUILDER
+→ CAPTURE/FREEZE EXACT EFFECTIVE FINGERPRINT
+→ EXECUTE R01–R06
+→ ADJUDICATE L2-01..L2-12
 → RECORD PROVENANCE
 ```
 
-Only after a successful new L1-C execution may SES claim canonical Candidate L1 PASS and proceed to L2 preparation.
+No Builder application or publication has occurred yet.
 
-## 6. Portfolio direction
+## 7. Portfolio direction
 
 ```text
 1. Software Systems Architect — future evolution/name direction; rename not executed.
 2. Documentation Auditor — existing.
-3. UX/UI APP Specialist — packeted evidence PASS; canonical L1-C next.
+3. UX/UI APP Specialist — canonical L1 PASS; L2 runtime application/validation next.
 4. Backend & Data Platform — candidate.
 5. Application Security Assurance — strong candidate.
 6. Platform, Delivery & Reliability — candidate consolidation; reversible.
@@ -105,18 +112,20 @@ Project-local preserved:
 - FECH.AI LeadOps / CRM / Discador;
 - FECH.AI MesaCliente / Tabelas / Propostas.
 
-## 7. Preserved cross-specialist boundaries
+## 8. Preserved boundaries
 
 ```text
 IMPLEMENTATION RESPONSIBILITY != ASSURANCE AUTHORITY
 CENTRAL EVOLUTION != AUTOMATIC PROJECT MUTATION
 TARGET CONSOLIDATION != AUTHORIZED RETIREMENT
+L1 PASS != L2 PASS
+PROFILE VERSIONED != BUILDER APPLIED
 ```
 
 SaaS Architect historical runtime PASS stays fingerprint-bound. Documentation Auditor historical failures and Gateway Design v1 remain unchanged/deferred/not implemented.
 
-## 8. Cross-model short resume
+## 9. Cross-model short resume
 
 ```text
-Resolve SES main LIVE → UX/UI Candidate v0.1 is versioned → historical fixture-adapted packeted run produced P01–P20 20/20 observed PASS with no stop-loss → formal PR review found proof-fidelity gap because one frozen executor kernel/spec was not used across all fixtures and some test-meta cues were present → historical results remain PACKETED_L1_BEHAVIORAL_EVIDENCE = PASS but canonical Candidate L1 PASS is NOT ESTABLISHED → next safe action is freeze/version one executor kernel and rerun canonical L1-C P01–P20 → only after L1-C PASS may L2 preparation begin → no registry activation, Builder application, consumer adoption or legacy retirement is authorized.
+Resolve SES main LIVE → UX/UI Candidate v0.1 has historical packeted L1-P PASS_WITH_LIMITATIONS plus a new canonical L1-C PASS under one frozen executor kernel → P01–P20 PASS, P04 invariance PASS, P20 non-regression PASS with full C1–C10 matrix → CANDIDATE_BEHAVIORAL_VALIDATION_L1 = PASS → L2 runtime profile/runbook are prepared but not applied → next safe action requires explicit Builder-mutation authorization, then apply profile to actual Builder, capture/freeze exact fingerprint, execute R01–R06 and adjudicate L2-01..L2-12 → no registry activation, consumer adoption or production certification yet.
 ```

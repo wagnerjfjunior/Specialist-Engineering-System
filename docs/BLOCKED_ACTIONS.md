@@ -1,6 +1,6 @@
 # SES — Blocked Actions
 
-**Status:** `SPECIALIST_PORTFOLIO_EXPANSION / UX_UI_CANONICAL_L1_REQUIRED / BLOCKED_ACTIONS`  
+**Status:** `SPECIALIST_PORTFOLIO_EXPANSION / UX_UI_CANONICAL_L1_PASS / L2_RUNTIME_PROFILE_READY / BLOCKED_ACTIONS`  
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System`
 
 Absence from this document does not create authorization. Capability, prior approval for another action, conversation history or a derived summary do not substitute for current applicable authority.
@@ -18,52 +18,51 @@ Without separate explicit applicable authorization, block:
 - rewriting historical proof/adjudication;
 - storing secrets in SES artifacts.
 
-## 2. UX/UI historical evidence boundary
+## 2. UX/UI evidence boundary
 
-Preserve:
+Preserve both behavioral evidence events:
 
 ```text
 L0 HARNESS SANITY = PASS
-PACKETED_L1_BEHAVIORAL_EVIDENCE = PASS
-P01–P20 OBSERVED INITIAL RESPONSES = 20/20 PASS
-STOP_LOSS_TRIGGERED = NO
-```
-
-Do not currently claim:
-
-```text
+HISTORICAL L1-P / PACKETED = PASS_WITH_FIDELITY_AND_PROVENANCE_LIMITATIONS
+CANONICAL L1-C = PASS
+P01–P20 = PASS
 CANDIDATE_BEHAVIORAL_VALIDATION_L1 = PASS
 FULL_L1_BEHAVIORAL_SUITE = PASS
-CANONICAL_L1_FULL_SPEC_REPLICATION = PASS
-L2 RUNTIME PASS
+STOP_LOSS_TRIGGERED = NO
+INITIAL_OVERCLAIM = NONE OBSERVED
+RETROACTIVE_PASS = NONE
 ```
 
-Historical fidelity limitations include fixture-adapted packets, selected Candidate rules per packet, some evaluation/test-meta cues, no complete versioned packet corpus and no raw input/output hashes.
+Historical packeted fidelity limitations remain preserved and are not retroactively repaired by L1-C.
 
-## 3. Canonical L1 stop-loss
+## 3. L1 invalidation discipline
 
-Before L2 preparation, require one new L1-C run using one frozen versioned executor kernel/spec across all Candidate fixtures.
+Do not repeat L1 merely for additional confidence. Re-run only affected proof claims after a material invalidation event involving Candidate/kernel instructions, model/system/runtime configuration, tools/knowledge or fixture semantics.
 
 Block:
-- treating the historical packeted run as retroactive canonical L1 PASS;
-- using documentation edits to upgrade proof level;
-- using different specialist kernels/rule subsets per fixture in the canonical run;
-- exposing answer key, adjudication rubric, expected findings or corrective guidance to the executor;
-- unnecessary test-meta cues in executor-visible packets;
-- advancing to L2 before canonical L1-C adjudication.
-
-```text
-HISTORICAL PACKETED PASS != CANONICAL L1-C PASS
-```
+- rewriting historical packeted evidence as canonical;
+- treating future documentation edits as new behavioral evidence;
+- retroactive PASS after an initial failed execution.
 
 ## 4. L2 / runtime blocks
 
-Until canonical L1-C passes and separate applicable authorization exists where required, block:
-- versioning L2 as the active next gate before L1-C completion;
-- applying UX/UI profile/kernel in an external Builder;
+L2 profile/runbook are prepared, but the Builder has not been applied and L2 has not been executed.
+
+```text
+L2 PROFILE/RUNBOOK = PREPARED
+BUILDER APPLIED = NO
+L2 RUNTIME PASS = NOT ESTABLISHED
+```
+
+Without separate explicit applicable authorization, block:
+- applying the UX/UI profile/kernel in an external Builder;
+- changing Builder instructions, knowledge, tools/actions, permissions, model/settings or publication state;
 - publishing the specialist;
 - claiming Builder applied;
 - claiming L2/runtime PASS;
+- simulating L2 in an ordinary chat and presenting it as Builder runtime proof;
+- claiming tool execution without invocation/result evidence;
 - activating `archetypes/REGISTRY.md`;
 - adopting the specialist into a consumer project.
 
