@@ -45,6 +45,18 @@ Canonical L1-C evidence is valid only when:
 
 If either kernel changes materially, prior execution evidence does not transfer automatically. Record a new kernel hash/version and re-run only affected proof obligations.
 
+## Current execution blocker
+
+The current design conversation is contaminated for canonical L1-C because it contains candidate design decisions, behavioral expectations, fixtures and adjudication logic.
+
+```text
+CURRENT_CONVERSATION_ELIGIBLE_FOR_L1C = NO
+REASON = CONTAMINATED_CONTEXT
+REQUIRED_NEXT_MECHANISM = FRESH_ISOLATED_EXECUTOR_CONTEXTS
+```
+
+Do not downgrade this requirement merely to accelerate delivery. Using the current conversation would produce invalid proof, not faster proof.
+
 ## Current proof boundary
 
 ```text
@@ -54,7 +66,7 @@ L1C_KERNELS = FROZEN / HASH_BOUND
 L1C_RUNBOOKS = VERSIONED
 L1C_COVERAGE_SUPPLEMENT = VERSIONED / BOUND
 PRE_EXECUTION_COVERAGE_REVIEW = COMPLETED
-L1C_EXECUTION = NOT_EXECUTED
+L1C_EXECUTION = NOT_EXECUTED / BLOCKED_ON_FRESH_ISOLATED_CONTEXTS
 L1 PASS = NOT_ESTABLISHED
 L2 PASS = NOT_ESTABLISHED
 BUILDER = NOT_APPLIED
