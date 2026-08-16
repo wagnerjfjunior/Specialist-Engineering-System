@@ -1,6 +1,6 @@
 # SES — Project Status
 
-**Status:** `SPECIALIST_PORTFOLIO_EXPANSION / UX_UI_READY / L2_RUNTIME_PASS / NEXT_APPSEC_DISCOVERY`  
+**Status:** `SPECIALIST_PORTFOLIO_EXPANSION / UX_UI_ARCHETYPE_ACTIVE / UX_UI_READY / NEXT_APPSEC_DISCOVERY`  
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System`  
 **Canonical branch:** `main` resolved live before material work  
 **Authoritative next action:** `docs/NEXT_SAFE_ACTION.md`
@@ -13,105 +13,76 @@ SES remains project-agnostic specialist-engineering infrastructure. Consumer pro
 SES CENTRAL EVOLUTION != AUTOMATIC CONSUMER-PROJECT MUTATION
 ```
 
-## 2. UX/UI APP Specialist proof state
-
-Preserve all evidence events distinctly:
+## 2. UX/UI APP Specialist current state
 
 ```text
-L0 HARNESS SANITY = PASS
-HISTORICAL L1-P / PACKETED = PASS_WITH_FIDELITY_AND_PROVENANCE_LIMITATIONS
 CANONICAL L1-C = PASS
 P01–P20 = PASS
-CANDIDATE_BEHAVIORAL_VALIDATION_L1 = PASS
 FULL_L1_BEHAVIORAL_SUITE = PASS
 L2_RUNTIME_FINGERPRINT_VALIDATION = PASS / FINGERPRINT_BOUND
 SPECIALIST_READINESS = READY / USER_AUTHORIZED
-STOP_LOSS_TRIGGERED = NO
-INITIAL_OVERCLAIM = NONE OBSERVED
-RETROACTIVE_PASS = NONE
+ARCHETYPE_ID = ux-ui-app-specialist
+ARCHETYPE_RESOLUTION_STATUS = ACTIVE
+AVAILABLE_FOR_PROJECT_RESOLUTION = YES
+BUILDER_APPLIED = YES / PRIVATE
+PUBLISHED = NO
+CONSUMER_ADOPTION = NO / NOT AUTOMATIC
 ```
 
-Historical packeted limitations remain historical and are not retroactively repaired by L1-C or L2.
+Historical packeted L1-P fidelity/provenance limitations remain historical and are not retroactively repaired.
 
-Canonical L2 evidence:
+Canonical evidence:
 - `tests/runtime/evidence/UX_UI_APP_SPECIALIST_L2_RUNTIME_PROOF_2026-08-16.md`
+- `tests/behavioral/UX_UI_APP_SPECIALIST_ARCHETYPE_RESOLUTION_V0_1.md`
 
-## 3. Builder/runtime state
+Reusable archetype contract:
+- `archetypes/ux-ui-app-specialist/ARCHETYPE.md`
 
-Tested runtime configuration sources remain immutable evidence inputs:
-- `runtime/custom-gpt/UX_UI_APP_SPECIALIST_BUILDER_PACKAGE_V0_1.md`
-- `runtime/custom-gpt/UX_UI_APP_SPECIALIST_BUILDER_KERNEL_V0_1.md`
-- `tests/runtime/UX_UI_APP_SPECIALIST_L2_RUNTIME_PROFILE_V0_1.md`
-- `tests/runtime/UX_UI_APP_SPECIALIST_L2_RUNBOOK_V0_1.md`
+## 3. Reuse model
 
-Current state:
+The UX/UI APP Specialist is a reusable project-agnostic SES specialist. It must not be cloned per consumer project merely to load project context.
+
+For project-specific work:
 
 ```text
-BUILDER APPLIED = YES / PRIVATE
+RESOLVE SES MAIN
+→ RESOLVE ux-ui-app-specialist IN archetypes/REGISTRY.md
+→ READ ARCHETYPE CONTRACT
+→ RESOLVE EXPLICIT CONSUMER PROJECT
+→ PROJECT REGISTRY / ADAPTER
+→ CONSUMER PROJECT LIVE REF / BOOTSTRAP / CONTINUITY
+→ PROJECT-LOCAL RULES + AUTHORITY + EVIDENCE
+→ TASK-BOUND CONTEXT READINESS
+→ UX/UI WORK
+```
+
+```text
+ARCHETYPE_ACTIVE != PROJECT_CONTEXT_READY
+ARCHETYPE_ACTIVE != CONSUMER_ADOPTED
+CONTEXT_READY != AUTHORIZED_TO_MUTATE
+```
+
+## 4. Runtime fingerprint boundary
+
+The validated private Builder remains fingerprint-bound:
+
+```text
 BUILDER KERNEL BLOB = 8e988dceca962f608141cbef663fd4baea4cf86f
 GITHUB ACTION = ENABLED / READ_ONLY / RUNTIME VERIFIED
 GITHUB ACTION SCHEMA BLOB = 1e6237e806fd84716ec13b019e6617ad4110a211
 VERCEL = DISABLED / NOT CONFIGURED
 SUPABASE = DISABLED / NOT CONFIGURED
 KNOWLEDGE = EMPTY
-L2 RUNTIME PASS = ESTABLISHED FOR EXACT FINGERPRINT
-REGISTRY ACTIVE = NO
-PUBLISHED = NO
-CONSUMER ADOPTION = NO
 ```
 
-`READY` is a readiness state, not registry activation or publication authority.
+Material changes require proportional revalidation only. Do not repeat L1/L2 absent material invalidation.
 
-## 4. L2 provenance boundary
-
-The runtime proof records:
-- exact canonical Builder/kernel/profile/runbook/action refs and hashes;
-- deterministic normalized kernel blob match;
-- seven runtime responses: R01, R02, R03A, R03B, R04, R05, R06;
-- fresh individual conversations supported by user-supplied screenshot evidence;
-- unchanged Builder configuration between runs explicitly confirmed by the user;
-- R06 actual GitHub READ_ONLY Action execution against exact `main` ref;
-- raw submitted execution/screenshot/instruction-copy artifact hashes.
-
-Preserve limitations exactly as recorded in the evidence artifact. Do not later relabel user-confirmed or screenshot-supported facts as hidden product telemetry.
-
-## 5. Invalidation discipline
-
-The L2 PASS is fingerprint-bound.
-
-Material change to any relevant item may invalidate only affected claims:
-- Builder Instructions/kernel;
-- model/runtime settings;
-- Knowledge;
-- capabilities;
-- GitHub Action schema/auth/scope;
-- integration set;
-- relevant Builder/system behavior;
-- fixture semantics or contradictory evidence.
+## 5. Portfolio direction
 
 ```text
-MATERIAL CHANGE → PROPORTIONAL REVALIDATION
-NO MATERIAL CHANGE → NO REAUDIT LOOP
-```
-
-Do not repeat L1 or L2 merely for additional confidence.
-
-## 6. Existing archetypes and historical proof
-
-Current registry remains unchanged. Preserve:
-- SaaS Architect historical v0.1 runtime PASS bound to exact historical fingerprint;
-- Documentation Auditor current limitations and historical failures;
-- no proof transfer through future rename/evolution.
-
-Preferred future naming direction remains `SES — Software Systems Architect`; rename not executed.
-
-## 7. Portfolio direction
-
-```text
-REUSABLE SES DIRECTION
-1. Software Systems Architect — proposed evolution/name direction.
-2. Documentation Auditor — existing.
-3. UX/UI APP Specialist — READY; canonical L1 + fingerprint-bound L2 PASS; not registered/published/adopted.
+1. Software Systems Architect — proposed evolution/name direction; rename not executed.
+2. Documentation Auditor — existing; runtime limitations preserved.
+3. UX/UI APP Specialist — READY + ACTIVE archetype + available for project resolution.
 4. Application Security Assurance — next requirements/challenge target.
 5. Backend & Data Platform — candidate.
 6. Platform, Delivery & Reliability — candidate consolidation; reversible.
@@ -120,31 +91,27 @@ REUSABLE SES DIRECTION
 9. Integration & Automation — candidate if still justified.
 ```
 
-Project-local FECH.AI LeadOps/CRM/Discador and MesaCliente/Tabelas/Propostas remain project-local.
-
-## 8. Security/backend boundary
+## 6. Security/backend boundary
 
 ```text
 Backend & Data Platform = secure server/data implementation owner
 Application Security Assurance = independent adversarial/security verification owner
+IMPLEMENTATION RESPONSIBILITY != ASSURANCE AUTHORITY
 ```
 
-Candidate learning: `IMPLEMENTATION RESPONSIBILITY != ASSURANCE AUTHORITY`.
+## 7. Adoption/retirement boundary
 
-## 9. Adoption/retirement boundary
-
-No project specialist is retired or automatically replaced by UX/UI READY status.
+No consumer project is automatically mutated or migrated because the archetype is active.
 
 ```text
-READY SPECIALIST
-!= REGISTRY ACTIVE
-!= PUBLISHED
-!= CONSUMER ADOPTED
-!= LEGACY RETIRED
+ACTIVE ARCHETYPE
+→ PROJECT RESOLUTION
+→ PROJECT-LOCAL DELTA / AUTHORITY REVIEW WHEN NEEDED
+→ EXPLICIT PROJECT ADOPTION IF THE PROJECT REQUIRES AN ADOPTION EVENT
+→ EQUIVALENCE / RESIDUAL-GAP REVIEW
+→ RETIREMENT DECISION
 ```
 
-Any consumer adoption remains a separately authorized project-local event.
+## 8. Preserved Documentation Auditor state
 
-## 10. Preserved Documentation Auditor state
-
-Documentation Auditor Gateway Design v1 remains preserved/deferred/not implemented. UX/UI READY/L2 PASS does not repair or alter its historical failures or runtime-certification blockers.
+Documentation Auditor Gateway Design v1 remains preserved/deferred/not implemented. UX/UI activation does not repair or alter Documentation Auditor historical failures or runtime-certification blockers.
