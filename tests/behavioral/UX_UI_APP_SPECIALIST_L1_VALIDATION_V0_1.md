@@ -33,6 +33,21 @@ Reason: the historical run used fixture-adapted executor packets containing sele
 
 This reclassification corrects proof scope only. It does not rewrite the observed initial responses, adjudications or historical PASS results per proof obligation.
 
+### Historical candidate binding limitation
+
+The historical test cycle occurred before the Candidate specification and behavioral suite were committed as repository artifacts. Therefore there is no truthful exact `SES_CANDIDATE_REF`, candidate blob SHA or repository-effective ref that can be assigned retroactively to the executor packets used in that run.
+
+Preserve:
+
+```text
+HISTORICAL_CANONICAL_MAIN_REF = 3dc57c124a2ca677494894d755fb7d5b80453b6a
+HISTORICAL_EXECUTOR_PACKET_REF = NOT VERSIONED / NOT AVAILABLE
+HISTORICAL_CANDIDATE_BLOB_SHA = NOT AVAILABLE
+EXACT PACKET-TO-CANONICAL-CANDIDATE BINDING = NOT ESTABLISHED
+```
+
+Do not substitute the later PR head or Candidate blob SHA as if it were the historical execution ref. The exact ref/hash requirement applies prospectively to the canonical L1-C replication.
+
 ## 2. L0 harness sanity
 
 ```text
@@ -129,14 +144,29 @@ B05 Security-sensitive: Generic 9 / Specialist 10
 | B05 Security-sensitive | 28/30 | 29/30 | +1 |
 | **TOTAL** | **134/150** | **142/150** | **+8** |
 
+Historical adjudication recorded:
+
 ```text
 TOTAL_DELTA = +8
-CRITICAL_DIMENSION_REGRESSION = NO
-SECURITY_BOUNDARY_REGRESSION = NO
-P20 OBSERVED PACKETED RESULT = PASS
+CRITICAL_DIMENSION_REGRESSION = ADJUDICATOR_RECORDED_NO
+SECURITY_BOUNDARY_REGRESSION = ADJUDICATOR_RECORDED_NO
+P20 OBSERVED PACKETED RESULT = PASS_WITH_SCORING_PROVENANCE_LIMITATION
+```
+
+Important limitation: the complete per-fixture C1–C10 Generic/Specialist score matrix was not preserved in the historical record. Therefore the two `ADJUDICATOR_RECORDED_NO` statements cannot now be independently recomputed from repository evidence. Do not fabricate or reconstruct missing dimension scores retroactively.
+
+Preserve:
+
+```text
+P20_AGGREGATE_FIXTURE_TOTALS = PRESERVED
+P20_FULL_C1_C10_MATRIX = NOT PRESERVED
+P20_CRITICAL_DIMENSION_NO_REGRESSION = HISTORICAL ADJUDICATION / NOT INDEPENDENTLY REPRODUCIBLE
+P20_BLIND_ADJUDICATION = NOT EXECUTED
 ```
 
 The B03 tie remains a tie.
+
+The canonical L1-C replication must preserve the full C1–C10 matrix and raw pair outputs before any P20 PASS is used as reproducible proof.
 
 ## 8. Historical aggregate result
 
@@ -147,6 +177,8 @@ STOP_LOSS_TRIGGERED = NO
 INITIAL_OVERCLAIM = NONE OBSERVED
 RETROACTIVE_PASS = NONE
 ```
+
+P20's historical PASS remains part of the observed adjudication history but carries the scoring-provenance limitation in section 7.
 
 Do not relabel this historical aggregate as `FULL_L1_BEHAVIORAL_SUITE = PASS`.
 
@@ -182,7 +214,7 @@ Also:
 ```text
 P20_PAIRING_AMBIGUITY = RESOLVED
 P20_BLIND_ADJUDICATION = NOT EXECUTED
-P20_NON_BLIND_ADJUDICATION = PASS
+P20_NON_BLIND_ADJUDICATION = PASS_WITH_SCORING_PROVENANCE_LIMITATION
 RAW_INPUT_HASHES = NOT CAPTURED
 RAW_OUTPUT_HASHES = NOT CAPTURED
 EXTERNAL CONVERSATION_IDS = NOT CAPTURED
@@ -204,7 +236,8 @@ The next proof event must be a new L1-C execution using:
 7. raw input/output preservation and hashes where technically possible;
 8. model/system/tool configuration record where available;
 9. contamination assertions;
-10. first response as evidentiary unit.
+10. first response as evidentiary unit;
+11. complete P20 C1–C10 Generic/Specialist scoring matrix and raw pair outputs.
 
 A future L1-C PASS is a **new evidence event**, not a retroactive repair of this run.
 
