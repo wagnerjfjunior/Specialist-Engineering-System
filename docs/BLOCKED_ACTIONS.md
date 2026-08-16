@@ -1,6 +1,6 @@
 # SES — Blocked Actions
 
-**Status:** `DOCUMENTATION_AUDITOR_GATEWAY_DESIGN_V1 / BLOCKED_ACTIONS`
+**Status:** `SPECIALIST_PORTFOLIO_EXPANSION / BLOCKED_ACTIONS`
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System`
 
 Absence from this document does not create authorization. Capability, prior approval for another action, conversation history or a derived summary do not substitute for current applicable authority.
@@ -9,19 +9,51 @@ Absence from this document does not create authorization. Capability, prior appr
 
 - direct/unreviewed mutation of canonical SES state outside normal change process;
 - merge/publication decisions not explicitly authorized for the exact scope;
-- external Documentation Auditor Builder configuration changes;
-- Gateway runtime implementation or deployment;
-- live model/API integration presented as a Gateway implementation candidate;
-- consumer-project mutation from SES central evolution or Gateway work;
-- automatic propagation into registered consumer projects;
-- legacy specialist retirement without required gates;
-- Documentation Auditor runtime certification without required runtime evidence and authority-challenge prerequisites;
-- static/merged/design/profile state promoted into runtime/mechanical-enforcement proof;
-- storing secrets in continuity/evidence/trace artifacts;
+- external Builder configuration changes;
+- consumer-project mutation from SES central evolution;
+- automatic propagation of SES specialist changes into registered consumer projects;
+- legacy specialist retirement/deletion without mapping, delta review, behavioral evidence, explicit project adoption and retirement decision;
+- promoting a Candidate or target portfolio entry to active archetype solely because it appears in continuity;
+- claiming runtime/spec/product/security PASS from design documents;
 - rewriting historical proof/adjudication because later evidence differs;
-- universalizing Documentation Auditor Gateway design without independent evidence/review.
+- storing secrets in continuity/evidence artifacts.
 
-## 2. Historical selection-flow stop loss
+## 2. Specialist-portfolio stop-loss blocks
+
+Until separately reviewed/authorized, block:
+
+- canonical rename of `SES — SaaS Architect` merely from the preferred `Software Systems Architect` direction;
+- transfer of historical SaaS Architect runtime PASS to a renamed/evolved archetype without proportional proof;
+- mutation of `archetypes/REGISTRY.md` merely to reflect the target portfolio;
+- creating all queued specialist candidates simultaneously;
+- reducing specialist count as an objective that overrides domain depth, evidence quality or authority separation;
+- promoting FECH.AI-specific modules, Supabase-specific implementation, MesaCliente, LeadOps or FECH.AI GPT routing into universal archetypes without sufficient cross-project evidence;
+- merging Backend/Data implementation authority with final independent Security Assurance solely for convenience;
+- creating Frontend Engineering, Software Quality/Test Assurance or Privacy/LGPD archetypes merely for symmetry without repeated project evidence;
+- treating `Growth, Analytics & Monetization` consolidation as canonical before its explicit challenge/behavioral review;
+- treating `Platform, Delivery & Reliability` consolidation as irreversible before behavioral evidence.
+
+## 3. Adoption and retirement boundary
+
+Required future path:
+
+```text
+CURRENT PROJECT SPECIALIST
+→ SES CANDIDATE MAPPING
+→ DELTA / AUTHORITY ANALYSIS
+→ BEHAVIORAL TESTS
+→ EXPLICIT PROJECT ADOPTION
+→ RUNTIME/BUILDER APPLICATION WHEN AUTHORIZED
+→ EQUIVALENCE / RESIDUAL-GAP REVIEW
+→ RETIREMENT DECISION
+```
+
+```text
+TARGET CONSOLIDATION != AUTHORIZED RETIREMENT
+CENTRAL SES EVOLUTION != AUTOMATIC PROJECT MUTATION
+```
+
+## 4. Documentation Auditor historical selection-flow stop loss
 
 Remain blocked unless a new explicit product decision reopens them with different architecture/scope:
 
@@ -33,7 +65,7 @@ Remain blocked unless a new explicit product decision reopens them with differen
 - v0.7 as active Documentation Auditor target;
 - restoring historical selection-first P01–P10 as required runtime gates.
 
-## 3. Documentation Auditor v0.9 enforcement stop loss
+## 5. Documentation Auditor v0.9 enforcement stop loss
 
 Preserve corrected historical state:
 
@@ -54,66 +86,40 @@ OLD V0.9 PROPORTIONAL SMOKE = BLOCKED
 
 Initial R03A/R05 PASS adjudications remain historical `INITIAL_OVERCLAIM` records.
 
-For the v0.9 boundary, block:
+For the v0.9 boundary, block wording-only v0.10 cosmetic repair, favorable-sample reruns, retroactive PASS, invalid readiness promotion, blocked-context substantive release, output beyond validated effective scope and mechanical-enforcement claims from instruction following alone.
 
-- wording-only v0.10 intended to cosmetically repair target-entry/readiness/output defects;
-- rerunning R03A/R05/R06 merely to obtain favorable samples;
-- relabeling later retries as retroactive repair;
-- treating informational Registry lookup as authority for unsolicited alternatives after zero-match;
-- binding a bare list position to prior informational enumeration;
-- treating headings/partial fields/schema validity/model assertion as canonical evidence-supported readiness;
-- `CONTEXT_STATUS: BLOCKED` substantive analysis/release;
-- output beyond validated `EFFECTIVE_SCOPE`;
-- comparative claims beyond common validated comparison-effective scope;
-- mechanical-enforcement claims from instruction following alone.
+## 6. Documentation Auditor Gateway Design v1 remains deferred/not implemented
 
-## 4. Gateway Design v1 does not lift implementation block
+The merged Design v1 and proof matrix remain valid preserved artifacts. D01-D22 are design decisions; G01-G28 remain proof obligations, not executed PASS evidence.
 
-Reviewable design package:
+Block without separate authorization:
 
-- `docs/architecture/DOCUMENTATION_AUDITOR_RUNTIME_ENFORCEMENT_GATEWAY_DESIGN_V1.md`
-- `tests/runtime/DOCUMENTATION_AUDITOR_GATEWAY_PROOF_MATRIX_V1.md`
-- parent `docs/architecture/ADR-001-DOCUMENTATION_AUDITOR_RUNTIME_ENFORCEMENT_GATEWAY.md`
+- Gateway runtime implementation/deployment;
+- live model/API integration presented as implemented Gateway;
+- private Documentation Auditor Builder mutation;
+- mechanical-enforcement claims;
+- universalization of specialist-specific Gateway learning;
+- use of Gateway design to retroactively repair v0.9 failures.
 
-D01–D22 are approved design decisions, not implementation authority.
-
-All G01–G28 proof cases remain:
-
-```text
-DESIGN_ONLY / NOT_EXECUTED / NO_PASS_GRANTED
-```
-
-Do not infer `MECHANICALLY_ENFORCED_INVARIANT` from design completeness.
-
-## 5. Full runtime-certification authority blocker
-
-Independently of Gateway design, full aggregate Documentation Auditor runtime certification remains:
-
-```text
-BLOCKED / AUTHORITY_CHALLENGE_OVERLAY_PROCEDURE_NOT_VERSIONED_FOR_DOCUMENTATION_AUDITOR
-```
-
-Do not improvise or attach an ad hoc write-capable overlay. Lifting this blocker requires a separate explicit authorization for a versioned disposable-scope challenge procedure and then execution under the applicable suite.
-
-## 6. Work allowed by current state
+## 7. Active work allowed by current state
 
 Read-only/design work may:
 
-- resolve live refs and inspect canonical SES/project evidence;
-- review Gateway Design v1 and Proof Matrix v1;
-- define a Minimal Implementation Architecture as design only;
-- define interfaces, state/persistence requirements, candidate package boundaries, test harness topology, rollback/coexistence, implementation fingerprint and PR plan;
-- compare implementation substrates without building/deploying them;
-- identify proof gaps and request explicit product decisions.
+- resolve live SES/project refs and canonical evidence;
+- design `UX/UI APP Specialist Candidate v0.1`;
+- compare reference implementations and behavioral baselines;
+- define candidate competencies, proof obligations, boundaries and behavioral tests;
+- document queued specialist requirements/challenges without activating them;
+- preserve Gateway design evidence while it is deferred.
 
-READ_ONLY/design capability does not authorize subsequent implementation or mutation.
+Design capability does not authorize registry activation, Builder creation/configuration, project adoption, runtime publication or legacy retirement.
 
-## 7. Consumer-project boundary
+## 8. Consumer-project boundary
 
-No Gateway design decision grants FECH.AI, Blogs/SEO or other consumer-project mutation authority. Project truth/authority remains project-owned.
+No SES portfolio decision grants FECH.AI, Blogs/SEO or another consumer-project mutation authority. Project truth, local specialist rules and adoption decisions remain project-owned.
 
-## 8. Conflict and anti-loop rules
+## 9. Conflict and anti-loop rules
 
-If `docs/NEXT_SAFE_ACTION.md` conflicts materially with bootstrap, handoff, project status, live authority, Builder profile, runtime runbook, evidence/readjudication, parent ADR or Design v1: stop and reconcile the exact conflict.
+If `docs/NEXT_SAFE_ACTION.md` conflicts materially with bootstrap, handoff, project status, live authority, archetype registry or newer evidence: stop and reconcile the exact conflict.
 
 Do not create re-audit loops absent a material invalidation event. Revalidate only evidence/dependencies affected by material change.
