@@ -1,12 +1,9 @@
 # SES — Project Status
 
-**Status:** `DOCUMENTATION_AUDITOR_RUNTIME_ENFORCEMENT_GATEWAY_DESIGN_V1 / REVIEW_CHECKPOINT`
+**Status:** `SPECIALIST_PORTFOLIO_EXPANSION / UX_UI_CANDIDATE_NEXT`
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System`
 **Canonical branch:** `main` resolved live before material work
 **Authoritative next action:** `docs/NEXT_SAFE_ACTION.md`
-**Gateway design:** `docs/architecture/DOCUMENTATION_AUDITOR_RUNTIME_ENFORCEMENT_GATEWAY_DESIGN_V1.md`
-**Gateway proof matrix:** `tests/runtime/DOCUMENTATION_AUDITOR_GATEWAY_PROOF_MATRIX_V1.md`
-**Parent ADR:** `docs/architecture/ADR-001-DOCUMENTATION_AUDITOR_RUNTIME_ENFORCEMENT_GATEWAY.md`
 
 ## 1. Project boundary
 
@@ -14,127 +11,120 @@ SES remains project-agnostic specialist-engineering infrastructure. Consumer pro
 
 ```text
 SES CENTRAL EVOLUTION != AUTOMATIC CONSUMER-PROJECT MUTATION
-SFJM = CONTINUITY INFRASTRUCTURE, NOT PRODUCT/RUNTIME AUTHORITY
+SFJM/CONTINUITY = MATERIAL RECORDED STATE, NOT LIVE SOURCE AUTHORITY
 ```
 
-Gateway learning remains `SPECIALIST_SPECIFIC / CANDIDATE_LEARNING` for Documentation Auditor unless independent cross-domain evidence later supports generalization.
+## 2. Current material objective
 
-## 2. Preserved runtime history
+Product Authority has directed continuation/consolidation of the reusable SES specialist portfolio and requires the resulting state to survive cross-conversation/cross-model continuation through canonical SES continuity.
 
-Documentation Auditor v0.9 Builder was applied/fingerprinted before Gate 0. Corrected current adjudication remains:
+Current sole active specialist-design target:
 
 ```text
-R01 PASS
-R02 PASS
-R03A FAIL / project-specific substantive output before receipt
-R03B PASS
-R04 PASS
-R05 FAIL / unsolicited project enumeration after zero-match
-R06 FAIL / early comparison + invalid/incomplete readiness artifact
-
-PROJECT_TARGET_REGRESSION = 4/7
-PROJECT_TARGET_REGRESSION_PASS = NOT_ESTABLISHED
-V0.9 PROPORTIONAL SMOKE = BLOCKED_BY_GATE0_FAIL
-RUNTIME_ENFORCEMENT_GAP = ESTABLISHED
-PROMPT_LEVEL_FIX_STOP_LOSS = TRIGGERED
+SES — UX/UI APP Specialist Candidate v0.1
 ```
 
-Historical initial R03A/R05 PASS adjudications remain preserved as `INITIAL_OVERCLAIM`; no retroactive PASS.
+The previously completed Documentation Auditor Runtime Enforcement Gateway Design v1 is preserved and deferred. It is not cancelled or implemented.
 
-SaaS Architect historical v0.1 runtime PASS remains bound only to its exact historical fingerprint. Its current proportional Builder-fit smoke remains deferred.
+## 3. Existing SES archetypes and proof history
 
-## 3. Stop-loss state
+Current registry state before any future portfolio mutation remains limited to the existing reusable archetypes resolved from `archetypes/REGISTRY.md`.
 
-Remain blocked:
+Preserve:
 
-- wording-only Documentation Auditor v0.10 for these runtime-enforcement failures;
-- reruns of R03A/R05/R06 merely to seek a favorable aggregate;
-- old v0.9 proportional smoke;
-- retired mandatory numbered project menu / numeric selection / cross-turn selection state machine;
-- Builder/consumer mutation from SES runtime failure;
-- mechanical-enforcement claims from prompt/schema/behavioral success alone.
+- Documentation Auditor current specification/runtime limitations and historical failures;
+- SaaS Architect historical v0.1 runtime PASS bound only to its exact historical fingerprint;
+- no transfer of historical runtime proof through future rename/evolution.
 
-## 4. Gateway Design v1 checkpoint
+Product direction identifies `SES — SaaS Architect` as too narrow for the intended reusable role. Preferred working direction is `SES — Software Systems Architect`, but no canonical rename/version has been executed.
 
-The specialist-specific Gateway design is now substantially defined and reviewable. Approved D01–D22 establish:
+## 4. Target specialist portfolio direction
+
+Current target direction, pending per-specialist requirements/design/tests, is approximately:
 
 ```text
-EXTERNAL SES CONTROLLER OWNS TRANSITIONS + RELEASE
-MODEL OUTPUT = CANDIDATE, NOT AUTHORITY
-TRUSTED EVIDENCE = CONTROLLER-RESOLVED/ATTESTED
-READINESS = STRUCTURED TYPED UNION
-READY / LIMITED / BLOCKED = DISTINCT STATUS GATES
-TASK_SCOPE = IMMUTABLE TASKSCOPEGRAPH / SCOPEUNITS
-EFFECTIVE_SCOPE = BOUNDED SUBSET, NO SILENT EXPANSION
-MULTI-PROJECT = INDEPENDENT READINESS + DERIVED COMPARISON SCOPE
-GENERATOR != SEMANTIC EVALUATOR
-INVALID SUBSTANTIVE CLAIM => WHOLE CANDIDATE REJECTED
-DETERMINISTIC FAILURE CANNOT BE WAIVED SEMANTICALLY
-TRACE = APPEND-ONLY
-RENDERER = DETERMINISTIC/TIGHTLY CONSTRAINED
-VALIDATE/AUTHORIZE/RENDER = DIGEST BOUND
-LOW-LEVEL CONTROLLER-OWNED MODEL INTERFACE PREFERRED
-AGENT FRAMEWORKS = SUBORDINATE ONLY
-DURABLE STATE/TRACE = SES-OWNED
-DEPLOYMENT TOPOLOGY = UNDECIDED
+REUSABLE SES
+1. Software Systems Architect — proposed evolution/name direction.
+2. Documentation Auditor — existing.
+3. UX/UI APP Specialist — ACTIVE DESIGN TARGET.
+4. Backend & Data Platform — candidate.
+5. Application Security Assurance — strong candidate.
+6. Platform, Delivery & Reliability — candidate consolidation; reversible.
+7. Integration & Automation — candidate.
+8. SEO & Organic Growth — candidate consolidation.
+9. Growth, Analytics & Monetization — candidate; CHALLENGE_REQUIRED.
+
+PROJECT-LOCAL / NOT UNIVERSALIZED
+- FECH.AI LeadOps / CRM / Discador.
+- FECH.AI MesaCliente / Tabelas / Propostas.
 ```
 
-## 5. Target runtime flow
+This target reduces duplicated project-specific specialist identities while preserving distinct authority where required. Specialist-count reduction is not itself an acceptance criterion.
+
+## 5. Current candidate learnings not yet archetypes
+
+Keep as `CANDIDATE LEARNING / NOT YET JUSTIFIED` until repeated independent evidence exists:
+
+- Frontend Application Engineering;
+- Software Quality & Test Assurance;
+- Privacy/LGPD specialist;
+- generic CRM/Sales Operations;
+- generic financial/proposal specialist.
+
+Do not create archetypes merely for organizational symmetry.
+
+## 6. Security/backend boundary
+
+FECH.AI GPT3 v2.0 is a strong Reference Implementation but combines multiple concerns and is not a 1:1 SES archetype.
+
+Target split:
 
 ```text
-USER TASK
-→ TARGET CLASSIFICATION / ENTRY VALIDATION
-→ PROJECT RESOLUTION WHEN APPLICABLE
-→ TRUSTED EVIDENCE + PROVENANCE
-→ STRUCTURED READINESS
-→ STRUCTURAL/POLICY/EVIDENCE VALIDATION
-→ STATUS-AWARE EFFECTIVE SCOPE
-→ SUBSTANTIVE GENERATION WHEN ALLOWED
-→ INDEPENDENT SEMANTIC EVALUATION
-→ OUTPUT/EVIDENCE/PROJECT/DIGEST VALIDATION
-→ RELEASE GATE
-→ DETERMINISTIC RENDERING
-→ USER
+Backend & Data Platform
+= secure server/data implementation owner
+
+Application Security Assurance
+= independent security/adversarial verification owner
 ```
 
-There is no target direct `Model → User` substantive path.
+Candidate learning: `IMPLEMENTATION RESPONSIBILITY != ASSURANCE AUTHORITY`.
 
-## 6. Proof matrix state
+Security requirements remain distributed across technical specialists. Independent AppSec assurance challenges and verifies material security controls; it does not become implementation owner of every layer or product authority.
 
-`tests/runtime/DOCUMENTATION_AUDITOR_GATEWAY_PROOF_MATRIX_V1.md` defines G01–G28 adversarial challenges. They cover target-entry bypass, list-position binding, zero-match enumeration, fuzzy resolution, invalid transitions, malformed/unsupported readiness, fake evidence, ref semantics, LIMITED/BLOCKED behavior, stale state, cross-project contamination, comparison scope, whole-bundle rejection, self-authorization, validator precedence, renderer/digest bypass and historical-failure preservation.
+## 7. UX/UI evidence state
 
-Current status:
+The UX/UI candidate has sufficient requirements evidence to enter Candidate design, based on:
+
+- FECH.AI GPT2/reference implementation;
+- GPT2-generated UX/Product analysis;
+- generic/random-conversation UX/Product analysis as behavioral baseline/disconfirmation evidence.
+
+Candidate methods include Product Experience Coverage Sweep, Product Opportunity Sweep, E0-E5 UX Evidence Ladder, claim-to-proof obligations, boundary/handoff discipline and behavioral validation.
+
+Key observed reference gaps to prevent: coverage completeness, product-opportunity discovery and prompt-sensitive depth.
+
+## 8. Consolidation/adoption boundary
+
+No current FECH.AI or SEO specialist is retired by this target state.
+
+Required future migration path:
 
 ```text
-G01-G28 = DESIGN_ONLY / NOT_EXECUTED / NO_PASS_GRANTED
-MECHANICAL_ENFORCEMENT = NOT_ESTABLISHED
-RUNTIME_BEHAVIORAL_PROOF_FOR_GATEWAY = NOT_ESTABLISHED
+MAP CURRENT SPECIALIST
+→ DESIGN/TEST SES CANDIDATE
+→ DELTA + AUTHORITY REVIEW
+→ EXPLICIT PROJECT ADOPTION
+→ APPLY RUNTIME/BUILDER ONLY WHEN AUTHORIZED
+→ EQUIVALENCE / RESIDUAL-GAP REVIEW
+→ RETIREMENT DECISION
 ```
 
-## 7. Implementation status
+`TARGET CONSOLIDATION != AUTHORIZED RETIREMENT`.
 
-```text
-GATEWAY_IMPLEMENTATION = NOT_STARTED
-IMPLEMENTATION_AUTHORIZATION = NOT_PRESENT
-BUILDER_MUTATION = NONE
-CONSUMER_PROJECT_MUTATION = NONE
-DEPLOYMENT = NONE
-```
+## 9. Documentation Auditor Gateway preserved state
 
-The current preferred logical substrate is an external SES-controlled controller with explicit state machine, low-level model API interface, controller-side resolvers/evidence, deterministic validators/release gate, durable SES-owned state/trace and deterministic renderer. Framework/vendor/deployment choices are not yet authorized product decisions.
+Preserve the already merged Gateway Design v1, D01-D22, G01-G28 and the corrected historical v0.9 Gate 0 record. Gateway implementation/deployment remains unauthorized and no historical failure is rewritten by the portfolio objective change.
 
-## 8. Full certification blocker
+## 10. Continuity
 
-Full aggregate Documentation Auditor runtime certification remains independently:
-
-```text
-BLOCKED / AUTHORITY_CHALLENGE_OVERLAY_PROCEDURE_NOT_VERSIONED_FOR_DOCUMENTATION_AUDITOR
-```
-
-Do not improvise an ad hoc write-capable challenge overlay. Gateway design or future Gateway proof does not substitute for that separate obligation.
-
-## 9. Continuity
-
-`handoffs/CURRENT.md` preserves the cross-model resume state. `docs/NEXT_SAFE_ACTION.md` is the sole authoritative semantic next action.
-
-After this design checkpoint is merged, the next phase is a **Minimal Implementation Architecture review and explicit implementation-authorization decision**, not implementation by default.
+`handoffs/CURRENT.md` contains the cross-model resume state. `docs/NEXT_SAFE_ACTION.md` is the sole authoritative semantic next action. `docs/BLOCKED_ACTIONS.md` defines current stop-loss and non-authorizations.
