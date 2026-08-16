@@ -1,8 +1,8 @@
 # SES — Project Status
 
-**Status:** `SPECIALIST_PORTFOLIO_EXPANSION / UX_UI_CANDIDATE_NEXT`
-**Canonical source:** `wagnerjfjunior/Specialist-Engineering-System`
-**Canonical branch:** `main` resolved live before material work
+**Status:** `SPECIALIST_PORTFOLIO_EXPANSION / UX_UI_L1_PASS / L2_PREPARATION_NEXT`  
+**Canonical source:** `wagnerjfjunior/Specialist-Engineering-System`  
+**Canonical branch:** `main` resolved live before material work  
 **Authoritative next action:** `docs/NEXT_SAFE_ACTION.md`
 
 ## 1. Project boundary
@@ -16,19 +16,60 @@ SFJM/CONTINUITY = MATERIAL RECORDED STATE, NOT LIVE SOURCE AUTHORITY
 
 ## 2. Current material objective
 
-Product Authority has directed continuation/consolidation of the reusable SES specialist portfolio and requires the resulting state to survive cross-conversation/cross-model continuation through canonical SES continuity.
+Product Authority directed continuation/consolidation of the reusable SES specialist portfolio.
 
-Current sole active specialist-design target:
+The first active portfolio-expansion target, `SES — UX/UI APP Specialist Candidate v0.1`, has completed Candidate design and L1 behavioral validation.
 
 ```text
-SES — UX/UI APP Specialist Candidate v0.1
+UX/UI APP SPECIALIST CANDIDATE V0.1
+L0 HARNESS SANITY = PASS
+L1 BEHAVIORAL VALIDATION = PASS
+P01–P20 = 20/20 PASS
+L2 RUNTIME PROOF = NOT EXECUTED
+REGISTRY ACTIVE = NO
 ```
 
-The previously completed Documentation Auditor Runtime Enforcement Gateway Design v1 is preserved and deferred. It is not cancelled or implemented.
+Canonical artifacts:
 
-## 3. Existing SES archetypes and proof history
+- `docs/specialists/UX_UI_APP_SPECIALIST_CANDIDATE_V0_1.md`
+- `tests/behavioral/UX_UI_APP_SPECIALIST_BEHAVIORAL_SUITE_V0_1.md`
+- `tests/behavioral/UX_UI_APP_SPECIALIST_L1_VALIDATION_V0_1.md`
 
-Current registry state before any future portfolio mutation remains limited to the existing reusable archetypes resolved from `archetypes/REGISTRY.md`.
+The previously completed Documentation Auditor Runtime Enforcement Gateway Design v1 remains preserved/deferred/not implemented.
+
+## 3. UX/UI L1 proof state
+
+All proof obligations P01–P20 passed at L1.
+
+Preserve the exact scope of proof:
+
+```text
+CANDIDATE_BEHAVIORAL_VALIDATION_L1 = PASS
+```
+
+Do not promote this to:
+
+```text
+BUILDER RUNTIME PASS
+L2 PASS
+PRODUCTION CERTIFICATION
+UNIVERSAL VALIDATION
+```
+
+Provenance limitations remain material:
+
+```text
+EXECUTION_CONTEXT_ISOLATION = USER_REPORTED
+RAW_OUTPUT_UNMODIFIED = USER_REPORTED
+P20_BLIND_ADJUDICATION = NOT EXECUTED
+P20_NON_BLIND_ADJUDICATION = PASS
+```
+
+These limitations are historical and cannot be erased by later stronger evidence.
+
+## 4. Existing SES archetypes and proof history
+
+Current registry state remains limited to the existing reusable archetypes in `archetypes/REGISTRY.md`. UX/UI APP Specialist is not yet active there.
 
 Preserve:
 
@@ -36,17 +77,17 @@ Preserve:
 - SaaS Architect historical v0.1 runtime PASS bound only to its exact historical fingerprint;
 - no transfer of historical runtime proof through future rename/evolution.
 
-Product direction identifies `SES — SaaS Architect` as too narrow for the intended reusable role. Preferred working direction is `SES — Software Systems Architect`, but no canonical rename/version has been executed.
+Preferred future naming direction remains `SES — Software Systems Architect`, but no canonical rename/version has been executed.
 
-## 4. Target specialist portfolio direction
+## 5. Target specialist portfolio direction
 
-Current target direction, pending per-specialist requirements/design/tests, is approximately:
+Current target direction remains approximately:
 
 ```text
 REUSABLE SES
 1. Software Systems Architect — proposed evolution/name direction.
 2. Documentation Auditor — existing.
-3. UX/UI APP Specialist — ACTIVE DESIGN TARGET.
+3. UX/UI APP Specialist — L1 PASS; L2 PREPARATION NEXT.
 4. Backend & Data Platform — candidate.
 5. Application Security Assurance — strong candidate.
 6. Platform, Delivery & Reliability — candidate consolidation; reversible.
@@ -59,9 +100,9 @@ PROJECT-LOCAL / NOT UNIVERSALIZED
 - FECH.AI MesaCliente / Tabelas / Propostas.
 ```
 
-This target reduces duplicated project-specific specialist identities while preserving distinct authority where required. Specialist-count reduction is not itself an acceptance criterion.
+Specialist-count reduction is not itself an acceptance criterion.
 
-## 5. Current candidate learnings not yet archetypes
+## 6. Candidate learnings not yet archetypes
 
 Keep as `CANDIDATE LEARNING / NOT YET JUSTIFIED` until repeated independent evidence exists:
 
@@ -71,13 +112,13 @@ Keep as `CANDIDATE LEARNING / NOT YET JUSTIFIED` until repeated independent evid
 - generic CRM/Sales Operations;
 - generic financial/proposal specialist.
 
-Do not create archetypes merely for organizational symmetry.
+Do not create archetypes for symmetry.
 
-## 6. Security/backend boundary
+## 7. Security/backend boundary
 
-FECH.AI GPT3 v2.0 is a strong Reference Implementation but combines multiple concerns and is not a 1:1 SES archetype.
+FECH.AI GPT3 v2.0 remains a Reference Implementation rather than a 1:1 SES archetype.
 
-Target split:
+Target split remains:
 
 ```text
 Backend & Data Platform
@@ -87,21 +128,11 @@ Application Security Assurance
 = independent security/adversarial verification owner
 ```
 
-Candidate learning: `IMPLEMENTATION RESPONSIBILITY != ASSURANCE AUTHORITY`.
+Candidate learning remains:
 
-Security requirements remain distributed across technical specialists. Independent AppSec assurance challenges and verifies material security controls; it does not become implementation owner of every layer or product authority.
-
-## 7. UX/UI evidence state
-
-The UX/UI candidate has sufficient requirements evidence to enter Candidate design, based on:
-
-- FECH.AI GPT2/reference implementation;
-- GPT2-generated UX/Product analysis;
-- generic/random-conversation UX/Product analysis as behavioral baseline/disconfirmation evidence.
-
-Candidate methods include Product Experience Coverage Sweep, Product Opportunity Sweep, E0-E5 UX Evidence Ladder, claim-to-proof obligations, boundary/handoff discipline and behavioral validation.
-
-Key observed reference gaps to prevent: coverage completeness, product-opportunity discovery and prompt-sensitive depth.
+```text
+IMPLEMENTATION RESPONSIBILITY != ASSURANCE AUTHORITY
+```
 
 ## 8. Consolidation/adoption boundary
 
@@ -119,11 +150,15 @@ MAP CURRENT SPECIALIST
 → RETIREMENT DECISION
 ```
 
-`TARGET CONSOLIDATION != AUTHORIZED RETIREMENT`.
+```text
+TARGET CONSOLIDATION != AUTHORIZED RETIREMENT
+```
 
-## 9. Documentation Auditor Gateway preserved state
+## 9. Next proof level
 
-Preserve the already merged Gateway Design v1, D01-D22, G01-G28 and the corrected historical v0.9 Gate 0 record. Gateway implementation/deployment remains unauthorized and no historical failure is rewritten by the portfolio objective change.
+The sole semantic next action is maintained in `docs/NEXT_SAFE_ACTION.md`.
+
+Current direction: prepare a versioned L2 runtime candidate package for UX/UI APP Specialist v0.1. External Builder application or publication remains separately authorized work and is not implied by L1 PASS.
 
 ## 10. Continuity
 
