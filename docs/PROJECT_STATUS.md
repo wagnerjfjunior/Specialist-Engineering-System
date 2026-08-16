@@ -1,6 +1,6 @@
 # SES — Project Status
 
-**Status:** `SPECIALIST_PORTFOLIO_EXPANSION / UX_UI_CANONICAL_L1_PASS / BUILDER_PACKAGE_READY / L2_NEXT`  
+**Status:** `SPECIALIST_PORTFOLIO_EXPANSION / UX_UI_READY / L2_RUNTIME_PASS / NEXT_APPSEC_DISCOVERY`  
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System`  
 **Canonical branch:** `main` resolved live before material work  
 **Authoritative next action:** `docs/NEXT_SAFE_ACTION.md`
@@ -13,9 +13,9 @@ SES remains project-agnostic specialist-engineering infrastructure. Consumer pro
 SES CENTRAL EVOLUTION != AUTOMATIC CONSUMER-PROJECT MUTATION
 ```
 
-## 2. UX/UI APP Specialist current state
+## 2. UX/UI APP Specialist proof state
 
-Canonical behavioral state:
+Preserve all evidence events distinctly:
 
 ```text
 L0 HARNESS SANITY = PASS
@@ -24,16 +24,21 @@ CANONICAL L1-C = PASS
 P01–P20 = PASS
 CANDIDATE_BEHAVIORAL_VALIDATION_L1 = PASS
 FULL_L1_BEHAVIORAL_SUITE = PASS
+L2_RUNTIME_FINGERPRINT_VALIDATION = PASS / FINGERPRINT_BOUND
+SPECIALIST_READINESS = READY / USER_AUTHORIZED
 STOP_LOSS_TRIGGERED = NO
 INITIAL_OVERCLAIM = NONE OBSERVED
 RETROACTIVE_PASS = NONE
 ```
 
-Historical packeted limitations remain historical and are not retroactively repaired by L1-C.
+Historical packeted limitations remain historical and are not retroactively repaired by L1-C or L2.
 
-## 3. Builder/runtime package
+Canonical L2 evidence:
+- `tests/runtime/evidence/UX_UI_APP_SPECIALIST_L2_RUNTIME_PROOF_2026-08-16.md`
 
-Versioned runtime-candidate artifacts:
+## 3. Builder/runtime state
+
+Tested runtime configuration sources remain immutable evidence inputs:
 - `runtime/custom-gpt/UX_UI_APP_SPECIALIST_BUILDER_PACKAGE_V0_1.md`
 - `runtime/custom-gpt/UX_UI_APP_SPECIALIST_BUILDER_KERNEL_V0_1.md`
 - `tests/runtime/UX_UI_APP_SPECIALIST_L2_RUNTIME_PROFILE_V0_1.md`
@@ -42,32 +47,56 @@ Versioned runtime-candidate artifacts:
 Current state:
 
 ```text
-BUILDER PACKAGE = VERSIONED CANDIDATE
-BUILDER KERNEL = VERSIONED CANDIDATE
-BUILDER APPLIED = NO
-L2 RUNTIME PROOF = NOT EXECUTED
-L2 RUNTIME PASS = NOT ESTABLISHED
+BUILDER APPLIED = YES / PRIVATE
+BUILDER KERNEL BLOB = 8e988dceca962f608141cbef663fd4baea4cf86f
+GITHUB ACTION = ENABLED / READ_ONLY / RUNTIME VERIFIED
+GITHUB ACTION SCHEMA BLOB = 1e6237e806fd84716ec13b019e6617ad4110a211
+VERCEL = DISABLED / NOT CONFIGURED
+SUPABASE = DISABLED / NOT CONFIGURED
+KNOWLEDGE = EMPTY
+L2 RUNTIME PASS = ESTABLISHED FOR EXACT FINGERPRINT
 REGISTRY ACTIVE = NO
+PUBLISHED = NO
+CONSUMER ADOPTION = NO
 ```
 
-Target v0.1 integration surface:
+`READY` is a readiness state, not registry activation or publication authority.
+
+## 4. L2 provenance boundary
+
+The runtime proof records:
+- exact canonical Builder/kernel/profile/runbook/action refs and hashes;
+- deterministic normalized kernel blob match;
+- seven runtime responses: R01, R02, R03A, R03B, R04, R05, R06;
+- fresh individual conversations supported by user-supplied screenshot evidence;
+- unchanged Builder configuration between runs explicitly confirmed by the user;
+- R06 actual GitHub READ_ONLY Action execution against exact `main` ref;
+- raw submitted execution/screenshot/instruction-copy artifact hashes.
+
+Preserve limitations exactly as recorded in the evidence artifact. Do not later relabel user-confirmed or screenshot-supported facts as hidden product telemetry.
+
+## 5. Invalidation discipline
+
+The L2 PASS is fingerprint-bound.
+
+Material change to any relevant item may invalidate only affected claims:
+- Builder Instructions/kernel;
+- model/runtime settings;
+- Knowledge;
+- capabilities;
+- GitHub Action schema/auth/scope;
+- integration set;
+- relevant Builder/system behavior;
+- fixture semantics or contradictory evidence.
 
 ```text
-GITHUB = TARGET_ENABLED / READ_ONLY / NOT_APPLIED
-VERCEL = OPTIONAL_DISABLED / NOT_CONFIGURED
-SUPABASE = OPTIONAL_DISABLED / NOT_CONFIGURED
-KNOWLEDGE = EMPTY
+MATERIAL CHANGE → PROPORTIONAL REVALIDATION
+NO MATERIAL CHANGE → NO REAUDIT LOOP
 ```
 
-The dedicated Builder kernel is a new runtime fingerprint derived from L1-C semantics. Its creation does not transfer L1 proof into L2.
+Do not repeat L1 or L2 merely for additional confidence.
 
-## 4. Next proof event
-
-The next material action is external Builder application of the versioned package, exact fingerprint capture/freeze, then R01–R06 runtime execution and L2-01..L2-12 adjudication.
-
-Builder mutation/publication remains separately authorized.
-
-## 5. Existing archetypes and historical proof
+## 6. Existing archetypes and historical proof
 
 Current registry remains unchanged. Preserve:
 - SaaS Architect historical v0.1 runtime PASS bound to exact historical fingerprint;
@@ -76,24 +105,24 @@ Current registry remains unchanged. Preserve:
 
 Preferred future naming direction remains `SES — Software Systems Architect`; rename not executed.
 
-## 6. Portfolio direction
+## 7. Portfolio direction
 
 ```text
 REUSABLE SES DIRECTION
 1. Software Systems Architect — proposed evolution/name direction.
 2. Documentation Auditor — existing.
-3. UX/UI APP Specialist — canonical L1 PASS; Builder package ready; L2 runtime validation next.
-4. Backend & Data Platform — candidate.
-5. Application Security Assurance — strong candidate.
+3. UX/UI APP Specialist — READY; canonical L1 + fingerprint-bound L2 PASS; not registered/published/adopted.
+4. Application Security Assurance — next requirements/challenge target.
+5. Backend & Data Platform — candidate.
 6. Platform, Delivery & Reliability — candidate consolidation; reversible.
-7. Integration & Automation — candidate.
-8. SEO & Organic Growth — candidate consolidation.
-9. Growth, Analytics & Monetization — candidate; CHALLENGE_REQUIRED.
+7. SEO & Organic Growth — candidate consolidation.
+8. Growth, Analytics & Monetization — candidate; CHALLENGE_REQUIRED.
+9. Integration & Automation — candidate if still justified.
 ```
 
 Project-local FECH.AI LeadOps/CRM/Discador and MesaCliente/Tabelas/Propostas remain project-local.
 
-## 7. Security/backend boundary
+## 8. Security/backend boundary
 
 ```text
 Backend & Data Platform = secure server/data implementation owner
@@ -102,21 +131,20 @@ Application Security Assurance = independent adversarial/security verification o
 
 Candidate learning: `IMPLEMENTATION RESPONSIBILITY != ASSURANCE AUTHORITY`.
 
-## 8. Adoption/retirement boundary
+## 9. Adoption/retirement boundary
 
-No project specialist is retired or automatically replaced.
+No project specialist is retired or automatically replaced by UX/UI READY status.
 
 ```text
-CURRENT PROJECT SPECIALIST
-→ SES CANDIDATE MAPPING
-→ DELTA / AUTHORITY ANALYSIS
-→ BEHAVIORAL TESTS
-→ EXPLICIT PROJECT ADOPTION
-→ RUNTIME/BUILDER APPLICATION WHEN AUTHORIZED
-→ EQUIVALENCE / RESIDUAL-GAP REVIEW
-→ RETIREMENT DECISION
+READY SPECIALIST
+!= REGISTRY ACTIVE
+!= PUBLISHED
+!= CONSUMER ADOPTED
+!= LEGACY RETIRED
 ```
 
-## 9. Preserved Documentation Auditor state
+Any consumer adoption remains a separately authorized project-local event.
 
-Documentation Auditor Gateway Design v1 remains preserved/deferred/not implemented. UX/UI work does not repair or alter its historical failures or runtime-certification blockers.
+## 10. Preserved Documentation Auditor state
+
+Documentation Auditor Gateway Design v1 remains preserved/deferred/not implemented. UX/UI READY/L2 PASS does not repair or alter its historical failures or runtime-certification blockers.
