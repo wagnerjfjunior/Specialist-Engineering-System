@@ -6,6 +6,9 @@
 **Kernel blob SHA:** `7f31b2ec39633e3aecaaa4b7ed69346a861bd332`  
 **Runbook:** `tests/behavioral/UX_UI_APP_SPECIALIST_L1C_RUNBOOK_V0_1.md`  
 **Base main:** `b3a706a246c29f8b37cb99a4c9b366ec7a452e23`  
+**Submitted raw evidence filename:** `Testes.txt`  
+**Submitted raw evidence size:** `236374 bytes`  
+**Submitted raw evidence SHA-256:** `e7043a328d5a2642dec26206819ed9025cebc548f6a8cd8269edd4c52ed7d6d7`  
 **Status:** `PASS`
 
 ## 1. Scope of claim
@@ -164,7 +167,9 @@ FALSE VALIDATION CLAIM = NO
 
 ## 8. Provenance limitations
 
-The supplied evidence file preserves full inputs and first responses. The following remain user-reported or unavailable rather than independently runtime-verified:
+The submitted raw evidence attachment is bound to this record by filename, byte size and SHA-256 above. The repository records the adjudication and binding metadata; the original conversation attachment itself is not automatically a repository object.
+
+The following remain user-reported or unavailable rather than independently runtime-verified:
 
 ```text
 FRESH_CONTEXT = USER_REPORTED
