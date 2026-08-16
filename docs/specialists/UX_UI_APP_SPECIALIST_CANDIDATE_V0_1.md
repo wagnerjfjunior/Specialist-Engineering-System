@@ -1,7 +1,7 @@
 # SES — UX/UI APP Specialist Candidate v0.1
 
 **Candidate ID:** `ux-ui-app-specialist-v0.1`  
-**Lifecycle:** `READY / CANONICAL_L1_PASS / L2_RUNTIME_PASS_FINGERPRINT_BOUND / NOT_REGISTERED / BUILDER_APPLIED_PRIVATE`  
+**Lifecycle:** `READY / CANONICAL_L1_PASS / L2_RUNTIME_PASS_FINGERPRINT_BOUND / ARCHETYPE_ACTIVE / BUILDER_APPLIED_PRIVATE`  
 **Scope:** reusable SES specialist candidate for product experience, UX/UI and UX evidence work across web/SaaS/internal/mobile-responsive products.
 
 ## 1. Identity and mission
@@ -43,7 +43,7 @@ It does not automatically own final authority for:
 - compliance/legal/privacy authorization;
 - release/production decisions;
 - project-local business rules;
-- publication, registry activation or external Builder configuration.
+- publication, consumer adoption or external Builder configuration changes.
 
 ```text
 UX RECOMMENDATION != FINAL PRODUCT AUTHORITY
@@ -263,9 +263,9 @@ The candidate must resist at least:
 - F15 Priority Overreach
 - F16 Research Overclaim
 
-## 17. Validation status
+## 17. Validation and registry status
 
-Behavioral/runtime evidence is recorded in:
+Behavioral/runtime/registry evidence is recorded in:
 - `tests/behavioral/UX_UI_APP_SPECIALIST_BEHAVIORAL_SUITE_V0_1.md`
 - `tests/behavioral/UX_UI_APP_SPECIALIST_L1_VALIDATION_V0_1.md`
 - `tests/behavioral/UX_UI_APP_SPECIALIST_L1_PACKET_FIDELITY_NOTE_V0_1.md`
@@ -273,6 +273,7 @@ Behavioral/runtime evidence is recorded in:
 - `tests/behavioral/UX_UI_APP_SPECIALIST_L1C_RUNBOOK_V0_1.md`
 - `tests/behavioral/UX_UI_APP_SPECIALIST_L1C_VALIDATION_V0_1.md`
 - `tests/runtime/evidence/UX_UI_APP_SPECIALIST_L2_RUNTIME_PROOF_2026-08-16.md`
+- `tests/behavioral/UX_UI_APP_SPECIALIST_ARCHETYPE_RESOLUTION_V0_1.md`
 
 Current proof boundary:
 
@@ -286,11 +287,15 @@ FULL_L1_BEHAVIORAL_SUITE = PASS
 L2 RUNTIME / BUILDER FINGERPRINT VALIDATION = PASS / FINGERPRINT_BOUND
 BUILDER APPLIED = YES / PRIVATE
 SPECIALIST_READINESS = READY / USER_AUTHORIZED
-REGISTRY ACTIVATION = NOT AUTHORIZED / NOT ACTIVE
-CONSUMER ADOPTION = NOT AUTHORIZED
+ARCHETYPE_ID = ux-ui-app-specialist
+ARCHETYPE_RESOLUTION_STATUS = ACTIVE
+AVAILABLE_FOR_PROJECT_RESOLUTION = YES
+CONSUMER ADOPTION = NOT AUTOMATIC / SEPARATE PROJECT-LOCAL DECISION
 PUBLICATION = NOT AUTHORIZED
 ```
 
 The canonical L1-C PASS is a distinct evidence event and does not rewrite the historical packeted run. The L2 PASS is bound to the exact Builder/runtime fingerprint recorded in the runtime proof artifact and does not transfer automatically to future model/kernel/action/configuration changes.
 
-Re-run only affected proof after a material invalidation event. READY does not authorize registry activation, publication, consumer-project adoption, production certification for every project or risk acceptance.
+Registry activation makes the reusable archetype deterministically resolvable by SES. It does not establish project context, does not automatically adopt the specialist into a consumer project and does not authorize mutation.
+
+Re-run only affected proof after a material invalidation event.

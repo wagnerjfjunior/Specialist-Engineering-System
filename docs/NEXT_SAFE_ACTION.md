@@ -4,45 +4,51 @@
 
 **Next action ID:** `interview-application-security-assurance-specialist-requirements`  
 **Primary target:** `SES — Application Security Assurance specialist target`  
-**Current phase:** `SPECIALIST_PORTFOLIO_EXPANSION / UX_UI_READY / L2_RUNTIME_PASS / NEXT_APPSEC_DISCOVERY`  
+**Current phase:** `SPECIALIST_PORTFOLIO_EXPANSION / UX_UI_ARCHETYPE_ACTIVE / NEXT_APPSEC_DISCOVERY`  
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System` / `main` resolved live
 
 ## 1. Material state reached
 
-The UX/UI APP Specialist has completed the current behavioral/runtime proof sequence:
+The UX/UI APP Specialist is now intended to be an active reusable SES archetype with its completed proof lineage preserved:
 
 ```text
-L0 HARNESS SANITY = PASS
-HISTORICAL L1-P / PACKETED = PASS_WITH_FIDELITY_AND_PROVENANCE_LIMITATIONS
 CANONICAL L1-C = PASS
 P01–P20 = PASS
-CANDIDATE_BEHAVIORAL_VALIDATION_L1 = PASS
 FULL_L1_BEHAVIORAL_SUITE = PASS
 L2_RUNTIME_FINGERPRINT_VALIDATION = PASS / FINGERPRINT_BOUND
 SPECIALIST_READINESS = READY / USER_AUTHORIZED
+ARCHETYPE_ID = ux-ui-app-specialist
+ARCHETYPE_RESOLUTION_STATUS = ACTIVE
+AVAILABLE_FOR_PROJECT_RESOLUTION = YES
 HARD_BLOCKERS = NONE OBSERVED
 INITIAL_OVERCLAIM = NONE OBSERVED
 RETROACTIVE_PASS = NONE
 ```
 
-Canonical L2 evidence:
+Canonical evidence:
 - `tests/runtime/evidence/UX_UI_APP_SPECIALIST_L2_RUNTIME_PROOF_2026-08-16.md`
+- `tests/behavioral/UX_UI_APP_SPECIALIST_ARCHETYPE_RESOLUTION_V0_1.md`
 
-## 2. READY boundary
+Reusable contract:
+- `archetypes/ux-ui-app-specialist/ARCHETYPE.md`
+
+## 2. Reuse boundary
 
 ```text
-UX_UI_READY = YES
-BUILDER_APPLIED = YES / PRIVATE
-REGISTRY_ACTIVE = NO
-PUBLISHED = NO
-CONSUMER_ADOPTION = NO
+ACTIVE ARCHETYPE = REUSABLE SES METHOD
+PROJECT CONTEXT = RESOLVED AT RUNTIME FROM THE EXPLICIT CONSUMER PROJECT
 ```
 
-READY is not registry activation, publication, consumer adoption, production certification for every project or risk acceptance.
+Do not create a separate UX/UI specialist per project merely to load context.
 
-The tested L2 PASS remains bound to its exact Builder/runtime fingerprint. Do not repeat L1/L2 absent material invalidation.
+For project work, the active archetype must continue through the applicable Project Registry / Adapter / consumer bootstrap / continuity / authority / evidence path before project-specific conclusions.
 
-## 3. Sole next material action
+```text
+ARCHETYPE_RESOLVED != PROJECT_CONTEXT_READY
+PROJECT_CONTEXT_READY != AUTHORIZED_TO_MUTATE
+```
+
+## 3. Sole next material portfolio action
 
 Start the requirements/challenge interview for the next reusable specialist target: **Application Security Assurance**.
 
@@ -67,7 +73,7 @@ INTENT
 
 The immediate action is limited to discovery and requirements sufficiency.
 
-## 4. Interview objectives
+## 4. Application Security Assurance interview objectives
 
 Determine at minimum:
 - the security-assurance problem the specialist must own;
@@ -85,10 +91,6 @@ Explicitly challenge whether the requested scope creates excessive authority con
 
 ## 5. Done condition
 
-This next action completes only when minimum sufficient requirements are established to make a material design decision.
-
-Allowed outcomes:
-
 ```text
 REQUIREMENTS_SUFFICIENT → proceed to assumptions/challenge/design
 REQUIREMENTS_INSUFFICIENT → continue adaptive interview
@@ -101,11 +103,11 @@ Do not create a canonical Candidate or Builder package merely because the portfo
 ## 6. Explicitly blocked
 
 Without separate applicable authorization/decision, do not:
-- activate UX/UI APP Specialist in `archetypes/REGISTRY.md`;
 - publish or broaden visibility of the UX/UI Builder;
-- adopt UX/UI automatically into a consumer project;
-- mutate FECH.AI, Blogs/SEO or another consumer project;
-- retire legacy/project-local specialists;
+- automatically mutate or adopt UX/UI into consumer projects;
+- treat archetype resolution as project-context readiness;
+- mutate FECH.AI, Blogs/SEO or another consumer project from SES central evolution;
+- retire legacy/project-local specialists automatically;
 - change the tested UX/UI Builder fingerprint and retain the old L2 PASS as if unchanged;
 - repeat UX/UI L1/L2 solely for additional confidence;
 - generate the Application Security Assurance candidate before sufficient interview/challenge;
@@ -116,17 +118,17 @@ Without separate applicable authorization/decision, do not:
 ## 7. Portfolio direction
 
 ```text
-UX/UI APP Specialist — READY / L2 PASS fingerprint-bound
+UX/UI APP Specialist — READY / ACTIVE ARCHETYPE / AVAILABLE_FOR_PROJECT_RESOLUTION
 → Application Security Assurance — requirements/challenge next
 → Backend & Data Platform
 → Platform + Delivery + Reliability
 → SEO & Organic Growth
 → challenge Growth + Analytics + Monetization
 → Integration + Automation if still justified
-→ later evaluate registry/adoption/legacy retirement through separate authority gates
+→ later evaluate project adoption/legacy retirement through separate authority gates
 ```
 
 ```text
 CENTRAL SES EVOLUTION != AUTOMATIC PROJECT MUTATION
-READY != REGISTRY_ACTIVE != PUBLISHED != CONSUMER_ADOPTED
+ARCHETYPE_ACTIVE != AUTOMATIC_CONSUMER_ADOPTION
 ```

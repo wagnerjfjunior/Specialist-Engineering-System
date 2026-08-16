@@ -1,9 +1,9 @@
 # SES — Blocked Actions
 
-**Status:** `SPECIALIST_PORTFOLIO_EXPANSION / UX_UI_READY / L2_RUNTIME_PASS / BLOCKED_ACTIONS`  
+**Status:** `SPECIALIST_PORTFOLIO_EXPANSION / UX_UI_ARCHETYPE_ACTIVE / UX_UI_READY / BLOCKED_ACTIONS`  
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System`
 
-Absence from this document does not create authorization. Capability, prior approval for another action, conversation history or a derived summary do not substitute for current applicable authority.
+Absence from this document does not create authorization. Capability, registry state, prior approval for another action, conversation history or a derived summary do not substitute for current applicable authority.
 
 ## 1. General blocks
 
@@ -11,80 +11,73 @@ Without separate explicit applicable authorization, block:
 - direct/unreviewed mutation of canonical SES state;
 - merge/publication decisions not explicitly authorized for the exact scope;
 - consumer-project mutation from SES central evolution;
-- automatic propagation of SES specialists into registered projects;
-- legacy specialist retirement/deletion without mapping, delta review, behavioral evidence, explicit project adoption and retirement decision;
+- automatic propagation/adoption of SES specialists into registered projects;
+- legacy specialist retirement/deletion without mapping, delta review, behavioral evidence when required, explicit project adoption and retirement decision;
 - rewriting historical proof/adjudication;
 - storing secrets in SES artifacts.
 
-## 2. UX/UI evidence boundary
+## 2. UX/UI proof and registry boundary
 
-Preserve all evidence events distinctly:
+Preserve:
 
 ```text
-L0 HARNESS SANITY = PASS
 HISTORICAL L1-P / PACKETED = PASS_WITH_FIDELITY_AND_PROVENANCE_LIMITATIONS
 CANONICAL L1-C = PASS
 P01–P20 = PASS
-CANDIDATE_BEHAVIORAL_VALIDATION_L1 = PASS
 FULL_L1_BEHAVIORAL_SUITE = PASS
 L2_RUNTIME_FINGERPRINT_VALIDATION = PASS / FINGERPRINT_BOUND
 SPECIALIST_READINESS = READY / USER_AUTHORIZED
-STOP_LOSS_TRIGGERED = NO
+ARCHETYPE_ID = ux-ui-app-specialist
+ARCHETYPE_RESOLUTION_STATUS = ACTIVE
+AVAILABLE_FOR_PROJECT_RESOLUTION = YES
 INITIAL_OVERCLAIM = NONE OBSERVED
 RETROACTIVE_PASS = NONE
 ```
 
-Historical packeted fidelity limitations remain preserved and are not retroactively repaired by later PASS events.
-
-Canonical L2 evidence:
+Canonical evidence:
 - `tests/runtime/evidence/UX_UI_APP_SPECIALIST_L2_RUNTIME_PROOF_2026-08-16.md`
+- `tests/behavioral/UX_UI_APP_SPECIALIST_ARCHETYPE_RESOLUTION_V0_1.md`
 
-## 3. UX/UI L1/L2 invalidation discipline
+Historical packeted limitations remain historical and are not retroactively repaired by later PASS events.
 
-Do not repeat L1 or L2 merely for additional confidence.
+## 3. UX/UI invalidation discipline
 
-Re-run only affected proof claims after a material invalidation event involving:
-- Candidate/kernel instructions;
-- Builder model/system/runtime configuration;
-- Knowledge;
-- tools/actions/authentication/permissions;
-- integration set;
-- relevant fixture semantics;
-- contradictory/superseding evidence.
+Do not repeat L1/L2 merely for confidence. Revalidate only affected claims after material invalidation involving Candidate/archetype/kernel behavior, model/runtime settings, Knowledge, tools/actions/authentication/permissions, integration set, fixture semantics or contradictory evidence.
 
 Block:
-- rewriting historical evidence as if it came from a later run;
 - retroactive PASS after an initial failed execution;
-- transferring the fingerprint-bound L2 PASS to a materially changed Builder;
-- claiming an untested Vercel/Supabase-enabled configuration inherits the current L2 PASS;
-- reauditing unchanged gates solely because another artifact changed.
+- transferring fingerprint-bound L2 PASS to a materially changed Builder;
+- claiming an untested Vercel/Supabase-enabled configuration inherits current L2 PASS;
+- treating archetype activation itself as a reason to replay unchanged L1/L2 gates;
+- reauditing unrelated gates solely because another artifact changed.
 
-## 4. UX/UI post-READY blocks
+## 4. UX/UI post-activation blocks
 
 Current state:
 
 ```text
+ARCHETYPE_ACTIVE = YES
+READY = YES
 BUILDER_APPLIED = YES / PRIVATE
 L2_RUNTIME_PASS = ESTABLISHED FOR EXACT FINGERPRINT
-READY = YES
-REGISTRY_ACTIVE = NO
 PUBLISHED = NO
-CONSUMER_ADOPTION = NO
+AUTOMATIC_CONSUMER_ADOPTION = NO
 ```
 
 Without separate explicit applicable authorization, block:
-- activating UX/UI APP Specialist in `archetypes/REGISTRY.md`;
 - publishing or broadening Builder visibility;
-- adopting the specialist into a consumer project;
-- using READY as authority to mutate consumer-project code/data/configuration;
+- automatically adopting the specialist into a consumer project;
+- using archetype activation as authority to mutate consumer-project code/data/configuration;
+- treating `ARCHETYPE_RESOLVED` as `PROJECT_CONTEXT_READY`;
 - changing Builder instructions, Knowledge, tools/actions, permissions, model/settings or integration set and continuing to cite the old L2 PASS without proportional revalidation;
-- treating GitHub read-only connectivity as authorization for repository mutation;
+- treating GitHub read-only connectivity as repository mutation authority;
 - enabling Vercel or Supabase ad hoc under the tested fingerprint;
-- claiming production certification for every project or accepting risk from READY/L2 alone.
+- claiming production certification for every project or accepting risk from READY/L2/registry activation alone.
 
 ```text
-READY != REGISTRY_ACTIVE != PUBLISHED != CONSUMER_ADOPTED
-TOOL_CAPABILITY != MUTATION_AUTHORIZATION
+ARCHETYPE_ACTIVE != PROJECT_CONTEXT_READY
+PROJECT_CONTEXT_READY != AUTHORIZED_TO_MUTATE
+ARCHETYPE_ACTIVE != AUTOMATIC_CONSUMER_ADOPTION
 ```
 
 ## 5. Specialist-portfolio stop-loss
@@ -92,7 +85,7 @@ TOOL_CAPABILITY != MUTATION_AUTHORIZATION
 Continue to block:
 - SaaS Architect rename solely from preferred Software Systems Architect direction;
 - transfer of historical SaaS Architect runtime PASS through rename/evolution;
-- registry mutation merely to mirror target portfolio;
+- registry mutation merely to mirror target portfolio without evidence/decision;
 - creating all queued specialists simultaneously;
 - specialist-count reduction that sacrifices depth/evidence/authority separation;
 - universalizing FECH.AI-specific modules, Supabase specifics, MesaCliente, LeadOps or GPT routing without cross-project evidence;
@@ -105,20 +98,19 @@ Continue to block:
 ## 6. Adoption/retirement boundary
 
 ```text
-READY SES SPECIALIST
-→ REGISTRY DECISION WHEN AUTHORIZED
-→ CURRENT PROJECT SPECIALIST MAPPING
-→ DELTA / AUTHORITY ANALYSIS
+ACTIVE SES ARCHETYPE
+→ EXPLICIT PROJECT RESOLUTION
+→ PROJECT BOOTSTRAP / CONTINUITY / AUTHORITY
+→ DELTA / OVERRIDE REVIEW WHEN NEEDED
+→ EXPLICIT PROJECT ADOPTION IF APPLICABLE
 → PROJECT-LOCAL BEHAVIORAL EVIDENCE WHEN REQUIRED
-→ EXPLICIT PROJECT ADOPTION
-→ RUNTIME/BUILDER APPLICATION WHEN AUTHORIZED
 → EQUIVALENCE / RESIDUAL-GAP REVIEW
 → RETIREMENT DECISION
 ```
 
 ```text
 TARGET CONSOLIDATION != AUTHORIZED RETIREMENT
-CENTRAL SES EVOLUTION != AUTOMATIC PROJECT MUTATION
+CENTRAL EVOLUTION != AUTOMATIC PROJECT MUTATION
 ```
 
 ## 7. Documentation Auditor preserved blocks
@@ -142,17 +134,11 @@ OLD V0.9 PROPORTIONAL SMOKE = BLOCKED
 
 Initial R03A/R05 PASS adjudications remain historical `INITIAL_OVERCLAIM` records.
 
-Documentation Auditor Gateway Design v1 remains preserved/deferred/not implemented. D01-D22 are design decisions; G01-G28 are proof obligations, not executed PASS evidence.
-
-Full aggregate Documentation Auditor runtime certification remains:
-
-```text
-BLOCKED / AUTHORITY_CHALLENGE_OVERLAY_PROCEDURE_NOT_VERSIONED_FOR_DOCUMENTATION_AUDITOR
-```
+Documentation Auditor Gateway Design v1 remains preserved/deferred/not implemented. Full aggregate Documentation Auditor runtime certification remains blocked by its own unresolved authority-challenge overlay procedure.
 
 ## 8. Consumer-project boundary
 
-No SES portfolio/readiness decision grants mutation authority over FECH.AI, Blogs/SEO or another consumer project.
+No SES portfolio/readiness/registry decision grants mutation authority over FECH.AI, Blogs/SEO or another consumer project.
 
 ## 9. Conflict and anti-loop rules
 
