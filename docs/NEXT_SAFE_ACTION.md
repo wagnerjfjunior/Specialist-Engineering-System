@@ -2,14 +2,14 @@
 
 > Este é o registro autoritativo da única próxima ação segura do SES quando este estado estiver em `main`.
 
-**Next action ID:** `apply-ux-ui-app-specialist-builder-package-v0.1`  
-**Primary target:** `SES — UX/UI APP Specialist Candidate v0.1`  
-**Current phase:** `SPECIALIST_PORTFOLIO_EXPANSION / UX_UI_CANONICAL_L1_PASS / BUILDER_PACKAGE_READY / L2_NEXT`  
+**Next action ID:** `interview-application-security-assurance-specialist-requirements`  
+**Primary target:** `SES — Application Security Assurance specialist target`  
+**Current phase:** `SPECIALIST_PORTFOLIO_EXPANSION / UX_UI_READY / L2_RUNTIME_PASS / NEXT_APPSEC_DISCOVERY`  
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System` / `main` resolved live
 
 ## 1. Material state reached
 
-Preserve:
+The UX/UI APP Specialist has completed the current behavioral/runtime proof sequence:
 
 ```text
 L0 HARNESS SANITY = PASS
@@ -18,114 +18,115 @@ CANONICAL L1-C = PASS
 P01–P20 = PASS
 CANDIDATE_BEHAVIORAL_VALIDATION_L1 = PASS
 FULL_L1_BEHAVIORAL_SUITE = PASS
-STOP_LOSS_TRIGGERED = NO
+L2_RUNTIME_FINGERPRINT_VALIDATION = PASS / FINGERPRINT_BOUND
+SPECIALIST_READINESS = READY / USER_AUTHORIZED
+HARD_BLOCKERS = NONE OBSERVED
 INITIAL_OVERCLAIM = NONE OBSERVED
 RETROACTIVE_PASS = NONE
 ```
 
-Builder/runtime candidate artifacts:
-- `runtime/custom-gpt/UX_UI_APP_SPECIALIST_BUILDER_PACKAGE_V0_1.md`
-- `runtime/custom-gpt/UX_UI_APP_SPECIALIST_BUILDER_KERNEL_V0_1.md`
-- `tests/runtime/UX_UI_APP_SPECIALIST_L2_RUNTIME_PROFILE_V0_1.md`
-- `tests/runtime/UX_UI_APP_SPECIALIST_L2_RUNBOOK_V0_1.md`
+Canonical L2 evidence:
+- `tests/runtime/evidence/UX_UI_APP_SPECIALIST_L2_RUNTIME_PROOF_2026-08-16.md`
+
+## 2. READY boundary
 
 ```text
-BUILDER PACKAGE = VERSIONED CANDIDATE
-BUILDER KERNEL = VERSIONED CANDIDATE
-BUILDER APPLIED = NO
-L2 EXECUTED = NO
-L2 RUNTIME PASS = NOT ESTABLISHED
+UX_UI_READY = YES
+BUILDER_APPLIED = YES / PRIVATE
+REGISTRY_ACTIVE = NO
+PUBLISHED = NO
+CONSUMER_ADOPTION = NO
 ```
 
-## 2. Builder v0.1 target
+READY is not registry activation, publication, consumer adoption, production certification for every project or risk acceptance.
 
-The Builder must be configured field-by-field from the versioned package. The Instructions field must use the complete exact Builder kernel.
-
-Target integration surface:
-
-```text
-GITHUB = TARGET_ENABLED / READ_ONLY / NOT_APPLIED
-VERCEL = OPTIONAL_DISABLED / NOT_CONFIGURED
-SUPABASE = OPTIONAL_DISABLED / NOT_CONFIGURED
-KNOWLEDGE = EMPTY
-```
-
-GitHub is the only external integration targeted for this L2 fingerprint. Vercel/Supabase require separate versioned integration design before enablement.
+The tested L2 PASS remains bound to its exact Builder/runtime fingerprint. Do not repeat L1/L2 absent material invalidation.
 
 ## 3. Sole next material action
 
-Apply the approved Builder package to the actual external GPT Builder/runtime and capture the exact effective fingerprint before testing.
+Start the requirements/challenge interview for the next reusable specialist target: **Application Security Assurance**.
 
-This external mutation requires explicit applicable authorization.
+Do not jump directly from target name to a prompt/kernel/candidate.
 
-Application sequence:
-
-```text
-APPLY NAME + DESCRIPTION + 4 STARTERS
-→ COPY EXACT BUILDER KERNEL INTO INSTRUCTIONS
-→ KEEP KNOWLEDGE EMPTY
-→ CONFIGURE TARGET BUILDER CAPABILITIES
-→ CONFIGURE GITHUB READ_ONLY ACTION IF SUPPORTED
-→ KEEP VERCEL DISABLED
-→ KEEP SUPABASE DISABLED
-→ KEEP VISIBILITY PRIVATE
-→ CAPTURE EXACT EFFECTIVE FINGERPRINT
-→ FREEZE CONFIGURATION
-```
-
-Unknown/unexposed fields must be `NOT EXPOSED`, never inferred.
-
-## 4. L2 execution
-
-Only after Builder application/fingerprint freeze:
+Use the SES material flow:
 
 ```text
-EXECUTE R01–R06 IN FRESH BUILDER CONVERSATIONS
-→ ADJUDICATE L2-01..L2-12
-→ RECORD PROVENANCE
+INTENT
+→ INTERVIEW
+→ REQUIREMENTS
+→ ASSUMPTIONS
+→ CHALLENGE
+→ ALTERNATIVES
+→ DESIGN
+→ CANDIDATE
+→ TEST
+→ VALIDATE
+→ APPROVE
+→ PUBLISH
 ```
 
-The runtime-specific tool challenge should use GitHub if the read-only Action is actually configured and working.
+The immediate action is limited to discovery and requirements sufficiency.
+
+## 4. Interview objectives
+
+Determine at minimum:
+- the security-assurance problem the specialist must own;
+- whether this should be one specialist or multiple specialists;
+- implementation responsibility versus independent assurance authority;
+- target assets/surfaces and threat classes;
+- evidence/source-of-truth requirements;
+- allowed tools and permission boundaries;
+- high-risk actions that must remain outside default authority;
+- proof obligations and behavioral/runtime test needs;
+- project-agnostic versus project-local boundaries;
+- overlap with Backend & Data Platform, Software Systems Architect, Platform/Delivery/Reliability and consumer-project security owners.
+
+Explicitly challenge whether the requested scope creates excessive authority concentration or combines implementation and assurance in one role.
 
 ## 5. Done condition
 
-Only successful execution under the exact fingerprint may establish:
+This next action completes only when minimum sufficient requirements are established to make a material design decision.
+
+Allowed outcomes:
 
 ```text
-L2_RUNTIME_FINGERPRINT_VALIDATION = PASS
+REQUIREMENTS_SUFFICIENT → proceed to assumptions/challenge/design
+REQUIREMENTS_INSUFFICIENT → continue adaptive interview
+SPECIALIST_SPLIT_REQUIRED → present alternatives before design
+SPECIALIST_NOT_JUSTIFIED → recommend simpler alternative
 ```
 
-L2 PASS still does not automatically establish registry activation, consumer adoption, production certification or risk acceptance.
+Do not create a canonical Candidate or Builder package merely because the portfolio queue names Application Security Assurance.
 
 ## 6. Explicitly blocked
 
-Do not:
-- treat Builder package versioning as Builder application;
-- silently shorten/paraphrase the Builder kernel in the UI;
-- enable Vercel/Supabase ad hoc during the v0.1 L2 run;
-- claim GitHub is connected before actual Builder verification;
-- claim tool execution without invocation/result evidence;
-- treat L1-C PASS as L2/runtime PASS;
-- activate UX/UI APP Specialist in `archetypes/REGISTRY.md` from L1 alone;
-- publish the specialist without separate applicable authorization;
-- adopt the specialist into a consumer project automatically;
-- retire project-local specialists;
-- alter historical packeted outcomes/provenance.
+Without separate applicable authorization/decision, do not:
+- activate UX/UI APP Specialist in `archetypes/REGISTRY.md`;
+- publish or broaden visibility of the UX/UI Builder;
+- adopt UX/UI automatically into a consumer project;
+- mutate FECH.AI, Blogs/SEO or another consumer project;
+- retire legacy/project-local specialists;
+- change the tested UX/UI Builder fingerprint and retain the old L2 PASS as if unchanged;
+- repeat UX/UI L1/L2 solely for additional confidence;
+- generate the Application Security Assurance candidate before sufficient interview/challenge;
+- collapse Backend/Data implementation ownership into independent assurance authority for convenience;
+- implement the deferred Documentation Auditor Gateway;
+- execute the SaaS Architect rename from naming direction alone.
 
 ## 7. Portfolio direction
 
 ```text
-UX/UI APP Specialist — canonical L1 PASS; Builder package application + L2 runtime validation next
-→ Application Security Assurance
+UX/UI APP Specialist — READY / L2 PASS fingerprint-bound
+→ Application Security Assurance — requirements/challenge next
 → Backend & Data Platform
 → Platform + Delivery + Reliability
 → SEO & Organic Growth
 → challenge Growth + Analytics + Monetization
 → Integration + Automation if still justified
-→ only then evaluate project adoption/legacy retirement
+→ later evaluate registry/adoption/legacy retirement through separate authority gates
 ```
 
 ```text
 CENTRAL SES EVOLUTION != AUTOMATIC PROJECT MUTATION
-TARGET CONSOLIDATION != AUTHORIZED RETIREMENT
+READY != REGISTRY_ACTIVE != PUBLISHED != CONSUMER_ADOPTED
 ```
