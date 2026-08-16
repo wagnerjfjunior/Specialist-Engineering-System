@@ -36,6 +36,15 @@ Target behavior must preserve the L1-validated Candidate/kernel semantics, inclu
 
 The exact Builder field configuration comes from the Builder package. The exact Instructions payload comes from the Builder kernel. Do not synthesize a different runtime prompt during application.
 
+Before Builder application, measure the exact kernel text using the same counting method selected for that application and record the result. The Builder UI must accept the complete copy without truncation. If the UI rejects or truncates the kernel, L2 application is `BLOCKED` until a separately versioned Builder-fit kernel is reviewed.
+
+```text
+INSTRUCTIONS_MEASURED_CHARACTER_COUNT = REQUIRED_BEFORE_APPLICATION
+INSTRUCTIONS_COMPLETE_COPY = REQUIRED
+BUILDER_ACCEPTED_WITHOUT_TRUNCATION = REQUIRED
+SILENT_KERNEL_SHORTENING = PROHIBITED
+```
+
 ## 3. v0.1 integration surface
 
 Target package configuration:
@@ -70,6 +79,10 @@ PROFILE_VERSION
 PROFILE_BLOB_SHA
 BUILDER_KERNEL_ID
 BUILDER_KERNEL_BLOB_SHA
+INSTRUCTIONS_MEASURED_CHARACTER_COUNT
+INSTRUCTIONS_COUNT_METHOD
+INSTRUCTIONS_COMPLETE_COPY
+BUILDER_ACCEPTED_WITHOUT_TRUNCATION
 INSTRUCTION_BLOB_SHA_OR_EXACT_EXPORT
 KNOWLEDGE_FILE_LIST
 KNOWLEDGE_FILE_HASHES
@@ -86,7 +99,7 @@ DATE/TIME
 EXECUTION_ID
 ```
 
-If a field cannot be obtained from the product UI/API, record `NOT EXPOSED`, not an invented value.
+If a field cannot be obtained from the product UI/API, record `NOT EXPOSED`, not an invented value. The four instruction-fit fields above are application evidence and may not be replaced by `NOT EXPOSED`; they must be established before L2 execution.
 
 ## 5. Required configuration boundary
 
