@@ -8,6 +8,7 @@ Absence from this document does not create authorization. Capability, prior appr
 ## 1. Blocked without separate explicit applicable authorization
 
 - direct/unreviewed mutation of canonical SES state outside normal change process;
+- merge/publication decisions not explicitly authorized for the exact scope;
 - external Documentation Auditor Builder configuration changes;
 - Gateway runtime implementation or deployment;
 - live model/API integration presented as a Gateway implementation candidate;
