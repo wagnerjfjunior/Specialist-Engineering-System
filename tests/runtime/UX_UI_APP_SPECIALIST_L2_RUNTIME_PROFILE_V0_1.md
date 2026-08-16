@@ -2,15 +2,18 @@
 
 **Candidate ID:** `ux-ui-app-specialist-v0.1`  
 **Prerequisite:** `CANONICAL_L1-C = PASS`  
-**Status:** `L2_RUNTIME_CANDIDATE / NOT_APPLIED / NOT_EXECUTED`
+**Builder package:** `runtime/custom-gpt/UX_UI_APP_SPECIALIST_BUILDER_PACKAGE_V0_1.md`  
+**Builder kernel:** `runtime/custom-gpt/UX_UI_APP_SPECIALIST_BUILDER_KERNEL_V0_1.md`  
+**Builder kernel blob SHA:** `8e988dceca962f608141cbef663fd4baea4cf86f`  
+**Status:** `L2_RUNTIME_CANDIDATE / BUILDER_PACKAGE_VERSIONED / NOT_APPLIED / NOT_EXECUTED`
 
 ## 1. Purpose
 
-L2 validates the actual deployed specialist runtime under an exact fingerprint. It is not another prompt-only behavioral exercise.
+L2 validates the actual configured specialist runtime under an exact fingerprint. It is not another prompt-only behavioral exercise.
 
 ```text
 L1 PASS != L2 PASS
-PROFILE VERSIONED != BUILDER APPLIED
+PACKAGE VERSIONED != BUILDER APPLIED
 BUILDER APPLIED != RUNTIME VALIDATED
 ```
 
@@ -31,7 +34,39 @@ Target behavior must preserve the L1-validated Candidate/kernel semantics, inclu
 - prompt invariance;
 - non-regression against a competent generic baseline.
 
-## 3. L2 fingerprint fields
+The exact Builder field configuration comes from the Builder package. The exact Instructions payload comes from the Builder kernel. Do not synthesize a different runtime prompt during application.
+
+Before Builder application, measure the exact kernel text using the same counting method selected for that application and record the result. The Builder UI must accept the complete copy without truncation. If the UI rejects or truncates the kernel, L2 application is `BLOCKED` until a separately versioned Builder-fit kernel is reviewed.
+
+```text
+INSTRUCTIONS_MEASURED_CHARACTER_COUNT = REQUIRED_BEFORE_APPLICATION
+INSTRUCTIONS_COMPLETE_COPY = REQUIRED
+BUILDER_ACCEPTED_WITHOUT_TRUNCATION = REQUIRED
+SILENT_KERNEL_SHORTENING = PROHIBITED
+```
+
+## 3. v0.1 integration surface
+
+Target package configuration:
+
+```text
+GITHUB = TARGET_ENABLED / READ_ONLY / NOT_APPLIED
+VERCEL = OPTIONAL_DISABLED / NOT_CONFIGURED
+SUPABASE = OPTIONAL_DISABLED / NOT_CONFIGURED
+KNOWLEDGE = EMPTY
+```
+
+GitHub uses the existing SES read-only Action schema when actually configured:
+
+`runtime/custom-gpt/GITHUB_READONLY_ACTION.openapi.yaml`
+
+Schema blob at package-design time:
+
+`1e6237e806fd84716ec13b019e6617ad4110a211`
+
+Vercel and Supabase are explicitly outside the v0.1 L2 fingerprint unless a future versioned package changes that decision. Their mere availability must not be treated as connected capability.
+
+## 4. L2 fingerprint fields
 
 Before execution, capture exactly:
 
@@ -39,13 +74,23 @@ Before execution, capture exactly:
 RUNTIME_ID
 BUILDER/GPT_ID_OR_URL
 RUNTIME_NAME
+BUILDER_PACKAGE_REF/SHA
 PROFILE_VERSION
 PROFILE_BLOB_SHA
+BUILDER_KERNEL_ID
+BUILDER_KERNEL_BLOB_SHA
+INSTRUCTIONS_MEASURED_CHARACTER_COUNT
+INSTRUCTIONS_COUNT_METHOD
+INSTRUCTIONS_COMPLETE_COPY
+BUILDER_ACCEPTED_WITHOUT_TRUNCATION
 INSTRUCTION_BLOB_SHA_OR_EXACT_EXPORT
 KNOWLEDGE_FILE_LIST
 KNOWLEDGE_FILE_HASHES
 ACTIONS/TOOLS_ENABLED
 ACTION/TOOL_CONFIG_VERSION
+GITHUB_ACTION_SCHEMA_REF/HASH
+VERCEL_STATE
+SUPABASE_STATE
 MODEL
 MODEL_MODE/SETTINGS
 CAPABILITIES
@@ -54,9 +99,9 @@ DATE/TIME
 EXECUTION_ID
 ```
 
-If a field cannot be obtained from the product UI/API, record `NOT EXPOSED`, not an invented value.
+If a field cannot be obtained from the product UI/API, record `NOT EXPOSED`, not an invented value. The four instruction-fit fields above are application evidence and may not be replaced by `NOT EXPOSED`; they must be established before L2 execution.
 
-## 4. Required configuration boundary
+## 5. Required configuration boundary
 
 The runtime must not silently inherit:
 - FECH.AI-specific rules;
@@ -67,7 +112,7 @@ The runtime must not silently inherit:
 
 Consumer-project knowledge may be added only under a separately versioned adoption/configuration event.
 
-## 5. Tools/actions
+## 6. Tools/actions
 
 Tool availability does not prove execution.
 
@@ -84,9 +129,11 @@ If tools are enabled in the Builder, record:
 - returned evidence or error;
 - whether the answer accurately reflects execution status.
 
-## 6. Runtime proof scope
+GitHub is the only external integration targeted for v0.1 L2. It remains read-only. Vercel/Supabase must remain disabled during this fingerprint unless the package is versioned again before execution, in which case the affected L2 plan must be re-reviewed.
 
-L2 should establish whether the exact deployed fingerprint preserves the material L1 behavior. It must not claim universal behavior across future model/runtime changes.
+## 7. Runtime proof scope
+
+L2 should establish whether the exact deployed/configured fingerprint preserves the material L1 behavior. It must not claim universal behavior across future model/runtime changes.
 
 Supported if passed:
 
@@ -103,6 +150,6 @@ PRODUCTION CERTIFICATION FOR EVERY PROJECT
 RISK ACCEPTANCE
 ```
 
-## 7. Invalidation
+## 8. Invalidation
 
-Material change to instructions, knowledge, model, actions/tools, permissions, system/runtime settings or relevant product capability invalidates only affected L2 claims and requires proportional retest.
+Material change to instructions, knowledge, model, actions/tools, permissions, integration set, system/runtime settings or relevant product capability invalidates only affected L2 claims and requires proportional retest.
