@@ -1,13 +1,13 @@
 # SES — Current Handoff
 
-**Status:** `SPECIALIST_PORTFOLIO_EXPANSION / UX_UI_L1_PASS / L2_PREPARATION_NEXT`  
+**Status:** `SPECIALIST_PORTFOLIO_EXPANSION / UX_UI_PACKETED_L1_PASS / CANONICAL_L1_REPLICATION_NEXT`  
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System`  
 **Canonical ref rule:** resolve `main` live before material work  
 **Authoritative next action:** `docs/NEXT_SAFE_ACTION.md`
 
 ## 1. Purpose
 
-Preserve current SES specialist-portfolio direction and proof state across conversations/models without relying on chat memory, while preserving historical failures, runtime PASS provenance and non-authorizations.
+Preserve SES portfolio/proof continuity across conversations/models without relying on chat memory and without overstating the UX/UI Candidate proof level.
 
 ## 2. Mandatory reading order
 
@@ -16,115 +16,83 @@ Preserve current SES specialist-portfolio direction and proof state across conve
 3. read `docs/PROJECT_STATUS.md`;
 4. read `docs/NEXT_SAFE_ACTION.md`;
 5. read `docs/BLOCKED_ACTIONS.md`;
-6. read `archetypes/REGISTRY.md` and project registry/adapters when material;
-7. read the exact specialist candidate/runtime artifacts applicable to the task.
+6. read exact specialist/test artifacts applicable to the task.
 
-If reviewing an unmerged candidate branch/PR, preserve:
+For unmerged work preserve `CANONICAL_MAIN != CANDIDATE_HEAD`.
 
-```text
-CANONICAL_MAIN != CANDIDATE_HEAD
-```
+## 3. UX/UI Candidate v0.1 current evidence
 
-## 3. UX/UI APP Specialist Candidate v0.1 — material state
-
-The Candidate specification, behavioral suite and L1 validation record now exist:
-
+Artifacts:
 - `docs/specialists/UX_UI_APP_SPECIALIST_CANDIDATE_V0_1.md`
 - `tests/behavioral/UX_UI_APP_SPECIALIST_BEHAVIORAL_SUITE_V0_1.md`
 - `tests/behavioral/UX_UI_APP_SPECIALIST_L1_VALIDATION_V0_1.md`
+- `tests/behavioral/UX_UI_APP_SPECIALIST_L1_PACKET_FIDELITY_NOTE_V0_1.md`
 
-Validated state:
+Historical observed state:
 
 ```text
 L0 HARNESS SANITY = PASS
-L1 WAVE 1 = PASS
-L1 WAVE 2 = PASS
-L1 WAVE 3 = PASS
-L1 WAVE 4 = PASS
-P01–P20 = 20/20 PASS
-FULL_L1_BEHAVIORAL_SUITE = PASS
+PACKETED_L1_BEHAVIORAL_EVIDENCE = PASS
+P01–P20 OBSERVED INITIAL RESPONSES = 20/20 PASS
 STOP_LOSS_TRIGGERED = NO
 INITIAL_OVERCLAIM = NONE OBSERVED
 RETROACTIVE_PASS = NONE
 ```
 
-Proof boundary:
+Formal-review correction:
 
 ```text
-CANDIDATE_BEHAVIORAL_VALIDATION_L1 = PASS
-L2 RUNTIME / BUILDER PASS = NOT ESTABLISHED
+ONE FROZEN EXECUTOR KERNEL ACROSS ALL FIXTURES = NOT EXECUTED
+CANONICAL_L1_FULL_SPEC_REPLICATION = NOT EXECUTED
+CANDIDATE_BEHAVIORAL_VALIDATION_L1 = NOT ESTABLISHED
+FULL_L1_BEHAVIORAL_SUITE = NOT ESTABLISHED
+L2 = NOT EXECUTED
 REGISTRY ACTIVE = NO
-CONSUMER ADOPTION = NOT AUTHORIZED
 ```
 
-## 4. L1 provenance limitations
+This correction narrows the aggregate claim only; it does not change the historical 20/20 observed adjudications.
 
-Preserve permanently for this run:
+## 4. Historical fidelity/provenance limitations
 
 ```text
-FRESH_CONTEXT = USER_REPORTED
-ANSWER_KEY_NOT_VISIBLE = USER_REPORTED
-HARNESS_NOT_VISIBLE = USER_REPORTED
-RAW_OUTPUT_UNMODIFIED = USER_REPORTED
-EXECUTION_CONTEXT_ISOLATION = USER_REPORTED
+FIXTURE-ADAPTED EXECUTOR PACKETS = YES
+SELECTED CANDIDATE RULES PER PACKET = YES
+SOME TEST-META CUES PRESENT = YES
+FULL EXECUTOR PACKET CORPUS VERSIONED = NO
+RAW INPUT HASHES = NOT CAPTURED
+RAW OUTPUT HASHES = NOT CAPTURED
+FRESH CONTEXT = USER_REPORTED
+ANSWER KEY NOT VISIBLE = USER_REPORTED
+RAW OUTPUT UNMODIFIED = USER_REPORTED
 P20_PAIRING_AMBIGUITY = RESOLVED
 P20_BLIND_ADJUDICATION = NOT EXECUTED
 P20_NON_BLIND_ADJUDICATION = PASS
 ```
 
-No independent raw-output hashes, conversation IDs or exact model/runtime telemetry were captured in this L1 record.
+Future stronger evidence must not erase these historical limitations.
 
-Future blinded or runtime replication may strengthen evidence but must not rewrite this provenance.
-
-## 5. Key UX/UI candidate behavior
-
-The Candidate preserves:
-
-```text
-PRODUCT EXPERIENCE COVERAGE SWEEP
-PRODUCT OPPORTUNITY SWEEP
-UX EVIDENCE LADDER E0–E5
-CLAIM → PROOF OBLIGATION
-PROMPT INVARIANCE
-BOUNDARY / HANDOFF DISCIPLINE
-ACCESSIBILITY PROOF DISCIPLINE
-RESPONSIVE / MOBILE PROOF DISCIPLINE
-SECURITY-SENSITIVE HANDOFF
-```
-
-Behavioral expectation demonstrated at L1:
-
-```text
-SAME MATERIAL FACTS + SEMANTICALLY EQUIVALENT TASK
-→ SAME CRITICAL FINDINGS + BLOCKERS + EVIDENCE LIMITS + SAFEGUARDS
-```
-
-P20 non-regression result:
-
-```text
-GENERIC = 134/150
-SPECIALIST = 142/150
-TOTAL_DELTA = +8
-CRITICAL_REGRESSION = NO
-P20 = PASS
-```
-
-## 6. Sole next material action
+## 5. Next safe action
 
 Use `docs/NEXT_SAFE_ACTION.md` only.
 
-Current next action is preparation of a versioned **L2 runtime candidate package** for UX/UI APP Specialist v0.1.
-
-Preparation may define profile/kernel/fingerprint/runbook and exact regression requirements. It does not itself authorize external Builder application or publication.
-
-## 7. Portfolio direction
-
-Current reusable target direction remains approximately:
+Current next action:
 
 ```text
-1. Software Systems Architect — preferred future evolution/name from SaaS Architect; rename not executed.
+FREEZE ONE L1-C EXECUTOR KERNEL/SPEC
+→ CAPTURE EXACT REF/HASH
+→ RUN P01–P20 IN FRESH CONTEXTS
+→ ADJUDICATE
+→ RECORD PROVENANCE
+```
+
+Only after a successful new L1-C execution may SES claim canonical Candidate L1 PASS and proceed to L2 preparation.
+
+## 6. Portfolio direction
+
+```text
+1. Software Systems Architect — future evolution/name direction; rename not executed.
 2. Documentation Auditor — existing.
-3. UX/UI APP Specialist — L1 PASS; L2 preparation next.
+3. UX/UI APP Specialist — packeted evidence PASS; canonical L1-C next.
 4. Backend & Data Platform — candidate.
 5. Application Security Assurance — strong candidate.
 6. Platform, Delivery & Reliability — candidate consolidation; reversible.
@@ -134,69 +102,21 @@ Current reusable target direction remains approximately:
 ```
 
 Project-local preserved:
-
 - FECH.AI LeadOps / CRM / Discador;
 - FECH.AI MesaCliente / Tabelas / Propostas.
 
-Do not create additional universal archetypes for symmetry.
-
-## 8. Preserved cross-specialist learnings
-
-Security/backend target separation remains:
-
-```text
-Backend & Data Platform
-→ secure server/data implementation
-
-Application Security Assurance
-→ independent adversarial/security validation and evidence
-```
-
-Candidate learning:
+## 7. Preserved cross-specialist boundaries
 
 ```text
 IMPLEMENTATION RESPONSIBILITY != ASSURANCE AUTHORITY
-```
-
-No universal promotion occurs from one project occurrence alone.
-
-## 9. Architect naming direction
-
-Preferred future direction remains:
-
-```text
-SES — SaaS Architect
-→ SES — Software Systems Architect
-```
-
-Rename not executed. Historical SaaS Architect runtime PASS remains bound to its exact historical identity/fingerprint and does not automatically transfer.
-
-## 10. Documentation Auditor preserved state
-
-Documentation Auditor corrected runtime regression history and Gateway Design v1 remain preserved. Gateway remains deferred/not implemented. No UX/UI proof affects Documentation Auditor failures, Gateway proof obligations or runtime certification blocker.
-
-## 11. Adoption/retirement boundary
-
-No project specialist is retired or automatically replaced by the SES portfolio.
-
-```text
-CURRENT PROJECT SPECIALIST
-→ SES CANDIDATE MAPPING
-→ DELTA/AUTHORITY ANALYSIS
-→ BEHAVIORAL TESTS
-→ EXPLICIT PROJECT ADOPTION
-→ RUNTIME/BUILDER APPLICATION WHEN AUTHORIZED
-→ EQUIVALENCE/RESIDUAL-GAP REVIEW
-→ RETIREMENT DECISION
-```
-
-```text
-TARGET CONSOLIDATION != AUTHORIZED RETIREMENT
 CENTRAL EVOLUTION != AUTOMATIC PROJECT MUTATION
+TARGET CONSOLIDATION != AUTHORIZED RETIREMENT
 ```
 
-## 12. Cross-model short resume
+SaaS Architect historical runtime PASS stays fingerprint-bound. Documentation Auditor historical failures and Gateway Design v1 remain unchanged/deferred/not implemented.
+
+## 8. Cross-model short resume
 
 ```text
-Resolve SES main LIVE → bootstrap + handoff/status/next/blocked → UX/UI APP Specialist Candidate v0.1 is versioned and L1 behaviorally validated P01–P20 20/20 PASS → provenance limitations remain USER_REPORTED context isolation/raw-output integrity and P20 was NON-BLIND PASS → L1 does NOT establish L2/Builder/runtime/registry/project adoption → next safe action is prepare versioned L2 runtime profile/kernel/fingerprint/runbook, without applying external Builder absent separate authorization → SaaS Architect preferred future name Software Systems Architect but rename not executed and historical PASS remains fingerprint-bound → Documentation Auditor Gateway v1 preserved/deferred/not implemented → portfolio queue and consumer-project boundaries remain unchanged.
+Resolve SES main LIVE → UX/UI Candidate v0.1 is versioned → historical fixture-adapted packeted run produced P01–P20 20/20 observed PASS with no stop-loss → formal PR review found proof-fidelity gap because one frozen executor kernel/spec was not used across all fixtures and some test-meta cues were present → historical results remain PACKETED_L1_BEHAVIORAL_EVIDENCE = PASS but canonical Candidate L1 PASS is NOT ESTABLISHED → next safe action is freeze/version one executor kernel and rerun canonical L1-C P01–P20 → only after L1-C PASS may L2 preparation begin → no registry activation, Builder application, consumer adoption or legacy retirement is authorized.
 ```
