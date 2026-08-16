@@ -59,7 +59,11 @@ For the `documentation-auditor` Custom GPT runtime candidate, also read when val
 - `tests/behavioral/DOCUMENTATION_AUDITOR_TESTS.md`
 - `core/protocols/EVIDENCE_RETRIEVAL_RESILIENCE_CONTRACT.md` when the task or runtime case exercises retrieval resilience
 
-For the `ux-ui-app-specialist-v0.1` runtime candidate, also read when configuring/applying/testing that candidate:
+For `ux-ui-app-specialist`, first resolve the active archetype through `archetypes/REGISTRY.md` and read:
+
+- `archetypes/ux-ui-app-specialist/ARCHETYPE.md`
+
+For its validated v0.1 runtime fingerprint, also read when configuring/applying/testing or auditing that runtime:
 
 - `runtime/custom-gpt/UX_UI_APP_SPECIALIST_BUILDER_PACKAGE_V0_1.md`
 - `runtime/custom-gpt/UX_UI_APP_SPECIALIST_BUILDER_KERNEL_V0_1.md`
@@ -67,8 +71,10 @@ For the `ux-ui-app-specialist-v0.1` runtime candidate, also read when configurin
 - `tests/runtime/UX_UI_APP_SPECIALIST_L2_RUNTIME_PROFILE_V0_1.md`
 - `tests/runtime/UX_UI_APP_SPECIALIST_L2_RUNBOOK_V0_1.md`
 - `tests/behavioral/UX_UI_APP_SPECIALIST_L1C_VALIDATION_V0_1.md`
+- `tests/runtime/evidence/UX_UI_APP_SPECIALIST_L2_RUNTIME_PROOF_2026-08-16.md`
+- `tests/behavioral/UX_UI_APP_SPECIALIST_ARCHETYPE_RESOLUTION_V0_1.md`
 
-The UX/UI runtime candidate is not yet an active archetype registry entry. Builder package versioning does not imply Builder application, L2 PASS, registry activation or consumer adoption.
+The UX/UI APP Specialist is an active reusable archetype when the live `archetypes/REGISTRY.md` resolves `ux-ui-app-specialist` with `RESOLUTION_STATUS: ACTIVE`. Its Builder/runtime PASS remains fingerprint-bound and its activation does not imply automatic consumer-project adoption or mutation authority.
 
 Future archetype, specialist, validation and versioning contracts must be reached from this bootstrap rather than becoming independent entrypoints.
 
