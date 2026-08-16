@@ -1,7 +1,7 @@
 # SES — UX/UI APP Specialist Candidate v0.1
 
 **Candidate ID:** `ux-ui-app-specialist-v0.1`  
-**Lifecycle:** `CANDIDATE / CANONICAL_L1_PASS / L2_RUNTIME_PROFILE_READY / NOT_REGISTERED / BUILDER_NOT_APPLIED`  
+**Lifecycle:** `READY / CANONICAL_L1_PASS / L2_RUNTIME_PASS_FINGERPRINT_BOUND / NOT_REGISTERED / BUILDER_APPLIED_PRIVATE`  
 **Scope:** reusable SES specialist candidate for product experience, UX/UI and UX evidence work across web/SaaS/internal/mobile-responsive products.
 
 ## 1. Identity and mission
@@ -265,13 +265,14 @@ The candidate must resist at least:
 
 ## 17. Validation status
 
-Behavioral evidence is recorded in:
+Behavioral/runtime evidence is recorded in:
 - `tests/behavioral/UX_UI_APP_SPECIALIST_BEHAVIORAL_SUITE_V0_1.md`
 - `tests/behavioral/UX_UI_APP_SPECIALIST_L1_VALIDATION_V0_1.md`
 - `tests/behavioral/UX_UI_APP_SPECIALIST_L1_PACKET_FIDELITY_NOTE_V0_1.md`
 - `tests/behavioral/UX_UI_APP_SPECIALIST_L1C_EXECUTOR_KERNEL_V0_1.md`
 - `tests/behavioral/UX_UI_APP_SPECIALIST_L1C_RUNBOOK_V0_1.md`
 - `tests/behavioral/UX_UI_APP_SPECIALIST_L1C_VALIDATION_V0_1.md`
+- `tests/runtime/evidence/UX_UI_APP_SPECIALIST_L2_RUNTIME_PROOF_2026-08-16.md`
 
 Current proof boundary:
 
@@ -282,12 +283,14 @@ CANONICAL L1-C = PASS
 P01–P20 = PASS
 CANDIDATE_BEHAVIORAL_VALIDATION_L1 = PASS
 FULL_L1_BEHAVIORAL_SUITE = PASS
-L2 RUNTIME / BUILDER FINGERPRINT VALIDATION = NOT EXECUTED
-BUILDER APPLIED = NO
-REGISTRY ACTIVATION = NOT AUTHORIZED
+L2 RUNTIME / BUILDER FINGERPRINT VALIDATION = PASS / FINGERPRINT_BOUND
+BUILDER APPLIED = YES / PRIVATE
+SPECIALIST_READINESS = READY / USER_AUTHORIZED
+REGISTRY ACTIVATION = NOT AUTHORIZED / NOT ACTIVE
 CONSUMER ADOPTION = NOT AUTHORIZED
+PUBLICATION = NOT AUTHORIZED
 ```
 
-The canonical L1-C PASS is a new evidence event and does not rewrite the historical packeted run. A future L1 retest is required only if a material change invalidates affected behavioral claims.
+The canonical L1-C PASS is a distinct evidence event and does not rewrite the historical packeted run. The L2 PASS is bound to the exact Builder/runtime fingerprint recorded in the runtime proof artifact and does not transfer automatically to future model/kernel/action/configuration changes.
 
-L2 runtime profile/runbook are prepared under `tests/runtime/`, but L2 requires the actual configured Builder/runtime and exact effective fingerprint before any runtime PASS claim.
+Re-run only affected proof after a material invalidation event. READY does not authorize registry activation, publication, consumer-project adoption, production certification for every project or risk acceptance.

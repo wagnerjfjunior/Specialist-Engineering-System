@@ -1,6 +1,6 @@
 # SES — Blocked Actions
 
-**Status:** `SPECIALIST_PORTFOLIO_EXPANSION / UX_UI_CANONICAL_L1_PASS / L2_RUNTIME_PROFILE_READY / BLOCKED_ACTIONS`  
+**Status:** `SPECIALIST_PORTFOLIO_EXPANSION / UX_UI_READY / L2_RUNTIME_PASS / BLOCKED_ACTIONS`  
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System`
 
 Absence from this document does not create authorization. Capability, prior approval for another action, conversation history or a derived summary do not substitute for current applicable authority.
@@ -10,17 +10,15 @@ Absence from this document does not create authorization. Capability, prior appr
 Without separate explicit applicable authorization, block:
 - direct/unreviewed mutation of canonical SES state;
 - merge/publication decisions not explicitly authorized for the exact scope;
-- external Builder configuration/publication;
 - consumer-project mutation from SES central evolution;
 - automatic propagation of SES specialists into registered projects;
 - legacy specialist retirement/deletion without mapping, delta review, behavioral evidence, explicit project adoption and retirement decision;
-- registry activation merely from design or behavioral evidence;
 - rewriting historical proof/adjudication;
 - storing secrets in SES artifacts.
 
 ## 2. UX/UI evidence boundary
 
-Preserve both behavioral evidence events:
+Preserve all evidence events distinctly:
 
 ```text
 L0 HARNESS SANITY = PASS
@@ -29,45 +27,64 @@ CANONICAL L1-C = PASS
 P01–P20 = PASS
 CANDIDATE_BEHAVIORAL_VALIDATION_L1 = PASS
 FULL_L1_BEHAVIORAL_SUITE = PASS
+L2_RUNTIME_FINGERPRINT_VALIDATION = PASS / FINGERPRINT_BOUND
+SPECIALIST_READINESS = READY / USER_AUTHORIZED
 STOP_LOSS_TRIGGERED = NO
 INITIAL_OVERCLAIM = NONE OBSERVED
 RETROACTIVE_PASS = NONE
 ```
 
-Historical packeted fidelity limitations remain preserved and are not retroactively repaired by L1-C.
+Historical packeted fidelity limitations remain preserved and are not retroactively repaired by later PASS events.
 
-## 3. L1 invalidation discipline
+Canonical L2 evidence:
+- `tests/runtime/evidence/UX_UI_APP_SPECIALIST_L2_RUNTIME_PROOF_2026-08-16.md`
 
-Do not repeat L1 merely for additional confidence. Re-run only affected proof claims after a material invalidation event involving Candidate/kernel instructions, model/system/runtime configuration, tools/knowledge or fixture semantics.
+## 3. UX/UI L1/L2 invalidation discipline
+
+Do not repeat L1 or L2 merely for additional confidence.
+
+Re-run only affected proof claims after a material invalidation event involving:
+- Candidate/kernel instructions;
+- Builder model/system/runtime configuration;
+- Knowledge;
+- tools/actions/authentication/permissions;
+- integration set;
+- relevant fixture semantics;
+- contradictory/superseding evidence.
 
 Block:
-- rewriting historical packeted evidence as canonical;
-- treating future documentation edits as new behavioral evidence;
-- retroactive PASS after an initial failed execution.
+- rewriting historical evidence as if it came from a later run;
+- retroactive PASS after an initial failed execution;
+- transferring the fingerprint-bound L2 PASS to a materially changed Builder;
+- claiming an untested Vercel/Supabase-enabled configuration inherits the current L2 PASS;
+- reauditing unchanged gates solely because another artifact changed.
 
-## 4. L2 / runtime blocks
+## 4. UX/UI post-READY blocks
 
-L2 profile/runbook are prepared, but the Builder has not been applied and L2 has not been executed.
+Current state:
 
 ```text
-L2 PROFILE/RUNBOOK = PREPARED
-BUILDER APPLIED = NO
-L2 RUNTIME PASS = NOT ESTABLISHED
+BUILDER_APPLIED = YES / PRIVATE
+L2_RUNTIME_PASS = ESTABLISHED FOR EXACT FINGERPRINT
+READY = YES
+REGISTRY_ACTIVE = NO
+PUBLISHED = NO
+CONSUMER_ADOPTION = NO
 ```
 
 Without separate explicit applicable authorization, block:
-- applying the UX/UI profile/kernel in an external Builder;
-- changing Builder instructions, knowledge, tools/actions, permissions, model/settings or publication state;
-- publishing the specialist;
-- claiming Builder applied;
-- claiming L2/runtime PASS;
-- simulating L2 in an ordinary chat and presenting it as Builder runtime proof;
-- claiming tool execution without invocation/result evidence;
-- activating `archetypes/REGISTRY.md`;
-- adopting the specialist into a consumer project.
+- activating UX/UI APP Specialist in `archetypes/REGISTRY.md`;
+- publishing or broadening Builder visibility;
+- adopting the specialist into a consumer project;
+- using READY as authority to mutate consumer-project code/data/configuration;
+- changing Builder instructions, Knowledge, tools/actions, permissions, model/settings or integration set and continuing to cite the old L2 PASS without proportional revalidation;
+- treating GitHub read-only connectivity as authorization for repository mutation;
+- enabling Vercel or Supabase ad hoc under the tested fingerprint;
+- claiming production certification for every project or accepting risk from READY/L2 alone.
 
 ```text
-VERSIONED PROFILE != BUILDER APPLIED != RUNTIME PROOF != PUBLISHED
+READY != REGISTRY_ACTIVE != PUBLISHED != CONSUMER_ADOPTED
+TOOL_CAPABILITY != MUTATION_AUTHORIZATION
 ```
 
 ## 5. Specialist-portfolio stop-loss
@@ -82,15 +99,17 @@ Continue to block:
 - merging Backend/Data implementation authority with independent Security Assurance for convenience;
 - creating Frontend Engineering, Software Quality/Test Assurance or Privacy/LGPD archetypes merely for symmetry;
 - canonicalizing Growth/Analytics/Monetization before explicit challenge;
-- treating Platform/Delivery/Reliability consolidation as irreversible before evidence.
+- treating Platform/Delivery/Reliability consolidation as irreversible before evidence;
+- generating the Application Security Assurance candidate before minimum sufficient requirements/challenge are established.
 
 ## 6. Adoption/retirement boundary
 
 ```text
-CURRENT PROJECT SPECIALIST
-→ SES CANDIDATE MAPPING
+READY SES SPECIALIST
+→ REGISTRY DECISION WHEN AUTHORIZED
+→ CURRENT PROJECT SPECIALIST MAPPING
 → DELTA / AUTHORITY ANALYSIS
-→ BEHAVIORAL TESTS
+→ PROJECT-LOCAL BEHAVIORAL EVIDENCE WHEN REQUIRED
 → EXPLICIT PROJECT ADOPTION
 → RUNTIME/BUILDER APPLICATION WHEN AUTHORIZED
 → EQUIVALENCE / RESIDUAL-GAP REVIEW
@@ -133,7 +152,7 @@ BLOCKED / AUTHORITY_CHALLENGE_OVERLAY_PROCEDURE_NOT_VERSIONED_FOR_DOCUMENTATION_
 
 ## 8. Consumer-project boundary
 
-No SES portfolio decision grants mutation authority over FECH.AI, Blogs/SEO or another consumer project.
+No SES portfolio/readiness decision grants mutation authority over FECH.AI, Blogs/SEO or another consumer project.
 
 ## 9. Conflict and anti-loop rules
 
