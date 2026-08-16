@@ -20,7 +20,7 @@ Archetype resolution must be deterministic:
 
 Fail closed when no unique active archetype resolves.
 
-`RESOLUTION_STATUS` is the only field that determines registry eligibility. Lifecycle/version labels such as `RUNTIME_CANDIDATE_V0_1` or `SPEC_CANDIDATE_V0_1` describe maturity and must not be interpreted as active/inactive resolution state.
+`RESOLUTION_STATUS` is the only field that determines registry eligibility. Lifecycle/version labels such as `RUNTIME_CANDIDATE_V0_1`, `SPEC_CANDIDATE_V0_1` or `READY_V0_1` describe maturity and must not be interpreted as active/inactive resolution state.
 
 ## 3. Registered archetypes
 
@@ -59,6 +59,26 @@ The Documentation Auditor archetype provides reusable evidence-engineering metho
 It does not own project truth, project-local source precedence, lifecycle authority, runtime state or specialist routing. Those remain consumer-project responsibilities and must be resolved after project bootstrap.
 
 `RESOLUTION_STATUS: ACTIVE` means the versioned archetype contract can be resolved by SES. It does **not** mean an external Builder exists, has been configured, has passed runtime behavioral certification or is eligible to replace any project-bound specialist.
+
+### UX/UI APP Specialist
+
+```text
+ARCHETYPE_ID: ux-ui-app-specialist
+CANONICAL_NAME: SES — UX/UI APP Specialist
+ALIASES:
+- UX/UI APP Specialist
+- UX/UI Specialist
+- SES UX/UI APP Specialist
+CONTRACT_PATH: archetypes/ux-ui-app-specialist/ARCHETYPE.md
+RESOLUTION_STATUS: ACTIVE
+LIFECYCLE_STATUS: READY_V0_1 / L1_PASS / L2_RUNTIME_PASS_FINGERPRINT_BOUND
+```
+
+The UX/UI APP Specialist archetype provides reusable UX/UI and product-experience method: evidence discipline, discovery/opportunity framing, journey/state modeling, accessibility/mobile proof boundaries, security/privacy/architecture handoffs, tool honesty and prompt invariance.
+
+Its method is project-agnostic. Project identity, business rules, brand rules, live implementation state, repositories, deployments, databases and project authority remain project-local and must be resolved through the applicable SES project bootstrap path before project-specific substantive work.
+
+The validated Builder/runtime PASS remains bound to the recorded fingerprint. `RESOLUTION_STATUS: ACTIVE` does not transfer that proof to materially changed runtime configurations and does not automatically adopt the specialist into consumer projects.
 
 ## 4. Boundary
 
