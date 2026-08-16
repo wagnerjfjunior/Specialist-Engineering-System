@@ -1,6 +1,6 @@
 # SES — Project Status
 
-**Status:** `SPECIALIST_PORTFOLIO_EXPANSION / UX_UI_L1_PASS / L2_PREPARATION_NEXT`  
+**Status:** `SPECIALIST_PORTFOLIO_EXPANSION / UX_UI_PACKETED_L1_PASS / CANONICAL_L1_REPLICATION_NEXT`  
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System`  
 **Canonical branch:** `main` resolved live before material work  
 **Authoritative next action:** `docs/NEXT_SAFE_ACTION.md`
@@ -11,155 +11,124 @@ SES remains project-agnostic specialist-engineering infrastructure. Consumer pro
 
 ```text
 SES CENTRAL EVOLUTION != AUTOMATIC CONSUMER-PROJECT MUTATION
-SFJM/CONTINUITY = MATERIAL RECORDED STATE, NOT LIVE SOURCE AUTHORITY
 ```
 
-## 2. Current material objective
+## 2. UX/UI APP Specialist current state
 
-Product Authority directed continuation/consolidation of the reusable SES specialist portfolio.
+Versioned artifacts:
+- `docs/specialists/UX_UI_APP_SPECIALIST_CANDIDATE_V0_1.md`
+- `tests/behavioral/UX_UI_APP_SPECIALIST_BEHAVIORAL_SUITE_V0_1.md`
+- `tests/behavioral/UX_UI_APP_SPECIALIST_L1_VALIDATION_V0_1.md`
+- `tests/behavioral/UX_UI_APP_SPECIALIST_L1_PACKET_FIDELITY_NOTE_V0_1.md`
 
-The first active portfolio-expansion target, `SES — UX/UI APP Specialist Candidate v0.1`, has completed Candidate design and L1 behavioral validation.
+Historical observed evidence:
 
 ```text
-UX/UI APP SPECIALIST CANDIDATE V0.1
 L0 HARNESS SANITY = PASS
-L1 BEHAVIORAL VALIDATION = PASS
-P01–P20 = 20/20 PASS
+PACKETED_L1_BEHAVIORAL_EVIDENCE = PASS
+P01–P20 OBSERVED INITIAL RESPONSES = 20/20 PASS
+STOP_LOSS_TRIGGERED = NO
+INITIAL_OVERCLAIM = NONE OBSERVED
+RETROACTIVE_PASS = NONE
+```
+
+Formal review correction:
+
+```text
+CANONICAL_L1_FULL_SPEC_REPLICATION = NOT EXECUTED
+CANDIDATE_BEHAVIORAL_VALIDATION_L1 = NOT ESTABLISHED
+FULL_L1_BEHAVIORAL_SUITE = NOT ESTABLISHED
 L2 RUNTIME PROOF = NOT EXECUTED
 REGISTRY ACTIVE = NO
 ```
 
-Canonical artifacts:
+The correction narrows claim strength; it does not change historical per-proof observed adjudications.
 
-- `docs/specialists/UX_UI_APP_SPECIALIST_CANDIDATE_V0_1.md`
-- `tests/behavioral/UX_UI_APP_SPECIALIST_BEHAVIORAL_SUITE_V0_1.md`
-- `tests/behavioral/UX_UI_APP_SPECIALIST_L1_VALIDATION_V0_1.md`
+## 3. Why canonical L1 remains open
 
-The previously completed Documentation Auditor Runtime Enforcement Gateway Design v1 remains preserved/deferred/not implemented.
+The historical execution used fixture-adapted packets with selected Candidate rules. Some packets contained evaluation/test-meta cues. One exact repository-versioned frozen executor kernel/spec was not used unchanged across all fixtures, and exact packet/raw-input/raw-output hashes were not captured.
 
-## 3. UX/UI L1 proof state
-
-All proof obligations P01–P20 passed at L1.
-
-Preserve the exact scope of proof:
+Therefore:
 
 ```text
-CANDIDATE_BEHAVIORAL_VALIDATION_L1 = PASS
+OBSERVED PACKETED BEHAVIORAL PASS
+!=
+CANONICAL FULL-SPEC L1 PASS
 ```
 
-Do not promote this to:
+## 4. Provenance limitations
+
+Preserve permanently for the historical packeted cycle:
 
 ```text
-BUILDER RUNTIME PASS
-L2 PASS
-PRODUCTION CERTIFICATION
-UNIVERSAL VALIDATION
-```
-
-Provenance limitations remain material:
-
-```text
-EXECUTION_CONTEXT_ISOLATION = USER_REPORTED
+FRESH_CONTEXT = USER_REPORTED
+ANSWER_KEY_NOT_VISIBLE = USER_REPORTED
 RAW_OUTPUT_UNMODIFIED = USER_REPORTED
+EXECUTION_CONTEXT_ISOLATION = USER_REPORTED
+P20_PAIRING_AMBIGUITY = RESOLVED
 P20_BLIND_ADJUDICATION = NOT EXECUTED
 P20_NON_BLIND_ADJUDICATION = PASS
+RAW_INPUT_HASHES = NOT CAPTURED
+RAW_OUTPUT_HASHES = NOT CAPTURED
+MODEL/RUNTIME TELEMETRY = NOT CAPTURED
 ```
 
-These limitations are historical and cannot be erased by later stronger evidence.
+## 5. Current next proof event
 
-## 4. Existing SES archetypes and proof history
+The sole next action is canonical L1-C replication using one frozen versioned executor kernel/spec across P01–P20. See `docs/NEXT_SAFE_ACTION.md`.
 
-Current registry state remains limited to the existing reusable archetypes in `archetypes/REGISTRY.md`. UX/UI APP Specialist is not yet active there.
+L2 preparation is deferred until L1-C adjudication.
 
-Preserve:
+## 6. Existing archetypes and historical proof
 
-- Documentation Auditor current specification/runtime limitations and historical failures;
-- SaaS Architect historical v0.1 runtime PASS bound only to its exact historical fingerprint;
-- no transfer of historical runtime proof through future rename/evolution.
+Current registry remains unchanged. Preserve:
+- SaaS Architect historical v0.1 runtime PASS bound to exact historical fingerprint;
+- Documentation Auditor current limitations and historical failures;
+- no proof transfer through future rename/evolution.
 
-Preferred future naming direction remains `SES — Software Systems Architect`, but no canonical rename/version has been executed.
+Preferred future naming direction remains `SES — Software Systems Architect`; rename not executed.
 
-## 5. Target specialist portfolio direction
-
-Current target direction remains approximately:
+## 7. Portfolio direction
 
 ```text
-REUSABLE SES
+REUSABLE SES DIRECTION
 1. Software Systems Architect — proposed evolution/name direction.
 2. Documentation Auditor — existing.
-3. UX/UI APP Specialist — L1 PASS; L2 PREPARATION NEXT.
+3. UX/UI APP Specialist — packeted L1 evidence PASS; canonical L1-C next.
 4. Backend & Data Platform — candidate.
 5. Application Security Assurance — strong candidate.
 6. Platform, Delivery & Reliability — candidate consolidation; reversible.
 7. Integration & Automation — candidate.
 8. SEO & Organic Growth — candidate consolidation.
 9. Growth, Analytics & Monetization — candidate; CHALLENGE_REQUIRED.
-
-PROJECT-LOCAL / NOT UNIVERSALIZED
-- FECH.AI LeadOps / CRM / Discador.
-- FECH.AI MesaCliente / Tabelas / Propostas.
 ```
 
-Specialist-count reduction is not itself an acceptance criterion.
+Project-local FECH.AI LeadOps/CRM/Discador and MesaCliente/Tabelas/Propostas remain project-local.
 
-## 6. Candidate learnings not yet archetypes
-
-Keep as `CANDIDATE LEARNING / NOT YET JUSTIFIED` until repeated independent evidence exists:
-
-- Frontend Application Engineering;
-- Software Quality & Test Assurance;
-- Privacy/LGPD specialist;
-- generic CRM/Sales Operations;
-- generic financial/proposal specialist.
-
-Do not create archetypes for symmetry.
-
-## 7. Security/backend boundary
-
-FECH.AI GPT3 v2.0 remains a Reference Implementation rather than a 1:1 SES archetype.
-
-Target split remains:
+## 8. Security/backend boundary
 
 ```text
-Backend & Data Platform
-= secure server/data implementation owner
-
-Application Security Assurance
-= independent security/adversarial verification owner
+Backend & Data Platform = secure server/data implementation owner
+Application Security Assurance = independent adversarial/security verification owner
 ```
 
-Candidate learning remains:
+Candidate learning: `IMPLEMENTATION RESPONSIBILITY != ASSURANCE AUTHORITY`.
+
+## 9. Adoption/retirement boundary
+
+No project specialist is retired or automatically replaced.
 
 ```text
-IMPLEMENTATION RESPONSIBILITY != ASSURANCE AUTHORITY
-```
-
-## 8. Consolidation/adoption boundary
-
-No current FECH.AI or SEO specialist is retired by this target state.
-
-Required future migration path:
-
-```text
-MAP CURRENT SPECIALIST
-→ DESIGN/TEST SES CANDIDATE
-→ DELTA + AUTHORITY REVIEW
+CURRENT PROJECT SPECIALIST
+→ SES CANDIDATE MAPPING
+→ DELTA / AUTHORITY ANALYSIS
+→ BEHAVIORAL TESTS
 → EXPLICIT PROJECT ADOPTION
-→ APPLY RUNTIME/BUILDER ONLY WHEN AUTHORIZED
+→ RUNTIME/BUILDER APPLICATION WHEN AUTHORIZED
 → EQUIVALENCE / RESIDUAL-GAP REVIEW
 → RETIREMENT DECISION
 ```
 
-```text
-TARGET CONSOLIDATION != AUTHORIZED RETIREMENT
-```
+## 10. Preserved Documentation Auditor state
 
-## 9. Next proof level
-
-The sole semantic next action is maintained in `docs/NEXT_SAFE_ACTION.md`.
-
-Current direction: prepare a versioned L2 runtime candidate package for UX/UI APP Specialist v0.1. External Builder application or publication remains separately authorized work and is not implied by L1 PASS.
-
-## 10. Continuity
-
-`handoffs/CURRENT.md` contains the cross-model resume state. `docs/NEXT_SAFE_ACTION.md` is the sole authoritative semantic next action. `docs/BLOCKED_ACTIONS.md` defines current stop-loss and non-authorizations.
+Documentation Auditor Gateway Design v1 remains preserved/deferred/not implemented. UX/UI work does not repair or alter its historical failures or runtime-certification blockers.
