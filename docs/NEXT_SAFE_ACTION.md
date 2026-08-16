@@ -2,185 +2,117 @@
 
 > Este é o registro autoritativo da única próxima ação segura do SES quando este estado estiver em `main`.
 
-**Next action ID:** `design-ux-ui-app-specialist-candidate-v0-1`
-**Primary target:** `SES — UX/UI APP Specialist`
-**Current phase:** `SPECIALIST_PORTFOLIO_EXPANSION / UX_UI_REQUIREMENTS_EVIDENCE_COMPLETE_ENOUGH_FOR_CANDIDATE_DESIGN`
+**Next action ID:** `execute-ux-ui-app-specialist-canonical-l1-replication`  
+**Primary target:** `SES — UX/UI APP Specialist Candidate v0.1`  
+**Current phase:** `SPECIALIST_PORTFOLIO_EXPANSION / UX_UI_PACKETED_L1_PASS / CANONICAL_L1_REPLICATION_NEXT`  
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System` / `main` resolved live
 
-## 1. Material Product Authority direction
+## 1. Material state reached
 
-Product Authority changed the active SES objective from the Documentation Auditor Gateway implementation-architecture review to continuation/consolidation of the reusable SES specialist portfolio, with continuity preserved for cross-conversation/cross-model work.
+The Candidate design and behavioral suite are versioned. A historical packeted execution produced 20/20 observed PASS results, but formal review found that the run used fixture-adapted packets rather than one frozen repository-versioned executor kernel/spec.
 
-The prior Gateway Design v1 is **deferred, not cancelled**. Its historical failures, design decisions D01-D22, proof obligations G01-G28 and implementation block remain preserved. No Gateway implementation, Builder mutation or retroactive PASS is authorized by this objective change.
-
-## 2. Current specialist-portfolio target direction
-
-Current target is approximately nine reusable SES archetypes plus genuinely project-local domain specialists. This is a product/design direction, not canonical registry publication or legacy retirement authority.
+Preserve:
 
 ```text
-REUSABLE SES TARGETS
-1. Software Systems Architect — proposed evolution/name direction from SaaS Architect; rename not executed.
-2. Documentation Auditor — existing reusable archetype.
-3. UX/UI APP Specialist — ACTIVE DESIGN TARGET.
-4. Backend & Data Platform Specialist — candidate.
-5. Application Security Assurance Specialist — strong candidate.
-6. Platform, Delivery & Reliability Specialist — candidate consolidation; reversible if tests show depth/authority loss.
-7. Integration & Automation Specialist — candidate.
-8. SEO & Organic Growth Specialist — candidate consolidation of SEO research/technical/content/authority/link-building capabilities.
-9. Growth, Analytics & Monetization Specialist — candidate; CHALLENGE_REQUIRED before canonicalization.
-
-PROJECT-LOCAL PRESERVED
-- FECH.AI LeadOps / CRM / Discador.
-- FECH.AI MesaCliente / Tabelas / Propostas.
+L0 HARNESS SANITY = PASS
+PACKETED_L1_BEHAVIORAL_EVIDENCE = PASS
+P01–P20 OBSERVED INITIAL RESPONSES = 20/20 PASS
+STOP_LOSS_TRIGGERED = NO
+INITIAL_OVERCLAIM = NONE OBSERVED
+RETROACTIVE_PASS = NONE
 ```
 
-Do not create Frontend Engineering, Software Quality/Test Assurance, Privacy/LGPD or other new universal archetypes merely for symmetry; keep them as candidate learnings until repeated project evidence justifies promotion.
-
-## 3. Architecture identity direction
-
-`SES — SaaS Architect` is considered too narrow for the intended reusable architecture method. Preferred working direction:
+Do not currently claim:
 
 ```text
-SES — Software Systems Architect
+FULL_L1_BEHAVIORAL_SUITE = PASS
+CANDIDATE_BEHAVIORAL_VALIDATION_L1 = PASS
+CANONICAL_L1_FULL_SPEC_REPLICATION = PASS
+L2 RUNTIME PASS
 ```
 
-This is not yet a canonical rename/version change.
+## 2. Sole next material action
+
+Prepare, freeze and execute **L1-C canonical replication** before L2 work.
+
+The replication must:
+
+1. derive one compact executor kernel/spec from the Candidate;
+2. version it in SES and capture exact ref/hash;
+3. use the same kernel/spec unchanged across all Candidate fixtures;
+4. vary only fixture facts and user request;
+5. remove unnecessary evaluation/test-meta cues from executor-visible input;
+6. execute one fixture per fresh context;
+7. keep answer key/adjudication rubric outside the executor context;
+8. preserve first raw response as evidentiary unit;
+9. capture raw input/output hashes where technically possible;
+10. capture model/system/tool configuration where available;
+11. record contamination assertions;
+12. execute P20 with blinded adjudication when feasible, otherwise preserve the non-blind limitation.
+
+## 3. Done condition
+
+This next action completes only when:
 
 ```text
-HISTORICAL SAAS ARCHITECT RUNTIME PASS
-remains bound to the exact historical identity/fingerprint.
-
-RENAME/EVOLUTION != AUTOMATIC TRANSFER OF HISTORICAL PASS
+ONE FROZEN EXECUTOR KERNEL/SPEC = VERSIONED
+EXACT KERNEL REF/HASH = CAPTURED
+CANONICAL L1-C P01–P20 = EXECUTED
+RESULTS = ADJUDICATED
+PROVENANCE = RECORDED
 ```
 
-## 4. Security/backend boundary learned from FECH.AI GPT3
-
-FECH.AI GPT3 v2.0 is a Reference Implementation, not a 1:1 SES archetype. It materially combines Backend/Data implementation with Security Assurance and privacy-related concerns.
-
-Current target split:
+Only a successful new L1-C run may establish:
 
 ```text
-Backend & Data Platform
-→ implements secure server/data controls.
-
-Application Security Assurance
-→ independently challenges/tests/evidences material security controls and boundaries.
+CANDIDATE_BEHAVIORAL_VALIDATION_L1 = PASS
+FULL_L1_BEHAVIORAL_SUITE = PASS
 ```
 
-Candidate learning:
+The historical packeted run remains unchanged.
+
+## 4. L2 sequencing
+
+L2 preparation is **not** the current next action anymore. It becomes eligible only after canonical L1-C adjudication.
+
+If L1-C passes:
 
 ```text
-IMPLEMENTATION RESPONSIBILITY != ASSURANCE AUTHORITY
+CANONICAL L1-C PASS
+→ PREPARE VERSIONED L2 RUNTIME PROFILE/KERNEL/FINGERPRINT/RUNBOOK
+→ EXTERNAL BUILDER APPLICATION ONLY WITH SEPARATE AUTHORIZATION
+→ EXECUTE L2 UNDER EXACT FINGERPRINT
 ```
 
-Security requirements remain distributed across technical specialists; independent AppSec assurance remains cross-cutting. Do not promote this candidate learning to universal principle without normal SES review/generalization.
-
-## 5. UX/UI evidence already established
-
-The UX/UI candidate design is informed by:
-
-- FECH.AI GPT2 as Reference Implementation;
-- GPT2 UX/Product report;
-- competent generic/random-conversation UX/Product report as baseline/disconfirmation evidence.
-
-Candidate methods already identified:
-
-```text
-PRODUCT EXPERIENCE COVERAGE SWEEP
-PRODUCT OPPORTUNITY SWEEP
-UX EVIDENCE LADDER
-CLAIM -> PROOF OBLIGATION
-BOUNDARY/HANDOFF DISCIPLINE
-BEHAVIORAL VALIDATION
-```
-
-Candidate UX evidence ladder:
-
-```text
-E0 ASSUMPTION
-E1 ARTIFACT EVIDENCE
-E2 OBSERVED EXPERIENCE
-E3 BEHAVIORAL EVIDENCE
-E4 USER EVIDENCE
-E5 OUTCOME EVIDENCE
-```
-
-Observed strengths of the FECH.AI reference include evidence/boundary discipline, research, accessibility and runtime validation. Observed gaps to protect against include coverage completeness, product-opportunity discovery and prompt-invariance.
-
-Behavioral requirement:
-
-```text
-A specialist must not materially underperform a competent generic conversation in its own domain merely because the user did not enumerate every discipline to inspect.
-```
-
-## 6. Sole next material action
-
-Design `UX/UI APP Specialist Candidate v0.1` only.
-
-The design must:
-
-1. preserve SES universal/project-local/specialist-specific separation;
-2. remain project-agnostic and usable by new projects;
-3. treat FECH.AI GPT2 as reference implementation, not universal authority;
-4. define mission, scope, authority and boundaries;
-5. define Product Experience coverage and opportunity sweeps;
-6. define evidence ladder/proof obligations and unsupported-claim behavior;
-7. define research, IA, journeys, interaction, UI, design system, accessibility, responsive/mobile, content/microcopy, analytics and validation competencies;
-8. define existing-product versus greenfield/hybrid discovery behavior;
-9. define handoffs to architecture, backend/data, security, platform and project-local domain owners;
-10. define behavioral tests including prompt-invariance, evidence-level discipline, accessibility/mobile proof limits, security-sensitive flow routing and generic-baseline comparison;
-11. keep `GENERATE != AUTHORIZE != PUBLISH`;
-12. return Candidate v0.1 for review before registry/runtime/Builder publication.
-
-## 7. Queue after UX/UI candidate
-
-Current sequencing direction, subject to evidence and explicit decisions:
-
-```text
-UX/UI APP Specialist
-→ Application Security Assurance
-→ Backend & Data Platform
-→ Platform + Delivery + Reliability consolidation
-→ SEO & Organic Growth consolidation
-→ challenge Growth + Analytics + Monetization
-→ Integration & Automation if universal need remains supported
-→ only then evaluate legacy retirement/adoption per project
-```
-
-Do not build all candidates simultaneously.
-
-## 8. Explicitly blocked
+## 5. Explicitly blocked
 
 Do not:
+- treat documentation correction as retroactive L1-C PASS;
+- advance to L2 as if canonical L1 had already passed;
+- activate UX/UI APP Specialist in `archetypes/REGISTRY.md`;
+- configure/publish an external Builder without explicit applicable authorization;
+- adopt the Candidate into a consumer project;
+- retire or replace project-local specialists;
+- alter historical packeted outcomes/provenance;
+- implement the deferred Documentation Auditor Gateway;
+- execute the SaaS Architect rename from direction alone.
 
-- mutate `archetypes/REGISTRY.md` merely from this target direction;
-- execute the SaaS Architect rename without a versioned rename/evolution decision and proportional proof;
-- retire/delete FECH.AI or SEO legacy specialists;
-- automatically adopt SES specialists into consumer projects;
-- mutate FECH.AI or Blogs/SEO from central SES evolution;
-- implement/deploy the Documentation Auditor Gateway;
-- create/configure external Builders from Candidate design alone;
-- grant runtime/spec/product/security PASS from design documents;
-- universalize FECH.AI-specific modules, Supabase specifics, MesaCliente, LeadOps or project routing.
+## 6. Preserved portfolio direction
 
-## 9. Adoption/retirement path
+Queue after UX/UI remains:
 
 ```text
-CURRENT PROJECT SPECIALIST
-→ MAP TO SES CANDIDATE
-→ DELTA / AUTHORITY ANALYSIS
-→ BEHAVIORAL TESTS
-→ EXPLICIT PROJECT ADOPTION
-→ RUNTIME/BUILDER APPLICATION WHEN AUTHORIZED
-→ EQUIVALENCE / RESIDUAL-GAP REVIEW
-→ RETIREMENT DECISION
+UX/UI APP Specialist — canonical L1-C next, then L2 if passed
+→ Application Security Assurance
+→ Backend & Data Platform
+→ Platform + Delivery + Reliability
+→ SEO & Organic Growth
+→ challenge Growth + Analytics + Monetization
+→ Integration + Automation if still justified
+→ only then evaluate project adoption/legacy retirement
 ```
 
 ```text
-TARGET CONSOLIDATION != AUTHORIZED RETIREMENT
 CENTRAL SES EVOLUTION != AUTOMATIC PROJECT MUTATION
+TARGET CONSOLIDATION != AUTHORIZED RETIREMENT
 ```
-
-## 10. Done condition
-
-Complete only when a reviewable `UX/UI APP Specialist Candidate v0.1` exists with explicit requirements, assumptions/challenges, competencies, evidence/proof model, authority boundaries, project-local separation and behavioral test suite. No registry activation, Builder application, project adoption or publication is implied.
