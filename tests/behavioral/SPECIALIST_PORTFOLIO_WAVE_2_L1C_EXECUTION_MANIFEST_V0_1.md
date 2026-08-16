@@ -10,6 +10,7 @@ CANDIDATE_ID = application-security-assurance-specialist-v0.1
 KERNEL_ID = application-security-assurance-l1c-executor-kernel-v0.1
 KERNEL_BLOB_SHA = c1a0a6e66278b0bc94ef3280aff635a42faf9332
 RUNBOOK = tests/behavioral/APPLICATION_SECURITY_ASSURANCE_SPECIALIST_L1C_RUNBOOK_V0_1.md
+COVERAGE_SUPPLEMENT = tests/behavioral/SPECIALIST_PORTFOLIO_WAVE_2_L1C_COVERAGE_SUPPLEMENT_V0_1.md / A13+A14
 BEHAVIORAL_SUITE = tests/behavioral/APPLICATION_SECURITY_ASSURANCE_SPECIALIST_BEHAVIORAL_SUITE_V0_1.md
 L1_C_EXECUTION = NOT_EXECUTED
 L1_C_RESULT = NOT_ESTABLISHED
@@ -23,6 +24,7 @@ CANDIDATE_ID = backend-data-platform-specialist-v0.1
 KERNEL_ID = backend-data-platform-l1c-executor-kernel-v0.1
 KERNEL_BLOB_SHA = 906274528abc8becac74b29d64863175aa10abd2
 RUNBOOK = tests/behavioral/BACKEND_DATA_PLATFORM_SPECIALIST_L1C_RUNBOOK_V0_1.md
+COVERAGE_SUPPLEMENT = tests/behavioral/SPECIALIST_PORTFOLIO_WAVE_2_L1C_COVERAGE_SUPPLEMENT_V0_1.md / B17+B18
 BEHAVIORAL_SUITE = tests/behavioral/BACKEND_DATA_PLATFORM_SPECIALIST_BEHAVIORAL_SUITE_V0_1.md
 L1_C_EXECUTION = NOT_EXECUTED
 L1_C_RESULT = NOT_ESTABLISHED
@@ -36,6 +38,7 @@ Canonical L1-C evidence is valid only when:
 - each fixture runs in a fresh isolated context;
 - the first response is captured before correction/coaching;
 - hidden adjudication criteria/answer keys are not visible to the executor;
+- the runbook and the bound coverage supplement fixtures are both executed;
 - raw input/output and available execution metadata are preserved;
 - historical FAIL remains historical after later correction;
 - generic-baseline and prompt-invariance requirements are executed as specified by each runbook.
@@ -49,6 +52,8 @@ CANDIDATES = VERSIONED
 BEHAVIORAL_SUITES = VERSIONED
 L1C_KERNELS = FROZEN / HASH_BOUND
 L1C_RUNBOOKS = VERSIONED
+L1C_COVERAGE_SUPPLEMENT = VERSIONED / BOUND
+PRE_EXECUTION_COVERAGE_REVIEW = COMPLETED
 L1C_EXECUTION = NOT_EXECUTED
 L1 PASS = NOT_ESTABLISHED
 L2 PASS = NOT_ESTABLISHED
