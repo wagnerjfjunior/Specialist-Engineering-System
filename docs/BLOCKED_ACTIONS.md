@@ -101,7 +101,17 @@ Block without separate authorization:
 - universalization of specialist-specific Gateway learning;
 - use of Gateway design to retroactively repair v0.9 failures.
 
-## 7. Active work allowed by current state
+## 7. Full Documentation Auditor runtime-certification blocker remains separate
+
+Independently of Gateway design or specialist-portfolio expansion, full aggregate Documentation Auditor runtime certification remains:
+
+```text
+BLOCKED / AUTHORITY_CHALLENGE_OVERLAY_PROCEDURE_NOT_VERSIONED_FOR_DOCUMENTATION_AUDITOR
+```
+
+Do not improvise an ad hoc write-capable challenge overlay. Lifting this blocker requires a separate explicit authorization for a versioned disposable-scope challenge procedure and execution under the applicable suite. Gateway design, future Gateway proof, UX/UI specialist work or portfolio consolidation do not satisfy this obligation.
+
+## 8. Active work allowed by current state
 
 Read-only/design work may:
 
@@ -114,11 +124,11 @@ Read-only/design work may:
 
 Design capability does not authorize registry activation, Builder creation/configuration, project adoption, runtime publication or legacy retirement.
 
-## 8. Consumer-project boundary
+## 9. Consumer-project boundary
 
 No SES portfolio decision grants FECH.AI, Blogs/SEO or another consumer-project mutation authority. Project truth, local specialist rules and adoption decisions remain project-owned.
 
-## 9. Conflict and anti-loop rules
+## 10. Conflict and anti-loop rules
 
 If `docs/NEXT_SAFE_ACTION.md` conflicts materially with bootstrap, handoff, project status, live authority, archetype registry or newer evidence: stop and reconcile the exact conflict.
 
