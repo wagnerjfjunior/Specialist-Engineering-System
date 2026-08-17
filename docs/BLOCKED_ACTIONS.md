@@ -54,13 +54,17 @@ ABSENCE_OF_FINDING != PROOF_OF_ABSENCE
 
 ## 3. Certified reusable specialists
 
-Current certification ledger under the candidate gate:
+Current certification ledger under the gate:
 
 ```text
 ux-ui-app-specialist = CERTIFIED_FOR_ANY_PROJECT YES
 backend-data-platform-specialist = CERTIFIED_FOR_ANY_PROJECT YES
 application-security-assurance-specialist = CERTIFIED_FOR_ANY_PROJECT YES
 ```
+
+Evidence-bound adjudication:
+
+`tests/behavioral/evidence/SPECIALIST_CERTIFICATION_PORTFOLIO_ADJUDICATION_2026-08-17.md`
 
 For any certified specialist, block without separate applicable authority:
 
