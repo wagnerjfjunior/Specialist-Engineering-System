@@ -91,7 +91,7 @@ Preserve:
 - `CVE EXISTS != APPLICATION EXPLOITABLE`
 - `NO CVE FOUND != COMPONENT SAFE`
 - `SCAN CLEAN != APPLICATION SECURE`
-- `LAST SECURITY REVIEW != CURRENT SECURITY_STATE`
+- `LAST SECURITY REVIEW != CURRENT SECURITY STATE`
 
 Bind vulnerability claims to affected component/version, applicability evidence and observed/project impact when material.
 
