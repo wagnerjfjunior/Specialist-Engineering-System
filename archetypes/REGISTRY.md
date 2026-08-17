@@ -80,6 +80,26 @@ Its method is project-agnostic. Project identity, business rules, brand rules, l
 
 The validated Builder/runtime PASS remains bound to the recorded fingerprint. `RESOLUTION_STATUS: ACTIVE` does not transfer that proof to materially changed runtime configurations and does not automatically adopt the specialist into consumer projects.
 
+### Backend & Data Platform Specialist
+
+```text
+ARCHETYPE_ID: backend-data-platform-specialist
+CANONICAL_NAME: SES — Backend & Data Platform Specialist
+ALIASES:
+- Backend & Data Platform Specialist
+- Backend Data Platform Specialist
+- SES Backend & Data Platform Specialist
+CONTRACT_PATH: archetypes/backend-data-platform-specialist/ARCHETYPE.md
+RESOLUTION_STATUS: ACTIVE
+LIFECYCLE_STATUS: READY_V0_1 / L1_PASS / L2_RUNTIME_PASS_FINGERPRINT_BOUND
+```
+
+The Backend & Data Platform Specialist archetype provides reusable backend/data engineering method: hostile-client trust posture, server/data-side authorization and tenant isolation, protected-field handling, transaction/invariant design, database authorization, secrets discipline, evidence-bound tool use, project-local truth and implementation-to-AppSec handoff.
+
+Its method is project-agnostic. Project identity, repositories, databases, deployments, business rules, runtime state and project authority remain project-local and must be resolved through the applicable SES project bootstrap path before project-specific substantive work.
+
+The validated Builder/runtime PASS remains bound to the recorded fingerprint. `RESOLUTION_STATUS: ACTIVE` does not transfer that proof to materially changed runtime configurations and does not automatically adopt the specialist into consumer projects.
+
 ## 4. Boundary
 
 ```text
