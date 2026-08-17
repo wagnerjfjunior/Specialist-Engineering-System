@@ -1,6 +1,6 @@
 # SES — Blocked Actions
 
-**Status:** `SPECIALIST_PORTFOLIO_EXPANSION / UX_UI_ARCHETYPE_ACTIVE / UX_UI_READY / BLOCKED_ACTIONS`  
+**Status:** `SPECIALIST_PORTFOLIO_EXPANSION / UX_UI_ACTIVE / BACKEND_DATA_ACTIVE / APPSEC_CLOSURE_BLOCKS`  
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System`
 
 Absence from this document does not create authorization. Capability, registry state, prior approval for another action, conversation history or a derived summary do not substitute for current applicable authority.
@@ -16,68 +16,72 @@ Without separate explicit applicable authorization, block:
 - rewriting historical proof/adjudication;
 - storing secrets in SES artifacts.
 
-## 2. UX/UI proof and registry boundary
+## 2. Active archetype boundaries
 
-Preserve:
-
-```text
-HISTORICAL L1-P / PACKETED = PASS_WITH_FIDELITY_AND_PROVENANCE_LIMITATIONS
-CANONICAL L1-C = PASS
-P01–P20 = PASS
-FULL_L1_BEHAVIORAL_SUITE = PASS
-L2_RUNTIME_FINGERPRINT_VALIDATION = PASS / FINGERPRINT_BOUND
-SPECIALIST_READINESS = READY / USER_AUTHORIZED
-ARCHETYPE_ID = ux-ui-app-specialist
-ARCHETYPE_RESOLUTION_STATUS = ACTIVE
-AVAILABLE_FOR_PROJECT_RESOLUTION = YES
-INITIAL_OVERCLAIM = NONE OBSERVED
-RETROACTIVE_PASS = NONE
-```
-
-Canonical evidence:
-- `tests/runtime/evidence/UX_UI_APP_SPECIALIST_L2_RUNTIME_PROOF_2026-08-16.md`
-- `tests/behavioral/UX_UI_APP_SPECIALIST_ARCHETYPE_RESOLUTION_V0_1.md`
-
-Historical packeted limitations remain historical and are not retroactively repaired by later PASS events.
-
-## 3. UX/UI invalidation discipline
-
-Do not repeat L1/L2 merely for confidence. Revalidate only affected claims after material invalidation involving Candidate/archetype/kernel behavior, model/runtime settings, Knowledge, tools/actions/authentication/permissions, integration set, fixture semantics or contradictory evidence.
-
-Block:
-- retroactive PASS after an initial failed execution;
-- transferring fingerprint-bound L2 PASS to a materially changed Builder;
-- claiming an untested Vercel/Supabase-enabled configuration inherits current L2 PASS;
-- treating archetype activation itself as a reason to replay unchanged L1/L2 gates;
-- reauditing unrelated gates solely because another artifact changed.
-
-## 4. UX/UI post-activation blocks
-
-Current state:
+Current active reusable archetypes include:
 
 ```text
-ARCHETYPE_ACTIVE = YES
-READY = YES
-BUILDER_APPLIED = YES / PRIVATE
-L2_RUNTIME_PASS = ESTABLISHED FOR EXACT FINGERPRINT
-PUBLISHED = NO
-AUTOMATIC_CONSUMER_ADOPTION = NO
+ux-ui-app-specialist = READY / ACTIVE / FINGERPRINT-BOUND L2 PASS
+backend-data-platform-specialist = READY / ACTIVE / FINGERPRINT-BOUND L2 PASS
 ```
 
-Without separate explicit applicable authorization, block:
-- publishing or broadening Builder visibility;
-- automatically adopting the specialist into a consumer project;
-- using archetype activation as authority to mutate consumer-project code/data/configuration;
+For either active archetype, block without separate applicable authority:
+- publishing or broadening private Builder visibility;
+- automatic consumer-project adoption;
+- using registry activation as mutation authority over consumer-project code/data/configuration;
 - treating `ARCHETYPE_RESOLVED` as `PROJECT_CONTEXT_READY`;
-- changing Builder instructions, Knowledge, tools/actions, permissions, model/settings or integration set and continuing to cite the old L2 PASS without proportional revalidation;
-- treating GitHub read-only connectivity as repository mutation authority;
-- enabling Vercel or Supabase ad hoc under the tested fingerprint;
-- claiming production certification for every project or accepting risk from READY/L2/registry activation alone.
+- transferring old L2 PASS to a materially changed Builder/runtime;
+- claiming production certification for every project or accepting risk from readiness/activation alone.
 
 ```text
 ARCHETYPE_ACTIVE != PROJECT_CONTEXT_READY
 PROJECT_CONTEXT_READY != AUTHORIZED_TO_MUTATE
 ARCHETYPE_ACTIVE != AUTOMATIC_CONSUMER_ADOPTION
+```
+
+## 3. Backend & Data Platform proof boundary
+
+Preserve:
+
+```text
+L1-C = PASS
+P01-P22 = SATISFIED
+L2_RUNTIME_FINGERPRINT_VALIDATION = PASS
+SPECIALIST_READINESS = READY / USER_AUTHORIZED
+ARCHETYPE_RESOLUTION_STATUS = ACTIVE
+RUNTIME_ID = g-6a834feee5dc8191b4f99cbc0fa62320
+```
+
+Do not:
+- weaken hostile-client or server/data-side authorization boundaries;
+- infer security assurance closure from Backend/Data implementation tests;
+- enable Supabase/Vercel under the tested v0.1 fingerprint and retain the old L2 PASS without proportional revalidation;
+- merge implementation ownership with independent security assurance authority.
+
+## 4. Application Security Assurance current blocks
+
+Preserve current evidence state:
+
+```text
+L1-C = PASS
+SPECIALIST_READINESS = NOT ESTABLISHED
+ARCHETYPE_ACTIVE = NO
+R06 = BLOCKED / EXTERNAL RUNTIME-ACTION SERVICE
+EXACT COMPACT RUNTIME FINGERPRINT BINDING = UNRESOLVED
+```
+
+Block:
+- converting R06 to PASS without successful affected runtime evidence;
+- claiming root cause of AppSec Action failure without evidence;
+- silently rewriting v0.1 Builder/kernel history to fit current compact runtime;
+- promoting AppSec to READY before L2/fingerprint closure;
+- activating an AppSec archetype before separate readiness and resolution proof;
+- rerunning unaffected gates solely for confidence;
+- treating elapsed time, retry count or absence of new errors as proof of recovery.
+
+```text
+BLOCKED != PASS
+INITIAL FAIL / BLOCKED HISTORY MUST REMAIN PRESERVED
 ```
 
 ## 5. Specialist-portfolio stop-loss
@@ -93,7 +97,7 @@ Continue to block:
 - creating Frontend Engineering, Software Quality/Test Assurance or Privacy/LGPD archetypes merely for symmetry;
 - canonicalizing Growth/Analytics/Monetization before explicit challenge;
 - treating Platform/Delivery/Reliability consolidation as irreversible before evidence;
-- generating the Application Security Assurance candidate before minimum sufficient requirements/challenge are established.
+- starting Platform, Delivery & Reliability solely to avoid finishing AppSec affected runtime proof, absent explicit reprioritization.
 
 ## 6. Adoption/retirement boundary
 
@@ -138,7 +142,9 @@ Documentation Auditor Gateway Design v1 remains preserved/deferred/not implement
 
 ## 8. Consumer-project boundary
 
-No SES portfolio/readiness/registry decision grants mutation authority over FECH.AI, Blogs/SEO or another consumer project.
+No SES portfolio/readiness/registry decision grants mutation authority over FECH.AI, Blogs/SEO, StopJuniorMode/SFJM or another consumer/reference project.
+
+Cross-project continuity may record SES state as a reference only when explicitly authorized; it must not convert SES state into SFJM authority or vice versa.
 
 ## 9. Conflict and anti-loop rules
 
