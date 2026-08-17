@@ -29,7 +29,7 @@ The pre-adoption continuity record that still targeted AppSec L2 closure was sta
 
 ## 2. Sole next material specialist action
 
-Close the **SaaS Architect current Builder-fit certification gap**.
+Close the **SaaS Architect current Builder-package / Builder-fit runtime certification gap**.
 
 Do not transfer historical v0.1 PASS to the current Builder-fit revision.
 
@@ -37,14 +37,15 @@ The action is limited to:
 
 1. resolve the actual current external Builder configuration for `SES — SaaS Architect`;
 2. compare it to `runtime/custom-gpt/SAAS_ARCHITECT_BUILDER_PROFILE.md` and `runtime/custom-gpt/SAAS_ARCHITECT_BUILDER_KERNEL.md`;
-3. reconcile any Builder mismatch without rewriting historical v0.1 evidence;
-4. capture a fresh non-secret runtime fingerprint for the current Builder-fit revision;
-5. identify exactly which certification obligations C01-C18 are already satisfied by unaffected evidence and which are stale/unsatisfied;
-6. execute proportional L1/L2/runtime/tool/bootstrap proof only for affected obligations;
-7. perform a separate readiness evaluation for the current fingerprint when all proof obligations are closed;
-8. require applicable user authorization for READY if current READY is not already valid for the exact fingerprint;
-9. validate archetype/bootstrap/project-local leakage obligations against the current certification contract;
-10. adjudicate `CERTIFIED_FOR_ANY_PROJECT` without retroactive PASS or history erasure.
+3. create/version a complete SaaS Architect Builder package for the current certification subject; a profile alone does not satisfy C06;
+4. reconcile any external Builder mismatch without rewriting historical v0.1 evidence;
+5. capture a fresh non-secret runtime fingerprint for the current Builder-fit revision;
+6. identify exactly which certification obligations C01-C18 are already satisfied by unaffected evidence and which are stale/unsatisfied;
+7. execute proportional L1/L2/runtime/tool/bootstrap proof only for affected obligations;
+8. perform a separate readiness evaluation for the current fingerprint when all proof obligations are closed;
+9. require applicable user authorization for READY if current READY is not already valid for the exact fingerprint;
+10. validate archetype/bootstrap/project-local leakage obligations against the current certification contract;
+11. adjudicate `CERTIFIED_FOR_ANY_PROJECT` without retroactive PASS or history erasure.
 
 ## 3. Preserved SaaS Architect evidence
 
@@ -52,6 +53,9 @@ The action is limited to:
 HISTORICAL_V0_1_RUNTIME_BEHAVIORAL_PROOF = PASS
 HISTORICAL_T01_T29 = 29/29 PASS
 HISTORICAL_PASS = PRESERVED
+CURRENT_BUILDER_KERNEL = VERSIONED
+CURRENT_BUILDER_PROFILE = VERSIONED
+CURRENT_BUILDER_PACKAGE = NOT VERSIONED
 CURRENT_BUILDER_FIT_REVISION_RUNTIME_PROOF = NOT_YET_ESTABLISHED
 EXTERNAL_BUILDER_RECONCILIATION_REQUIRED
 CERTIFIED_FOR_ANY_PROJECT = NO
@@ -59,12 +63,17 @@ CERTIFIED_FOR_ANY_PROJECT = NO
 
 Historical proof remains valid evidence for the exact historical fingerprint and may satisfy unaffected historical claims. It does not certify the changed current runtime.
 
+```text
+BUILDER_PROFILE_VERSIONED != BUILDER_PACKAGE_VERSIONED
+```
+
 ## 4. Done condition
 
 The SaaS Architect closure is complete only when the certification ledger can support:
 
 ```text
 C01-C18 = SATISFIED
+CURRENT_BUILDER_PACKAGE = VERSIONED
 CURRENT_BUILDER_APPLIED = YES
 CURRENT_RUNTIME_FINGERPRINT = CAPTURED
 CURRENT_L2_RUNTIME_PROOF = PASS
@@ -83,6 +92,7 @@ CERTIFIED_FOR_ANY_PROJECT = YES
 
 Without separate applicable authorization/decision, do not:
 
+- substitute `SAAS_ARCHITECT_BUILDER_PROFILE.md` for the required Builder package;
 - rewrite historical SaaS v0.1 PASS as current-runtime proof;
 - revive the superseded v0.2/v0.3 selection-first experiments;
 - rerun unaffected gates merely for confidence;
