@@ -2,13 +2,13 @@
 
 **Package ID:** `application-security-assurance-specialist-builder-package-v0.2`  
 **Candidate:** `application-security-assurance-specialist-v0.1`  
-**Status:** `BUILDER_FIT_COMPACT_BINDING / RUNTIME_EVIDENCE_IN_PROGRESS / NOT_READY / NOT_ACTIVE`
+**Status:** `BUILDER_FIT_COMPACT_BINDING / L2_PASS_COMPACT_FINGERPRINT_BOUND / READY_USER_AUTHORIZED / ARCHETYPE_ACTIVE_ON_CANDIDATE_BRANCH`
 
 ## 1. Purpose
 
 Bind the actual AppSec Builder/runtime to the compact Builder-fit Instructions payload that was observed in the configured GPT and used for runtime validation.
 
-This package does not rewrite or replace the historical full kernel v0.1. It records a new executable Builder-fit fingerprint derived from that semantic source.
+This package does not rewrite or replace the historical full kernel v0.1. It records the executable Builder-fit fingerprint derived from that semantic source and the validated runtime configuration evidence used for L2 closure.
 
 ```text
 FULL KERNEL v0.1 = CANONICAL SEMANTIC SOURCE / HISTORICAL
@@ -23,7 +23,7 @@ V0.1 EXACT-COPY REQUIREMENT != RETROACTIVELY SATISFIED
 `SES — Application Security Assurance Specialist`
 
 ### Description
-Preserve the configured AppSec description unless separately changed and revalidated.
+Configured description observed in Builder UI and preserved unless separately changed and revalidated.
 
 ### Visibility
 `PRIVATE / APENAS PARA MIM`
@@ -58,7 +58,7 @@ lines = newline_count + 1
 SHA-256 = SHA-256 of exact UTF-8 bytes supplied by the operator
 ```
 
-The repository compact kernel was created from that exact supplied payload; Git blob identity is recorded separately from SHA-256.
+The repository compact kernel was created from that supplied payload; Git blob identity is recorded separately from SHA-256.
 
 ## 4. Semantic-source relation
 
@@ -70,30 +70,41 @@ Full kernel blob SHA:
 
 `6c44ce208425402aa4a89adfc5cd4e4ed8571ed3`
 
-The compact kernel is not byte-identical to the full kernel. A separate semantic-equivalence review records preserved material safeguards and noncritical compression deltas.
-
-Canonical comparison evidence:
+The compact kernel is not byte-identical to the full kernel. The semantic-equivalence review records preserved material safeguards and noncritical compression deltas:
 
 `tests/runtime/evidence/APPLICATION_SECURITY_ASSURANCE_COMPACT_KERNEL_SEMANTIC_REVIEW_2026-08-17.md`
 
 ## 5. Conversation starters
 
-Preserve the four configured v0.1 starters unless a separately versioned Builder change is authorized. Starter wording is not part of the compact-kernel text itself.
+The configured Builder UI shows the four AppSec starters used by this specialist. Starter wording is not part of the compact-kernel text itself. Material starter changes that affect behavior require proportional review.
 
-## 6. Knowledge and capabilities
+## 6. Effective runtime configuration
 
-Target/effective binding for the currently tested private runtime must be captured from the Builder UI and runtime evidence. Preserve known constraints:
+Operator-provided Builder screenshots on 2026-08-17 established the following UI-visible runtime configuration:
 
 ```text
-KNOWLEDGE = EMPTY
-GITHUB_ACTION = ENABLED / READ_ONLY
-VERCEL = DISABLED
-SUPABASE = DISABLED
+MODEL = GPT-5.6 Sol (gpt-5-6)
+WEB_SEARCH = ENABLED
+IMAGE_GENERATION = ENABLED
+DATA_ANALYSIS / CODE_INTERPRETER = ENABLED
+KNOWLEDGE = EMPTY / NO FILES OBSERVED
+GITHUB_ACTION = CONFIGURED / api.github.com
 VISIBILITY = PRIVATE / APENAS PARA MIM
-MODEL / MODEL SETTINGS = NOT EXPOSED unless observed
 ```
 
-Web Search / Data Analysis / Image Generation must be recorded as actually configured when final fingerprint evidence is closed. Capability availability is not proof of invocation.
+Additional integration constraints preserved from the recorded AppSec runtime configuration evidence:
+
+```text
+GITHUB_ACTION_AUTHORITY = READ_ONLY
+VERCEL = DISABLED
+SUPABASE = DISABLED
+```
+
+Capability availability is not proof of invocation. Tool-execution claims require returned evidence from the applicable tool.
+
+Canonical UI/config evidence record:
+
+`tests/runtime/evidence/APPLICATION_SECURITY_ASSURANCE_RUNTIME_UI_CONFIGURATION_2026-08-17.md`
 
 ## 7. GitHub Action
 
@@ -107,7 +118,7 @@ Schema blob:
 
 `1e6237e806fd84716ec13b019e6617ad4110a211`
 
-R06 on the compact runtime returned read-only repository evidence successfully and made no mutation. Final L2 adjudication must preserve the exact R06 evidence event rather than rewriting the earlier blocked event.
+R06 on the compact runtime returned read-only repository evidence successfully and made no mutation. Final L2 adjudication preserves the exact R06 evidence event rather than rewriting the earlier blocked event.
 
 ## 8. Runtime proof boundary
 
@@ -118,16 +129,33 @@ INITIAL BLOCKED HISTORY = PRESERVED
 RETROACTIVE PASS = NO
 ```
 
-The compact Instructions were the effective runtime Instructions used for the current R06 retest. The v0.1 full-kernel exact-copy requirement was not met and is not claimed as met.
+The operator explicitly attested that the same compact Instructions payload remained effective during the already-recorded R01-R08 executions.
 
-## 9. L2 binding
+```text
+R01_R08_EFFECTIVE_INSTRUCTIONS_CONTINUITY = OPERATOR_ATTESTED / YES
+RAW_RUNTIME_TELEMETRY = NOT CAPTURED
+CONTRADICTORY_RUNTIME_EVIDENCE = NONE OBSERVED
+```
+
+## 9. L2 and readiness binding
 
 Use:
 
 - `tests/runtime/APPLICATION_SECURITY_ASSURANCE_SPECIALIST_L2_RUNBOOK_V0_1.md` for preserved fixture/proof-obligation definitions;
-- `tests/runtime/APPLICATION_SECURITY_ASSURANCE_SPECIALIST_L2_COMPACT_BINDING_V0_2.md` for the executable compact-fingerprint binding and affected-gate adjudication rules.
+- `tests/runtime/APPLICATION_SECURITY_ASSURANCE_SPECIALIST_L2_COMPACT_BINDING_V0_2.md` for the executable compact-fingerprint binding;
+- `tests/runtime/evidence/APPLICATION_SECURITY_ASSURANCE_L2_FINAL_VERDICT_COMPACT_V0_2_2026-08-17.md` for final L2 adjudication;
+- `tests/runtime/evidence/APPLICATION_SECURITY_ASSURANCE_SPECIALIST_READINESS_DECISION_2026-08-17.md` for readiness authorization.
 
-Do not replay unaffected L1/L2 gates merely to create confidence. Revalidate only claims affected by the compact-kernel binding or contradictory evidence.
+Current candidate-branch lifecycle state:
+
+```text
+L1-C = PASS
+L2_RUNTIME_FINGERPRINT_VALIDATION = PASS / COMPACT_FINGERPRINT_BOUND
+SPECIALIST_READINESS = READY / USER_AUTHORIZED
+ARCHETYPE_RESOLUTION_STATUS = ACTIVE ON CANDIDATE BRANCH
+```
+
+Canonical `main` archetype activation requires merge of the candidate branch.
 
 ## 10. Invalidation
 
@@ -137,5 +165,6 @@ Material changes to compact Instructions, Knowledge, model/settings, capabilitie
 L1 PASS != L2 PASS
 L2 PASS != READY
 READY != ARCHETYPE ACTIVE
+ARCHETYPE ACTIVE != CONSUMER ADOPTION
 TOOL CAPABILITY != AUTHORIZATION
 ```
