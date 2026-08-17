@@ -1,6 +1,6 @@
 # SES — Current Handoff
 
-**Status:** `SPECIALIST_PORTFOLIO_EXPANSION / UX_UI_ACTIVE / BACKEND_DATA_ACTIVE / NEXT_APPSEC_L2_CLOSURE`  
+**Status:** `SPECIALIST_CERTIFICATION_GATE_V0_1 / APPSEC_ACTIVE / SAAS_CERTIFICATION_NEXT`  
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System`  
 **Canonical ref rule:** resolve `main` live before material work  
 **Authoritative next action:** `docs/NEXT_SAFE_ACTION.md`
@@ -13,25 +13,70 @@
 4. read `docs/NEXT_SAFE_ACTION.md`;
 5. read `docs/BLOCKED_ACTIONS.md`;
 6. resolve `archetypes/REGISTRY.md` and exact archetype contract when specialist work is requested;
-7. resolve consumer-project context separately when project-specific work is requested.
+7. for certification work, read `core/protocols/SPECIALIST_CERTIFICATION_FOR_ANY_PROJECT_CONTRACT.md` and `docs/SPECIALIST_CERTIFICATION_STATUS.md`;
+8. resolve consumer-project context separately when project-specific work is requested.
 
 For unmerged work preserve `CANONICAL_MAIN != CANDIDATE_HEAD`.
 
-## 2. Canonical portfolio state after PR #31
+## 2. Live baseline before gate adoption
 
-PR #31 merged into `main` as:
+`main` was resolved LIVE at the start of the gate-adoption change as:
 
-`32354c3ac7797232571435293b0d8dc722706e4f`
+```text
+47645c4a3facfa3e0d0657290833975d03962134
+```
+
+That commit is the merge of PR #33 and activates the Application Security Assurance Specialist.
+
+The prior continuity documents still described the post-PR #31 AppSec-blocked state. That derived continuity was stale and is reconciled by the gate-adoption change; the historical evidence itself is not rewritten.
+
+## 3. Terminal specialist lifecycle gate
+
+The terminal gate is:
+
+```text
+CERTIFIED_FOR_ANY_PROJECT = YES
+```
+
+Defined by:
+
+- `core/protocols/SPECIALIST_CERTIFICATION_FOR_ANY_PROJECT_CONTRACT.md`
+- `tests/behavioral/SPECIALIST_CERTIFICATION_FOR_ANY_PROJECT_TESTS.md`
+- `docs/SPECIALIST_CERTIFICATION_STATUS.md`
+- `tests/behavioral/evidence/SPECIALIST_CERTIFICATION_PORTFOLIO_ADJUDICATION_2026-08-17.md`
+
+A specialist is not finished merely because it is READY or ACTIVE.
+
+```text
+READY != CERTIFIED_FOR_ANY_PROJECT
+ARCHETYPE_ACTIVE != CERTIFIED_FOR_ANY_PROJECT
+HISTORICAL_PASS != CURRENT_CERTIFICATION
+```
+
+Certification remains distinct from consumer adoption, project readiness, mutation authority, publication, production approval and risk acceptance.
+
+## 4. Current portfolio certification state
+
+```text
+UX/UI APP Specialist = CERTIFIED_FOR_ANY_PROJECT YES
+Backend & Data Platform Specialist = CERTIFIED_FOR_ANY_PROJECT YES
+Application Security Assurance Specialist = CERTIFIED_FOR_ANY_PROJECT YES
+SaaS Architect = CERTIFIED_FOR_ANY_PROJECT NO
+Documentation Auditor = CERTIFIED_FOR_ANY_PROJECT NO
+```
 
 ### UX/UI APP Specialist
 
 ```text
 L1-C = PASS
+PROMPT INVARIANCE = PASS
+GENERIC BASELINE NON-REGRESSION = PASS
+BUILDER APPLIED = YES
 L2_RUNTIME_FINGERPRINT_VALIDATION = PASS / FINGERPRINT_BOUND
 SPECIALIST_READINESS = READY / USER_AUTHORIZED
-ARCHETYPE_ID = ux-ui-app-specialist
 ARCHETYPE_RESOLUTION_STATUS = ACTIVE
-AVAILABLE_FOR_PROJECT_RESOLUTION = YES
+PROJECT_AGNOSTIC / PROJECT_BOOTSTRAP BOUNDARY = PASS
+CERTIFIED_FOR_ANY_PROJECT = YES
 ```
 
 ### Backend & Data Platform Specialist
@@ -39,120 +84,106 @@ AVAILABLE_FOR_PROJECT_RESOLUTION = YES
 ```text
 L1-C = PASS
 P01-P22 = SATISFIED
-PROMPT INVARIANCE L1 = PASS
-GENERIC BASELINE = PASS
-BUILDER_APPLIED = YES
+PROMPT INVARIANCE = PASS
+GENERIC BASELINE NON-REGRESSION = PASS
+BUILDER APPLIED = YES
 RUNTIME_ID = g-6a834feee5dc8191b4f99cbc0fa62320
-R01-R08 = PASS
-PROMPT INVARIANCE L2 = PASS
-L2-01..L2-14 = PASS
 L2_RUNTIME_FINGERPRINT_VALIDATION = PASS
 SPECIALIST_READINESS = READY / USER_AUTHORIZED
-ARCHETYPE_ID = backend-data-platform-specialist
 ARCHETYPE_RESOLUTION_STATUS = ACTIVE
-AVAILABLE_FOR_PROJECT_RESOLUTION = YES
+CERTIFIED_FOR_ANY_PROJECT = YES
 ```
 
-Canonical evidence:
-- `tests/behavioral/evidence/BACKEND_DATA_PLATFORM_L1C_FINAL_VERDICT_2026-08-17.md`
-- `tests/runtime/evidence/BACKEND_DATA_PLATFORM_L2_FINAL_VERDICT_2026-08-17.md`
-- `tests/runtime/evidence/BACKEND_DATA_PLATFORM_SPECIALIST_READINESS_DECISION_2026-08-17.md`
-- `tests/behavioral/BACKEND_DATA_PLATFORM_SPECIALIST_ARCHETYPE_RESOLUTION_V0_1.md`
-- `archetypes/backend-data-platform-specialist/ARCHETYPE.md`
-
-### Application Security Assurance
+### Application Security Assurance Specialist
 
 ```text
 L1-C = PASS
-SPECIALIST_READINESS = NOT ESTABLISHED
-ARCHETYPE_ACTIVE = NO
-L2 = PARTIAL / BLOCKED ON AFFECTED RUNTIME PROOF
-R06 = BLOCKED / EXTERNAL ACTION-RUNTIME CONNECTIVITY
-EXACT COMPACT RUNTIME FINGERPRINT BINDING = UNRESOLVED
+PROMPT INVARIANCE = PASS
+GENERIC BASELINE = PASS
+COMPACT BUILDER v0.2 = VERSIONED / APPLIED / FINGERPRINT-BOUND
+R01-R08 = PASS
+R06_INITIAL = BLOCKED / PRESERVED
+R06_RETEST = PASS
+L2-01..L2-14 = PASS
+L2_RUNTIME_FINGERPRINT_VALIDATION = PASS / COMPACT_FINGERPRINT_BOUND
+SPECIALIST_READINESS = READY / USER_AUTHORIZED
+ARCHETYPE_RESOLUTION_STATUS = ACTIVE
+CERTIFIED_FOR_ANY_PROJECT = YES
 ```
 
-Preserve:
+Preserve AppSec correction history:
 
 ```text
-BLOCKED != PASS
-L1 PASS != L2 PASS
-BUILDER APPLIED != RUNTIME PROOF
+A03_INITIAL = INVALID
+A07_INITIAL = FAIL
+A07_P14_INITIAL = FAIL
+R06_INITIAL = BLOCKED
+INITIAL_OVERCLAIM = YES
+USER_CORRECTED = YES
+SELF_AUDIT_CORRECTION = EXECUTED
+RETROACTIVE_PASS = NO
+RETROACTIVE_ERASURE = NO
 ```
 
-## 3. Reuse semantics
+### SaaS Architect
 
 ```text
-ACTIVE ARCHETYPE
+ARCHETYPE_RESOLUTION_STATUS = ACTIVE
+HISTORICAL_V0_1_RUNTIME_BEHAVIORAL_PROOF = PASS / 29 OF 29
+CURRENT_BUILDER_FIT_REVISION_RUNTIME_PROOF = NOT_YET_ESTABLISHED
+EXTERNAL_BUILDER_RECONCILIATION_REQUIRED
+CERTIFIED_FOR_ANY_PROJECT = NO
+```
+
+Historical v0.1 PASS remains valid only for its recorded fingerprint and is not transferred to the current Builder-fit revision.
+
+### Documentation Auditor
+
+```text
+ARCHETYPE_RESOLUTION_STATUS = ACTIVE
+LIFECYCLE_STATUS = RUNTIME_NOT_CERTIFIED
+PROJECT_TARGET_REGRESSION = 4/7
+R03A = FAIL
+R05 = FAIL
+R06 = FAIL
+RUNTIME_ENFORCEMENT_GAP = ESTABLISHED
+CERTIFIED_FOR_ANY_PROJECT = NO
+```
+
+## 5. Reuse model
+
+For a certified reusable specialist:
+
+```text
+CERTIFIED SPECIALIST
 + EXPLICIT CONSUMER PROJECT
 + PROJECT REGISTRY / ADAPTER / BOOTSTRAP / CONTINUITY
 + PROJECT-LOCAL RULES / AUTHORITY / LIVE EVIDENCE
++ TASK-BOUND CONTEXT READINESS
 = PROJECT-SPECIFIC SPECIALIST EXECUTION
 ```
 
-Do not create per-project clones merely to load context.
+Still preserve:
 
 ```text
-ARCHETYPE_RESOLVED != PROJECT_CONTEXT_READY
+CERTIFIED_FOR_ANY_PROJECT != PROJECT_CONTEXT_READY
 PROJECT_CONTEXT_READY != AUTHORIZED_TO_MUTATE
+CERTIFIED_FOR_ANY_PROJECT != CONSUMER_ADOPTED
 CENTRAL EVOLUTION != AUTOMATIC PROJECT MUTATION
 ```
-
-## 4. Backend/Data tested fingerprint summary
-
-```text
-RUNTIME_NAME = SES — Backend & Data Platform Specialist
-RUNTIME_ID = g-6a834feee5dc8191b4f99cbc0fa62320
-BUILDER_KERNEL_BLOB = 0d3c264cc4367ed8671fb7b07c28de24bf821819
-INSTRUCTIONS_CHARACTER_COUNT = 7389
-INSTRUCTIONS_UTF8_BYTES = 7401
-KNOWLEDGE = EMPTY
-GITHUB = ENABLED / READ_ONLY / RUNTIME VERIFIED
-SUPABASE = DISABLED
-VERCEL = DISABLED
-VISIBILITY = PRIVATE / APENAS PARA MIM
-```
-
-The L2 PASS remains bound to the recorded runtime fingerprint. Material changes require proportional revalidation only.
-
-## 5. Authority boundary between Backend/Data and AppSec
-
-```text
-BACKEND & DATA PLATFORM = IMPLEMENTATION OWNER
-APPLICATION SECURITY ASSURANCE = INDEPENDENT ASSURANCE OWNER
-IMPLEMENTATION OWNER != INDEPENDENT ASSURANCE OWNER
-BACKEND TEST PASS != APPSEC RETEST PASS
-```
-
-Backend/Data may remediate a finding. Final security-control closure remains with independent assurance when applicable.
 
 ## 6. Next safe action
 
 Use `docs/NEXT_SAFE_ACTION.md` only.
 
-The next material portfolio action is **Application Security Assurance L2/fingerprint closure**, not creation of a new specialist.
+The next material specialist lifecycle action after gate adoption is to close the **SaaS Architect current Builder-fit certification gap** without rewriting its historical v0.1 PASS.
 
-The closure target is limited to:
-- re-test affected GitHub Action/runtime connectivity when available;
-- resolve exact compact runtime fingerprint binding without rewriting historical v0.1 evidence;
-- adjudicate only affected L2 gates;
-- if all affected obligations pass and no blocker remains, proceed to separate readiness evaluation and later archetype activation gates.
+Documentation Auditor follows SaaS Architect.
 
-## 7. Portfolio direction
+Do not start a new specialist before the existing specialist backlog reaches the same terminal gate unless the user explicitly reprioritizes.
 
-```text
-1. Software Systems Architect — future evolution/name direction; rename not executed.
-2. Documentation Auditor — existing; gateway deferred.
-3. UX/UI APP Specialist — READY + ACTIVE.
-4. Backend & Data Platform — READY + ACTIVE.
-5. Application Security Assurance — L1 PASS; L2 closure next.
-6. Platform, Delivery & Reliability — next new-specialist target after AppSec closure.
-7. SEO & Organic Growth — candidate consolidation.
-8. Growth, Analytics & Monetization — CHALLENGE_REQUIRED.
-9. Integration & Automation — candidate if still justified.
-```
+## 7. Runtime Enforcement Gateway direction
 
-## 8. Cross-model short resume
+The Runtime Enforcement Gateway remains future UNIVERSAL SES infrastructure, not a specialist.
 
-```text
-Resolve SES main LIVE → PR #31 merged as 32354c3... → ux-ui-app-specialist READY+ACTIVE → backend-data-platform-specialist L1 PASS + L2 PASS + READY + ACTIVE → both remain project-agnostic and require consumer-project bootstrap/authority/evidence at runtime → AppSec L1 PASS remains NOT READY because L2 has an affected runtime/tool blocker plus unresolved exact compact fingerprint binding → do not convert BLOCKED to PASS → next safe portfolio action is AppSec L2/fingerprint closure → after AppSec closure, proceed to Platform, Delivery & Reliability discovery if still justified.
-```
+Contract/design work follows certification normalization of the existing specialist portfolio. Do not implement complex middleware/runtime prematurely.

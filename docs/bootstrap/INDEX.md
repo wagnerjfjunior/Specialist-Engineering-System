@@ -35,11 +35,14 @@ Read when applicable:
 - `core/protocols/HYBRID_SPECIALIST_BOOTSTRAP_CONTRACT.md` for hybrid/multi-project specialist work
 - `core/protocols/HYBRID_PROJECT_TARGET_RESOLUTION_CONTRACT.md` when target/project identity is missing, ambiguous, or project enumeration is requested
 - `core/protocols/EVIDENCE_RETRIEVAL_RESILIENCE_CONTRACT.md` when large-file, large-tree, truncation, incomplete transport or context-budget risk is material
+- `core/protocols/SPECIALIST_CERTIFICATION_FOR_ANY_PROJECT_CONTRACT.md` for specialist terminal lifecycle/certification decisions
+- `docs/SPECIALIST_CERTIFICATION_STATUS.md` for the current evidence-bound portfolio certification ledger
 
-Behavioral validation of hybrid bootstrap/target resolution is defined in:
+Behavioral validation is defined, when applicable, in:
 
 - `tests/behavioral/HYBRID_SPECIALIST_BOOTSTRAP_TESTS.md`
 - `tests/behavioral/HYBRID_PROJECT_TARGET_RESOLUTION_TESTS.md`
+- `tests/behavioral/SPECIALIST_CERTIFICATION_FOR_ANY_PROJECT_TESTS.md`
 
 For the `saas-architect` Custom GPT runtime candidate, also read when validating/applying/testing that candidate:
 
@@ -48,6 +51,7 @@ For the `saas-architect` Custom GPT runtime candidate, also read when validating
 - `runtime/custom-gpt/GITHUB_READONLY_ACTION.openapi.yaml`
 - `tests/runtime/HYBRID_SAAS_ARCHITECT_RUNTIME_RUNBOOK.md`
 - `tests/runtime/HYBRID_SAAS_ARCHITECT_FIXTURES.md`
+- `tests/runtime/evidence/HYBRID_SAAS_ARCHITECT_RUNTIME_PROOF_2026-08-12.md`
 
 For the `documentation-auditor` Custom GPT runtime candidate, also read when validating/applying/testing that candidate:
 
@@ -57,6 +61,7 @@ For the `documentation-auditor` Custom GPT runtime candidate, also read when val
 - `tests/runtime/DOCUMENTATION_AUDITOR_RUNTIME_RUNBOOK.md`
 - `tests/runtime/DOCUMENTATION_AUDITOR_PROJECT_TARGET_REGRESSION.md`
 - `tests/behavioral/DOCUMENTATION_AUDITOR_TESTS.md`
+- `tests/runtime/evidence/DOCUMENTATION_AUDITOR_V09_GATE0_READJUDICATION_2026-08-15.md`
 - `core/protocols/EVIDENCE_RETRIEVAL_RESILIENCE_CONTRACT.md` when the task or runtime case exercises retrieval resilience
 
 For `ux-ui-app-specialist`, first resolve the active archetype through `archetypes/REGISTRY.md` and read:
@@ -74,9 +79,43 @@ For its validated v0.1 runtime fingerprint, also read when configuring/applying/
 - `tests/runtime/evidence/UX_UI_APP_SPECIALIST_L2_RUNTIME_PROOF_2026-08-16.md`
 - `tests/behavioral/UX_UI_APP_SPECIALIST_ARCHETYPE_RESOLUTION_V0_1.md`
 
-The UX/UI APP Specialist is an active reusable archetype when the live `archetypes/REGISTRY.md` resolves `ux-ui-app-specialist` with `RESOLUTION_STATUS: ACTIVE`. Its Builder/runtime PASS remains fingerprint-bound and its activation does not imply automatic consumer-project adoption or mutation authority.
+For `backend-data-platform-specialist`, first resolve the active archetype and read:
 
-Future archetype, specialist, validation and versioning contracts must be reached from this bootstrap rather than becoming independent entrypoints.
+- `archetypes/backend-data-platform-specialist/ARCHETYPE.md`
+
+For its validated v0.1 runtime fingerprint, also read when configuring/applying/testing or auditing that runtime:
+
+- `runtime/custom-gpt/BACKEND_DATA_PLATFORM_SPECIALIST_BUILDER_PACKAGE_V0_1.md`
+- `runtime/custom-gpt/BACKEND_DATA_PLATFORM_SPECIALIST_BUILDER_KERNEL_V0_1.md`
+- `runtime/custom-gpt/GITHUB_READONLY_ACTION.openapi.yaml`
+- `tests/behavioral/evidence/BACKEND_DATA_PLATFORM_L1C_FINAL_VERDICT_2026-08-17.md`
+- `tests/runtime/BACKEND_DATA_PLATFORM_SPECIALIST_L2_RUNTIME_PROFILE_V0_1.md`
+- `tests/runtime/BACKEND_DATA_PLATFORM_SPECIALIST_L2_RUNBOOK_V0_1.md`
+- `tests/runtime/evidence/BACKEND_DATA_PLATFORM_L2_FINAL_VERDICT_2026-08-17.md`
+- `tests/runtime/evidence/BACKEND_DATA_PLATFORM_SPECIALIST_READINESS_DECISION_2026-08-17.md`
+- `tests/behavioral/BACKEND_DATA_PLATFORM_SPECIALIST_ARCHETYPE_RESOLUTION_V0_1.md`
+
+For `application-security-assurance-specialist`, first resolve the active archetype and read:
+
+- `archetypes/application-security-assurance-specialist/ARCHETYPE.md`
+
+For its validated compact v0.2 runtime fingerprint, also read when configuring/applying/testing or auditing that runtime:
+
+- `runtime/custom-gpt/APPLICATION_SECURITY_ASSURANCE_SPECIALIST_BUILDER_PACKAGE_V0_2.md`
+- `runtime/custom-gpt/APPLICATION_SECURITY_ASSURANCE_SPECIALIST_BUILDER_KERNEL_COMPACT_V0_2.md`
+- `runtime/custom-gpt/GITHUB_READONLY_ACTION.openapi.yaml`
+- `tests/behavioral/evidence/APPSEC_L1C_FINAL_VERDICT_2026-08-17.md`
+- `tests/behavioral/evidence/APPSEC_L1C_P24_GENERIC_BASELINE_ADJUDICATION_2026-08-17.md`
+- `tests/runtime/APPLICATION_SECURITY_ASSURANCE_SPECIALIST_L2_COMPACT_BINDING_V0_2.md`
+- `tests/runtime/evidence/APPLICATION_SECURITY_ASSURANCE_RUNTIME_UI_CONFIGURATION_2026-08-17.md`
+- `tests/runtime/evidence/APPLICATION_SECURITY_ASSURANCE_L2_FINAL_VERDICT_COMPACT_V0_2_2026-08-17.md`
+- `tests/runtime/evidence/APPLICATION_SECURITY_ASSURANCE_SPECIALIST_READINESS_DECISION_2026-08-17.md`
+- `tests/behavioral/APPLICATION_SECURITY_ASSURANCE_SPECIALIST_ARCHETYPE_RESOLUTION_V0_1.md`
+- `tests/behavioral/evidence/APPLICATION_SECURITY_ASSURANCE_ARCHETYPE_ACTIVATION_2026-08-17.md`
+
+The active reusable specialists remain fingerprint-bound. Archetype activation does not imply automatic consumer-project adoption, project readiness, mutation authority, publication, production approval or risk acceptance.
+
+Future archetype, specialist, validation, certification and versioning contracts must be reached from this bootstrap rather than becoming independent entrypoints.
 
 ## 3. Archetype resolution
 
@@ -248,7 +287,7 @@ For hybrid specialists:
 
 ## 8. Source-of-truth and authority boundary
 
-SES owns reusable engineering contracts, archetype contracts, runtime-candidate configuration specifications and project registration metadata.
+SES owns reusable engineering contracts, archetype contracts, runtime-candidate configuration specifications, certification contracts/ledger and project registration metadata.
 
 The consumer project owns its own:
 
@@ -301,7 +340,32 @@ Before runtime testing of any SES Custom GPT candidate:
 
 No Builder secret/token may be committed to SES.
 
-## 10. Proof-level integrity
+## 10. Specialist terminal certification
+
+For a reusable specialist lifecycle/completion decision, read:
+
+- `core/protocols/SPECIALIST_CERTIFICATION_FOR_ANY_PROJECT_CONTRACT.md`;
+- `tests/behavioral/SPECIALIST_CERTIFICATION_FOR_ANY_PROJECT_TESTS.md`;
+- `docs/SPECIALIST_CERTIFICATION_STATUS.md`;
+- the exact L1/L2/readiness/archetype evidence referenced by the ledger.
+
+The terminal SES specialist lifecycle state is:
+
+```text
+CERTIFIED_FOR_ANY_PROJECT = YES
+```
+
+The gate is conjunctive and fingerprint-bound. Do not infer it from READY, ACTIVE or a historical runtime PASS.
+
+```text
+READY != CERTIFIED_FOR_ANY_PROJECT
+ARCHETYPE_ACTIVE != CERTIFIED_FOR_ANY_PROJECT
+HISTORICAL_PASS != CURRENT_CERTIFICATION
+```
+
+Certification is reusable-specialist eligibility only. It does not grant consumer adoption, project context, mutation authority, publication, production approval or risk acceptance.
+
+## 11. Proof-level integrity
 
 Keep these conclusions separate:
 
@@ -309,6 +373,7 @@ Keep these conclusions separate:
 SPEC_CONFORMANCE
 CANDIDATE_HEAD_PROTOCOL_PROOF
 RUNTIME_BEHAVIORAL_PROOF
+SPECIALIST_CERTIFICATION
 ```
 
 For candidate-head proof, preserve both:
@@ -326,7 +391,9 @@ A coherent specification or successful read-only resolution chain on a candidate
 
 Do not substitute one archetype's behavioral suite for another archetype's runtime proof.
 
-## 11. Change discipline
+`SPECIALIST_CERTIFICATION = YES` additionally requires every obligation in `SPECIALIST_CERTIFICATION_FOR_ANY_PROJECT_CONTRACT.md` for the exact certification subject/fingerprint.
+
+## 12. Change discipline
 
 For material SES changes:
 
@@ -334,7 +401,7 @@ For material SES changes:
 
 Creating or updating SES documentation/runtime specifications does not authorize mutation in any consumer project or external GPT Builder. Central evolution does not automatically mutate or upgrade registered projects.
 
-## 12. SES self-continuity / SFJM operational layer
+## 13. SES self-continuity / SFJM operational layer
 
 For material work on **SES itself** when current operational continuity is relevant, this bootstrap also resolves the SES-owned SFJM continuity layer:
 
