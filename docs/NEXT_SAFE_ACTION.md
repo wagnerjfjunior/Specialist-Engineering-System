@@ -1,15 +1,15 @@
 # SES — Next Safe Action
 
-> Este é o registro autoritativo da próxima ação segura do SES quando este candidate change estiver em `main`.
+> Este é o registro autoritativo da próxima ação segura do SES quando presente em `main`.
 
 **Next action ID:** `close-saas-architect-current-certification-gap`  
 **Primary target:** `SES — SaaS Architect`  
 **Current phase:** `SPECIALIST_CERTIFICATION_NORMALIZATION / SAAS_ARCHITECT_CURRENT_RUNTIME_CLOSURE`  
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System` / `main` resolved live
 
-## 1. Material state reached by this candidate change
+## 1. Material state reached by gate adoption
 
-The terminal reusable-specialist lifecycle gate is defined as:
+The terminal reusable-specialist lifecycle gate is:
 
 ```text
 CERTIFIED_FOR_ANY_PROJECT = YES
@@ -25,7 +25,7 @@ SAAS ARCHITECT = NO
 DOCUMENTATION AUDITOR = NO
 ```
 
-The pre-change continuity record that still targeted AppSec L2 closure was stale relative to PR #33 and is superseded by this reconciled next-action record if this change is merged.
+The pre-adoption continuity record that still targeted AppSec L2 closure was stale relative to PR #33 and is superseded by this reconciled next-action record when this file is canonical on `main`.
 
 ## 2. Sole next material specialist action
 
