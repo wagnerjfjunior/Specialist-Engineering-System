@@ -2,59 +2,105 @@
 
 > Este é o registro autoritativo da única próxima ação segura do SES quando este estado estiver em `main`.
 
-**Next action ID:** `interview-application-security-assurance-specialist-requirements`  
-**Primary target:** `SES — Application Security Assurance specialist target`  
-**Current phase:** `SPECIALIST_PORTFOLIO_EXPANSION / UX_UI_ARCHETYPE_ACTIVE / NEXT_APPSEC_DISCOVERY`  
+**Next action ID:** `close-application-security-assurance-l2-runtime-fingerprint`  
+**Primary target:** `SES — Application Security Assurance Specialist`  
+**Current phase:** `SPECIALIST_PORTFOLIO_EXPANSION / BACKEND_DATA_ACTIVE / APPSEC_L2_CLOSURE`  
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System` / `main` resolved live
 
 ## 1. Material state reached
 
-The UX/UI APP Specialist is now intended to be an active reusable SES archetype with its completed proof lineage preserved:
+After PR #31:
 
 ```text
-CANONICAL L1-C = PASS
-P01–P20 = PASS
-FULL_L1_BEHAVIORAL_SUITE = PASS
-L2_RUNTIME_FINGERPRINT_VALIDATION = PASS / FINGERPRINT_BOUND
-SPECIALIST_READINESS = READY / USER_AUTHORIZED
-ARCHETYPE_ID = ux-ui-app-specialist
-ARCHETYPE_RESOLUTION_STATUS = ACTIVE
-AVAILABLE_FOR_PROJECT_RESOLUTION = YES
-HARD_BLOCKERS = NONE OBSERVED
-INITIAL_OVERCLAIM = NONE OBSERVED
-RETROACTIVE_PASS = NONE
+MAIN MERGE = 32354c3ac7797232571435293b0d8dc722706e4f
+UX/UI APP = L1 PASS / L2 PASS / READY / ACTIVE
+BACKEND & DATA PLATFORM = L1 PASS / L2 PASS / READY / ACTIVE
+APPLICATION SECURITY ASSURANCE = L1 PASS / L2 PARTIAL-BLOCKED / NOT READY / NOT ACTIVE
 ```
 
-Canonical evidence:
-- `tests/runtime/evidence/UX_UI_APP_SPECIALIST_L2_RUNTIME_PROOF_2026-08-16.md`
-- `tests/behavioral/UX_UI_APP_SPECIALIST_ARCHETYPE_RESOLUTION_V0_1.md`
+Backend/Data is no longer a candidate-only portfolio item.
 
-Reusable contract:
-- `archetypes/ux-ui-app-specialist/ARCHETYPE.md`
+## 2. Sole next material portfolio action
 
-## 2. Reuse boundary
+Close the **affected Application Security Assurance L2/runtime-fingerprint obligations**.
+
+Do not create a new specialist before this closure unless the user explicitly reprioritizes.
+
+The action is limited to:
+
+1. resolve current AppSec runtime/Builder fingerprint exactly;
+2. preserve historical v0.1 artifacts and failures; do not silently rewrite prior proof;
+3. re-test the affected GitHub Action/runtime connectivity gate when the external incident/service is available;
+4. establish exact compact runtime instruction/configuration binding with measured count/hash or equivalent immutable fingerprint evidence;
+5. adjudicate only affected L2 proof obligations;
+6. if no blocker remains, perform a separate readiness evaluation;
+7. only after readiness authorization, consider a separate archetype contract/resolution activation gate.
+
+## 3. Current AppSec evidence boundary
 
 ```text
-ACTIVE ARCHETYPE = REUSABLE SES METHOD
-PROJECT CONTEXT = RESOLVED AT RUNTIME FROM THE EXPLICIT CONSUMER PROJECT
+APPSEC_L1C_RESULT = PASS
+P01-P24 = SATISFIED
+PROMPT_INVARIANCE = PASS
+GENERIC_BASELINE = PASS
+R01-R05 = PASS
+R07 = PASS after valid fresh reruns
+R08 = PASS
+R06 = BLOCKED
+BLOCKER_CLASS = EXTERNAL RUNTIME / ACTION SERVICE
+ROOT_CAUSE OF APPSEC CONFIGURATION = NOT ESTABLISHED
+EXACT COMPACT RUNTIME FINGERPRINT BINDING = UNRESOLVED
+SPECIALIST_READINESS = NOT ESTABLISHED
+ARCHETYPE_ACTIVE = NO
 ```
 
-Do not create a separate UX/UI specialist per project merely to load context.
-
-For project work, the active archetype must continue through the applicable Project Registry / Adapter / consumer bootstrap / continuity / authority / evidence path before project-specific conclusions.
+Preserve:
 
 ```text
-ARCHETYPE_RESOLVED != PROJECT_CONTEXT_READY
-PROJECT_CONTEXT_READY != AUTHORIZED_TO_MUTATE
+BLOCKED != PASS
+ABSENCE OF FINDING != PROOF OF ABSENCE
+L1 PASS != L2 PASS
+L2 PASS != READY
+READY != ARCHETYPE ACTIVE
 ```
 
-## 3. Sole next material portfolio action
+## 4. Done condition
 
-Start the requirements/challenge interview for the next reusable specialist target: **Application Security Assurance**.
+```text
+AFFECTED RUNTIME TOOL PROOF = PASS OR VALID EXTERNAL BLOCKER PRESERVED
+EXACT RUNTIME FINGERPRINT BINDING = PASS
+NO UNRESOLVED HARD BLOCKER = required for L2 PASS
+```
 
-Do not jump directly from target name to a prompt/kernel/candidate.
+If all required affected obligations pass:
 
-Use the SES material flow:
+```text
+APPSEC L2 = PASS
+→ READINESS EVALUATION
+→ USER AUTHORIZATION IF READY
+→ ARCHETYPE CONTRACT / RESOLUTION TEST
+→ PRE-MERGE REVIEW
+→ SEPARATE ACTIVATION AUTHORIZATION
+```
+
+If the external Action service is still unavailable, preserve `BLOCKED`; do not manufacture a PASS or expand the retry loop beyond the affected gate.
+
+## 5. Explicitly blocked
+
+Without separate applicable authorization/decision, do not:
+- create or activate Platform, Delivery & Reliability before AppSec closure merely to keep portfolio momentum;
+- convert AppSec `BLOCKED` to PASS from elapsed time or assumption;
+- silently rewrite AppSec v0.1 Builder/kernel evidence to match the compact runtime;
+- rerun unaffected L1/L2 gates absent material invalidation;
+- merge Backend/Data implementation authority into AppSec independent assurance;
+- automatically mutate or adopt active SES archetypes into consumer projects;
+- publish or broaden private Builders;
+- execute the deferred Documentation Auditor Gateway;
+- execute the SaaS Architect rename from naming direction alone.
+
+## 6. After AppSec closure
+
+The next new-specialist target is **Platform, Delivery & Reliability**, subject to the normal SES requirements/challenge flow and explicit user prioritization.
 
 ```text
 INTENT
@@ -71,64 +117,10 @@ INTENT
 → PUBLISH
 ```
 
-The immediate action is limited to discovery and requirements sufficiency.
-
-## 4. Application Security Assurance interview objectives
-
-Determine at minimum:
-- the security-assurance problem the specialist must own;
-- whether this should be one specialist or multiple specialists;
-- implementation responsibility versus independent assurance authority;
-- target assets/surfaces and threat classes;
-- evidence/source-of-truth requirements;
-- allowed tools and permission boundaries;
-- high-risk actions that must remain outside default authority;
-- proof obligations and behavioral/runtime test needs;
-- project-agnostic versus project-local boundaries;
-- overlap with Backend & Data Platform, Software Systems Architect, Platform/Delivery/Reliability and consumer-project security owners.
-
-Explicitly challenge whether the requested scope creates excessive authority concentration or combines implementation and assurance in one role.
-
-## 5. Done condition
-
-```text
-REQUIREMENTS_SUFFICIENT → proceed to assumptions/challenge/design
-REQUIREMENTS_INSUFFICIENT → continue adaptive interview
-SPECIALIST_SPLIT_REQUIRED → present alternatives before design
-SPECIALIST_NOT_JUSTIFIED → recommend simpler alternative
-```
-
-Do not create a canonical Candidate or Builder package merely because the portfolio queue names Application Security Assurance.
-
-## 6. Explicitly blocked
-
-Without separate applicable authorization/decision, do not:
-- publish or broaden visibility of the UX/UI Builder;
-- automatically mutate or adopt UX/UI into consumer projects;
-- treat archetype resolution as project-context readiness;
-- mutate FECH.AI, Blogs/SEO or another consumer project from SES central evolution;
-- retire legacy/project-local specialists automatically;
-- change the tested UX/UI Builder fingerprint and retain the old L2 PASS as if unchanged;
-- repeat UX/UI L1/L2 solely for additional confidence;
-- generate the Application Security Assurance candidate before sufficient interview/challenge;
-- collapse Backend/Data implementation ownership into independent assurance authority for convenience;
-- implement the deferred Documentation Auditor Gateway;
-- execute the SaaS Architect rename from naming direction alone.
-
-## 7. Portfolio direction
-
-```text
-UX/UI APP Specialist — READY / ACTIVE ARCHETYPE / AVAILABLE_FOR_PROJECT_RESOLUTION
-→ Application Security Assurance — requirements/challenge next
-→ Backend & Data Platform
-→ Platform + Delivery + Reliability
-→ SEO & Organic Growth
-→ challenge Growth + Analytics + Monetization
-→ Integration + Automation if still justified
-→ later evaluate project adoption/legacy retirement through separate authority gates
-```
+## 7. Universal boundary
 
 ```text
 CENTRAL SES EVOLUTION != AUTOMATIC PROJECT MUTATION
 ARCHETYPE_ACTIVE != AUTOMATIC_CONSUMER_ADOPTION
+TOOL CAPABILITY != AUTHORIZATION
 ```
