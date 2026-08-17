@@ -1,14 +1,17 @@
 # SES — Specialist Certification Status
 
-**Status:** `CANDIDATE_CANONICAL / PORTFOLIO_CERTIFICATION_LEDGER`  
+**Status:** `CANONICAL_V0_1 / PORTFOLIO_CERTIFICATION_LEDGER`  
 **Gate:** `core/protocols/SPECIALIST_CERTIFICATION_FOR_ANY_PROJECT_CONTRACT.md`  
-**Portfolio baseline:** canonical `main` resolved before this change at `47645c4a3facfa3e0d0657290833975d03962134`
+**Portfolio adjudication:** `tests/behavioral/evidence/SPECIALIST_CERTIFICATION_PORTFOLIO_ADJUDICATION_2026-08-17.md`  
+**Portfolio baseline:** canonical `main` resolved before gate adoption at `47645c4a3facfa3e0d0657290833975d03962134`
 
 ## 1. Authority and scope
 
 This ledger records the current evidence-bounded SES specialist certification state.
 
 It does not replace L1/L2/readiness/archetype proof artifacts and does not control archetype resolution. `archetypes/REGISTRY.md` remains the resolution authority.
+
+The portfolio `YES/NO` conclusions below are supported by the explicit C01-C18 adjudication referenced above. That adjudication was performed on candidate-head before canonical adoption and remains the provenance record of the certification decision.
 
 ```text
 CERTIFIED_FOR_ANY_PROJECT
