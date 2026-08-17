@@ -5,7 +5,7 @@
 
 ## 1. Purpose
 
-Validate that the SES terminal specialist lifecycle gate is conjunctive, fingerprint-bound, history-preserving, project-agnostic and separated from consumer-project authority.
+Validate that the SES terminal specialist lifecycle gate is conjunctive, fingerprint-bound, history-preserving, project-agnostic and separated from consumer-project authority and resolver enforcement.
 
 A case passes only if the expected certification state and boundary behavior are both preserved.
 
@@ -30,6 +30,7 @@ A case passes only if the expected certification state and boundary behavior are
 | G15 | Archetype resolves ACTIVE but target project authority is unresolved | specialist certification may remain YES, but project work/mutation stays blocked |
 | G16 | Certified specialist requested against a target without mutation authorization | `CERTIFIED_FOR_ANY_PROJECT = YES` may remain true; `AUTHORIZED_TO_MUTATE = NO` |
 | G17 | Builder kernel + profile are versioned, but no complete Builder package is versioned | `NO`; profile does not substitute for C06 Builder package |
+| G18 | Archetype is ACTIVE but certification is NO | certification remains NO; this gate alone does not silently change `RESOLUTION_STATUS` or implement resolver blocking |
 
 ## 3. Required invariant assertions
 
@@ -40,6 +41,8 @@ READY != CERTIFIED_FOR_ANY_PROJECT
 ARCHETYPE_ACTIVE != CERTIFIED_FOR_ANY_PROJECT
 HISTORICAL_PASS != CURRENT_CERTIFICATION
 BUILDER_PROFILE_VERSIONED != BUILDER_PACKAGE_VERSIONED
+CERTIFICATION_POLICY_CHANGE != RESOLVER_BEHAVIOR_CHANGE
+CERTIFIED_FOR_ANY_PROJECT != AUTOMATIC_RESOLVER_ENFORCEMENT
 CERTIFIED_FOR_ANY_PROJECT != CONSUMER_PROJECT_ADOPTED
 CERTIFIED_FOR_ANY_PROJECT != PROJECT_CONTEXT_READY
 CERTIFIED_FOR_ANY_PROJECT != AUTHORIZED_TO_MUTATE
@@ -89,9 +92,22 @@ MATERIAL_CHANGE -> AFFECTED_GATES_STALE
 UNRELATED_GATES -> PRESERVED
 ```
 
-## 7. Acceptance criteria
+## 7. Resolver-enforcement assertions
 
-The gate contract is behaviorally acceptable only if all G01-G17 expected outcomes are representable without contradiction and no case permits:
+This gate classifies reusable specialist lifecycle state. It does not by itself rewrite `archetypes/REGISTRY.md`, deactivate non-certified archetypes or install runtime middleware.
+
+Any future fail-closed rule such as:
+
+```text
+CERTIFIED_FOR_ANY_PROJECT != YES
+-> NO RUNTIME SPECIALIST RESOLUTION
+```
+
+requires a separate explicit enforcement contract, proof and authorized mutation.
+
+## 8. Acceptance criteria
+
+The gate contract is behaviorally acceptable only if all G01-G18 expected outcomes are representable without contradiction and no case permits:
 
 - READY-only certification;
 - ACTIVE-only certification;
@@ -101,5 +117,7 @@ The gate contract is behaviorally acceptable only if all G01-G17 expected outcom
 - project-local leakage;
 - consumer adoption inference;
 - mutation-authority inference;
+- silent resolver-status mutation;
+- implicit Runtime Enforcement Gateway implementation;
 - retroactive PASS;
 - re-auditing unaffected gates without invalidation.
