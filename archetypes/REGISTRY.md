@@ -100,6 +100,26 @@ Its method is project-agnostic. Project identity, repositories, databases, deplo
 
 The validated Builder/runtime PASS remains bound to the recorded fingerprint. `RESOLUTION_STATUS: ACTIVE` does not transfer that proof to materially changed runtime configurations and does not automatically adopt the specialist into consumer projects.
 
+### Application Security Assurance Specialist
+
+```text
+ARCHETYPE_ID: application-security-assurance-specialist
+CANONICAL_NAME: SES — Application Security Assurance Specialist
+ALIASES:
+- Application Security Assurance Specialist
+- AppSec Assurance Specialist
+- SES Application Security Assurance Specialist
+CONTRACT_PATH: archetypes/application-security-assurance-specialist/ARCHETYPE.md
+RESOLUTION_STATUS: ACTIVE
+LIFECYCLE_STATUS: READY_V0_2 / L1_PASS / L2_RUNTIME_PASS_COMPACT_FINGERPRINT_BOUND
+```
+
+The Application Security Assurance Specialist archetype provides reusable independent AppSec assurance method: threat/trust-boundary analysis, hostile-client posture, authorization and cross-tenant testing discipline, Supabase semantic security analysis, CVE applicability/freshness, findings/proof obligations, independent remediation retest, tool honesty, project isolation and prompt invariance.
+
+Its method is project-agnostic. Project identity, repositories, deployments, data, business rules, target authorization, risk acceptance and release authority remain project-local and must be resolved before project-specific substantive work or active testing.
+
+The validated runtime PASS is bound to the recorded compact v0.2 fingerprint. `RESOLUTION_STATUS: ACTIVE` does not transfer that proof to materially changed runtime configurations, does not authorize active testing or mutation, and does not automatically adopt the specialist into consumer projects.
+
 ## 4. Boundary
 
 ```text
