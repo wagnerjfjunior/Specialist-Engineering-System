@@ -29,7 +29,7 @@ ABSENCE_OF_FINDING != PROOF_OF_ABSENCE
 | C03 Prompt invariance | PASS | L1 P04 + L2 R03A/R03B |
 | C04 Generic baseline non-regression | PASS | L1 P20, delta 0 / no critical regression |
 | C05 Builder kernel versioned | PASS | `UX_UI_APP_SPECIALIST_BUILDER_KERNEL_V0_1.md` |
-| C06 Builder package/profile versioned | PASS | `UX_UI_APP_SPECIALIST_BUILDER_PACKAGE_V0_1.md` |
+| C06 Builder package versioned | PASS | `UX_UI_APP_SPECIALIST_BUILDER_PACKAGE_V0_1.md` |
 | C07 Actual Builder applied | PASS | L2 runtime proof: `BUILDER_APPLIED = YES` |
 | C08 Runtime fingerprint captured | PASS | L2 fingerprint section with runtime ID, kernel blob, instruction hashes/config |
 | C09 L2 runtime PASS | PASS | `L2_RUNTIME_FINGERPRINT_VALIDATION = PASS` |
@@ -156,7 +156,6 @@ Positive preserved evidence:
 ```text
 C01 PROJECT_AGNOSTIC_CONTRACT = PASS
 C05 BUILDER_KERNEL_VERSIONED = PASS
-C06 BUILDER_PROFILE_VERSIONED = PASS
 C13 ARCHETYPE_CONTRACT = PASS
 C15 ARCHETYPE_ACTIVE = PASS
 HISTORICAL_V0_1_RUNTIME_BEHAVIORAL_PROOF = PASS / 29 OF 29
@@ -165,11 +164,18 @@ HISTORICAL_V0_1_RUNTIME_BEHAVIORAL_PROOF = PASS / 29 OF 29
 Dispositive current gaps:
 
 ```text
+C06 BUILDER_PACKAGE_VERSIONED = FAIL / NO CURRENT SAAS ARCHITECT BUILDER PACKAGE IS VERSIONED
 C07 ACTUAL_CURRENT_BUILDER_APPLIED = NOT_ESTABLISHED / EXTERNAL_BUILDER_RECONCILIATION_REQUIRED
 C08 CURRENT_RUNTIME_FINGERPRINT = NOT_ESTABLISHED
 C09 CURRENT_L2_RUNTIME_PASS = NOT_ESTABLISHED
 C11 CURRENT_FINGERPRINT_READINESS = NOT_ESTABLISHED
-C18 NO_UNRESOLVED_HARD_BLOCKER = FAIL FOR CERTIFICATION / CURRENT RUNTIME PROOF GAP REMAINS
+C18 NO_UNRESOLVED_HARD_BLOCKER = NOT SATISFIED FOR CERTIFICATION / CURRENT PACKAGE + RUNTIME PROOF GAPS REMAIN
+```
+
+The existing `SAAS_ARCHITECT_BUILDER_PROFILE.md` is a useful supporting configuration artifact, but under C06:
+
+```text
+BUILDER_PROFILE_VERSIONED != BUILDER_PACKAGE_VERSIONED
 ```
 
 The Builder profile explicitly states:
@@ -198,9 +204,10 @@ Primary evidence:
 
 **ARCHETYPE_ID:** `documentation-auditor`
 
-Positive evidence includes an ACTIVE project-agnostic archetype contract and versioned Builder/runtime candidate artifacts. However current runtime certification is dispositively blocked.
+Positive evidence includes an ACTIVE project-agnostic archetype contract and versioned Builder/runtime candidate artifacts. However current certification is dispositively blocked.
 
 ```text
+C06 BUILDER_PACKAGE_VERSIONED = NOT ESTABLISHED
 C09 L2/CURRENT RUNTIME PASS = FAIL / NOT ESTABLISHED
 C16 PROJECT BOOTSTRAP COMPATIBILITY = FAIL IN CURRENT RUNTIME REGRESSION
 C18 NO_UNRESOLVED_HARD_BLOCKER = FAIL
@@ -246,11 +253,12 @@ documentation-auditor = NO
 
 ## 8. Gate-behavior audit
 
-The portfolio adjudication preserves the intended G01-G16 distinctions:
+The portfolio adjudication preserves the intended G01-G17 distinctions:
 
 ```text
 READY_ONLY_CERTIFICATION = PROHIBITED
 ACTIVE_ONLY_CERTIFICATION = PROHIBITED
+PROFILE_ONLY_SUBSTITUTION_FOR_BUILDER_PACKAGE = PROHIBITED
 HISTORICAL_PASS_TRANSFER_TO_CHANGED_RUNTIME = PROHIBITED
 PROJECT_LOCAL_LEAKAGE = PROHIBITED
 MISSING_TOOL_PROOF_AS_PASS = PROHIBITED
