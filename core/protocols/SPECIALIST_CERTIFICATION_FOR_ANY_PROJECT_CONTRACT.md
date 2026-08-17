@@ -12,9 +12,11 @@ CERTIFIED_FOR_ANY_PROJECT = YES
 
 This gate answers one bounded question:
 
-> Has this exact specialist release/runtime/archetype combination demonstrated enough reusable competence, runtime integrity, project isolation and bootstrap compatibility to be eligible for resolution across consumer projects without embedding project-local truth?
+> Has this exact specialist release/runtime/archetype combination demonstrated the reusable competence, runtime integrity, project isolation and bootstrap compatibility required by SES to be considered finished as a project-agnostic specialist?
 
 It does **not** certify any consumer project's product, implementation, security, production state or risk posture.
+
+It also does not itself modify specialist-resolution behavior. Certification policy and runtime/resolver enforcement are separate concerns.
 
 ## 2. Universal boundary
 
@@ -28,9 +30,18 @@ CERTIFIED_FOR_ANY_PROJECT
 != PUBLISHED
 != PRODUCTION_APPROVED
 != RISK_ACCEPTED
+!= AUTOMATIC_RESOLVER_ENFORCEMENT
 ```
 
 Consumer-project truth, live state, authority, environments, targets, adoption and local rules remain PROJECT-LOCAL.
+
+`archetypes/REGISTRY.md` remains the authority for current archetype resolution eligibility. A certification result must not silently mutate `RESOLUTION_STATUS`, routing or adoption semantics.
+
+```text
+CERTIFICATION_POLICY_CHANGE != RESOLVER_BEHAVIOR_CHANGE
+```
+
+Any future rule that prevents a non-certified ACTIVE archetype from runtime resolution requires a separate explicit enforcement contract, behavioral proof and authorized mutation. This v0.1 certification gate does not implement the Runtime Enforcement Gateway.
 
 ## 3. Certification equation
 
