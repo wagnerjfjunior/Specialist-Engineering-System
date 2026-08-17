@@ -44,7 +44,7 @@ PROJECT-AGNOSTIC CONTRACT
 + PROMPT INVARIANCE PASS
 + GENERIC BASELINE / NON-REGRESSION PASS
 + BUILDER KERNEL VERSIONED
-+ BUILDER PACKAGE OR PROFILE VERSIONED
++ BUILDER PACKAGE VERSIONED
 + ACTUAL BUILDER APPLIED
 + RUNTIME FINGERPRINT CAPTURED
 + L2 RUNTIME PASS
@@ -71,7 +71,8 @@ Record when available and material:
 ARCHETYPE_ID
 CANDIDATE_ID / SPECIALIST_VERSION
 BUILDER_KERNEL_PATH + BLOB/HASH
-BUILDER_PACKAGE_OR_PROFILE_PATH + BLOB/HASH
+BUILDER_PACKAGE_PATH + BLOB/HASH
+BUILDER_PROFILE_PATH + BLOB/HASH when a separate profile exists
 RUNTIME_ID
 RUNTIME_FINGERPRINT
 MODEL / MATERIAL RUNTIME SETTINGS
@@ -82,6 +83,8 @@ SES_REF_AT_CERTIFICATION
 CERTIFICATION_EVIDENCE_REFS
 ```
 
+A Builder profile may describe configuration, but it does not substitute for the required versioned Builder package at the terminal certification gate.
+
 A materially changed runtime does not inherit certification merely because the archetype ID or display name is unchanged.
 
 ```text
@@ -89,6 +92,7 @@ HISTORICAL_PASS != CURRENT_CERTIFICATION
 OLD_FINGERPRINT_PASS != NEW_FINGERPRINT_PASS
 ARCHETYPE_ACTIVE != CERTIFIED_FOR_ANY_PROJECT
 READY != CERTIFIED_FOR_ANY_PROJECT
+BUILDER_PROFILE_VERSIONED != BUILDER_PACKAGE_VERSIONED
 ```
 
 ## 5. Required proof obligations
@@ -113,9 +117,9 @@ The specialist must not obtain domain depth by regressing critical generic reaso
 
 The executable Builder Instructions source must be versioned and reproducibly identifiable.
 
-### C06 — Versioned Builder package/profile
+### C06 — Versioned Builder package
 
-The applied runtime configuration contract must be versioned, including the expected capabilities/tool surface and fingerprint requirements.
+A complete Builder package for the certification subject must be versioned. It must bind the executable kernel to the expected Builder configuration, capabilities/tool surface and fingerprint requirements. A profile alone is insufficient for C06.
 
 ### C07 — Actual Builder applied
 
@@ -213,7 +217,7 @@ A later valid PASS may satisfy the current obligation without rewriting the earl
 Material changes can invalidate only affected certification dependencies, including:
 
 - Builder Instructions/kernel;
-- Builder package/profile;
+- Builder package or supporting profile;
 - model or material runtime settings;
 - Knowledge or system context surface;
 - tool/action schema, authentication or permission surface;
