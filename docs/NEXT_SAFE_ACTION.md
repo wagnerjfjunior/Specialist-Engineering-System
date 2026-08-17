@@ -1,126 +1,123 @@
 # SES — Next Safe Action
 
-> Este é o registro autoritativo da única próxima ação segura do SES quando este estado estiver em `main`.
+> Este é o registro autoritativo da próxima ação segura do SES quando este candidate change estiver em `main`.
 
-**Next action ID:** `close-application-security-assurance-l2-runtime-fingerprint`  
-**Primary target:** `SES — Application Security Assurance Specialist`  
-**Current phase:** `SPECIALIST_PORTFOLIO_EXPANSION / BACKEND_DATA_ACTIVE / APPSEC_L2_CLOSURE`  
+**Next action ID:** `close-saas-architect-current-certification-gap`  
+**Primary target:** `SES — SaaS Architect`  
+**Current phase:** `SPECIALIST_CERTIFICATION_NORMALIZATION / SAAS_ARCHITECT_CURRENT_RUNTIME_CLOSURE`  
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System` / `main` resolved live
 
-## 1. Material state reached
+## 1. Material state reached by this candidate change
 
-After PR #31:
+The terminal reusable-specialist lifecycle gate is defined as:
 
 ```text
-MAIN MERGE = 32354c3ac7797232571435293b0d8dc722706e4f
-UX/UI APP = L1 PASS / L2 PASS / READY / ACTIVE
-BACKEND & DATA PLATFORM = L1 PASS / L2 PASS / READY / ACTIVE
-APPLICATION SECURITY ASSURANCE = L1 PASS / L2 PARTIAL-BLOCKED / NOT READY / NOT ACTIVE
+CERTIFIED_FOR_ANY_PROJECT = YES
 ```
 
-Backend/Data is no longer a candidate-only portfolio item.
+Current portfolio classification under that gate:
 
-## 2. Sole next material portfolio action
+```text
+UX/UI APP = YES
+BACKEND & DATA PLATFORM = YES
+APPLICATION SECURITY ASSURANCE = YES
+SAAS ARCHITECT = NO
+DOCUMENTATION AUDITOR = NO
+```
 
-Close the **affected Application Security Assurance L2/runtime-fingerprint obligations**.
+The pre-change continuity record that still targeted AppSec L2 closure was stale relative to PR #33 and is superseded by this reconciled next-action record if this change is merged.
 
-Do not create a new specialist before this closure unless the user explicitly reprioritizes.
+## 2. Sole next material specialist action
+
+Close the **SaaS Architect current Builder-fit certification gap**.
+
+Do not transfer historical v0.1 PASS to the current Builder-fit revision.
 
 The action is limited to:
 
-1. resolve current AppSec runtime/Builder fingerprint exactly;
-2. preserve historical v0.1 artifacts and failures; do not silently rewrite prior proof;
-3. re-test the affected GitHub Action/runtime connectivity gate when the external incident/service is available;
-4. establish exact compact runtime instruction/configuration binding with measured count/hash or equivalent immutable fingerprint evidence;
-5. adjudicate only affected L2 proof obligations;
-6. if no blocker remains, perform a separate readiness evaluation;
-7. only after readiness authorization, consider a separate archetype contract/resolution activation gate.
+1. resolve the actual current external Builder configuration for `SES — SaaS Architect`;
+2. compare it to `runtime/custom-gpt/SAAS_ARCHITECT_BUILDER_PROFILE.md` and `runtime/custom-gpt/SAAS_ARCHITECT_BUILDER_KERNEL.md`;
+3. reconcile any Builder mismatch without rewriting historical v0.1 evidence;
+4. capture a fresh non-secret runtime fingerprint for the current Builder-fit revision;
+5. identify exactly which certification obligations C01-C18 are already satisfied by unaffected evidence and which are stale/unsatisfied;
+6. execute proportional L1/L2/runtime/tool/bootstrap proof only for affected obligations;
+7. perform a separate readiness evaluation for the current fingerprint when all proof obligations are closed;
+8. require applicable user authorization for READY if current READY is not already valid for the exact fingerprint;
+9. validate archetype/bootstrap/project-local leakage obligations against the current certification contract;
+10. adjudicate `CERTIFIED_FOR_ANY_PROJECT` without retroactive PASS or history erasure.
 
-## 3. Current AppSec evidence boundary
-
-```text
-APPSEC_L1C_RESULT = PASS
-P01-P24 = SATISFIED
-PROMPT_INVARIANCE = PASS
-GENERIC_BASELINE = PASS
-R01-R05 = PASS
-R07 = PASS after valid fresh reruns
-R08 = PASS
-R06 = BLOCKED
-BLOCKER_CLASS = EXTERNAL RUNTIME / ACTION SERVICE
-ROOT_CAUSE OF APPSEC CONFIGURATION = NOT ESTABLISHED
-EXACT COMPACT RUNTIME FINGERPRINT BINDING = UNRESOLVED
-SPECIALIST_READINESS = NOT ESTABLISHED
-ARCHETYPE_ACTIVE = NO
-```
-
-Preserve:
+## 3. Preserved SaaS Architect evidence
 
 ```text
-BLOCKED != PASS
-ABSENCE OF FINDING != PROOF OF ABSENCE
-L1 PASS != L2 PASS
-L2 PASS != READY
-READY != ARCHETYPE ACTIVE
+HISTORICAL_V0_1_RUNTIME_BEHAVIORAL_PROOF = PASS
+HISTORICAL_T01_T29 = 29/29 PASS
+HISTORICAL_PASS = PRESERVED
+CURRENT_BUILDER_FIT_REVISION_RUNTIME_PROOF = NOT_YET_ESTABLISHED
+EXTERNAL_BUILDER_RECONCILIATION_REQUIRED
+CERTIFIED_FOR_ANY_PROJECT = NO
 ```
+
+Historical proof remains valid evidence for the exact historical fingerprint and may satisfy unaffected historical claims. It does not certify the changed current runtime.
 
 ## 4. Done condition
 
-```text
-AFFECTED RUNTIME TOOL PROOF = PASS OR VALID EXTERNAL BLOCKER PRESERVED
-EXACT RUNTIME FINGERPRINT BINDING = PASS
-NO UNRESOLVED HARD BLOCKER = required for L2 PASS
-```
-
-If all required affected obligations pass:
+The SaaS Architect closure is complete only when the certification ledger can support:
 
 ```text
-APPSEC L2 = PASS
-→ READINESS EVALUATION
-→ USER AUTHORIZATION IF READY
-→ ARCHETYPE CONTRACT / RESOLUTION TEST
-→ PRE-MERGE REVIEW
-→ SEPARATE ACTIVATION AUTHORIZATION
+C01-C18 = SATISFIED
+CURRENT_BUILDER_APPLIED = YES
+CURRENT_RUNTIME_FINGERPRINT = CAPTURED
+CURRENT_L2_RUNTIME_PROOF = PASS
+TOOL_HONESTY / APPLICABLE INTEGRATION PROOF = PASS
+READINESS_EVALUATION = PASS
+USER-AUTHORIZED READY = YES
+ARCHETYPE RESOLUTION = PASS
+ARCHETYPE ACTIVE = YES
+PROJECT BOOTSTRAP COMPATIBILITY = PASS
+PROJECT_LOCAL_LEAKAGE = NONE OBSERVED
+UNRESOLVED_HARD_BLOCKER = NONE
+CERTIFIED_FOR_ANY_PROJECT = YES
 ```
-
-If the external Action service is still unavailable, preserve `BLOCKED`; do not manufacture a PASS or expand the retry loop beyond the affected gate.
 
 ## 5. Explicitly blocked
 
 Without separate applicable authorization/decision, do not:
-- create or activate Platform, Delivery & Reliability before AppSec closure merely to keep portfolio momentum;
-- convert AppSec `BLOCKED` to PASS from elapsed time or assumption;
-- silently rewrite AppSec v0.1 Builder/kernel evidence to match the compact runtime;
-- rerun unaffected L1/L2 gates absent material invalidation;
-- merge Backend/Data implementation authority into AppSec independent assurance;
-- automatically mutate or adopt active SES archetypes into consumer projects;
-- publish or broaden private Builders;
-- execute the deferred Documentation Auditor Gateway;
-- execute the SaaS Architect rename from naming direction alone.
 
-## 6. After AppSec closure
+- rewrite historical SaaS v0.1 PASS as current-runtime proof;
+- revive the superseded v0.2/v0.3 selection-first experiments;
+- rerun unaffected gates merely for confidence;
+- rename SaaS Architect solely from preferred naming direction;
+- claim consumer-project adoption, production approval or risk acceptance from certification;
+- automatically mutate FECH.AI or another consumer project;
+- start Documentation Auditor closure before SaaS certification unless explicitly reprioritized;
+- create a new specialist merely to maintain portfolio momentum;
+- implement complex Runtime Enforcement Gateway middleware before its contract/test phase.
 
-The next new-specialist target is **Platform, Delivery & Reliability**, subject to the normal SES requirements/challenge flow and explicit user prioritization.
+## 6. After SaaS Architect certification
+
+Next:
 
 ```text
-INTENT
-→ INTERVIEW
-→ REQUIREMENTS
-→ ASSUMPTIONS
-→ CHALLENGE
-→ ALTERNATIVES
-→ DESIGN
-→ CANDIDATE
-→ TEST
-→ VALIDATE
-→ APPROVE
-→ PUBLISH
+Documentation Auditor -> CERTIFIED_FOR_ANY_PROJECT = YES
+```
+
+Then audit remaining/legacy specialists against the same terminal gate.
+
+Only after existing specialist normalization:
+
+```text
+DEFINE RUNTIME ENFORCEMENT GATEWAY CONTRACT v0.1
+-> TEST PROJECT RESOLUTION / SPECIALIST RESOLUTION / CONTEXT / AUTHORITY FAIL-CLOSED
+-> DECIDE WHETHER DEDICATED TECHNICAL RUNTIME IS NECESSARY
 ```
 
 ## 7. Universal boundary
 
 ```text
+CERTIFIED_FOR_ANY_PROJECT != CONSUMER_PROJECT_ADOPTION
+CERTIFIED_FOR_ANY_PROJECT != AUTHORIZED_TO_MUTATE
 CENTRAL SES EVOLUTION != AUTOMATIC PROJECT MUTATION
-ARCHETYPE_ACTIVE != AUTOMATIC_CONSUMER_ADOPTION
 TOOL CAPABILITY != AUTHORIZATION
+AS_IS != TARGET_STATE
+GENERATE != AUTHORIZE != PUBLISH
 ```
