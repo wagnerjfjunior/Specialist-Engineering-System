@@ -30,8 +30,8 @@ CERTIFIED_FOR_ANY_PROJECT
 | `ux-ui-app-specialist` | `YES` | canonical L1-C + prompt invariance + generic non-regression PASS; versioned/applied Builder package+kernel; fingerprint-bound L2/tool proof PASS; user-authorized READY; project-agnostic archetype resolution/bootstrapping boundaries PASS; ACTIVE; no unresolved hard blocker observed |
 | `backend-data-platform-specialist` | `YES` | canonical L1-C + prompt invariance + generic non-regression PASS; versioned/applied Builder package+kernel; captured fingerprint; L2/tool proof PASS; user-authorized READY; project-agnostic archetype resolution/bootstrapping boundaries PASS; ACTIVE; no unresolved hard blocker observed |
 | `application-security-assurance-specialist` | `YES` | L1-C/prompt invariance/generic baseline PASS; compact v0.2 package+kernel versioned and applied; runtime fingerprint captured; R01-R08 and L2-01..L2-14 PASS; R06 historical BLOCKED preserved with later retest PASS; tool proof/readiness/archetype resolution PASS; user-authorized READY; ACTIVE; no unresolved hard blocker |
-| `saas-architect` | `NO` | historical v0.1 runtime behavioral PASS is preserved, but current Builder-fit revision is a different fingerprint with external Builder reconciliation/current runtime proof not established |
-| `documentation-auditor` | `NO` | runtime certification is not established; corrected project-target regression is 4/7 with R03A/R05/R06 FAIL and runtime-enforcement gap established |
+| `saas-architect` | `NO` | current Builder package is not versioned; historical v0.1 runtime PASS is preserved but the current Builder-fit revision has unresolved Builder application/fingerprint/runtime proof |
+| `documentation-auditor` | `NO` | Builder package not established; runtime certification not established; corrected project-target regression is 4/7 with R03A/R05/R06 FAIL and runtime-enforcement gap established |
 
 ```text
 TOTAL_ACTIVE_ARCHETYPES = 5
@@ -137,10 +137,19 @@ Positive preserved evidence:
 
 - project-agnostic archetype contract exists;
 - archetype is ACTIVE;
+- Builder-fit kernel and supporting profile are versioned;
 - historical v0.1 runtime behavioral proof records T01-T29 = 29/29 PASS;
 - historical authority-challenge and project-isolation behavior remain evidence for that exact historical fingerprint.
 
-Current blocker:
+Current certification gaps:
+
+```text
+C06 BUILDER_PACKAGE_VERSIONED = FAIL / NOT PRESENT
+C07 ACTUAL_CURRENT_BUILDER_APPLIED = NOT_ESTABLISHED
+C08 CURRENT_RUNTIME_FINGERPRINT = NOT_ESTABLISHED
+C09 CURRENT_L2_RUNTIME_PASS = NOT_ESTABLISHED
+C11 CURRENT_FINGERPRINT_READINESS = NOT_ESTABLISHED
+```
 
 `runtime/custom-gpt/SAAS_ARCHITECT_BUILDER_PROFILE.md` explicitly records:
 
@@ -150,9 +159,15 @@ CURRENT_BUILDER_FIT_REVISION_RUNTIME_PROOF = NOT_YET_ESTABLISHED
 EXTERNAL_BUILDER_RECONCILIATION_REQUIRED
 ```
 
+A supporting Builder profile does not satisfy the terminal package gate:
+
+```text
+BUILDER_PROFILE_VERSIONED != BUILDER_PACKAGE_VERSIONED
+```
+
 Therefore historical PASS cannot be transferred to the current Builder-fit kernel/fingerprint.
 
-Next certification work must resolve the current Builder application/fingerprint and execute proportional runtime proof for the affected obligations without erasing v0.1 history.
+Next certification work must version the current Builder package, resolve actual Builder application/fingerprint and execute proportional runtime proof for affected obligations without erasing v0.1 history.
 
 ## 7. Documentation Auditor
 
@@ -164,6 +179,7 @@ CERTIFIED_FOR_ANY_PROJECT = NO
 Preserve:
 
 ```text
+C06 BUILDER_PACKAGE_VERSIONED = NOT_ESTABLISHED
 R01 = PASS
 R02 = PASS
 R03A = FAIL
