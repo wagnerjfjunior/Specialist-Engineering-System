@@ -1,6 +1,6 @@
 # SES — Specialist Certification for Any Project Contract v0.1
 
-**Status:** `CANDIDATE_CANONICAL / UNIVERSAL_LIFECYCLE_GATE`
+**Status:** `CANONICAL_V0_1 / UNIVERSAL_LIFECYCLE_GATE`
 
 ## 1. Purpose
 
@@ -234,6 +234,10 @@ NO_MATERIAL_CHANGE -> NO_REAUDIT_LOOP
 The authoritative current SES certification ledger is:
 
 `docs/SPECIALIST_CERTIFICATION_STATUS.md`
+
+The portfolio certification adjudication that supports the initial ledger adoption is:
+
+`tests/behavioral/evidence/SPECIALIST_CERTIFICATION_PORTFOLIO_ADJUDICATION_2026-08-17.md`
 
 The ledger reports certification state and evidence references. It does not replace underlying proof artifacts.
 
