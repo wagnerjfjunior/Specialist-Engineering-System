@@ -16,6 +16,7 @@ This is a repository-evidence adjudication. It does not claim new external runti
 EXISTING_EVIDENCE_REUSED != NEW_RUNTIME_EXECUTION
 HISTORICAL_PASS != CURRENT_CERTIFICATION
 ABSENCE_OF_FINDING != PROOF_OF_ABSENCE
+CERTIFICATION_POLICY_CHANGE != RESOLVER_BEHAVIOR_CHANGE
 ```
 
 ## 2. UX/UI APP Specialist
@@ -47,7 +48,7 @@ ABSENCE_OF_FINDING != PROOF_OF_ABSENCE
 UX_UI_APP_SPECIALIST_CERTIFIED_FOR_ANY_PROJECT = YES
 ```
 
-Boundary: its historical L2 file states `PRODUCTION_CERTIFICATION_FOR_EVERY_PROJECT = NOT ESTABLISHED`. The SES certification term introduced here is not that claim; it means reusable specialist eligibility only.
+Boundary: its historical L2 file states `PRODUCTION_CERTIFICATION_FOR_EVERY_PROJECT = NOT ESTABLISHED`. The SES certification term introduced here is not that claim; it means reusable specialist lifecycle certification only.
 
 Primary evidence:
 
@@ -164,13 +165,33 @@ HISTORICAL_V0_1_RUNTIME_BEHAVIORAL_PROOF = PASS / 29 OF 29
 Dispositive current gaps:
 
 ```text
-C06 BUILDER_PACKAGE_VERSIONED = FAIL / NO CURRENT SAAS ARCHITECT BUILDER PACKAGE IS VERSIONED
+C06 BUILDER_PACKAGE_VERSIONED = NOT_ESTABLISHED
 C07 ACTUAL_CURRENT_BUILDER_APPLIED = NOT_ESTABLISHED / EXTERNAL_BUILDER_RECONCILIATION_REQUIRED
 C08 CURRENT_RUNTIME_FINGERPRINT = NOT_ESTABLISHED
 C09 CURRENT_L2_RUNTIME_PASS = NOT_ESTABLISHED
 C11 CURRENT_FINGERPRINT_READINESS = NOT_ESTABLISHED
 C18 NO_UNRESOLVED_HARD_BLOCKER = NOT SATISFIED FOR CERTIFICATION / CURRENT PACKAGE + RUNTIME PROOF GAPS REMAIN
 ```
+
+### C06 bounded evidence
+
+The canonical pre-change `runtime/custom-gpt` directory at main `47645c4a3facfa3e0d0657290833975d03962134` contains:
+
+```text
+SAAS_ARCHITECT_BUILDER_KERNEL.md = PRESENT
+SAAS_ARCHITECT_BUILDER_PROFILE.md = PRESENT
+SAAS_ARCHITECT_BUILDER_PACKAGE = NOT IDENTIFIED IN THE CANONICAL RUNTIME DIRECTORY
+```
+
+The PR #34 changed-file set contains no `runtime/custom-gpt/*` path, so this certification-gate change does not create or mutate a SaaS Builder package.
+
+This supports the bounded state:
+
+```text
+C06 BUILDER_PACKAGE_VERSIONED = NOT_ESTABLISHED
+```
+
+It is not represented as proof that no package-like artifact could exist anywhere under any unrelated repository path.
 
 The existing `SAAS_ARCHITECT_BUILDER_PROFILE.md` is a useful supporting configuration artifact, but under C06:
 
@@ -194,11 +215,13 @@ RETROACTIVE_TRANSFER_OF_HISTORICAL_PASS = NO
 
 Primary evidence:
 
-- `archetypes/saas-architect/ARCHETYPE.md`
-- `runtime/custom-gpt/SAAS_ARCHITECT_BUILDER_PROFILE.md`
-- `runtime/custom-gpt/SAAS_ARCHITECT_BUILDER_KERNEL.md`
-- `tests/runtime/evidence/HYBRID_SAAS_ARCHITECT_RUNTIME_PROOF_2026-08-12.md`
-- `archetypes/REGISTRY.md`
+- canonical `runtime/custom-gpt` directory listing at baseline main;
+- PR #34 changed-file enumeration;
+- `archetypes/saas-architect/ARCHETYPE.md`;
+- `runtime/custom-gpt/SAAS_ARCHITECT_BUILDER_PROFILE.md`;
+- `runtime/custom-gpt/SAAS_ARCHITECT_BUILDER_KERNEL.md`;
+- `tests/runtime/evidence/HYBRID_SAAS_ARCHITECT_RUNTIME_PROOF_2026-08-12.md`;
+- `archetypes/REGISTRY.md`.
 
 ## 6. Documentation Auditor
 
@@ -207,7 +230,7 @@ Primary evidence:
 Positive evidence includes an ACTIVE project-agnostic archetype contract and versioned Builder/runtime candidate artifacts. However current certification is dispositively blocked.
 
 ```text
-C06 BUILDER_PACKAGE_VERSIONED = NOT ESTABLISHED
+C06 BUILDER_PACKAGE_VERSIONED = NOT_ESTABLISHED
 C09 L2/CURRENT RUNTIME PASS = FAIL / NOT ESTABLISHED
 C16 PROJECT BOOTSTRAP COMPATIBILITY = FAIL IN CURRENT RUNTIME REGRESSION
 C18 NO_UNRESOLVED_HARD_BLOCKER = FAIL
@@ -253,7 +276,7 @@ documentation-auditor = NO
 
 ## 8. Gate-behavior audit
 
-The portfolio adjudication preserves the intended G01-G17 distinctions:
+The portfolio adjudication preserves the intended G01-G18 distinctions:
 
 ```text
 READY_ONLY_CERTIFICATION = PROHIBITED
@@ -265,6 +288,8 @@ MISSING_TOOL_PROOF_AS_PASS = PROHIBITED
 RETROACTIVE_PASS = PROHIBITED
 CONSUMER_ADOPTION_INFERENCE = PROHIBITED
 MUTATION_AUTHORITY_INFERENCE = PROHIBITED
+CERTIFICATION_POLICY_CHANGE != RESOLVER_BEHAVIOR_CHANGE
+AUTOMATIC_RESOLVER_ENFORCEMENT = NOT IMPLEMENTED
 PROPORTIONAL_REVALIDATION = REQUIRED
 ```
 
