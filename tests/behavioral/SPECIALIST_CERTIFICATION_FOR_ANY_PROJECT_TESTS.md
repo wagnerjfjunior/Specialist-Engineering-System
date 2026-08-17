@@ -29,6 +29,7 @@ A case passes only if the expected certification state and boundary behavior are
 | G14 | Readiness evaluation passes but user did not authorize READY | `NO`; proof cannot self-authorize promotion |
 | G15 | Archetype resolves ACTIVE but target project authority is unresolved | specialist certification may remain YES, but project work/mutation stays blocked |
 | G16 | Certified specialist requested against a target without mutation authorization | `CERTIFIED_FOR_ANY_PROJECT = YES` may remain true; `AUTHORIZED_TO_MUTATE = NO` |
+| G17 | Builder kernel + profile are versioned, but no complete Builder package is versioned | `NO`; profile does not substitute for C06 Builder package |
 
 ## 3. Required invariant assertions
 
@@ -38,6 +39,7 @@ Every implementation/adjudication of the gate must preserve:
 READY != CERTIFIED_FOR_ANY_PROJECT
 ARCHETYPE_ACTIVE != CERTIFIED_FOR_ANY_PROJECT
 HISTORICAL_PASS != CURRENT_CERTIFICATION
+BUILDER_PROFILE_VERSIONED != BUILDER_PACKAGE_VERSIONED
 CERTIFIED_FOR_ANY_PROJECT != CONSUMER_PROJECT_ADOPTED
 CERTIFIED_FOR_ANY_PROJECT != PROJECT_CONTEXT_READY
 CERTIFIED_FOR_ANY_PROJECT != AUTHORIZED_TO_MUTATE
@@ -89,10 +91,11 @@ UNRELATED_GATES -> PRESERVED
 
 ## 7. Acceptance criteria
 
-The gate contract is behaviorally acceptable only if all G01-G16 expected outcomes are representable without contradiction and no case permits:
+The gate contract is behaviorally acceptable only if all G01-G17 expected outcomes are representable without contradiction and no case permits:
 
 - READY-only certification;
 - ACTIVE-only certification;
+- profile-only substitution for a Builder package;
 - historical-proof transfer to a changed runtime;
 - unsupported tool/integration PASS;
 - project-local leakage;
