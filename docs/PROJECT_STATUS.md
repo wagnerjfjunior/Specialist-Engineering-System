@@ -1,6 +1,6 @@
 # SES — Project Status
 
-**Status:** `SPECIALIST_CERTIFICATION_NORMALIZATION / GATE_V0_1_CANDIDATE / SAAS_NEXT`  
+**Status:** `SPECIALIST_CERTIFICATION_NORMALIZATION / GATE_V0_1 / SAAS_NEXT`  
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System`  
 **Canonical branch:** `main` resolved live before material work  
 **Authoritative next action:** `docs/NEXT_SAFE_ACTION.md`
@@ -13,9 +13,9 @@ SES is project-agnostic specialist-engineering infrastructure. Consumer projects
 SES CENTRAL EVOLUTION != AUTOMATIC CONSUMER-PROJECT MUTATION
 ```
 
-## 2. Live canonical baseline
+## 2. Live canonical baseline before gate adoption
 
-Before this candidate branch was created, `main` resolved LIVE as:
+Before the certification-gate branch was created, `main` resolved LIVE as:
 
 ```text
 47645c4a3facfa3e0d0657290833975d03962134
@@ -23,11 +23,11 @@ Before this candidate branch was created, `main` resolved LIVE as:
 
 This is the merge of PR #33 and contains Application Security Assurance readiness + archetype activation.
 
-The former post-PR #31 continuity summaries were stale regarding AppSec and are reconciled by this candidate branch. Historical FAIL/BLOCKED/overclaim evidence remains preserved.
+The former post-PR #31 continuity summaries were stale regarding AppSec and are reconciled by the gate-adoption change. Historical FAIL/BLOCKED/overclaim evidence remains preserved.
 
-## 3. Candidate terminal certification gate
+## 3. Terminal certification gate
 
-This branch proposes the universal terminal specialist lifecycle gate:
+The universal terminal specialist lifecycle gate is:
 
 ```text
 CERTIFIED_FOR_ANY_PROJECT = YES
@@ -38,8 +38,9 @@ Sources:
 - `core/protocols/SPECIALIST_CERTIFICATION_FOR_ANY_PROJECT_CONTRACT.md`
 - `tests/behavioral/SPECIALIST_CERTIFICATION_FOR_ANY_PROJECT_TESTS.md`
 - `docs/SPECIALIST_CERTIFICATION_STATUS.md`
+- `tests/behavioral/evidence/SPECIALIST_CERTIFICATION_PORTFOLIO_ADJUDICATION_2026-08-17.md`
 
-The gate is conjunctive and fingerprint-bound. `READY` and `ARCHETYPE ACTIVE` are necessary lifecycle facts where required but are not terminal certification by themselves.
+The gate is conjunctive and fingerprint-bound. `READY` and `ARCHETYPE ACTIVE` are not terminal certification by themselves.
 
 ```text
 READY != CERTIFIED_FOR_ANY_PROJECT
@@ -48,8 +49,6 @@ HISTORICAL_PASS != CURRENT_CERTIFICATION
 ```
 
 ## 4. Portfolio certification ledger
-
-Current evidence-bound portfolio classification under the candidate gate:
 
 | Specialist | Archetype | Certification |
 |---|---|---|
@@ -65,7 +64,7 @@ CERTIFIED_FOR_ANY_PROJECT_YES = 3
 CERTIFIED_FOR_ANY_PROJECT_NO = 2
 ```
 
-Detailed evidence is recorded in `docs/SPECIALIST_CERTIFICATION_STATUS.md`.
+Detailed evidence is recorded in `docs/SPECIALIST_CERTIFICATION_STATUS.md` and the portfolio adjudication artifact.
 
 ## 5. Certified specialists
 
