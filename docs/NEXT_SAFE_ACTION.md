@@ -37,7 +37,7 @@ The action is limited to:
 
 1. resolve the actual current external Builder configuration for `SES — SaaS Architect`;
 2. compare it to `runtime/custom-gpt/SAAS_ARCHITECT_BUILDER_PROFILE.md` and `runtime/custom-gpt/SAAS_ARCHITECT_BUILDER_KERNEL.md`;
-3. create/version a complete SaaS Architect Builder package for the current certification subject; a profile alone does not satisfy C06;
+3. establish and version a complete SaaS Architect Builder package for the current certification subject; a profile alone does not satisfy C06;
 4. reconcile any external Builder mismatch without rewriting historical v0.1 evidence;
 5. capture a fresh non-secret runtime fingerprint for the current Builder-fit revision;
 6. identify exactly which certification obligations C01-C18 are already satisfied by unaffected evidence and which are stale/unsatisfied;
@@ -55,11 +55,13 @@ HISTORICAL_T01_T29 = 29/29 PASS
 HISTORICAL_PASS = PRESERVED
 CURRENT_BUILDER_KERNEL = VERSIONED
 CURRENT_BUILDER_PROFILE = VERSIONED
-CURRENT_BUILDER_PACKAGE = NOT VERSIONED
+CURRENT_BUILDER_PACKAGE = NOT_ESTABLISHED
 CURRENT_BUILDER_FIT_REVISION_RUNTIME_PROOF = NOT_YET_ESTABLISHED
 EXTERNAL_BUILDER_RECONCILIATION_REQUIRED
 CERTIFIED_FOR_ANY_PROJECT = NO
 ```
+
+`CURRENT_BUILDER_PACKAGE = NOT_ESTABLISHED` is bounded to the current SES evidence: the canonical runtime directory identifies the SaaS kernel/profile but no package there, and the certification-gate PR changes no `runtime/custom-gpt/*` path. It is not an unbounded proof of global absence.
 
 Historical proof remains valid evidence for the exact historical fingerprint and may satisfy unaffected historical claims. It does not certify the changed current runtime.
 
@@ -98,6 +100,7 @@ Without separate applicable authorization/decision, do not:
 - rerun unaffected gates merely for confidence;
 - rename SaaS Architect solely from preferred naming direction;
 - claim consumer-project adoption, production approval or risk acceptance from certification;
+- silently change `RESOLUTION_STATUS` from certification state alone;
 - automatically mutate FECH.AI or another consumer project;
 - start Documentation Auditor closure before SaaS certification unless explicitly reprioritized;
 - create a new specialist merely to maintain portfolio momentum;
@@ -126,6 +129,8 @@ DEFINE RUNTIME ENFORCEMENT GATEWAY CONTRACT v0.1
 ```text
 CERTIFIED_FOR_ANY_PROJECT != CONSUMER_PROJECT_ADOPTION
 CERTIFIED_FOR_ANY_PROJECT != AUTHORIZED_TO_MUTATE
+CERTIFIED_FOR_ANY_PROJECT != AUTOMATIC_RESOLVER_ENFORCEMENT
+CERTIFICATION_POLICY_CHANGE != RESOLVER_BEHAVIOR_CHANGE
 CENTRAL SES EVOLUTION != AUTOMATIC PROJECT MUTATION
 TOOL CAPABILITY != AUTHORIZATION
 AS_IS != TARGET_STATE
