@@ -21,6 +21,7 @@ CERTIFIED_FOR_ANY_PROJECT
 != PUBLISHED
 != PRODUCTION_APPROVED
 != RISK_ACCEPTED
+!= AUTOMATIC_RESOLVER_ENFORCEMENT
 ```
 
 ## 2. Current portfolio
@@ -30,8 +31,8 @@ CERTIFIED_FOR_ANY_PROJECT
 | `ux-ui-app-specialist` | `YES` | canonical L1-C + prompt invariance + generic non-regression PASS; versioned/applied Builder package+kernel; fingerprint-bound L2/tool proof PASS; user-authorized READY; project-agnostic archetype resolution/bootstrapping boundaries PASS; ACTIVE; no unresolved hard blocker observed |
 | `backend-data-platform-specialist` | `YES` | canonical L1-C + prompt invariance + generic non-regression PASS; versioned/applied Builder package+kernel; captured fingerprint; L2/tool proof PASS; user-authorized READY; project-agnostic archetype resolution/bootstrapping boundaries PASS; ACTIVE; no unresolved hard blocker observed |
 | `application-security-assurance-specialist` | `YES` | L1-C/prompt invariance/generic baseline PASS; compact v0.2 package+kernel versioned and applied; runtime fingerprint captured; R01-R08 and L2-01..L2-14 PASS; R06 historical BLOCKED preserved with later retest PASS; tool proof/readiness/archetype resolution PASS; user-authorized READY; ACTIVE; no unresolved hard blocker |
-| `saas-architect` | `NO` | current Builder package is not versioned; historical v0.1 runtime PASS is preserved but the current Builder-fit revision has unresolved Builder application/fingerprint/runtime proof |
-| `documentation-auditor` | `NO` | Builder package not established; runtime certification not established; corrected project-target regression is 4/7 with R03A/R05/R06 FAIL and runtime-enforcement gap established |
+| `saas-architect` | `NO` | C06 Builder package versioning is not established; historical v0.1 runtime PASS is preserved but the current Builder-fit revision has unresolved Builder application/fingerprint/runtime proof |
+| `documentation-auditor` | `NO` | C06 Builder package versioning is not established; runtime certification not established; corrected project-target regression is 4/7 with R03A/R05/R06 FAIL and runtime-enforcement gap established |
 
 ```text
 TOTAL_ACTIVE_ARCHETYPES = 5
@@ -64,7 +65,7 @@ CONSUMER_ADOPTION = NO / NOT AUTOMATIC
 PRODUCTION_CERTIFICATION_FOR_EVERY_PROJECT = NOT CLAIMED
 ```
 
-The SES term `CERTIFIED_FOR_ANY_PROJECT` means reusable specialist eligibility under the gate contract; it is not a claim that every project/product is production-certified.
+The SES term `CERTIFIED_FOR_ANY_PROJECT` means reusable specialist lifecycle certification under the gate contract; it is not a claim that every project/product is production-certified and does not by itself change resolver behavior.
 
 ## 4. Backend & Data Platform Specialist
 
@@ -144,12 +145,14 @@ Positive preserved evidence:
 Current certification gaps:
 
 ```text
-C06 BUILDER_PACKAGE_VERSIONED = FAIL / NOT PRESENT
+C06 BUILDER_PACKAGE_VERSIONED = NOT_ESTABLISHED
 C07 ACTUAL_CURRENT_BUILDER_APPLIED = NOT_ESTABLISHED
 C08 CURRENT_RUNTIME_FINGERPRINT = NOT_ESTABLISHED
 C09 CURRENT_L2_RUNTIME_PASS = NOT_ESTABLISHED
 C11 CURRENT_FINGERPRINT_READINESS = NOT_ESTABLISHED
 ```
+
+The bounded C06 evidence is: canonical `runtime/custom-gpt` at the pre-change main contains the SaaS kernel and profile but no SaaS package is identified there; PR #34 changes no `runtime/custom-gpt/*` path. This is sufficient for `NOT_ESTABLISHED`, not for an unbounded proof of global absence.
 
 `runtime/custom-gpt/SAAS_ARCHITECT_BUILDER_PROFILE.md` explicitly records:
 
@@ -167,7 +170,7 @@ BUILDER_PROFILE_VERSIONED != BUILDER_PACKAGE_VERSIONED
 
 Therefore historical PASS cannot be transferred to the current Builder-fit kernel/fingerprint.
 
-Next certification work must version the current Builder package, resolve actual Builder application/fingerprint and execute proportional runtime proof for affected obligations without erasing v0.1 history.
+Next certification work must establish/version the current Builder package, resolve actual Builder application/fingerprint and execute proportional runtime proof for affected obligations without erasing v0.1 history.
 
 ## 7. Documentation Auditor
 
@@ -201,7 +204,7 @@ Primary evidence:
 - `archetypes/documentation-auditor/ARCHETYPE.md`
 - `archetypes/REGISTRY.md`
 
-`RESOLUTION_STATUS: ACTIVE` does not repair runtime certification failure.
+`RESOLUTION_STATUS: ACTIVE` does not repair runtime certification failure and is not automatically mutated by this certification ledger.
 
 ## 8. Invalidation
 
