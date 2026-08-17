@@ -18,9 +18,9 @@
 
 For unmerged work preserve `CANONICAL_MAIN != CANDIDATE_HEAD`.
 
-## 2. Live baseline before this candidate change
+## 2. Live baseline before gate adoption
 
-`main` was resolved LIVE at the start of this change as:
+`main` was resolved LIVE at the start of the gate-adoption change as:
 
 ```text
 47645c4a3facfa3e0d0657290833975d03962134
@@ -28,11 +28,11 @@ For unmerged work preserve `CANONICAL_MAIN != CANDIDATE_HEAD`.
 
 That commit is the merge of PR #33 and activates the Application Security Assurance Specialist.
 
-The prior continuity documents still described the post-PR #31 AppSec-blocked state. That derived continuity was stale and is reconciled by this candidate change; the historical evidence itself is not rewritten.
+The prior continuity documents still described the post-PR #31 AppSec-blocked state. That derived continuity was stale and is reconciled by the gate-adoption change; the historical evidence itself is not rewritten.
 
 ## 3. Terminal specialist lifecycle gate
 
-The candidate canonical terminal gate is:
+The terminal gate is:
 
 ```text
 CERTIFIED_FOR_ANY_PROJECT = YES
@@ -43,6 +43,7 @@ Defined by:
 - `core/protocols/SPECIALIST_CERTIFICATION_FOR_ANY_PROJECT_CONTRACT.md`
 - `tests/behavioral/SPECIALIST_CERTIFICATION_FOR_ANY_PROJECT_TESTS.md`
 - `docs/SPECIALIST_CERTIFICATION_STATUS.md`
+- `tests/behavioral/evidence/SPECIALIST_CERTIFICATION_PORTFOLIO_ADJUDICATION_2026-08-17.md`
 
 A specialist is not finished merely because it is READY or ACTIVE.
 
@@ -175,7 +176,7 @@ CENTRAL EVOLUTION != AUTOMATIC PROJECT MUTATION
 
 Use `docs/NEXT_SAFE_ACTION.md` only.
 
-The next material specialist lifecycle action after this gate is canonicalized is to close the **SaaS Architect current Builder-fit certification gap** without rewriting its historical v0.1 PASS.
+The next material specialist lifecycle action after gate adoption is to close the **SaaS Architect current Builder-fit certification gap** without rewriting its historical v0.1 PASS.
 
 Documentation Auditor follows SaaS Architect.
 
