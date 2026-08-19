@@ -1,19 +1,12 @@
 # SES — Software Systems Architect Builder Fingerprint — 2026-08-19
 
-**Certification subject:** `software-systems-architect / builder-fit-v0.1`
-**Evidence class:** `EXTERNAL_BUILDER_APPLIED_CONFIGURATION / OPERATOR_SCREENSHOTS + SUPPLIED_SCHEMA_TEXT`
-**Runtime proof:** `NOT_YET_EXECUTED`
+**Certification subject:** `software-systems-architect / builder-fit-v0.1`  
+**Evidence class:** `EXTERNAL_BUILDER_APPLIED_CONFIGURATION / OPERATOR_SCREENSHOTS`  
+**Status:** `HISTORICAL_INITIAL_CURRENT_FINGERPRINT / STALE_REVALIDATION_REQUIRED`
 
-## 1. Evidence boundary
+## 1. Captured applied configuration
 
-This record is based on operator-supplied screenshots of the actual Custom GPT Builder and supplied text for the configured GitHub Action schema/kernel display. It records only fields visibly established by that evidence. Missing/non-visible fields remain `NOT_CAPTURED`.
-
-Earlier screenshots showed `Atualizações pendentes`; later post-update screenshots show `Ao vivo · Apenas para mim` and no pending-update indicator. The normal `Atualizar` control remains visible and is not treated, by itself, as evidence of a pending change.
-
-`BUILDER_APPLIED != L2_RUNTIME_PASS`
-`FINGERPRINT_CAPTURED != TOOL_INVOCATION_PROOF`
-
-## 2. Captured applied configuration
+The operator supplied post-update Builder screenshots showing the GPT live/private with the then-current compact kernel applied.
 
 ```text
 RUNTIME_NAME = SES — Software Systems Architect
@@ -21,49 +14,72 @@ ARCHETYPE_ID = software-systems-architect
 VISIBILITY = PRIVATE / APENAS PARA MIM
 LIVE_STATUS = AO VIVO
 MODEL = GPT-5.6 Sol (gpt-5-6) / recommended model shown
-DESCRIPTION_COMPLETE_COPY = YES / visually consistent with versioned 286-character Builder-fit description
-DESCRIPTION_CHARACTER_COUNT = 286 / versioned source count
-INSTRUCTIONS_COMPLETE_COPY = YES / beginning and ending of exact compact kernel captured in prior screenshots; supplied complete text matches versioned kernel
-KERNEL_PATH = runtime/custom-gpt/SOFTWARE_SYSTEMS_ARCHITECT_BUILDER_KERNEL_V0_1.md
+DESCRIPTION_CHARACTER_COUNT = 286
 KERNEL_BLOB_SHA = 5aa37be41e83e7f3c83019a5b29e1a8583364d2f
-INSTRUCTIONS_CHARACTER_COUNT = 7710 / versioned source count
-INSTRUCTIONS_UTF8_BYTES = 7752 / versioned source count
-CONVERSATION_STARTERS = 4 / visually captured
-KNOWLEDGE = EMPTY / no uploaded files visible
+INSTRUCTIONS_CHARACTER_COUNT = 7710
+INSTRUCTIONS_UTF8_BYTES = 7752
+CONVERSATION_STARTERS = 4
+KNOWLEDGE = EMPTY
 WEB_SEARCH = ENABLED
 IMAGE_GENERATION = DISABLED
 DATA_ANALYSIS / CODE_INTERPRETER = ENABLED
-CUSTOM_ACTION_HOST = api.github.com
 CUSTOM_ACTION_TITLE = SES GitHub READ_ONLY
-ACTION_AUTH_TYPE = API KEY
-ACTION_AUTH_MODE = BEARER
-ACTION_SECRET = PRESENT BUT HIDDEN / NOT RECORDED
-ACTION_METHOD_SURFACE = GET-only in supplied schema
-ACTION_SCHEMA_PATH = runtime/custom-gpt/GITHUB_READONLY_ACTION.openapi.yaml
+ACTION_AUTH_TYPE = API KEY / BEARER
 ACTION_SCHEMA_EXPECTED_BLOB = 1e6237e806fd84716ec13b019e6617ad4110a211
+ACTION_METHOD_SURFACE = GET-only in supplied schema
 APPS = NOT_CAPTURED
 BUILDER/GPT_FULL_ID = NOT_CAPTURED
-MODEL_SETTINGS_BEYOND_RECOMMENDED_MODEL = NOT_CAPTURED
-PENDING_UPDATE_INDICATOR = NOT_OBSERVED IN POST-UPDATE CAPTURE
 ```
 
-## 3. Action evidence
+Earlier screenshots showed a pending update; later screenshots showed `Ao vivo · Apenas para mim` with no pending-update indicator. This established C07/C08 for that exact fingerprint before L2.
 
-The supplied Action schema is OpenAPI `3.1.0`, title `SES GitHub READ_ONLY`, version `0.2.1`, server `https://api.github.com`, and exposes GET operations only, including `/user`, repository metadata/branches/files/blobs/commits/PR read operations, checks/workflows and compare. No mutation endpoint is present in the supplied schema text.
+## 2. Initial L2 outcome
 
-This establishes configured read-only action surface at the applied-configuration level. It does **not** establish successful authentication, repository access or runtime tool correctness. Those remain C10/L2 proof obligations.
+The fingerprint above was then exercised in current-runtime L2 and produced material failures. See:
 
-## 4. Adjudication
+- `tests/runtime/evidence/SOFTWARE_SYSTEMS_ARCHITECT_L2_ADJUDICATION_2026-08-19.md`
+- `tests/runtime/evidence/SOFTWARE_SYSTEMS_ARCHITECT_L2_READJUDICATION_2026-08-19.md`
 
 ```text
-C07 ACTUAL BUILDER APPLIED = PASS
-C08 RUNTIME FINGERPRINT CAPTURED = PASS / SUFFICIENT_FOR_L2_ENTRY
-C09 L2 RUNTIME PASS = NOT_ESTABLISHED
-C10 TOOL HONESTY / INTEGRATION PROOF = NOT_ESTABLISHED
+INITIAL_L2 = FAIL
+R01_INITIAL = FAIL
+R03_INITIAL = FAIL / PRE-CANONICALIZATION IDENTITY DEPENDENCY
+R09_INITIAL = FAIL / TOOL OPERATION IDENTITY OVERCLAIM
 ```
 
-`C08 PASS` means the current applied configuration is sufficiently fingerprinted to define the L2 test subject. It does not imply that every non-material UI field was exposed or captured.
+## 3. Superseding corrected kernel
 
-## 5. Next gate
+The Builder kernel was corrected after that run:
 
-Execute `tests/runtime/SOFTWARE_SYSTEMS_ARCHITECT_L2_CURRENT_FINGERPRINT_RUNBOOK_V0_1.md` against this exact configured GPT. Any material Builder change before/during L2 invalidates affected runtime evidence and requires fingerprint reconciliation.
+```text
+CURRENT_KERNEL_BLOB_SHA = c82d8e008fc2922828f55aa4d667be09c359c0b4
+CURRENT_INSTRUCTIONS_CHARACTER_COUNT = 7915
+CURRENT_INSTRUCTIONS_UTF8_BYTES = 7957
+```
+
+Because Instructions are a material fingerprint field:
+
+```text
+PREVIOUS_BUILDER_APPLIED = HISTORICAL_PASS_FOR_C07_AT_THAT_TIME
+PREVIOUS_RUNTIME_FINGERPRINT = STALE_REVALIDATION_REQUIRED
+CURRENT_BUILDER_APPLIED = NOT_ESTABLISHED_FOR_CORRECTED_KERNEL
+CURRENT_RUNTIME_FINGERPRINT = NOT_CAPTURED_FOR_CORRECTED_KERNEL
+```
+
+The old screenshot evidence remains valid historical evidence of what was applied; it cannot be transferred to the corrected kernel.
+
+## 4. Current gate state
+
+```text
+C07 CURRENT CORRECTED BUILDER APPLIED = NOT_ESTABLISHED
+C08 CURRENT CORRECTED FINGERPRINT CAPTURED = NOT_ESTABLISHED
+C09 CURRENT L2 = NOT_SATISFIED
+C10 CURRENT TOOL PROOF = NOT_SATISFIED
+CERTIFIED_FOR_ANY_PROJECT = NO
+```
+
+## 5. Next proof event
+
+After the identity/archetype is canonical on SES `main`, apply the exact corrected kernel/package in Builder, capture a fresh non-secret fingerprint, then execute the affected L2 retests defined by `docs/NEXT_SAFE_ACTION.md`.
+
+`RETROACTIVE_PASS = NO`.
