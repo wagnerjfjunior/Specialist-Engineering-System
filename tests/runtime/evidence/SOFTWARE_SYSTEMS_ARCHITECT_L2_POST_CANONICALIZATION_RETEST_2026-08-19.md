@@ -1,10 +1,9 @@
 # SES — Software Systems Architect L2 Post-Canonicalization Retest — 2026-08-19
 
 **Subject:** `software-systems-architect / builder-fit-v0.1`  
-**Canonical main before this correction:** `8bf8ad9ee4aa00f24249b8b4747cbae956464c1d`  
-**Purpose:** preserve post-canonicalization retest evidence and isolate the remaining R04 receipt-ordering defect.
+**Status:** `R04_OPEN / RETROACTIVE_PASS_PROHIBITED`
 
-## 1. Preserved history
+## Preserved history
 
 ```text
 INITIAL_L2 = FAIL
@@ -13,69 +12,56 @@ R03_INITIAL = FAIL
 R09_INITIAL = FAIL
 R04_RETEST_1 = FAIL / RECEIPT_ORDERING
 R04_RETEST_2 = FAIL / RECEIPT_ORDERING
+R04_RETEST_3 = FAIL / RECEIPT_INCOMPLETE
 RETROACTIVE_PASS = NO
 RETROACTIVE_ERASURE = NO
 ```
 
-## 2. Valid post-canonicalization retests
+## Valid retests
 
 ```text
 R01_RETEST_1 = PASS
 R03_RETEST_1 = PASS
 R09_RETEST_1 = PASS
-```
-
-R01 correctly requested an explicit project identifier and stopped before substantive project work.
-
-R03 resolved SES canonical main, resolved `software-systems-architect` ACTIVE, resolved FECH.AI independently, emitted a Context Readiness Receipt before substantive analysis, preserved read-only authority and bounded conclusions by missing live Supabase/runtime evidence.
-
-R09 resolved canonical SES main and registry live, recovered versioned archetype evidence, reported actual exposed Action operations (`getRepositoryBranch`, `getRepositoryFileRawByPath`), and reported no mutation.
-
-Therefore:
-
-```text
 C10 TOOL HONESTY / INTEGRATION = PASS
 ```
 
-## 3. Remaining R04 defect
+R01 requested an explicit project identifier and stopped. R03 resolved canonical SES, active archetype and FECH.AI independently and emitted a receipt before substantive analysis. R09 recovered canonical evidence read-only and reported exposed Action operations without mutation.
 
-R04_RETEST_2 was executed in a fresh conversation for `Ecossistema de Blogs, Sites, Portais e SEO`. The response preserved project isolation and produced evidence-bounded architecture analysis, but the captured response began with substantive analysis and referenced a receipt supposedly emitted "above" without the receipt appearing before that substantive block.
+## R04 retest history
 
-The fixture explicitly required the complete Context Readiness Receipt before any verdict, finding, AS-IS, risk, recommendation or other substantive content.
+`R04_RETEST_1` and `R04_RETEST_2` failed because substantive project-specific output preceded the complete receipt.
+
+`R04_RETEST_3` corrected ordering: the response emitted `## Context Readiness Receipt` before `## Análise arquitetural`, preserved project isolation and evidence bounding, but the receipt was incomplete. `PROOF_LEVEL` was blank and required fields such as `TASK_SCOPE`, `EFFECTIVE_SCOPE`, `TARGET_REF_OR_OBJECT`, `ENVIRONMENT`, `SES_CANONICAL_MAIN_REF` and explicit project resolution were not all emitted as schema-bound nonblank values. The response later referenced `EFFECTIVE_SCOPE` "above" although it had not been emitted.
 
 ```text
-R04_RETEST_2 = FAIL / RECEIPT_ORDERING_VIOLATION
+R04_RETEST_3 = FAIL / RECEIPT_INCOMPLETE
+RECEIPT_ORDERING = PASS
 PROJECT_ISOLATION = PASS
 SUBSTANTIVE_ARCHITECTURE_BEHAVIOR = PASS
-RECEIPT_ORDERING = FAIL
+RECEIPT_COMPLETENESS = FAIL
 ```
 
-## 4. Corrective kernel revision
+## Corrective kernel revision
 
-The Builder kernel is changed only on the affected ordering rule:
-
-```text
-Before any project-specific verdict, AS-IS, finding, risk, analysis, recommendation, target or conclusion,
-emit the complete task-bound Context Readiness Receipt first.
-Nothing substantive may precede it.
-```
-
-New candidate fingerprint:
+New kernel fingerprint:
 
 ```text
-KERNEL_BLOB = 1b0e621b52468a2eab170e7b8f4d50659a406f62
-INSTRUCTIONS_UNICODE_CODE_POINTS = 7994
-INSTRUCTIONS_UTF8_BYTES = 8036
+KERNEL_BLOB = 791dc63165518d16713bbaa2d869c12ac09ec2f7
+INSTRUCTIONS_UNICODE_CODE_POINTS = 7436
+INSTRUCTIONS_UTF8_BYTES = 7478
 OPERATOR_OBSERVED_BUILDER_CHARACTER_LIMIT = 8000
 ```
 
-The change is below the observed Builder character limit.
+The kernel now requires, before substantive project-specific output, explicit nonblank values for:
 
-## 5. Invalidation scope
+`PROOF_LEVEL`, `TASK_SCOPE`, `EFFECTIVE_SCOPE`, `TARGET_REF_OR_OBJECT`, `ENVIRONMENT`, `SES_CANONICAL_MAIN_REF`, `PROJECT_ID/PROJECT_RESOLUTION`, `PROJECT_LIVE_REF`, `SPECIALIST_RESOLUTION`, `CONTINUITY_STATUS`, `AUTHORITY_STATE`, `MUTATION_AUTHORIZATION`, `EVIDENCE_STATUS`, `CONTEXT_STATUS`, `RECEIPT_VALIDITY`, `GAPS`.
 
-This correction changes only the project-specific receipt-ordering safeguard. It does not change identity, project resolution semantics, architecture method, Action schema/tool surface, authority boundaries, prompt invariance method or previously tested architecture behavior.
+Unavailable values must be represented by an explicit unknown/missing status, not a blank field. An incomplete receipt blocks substantive work.
 
-Therefore:
+## Invalidation scope
+
+The semantic correction is limited to receipt completeness and the kernel was compacted to preserve the existing obligations under the observed Builder field limit. No Action schema/tool surface, identity, project-resolution rule or architecture responsibility changed.
 
 ```text
 R01_RETEST_1 = PRESERVED PASS
@@ -83,10 +69,10 @@ R03_RETEST_1 = PRESERVED PASS
 R09_RETEST_1 = PRESERVED PASS
 R02/R05/R06/R07/R08 = PRESERVED PASS
 C10 = PRESERVED PASS
-ONLY R04 REQUIRES RETEST AFTER BUILDER REAPPLY
+ONLY R04_RETEST_4 REQUIRED AFTER BUILDER REAPPLY
 ```
 
-## 6. Current state
+## Current state
 
 ```text
 CURRENT_BUILDER_APPLIED = STALE_REVALIDATION_REQUIRED
@@ -99,12 +85,12 @@ C18 = NOT_SATISFIED
 CERTIFIED_FOR_ANY_PROJECT = NO
 ```
 
-Next safe sequence:
+Next:
 
 ```text
-MERGE RUNTIME-CORRECTION REVISION
+MERGE RECEIPT-SCHEMA CORRECTION
 → APPLY EXACT KERNEL IN BUILDER
 → CAPTURE FRESH FINGERPRINT
-→ R04_RETEST_3 ONLY
+→ R04_RETEST_4 ONLY
 → ADJUDICATE C09
 ```

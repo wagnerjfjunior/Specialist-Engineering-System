@@ -3,16 +3,13 @@
 **Status:** `BUILDER_FIT / RUNTIME_CORRECTION_CANDIDATE / REAPPLY_REQUIRED / L1C_PASS / L2_R04_OPEN`  
 **ARCHETYPE_ID:** `software-systems-architect`
 
-## 1. Purpose
+## Purpose
 
-Version the intended Builder configuration for `SES — Software Systems Architect` while preserving historical `SES — SaaS Architect` evidence and all current L2 failures on their original fingerprints.
+Version the intended Builder configuration while preserving historical SaaS evidence and all current L2 failures on their original fingerprints.
 
-```text
-PROFILE_VERSIONED != BUILDER_APPLIED != RUNTIME_FINGERPRINT != RUNTIME_PROOF
-CERTIFIED_FOR_ANY_PROJECT = NO
-```
+`PROFILE_VERSIONED != BUILDER_APPLIED != RUNTIME_FINGERPRINT != RUNTIME_PROOF`
 
-## 2. Builder fields
+## Builder fields
 
 **Name:** `SES — Software Systems Architect`
 
@@ -22,64 +19,42 @@ CERTIFIED_FOR_ANY_PROJECT = NO
 
 Measured: `286 Unicode code points / 292 UTF-8 bytes`.
 
-**Instructions exact source:**
-
-`runtime/custom-gpt/SOFTWARE_SYSTEMS_ARCHITECT_BUILDER_KERNEL_V0_1.md`
+**Instructions exact source:** `runtime/custom-gpt/SOFTWARE_SYSTEMS_ARCHITECT_BUILDER_KERNEL_V0_1.md`
 
 ```text
-EXPECTED_KERNEL_BLOB = 1b0e621b52468a2eab170e7b8f4d50659a406f62
-INSTRUCTIONS_UNICODE_CODE_POINTS = 7994
-INSTRUCTIONS_UTF8_BYTES = 8036
+EXPECTED_KERNEL_BLOB = 791dc63165518d16713bbaa2d869c12ac09ec2f7
+INSTRUCTIONS_UNICODE_CODE_POINTS = 7436
+INSTRUCTIONS_UTF8_BYTES = 7478
 OPERATOR_OBSERVED_UI_LIMIT = 8000 characters / 2026-08-19
 ```
 
-The observed Builder limit is character-based; this kernel remains below it.
-
-**Conversation starters — exactly four:**
-
-1. `Reconstrua o AS-IS do sistema que eu indicar e faça um Deep Architecture Audit das fronteiras, dependências, estado e riscos.`
-2. `Compare a arquitetura atual com alternativas viáveis e recomende uma target architecture com trade-offs, migração, proof obligations e rollback.`
-3. `Audite este fluxo ponta a ponta: identidade → autorização → tenant → domínio → persistência → eventos/side effects → observabilidade → falha/recuperação.`
-4. `Revalide uma decisão arquitetural atual com evidência live e diga o que mudou, o que continua válido e a próxima ação segura.`
-
-**Knowledge:** `EMPTY`
-
-**Capabilities target:**
+**Conversation starters:** same four exact starters versioned in the Builder package.
 
 ```text
+KNOWLEDGE = EMPTY
 Web Search = ENABLED
 Code Interpreter / Data Analysis = ENABLED
 Image Generation = DISABLED
 Actions = ENABLED
-Apps = record actual Builder state
+ACTION = SES GitHub READ_ONLY
+EXPECTED_ACTION_SCHEMA_BLOB = 1e6237e806fd84716ec13b019e6617ad4110a211
+VISIBILITY = PRIVATE / APENAS PARA MIM
 ```
 
-**Action:**
-
-```text
-TITLE = SES GitHub READ_ONLY
-SCHEMA = runtime/custom-gpt/GITHUB_READONLY_ACTION.openapi.yaml
-EXPECTED_SCHEMA_BLOB = 1e6237e806fd84716ec13b019e6617ad4110a211
-AUTH = API key / Bearer / secret only in Builder
-SURFACE = READ_ONLY / GET-only
-```
-
-**Visibility target:** `PRIVATE / APENAS PARA MIM`.
-
-## 3. Runtime behavior corrections bound to this fingerprint
+## Runtime behavior corrections bound to this fingerprint
 
 ```text
 MISSING PROJECT ID → ASK DIRECTLY → STOP
 TOOL OPERATION NAME NOT OBSERVABLE → TOOL_OPERATION=NOT_CAPTURED
 PROJECT-SPECIFIC WORK → COMPLETE CONTEXT READINESS RECEIPT FIRST
-NO VERDICT / AS-IS / FINDING / RISK / ANALYSIS / RECOMMENDATION / TARGET / CONCLUSION BEFORE RECEIPT
+REQUIRED RECEIPT FIELDS → EXPLICIT NONBLANK VALUE OR EXPLICIT UNKNOWN/MISSING STATUS
+INCOMPLETE RECEIPT → NO SUBSTANTIVE WORK
 ```
 
-## 4. Runtime loading chain
+Required receipt fields:
+`PROOF_LEVEL`, `TASK_SCOPE`, `EFFECTIVE_SCOPE`, `TARGET_REF_OR_OBJECT`, `ENVIRONMENT`, `SES_CANONICAL_MAIN_REF`, `PROJECT_ID/PROJECT_RESOLUTION`, `PROJECT_LIVE_REF`, `SPECIALIST_RESOLUTION`, `CONTINUITY_STATUS`, `AUTHORITY_STATE`, `MUTATION_AUTHORIZATION`, `EVIDENCE_STATUS`, `CONTEXT_STATUS`, `RECEIPT_VALIDITY`, `GAPS`.
 
-`SES main → docs/bootstrap/INDEX.md → archetypes/REGISTRY.md → software-systems-architect → archetype contract → hybrid bootstrap → explicit project resolution → Project Adapter → consumer bootstrap/local specialist → material evidence → task-bound Context Readiness Receipt → bounded architecture work`.
-
-## 5. Reconciliation gate
+## Reconciliation gate
 
 ```text
 RUNTIME_NAME = SES — Software Systems Architect
@@ -87,9 +62,9 @@ ARCHETYPE_ID = software-systems-architect
 DESCRIPTION_COMPLETE_COPY = YES
 DESCRIPTION_CHARACTER_COUNT = 286
 INSTRUCTIONS_COMPLETE_COPY = YES
-KERNEL_BLOB = 1b0e621b52468a2eab170e7b8f4d50659a406f62
-INSTRUCTIONS_CHARACTER_COUNT = 7994
-INSTRUCTIONS_UTF8_BYTES = 8036
+KERNEL_BLOB = 791dc63165518d16713bbaa2d869c12ac09ec2f7
+INSTRUCTIONS_CHARACTER_COUNT = 7436
+INSTRUCTIONS_UTF8_BYTES = 7478
 CONVERSATION_STARTERS = exactly 4
 KNOWLEDGE = EMPTY
 ACTION_SURFACE = READ_ONLY / GET-only
@@ -98,9 +73,7 @@ APPS = actual / NOT EXPOSED
 VISIBILITY = PRIVATE / APENAS PARA MIM
 ```
 
-After reapply, capture a fresh fingerprint and retest only R04 unless another material configuration change invalidates more evidence.
-
-## 6. Current lifecycle
+## Current lifecycle
 
 ```text
 L1-C = PASS
@@ -109,6 +82,7 @@ R03_RETEST_1 = PASS
 R09_RETEST_1 = PASS
 R04_RETEST_1 = FAIL / PRESERVED
 R04_RETEST_2 = FAIL / PRESERVED
+R04_RETEST_3 = FAIL / RECEIPT_INCOMPLETE / PRESERVED
 CURRENT_BUILDER_APPLIED = STALE_REVALIDATION_REQUIRED
 CURRENT_RUNTIME_FINGERPRINT = STALE_REVALIDATION_REQUIRED
 C09 = NOT_SATISFIED
@@ -117,3 +91,5 @@ C11 = NOT_ELIGIBLE
 C12 = NOT_APPLICABLE_YET
 CERTIFIED_FOR_ANY_PROJECT = NO
 ```
+
+After reapply, capture a fresh fingerprint and retest only `R04_RETEST_4` unless another material configuration change invalidates more evidence.
