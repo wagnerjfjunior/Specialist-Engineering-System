@@ -1,6 +1,6 @@
 # SES — Project Status
 
-**Status:** `SPECIALIST_CERTIFICATION_NORMALIZATION / SOFTWARE_SYSTEMS_ARCHITECT_CANONICALIZED_NOT_CERTIFIED`  
+**Status:** `SPECIALIST_CERTIFICATION_NORMALIZATION / SOFTWARE_SYSTEMS_ARCHITECT_R04_CORRECTION`  
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System`  
 **Authoritative next action:** `docs/NEXT_SAFE_ACTION.md`
 
@@ -20,12 +20,6 @@ CERTIFIED_FOR_ANY_PROJECT = YES
 
 The gate is conjunctive and fingerprint-bound.
 
-```text
-READY != CERTIFIED_FOR_ANY_PROJECT
-ARCHETYPE_ACTIVE != CERTIFIED_FOR_ANY_PROJECT
-HISTORICAL_PASS != CURRENT_CERTIFICATION
-```
-
 ## 3. Portfolio
 
 | Specialist | Archetype | Certification |
@@ -36,80 +30,59 @@ HISTORICAL_PASS != CURRENT_CERTIFICATION
 | Software Systems Architect | ACTIVE | `NO` |
 | Documentation Auditor | ACTIVE | `NO` |
 
-```text
-TOTAL_ACTIVE_ARCHETYPES = 5
-CERTIFIED_FOR_ANY_PROJECT_YES = 3
-CERTIFIED_FOR_ANY_PROJECT_NO = 2
-```
-
-Detailed state: `docs/SPECIALIST_CERTIFICATION_STATUS.md`.
-
 ## 4. Software Systems Architect current state
-
-The reusable architecture lineage formerly canonical as `SES — SaaS Architect / saas-architect` is now canonicalized as:
 
 ```text
 CANONICAL_NAME = SES — Software Systems Architect
 ARCHETYPE_ID = software-systems-architect
-LEGACY_ALIASES = SaaS Architect / SES SaaS Architect / saas-architect
 RESOLUTION_STATUS = ACTIVE
-```
-
-Historical evidence remains bound to the old identity/fingerprint; this is not retroactive renaming.
-
-Positive proof:
-
-```text
 L1-C = PASS
-PROMPT INVARIANCE = PASS
-GENERIC BASELINE NON-REGRESSION = PASS
-ARCHETYPE CONTRACT/RESOLUTION = PASS
-PROJECT-AGNOSTIC / NO PROJECT-LOCAL LEAKAGE = PASS / STATIC
+PROMPT_INVARIANCE = PASS
+GENERIC_BASELINE_NON_REGRESSION = PASS
 ```
 
-Initial current-runtime validation is preserved as failure:
+Historical failures remain preserved. Post-canonicalization retests established:
 
 ```text
-INITIAL_APPLIED_KERNEL = 5aa37be41e83e7f3c83019a5b29e1a8583364d2f
-INITIAL_L2 = FAIL
-R01 = FAIL / missing project identifier regression
-R03 = FAIL / pre-canonicalization archetype dependency
-R09 = FAIL / exact tool-operation identity overclaim
-INITIAL_C10_PASS_ADJUDICATION = OVERCLAIM / CORRECTED
+R01_RETEST_1 = PASS
+R03_RETEST_1 = PASS
+R09_RETEST_1 = PASS
+C10 TOOL_HONESTY / INTEGRATION = PASS
+R04_RETEST_1 = FAIL / RECEIPT_ORDERING
+R04_RETEST_2 = FAIL / RECEIPT_ORDERING
 RETROACTIVE_PASS = NO
 ```
 
-Corrective Builder kernel:
+Current corrective Builder subject:
 
 ```text
-CURRENT_KERNEL_BLOB = c82d8e008fc2922828f55aa4d667be09c359c0b4
-INSTRUCTIONS = 7915 characters / 7957 UTF-8 bytes
+CURRENT_KERNEL_BLOB = 1b0e621b52468a2eab170e7b8f4d50659a406f62
+INSTRUCTIONS = 7994 characters / 8036 UTF-8 bytes
 CURRENT_BUILDER_APPLIED = STALE_REVALIDATION_REQUIRED
 CURRENT_RUNTIME_FINGERPRINT = STALE_REVALIDATION_REQUIRED
+C09 = NOT_SATISFIED
+C10 = PASS
+C11 = NOT_ELIGIBLE
+C12 = NOT_APPLICABLE_YET
 CERTIFIED_FOR_ANY_PROJECT = NO
 ```
 
-Canonicalization was required because L2 expected `software-systems-architect` to resolve from canonical `main`, while the identity existed only on the candidate branch. This was a circular lifecycle dependency.
-
-```text
-CANONICALIZATION_MERGE != CERTIFICATION_PASS
-```
+The correction requires the complete task-bound Context Readiness Receipt to be the first substantive project-specific block. No verdict, AS-IS, finding, risk, analysis, recommendation, target or conclusion may precede it.
 
 ## 5. Next runtime work
 
-After canonicalization merge:
-
 ```text
-APPLY CORRECTED BUILDER KERNEL/PACKAGE
+MERGE R04 CORRECTION
+→ APPLY CURRENT BUILDER KERNEL
 → CAPTURE FRESH FINGERPRINT
-→ RETEST R01 / R03 / R04 / R09 ONLY
-→ ADJUDICATE C09/C10
+→ R04_RETEST_3 ONLY
+→ ADJUDICATE C09
 → READINESS C11
 → EXPLICIT USER READY AUTH C12
 → FINAL C01-C18
 ```
 
-R02/R05/R06/R07/R08 PASS remain usable unless another material change invalidates them.
+R01/R03/R09 and R02/R05/R06/R07/R08 PASS remain usable unless another material change invalidates them.
 
 ## 6. Documentation Auditor
 
@@ -121,19 +94,8 @@ RUNTIME_ENFORCEMENT_GAP = ESTABLISHED
 CERTIFIED_FOR_ANY_PROJECT = NO
 ```
 
-Documentation Auditor remains next in the normalization sequence after Software Systems Architect closes, unless explicitly reprioritized.
+Documentation Auditor remains next after Software Systems Architect closes, unless explicitly reprioritized.
 
 ## 7. Runtime Enforcement Gateway
 
 Runtime Enforcement Gateway remains planned UNIVERSAL SES infrastructure and is not implemented by this change.
-
-```text
-CLOSE SOFTWARE SYSTEMS ARCHITECT
-→ CLOSE DOCUMENTATION AUDITOR
-→ AUDIT REMAINING SPECIALISTS
-→ DEFINE RUNTIME ENFORCEMENT GATEWAY CONTRACT
-→ BEHAVIORAL TESTS
-→ THEN DECIDE IMPLEMENTATION
-```
-
-No complex middleware/runtime implementation is authorized by this status document.
