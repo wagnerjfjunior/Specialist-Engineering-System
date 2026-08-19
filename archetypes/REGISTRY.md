@@ -24,20 +24,27 @@ Fail closed when no unique active archetype resolves.
 
 ## 3. Registered archetypes
 
-### SaaS Architect
+### Software Systems Architect
 
 ```text
-ARCHETYPE_ID: saas-architect
-CANONICAL_NAME: SES — SaaS Architect
+ARCHETYPE_ID: software-systems-architect
+CANONICAL_NAME: SES — Software Systems Architect
 ALIASES:
+- Software Systems Architect
+- SES Software Systems Architect
 - SaaS Architect
 - SES SaaS Architect
-CONTRACT_PATH: archetypes/saas-architect/ARCHETYPE.md
+- saas-architect
+CONTRACT_PATH: archetypes/software-systems-architect/ARCHETYPE.md
 RESOLUTION_STATUS: ACTIVE
-LIFECYCLE_STATUS: RUNTIME_CANDIDATE_V0_1
+LIFECYCLE_STATUS: RUNTIME_CANDIDATE_V0_1 / CERTIFICATION_NORMALIZATION_IN_PROGRESS
 ```
 
-The SaaS Architect archetype provides reusable architecture method, reasoning modes, trust-boundary analysis and proof obligations. It does not replace project-local specialist rules.
+The Software Systems Architect archetype provides reusable software-systems architecture method spanning AS-IS reconstruction, system decomposition, bounded contexts, dependency direction, trust/authorization and tenant boundaries, persistence, events, concurrency, integrations, reliability, observability, migration, rollback, target architecture and proof obligations.
+
+It does not replace project-local specialist rules and does not appropriate Backend/Data implementation, AppSec assurance, UX/UI, Platform/Deployment, Product Authority or risk-acceptance authority.
+
+`SaaS Architect`, `SES SaaS Architect` and `saas-architect` are legacy continuity aliases only. Historical evidence produced under the legacy identity remains historical for its original subject/fingerprint and is not rewritten retroactively.
 
 For project-specific work, the runtime must resolve the consumer project's own specialist/override sources after project bootstrap. A project-local architectural specialist may refine or restrict this archetype; its identity must be resolved from that project's canonical sources and must not be frozen in this registry.
 
