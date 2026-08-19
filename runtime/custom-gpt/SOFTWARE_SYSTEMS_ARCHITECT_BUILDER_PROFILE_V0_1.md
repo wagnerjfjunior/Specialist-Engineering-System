@@ -1,15 +1,14 @@
 # SES — Software Systems Architect Custom GPT Builder Profile v0.1
 
-**Status:** `BUILDER_FIT / CANONICALIZATION_CANDIDATE / REAPPLY_REQUIRED / L1C_PASS / L2_INITIAL_FAIL`  
+**Status:** `BUILDER_FIT / RUNTIME_CORRECTION_CANDIDATE / REAPPLY_REQUIRED / L1C_PASS / L2_R04_OPEN`  
 **ARCHETYPE_ID:** `software-systems-architect`
 
 ## 1. Purpose
 
-Version the intended Builder configuration for `SES — Software Systems Architect` while preserving historical `SES — SaaS Architect` evidence on its original fingerprint.
+Version the intended Builder configuration for `SES — Software Systems Architect` while preserving historical `SES — SaaS Architect` evidence and all current L2 failures on their original fingerprints.
 
 ```text
 PROFILE_VERSIONED != BUILDER_APPLIED != RUNTIME_FINGERPRINT != RUNTIME_PROOF
-HISTORICAL_SAAS_PASS = PRESERVED / OLD FINGERPRINT ONLY
 CERTIFIED_FOR_ANY_PROJECT = NO
 ```
 
@@ -28,13 +27,13 @@ Measured: `286 Unicode code points / 292 UTF-8 bytes`.
 `runtime/custom-gpt/SOFTWARE_SYSTEMS_ARCHITECT_BUILDER_KERNEL_V0_1.md`
 
 ```text
-EXPECTED_KERNEL_BLOB = c82d8e008fc2922828f55aa4d667be09c359c0b4
-INSTRUCTIONS_UNICODE_CODE_POINTS = 7915
-INSTRUCTIONS_UTF8_BYTES = 7957
+EXPECTED_KERNEL_BLOB = 1b0e621b52468a2eab170e7b8f4d50659a406f62
+INSTRUCTIONS_UNICODE_CODE_POINTS = 7994
+INSTRUCTIONS_UTF8_BYTES = 8036
 OPERATOR_OBSERVED_UI_LIMIT = 8000 characters / 2026-08-19
 ```
 
-This fingerprint supersedes the previously applied `5aa37be41e83e7f3c83019a5b29e1a8583364d2f` configuration for current proof. The old applied fingerprint remains historical evidence and is not rewritten.
+The observed Builder limit is character-based; this kernel remains below it.
 
 **Conversation starters — exactly four:**
 
@@ -67,41 +66,20 @@ SURFACE = READ_ONLY / GET-only
 
 **Visibility target:** `PRIVATE / APENAS PARA MIM`.
 
-**Model:** capture actual selected model after reapply.
-
 ## 3. Runtime behavior corrections bound to this fingerprint
 
 ```text
-MISSING PROJECT ID
-→ ASK DIRECTLY
-→ STOP
-→ NO PROJECT INFERENCE / SELECTION / SUBSTANTIVE PROJECT WORK
-```
-
-For tool reporting:
-
-```text
-EXACT OPERATION NAME OBSERVABLE → REPORT IT
-NOT OBSERVABLE → TOOL_OPERATION=NOT_CAPTURED
-NEVER INFER/INVENT OPERATION NAME
+MISSING PROJECT ID → ASK DIRECTLY → STOP
+TOOL OPERATION NAME NOT OBSERVABLE → TOOL_OPERATION=NOT_CAPTURED
+PROJECT-SPECIFIC WORK → COMPLETE CONTEXT READINESS RECEIPT FIRST
+NO VERDICT / AS-IS / FINDING / RISK / ANALYSIS / RECOMMENDATION / TARGET / CONCLUSION BEFORE RECEIPT
 ```
 
 ## 4. Runtime loading chain
 
 `SES main → docs/bootstrap/INDEX.md → archetypes/REGISTRY.md → software-systems-architect → archetype contract → hybrid bootstrap → explicit project resolution → Project Adapter → consumer bootstrap/local specialist → material evidence → task-bound Context Readiness Receipt → bounded architecture work`.
 
-## 5. Historical boundary
-
-```text
-HISTORICAL_IDENTITY = SES — SaaS Architect
-HISTORICAL_ARCHETYPE_ID = saas-architect
-HISTORICAL_RUNTIME_BEHAVIORAL_PROOF = PASS
-HISTORICAL_T01_T29 = 29/29 PASS
-HISTORICAL_KERNEL_BLOB = 50672d09665035c0f60f18887f3295a5ea8cad03
-LEGACY_ALIAS != RETROACTIVE_IDENTITY_REWRITE
-```
-
-## 6. Reconciliation gate after canonicalization
+## 5. Reconciliation gate
 
 ```text
 RUNTIME_NAME = SES — Software Systems Architect
@@ -109,9 +87,9 @@ ARCHETYPE_ID = software-systems-architect
 DESCRIPTION_COMPLETE_COPY = YES
 DESCRIPTION_CHARACTER_COUNT = 286
 INSTRUCTIONS_COMPLETE_COPY = YES
-KERNEL_BLOB = c82d8e008fc2922828f55aa4d667be09c359c0b4
-INSTRUCTIONS_CHARACTER_COUNT = 7915
-INSTRUCTIONS_UTF8_BYTES = 7957
+KERNEL_BLOB = 1b0e621b52468a2eab170e7b8f4d50659a406f62
+INSTRUCTIONS_CHARACTER_COUNT = 7994
+INSTRUCTIONS_UTF8_BYTES = 8036
 CONVERSATION_STARTERS = exactly 4
 KNOWLEDGE = EMPTY
 ACTION_SURFACE = READ_ONLY / GET-only
@@ -120,17 +98,21 @@ APPS = actual / NOT EXPOSED
 VISIBILITY = PRIVATE / APENAS PARA MIM
 ```
 
-After reapply, capture a fresh fingerprint and retest affected L2 obligations. No current runtime PASS is claimed by this profile.
+After reapply, capture a fresh fingerprint and retest only R04 unless another material configuration change invalidates more evidence.
 
-## 7. Current lifecycle
+## 6. Current lifecycle
 
 ```text
 L1-C = PASS
-INITIAL_L2 = FAIL / PRESERVED
+R01_RETEST_1 = PASS
+R03_RETEST_1 = PASS
+R09_RETEST_1 = PASS
+R04_RETEST_1 = FAIL / PRESERVED
+R04_RETEST_2 = FAIL / PRESERVED
 CURRENT_BUILDER_APPLIED = STALE_REVALIDATION_REQUIRED
 CURRENT_RUNTIME_FINGERPRINT = STALE_REVALIDATION_REQUIRED
 C09 = NOT_SATISFIED
-C10 = NOT_SATISFIED
+C10 = PASS / PRESERVED
 C11 = NOT_ELIGIBLE
 C12 = NOT_APPLICABLE_YET
 CERTIFIED_FOR_ANY_PROJECT = NO
