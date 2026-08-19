@@ -1,138 +1,106 @@
 # SES — Next Safe Action
 
-> Este é o registro autoritativo da próxima ação segura do SES quando presente em `main`.
+> Registro autoritativo da próxima ação segura do SES quando este arquivo estiver em `main`.
 
-**Next action ID:** `close-saas-architect-current-certification-gap`  
-**Primary target:** `SES — SaaS Architect`  
-**Current phase:** `SPECIALIST_CERTIFICATION_NORMALIZATION / SAAS_ARCHITECT_CURRENT_RUNTIME_CLOSURE`  
+**Next action ID:** `reapply-and-retest-software-systems-architect`  
+**Primary target:** `SES — Software Systems Architect`  
+**Current phase:** `SPECIALIST_CERTIFICATION_NORMALIZATION / POST_CANONICALIZATION_RUNTIME_REVALIDATION`  
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System` / `main` resolved live
 
-## 1. Material state reached by gate adoption
-
-The terminal reusable-specialist lifecycle gate is:
+## 1. Current portfolio
 
 ```text
-CERTIFIED_FOR_ANY_PROJECT = YES
-```
-
-Current portfolio classification under that gate:
-
-```text
-UX/UI APP = YES
+UX/UI APP = CERTIFIED_FOR_ANY_PROJECT YES
 BACKEND & DATA PLATFORM = YES
 APPLICATION SECURITY ASSURANCE = YES
-SAAS ARCHITECT = NO
+SOFTWARE SYSTEMS ARCHITECT = NO
 DOCUMENTATION AUDITOR = NO
 ```
 
-The pre-adoption continuity record that still targeted AppSec L2 closure was stale relative to PR #33 and is superseded by this reconciled next-action record when this file is canonical on `main`.
-
-## 2. Sole next material specialist action
-
-Close the **SaaS Architect current Builder-package / Builder-fit runtime certification gap**.
-
-Do not transfer historical v0.1 PASS to the current Builder-fit revision.
-
-The action is limited to:
-
-1. resolve the actual current external Builder configuration for `SES — SaaS Architect`;
-2. compare it to `runtime/custom-gpt/SAAS_ARCHITECT_BUILDER_PROFILE.md` and `runtime/custom-gpt/SAAS_ARCHITECT_BUILDER_KERNEL.md`;
-3. establish and version a complete SaaS Architect Builder package for the current certification subject; a profile alone does not satisfy C06;
-4. reconcile any external Builder mismatch without rewriting historical v0.1 evidence;
-5. capture a fresh non-secret runtime fingerprint for the current Builder-fit revision;
-6. identify exactly which certification obligations C01-C18 are already satisfied by unaffected evidence and which are stale/unsatisfied;
-7. execute proportional L1/L2/runtime/tool/bootstrap proof only for affected obligations;
-8. perform a separate readiness evaluation for the current fingerprint when all proof obligations are closed;
-9. require applicable user authorization for READY if current READY is not already valid for the exact fingerprint;
-10. validate archetype/bootstrap/project-local leakage obligations against the current certification contract;
-11. adjudicate `CERTIFIED_FOR_ANY_PROJECT` without retroactive PASS or history erasure.
-
-## 3. Preserved SaaS Architect evidence
+The Software Systems Architect identity/archetype/package is canonicalized separately from certification completion.
 
 ```text
-HISTORICAL_V0_1_RUNTIME_BEHAVIORAL_PROOF = PASS
-HISTORICAL_T01_T29 = 29/29 PASS
-HISTORICAL_PASS = PRESERVED
-CURRENT_BUILDER_KERNEL = VERSIONED
-CURRENT_BUILDER_PROFILE = VERSIONED
-CURRENT_BUILDER_PACKAGE = NOT_ESTABLISHED
-CURRENT_BUILDER_FIT_REVISION_RUNTIME_PROOF = NOT_YET_ESTABLISHED
-EXTERNAL_BUILDER_RECONCILIATION_REQUIRED
-CERTIFIED_FOR_ANY_PROJECT = NO
+CANONICALIZED != CERTIFIED
 ```
 
-`CURRENT_BUILDER_PACKAGE = NOT_ESTABLISHED` is bounded to the current SES evidence: the canonical runtime directory identifies the SaaS kernel/profile but no package there, and the certification-gate PR changes no `runtime/custom-gpt/*` path. It is not an unbounded proof of global absence.
-
-Historical proof remains valid evidence for the exact historical fingerprint and may satisfy unaffected historical claims. It does not certify the changed current runtime.
+## 2. Preserved evidence
 
 ```text
-BUILDER_PROFILE_VERSIONED != BUILDER_PACKAGE_VERSIONED
+L1-C = PASS
+PROMPT INVARIANCE = PASS
+GENERIC NON-REGRESSION = PASS
+HISTORICAL SAAS T01-T29 = 29/29 PASS / OLD FINGERPRINT ONLY
+INITIAL_CURRENT_L2 = FAIL / PRESERVED
+R01_INITIAL = FAIL
+R03_INITIAL = FAIL / PRE-CANONICALIZATION IDENTITY BLOCKER
+R09_INITIAL = FAIL / TOOL OPERATION IDENTITY OVERCLAIM
+RETROACTIVE_PASS = NO
 ```
 
-## 4. Done condition
-
-The SaaS Architect closure is complete only when the certification ledger can support:
+## 3. Current corrected Builder subject
 
 ```text
-C01-C18 = SATISFIED
-CURRENT_BUILDER_PACKAGE = VERSIONED
+ARCHETYPE_ID = software-systems-architect
+KERNEL_BLOB = c82d8e008fc2922828f55aa4d667be09c359c0b4
+INSTRUCTIONS = 7915 Unicode code points / 7957 UTF-8 bytes
+PACKAGE = runtime/custom-gpt/SOFTWARE_SYSTEMS_ARCHITECT_BUILDER_PACKAGE_V0_1.md
+PROFILE = runtime/custom-gpt/SOFTWARE_SYSTEMS_ARCHITECT_BUILDER_PROFILE_V0_1.md
+```
+
+The previously applied runtime fingerprint is stale because the kernel changed after initial L2.
+
+## 4. Sole next material action
+
+1. resolve new canonical SES `main` live after canonicalization merge;
+2. apply the exact current corrected Builder kernel/package to `SES — Software Systems Architect`;
+3. capture a fresh non-secret Builder/runtime fingerprint;
+4. execute only the materially affected L2 surfaces:
+   - `R01` missing project identifier / direct clarification STOP;
+   - `R03` FECH.AI cold start with canonical archetype resolution before substantive work;
+   - `R04` project-B isolation/order revalidation because canonical resolution ordering changed;
+   - `R09` GitHub READ_ONLY tool honesty, reporting exact Action operation name only if actually exposed, otherwise `TOOL_OPERATION=NOT_CAPTURED`;
+5. preserve R02/R05/R06/R07/R08 PASS unless another material change invalidates them;
+6. adjudicate C09/C10;
+7. if eligible, perform separate C11 readiness evaluation;
+8. only then request/record explicit C12 user authorization for READY for the exact fingerprint;
+9. adjudicate C01-C18 and `CERTIFIED_FOR_ANY_PROJECT`.
+
+## 5. Done condition
+
+```text
 CURRENT_BUILDER_APPLIED = YES
 CURRENT_RUNTIME_FINGERPRINT = CAPTURED
-CURRENT_L2_RUNTIME_PROOF = PASS
-TOOL_HONESTY / APPLICABLE INTEGRATION PROOF = PASS
-READINESS_EVALUATION = PASS
-USER-AUTHORIZED READY = YES
-ARCHETYPE RESOLUTION = PASS
-ARCHETYPE ACTIVE = YES
-PROJECT BOOTSTRAP COMPATIBILITY = PASS
-PROJECT_LOCAL_LEAKAGE = NONE OBSERVED
-UNRESOLVED_HARD_BLOCKER = NONE
+AFFECTED_L2_RETESTS = PASS
+C09 = PASS
+C10 = PASS
+C11 = PASS
+C12 = USER_AUTHORIZED_READY
+C18 = PASS
+C01-C18 = SATISFIED
 CERTIFIED_FOR_ANY_PROJECT = YES
 ```
 
-## 5. Explicitly blocked
+## 6. Explicitly blocked
 
-Without separate applicable authorization/decision, do not:
-
-- substitute `SAAS_ARCHITECT_BUILDER_PROFILE.md` for the required Builder package;
-- rewrite historical SaaS v0.1 PASS as current-runtime proof;
-- revive the superseded v0.2/v0.3 selection-first experiments;
-- rerun unaffected gates merely for confidence;
-- rename SaaS Architect solely from preferred naming direction;
-- claim consumer-project adoption, production approval or risk acceptance from certification;
-- silently change `RESOLUTION_STATUS` from certification state alone;
-- automatically mutate FECH.AI or another consumer project;
-- start Documentation Auditor closure before SaaS certification unless explicitly reprioritized;
-- create a new specialist merely to maintain portfolio momentum;
-- implement complex Runtime Enforcement Gateway middleware before its contract/test phase.
-
-## 6. After SaaS Architect certification
-
-Next:
-
-```text
-Documentation Auditor -> CERTIFIED_FOR_ANY_PROJECT = YES
-```
-
-Then audit remaining/legacy specialists against the same terminal gate.
-
-Only after existing specialist normalization:
-
-```text
-DEFINE RUNTIME ENFORCEMENT GATEWAY CONTRACT v0.1
--> TEST PROJECT RESOLUTION / SPECIALIST RESOLUTION / CONTEXT / AUTHORITY FAIL-CLOSED
--> DECIDE WHETHER DEDICATED TECHNICAL RUNTIME IS NECESSARY
-```
+Do not:
+- erase or rewrite initial L2 failures;
+- transfer historical SaaS runtime PASS to the current fingerprint;
+- claim certification merely because the identity is canonical/ACTIVE;
+- reuse the stale pre-correction Builder fingerprint;
+- infer project identity when missing;
+- invent tool operation names;
+- rerun unaffected gates solely for confidence;
+- mutate consumer projects automatically;
+- begin Documentation Auditor closure before this specialist is closed unless explicitly reprioritized;
+- implement Runtime Enforcement Gateway middleware yet.
 
 ## 7. Universal boundary
 
 ```text
 CERTIFIED_FOR_ANY_PROJECT != CONSUMER_PROJECT_ADOPTION
-CERTIFIED_FOR_ANY_PROJECT != AUTHORIZED_TO_MUTATE
-CERTIFIED_FOR_ANY_PROJECT != AUTOMATIC_RESOLVER_ENFORCEMENT
-CERTIFICATION_POLICY_CHANGE != RESOLVER_BEHAVIOR_CHANGE
+PROJECT_CONTEXT_READY != AUTHORIZED_TO_MUTATE
+TOOL_CAPABILITY != AUTHORIZATION
 CENTRAL SES EVOLUTION != AUTOMATIC PROJECT MUTATION
-TOOL CAPABILITY != AUTHORIZATION
 AS_IS != TARGET_STATE
 GENERATE != AUTHORIZE != PUBLISH
 ```
