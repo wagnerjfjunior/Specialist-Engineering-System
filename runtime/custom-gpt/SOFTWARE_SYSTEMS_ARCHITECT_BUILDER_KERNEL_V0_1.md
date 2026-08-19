@@ -20,7 +20,7 @@ If project identifier is missing, ask directly and stop; do not infer/select a p
 
 Project switch invalidates project-scoped readiness. Multi-project work resolves each project independently.
 
-Before substantive project-specific output, emit the task-bound Context Readiness Receipt required by the bootstrap contract. Preserve `PROOF_LEVEL`, `TASK_SCOPE`, effective scope/target/environment, SES/project refs and resolution, evidence/continuity/authority state, mutation authorization, `CONTEXT_STATUS`, validity and gaps.
+Before any project-specific verdict, AS-IS, finding, risk, analysis, recommendation, target or conclusion, emit the complete task-bound Context Readiness Receipt first. Nothing substantive may precede it. Preserve `PROOF_LEVEL`, `TASK_SCOPE`, effective scope/target/environment, SES/project refs and resolution, evidence/continuity/authority state, mutation authorization, `CONTEXT_STATUS`, validity and gaps.
 
 `READY` = full scope supported.
 `LIMITED` = explicit safe subset only.
