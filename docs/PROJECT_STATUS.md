@@ -1,6 +1,6 @@
 # SES — Project Status
 
-**Status:** `SPECIALIST_CERTIFICATION_NORMALIZATION / SOFTWARE_SYSTEMS_ARCHITECT_CERTIFIED`  
+**Status:** `SPECIALIST_CERTIFICATION_NORMALIZATION / DOCUMENTATION_AUDITOR_GATEWAY_PROOF_RUNTIME_IMPLEMENTED`  
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System`  
 **Authoritative next action:** `docs/NEXT_SAFE_ACTION.md`
 
@@ -16,44 +16,46 @@ SES is project-agnostic specialist-engineering infrastructure. Consumer projects
 | Software Systems Architect | ACTIVE | `YES` |
 | Documentation Auditor | ACTIVE | `NO` |
 
-## Software Systems Architect
+## Documentation Auditor
+
+Historical v0.9 runtime evidence remains:
 
 ```text
-ARCHETYPE_ID = software-systems-architect
-KERNEL_BLOB = 791dc63165518d16713bbaa2d869c12ac09ec2f7
-L1-C = PASS
-C09 L2 = PASS
-C10 TOOL HONESTY = PASS
-C11 READINESS = PASS
-C12 USER_AUTHORIZED_READY = PASS
-C18 = PASS
-C01-C18 = PASS
-CERTIFIED_FOR_ANY_PROJECT = YES
-```
-
-Preserved failures remain historical and are not retroactively rewritten:
-
-```text
-INITIAL_L2 = FAIL
-R01_INITIAL = FAIL
-R03_INITIAL = FAIL
-R09_INITIAL = FAIL
-R04_RETEST_1 = FAIL
-R04_RETEST_2 = FAIL
-R04_RETEST_3 = FAIL
+R01 = PASS
+R02 = PASS
+R03A = FAIL
+R03B = PASS
+R04 = PASS
+R05 = FAIL
+R06 = FAIL
+PROJECT_TARGET_REGRESSION = 4/7
+PROMPT_LEVEL_FIX_STOP_LOSS = TRIGGERED
 RETROACTIVE_PASS = NO
 ```
 
-Final evidence: `tests/runtime/evidence/SOFTWARE_SYSTEMS_ARCHITECT_FINAL_CERTIFICATION_2026-08-19.md`.
-
-## Next normalization target
-
-Documentation Auditor is next in the existing normalization sequence unless explicitly reprioritized.
+A materially different specialist-specific proof runtime now exists:
 
 ```text
-SOFTWARE SYSTEMS ARCHITECT = CLOSED / CERTIFIED
-DOCUMENTATION AUDITOR = NEXT / NOT CERTIFIED
-RUNTIME ENFORCEMENT GATEWAY = DEFERRED
+CONTROLLER = runtime/documentation_auditor_gateway/controller.py
+ADVERSARIAL_TESTS = 10/10 PASS / LOCAL EXECUTION
+R03A_FAILURE_DIMENSION = MECHANICALLY_BLOCKED_IN_PROOF_RUNTIME
+R05_FAILURE_DIMENSION = MECHANICALLY_BLOCKED_IN_PROOF_RUNTIME
+R06_FAILURE_DIMENSION = MECHANICALLY_BLOCKED_IN_PROOF_RUNTIME
+EXTERNAL_GATEWAY_DEPLOYED = NO
+EXTERNAL_RUNTIME_FINGERPRINT = NOT_CAPTURED
+C09 = NOT_SATISFIED
+CERTIFIED_FOR_ANY_PROJECT = NO
 ```
 
-Certification does not imply consumer adoption, project-context readiness, mutation authority, publication, production approval or risk acceptance.
+Evidence: `tests/runtime/evidence/DOCUMENTATION_AUDITOR_GATEWAY_PROOF_RUNTIME_V1_2026-08-19.md`.
+
+## Boundary
+
+```text
+PROOF_RUNTIME_IMPLEMENTED != EXTERNAL_RUNTIME_DEPLOYED
+LOCAL_TEST_PASS != C09
+DOCUMENTATION_AUDITOR_GATEWAY = SPECIALIST_SPECIFIC / CANDIDATE_LEARNING
+RUNTIME ENFORCEMENT GATEWAY UNIVERSALIZATION = DEFERRED
+```
+
+The next material action is external Gateway deployment/adoption plus fingerprint-bound runtime validation. Certified specialists remain closed absent a material invalidation event.
