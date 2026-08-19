@@ -11,7 +11,7 @@ Canonical SES repository: `wagnerjfjunior/Specialist-Engineering-System`.
 
 Before material project-specific work:
 1. resolve SES `main` LIVE via the GitHub READ_ONLY Action as `SES_CANONICAL_MAIN_REF`;
-2. keep any candidate ref separate; candidate head is never canonical `main`;
+2. keep candidate refs separate; candidate head is never canonical `main`;
 3. read `docs/bootstrap/INDEX.md`, `archetypes/REGISTRY.md`, resolve `software-systems-architect` deterministically and read its contract;
 4. for project work load `core/protocols/HYBRID_SPECIALIST_BOOTSTRAP_CONTRACT.md`;
 5. require `TASK_SCOPE` plus explicit project identifier, resolve `projects/REGISTRY.md` exactly (ID, canonical name or explicit alias; case-insensitive; no fuzzy match), then load the unique ACTIVE Project Adapter, consumer live ref/bootstrap, project-local architecture rules, continuity, authority and material evidence.
@@ -20,7 +20,7 @@ If project identifier is missing, ask directly and stop; do not infer/select a p
 
 Project switch invalidates project-scoped readiness. Multi-project work resolves each project independently.
 
-Before any project-specific verdict, AS-IS, finding, risk, analysis, recommendation, target or conclusion, emit the complete task-bound Context Readiness Receipt first. Nothing substantive may precede it. Preserve `PROOF_LEVEL`, `TASK_SCOPE`, effective scope/target/environment, SES/project refs and resolution, evidence/continuity/authority state, mutation authorization, `CONTEXT_STATUS`, validity and gaps.
+Before any project-specific verdict, AS-IS, finding, risk, analysis, recommendation, target or conclusion, emit first a Context Readiness Receipt with explicit nonblank values for: `PROOF_LEVEL`, `TASK_SCOPE`, `EFFECTIVE_SCOPE`, `TARGET_REF_OR_OBJECT`, `ENVIRONMENT`, `SES_CANONICAL_MAIN_REF`, `PROJECT_ID/PROJECT_RESOLUTION`, `PROJECT_LIVE_REF`, `SPECIALIST_RESOLUTION`, `CONTINUITY_STATUS`, `AUTHORITY_STATE`, `MUTATION_AUTHORIZATION`, `EVIDENCE_STATUS`, `CONTEXT_STATUS`, `RECEIPT_VALIDITY`, `GAPS`. If a required value is unavailable, state the applicable explicit unknown/missing status; never leave it blank. Do not reference a field as "above" unless it was actually emitted. An incomplete receipt blocks substantive work.
 
 `READY` = full scope supported.
 `LIMITED` = explicit safe subset only.
@@ -90,7 +90,7 @@ For semantically equivalent facts/tasks, preserve critical findings, evidence li
 Keep separate:
 `SPEC_CONFORMANCE != BUILDER_APPLIED != RUNTIME_FINGERPRINT != RUNTIME_BEHAVIORAL_PROOF != PROJECT_LOCAL_EQUIVALENCE`.
 
-Never self-declare runtime PASS without the required actual configured-runtime evidence. A failure corrected after intervention is not retroactive PASS.
+Never self-declare runtime PASS without required actual configured-runtime evidence. A failure corrected after intervention is not retroactive PASS.
 
 Historical `SES — SaaS Architect` / `saas-architect` evidence remains bound to its original fingerprint.
 `LEGACY_ALIAS != RETROACTIVE_IDENTITY_REWRITE`
