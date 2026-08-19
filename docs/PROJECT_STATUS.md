@@ -1,8 +1,7 @@
 # SES — Project Status
 
-**Status:** `SPECIALIST_CERTIFICATION_NORMALIZATION / GATE_V0_1 / SAAS_NEXT`  
+**Status:** `SPECIALIST_CERTIFICATION_NORMALIZATION / SOFTWARE_SYSTEMS_ARCHITECT_CANONICALIZED_NOT_CERTIFIED`  
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System`  
-**Canonical branch:** `main` resolved live before material work  
 **Authoritative next action:** `docs/NEXT_SAFE_ACTION.md`
 
 ## 1. Project boundary
@@ -13,34 +12,13 @@ SES is project-agnostic specialist-engineering infrastructure. Consumer projects
 SES CENTRAL EVOLUTION != AUTOMATIC CONSUMER-PROJECT MUTATION
 ```
 
-## 2. Live canonical baseline before gate adoption
-
-Before the certification-gate branch was created, `main` resolved LIVE as:
-
-```text
-47645c4a3facfa3e0d0657290833975d03962134
-```
-
-This is the merge of PR #33 and contains Application Security Assurance readiness + archetype activation.
-
-The former post-PR #31 continuity summaries were stale regarding AppSec and are reconciled by the gate-adoption change. Historical FAIL/BLOCKED/overclaim evidence remains preserved.
-
-## 3. Terminal certification gate
-
-The universal terminal specialist lifecycle gate is:
+## 2. Terminal certification gate
 
 ```text
 CERTIFIED_FOR_ANY_PROJECT = YES
 ```
 
-Sources:
-
-- `core/protocols/SPECIALIST_CERTIFICATION_FOR_ANY_PROJECT_CONTRACT.md`
-- `tests/behavioral/SPECIALIST_CERTIFICATION_FOR_ANY_PROJECT_TESTS.md`
-- `docs/SPECIALIST_CERTIFICATION_STATUS.md`
-- `tests/behavioral/evidence/SPECIALIST_CERTIFICATION_PORTFOLIO_ADJUDICATION_2026-08-17.md`
-
-The gate is conjunctive and fingerprint-bound. `READY` and `ARCHETYPE ACTIVE` are not terminal certification by themselves.
+The gate is conjunctive and fingerprint-bound.
 
 ```text
 READY != CERTIFIED_FOR_ANY_PROJECT
@@ -48,15 +26,15 @@ ARCHETYPE_ACTIVE != CERTIFIED_FOR_ANY_PROJECT
 HISTORICAL_PASS != CURRENT_CERTIFICATION
 ```
 
-## 4. Portfolio certification ledger
+## 3. Portfolio
 
 | Specialist | Archetype | Certification |
 |---|---|---|
-| UX/UI APP Specialist | ACTIVE | `CERTIFIED_FOR_ANY_PROJECT = YES` |
-| Backend & Data Platform Specialist | ACTIVE | `CERTIFIED_FOR_ANY_PROJECT = YES` |
-| Application Security Assurance Specialist | ACTIVE | `CERTIFIED_FOR_ANY_PROJECT = YES` |
-| SaaS Architect | ACTIVE | `CERTIFIED_FOR_ANY_PROJECT = NO` |
-| Documentation Auditor | ACTIVE | `CERTIFIED_FOR_ANY_PROJECT = NO` |
+| UX/UI APP Specialist | ACTIVE | `YES` |
+| Backend & Data Platform Specialist | ACTIVE | `YES` |
+| Application Security Assurance Specialist | ACTIVE | `YES` |
+| Software Systems Architect | ACTIVE | `NO` |
+| Documentation Auditor | ACTIVE | `NO` |
 
 ```text
 TOTAL_ACTIVE_ARCHETYPES = 5
@@ -64,140 +42,98 @@ CERTIFIED_FOR_ANY_PROJECT_YES = 3
 CERTIFIED_FOR_ANY_PROJECT_NO = 2
 ```
 
-Detailed evidence is recorded in `docs/SPECIALIST_CERTIFICATION_STATUS.md` and the portfolio adjudication artifact.
+Detailed state: `docs/SPECIALIST_CERTIFICATION_STATUS.md`.
 
-## 5. Certified specialists
+## 4. Software Systems Architect current state
 
-### UX/UI APP Specialist
+The reusable architecture lineage formerly canonical as `SES — SaaS Architect / saas-architect` is now canonicalized as:
+
+```text
+CANONICAL_NAME = SES — Software Systems Architect
+ARCHETYPE_ID = software-systems-architect
+LEGACY_ALIASES = SaaS Architect / SES SaaS Architect / saas-architect
+RESOLUTION_STATUS = ACTIVE
+```
+
+Historical evidence remains bound to the old identity/fingerprint; this is not retroactive renaming.
+
+Positive proof:
 
 ```text
 L1-C = PASS
 PROMPT INVARIANCE = PASS
 GENERIC BASELINE NON-REGRESSION = PASS
-BUILDER APPLIED = YES
-L2_RUNTIME_FINGERPRINT_VALIDATION = PASS / FINGERPRINT_BOUND
-SPECIALIST_READINESS = READY / USER_AUTHORIZED
-ARCHETYPE_RESOLUTION = PASS
-ARCHETYPE_RESOLUTION_STATUS = ACTIVE
-PROJECT_BOOTSTRAP / PROJECT-LOCAL BOUNDARY = PASS
-CERTIFIED_FOR_ANY_PROJECT = YES
+ARCHETYPE CONTRACT/RESOLUTION = PASS
+PROJECT-AGNOSTIC / NO PROJECT-LOCAL LEAKAGE = PASS / STATIC
 ```
 
-### Backend & Data Platform Specialist
+Initial current-runtime validation is preserved as failure:
 
 ```text
-L1-C = PASS
-P01-P22 = SATISFIED
-PROMPT INVARIANCE = PASS
-GENERIC BASELINE NON-REGRESSION = PASS
-BUILDER APPLIED = YES
-RUNTIME_ID = g-6a834feee5dc8191b4f99cbc0fa62320
-L2_RUNTIME_FINGERPRINT_VALIDATION = PASS
-SPECIALIST_READINESS = READY / USER_AUTHORIZED
-ARCHETYPE_RESOLUTION = PASS
-ARCHETYPE_RESOLUTION_STATUS = ACTIVE
-CERTIFIED_FOR_ANY_PROJECT = YES
-```
-
-### Application Security Assurance Specialist
-
-```text
-L1-C = PASS
-PROMPT INVARIANCE = PASS
-GENERIC BASELINE NON-REGRESSION = PASS
-COMPACT_BUILDER_V0_2 = VERSIONED / APPLIED
-L2_RUNTIME_FINGERPRINT_VALIDATION = PASS / COMPACT_FINGERPRINT_BOUND
-R06_INITIAL = BLOCKED / PRESERVED
-R06_RETEST = PASS
-SPECIALIST_READINESS = READY / USER_AUTHORIZED
-ARCHETYPE_RESOLUTION = PASS
-ARCHETYPE_RESOLUTION_STATUS = ACTIVE
-CERTIFIED_FOR_ANY_PROJECT = YES
-```
-
-Preserve:
-
-```text
-A03_INITIAL = INVALID
-A07_INITIAL = FAIL
-A07_P14_INITIAL = FAIL
-R06_INITIAL = BLOCKED
-INITIAL_OVERCLAIM = YES
-USER_CORRECTED = YES
-SELF_AUDIT_CORRECTION = EXECUTED
+INITIAL_APPLIED_KERNEL = 5aa37be41e83e7f3c83019a5b29e1a8583364d2f
+INITIAL_L2 = FAIL
+R01 = FAIL / missing project identifier regression
+R03 = FAIL / pre-canonicalization archetype dependency
+R09 = FAIL / exact tool-operation identity overclaim
+INITIAL_C10_PASS_ADJUDICATION = OVERCLAIM / CORRECTED
 RETROACTIVE_PASS = NO
-RETROACTIVE_ERASURE = NO
 ```
 
-## 6. SaaS Architect certification gap
+Corrective Builder kernel:
 
 ```text
-ARCHETYPE_RESOLUTION_STATUS = ACTIVE
-HISTORICAL_V0_1_RUNTIME_BEHAVIORAL_PROOF = PASS
-HISTORICAL_T01_T29 = 29/29 PASS
-CURRENT_BUILDER_FIT_REVISION_RUNTIME_PROOF = NOT_YET_ESTABLISHED
-EXTERNAL_BUILDER_RECONCILIATION_REQUIRED
+CURRENT_KERNEL_BLOB = c82d8e008fc2922828f55aa4d667be09c359c0b4
+INSTRUCTIONS = 7915 characters / 7957 UTF-8 bytes
+CURRENT_BUILDER_APPLIED = STALE_REVALIDATION_REQUIRED
+CURRENT_RUNTIME_FINGERPRINT = STALE_REVALIDATION_REQUIRED
 CERTIFIED_FOR_ANY_PROJECT = NO
 ```
 
-The current Builder-fit kernel is a different fingerprint from the historical certified v0.1 runtime. No transfer of historical PASS is allowed.
+Canonicalization was required because L2 expected `software-systems-architect` to resolve from canonical `main`, while the identity existed only on the candidate branch. This was a circular lifecycle dependency.
 
-The next specialist closure must determine the exact current external Builder state, capture the current fingerprint and execute only the proportional proof obligations invalidated by the Builder-fit revision.
+```text
+CANONICALIZATION_MERGE != CERTIFICATION_PASS
+```
 
-## 7. Documentation Auditor certification gap
+## 5. Next runtime work
+
+After canonicalization merge:
+
+```text
+APPLY CORRECTED BUILDER KERNEL/PACKAGE
+→ CAPTURE FRESH FINGERPRINT
+→ RETEST R01 / R03 / R04 / R09 ONLY
+→ ADJUDICATE C09/C10
+→ READINESS C11
+→ EXPLICIT USER READY AUTH C12
+→ FINAL C01-C18
+```
+
+R02/R05/R06/R07/R08 PASS remain usable unless another material change invalidates them.
+
+## 6. Documentation Auditor
 
 ```text
 ARCHETYPE_RESOLUTION_STATUS = ACTIVE
 LIFECYCLE_STATUS = RUNTIME_NOT_CERTIFIED
-R01 = PASS
-R02 = PASS
-R03A = FAIL
-R03B = PASS
-R04 = PASS
-R05 = FAIL
-R06 = FAIL
 PROJECT_TARGET_REGRESSION = 4/7
 RUNTIME_ENFORCEMENT_GAP = ESTABLISHED
 CERTIFIED_FOR_ANY_PROJECT = NO
 ```
 
-Documentation Auditor follows SaaS Architect in the normalization sequence.
+Documentation Auditor remains next in the normalization sequence after Software Systems Architect closes, unless explicitly reprioritized.
 
-## 8. Reuse/adoption boundary
+## 7. Runtime Enforcement Gateway
 
-For a certified reusable specialist:
-
-```text
-CERTIFIED SPECIALIST
--> EXPLICIT PROJECT RESOLUTION
--> PROJECT REGISTRY / ADAPTER
--> PROJECT BOOTSTRAP / CONTINUITY
--> PROJECT-LOCAL RULES + AUTHORITY + LIVE EVIDENCE
--> TASK-BOUND CONTEXT READINESS
--> BOUNDED SPECIALIST EXECUTION
-```
+Runtime Enforcement Gateway remains planned UNIVERSAL SES infrastructure and is not implemented by this change.
 
 ```text
-CERTIFIED_FOR_ANY_PROJECT != CONSUMER_ADOPTED
-CERTIFIED_FOR_ANY_PROJECT != PROJECT_CONTEXT_READY
-PROJECT_CONTEXT_READY != AUTHORIZED_TO_MUTATE
-CERTIFIED_FOR_ANY_PROJECT != PRODUCTION_APPROVED
+CLOSE SOFTWARE SYSTEMS ARCHITECT
+→ CLOSE DOCUMENTATION AUDITOR
+→ AUDIT REMAINING SPECIALISTS
+→ DEFINE RUNTIME ENFORCEMENT GATEWAY CONTRACT
+→ BEHAVIORAL TESTS
+→ THEN DECIDE IMPLEMENTATION
 ```
 
-## 9. Runtime Enforcement Gateway
-
-The Runtime Enforcement Gateway remains planned UNIVERSAL SES infrastructure. It is not a specialist and is not implemented by this change.
-
-Sequence remains:
-
-```text
-CERTIFICATION GATE
--> CLOSE SAAS ARCHITECT
--> CLOSE DOCUMENTATION AUDITOR
--> AUDIT REMAINING SPECIALISTS
--> DEFINE RUNTIME ENFORCEMENT GATEWAY CONTRACT
--> BEHAVIORAL TESTS
--> THEN DECIDE WHETHER DEDICATED TECHNICAL RUNTIME IS NECESSARY
-```
-
-No complex runtime/middleware implementation is authorized by this status document.
+No complex middleware/runtime implementation is authorized by this status document.
