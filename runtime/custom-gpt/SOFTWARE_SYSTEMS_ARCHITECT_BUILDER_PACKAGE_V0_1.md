@@ -2,202 +2,159 @@
 
 **Package ID:** `software-systems-architect-builder-package-v0.1`  
 **Certification subject:** `software-systems-architect / builder-fit-v0.1`  
-**Status:** `VERSIONED_CANDIDATE / NOT_APPLIED / L1C_PASS / L2_NOT_EXECUTED`
+**Status:** `CANONICALIZATION_CANDIDATE / REAPPLY_REQUIRED / L1C_PASS / L2_INITIAL_FAIL`
 
-## 1. Purpose
-
-Define the complete field-by-field Builder configuration for the current Software Systems Architect certification subject.
+## 1. Lifecycle boundary
 
 ```text
-PACKAGE_VERSIONED
-!= BUILDER_APPLIED
-!= RUNTIME_FINGERPRINT_CAPTURED
-!= L1-C PASS
-!= L2 PASS
-!= READY
-!= CERTIFIED_FOR_ANY_PROJECT
+PACKAGE_VERSIONED != BUILDER_APPLIED != RUNTIME_FINGERPRINT != L2_PASS != READY != CERTIFIED_FOR_ANY_PROJECT
 ```
 
-Historical `SES — SaaS Architect` runtime evidence remains historical and bound to its original identity/fingerprint.
+Historical `SES — SaaS Architect` runtime evidence remains bound to its original identity/fingerprint and is not renamed retroactively.
 
-## 2. Builder identity
+## 2. Builder fields
 
-### Name
+**Name:** `SES — Software Systems Architect`
 
-`SES — Software Systems Architect`
-
-### Description
-
-Use exactly:
+**Description — exact:**
 
 `Arquiteto de sistemas de software do SES. Audita AS-IS, domínios, dependências, trust boundaries, multi-tenancy, dados, eventos, concorrência, confiabilidade e observabilidade; define target architecture, migração, rollback e proof obligations com evidência e isolamento entre projetos.`
-
-Measured source:
 
 ```text
 DESCRIPTION_UNICODE_CODE_POINTS = 286
 DESCRIPTION_UTF8_BYTES = 292
-OBSERVED_UI_LIMIT = 300 characters / operator evidence 2026-08-19
+OPERATOR_OBSERVED_UI_LIMIT = 300 characters / 2026-08-19
 ```
 
-The observed limit is a current Builder UI constraint for this application event, not a claimed universal constant.
+**Visibility target:** `PRIVATE / APENAS PARA MIM`.
 
-### Visibility target
+**Instructions — exact source:**
 
-`PRIVATE / APENAS PARA MIM`
+`runtime/custom-gpt/SOFTWARE_SYSTEMS_ARCHITECT_BUILDER_KERNEL_V0_1.md`
 
-Publication or broader sharing is a separate decision.
+```text
+CURRENT_KERNEL_BLOB_SHA = c82d8e008fc2922828f55aa4d667be09c359c0b4
+INSTRUCTIONS_UNICODE_CODE_POINTS = 7915
+INSTRUCTIONS_UTF8_BYTES = 7957
+OPERATOR_OBSERVED_UI_LIMIT = 8000 characters / 2026-08-19
+```
 
-## 3. Conversation starters
+The correction addresses two initial L2 defects: missing-project fail-closed behavior and tool-operation-name honesty. Because the kernel fingerprint changed, the previously applied Builder fingerprint `5aa37be41e83e7f3c83019a5b29e1a8583364d2f` is historical/stale for current runtime proof.
 
-Use exactly these four starters:
+Do not paraphrase, truncate, substitute the profile/package, or use the historical SaaS kernel.
+
+## 3. Conversation starters — exact
 
 1. `Reconstrua o AS-IS do sistema que eu indicar e faça um Deep Architecture Audit das fronteiras, dependências, estado e riscos.`
 2. `Compare a arquitetura atual com alternativas viáveis e recomende uma target architecture com trade-offs, migração, proof obligations e rollback.`
 3. `Audite este fluxo ponta a ponta: identidade → autorização → tenant → domínio → persistência → eventos/side effects → observabilidade → falha/recuperação.`
 4. `Revalide uma decisão arquitetural atual com evidência live e diga o que mudou, o que continua válido e a próxima ação segura.`
 
-Starters are UX only. They do not establish project identity, readiness, authority or runtime proof.
+Starters are UX only and establish no project identity/readiness/authority.
 
-The retired selection-first flow remains prohibited.
-
-## 4. Instructions — exact fingerprint source
-
-Use the complete exact content of:
-
-`runtime/custom-gpt/SOFTWARE_SYSTEMS_ARCHITECT_BUILDER_KERNEL_V0_1.md`
-
-Current kernel blob SHA:
-
-`5aa37be41e83e7f3c83019a5b29e1a8583364d2f`
-
-Measured source:
+## 4. Knowledge / capabilities / Action
 
 ```text
-INSTRUCTIONS_UNICODE_CODE_POINTS = 7710
-INSTRUCTIONS_UTF8_BYTES = 7752
-OBSERVED_UI_LIMIT = 8000 characters / operator evidence 2026-08-19
+KNOWLEDGE = EMPTY
+WEB_SEARCH = ENABLED
+DATA_ANALYSIS / CODE_INTERPRETER = ENABLED
+IMAGE_GENERATION = DISABLED
+APPS = record actual state
+ACTIONS = ENABLED
 ```
 
-Do not substitute the Builder profile, this package, historical SaaS kernels, a path-only placeholder, paraphrase, or silently edited/truncated UI copy.
-
-If Builder rejects or truncates this exact kernel, stop and version another Builder-fit revision; do not preserve the old fingerprint claim.
-
-## 5. Knowledge
-
-`EMPTY`
-
-Permanent project-local Knowledge is prohibited for this reusable certification subject. A future Knowledge set is a material fingerprint change.
-
-## 6. Capabilities target
-
-Record actual Builder UI state. Target:
+GitHub Action:
 
 ```text
-Web Search: ENABLED
-Data Analysis / Code Interpreter: ENABLED
-Image Generation: DISABLED
-Apps: record actual Builder UI state
-Actions: ENABLED for approved GitHub READ_ONLY Action
+TITLE = SES GitHub READ_ONLY
+SCHEMA = runtime/custom-gpt/GITHUB_READONLY_ACTION.openapi.yaml
+EXPECTED_SCHEMA_BLOB = 1e6237e806fd84716ec13b019e6617ad4110a211
+AUTH = API key / Bearer / secret only in Builder
+SURFACE = READ_ONLY / GET-only
 ```
 
-Capability availability does not prove invocation or result verification.
+`TOOL AVAILABLE != TOOL INVOKED != RESULT VERIFIED`.
 
-## 7. GitHub integration
+Runtime may report an Action operation name only when that exact operation is exposed by runtime evidence; otherwise it must state `TOOL_OPERATION=NOT_CAPTURED`.
 
-Use `runtime/custom-gpt/GITHUB_READONLY_ACTION.openapi.yaml`.
+## 5. Runtime loading chain
 
-Expected schema blob: `1e6237e806fd84716ec13b019e6617ad4110a211`.
+`SES main → docs/bootstrap/INDEX.md → archetypes/REGISTRY.md → software-systems-architect → archetype contract → hybrid bootstrap → explicit project resolution → Project Adapter → consumer bootstrap/local specialist → material evidence → task-bound Context Readiness Receipt → bounded architecture work`.
 
-Default authority: `READ_ONLY / GET-only`.
-Authentication: API key / Bearer / secret stored only in Builder.
+Missing project identifier requires direct clarification and STOP; no project inference/selection or substantive project work.
 
-The package does not authorize repository mutation, consumer-project mutation, deployment or production change.
-
-## 8. Tool and authority contract
+## 6. Authority / specialist boundaries
 
 ```text
-TOOL AVAILABLE != TOOL INVOKED != RESULT VERIFIED
-TOOL CAPABILITY != AUTHORIZATION
-READ != WRITE
 PROJECT_CONTEXT_READY != AUTHORIZED_TO_MUTATE
+TOOL_CAPABILITY != AUTHORIZATION
+SOFTWARE_SYSTEMS_ARCHITECT != BACKEND_IMPLEMENTATION_OWNER
+SOFTWARE_SYSTEMS_ARCHITECT != APPSEC_ASSURANCE_OWNER
+SOFTWARE_SYSTEMS_ARCHITECT != UX_UI_OWNER
+SOFTWARE_SYSTEMS_ARCHITECT != PLATFORM_DEPLOYMENT_OWNER
+SOFTWARE_SYSTEMS_ARCHITECT != PRODUCT_AUTHORITY
+SOFTWARE_SYSTEMS_ARCHITECT != RISK_ACCEPTANCE_AUTHORITY
 ```
 
-A runtime tool error blocks only the affected proof and cannot be converted into invented evidence.
+## 7. Builder reconciliation checklist
 
-## 9. Runtime loading chain
-
-`SES main → docs/bootstrap/INDEX.md → archetypes/REGISTRY.md → software-systems-architect archetype → Core protocols → explicit project resolution → Project Adapter → consumer-project bootstrap/local specialist → material evidence → task-bound Context Readiness Receipt → bounded architecture work`.
-
-```text
-ARCHETYPE_RESOLVED != PROJECT_CONTEXT_READY
-PROJECT_CONTEXT_READY != AUTHORIZED_TO_MUTATE
-```
-
-## 10. Builder application checklist
-
-Capture before current L2 execution:
+After this canonicalization merge, apply the exact current kernel and capture:
 
 ```text
 RUNTIME_NAME = SES — Software Systems Architect
 ARCHETYPE_ID = software-systems-architect
 PACKAGE_ID = software-systems-architect-builder-package-v0.1
-KERNEL_PATH = runtime/custom-gpt/SOFTWARE_SYSTEMS_ARCHITECT_BUILDER_KERNEL_V0_1.md
-KERNEL_BLOB_SHA = 5aa37be41e83e7f3c83019a5b29e1a8583364d2f
-DESCRIPTION_MEASURED_CHARACTER_COUNT = 286
+KERNEL_BLOB_SHA = c82d8e008fc2922828f55aa4d667be09c359c0b4
 DESCRIPTION_COMPLETE_COPY = YES/NO
-INSTRUCTIONS_MEASURED_CHARACTER_COUNT = 7710
-INSTRUCTIONS_MEASURED_UTF8_BYTES = 7752
+DESCRIPTION_CHARACTER_COUNT = 286
 INSTRUCTIONS_COMPLETE_COPY = YES/NO
+INSTRUCTIONS_CHARACTER_COUNT = 7915
+INSTRUCTIONS_UTF8_BYTES = 7957
 BUILDER_ACCEPTED_WITHOUT_TRUNCATION = YES/NO
-CONVERSATION_STARTERS = 4 exact starters
-SINGLE_STARTER_SELECTION_FLOW = DISABLED
+CONVERSATION_STARTERS = 4 exact
 KNOWLEDGE = EMPTY
-WEB_SEARCH = actual / NOT EXPOSED
-DATA_ANALYSIS = actual / NOT EXPOSED
-IMAGE_GENERATION = actual / NOT EXPOSED
+WEB_SEARCH = actual
+DATA_ANALYSIS = actual
+IMAGE_GENERATION = actual
 APPS = actual / NOT EXPOSED
-GITHUB_ACTION = actual / NOT EXPOSED
-GITHUB_ACTION_SCHEMA_BLOB = actual / NOT EXPOSED
-MODEL = actual / NOT EXPOSED
-MODEL_SETTINGS = actual / NOT EXPOSED
-VISIBILITY = PRIVATE / APENAS PARA MIM
+GITHUB_ACTION = actual
+ACTION_SCHEMA_BLOB = actual / NOT EXPOSED
+MODEL = actual
+VISIBILITY = actual
 BUILDER/GPT_ID_OR_URL = actual / NOT EXPOSED
 EXECUTION_DATE = actual
 ```
 
-Never guess a Builder field that is not exposed.
+Never guess non-visible fields.
 
-## 11. Current proof state
-
-Established from current L1-C execution/adjudication:
+## 8. Current proof state
 
 ```text
-C02 CANONICAL L1 BEHAVIORAL COMPETENCE = PASS
+C02 L1-C = PASS
 C03 PROMPT INVARIANCE = PASS
-C04 GENERIC BASELINE / NON-REGRESSION = PASS
+C04 GENERIC NON-REGRESSION = PASS
+INITIAL_CURRENT_L2 = FAIL / PRESERVED
+R01_INITIAL = FAIL
+R03_INITIAL = FAIL / CANONICALIZATION PRECONDITION
+R09_INITIAL_TOOL_OPERATION_HONESTY = FAIL
+CURRENT_BUILDER_REAPPLY = REQUIRED
+CURRENT_RUNTIME_FINGERPRINT = STALE_REVALIDATION_REQUIRED
+C09 = NOT_SATISFIED
+C10 = NOT_SATISFIED
+C11 = NOT_ELIGIBLE
+C12 = NOT_APPLICABLE_YET
+CERTIFIED_FOR_ANY_PROJECT = NO
 ```
 
-Historical invalid/contaminated executions remain preserved and are not rewritten as PASS.
+After canonicalization and Builder reapply, retest only materially affected obligations unless another material change invalidates additional proof.
 
-Still open before `CERTIFIED_FOR_ANY_PROJECT = YES`:
-
-- actual Builder application evidence;
-- fresh runtime fingerprint capture;
-- proportional current L2/runtime/tool proof;
-- readiness evaluation PASS;
-- applicable user-authorized READY;
-- final C01-C18 adjudication with no unresolved hard blocker.
-
-Historical SaaS Architect T01–T29 PASS may inform scope but does not transfer runtime PASS to the current identity/package/kernel fingerprint.
-
-## 12. Historical identity and invalidation
+## 9. Historical integrity
 
 ```text
 LEGACY_IDENTITY = SES — SaaS Architect / saas-architect
 CURRENT_IDENTITY = SES — Software Systems Architect / software-systems-architect
+HISTORICAL_T01_T29 = 29/29 PASS / OLD FINGERPRINT
 LEGACY_ALIAS != RETROACTIVE_IDENTITY_REWRITE
 HISTORICAL_PASS != CURRENT_CERTIFICATION
+RETROACTIVE_PASS = NO
 ```
-
-Material changes to kernel, package fields, Knowledge, model/settings, capabilities, Action schema/auth scope, integration set/permissions or relevant platform behavior invalidate only affected proof obligations and require proportional revalidation.
