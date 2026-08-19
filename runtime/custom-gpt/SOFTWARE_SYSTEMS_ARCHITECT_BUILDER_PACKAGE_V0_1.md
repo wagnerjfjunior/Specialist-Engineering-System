@@ -2,7 +2,7 @@
 
 **Package ID:** `software-systems-architect-builder-package-v0.1`  
 **Certification subject:** `software-systems-architect / builder-fit-v0.1`  
-**Status:** `CANONICALIZATION_CANDIDATE / REAPPLY_REQUIRED / L1C_PASS / L2_INITIAL_FAIL`
+**Status:** `RUNTIME_CORRECTION_CANDIDATE / REAPPLY_REQUIRED / L1C_PASS / L2_R04_OPEN`
 
 ## 1. Lifecycle boundary
 
@@ -33,15 +33,17 @@ OPERATOR_OBSERVED_UI_LIMIT = 300 characters / 2026-08-19
 `runtime/custom-gpt/SOFTWARE_SYSTEMS_ARCHITECT_BUILDER_KERNEL_V0_1.md`
 
 ```text
-CURRENT_KERNEL_BLOB_SHA = c82d8e008fc2922828f55aa4d667be09c359c0b4
-INSTRUCTIONS_UNICODE_CODE_POINTS = 7915
-INSTRUCTIONS_UTF8_BYTES = 7957
+CURRENT_KERNEL_BLOB_SHA = 1b0e621b52468a2eab170e7b8f4d50659a406f62
+INSTRUCTIONS_UNICODE_CODE_POINTS = 7994
+INSTRUCTIONS_UTF8_BYTES = 8036
 OPERATOR_OBSERVED_UI_LIMIT = 8000 characters / 2026-08-19
 ```
 
-The correction addresses two initial L2 defects: missing-project fail-closed behavior and tool-operation-name honesty. Because the kernel fingerprint changed, the previously applied Builder fingerprint `5aa37be41e83e7f3c83019a5b29e1a8583364d2f` is historical/stale for current runtime proof.
+The Builder limit observed by the operator is character-based. The current kernel remains below that observed limit.
 
-Do not paraphrase, truncate, substitute the profile/package, or use the historical SaaS kernel.
+This revision preserves the earlier corrections for missing-project fail-closed behavior and tool-operation-name honesty, and adds an explicit receipt-ordering invariant: the complete task-bound Context Readiness Receipt must appear before any project-specific verdict, AS-IS, finding, risk, analysis, recommendation, target or conclusion.
+
+Previously applied fingerprints remain historical/stale for current proof. Do not paraphrase, truncate, substitute the profile/package, or use the historical SaaS kernel.
 
 ## 3. Conversation starters — exact
 
@@ -83,6 +85,8 @@ Runtime may report an Action operation name only when that exact operation is ex
 
 Missing project identifier requires direct clarification and STOP; no project inference/selection or substantive project work.
 
+For project-specific work, the complete Context Readiness Receipt must be the first substantive block. Nothing substantive may precede it.
+
 ## 6. Authority / specialist boundaries
 
 ```text
@@ -98,18 +102,18 @@ SOFTWARE_SYSTEMS_ARCHITECT != RISK_ACCEPTANCE_AUTHORITY
 
 ## 7. Builder reconciliation checklist
 
-After this canonicalization merge, apply the exact current kernel and capture:
+Apply the exact current kernel and capture:
 
 ```text
 RUNTIME_NAME = SES — Software Systems Architect
 ARCHETYPE_ID = software-systems-architect
 PACKAGE_ID = software-systems-architect-builder-package-v0.1
-KERNEL_BLOB_SHA = c82d8e008fc2922828f55aa4d667be09c359c0b4
+KERNEL_BLOB_SHA = 1b0e621b52468a2eab170e7b8f4d50659a406f62
 DESCRIPTION_COMPLETE_COPY = YES/NO
 DESCRIPTION_CHARACTER_COUNT = 286
 INSTRUCTIONS_COMPLETE_COPY = YES/NO
-INSTRUCTIONS_CHARACTER_COUNT = 7915
-INSTRUCTIONS_UTF8_BYTES = 7957
+INSTRUCTIONS_CHARACTER_COUNT = 7994
+INSTRUCTIONS_UTF8_BYTES = 8036
 BUILDER_ACCEPTED_WITHOUT_TRUNCATION = YES/NO
 CONVERSATION_STARTERS = 4 exact
 KNOWLEDGE = EMPTY
@@ -133,20 +137,21 @@ Never guess non-visible fields.
 C02 L1-C = PASS
 C03 PROMPT INVARIANCE = PASS
 C04 GENERIC NON-REGRESSION = PASS
-INITIAL_CURRENT_L2 = FAIL / PRESERVED
-R01_INITIAL = FAIL
-R03_INITIAL = FAIL / CANONICALIZATION PRECONDITION
-R09_INITIAL_TOOL_OPERATION_HONESTY = FAIL
+R01_RETEST_1 = PASS
+R03_RETEST_1 = PASS
+R09_RETEST_1 = PASS
+R04_RETEST_1 = FAIL / RECEIPT_ORDERING
+R04_RETEST_2 = FAIL / RECEIPT_ORDERING
 CURRENT_BUILDER_REAPPLY = REQUIRED
 CURRENT_RUNTIME_FINGERPRINT = STALE_REVALIDATION_REQUIRED
 C09 = NOT_SATISFIED
-C10 = NOT_SATISFIED
+C10 = PASS / PRESERVED unless tool surface changes
 C11 = NOT_ELIGIBLE
 C12 = NOT_APPLICABLE_YET
 CERTIFIED_FOR_ANY_PROJECT = NO
 ```
 
-After canonicalization and Builder reapply, retest only materially affected obligations unless another material change invalidates additional proof.
+After reapply, retest only R04 unless another material change invalidates additional proof.
 
 ## 9. Historical integrity
 
@@ -154,6 +159,8 @@ After canonicalization and Builder reapply, retest only materially affected obli
 LEGACY_IDENTITY = SES — SaaS Architect / saas-architect
 CURRENT_IDENTITY = SES — Software Systems Architect / software-systems-architect
 HISTORICAL_T01_T29 = 29/29 PASS / OLD FINGERPRINT
+R04_RETEST_1 = FAIL / PRESERVED
+R04_RETEST_2 = FAIL / PRESERVED
 LEGACY_ALIAS != RETROACTIVE_IDENTITY_REWRITE
 HISTORICAL_PASS != CURRENT_CERTIFICATION
 RETROACTIVE_PASS = NO
