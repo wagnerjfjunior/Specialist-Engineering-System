@@ -25,7 +25,7 @@ CERTIFIED_FOR_ANY_PROJECT
 | `ux-ui-app-specialist` | `YES` | canonical L1-C + prompt invariance + generic non-regression PASS; versioned/applied Builder package+kernel; fingerprint-bound L2/tool proof PASS; user-authorized READY; ACTIVE; no unresolved hard blocker observed |
 | `backend-data-platform-specialist` | `YES` | canonical L1-C + prompt invariance + generic non-regression PASS; Builder package+kernel applied; captured fingerprint; L2/tool proof PASS; user-authorized READY; ACTIVE; no unresolved hard blocker observed |
 | `application-security-assurance-specialist` | `YES` | L1-C/prompt invariance/generic baseline PASS; compact v0.2 package+kernel applied; L2/tool/readiness/archetype proof PASS; user-authorized READY; historical failures preserved |
-| `software-systems-architect` | `NO` | identity/archetype canonicalized; L1-C PASS; corrected Builder kernel requires reapply; initial current-fingerprint L2 FAIL preserved at R01/R03 and tool-operation honesty; C09-C12/C18 remain open |
+| `software-systems-architect` | `NO` | identity/archetype canonicalized; L1-C PASS; R01/R03/R09 corrected retests PASS; C10 PASS; R04 receipt-ordering failed twice and current kernel requires reapply + R04-only revalidation; C09/C11/C12/C18 remain open |
 | `documentation-auditor` | `NO` | runtime certification not established; corrected project-target regression remains 4/7 with R03A/R05/R06 FAIL and runtime-enforcement gap established |
 
 ```text
@@ -45,12 +45,6 @@ L2_PASS = FINGERPRINT_BOUND
 CONSUMER_ADOPTION = NOT_AUTOMATIC
 ```
 
-Primary evidence includes:
-- `tests/behavioral/UX_UI_APP_SPECIALIST_L1C_VALIDATION_V0_1.md`
-- `runtime/custom-gpt/UX_UI_APP_SPECIALIST_BUILDER_PACKAGE_V0_1.md`
-- `tests/runtime/evidence/UX_UI_APP_SPECIALIST_L2_RUNTIME_PROOF_2026-08-16.md`
-- `tests/behavioral/UX_UI_APP_SPECIALIST_ARCHETYPE_RESOLUTION_V0_1.md`
-
 ### Backend & Data Platform Specialist
 
 ```text
@@ -59,12 +53,6 @@ CERTIFIED_FOR_ANY_PROJECT = YES
 L2_PASS = FINGERPRINT_BOUND
 CONSUMER_ADOPTION = NOT_AUTOMATIC
 ```
-
-Primary evidence includes:
-- `tests/behavioral/evidence/BACKEND_DATA_PLATFORM_L1C_FINAL_VERDICT_2026-08-17.md`
-- `runtime/custom-gpt/BACKEND_DATA_PLATFORM_SPECIALIST_BUILDER_PACKAGE_V0_1.md`
-- `tests/runtime/evidence/BACKEND_DATA_PLATFORM_L2_FINAL_VERDICT_2026-08-17.md`
-- `tests/runtime/evidence/BACKEND_DATA_PLATFORM_SPECIALIST_READINESS_DECISION_2026-08-17.md`
 
 ### Application Security Assurance Specialist
 
@@ -119,6 +107,7 @@ C03 PROMPT_INVARIANCE = PASS
 C04 GENERIC_NON_REGRESSION = PASS
 C05 BUILDER_KERNEL_VERSIONED = PASS
 C06 BUILDER_PACKAGE_VERSIONED = PASS
+C10 TOOL_HONESTY / INTEGRATION = PASS
 C13 ARCHETYPE_CONTRACT = PASS
 C14 ARCHETYPE_RESOLUTION = PASS
 C15 ARCHETYPE_ACTIVE = PASS
@@ -126,34 +115,42 @@ C16 PROJECT_BOOTSTRAP_COMPATIBILITY = PASS / CONTRACT_LEVEL
 C17 PROJECT_LOCAL_LEAKAGE = NONE_OBSERVED / STATIC
 ```
 
-Current runtime state after initial L2 and corrective revision:
+Runtime history and current correction:
 
 ```text
 INITIAL_APPLIED_KERNEL_BLOB = 5aa37be41e83e7f3c83019a5b29e1a8583364d2f
 INITIAL_L2 = FAIL / PRESERVED
-R01_INITIAL = FAIL / MISSING_PROJECT_IDENTIFIER REGRESSION
-R03_INITIAL = FAIL / CANONICALIZATION PRECONDITION
-R09_INITIAL_TOOL_OPERATION_HONESTY = FAIL
+R01_INITIAL = FAIL
+R03_INITIAL = FAIL
+R09_INITIAL = FAIL
 INITIAL_C10_PASS_ADJUDICATION = OVERCLAIM / CORRECTED
 
-CURRENT_KERNEL_BLOB = c82d8e008fc2922828f55aa4d667be09c359c0b4
+R01_RETEST_1 = PASS
+R03_RETEST_1 = PASS
+R09_RETEST_1 = PASS
+R04_RETEST_1 = FAIL / RECEIPT_ORDERING
+R04_RETEST_2 = FAIL / RECEIPT_ORDERING
+
+CURRENT_KERNEL_BLOB = 1b0e621b52468a2eab170e7b8f4d50659a406f62
+CURRENT_INSTRUCTIONS_CHARACTERS = 7994
 CURRENT_BUILDER_APPLIED = STALE_REVALIDATION_REQUIRED
 CURRENT_RUNTIME_FINGERPRINT = STALE_REVALIDATION_REQUIRED
 C09 CURRENT_L2 = NOT_SATISFIED
-C10 CURRENT_TOOL_PROOF = NOT_SATISFIED
+C10 CURRENT_TOOL_PROOF = PASS
 C11 READINESS = NOT_ELIGIBLE
 C12 USER_AUTHORIZED_READY = NOT_APPLICABLE_YET
 C18 NO_UNRESOLVED_HARD_BLOCKER = NOT_SATISFIED
 CERTIFIED_FOR_ANY_PROJECT = NO
 ```
 
-Canonicalization is intentionally separate from certification:
+Current correction scope:
 
 ```text
-MERGED_IDENTITY/ARCHETYPE != CERTIFICATION_PASS
+COMPLETE CONTEXT READINESS RECEIPT MUST PRECEDE
+VERDICT / AS-IS / FINDING / RISK / ANALYSIS / RECOMMENDATION / TARGET / CONCLUSION
 ```
 
-After canonicalization, apply the exact current kernel/package to Builder, capture a fresh fingerprint and retest only materially affected runtime obligations unless another change invalidates more evidence.
+Only R04 requires runtime retest after applying the current kernel, unless another material Builder/configuration change invalidates more evidence.
 
 Primary evidence:
 - `archetypes/software-systems-architect/ARCHETYPE.md`
@@ -162,6 +159,7 @@ Primary evidence:
 - `tests/behavioral/evidence/SOFTWARE_SYSTEMS_ARCHITECT_L1C_ADJUDICATION_2026-08-19.md`
 - `tests/runtime/evidence/SOFTWARE_SYSTEMS_ARCHITECT_L2_ADJUDICATION_2026-08-19.md`
 - `tests/runtime/evidence/SOFTWARE_SYSTEMS_ARCHITECT_L2_READJUDICATION_2026-08-19.md`
+- `tests/runtime/evidence/SOFTWARE_SYSTEMS_ARCHITECT_L2_POST_CANONICALIZATION_RETEST_2026-08-19.md`
 
 ## 5. Documentation Auditor
 
