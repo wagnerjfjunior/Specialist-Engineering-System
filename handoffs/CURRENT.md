@@ -1,6 +1,6 @@
 # SES — Current Handoff
 
-**Status:** `SPECIALIST_CERTIFICATION_NORMALIZATION / SOFTWARE_SYSTEMS_ARCHITECT_CLOSED / DOCUMENTATION_AUDITOR_NEXT`  
+**Status:** `SPECIALIST_CERTIFICATION_NORMALIZATION / DOCUMENTATION_AUDITOR_V1_CANDIDATE`  
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System`  
 **Canonical ref rule:** resolve `main` live before material work  
 **Authoritative next action:** `docs/NEXT_SAFE_ACTION.md`
@@ -22,35 +22,43 @@ UX/UI APP Specialist = CERTIFIED_FOR_ANY_PROJECT YES
 Backend & Data Platform Specialist = YES
 Application Security Assurance Specialist = YES
 Software Systems Architect = YES
-Documentation Auditor = NO
+Documentation Auditor = NO / V1 CERTIFICATION CANDIDATE
 ```
 
-## Software Systems Architect closure
+## Documentation Auditor v1.0
 
 ```text
-ARCHETYPE_ID = software-systems-architect
-KERNEL_BLOB = 791dc63165518d16713bbaa2d869c12ac09ec2f7
-R04_RETEST_4 = PASS
-C09 = PASS
-C10 = PASS
-C11 = PASS
-C12 = USER_AUTHORIZED_READY / 2026-08-19
-C01-C18 = PASS
-CERTIFIED_FOR_ANY_PROJECT = YES
+ARCHETYPE_ID = documentation-auditor
+KERNEL_BLOB = 90fcabe72ca5202b54f50ba48b695de00096afa6
+KERNEL_CHARACTERS = 7889
+BUILDER_PACKAGE = runtime/custom-gpt/DOCUMENTATION_AUDITOR_BUILDER_PACKAGE_V1_0.md
+C01/C05/C06/C13-C17 = PASS
+C02-C04 = PENDING EXECUTION
+C07-C10 = PENDING BUILDER/RUNTIME EVIDENCE
+C11-C12/C18 = PENDING
+CERTIFIED_FOR_ANY_PROJECT = NO
 ```
 
-Preserve historical failures without retroactive PASS, including initial L2 failures and R04 retests 1-3.
+Historical v0.9 remains preserved:
 
-Final evidence: `tests/runtime/evidence/SOFTWARE_SYSTEMS_ARCHITECT_FINAL_CERTIFICATION_2026-08-19.md`.
+```text
+R03A = FAIL
+R05 = FAIL
+R06 = FAIL
+PROJECT_TARGET_REGRESSION = 4/7
+RETROACTIVE_PASS = NO
+```
+
+The v1.0 candidate is a new fingerprint boundary and does not retroactively rewrite v0.9.
 
 ## Next safe action
 
-Close the existing Documentation Auditor certification gap using current canonical evidence and proportional revalidation. Its known project-target regression/runtime-enforcement failures remain historical evidence and must not be erased.
+Apply the exact v1.0 Builder Package/kernel to the private `SES — Documentation Auditor`, capture the external Builder/runtime fingerprint and execute `tests/runtime/DOCUMENTATION_AUDITOR_CERTIFICATION_L2_RUNBOOK_V1_0.md`. If all required runtime gates pass, perform readiness adjudication, obtain/confirm user READY for that exact fingerprint, and close C01-C18.
 
-Runtime Enforcement Gateway remains deferred until specialist normalization work reaches the planned point.
+The Documentation Auditor Runtime Enforcement Gateway remains a separate second-phase track and is not a prerequisite for specialist certification.
 
 ```text
 CERTIFIED_FOR_ANY_PROJECT != CONSUMER_PROJECT_ADOPTED
 PROJECT_CONTEXT_READY != AUTHORIZED_TO_MUTATE
-CENTRAL SES EVOLUTION != AUTOMATIC PROJECT MUTATION
+SPECIALIST_CERTIFICATION != GATEWAY_DEPLOYMENT
 ```
