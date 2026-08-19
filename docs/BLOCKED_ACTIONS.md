@@ -3,47 +3,36 @@
 **Status:** `SPECIALIST_CERTIFICATION_NORMALIZATION / GATE_V0_1`  
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System`
 
-Absence from this document does not create authorization. Capability, certification, registry state, prior approval for another action, conversation history or a derived summary do not substitute for current applicable authority.
+Absence from this document does not create authorization. Capability, certification, prior approval, conversation history or a derived summary do not substitute for current applicable authority.
 
 ## 1. General blocks
 
 Without separate explicit applicable authorization, block:
 
-- direct/unreviewed mutation of canonical SES state;
-- merge/publication decisions not explicitly authorized for the exact scope;
+- direct/unreviewed canonical SES mutation;
+- merge/publication not authorized for the exact scope;
 - consumer-project mutation from SES central evolution;
-- automatic propagation/adoption of SES specialists into registered projects;
-- legacy specialist retirement/deletion without mapping, delta review, evidence and explicit adoption/retirement decisions;
+- automatic specialist adoption/propagation into consumer projects;
+- legacy retirement/deletion without mapping, evidence and explicit decision;
 - rewriting historical proof/adjudication;
 - storing secrets in SES artifacts;
-- treating tool capability as mutation authority.
+- treating tool capability as authority.
 
 ```text
 GENERATE != AUTHORIZE != PUBLISH
-TOOL CAPABILITY != AUTHORIZATION
+TOOL_CAPABILITY != AUTHORIZATION
 CONTEXT_READY != AUTHORIZED_TO_MUTATE
 ```
 
 ## 2. Certification gate blocks
 
-The terminal specialist lifecycle target is:
+Terminal specialist state:
 
 ```text
 CERTIFIED_FOR_ANY_PROJECT = YES
 ```
 
-Block any certification claim based solely on:
-
-- `SPECIALIST_READINESS = READY`;
-- `RESOLUTION_STATUS = ACTIVE`;
-- historical runtime PASS for a materially changed current fingerprint;
-- spec conformance without actual Builder/runtime proof;
-- missing tool/integration evidence;
-- absence of observed failure;
-- consumer-project-specific success used as universal proof;
-- unresolved hard blockers.
-
-Preserve:
+Block certification based solely on READY, ACTIVE, historical PASS for another fingerprint, spec conformance without actual Builder/runtime proof, missing tool evidence, absence of observed failure, one consumer-project success, or unresolved hard blockers.
 
 ```text
 READY != CERTIFIED_FOR_ANY_PROJECT
@@ -54,89 +43,26 @@ ABSENCE_OF_FINDING != PROOF_OF_ABSENCE
 
 ## 3. Certified reusable specialists
 
-Current certification ledger under the gate:
-
 ```text
-ux-ui-app-specialist = CERTIFIED_FOR_ANY_PROJECT YES
-backend-data-platform-specialist = CERTIFIED_FOR_ANY_PROJECT YES
-application-security-assurance-specialist = CERTIFIED_FOR_ANY_PROJECT YES
+ux-ui-app-specialist = YES
+backend-data-platform-specialist = YES
+application-security-assurance-specialist = YES
+software-systems-architect = YES
 ```
 
-Evidence-bound adjudication:
+For certified specialists, block without separate authority: publication/broader visibility, automatic project adoption, transfer of proof to a changed fingerprint, mutation authority, production approval, risk acceptance, or claims that every consumer project is correct/secure/production-ready.
 
-`tests/behavioral/evidence/SPECIALIST_CERTIFICATION_PORTFOLIO_ADJUDICATION_2026-08-17.md`
+## 4. Historical integrity
 
-For any certified specialist, block without separate applicable authority:
+Preserve historical AppSec events including `A03_INITIAL=INVALID`, `A07_INITIAL=FAIL`, `R06_INITIAL=BLOCKED`, later retests, `INITIAL_OVERCLAIM`, `USER_CORRECTED`, `RETROACTIVE_PASS=NO` and `RETROACTIVE_ERASURE=NO`.
 
-- publishing or broadening private Builder visibility;
-- automatic consumer-project adoption;
-- treating certification as project-context readiness;
-- treating certification as mutation authority;
-- treating certification as production approval or risk acceptance;
-- transferring fingerprint-bound L2/certification proof to a materially changed runtime;
-- claiming that every consumer project is secure, correct or production-ready.
+Preserve historical Software Systems Architect failures/retests as recorded in its final certification evidence. Current certification does not rewrite them.
 
-```text
-CERTIFIED_FOR_ANY_PROJECT != PROJECT_CONTEXT_READY
-CERTIFIED_FOR_ANY_PROJECT != CONSUMER_PROJECT_ADOPTED
-CERTIFIED_FOR_ANY_PROJECT != AUTHORIZED_TO_MUTATE
-CERTIFIED_FOR_ANY_PROJECT != PRODUCTION_APPROVED
-```
+Preserve legacy SaaS Architect evidence under its original identity/fingerprint; do not transfer that historical runtime PASS to a changed current fingerprint or use legacy aliases to rewrite history.
 
-## 4. Application Security Assurance historical integrity
+## 5. Documentation Auditor
 
-Current state:
-
-```text
-L1-C = PASS
-L2_RUNTIME_FINGERPRINT_VALIDATION = PASS / COMPACT_FINGERPRINT_BOUND
-SPECIALIST_READINESS = READY / USER_AUTHORIZED
-ARCHETYPE_RESOLUTION_STATUS = ACTIVE
-CERTIFIED_FOR_ANY_PROJECT = YES
-```
-
-Preserve historical events:
-
-```text
-A03_INITIAL = INVALID
-A07_INITIAL = FAIL
-A07_P14_INITIAL = FAIL
-R06_INITIAL = BLOCKED
-R06_RETEST = PASS
-INITIAL_OVERCLAIM = YES
-USER_CORRECTED = YES
-SELF_AUDIT_CORRECTION = EXECUTED
-RETROACTIVE_PASS = NO
-RETROACTIVE_ERASURE = NO
-```
-
-Block any attempt to rewrite those earlier events as if they had initially passed.
-
-## 5. SaaS Architect current blocks
-
-Preserve:
-
-```text
-ARCHETYPE_RESOLUTION_STATUS = ACTIVE
-HISTORICAL_V0_1_RUNTIME_BEHAVIORAL_PROOF = PASS
-HISTORICAL_T01_T29 = 29/29 PASS
-CURRENT_BUILDER_FIT_REVISION_RUNTIME_PROOF = NOT_YET_ESTABLISHED
-EXTERNAL_BUILDER_RECONCILIATION_REQUIRED
-CERTIFIED_FOR_ANY_PROJECT = NO
-```
-
-Until the current Builder-fit revision is reconciled and proportionally validated, block:
-
-- `CERTIFIED_FOR_ANY_PROJECT = YES`;
-- transfer of historical v0.1 runtime PASS to the current fingerprint;
-- SaaS Architect rename solely from naming preference;
-- revival of superseded selection-first v0.2/v0.3 experiments without a new decision;
-- consumer-project migration/adoption claims based on current certification;
-- publication/broader visibility claims.
-
-## 6. Documentation Auditor current blocks
-
-Preserve corrected state:
+Historical v0.9 remains:
 
 ```text
 R01 = PASS
@@ -147,34 +73,62 @@ R04 = PASS
 R05 = FAIL
 R06 = FAIL
 PROJECT_TARGET_REGRESSION = 4/7
-PROJECT_TARGET_REGRESSION_PASS = NOT_ESTABLISHED
-RUNTIME_ENFORCEMENT_GAP = ESTABLISHED
-PROMPT_LEVEL_FIX_STOP_LOSS = TRIGGERED
+PROMPT_LEVEL_FIX_STOP_LOSS = TRIGGERED FOR V0_9 COSMETIC RETRY LOOP
+RETROACTIVE_PASS = NO
 CERTIFIED_FOR_ANY_PROJECT = NO
 ```
 
 Initial R03A/R05 PASS adjudications remain historical `INITIAL_OVERCLAIM` records.
 
+Current v1.0 certification candidate:
+
+```text
+KERNEL_BLOB = 90fcabe72ca5202b54f50ba48b695de00096afa6
+BUILDER_PACKAGE = VERSIONED
+C01/C05/C06/C13-C17 = PASS
+C02-C04 = PENDING EXECUTION
+C07-C10 = PENDING BUILDER/RUNTIME EVIDENCE
+C11-C12/C18 = PENDING
+CERTIFIED_FOR_ANY_PROJECT = NO
+```
+
 Block:
 
-- certification until affected runtime obligations are actually closed;
-- converting project-target regression failures to PASS from design intent alone;
-- treating `RESOLUTION_STATUS: ACTIVE` as runtime certification;
-- implementing the deferred Documentation Auditor Gateway as if design artifacts proved enforcement;
-- broad prompt-level retry loops after the recorded stop-loss without a material new mechanism/evidence event.
+- converting any v0.9 FAIL to retroactive PASS;
+- declaring v1.0 certified from design intent or repository artifacts alone;
+- C07/C08 without actual Builder application/fingerprint evidence;
+- C09/C10 without actual configured-runtime execution;
+- C11 before the required behavioral/runtime obligations close;
+- C12 without applicable user READY authorization for the exact final fingerprint;
+- certification while C18 has an unresolved blocker.
+
+The v0.9 prompt-level stop-loss forbids repeated wording-only retries on that same failed fingerprint. It does **not** prohibit a separately versioned new certification subject from being tested as a new fingerprint, provided historical failures remain preserved and all certification obligations are freshly satisfied where invalidated.
+
+```text
+OLD_FINGERPRINT_FAIL != NEW_FINGERPRINT_RESULT
+NEW_FINGERPRINT_RESULT REQUIRES NEW EVIDENCE
+```
+
+## 6. Documentation Auditor Gateway boundary
+
+The Documentation Auditor Runtime Enforcement Gateway is separate second-phase runtime/enforcement research. Its design or proof-runtime implementation does not substitute for specialist runtime certification and is not a prerequisite imposed by `SPECIALIST_CERTIFICATION_FOR_ANY_PROJECT_CONTRACT.md`.
+
+Block:
+
+- treating Gateway design as deployed enforcement;
+- treating local Gateway proof as Documentation Auditor C09;
+- universalizing the specialist-specific Gateway from a single-domain occurrence;
+- automatic consumer-project mutation/adoption from Gateway work.
+
+```text
+SPECIALIST_CERTIFICATION != GATEWAY_DEPLOYMENT
+GATEWAY_PROOF != C09
+CANDIDATE_LEARNING != UNIVERSAL_PRINCIPLE
+```
 
 ## 7. Portfolio stop-loss
 
-Continue to block:
-
-- creating new specialists before SaaS Architect and Documentation Auditor are normalized, absent explicit reprioritization;
-- creating all queued specialists simultaneously;
-- reducing specialist count in a way that collapses implementation and independent assurance authority;
-- universalizing FECH.AI-specific modules, Supabase specifics, MesaCliente, LeadOps or GPT routing without cross-project evidence;
-- merging Backend/Data implementation authority with independent AppSec assurance;
-- canonicalizing new portfolio categories merely for symmetry;
-- treating Runtime Enforcement Gateway design as implemented runtime;
-- implementing complex gateway/middleware before contract + behavioral proof justify it.
+Unless explicitly reprioritized, block creating large new specialist waves before the current Documentation Auditor normalization is closed. Continue to block collapsing Backend/Data implementation authority with independent AppSec assurance and universalizing FECH.AI-specific modules, Supabase specifics, MesaCliente, LeadOps or project routing without cross-domain evidence.
 
 ## 8. Adoption/retirement boundary
 
@@ -184,21 +138,19 @@ CERTIFIED SES SPECIALIST
 -> PROJECT BOOTSTRAP / CONTINUITY / AUTHORITY
 -> DELTA / OVERRIDE REVIEW WHEN NEEDED
 -> EXPLICIT PROJECT ADOPTION IF APPLICABLE
--> PROJECT-LOCAL BEHAVIORAL EVIDENCE WHEN REQUIRED
+-> PROJECT-LOCAL EVIDENCE WHEN REQUIRED
 -> EQUIVALENCE / RESIDUAL-GAP REVIEW
 -> RETIREMENT DECISION
 ```
 
 ```text
-TARGET CONSOLIDATION != AUTHORIZED RETIREMENT
 CENTRAL EVOLUTION != AUTOMATIC PROJECT MUTATION
+TARGET CONSOLIDATION != AUTHORIZED RETIREMENT
 ```
 
-## 9. Conflict and anti-loop rules
+## 9. Conflict and anti-loop
 
 If `docs/NEXT_SAFE_ACTION.md` conflicts materially with bootstrap, certification contract/ledger, live authority, archetype registry or newer evidence: stop and reconcile.
-
-Do not create re-audit loops absent a material invalidation event. Revalidate only affected evidence/dependencies.
 
 ```text
 MATERIAL_CHANGE -> PROPORTIONAL_REVALIDATION
