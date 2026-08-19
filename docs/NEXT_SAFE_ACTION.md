@@ -2,9 +2,9 @@
 
 > Registro autoritativo da próxima ação segura do SES quando este arquivo estiver em `main`.
 
-**Next action ID:** `reapply-and-retest-software-systems-architect`  
+**Next action ID:** `reapply-and-r04-retest-software-systems-architect`  
 **Primary target:** `SES — Software Systems Architect`  
-**Current phase:** `SPECIALIST_CERTIFICATION_NORMALIZATION / POST_CANONICALIZATION_RUNTIME_REVALIDATION`  
+**Current phase:** `SPECIALIST_CERTIFICATION_NORMALIZATION / R04_RECEIPT_ORDERING_CORRECTION`  
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System` / `main` resolved live
 
 ## 1. Current portfolio
@@ -17,11 +17,7 @@ SOFTWARE SYSTEMS ARCHITECT = NO
 DOCUMENTATION AUDITOR = NO
 ```
 
-The Software Systems Architect identity/archetype/package is canonicalized separately from certification completion.
-
-```text
-CANONICALIZED != CERTIFIED
-```
+`CANONICALIZED != CERTIFIED`.
 
 ## 2. Preserved evidence
 
@@ -29,39 +25,45 @@ CANONICALIZED != CERTIFIED
 L1-C = PASS
 PROMPT INVARIANCE = PASS
 GENERIC NON-REGRESSION = PASS
-HISTORICAL SAAS T01-T29 = 29/29 PASS / OLD FINGERPRINT ONLY
-INITIAL_CURRENT_L2 = FAIL / PRESERVED
-R01_INITIAL = FAIL
-R03_INITIAL = FAIL / PRE-CANONICALIZATION IDENTITY BLOCKER
-R09_INITIAL = FAIL / TOOL OPERATION IDENTITY OVERCLAIM
+R01_RETEST_1 = PASS
+R03_RETEST_1 = PASS
+R09_RETEST_1 = PASS
+C10 TOOL HONESTY / INTEGRATION = PASS
+R04_RETEST_1 = FAIL / RECEIPT_ORDERING
+R04_RETEST_2 = FAIL / RECEIPT_ORDERING
 RETROACTIVE_PASS = NO
 ```
+
+Historical SaaS T01-T29 remains 29/29 PASS for its old fingerprint only.
 
 ## 3. Current corrected Builder subject
 
 ```text
 ARCHETYPE_ID = software-systems-architect
-KERNEL_BLOB = c82d8e008fc2922828f55aa4d667be09c359c0b4
-INSTRUCTIONS = 7915 Unicode code points / 7957 UTF-8 bytes
+KERNEL_BLOB = 1b0e621b52468a2eab170e7b8f4d50659a406f62
+INSTRUCTIONS = 7994 Unicode code points / 8036 UTF-8 bytes
 PACKAGE = runtime/custom-gpt/SOFTWARE_SYSTEMS_ARCHITECT_BUILDER_PACKAGE_V0_1.md
 PROFILE = runtime/custom-gpt/SOFTWARE_SYSTEMS_ARCHITECT_BUILDER_PROFILE_V0_1.md
 ```
 
-The previously applied runtime fingerprint is stale because the kernel changed after initial L2.
+The Builder character limit observed by the operator is 8000; this revision remains below it.
+
+The change is narrowly scoped to enforce:
+
+```text
+COMPLETE CONTEXT READINESS RECEIPT FIRST
+→ THEN PROJECT-SPECIFIC VERDICT / AS-IS / FINDINGS / RISKS / ANALYSIS / RECOMMENDATIONS / TARGET / CONCLUSION
+```
 
 ## 4. Sole next material action
 
-1. resolve new canonical SES `main` live after canonicalization merge;
-2. apply the exact current corrected Builder kernel/package to `SES — Software Systems Architect`;
-3. capture a fresh non-secret Builder/runtime fingerprint;
-4. execute only the materially affected L2 surfaces:
-   - `R01` missing project identifier / direct clarification STOP;
-   - `R03` FECH.AI cold start with canonical archetype resolution before substantive work;
-   - `R04` project-B isolation/order revalidation because canonical resolution ordering changed;
-   - `R09` GitHub READ_ONLY tool honesty, reporting exact Action operation name only if actually exposed, otherwise `TOOL_OPERATION=NOT_CAPTURED`;
-5. preserve R02/R05/R06/R07/R08 PASS unless another material change invalidates them;
-6. adjudicate C09/C10;
-7. if eligible, perform separate C11 readiness evaluation;
+1. merge this runtime-correction revision to canonical `main` while certification remains NO;
+2. apply the exact current kernel to the existing `SES — Software Systems Architect` Builder;
+3. capture a fresh fingerprint proving the update is live;
+4. execute **only `R04_RETEST_3`** in a fresh conversation;
+5. preserve R01/R03/R09 and R02/R05/R06/R07/R08 PASS unless another material change invalidates them;
+6. adjudicate C09;
+7. if C09 closes, perform C11 readiness evaluation;
 8. only then request/record explicit C12 user authorization for READY for the exact fingerprint;
 9. adjudicate C01-C18 and `CERTIFIED_FOR_ANY_PROJECT`.
 
@@ -70,7 +72,7 @@ The previously applied runtime fingerprint is stale because the kernel changed a
 ```text
 CURRENT_BUILDER_APPLIED = YES
 CURRENT_RUNTIME_FINGERPRINT = CAPTURED
-AFFECTED_L2_RETESTS = PASS
+R04_RETEST_3 = PASS
 C09 = PASS
 C10 = PASS
 C11 = PASS
@@ -82,17 +84,7 @@ CERTIFIED_FOR_ANY_PROJECT = YES
 
 ## 6. Explicitly blocked
 
-Do not:
-- erase or rewrite initial L2 failures;
-- transfer historical SaaS runtime PASS to the current fingerprint;
-- claim certification merely because the identity is canonical/ACTIVE;
-- reuse the stale pre-correction Builder fingerprint;
-- infer project identity when missing;
-- invent tool operation names;
-- rerun unaffected gates solely for confidence;
-- mutate consumer projects automatically;
-- begin Documentation Auditor closure before this specialist is closed unless explicitly reprioritized;
-- implement Runtime Enforcement Gateway middleware yet.
+Do not erase or rewrite initial/retest failures, transfer historical SaaS runtime PASS to the current fingerprint, rerun unaffected gates solely for confidence, infer missing project identity, invent tool operation names, mutate consumer projects automatically, or begin Documentation Auditor closure before this specialist is closed unless explicitly reprioritized.
 
 ## 7. Universal boundary
 
