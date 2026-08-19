@@ -11,7 +11,7 @@
 | `backend-data-platform-specialist` | `YES` | fingerprint-bound L1/L2/tool/readiness proof PASS |
 | `application-security-assurance-specialist` | `YES` | compact fingerprint-bound L1/L2/tool/readiness proof PASS |
 | `software-systems-architect` | `YES` | C01-C18 PASS; current Builder/runtime fingerprint validated; user-authorized READY; historical failures preserved |
-| `documentation-auditor` | `NO` | runtime certification not established |
+| `documentation-auditor` | `NO` | v1.0 certification candidate versioned; external Builder/runtime proof pending |
 
 ```text
 CERTIFIED_FOR_ANY_PROJECT != CONSUMER_PROJECT_ADOPTED
@@ -74,11 +74,35 @@ Primary final evidence: `tests/runtime/evidence/SOFTWARE_SYSTEMS_ARCHITECT_FINAL
 
 ## Documentation Auditor
 
+Current certification subject:
+
 ```text
 ARCHETYPE_ID = documentation-auditor
+CANONICAL_NAME = SES — Documentation Auditor
+RESOLUTION_STATUS = ACTIVE
+CURRENT_CANDIDATE = documentation-auditor-v1.0
+CURRENT_KERNEL_BLOB = 90fcabe72ca5202b54f50ba48b695de00096afa6
+CURRENT_INSTRUCTIONS_CHARACTERS = 7889
+BUILDER_PACKAGE = runtime/custom-gpt/DOCUMENTATION_AUDITOR_BUILDER_PACKAGE_V1_0.md
+C01/C05/C06/C13-C17 = PASS
+C02-C04 = PENDING ACTUAL CANDIDATE EXECUTION
+C07-C10 = PENDING BUILDER/RUNTIME EVIDENCE
+C11-C12/C18 = PENDING
 CERTIFIED_FOR_ANY_PROJECT = NO
-PROJECT_TARGET_REGRESSION = 4/7
-RUNTIME_ENFORCEMENT_GAP = ESTABLISHED
 ```
+
+Historical v0.9:
+
+```text
+R03A = FAIL
+R05 = FAIL
+R06 = FAIL
+PROJECT_TARGET_REGRESSION = 4/7
+PROMPT_LEVEL_FIX_STOP_LOSS = TRIGGERED FOR V0_9 COSMETIC RETRIES
+RETROACTIVE_PASS = NO
+RETROACTIVE_ERASURE = NO
+```
+
+The v1.0 candidate is a new fingerprint boundary. A later valid PASS may satisfy current obligations without rewriting v0.9. The Documentation Auditor Runtime Enforcement Gateway is a separate second-phase track and is not a certification prerequisite.
 
 Any material runtime fingerprint/tool/archetype/bootstrap change requires proportional revalidation; never silently preserve PASS across material drift.
