@@ -29,10 +29,10 @@ HISTORICAL_PASS != CURRENT_CERTIFICATION
 | C04 Generic baseline / non-regression | PASS | A01/A03/A04/A08/A09/A11/A13 generic baseline; C1-C10 no material regression |
 | C05 Builder kernel versioned | PASS / CANDIDATE_HEAD | compact Builder-fit kernel blob `5aa37be41e83e7f3c83019a5b29e1a8583364d2f` |
 | C06 Builder package versioned | PASS / CANDIDATE_HEAD | package bound to compact kernel and measured Builder fields |
-| C07 Actual Builder applied | NOT_ESTABLISHED | external Builder application/reconciliation required |
-| C08 Runtime fingerprint captured | NOT_ESTABLISHED | capture after exact package application |
-| C09 L2 runtime PASS | NOT_ESTABLISHED | execute current-fingerprint proportional L2 after Builder binding |
-| C10 Tool honesty / integration proof | CURRENT_NOT_ESTABLISHED | current configured GitHub Action must be exercised and evidence-bound |
+| C07 Actual Builder applied | PASS | operator screenshots show current Builder-fit package applied; see runtime fingerprint evidence |
+| C08 Runtime fingerprint captured | PASS / SUFFICIENT_FOR_L2_ENTRY | current actual Builder configuration captured; non-material non-visible fields remain `NOT_CAPTURED` |
+| C09 L2 runtime PASS | NOT_ESTABLISHED | execute current-fingerprint proportional L2 |
+| C10 Tool honesty / integration proof | CURRENT_NOT_ESTABLISHED | configured GitHub READ_ONLY Action must be exercised and evidence-bound in L2 |
 | C11 Readiness evaluation PASS | NOT_ESTABLISHED | adjudicate after current L2/tool closure |
 | C12 User-authorized READY | NOT_ESTABLISHED_FOR_EXACT_CURRENT_FINGERPRINT | explicit applicable READY authorization after readiness eligibility |
 | C13 Archetype contract | PASS / CANDIDATE_HEAD | Software Systems Architect archetype contract |
@@ -40,7 +40,7 @@ HISTORICAL_PASS != CURRENT_CERTIFICATION
 | C15 Archetype ACTIVE | PASS / CANDIDATE_HEAD | registry resolves canonical ID as ACTIVE |
 | C16 Project bootstrap compatibility | PASS / CONTRACT_LEVEL | archetype + compact kernel require project/bootstrap/readiness; runtime manifestation remains C09 |
 | C17 No project-local leakage | PASS / STATIC CONTRACT REVIEW | reusable method; no frozen consumer-project truth |
-| C18 No unresolved hard blocker | NOT_SATISFIED | C07-C12 remain open |
+| C18 No unresolved hard blocker | NOT_SATISFIED | C09-C12 remain open |
 
 Current aggregate:
 
@@ -76,9 +76,7 @@ Durable adjudication: `tests/behavioral/evidence/SOFTWARE_SYSTEMS_ARCHITECT_L1C_
 
 ## 4. Builder-fit revision after observed UI limits
 
-During attempted Builder configuration, operator reported that the prior Description exceeded the current UI field limit and the prior Instructions exceeded the current UI field limit.
-
-The package was not silently truncated. Instead a compact versioned kernel was created.
+The prior package exceeded operator-observed current Builder UI field limits. The package was not silently truncated; a compact versioned kernel was created.
 
 ```text
 DESCRIPTION_CHARACTER_COUNT = 286
@@ -97,26 +95,59 @@ Static semantic delta review: `tests/behavioral/evidence/SOFTWARE_SYSTEMS_ARCHIT
 ```text
 BUILDER_FIT_DELTA_REVIEW = PASS
 C02-C04 = PRESERVED
-RUNTIME_REVALIDATION = REQUIRED / L2 NOT YET EXECUTED
+RUNTIME_REVALIDATION = REQUIRED
 ```
 
-## 5. Required execution order from current state
+## 5. Actual Builder fingerprint
+
+Evidence: `tests/runtime/evidence/SOFTWARE_SYSTEMS_ARCHITECT_BUILDER_FINGERPRINT_2026-08-19.md`.
+
+Captured actual Builder state includes:
+
+```text
+NAME = SES — Software Systems Architect
+VISIBILITY = PRIVATE / APENAS PARA MIM
+MODEL = GPT-5.6 Sol (gpt-5-6) / recommended model shown
+DESCRIPTION = exact Builder-fit revision / 286 source characters
+INSTRUCTIONS = compact current kernel / blob 5aa37be41e83e7f3c83019a5b29e1a8583364d2f
+STARTERS = 4
+KNOWLEDGE = EMPTY
+WEB_SEARCH = ENABLED
+IMAGE_GENERATION = DISABLED
+DATA_ANALYSIS = ENABLED
+CUSTOM_ACTION = api.github.com / SES GitHub READ_ONLY
+ACTION_AUTH = API KEY / BEARER / secret hidden
+ACTION_SURFACE = GET-only in supplied schema
+APPS = NOT_CAPTURED
+FULL_GPT_ID = NOT_CAPTURED
+```
+
+Adjudication:
+
+```text
+C07 ACTUAL BUILDER APPLIED = PASS
+C08 RUNTIME FINGERPRINT CAPTURED = PASS / SUFFICIENT_FOR_L2_ENTRY
+```
+
+C08 does not establish runtime behavior, successful Action authentication or repository access.
+
+## 6. Required execution order from current state
 
 ```text
 1. NORMALIZE CANONICAL IDENTITY            = DONE
 2. VERSION ARCHETYPE / BUILDER PACKAGE     = DONE
 3. EXECUTE L1-C                            = PASS
 4. BUILDER-FIT COMPACT REVISION            = PASS / VERSIONED
-5. APPLY EXACT CURRENT BUILDER PACKAGE      = NEXT
-6. CAPTURE CURRENT RUNTIME FINGERPRINT
-7. EXECUTE PROPORTIONAL CURRENT L2 + TOOL PROOF
-8. ADJUDICATE C07-C10
+5. APPLY EXACT CURRENT BUILDER PACKAGE      = PASS
+6. CAPTURE CURRENT RUNTIME FINGERPRINT      = PASS
+7. EXECUTE PROPORTIONAL CURRENT L2 + TOOL PROOF = NEXT
+8. ADJUDICATE C09-C10
 9. READINESS EVALUATION
 10. EXPLICIT USER-AUTHORIZED READY
 11. FINAL C01-C18 CERTIFICATION ADJUDICATION
 ```
 
-## 6. Historical boundary
+## 7. Historical boundary
 
 Preserve without rewrite:
 
@@ -131,12 +162,12 @@ RETROACTIVE_ERASURE = NO
 RETROACTIVE_IDENTITY_REWRITE = NO
 ```
 
-## 7. Current verdict
+## 8. Current verdict
 
 ```text
 SOFTWARE_SYSTEMS_ARCHITECT_CERTIFICATION_GAP_AUDIT = PASS
 CURRENT_CERTIFICATION = NO
-NEXT_BLOCKING_GATE = C07 / EXACT BUILDER APPLICATION
+NEXT_BLOCKING_GATE = C09/C10 / CURRENT L2 + TOOL PROOF
 ```
 
-No Builder application, fresh runtime fingerprint, current L2/tool PASS, readiness PASS or certification PASS is claimed by this audit.
+No current L2/tool PASS, readiness PASS or certification PASS is claimed by this audit.
