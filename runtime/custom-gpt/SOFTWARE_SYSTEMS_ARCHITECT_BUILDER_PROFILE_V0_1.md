@@ -1,19 +1,19 @@
 # SES — Software Systems Architect Custom GPT Builder Profile v0.1
 
-**Status:** BUILDER_FIT_REVISION / EXTERNAL_BUILDER_RECONCILIATION_REQUIRED
+**Status:** BUILDER_FIT / EXTERNAL_BUILDER_RECONCILIATION_REQUIRED / L1C_PASS
 **ARCHETYPE_ID:** `software-systems-architect`
 
 ## 1. Purpose
 
-Version the intended Builder configuration for `SES — Software Systems Architect` while preserving the historical `SES — SaaS Architect` runtime evidence as legacy fingerprint-bound evidence only.
+Version the intended Builder configuration for `SES — Software Systems Architect` while preserving historical `SES — SaaS Architect` runtime evidence as legacy fingerprint-bound evidence only.
 
 ```text
 HISTORICAL_SAAS_ARCHITECT_RUNTIME_BEHAVIORAL_PROOF = PASS / PRESERVED
+SOFTWARE_SYSTEMS_ARCHITECT_L1C = PASS
 SOFTWARE_SYSTEMS_ARCHITECT_CURRENT_RUNTIME_PROOF = NOT_YET_ESTABLISHED
 LEGACY_ALIAS != RETROACTIVE_IDENTITY_REWRITE
+PROFILE_VERSIONED != BUILDER_APPLIED != CURRENT_RUNTIME_PROOF
 ```
-
-`PROFILE_VERSIONED != BUILDER_APPLIED != CURRENT_RUNTIME_PROOF`
 
 ## 2. Builder fields
 
@@ -23,7 +23,11 @@ LEGACY_ALIAS != RETROACTIVE_IDENTITY_REWRITE
 
 ### Description
 
-`Arquiteto de sistemas de software do Specialist Engineering System. Reconstrói o AS-IS, audita arquitetura, domínios, dependências, trust boundaries, autorização, multi-tenancy, dados, integrações, eventos, concorrência, escalabilidade, confiabilidade e observabilidade; compara alternativas e define target architecture, migração, rollback e proof obligations com evidência, fail-closed e isolamento entre projetos.`
+`Arquiteto de sistemas de software do SES. Audita AS-IS, domínios, dependências, trust boundaries, multi-tenancy, dados, eventos, concorrência, confiabilidade e observabilidade; define target architecture, migração, rollback e proof obligations com evidência e isolamento entre projetos.`
+
+Measured: `286 Unicode code points / 292 UTF-8 bytes`.
+
+Observed Builder UI constraint supplied by operator on 2026-08-19: Description must fit within `300` characters. This profile treats that as runtime UI evidence, not a universal platform constant.
 
 ### Instructions
 
@@ -33,11 +37,18 @@ Use the complete exact content of:
 
 Expected kernel blob:
 
-`3629da7bb322e80129cdc7950967e2132b946fe6`
+`5aa37be41e83e7f3c83019a5b29e1a8583364d2f`
 
-Do not use the profile itself, a path-only placeholder, paraphrase, truncated copy or permanent Knowledge as a substitute.
+Measured exact source length:
 
-Before application, measure and record the exact Builder Instructions character/byte count from this kernel. If the Builder rejects or truncates it, stop and version a new Builder-fit kernel rather than silently editing the UI copy.
+```text
+INSTRUCTIONS_UNICODE_CODE_POINTS = 7710
+INSTRUCTIONS_UTF8_BYTES = 7752
+```
+
+Observed Builder UI constraint supplied by operator on 2026-08-19: Instructions must fit within `8000` characters. The current kernel is intentionally below that observed limit.
+
+Do not use this profile, a path-only placeholder, paraphrase, truncated copy or permanent Knowledge as a substitute for the exact kernel.
 
 ### Conversation starters
 
@@ -69,18 +80,10 @@ Web Search is supplementary only.
 One custom Action: `SES GitHub READ_ONLY`
 
 Schema: `runtime/custom-gpt/GITHUB_READONLY_ACTION.openapi.yaml`
-
 Expected schema blob: `1e6237e806fd84716ec13b019e6617ad4110a211`
 
+Authentication: API key / Bearer / secret in Builder UI only.
 No Action mutation is part of this candidate.
-
-### Authentication
-
-```text
-Type: API key
-Mode: Bearer
-Secret: Builder UI only / never committed
-```
 
 ### Visibility
 
@@ -92,15 +95,11 @@ Record the actual selected model in the Builder fingerprint. Model changes may i
 
 ## 3. Runtime loading chain
 
-`SES main → docs/bootstrap/INDEX.md → archetypes/REGISTRY.md → software-systems-architect archetype → applicable Core protocols → projects/REGISTRY.md → Project Adapter → consumer-project bootstrap/local specialist → material evidence → task-bound Context Readiness Receipt → bounded architecture work`.
+`SES main → docs/bootstrap/INDEX.md → archetypes/REGISTRY.md → software-systems-architect archetype → Core protocols → projects/REGISTRY.md → Project Adapter → consumer-project bootstrap/local specialist → material evidence → task-bound Context Readiness Receipt → bounded architecture work`.
 
 ## 4. Historical evidence boundary
 
-Canonical historical evidence remains:
-
-`tests/runtime/evidence/HYBRID_SAAS_ARCHITECT_RUNTIME_PROOF_2026-08-12.md`
-
-Preserve:
+Canonical historical evidence remains `tests/runtime/evidence/HYBRID_SAAS_ARCHITECT_RUNTIME_PROOF_2026-08-12.md`.
 
 ```text
 HISTORICAL_IDENTITY = SES — SaaS Architect
@@ -109,22 +108,24 @@ HISTORICAL_RUNTIME_BEHAVIORAL_PROOF = PASS
 HISTORICAL_T01_T29 = 29/29 PASS
 HISTORICAL_KERNEL_BLOB = 50672d09665035c0f60f18887f3295a5ea8cad03
 HISTORICAL_ACTION_SCHEMA_BLOB = 1e6237e806fd84716ec13b019e6617ad4110a211
-HISTORICAL_FINAL_ACTION_SURFACE = READ_ONLY / GET-only
+LEGACY_ALIAS != RETROACTIVE_IDENTITY_REWRITE
 ```
 
 Do not rename that historical evidence in place.
 
 ## 5. Builder reconciliation gate
 
-Before applying/testing verify and capture:
+Before L2 capture:
 
 ```text
 RUNTIME_NAME = SES — Software Systems Architect
 ARCHETYPE_ID = software-systems-architect
+DESCRIPTION_COMPLETE_COPY = YES
+DESCRIPTION_CHARACTER_COUNT = 286
 INSTRUCTIONS_COMPLETE_COPY = YES
-KERNEL_BLOB = 3629da7bb322e80129cdc7950967e2132b946fe6
-INSTRUCTIONS_CHARACTER_COUNT = actual
-INSTRUCTIONS_UTF8_BYTES = actual
+KERNEL_BLOB = 5aa37be41e83e7f3c83019a5b29e1a8583364d2f
+INSTRUCTIONS_CHARACTER_COUNT = 7710
+INSTRUCTIONS_UTF8_BYTES = 7752
 CONVERSATION_STARTERS = exactly 4
 KNOWLEDGE = EMPTY
 ACTION_SURFACE = READ_ONLY / GET-only
@@ -136,13 +137,9 @@ VISIBILITY = PRIVATE / APENAS PARA MIM
 Capture a fresh non-secret fingerprint and keep separate:
 
 ```text
-PROFILE_VERSIONED
-!= BUILDER_RECONCILED
-!= FINGERPRINT_COMPLETE
-!= L2_RUNTIME_PROOF
-!= CERTIFIED_FOR_ANY_PROJECT
+PROFILE_VERSIONED != BUILDER_RECONCILED != FINGERPRINT_COMPLETE != L2_RUNTIME_PROOF != CERTIFIED_FOR_ANY_PROJECT
 ```
 
 ## 6. Lifecycle separation
 
-This normalization does not authorize publication, broad sharing, consumer-project mutation, production/security claims or legacy evidence retirement.
+L1-C PASS does not authorize publication, broad sharing, consumer-project mutation, production/security claims or legacy evidence retirement. Builder application and current runtime proof remain open gates.
