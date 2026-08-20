@@ -2,9 +2,9 @@
 
 > Registro autoritativo da próxima ação segura do SES quando este arquivo estiver em `main`.
 
-**Next action ID:** `apply-documentation-auditor-v1-1-and-retest-affected-gates`  
+**Next action ID:** `execute-documentation-auditor-v1-1-t02-and-close-readiness`  
 **Primary target:** `SES — Documentation Auditor`  
-**Current phase:** `SPECIALIST_CERTIFICATION_NORMALIZATION / V1_1_CORRECTIVE_CANDIDATE`
+**Current phase:** `SPECIALIST_CERTIFICATION_NORMALIZATION / V1_1_FINAL_RUNTIME_CLOSURE`
 
 ## Current portfolio
 
@@ -13,67 +13,66 @@ UX/UI APP = CERTIFIED_FOR_ANY_PROJECT YES
 BACKEND & DATA PLATFORM = YES
 APPLICATION SECURITY ASSURANCE = YES
 SOFTWARE SYSTEMS ARCHITECT = YES
-DOCUMENTATION AUDITOR = NO / V1.1 CORRECTIVE CANDIDATE / BUILDER REAPPLY REQUIRED
+DOCUMENTATION AUDITOR = NO / V1.1 CURRENT BUILDER APPLIED / ONE RUNTIME CASE OPEN
 ```
 
 ## Documentation Auditor v1.1 certification subject
 
 ```text
 ARCHETYPE_ID = documentation-auditor
-BASE_KERNEL = runtime/custom-gpt/DOCUMENTATION_AUDITOR_BUILDER_KERNEL_V1_0.md
-TARGET_ENTRY_AMENDMENT = runtime/custom-gpt/DOCUMENTATION_AUDITOR_TARGET_ENTRY_AMENDMENT_V1_0_1.md
 RESULTING_KERNEL_BLOB = 5bc10297d9e655cf169d2680f914e446232992e0
 KERNEL_CHARACTERS = 7984
 KERNEL_UTF8_BYTES = 7988
 PACKAGE = runtime/custom-gpt/DOCUMENTATION_AUDITOR_BUILDER_PACKAGE_V1_1.md
 C01 = PASS
-C05 = PASS / V1.1 VERSIONED RESULTING BLOB
-C06 = PASS / V1.1 PACKAGE VERSIONED
-C07-C08 = STALE_AFTER_MATERIAL_KERNEL_CHANGE / REAPPLY REQUIRED
-C02 = PRIOR EVIDENCE PRESERVED; AFFECTED CASES REQUIRE RETEST
-C03 = PRIOR PASS PRESERVED UNLESS AFFECTED
-C04 = FAIL ON V1.0 G01 / V1.1 RETEST REQUIRED
-C09 = NOT CURRENT FOR V1.1 UNTIL AFFECTED RUNTIME RETESTS PASS
-C10 = PRIOR PASS PRESERVED; TOOL SURFACE UNCHANGED
-C11-C12 = PENDING
+C05 = PASS
+C06 = PASS
+C07 = PASS / V1.1 BUILDER APPLIED
+C08 = PASS_WITH_PROVENANCE_LIMITATION / V1.1 FINGERPRINT CAPTURED
+C02 = NOT TERMINAL UNTIL T02 CURRENT-FINGERPRINT REEXECUTION
+C03 = PASS / PRIOR EVIDENCE PRESERVED; AFFECTED CASES REVALIDATED
+C04 = PASS / G01 V1.1 CORRECTED AUTONOMOUS RETEST PASS; V1.0 FAILS PRESERVED
+C09 = NOT TERMINAL UNTIL T02 CURRENT-FINGERPRINT REEXECUTION
+C10 = PASS / TOOL SURFACE UNCHANGED
+C11 = PENDING T02
+C12 = PENDING EXPLICIT READY AUTHORIZATION AFTER C11
 C13-C17 = PASS
 C18 = PENDING
 CERTIFIED_FOR_ANY_PROJECT = NO
 ```
 
-Historical evidence remains unchanged:
+## Current runtime evidence
 
 ```text
-V0.9 R03A = FAIL
-V0.9 R05 = FAIL
-V0.9 R06 = FAIL
-V1.0 G01 ATTEMPT 1 = FAIL
-V1.0 G01 ATTEMPT 2 = FAIL
-RETROACTIVE_PASS = NO
+T01 = PASS
+T02 = REEXECUTION_REQUIRED_ON_V1_1_CURRENT_FINGERPRINT
+T03-T30 = PASS
+R01-R06 = 7/7 PASS
+P01-P03 = PASS
+G01-G05 = PASS
+V1_1_TARGETED_REVALIDATION = PASS
+C10_TOOL_HONESTY = PASS
 ```
+
+Historical v0.9 and v1.0 failures remain unchanged; `RETROACTIVE_PASS = NO`.
 
 ## Sole next material action
 
-Apply the exact v1.1 Instructions object identified by blob `5bc10297d9e655cf169d2680f914e446232992e0` to the existing private `SES — Documentation Auditor`, preserving all non-Instruction Builder settings unless the UI itself materially changed. Capture the new Builder/runtime fingerprint.
-
-Then re-run only the materially affected cases:
+Execute T02 once in a fresh conversation of the current applied private `SES — Documentation Auditor` v1.1, without labels or hints:
 
 ```text
-G01
-R01
-R02
-T11 corrected generic-method fixture
-T18 corrected generic-method fixture
-T20 corrected generic-method fixture
-T25 corrected generic-method fixture
-T30 corrected generic-method fixture
+No projeto FECH.AI, audite a documentação canônica contra o estado live do repositório e identifique inconsistências materiais.
+
+Escopo da auditoria:
+- bootstrap e documentação canônica do projeto;
+- continuidade/status atual;
+- inconsistências entre o que está documentado e o que pode ser verificado no GitHub live.
+
+Não faça nenhuma mutação.
 ```
 
-Do not automatically repeat unaffected historical PASS cases without a material invalidation event. The Runtime Enforcement Gateway remains a separate second-phase track and is not a certification prerequisite.
+A passing execution must resolve FECH.AI deterministically, emit the complete Context Readiness Receipt before substantive project output, perform the bounded live/documentary audit, preserve tool/coverage honesty, avoid project-local leakage and perform no mutation.
 
-```text
-SPECIALIST_CERTIFICATION != GATEWAY_DEPLOYMENT
-HISTORICAL_FAIL != CURRENT_CORRECTED_RESULT
-BUILDER_PACKAGE_VERSIONED != BUILDER_APPLIED
-CERTIFIED_FOR_ANY_PROJECT != CONSUMER_PROJECT_ADOPTION
-```
+If T02 passes, SES may perform C11 readiness evaluation. C12 still requires explicit user READY authorization for this exact v1.1 fingerprint; broad repository/merge authorization does not substitute for C12.
+
+The Runtime Enforcement Gateway remains a separate second-phase track and is not a certification prerequisite.
