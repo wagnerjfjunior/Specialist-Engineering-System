@@ -11,7 +11,7 @@
 | `backend-data-platform-specialist` | `YES` | fingerprint-bound L1/L2/tool/readiness proof PASS |
 | `application-security-assurance-specialist` | `YES` | compact fingerprint-bound L1/L2/tool/readiness proof PASS |
 | `software-systems-architect` | `YES` | C01-C18 PASS; current Builder/runtime fingerprint validated; user-authorized READY; historical failures preserved |
-| `documentation-auditor` | `NO` | v1.0 certification candidate versioned; external Builder/runtime proof pending |
+| `documentation-auditor` | `YES` | v1.1 exact fingerprint; C01-C18 PASS; T01-T30/R/P/G/tool proof PASS; user-authorized READY; historical failures preserved |
 
 ```text
 CERTIFIED_FOR_ANY_PROJECT != CONSUMER_PROJECT_ADOPTED
@@ -74,35 +74,44 @@ Primary final evidence: `tests/runtime/evidence/SOFTWARE_SYSTEMS_ARCHITECT_FINAL
 
 ## Documentation Auditor
 
-Current certification subject:
+Current certified subject:
 
 ```text
 ARCHETYPE_ID = documentation-auditor
 CANONICAL_NAME = SES — Documentation Auditor
 RESOLUTION_STATUS = ACTIVE
-CURRENT_CANDIDATE = documentation-auditor-v1.0
-CURRENT_KERNEL_BLOB = 90fcabe72ca5202b54f50ba48b695de00096afa6
-CURRENT_INSTRUCTIONS_CHARACTERS = 7889
-BUILDER_PACKAGE = runtime/custom-gpt/DOCUMENTATION_AUDITOR_BUILDER_PACKAGE_V1_0.md
-C01/C05/C06/C13-C17 = PASS
-C02-C04 = PENDING ACTUAL CANDIDATE EXECUTION
-C07-C10 = PENDING BUILDER/RUNTIME EVIDENCE
-C11-C12/C18 = PENDING
-CERTIFIED_FOR_ANY_PROJECT = NO
+CURRENT_CANDIDATE = documentation-auditor-v1.1
+CURRENT_KERNEL = runtime/custom-gpt/DOCUMENTATION_AUDITOR_BUILDER_KERNEL_V1_1.md
+CURRENT_KERNEL_BLOB = 5bc10297d9e655cf169d2680f914e446232992e0
+CURRENT_INSTRUCTIONS_CHARACTERS = 7984
+CURRENT_INSTRUCTIONS_UTF8_BYTES = 7988
+BUILDER_PACKAGE = runtime/custom-gpt/DOCUMENTATION_AUDITOR_BUILDER_PACKAGE_V1_1.md
+CURRENT_BUILDER_APPLIED = PASS
+CURRENT_RUNTIME_FINGERPRINT = CAPTURED / PASS_WITH_PROVENANCE_LIMITATION
+T01-T30 = PASS
+R01-R06 = 7/7 PASS
+P01-P03 = PASS
+G01-G05 = PASS
+TOOL_HONESTY = PASS
+C01-C18 = PASS
+C12 = USER_AUTHORIZED_READY / 2026-08-20 / KERNEL_BLOB 5bc10297d9e655cf169d2680f914e446232992e0
+CERTIFIED_FOR_ANY_PROJECT = YES
 ```
 
-Historical v0.9:
+Historical integrity:
 
 ```text
-R03A = FAIL
-R05 = FAIL
-R06 = FAIL
-PROJECT_TARGET_REGRESSION = 4/7
-PROMPT_LEVEL_FIX_STOP_LOSS = TRIGGERED FOR V0_9 COSMETIC RETRIES
+V0.9 R03A = FAIL
+V0.9 R05 = FAIL
+V0.9 R06 = FAIL
+V1.0 G01 ATTEMPT 1 = FAIL
+V1.0 G01 ATTEMPT 2 = FAIL
 RETROACTIVE_PASS = NO
 RETROACTIVE_ERASURE = NO
 ```
 
-The v1.0 candidate is a new fingerprint boundary. A later valid PASS may satisfy current obligations without rewriting v0.9. The Documentation Auditor Runtime Enforcement Gateway is a separate second-phase track and is not a certification prerequisite.
+The v1.1 result is a new fingerprint-bound certification and does not rewrite any earlier failure. Primary final evidence: `tests/runtime/evidence/DOCUMENTATION_AUDITOR_FINAL_CERTIFICATION_2026-08-20.md`.
+
+The Documentation Auditor Runtime Enforcement Gateway is a separate second-phase track and is not a certification prerequisite.
 
 Any material runtime fingerprint/tool/archetype/bootstrap change requires proportional revalidation; never silently preserve PASS across material drift.

@@ -2,9 +2,9 @@
 
 > Registro autoritativo da próxima ação segura do SES quando este arquivo estiver em `main`.
 
-**Next action ID:** `apply-and-validate-documentation-auditor-v1`  
+**Next action ID:** `documentation-auditor-v1-1-certified`  
 **Primary target:** `SES — Documentation Auditor`  
-**Current phase:** `SPECIALIST_CERTIFICATION_NORMALIZATION / V1_CERTIFICATION_CANDIDATE`
+**Current phase:** `SPECIALIST_CERTIFICATION_NORMALIZATION / CERTIFICATION_CLOSED`
 
 ## Current portfolio
 
@@ -13,51 +13,66 @@ UX/UI APP = CERTIFIED_FOR_ANY_PROJECT YES
 BACKEND & DATA PLATFORM = YES
 APPLICATION SECURITY ASSURANCE = YES
 SOFTWARE SYSTEMS ARCHITECT = YES
-DOCUMENTATION AUDITOR = NO / V1 CANDIDATE READY FOR BUILDER APPLICATION
+DOCUMENTATION AUDITOR = CERTIFIED_FOR_ANY_PROJECT YES
 ```
 
-## Documentation Auditor v1.0 certification subject
+## Documentation Auditor v1.1 terminal state
 
 ```text
 ARCHETYPE_ID = documentation-auditor
-KERNEL = runtime/custom-gpt/DOCUMENTATION_AUDITOR_BUILDER_KERNEL_V1_0.md
-KERNEL_BLOB = 90fcabe72ca5202b54f50ba48b695de00096afa6
-KERNEL_CHARACTERS = 7889
-PACKAGE = runtime/custom-gpt/DOCUMENTATION_AUDITOR_BUILDER_PACKAGE_V1_0.md
+CANDIDATE = documentation-auditor-v1.1
+RESULTING_KERNEL_BLOB = 5bc10297d9e655cf169d2680f914e446232992e0
+KERNEL_CHARACTERS = 7984
+KERNEL_UTF8_BYTES = 7988
+PACKAGE = runtime/custom-gpt/DOCUMENTATION_AUDITOR_BUILDER_PACKAGE_V1_1.md
 C01 = PASS
+C02 = PASS
+C03 = PASS
+C04 = PASS
 C05 = PASS
 C06 = PASS
-C13-C17 = PASS
-C02-C04 = PENDING EXECUTION
-C07-C10 = PENDING BUILDER/RUNTIME EVIDENCE
-C11-C12 = PENDING
-C18 = PENDING
-CERTIFIED_FOR_ANY_PROJECT = NO
+C07 = PASS
+C08 = PASS_WITH_PROVENANCE_LIMITATION
+C09 = PASS
+C10 = PASS
+C11 = PASS
+C12 = PASS / USER AUTHORIZED READY 2026-08-20 FOR EXACT KERNEL BLOB
+C13 = PASS
+C14 = PASS
+C15 = PASS
+C16 = PASS
+C17 = PASS
+C18 = PASS
+CERTIFIED_FOR_ANY_PROJECT = YES
 ```
 
-Historical v0.9 remains unchanged:
+## Runtime evidence
 
 ```text
-R03A = FAIL
-R05 = FAIL
-R06 = FAIL
-PROJECT_TARGET_REGRESSION = 4/7
-RETROACTIVE_PASS = NO
+T01-T30 = PASS
+R01-R06 = 7/7 PASS
+P01-P03 = PASS
+G01-G05 = PASS
+C10_TOOL_HONESTY = PASS
+V1_1_TARGETED_REVALIDATION = PASS
+T02_CURRENT_FINGERPRINT_REEXECUTION = PASS
 ```
 
-## Sole next material action
+Historical v0.9 and v1.0 failures remain preserved; `RETROACTIVE_PASS = NO`.
 
-Apply the exact v1.0 Builder Package/kernel to the existing private `SES — Documentation Auditor`, capture the resulting Builder/runtime fingerprint, then execute:
+Final evidence:
 
-`tests/runtime/DOCUMENTATION_AUDITOR_CERTIFICATION_L2_RUNBOOK_V1_0.md`.
+`tests/runtime/evidence/DOCUMENTATION_AUDITOR_FINAL_CERTIFICATION_2026-08-20.md`
 
-The runbook closes the remaining behavioral, prompt-invariance, generic-baseline, target/readiness and tool-honesty obligations only if actual execution passes.
+## Next safe action
 
-The specialist-specific Runtime Enforcement Gateway is a separate second-phase track and is not a prerequisite for specialist certification.
+No further Documentation Auditor certification work is required while the certified fingerprint remains materially unchanged. Consumer projects may adopt this specialist explicitly under their own project-local authority and bootstrap contracts.
+
+The Runtime Enforcement Gateway remains a separate second-phase track and is not a prerequisite for this certification.
 
 ```text
-SPECIALIST_CERTIFICATION != GATEWAY_DEPLOYMENT
-HISTORICAL_FAIL != CURRENT_V1_RESULT
-BUILDER_PACKAGE_VERSIONED != BUILDER_APPLIED
-CERTIFIED_FOR_ANY_PROJECT != CONSUMER_PROJECT_ADOPTION
+CERTIFIED_FOR_ANY_PROJECT != CONSUMER_PROJECT_ADOPTED
+CERTIFIED_FOR_ANY_PROJECT != PROJECT_CONTEXT_READY
+PROJECT_CONTEXT_READY != AUTHORIZED_TO_MUTATE
+CERTIFIED_FOR_ANY_PROJECT != PRODUCTION_APPROVED
 ```
