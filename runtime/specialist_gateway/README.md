@@ -65,7 +65,17 @@ SES_GATEWAY_API_KEY = shared API secret for X-SES-Gateway-Key
 
 A domain routing blocker such as `SPECIALIST_NOT_CERTIFIED` remains a successful HTTP exchange with that explicit decision in the receipt. Transport/dependency failures use bounded HTTP error states instead of masquerading as routing decisions.
 
-The versioned OpenAPI file is a deployment template. Its server host must be replaced only after an actual deployment is observed; template existence is not Action/tool integration proof.
+## OpenAPI surface
+
+`RUNTIME_ENFORCEMENT_GATEWAY.openapi.template.yaml` remains the provider-neutral deployment template.
+
+`RUNTIME_ENFORCEMENT_GATEWAY.openapi.yaml` is the host-bound v0.1 schema for the externally proven canonical host:
+
+```text
+https://ses-runtime-enforcement-gateway.vercel.app
+```
+
+The bound schema is eligible for Action/tool configuration because `/health` and authenticated `/route` were externally observed. Schema existence still does not prove that any Action/tool has been configured or invoked.
 
 ## Non-goals
 
@@ -76,7 +86,8 @@ Gateway v0.1 does not provide semantic intent classification, automatic adoption
 ```text
 CONTROLLER_IMPLEMENTED != DEPLOYED_SERVICE
 HTTP_CODE_VERSIONED != DEPLOYED_SERVICE
-OPENAPI_TEMPLATE != ACTION_CONFIGURED
+OPENAPI_BOUND != ACTION_CONFIGURED
+ACTION_CONFIGURED != ACTION_INVOKED
 DEPLOYED != INVOKED
 CANONICAL_SNAPSHOT_LOADED != SPECIALIST_EXECUTED
 ROUTABLE != EXECUTED
