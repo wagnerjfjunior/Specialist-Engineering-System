@@ -2,9 +2,9 @@
 
 > Registro autoritativo da próxima ação segura do SES quando este arquivo estiver em `main`.
 
-**Next action ID:** `runtime-enforcement-gateway-external-deployment-unblock`  
+**Next action ID:** `runtime-enforcement-gateway-external-route-proof`  
 **Primary target:** `SES Runtime Enforcement Gateway`  
-**Current phase:** `RUNTIME_ENFORCEMENT_GATEWAY_OPERATIONALIZATION / DEPLOY_READY_EXTERNAL_CONFIGURATION_REQUIRED`
+**Current phase:** `RUNTIME_ENFORCEMENT_GATEWAY_OPERATIONALIZATION / ROUTE_PROOF`
 
 ## Current certified portfolio
 
@@ -28,52 +28,51 @@ FECHAI_REFERENCE_ROUTING = PASS 7/7
 FECHAI_PROJECT_ROUTING_RECONCILIATION = IMPLEMENTED
 CANONICAL_GITHUB_LOADER = IMPLEMENTED / L01-L08 PASS 8/8
 HTTP_SERVICE_CODE = MERGED / H01-H08 PASS 8/8
+GIT_BOUND_MAIN_DEPLOYMENT_STATUS = VERCEL SUCCESS
+CANONICAL_HOST = https://ses-runtime-enforcement-gateway.vercel.app
+EXTERNAL_HEALTH = PASS
+EXTERNAL_ROUTE = NOT PROVEN
 OPENAPI = TEMPLATE / HOST NOT YET BOUND
-DEPLOY_READY = YES
-PERSISTED_EXTERNAL_DEPLOYMENT = NOT PROVEN
 ACTION_TOOL = NOT PROVEN INVOCABLE
 ```
 
-Observed deployment blocker:
+Deployment-object lookup through the available Vercel connector still returns `404` and remains a provenance limitation. It does not negate the independently observed external `/health` response.
+
+Evidence:
 
 ```text
-VERCEL_DEPLOY_OPERATION = returned INITIALIZING ids/urls
-VERCEL_GET_DEPLOYMENT = 404 for returned id
-VERCEL_BUILD_LOGS = 404 for returned id
-VERCEL_PROJECT_LIST = [] after attempts
-VERCEL_ENV_SECRET_CONFIGURATION = unavailable in observed connector surface
+tests/runtime/evidence/RUNTIME_ENFORCEMENT_GATEWAY_DEPLOYMENT_ATTEMPT_2026-08-20.md
+tests/runtime/evidence/RUNTIME_ENFORCEMENT_GATEWAY_EXTERNAL_HEALTH_2026-08-20.md
 ```
-
-Evidence: `tests/runtime/evidence/RUNTIME_ENFORCEMENT_GATEWAY_DEPLOYMENT_ATTEMPT_2026-08-20.md`.
 
 ## Next safe action
 
-Do not redesign the Gateway. Resume only the affected deployment/invocation gates through a working authorized Vercel surface:
+Do not redesign or redeploy the Gateway merely because the next gate is still open. Validate the already deployed `POST /route` endpoint proportionally:
 
 ```text
-1. create or associate a persistent Vercel project for the SES Gateway;
-2. configure SES_GITHUB_TOKEN with read-only access to the private SES repository;
-3. configure SES_GATEWAY_API_KEY;
-4. deploy the current Gateway runtime from canonical SES source;
-5. observe GET /health = ready;
-6. observe authenticated POST /route for at least one adopted FECH.AI role;
-7. observe one fail-closed route case;
-8. bind the observed host into a versioned OpenAPI schema;
-9. configure the Action/tool through an actually available authorized configuration surface;
-10. observe one external Action/tool invocation before claiming ACTION_TOOL_INTEGRATED.
+1. execute one authenticated POST /route against the canonical host using the externally configured SES_GATEWAY_API_KEY;
+2. use an exact adopted FECH.AI role and verify decision = ROUTABLE;
+3. verify mutation_authorized = false in the receipt;
+4. execute one authenticated fail-closed POST /route using a non-adopted/legacy role;
+5. verify the fail-closed decision is returned as domain output rather than transport failure;
+6. record both external responses without exposing the API key;
+7. bind the proven canonical host into the versioned OpenAPI schema;
+8. configure the Action/tool only through an actually available authorized surface;
+9. observe one external Action/tool invocation before claiming ACTION_TOOL_INTEGRATED.
 ```
 
-Only deployment/invocation gates are blocked. Controller, loader and HTTP local gates remain valid because no material runtime source change occurred.
+Do not request, store, commit or expose `SES_GATEWAY_API_KEY` or `SES_GITHUB_TOKEN` as evidence.
 
-Do not add database, dashboard, Supabase dependency, semantic/fuzzy free-text routing, automatic specialist adoption, autonomous Builder creation, automatic project mutation or project-truth storage to work around this tooling limitation.
+Controller, loader and HTTP local gates remain valid because no material runtime source change occurred.
+
+Do not add database, dashboard, Supabase dependency, semantic/fuzzy free-text routing, automatic specialist adoption, autonomous Builder creation or automatic project mutation.
 
 ```text
-IMPLEMENTED != DEPLOYED
-DEPLOY_REQUEST_RESPONSE != PERSISTED_DEPLOYMENT
 DEPLOYED != INVOKED
 OPENAPI_TEMPLATE != ACTION_CONFIGURED
 ROUTABLE != EXECUTED
 TOOL_CAPABILITY != AUTHORIZATION
 CERTIFIED_FOR_ANY_PROJECT != CONSUMER_PROJECT_ADOPTED
 PROJECT_CONTEXT_READY != AUTHORIZED_TO_MUTATE
+RETROACTIVE_PASS = NO
 ```
