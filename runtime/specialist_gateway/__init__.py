@@ -15,6 +15,12 @@ from .github_loader import (
     GitHubContentsClient,
     load_canonical_snapshot,
 )
+from .http_api import (
+    API_KEY_ENV,
+    ApiResult,
+    health_check,
+    route_request,
+)
 
 __all__ = [
     "ArchetypeRecord",
@@ -30,4 +36,8 @@ __all__ = [
     "CanonicalSnapshot",
     "GitHubContentsClient",
     "load_canonical_snapshot",
+    "API_KEY_ENV",
+    "ApiResult",
+    "health_check",
+    "route_request",
 ]

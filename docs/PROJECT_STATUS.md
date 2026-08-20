@@ -1,6 +1,6 @@
 # SES — Project Status
 
-**Status:** `RUNTIME_ENFORCEMENT_GATEWAY_OPERATIONALIZATION / CANONICAL_LOADER_V0_1`  
+**Status:** `RUNTIME_ENFORCEMENT_GATEWAY_OPERATIONALIZATION / HTTP_RUNTIME_V0_1_CANDIDATE`  
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System`  
 **Authoritative next action:** `docs/NEXT_SAFE_ACTION.md`
 
@@ -16,35 +16,11 @@ SES is project-agnostic specialist-engineering infrastructure. Consumer projects
 | Software Systems Architect | ACTIVE | `YES` |
 | Documentation Auditor | ACTIVE | `YES / v1.1` |
 
-## Documentation Auditor v1.1
-
-```text
-ARCHETYPE_ID = documentation-auditor
-KERNEL = runtime/custom-gpt/DOCUMENTATION_AUDITOR_BUILDER_KERNEL_V1_1.md
-KERNEL_BLOB = 5bc10297d9e655cf169d2680f914e446232992e0
-KERNEL_CHARACTERS = 7984
-KERNEL_UTF8_BYTES = 7988
-BUILDER_PACKAGE = runtime/custom-gpt/DOCUMENTATION_AUDITOR_BUILDER_PACKAGE_V1_1.md
-C01-C18 = PASS
-RUNTIME_FINGERPRINT_CAPTURED = PASS_WITH_PROVENANCE_LIMITATION
-T01-T30 = PASS
-R01-R06 = 7/7 PASS
-P01-P03 = PASS
-G01-G05 = PASS
-TOOL_HONESTY = PASS
-USER_AUTHORIZED_READY = YES / 2026-08-20 / EXACT KERNEL BLOB
-CERTIFIED_FOR_ANY_PROJECT = YES
-```
-
-Final evidence: `tests/runtime/evidence/DOCUMENTATION_AUDITOR_FINAL_CERTIFICATION_2026-08-20.md`.
-
-Historical v0.9 and v1.0 evidence remains preserved, including R03A/R05/R06 failures, both v1.0 G01 failures, corrected retests and `RETROACTIVE_PASS = NO`.
+All certification remains fingerprint-bound. Historical FAIL/BLOCKED/INVALID/overclaim events remain preserved; `RETROACTIVE_PASS = NO`.
 
 ## Runtime Enforcement Gateway
 
-The Gateway originated as specialist-specific candidate learning during Documentation Auditor work. That historical origin remains historical and does not convert Documentation Auditor proof into Gateway proof.
-
-The merged `core/protocols/RUNTIME_ENFORCEMENT_GATEWAY_CONTRACT.md` now defines a bounded universal SES runtime contract for deterministic project/role/archetype/certification/bootstrap routing semantics. Universalization is limited to those contract semantics; consumer-project role maps and project rules remain project-local.
+The Gateway originated as specialist-specific candidate learning during Documentation Auditor work. The merged contract now defines bounded universal SES routing/enforcement semantics; consumer-project role maps, truth, authority and adoption remain project-local.
 
 Current state:
 
@@ -55,17 +31,33 @@ CONTROLLER_G01_G12 = PASS 12/12
 G12_INITIAL = FAIL / PRESERVED
 FECHAI_SES_REFERENCE_ROUTING = PASS 7/7
 FECHAI_REPOSITORY_ROUTING_RECONCILIATION = IMPLEMENTED VIA FECH.AI PR #122
-CANONICAL_GITHUB_LOADER = IMPLEMENTATION CANDIDATE
-HTTP_RUNTIME = NOT YET PROVEN DEPLOYED
-ACTION_TOOL_INVOCATION = NOT YET PROVEN
+CANONICAL_GITHUB_LOADER = IMPLEMENTED / LOCAL L01-L08 PASS 8/8
+LOADER_INITIAL_YES_IMPLIES_CURRENT_ASSUMPTION = CORRECTED / RETROACTIVE_PASS NO
+HTTP_SERVICE_CODE = IMPLEMENTATION CANDIDATE / LOCAL H01-H08 PASS 8/8
+GET_HEALTH = VERSIONED CANDIDATE
+POST_ROUTE = VERSIONED CANDIDATE / API KEY REQUIRED
+OPENAPI_ACTION_SCHEMA = TEMPLATE / DEPLOYED HOST NOT BOUND
+EXTERNAL_DEPLOYMENT = NOT YET OBSERVED
+EXTERNAL_HEALTH = NOT YET OBSERVED
+EXTERNAL_ROUTE = NOT YET OBSERVED
+ACTION_TOOL_INVOCATION = NOT YET OBSERVED
+```
+
+Required deployment secrets remain external to SES:
+
+```text
+SES_GITHUB_TOKEN = read-only private SES GitHub access
+SES_GATEWAY_API_KEY = route API authentication secret
 ```
 
 Preserve:
 
 ```text
 SPECIALIST_CERTIFICATION != GATEWAY_DEPLOYMENT
-GATEWAY_PROOF != DOCUMENTATION_AUDITOR_C09
 REFERENCE_IMPLEMENTATION != UNIVERSAL PROJECT TRUTH
+HTTP_CODE_VERSIONED != DEPLOYED_SERVICE
+OPENAPI_TEMPLATE != ACTION_CONFIGURED
+DEPLOYED != INVOKED
 ROUTABLE != EXECUTED
 PROJECT_CONTEXT_READY != AUTHORIZED_TO_MUTATE
 ```
