@@ -141,11 +141,15 @@ def parse_certification_ledger(text: str) -> Dict[str, CertificationRecord]:
     records: Dict[str, CertificationRecord] = {}
     row_pattern = re.compile(r"^\|\s*`([^`]+)`\s*\|\s*`(YES|NO)`\s*\|", re.MULTILINE)
     for archetype_id, certification in row_pattern.findall(text):
+        certified_subject = _certified_subject(text, archetype_id)
+        fingerprint_status = (
+            "CURRENT" if certification == "YES" and certified_subject != "NOT_CAPTURED" else "UNSUPPORTED"
+        )
         records[archetype_id] = CertificationRecord(
             archetype_id=archetype_id,
             certification=certification,
-            certified_subject=_certified_subject(text, archetype_id),
-            fingerprint_status="CURRENT" if certification == "YES" else "UNSUPPORTED",
+            certified_subject=certified_subject,
+            fingerprint_status=fingerprint_status,
         )
     if not records:
         raise CanonicalLoadError("Certification ledger contained no parseable certification rows")
@@ -159,13 +163,13 @@ def _certified_subject(text: str, archetype_id: str) -> str:
         flags=re.DOTALL,
     )
     if not section_match:
-        return f"{archetype_id}:LEDGER_CURRENT"
+        return "NOT_CAPTURED"
     body = section_match.group("body")
     for key in ("CURRENT_KERNEL_BLOB", "CURRENT_CANDIDATE", "CURRENT_RUNTIME_FINGERPRINT"):
         match = re.search(rf"^{key}\s*=\s*(.+?)\s*$", body, flags=re.MULTILINE)
         if match:
             return f"{key}={match.group(1)}"
-    return f"{archetype_id}:LEDGER_CURRENT"
+    return "NOT_CAPTURED"
 
 
 def parse_project_adapter(text: str, adapter_path: str) -> ProjectAdapter:
