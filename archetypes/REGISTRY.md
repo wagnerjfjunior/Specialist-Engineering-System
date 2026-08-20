@@ -58,14 +58,14 @@ ALIASES:
 - SES Documentation Auditor
 CONTRACT_PATH: archetypes/documentation-auditor/ARCHETYPE.md
 RESOLUTION_STATUS: ACTIVE
-LIFECYCLE_STATUS: SPEC_CANDIDATE_V0_2 / RUNTIME_NOT_CERTIFIED
+LIFECYCLE_STATUS: READY_V0_2 / L1_PASS / L2_RUNTIME_PASS_FINGERPRINT_BOUND
 ```
 
 The Documentation Auditor archetype provides reusable evidence-engineering method for claim decomposition, claim-to-evidence traceability, provenance, proof obligations, contradiction handling, freshness/invalidation, bounded negative evidence, final-state verification and reproducible documentation/evidence verdicts.
 
 It does not own project truth, project-local source precedence, lifecycle authority, runtime state or specialist routing. Those remain consumer-project responsibilities and must be resolved after project bootstrap.
 
-`RESOLUTION_STATUS: ACTIVE` means the versioned archetype contract can be resolved by SES. It does **not** mean an external Builder exists, has been configured, has passed runtime behavioral certification or is eligible to replace any project-bound specialist.
+`RESOLUTION_STATUS: ACTIVE` means the versioned archetype contract can be resolved by SES. The validated Builder/runtime certification remains bound to the recorded Documentation Auditor v1.1 fingerprint and does not automatically adopt the specialist into consumer projects, create project context, or authorize mutation.
 
 ### UX/UI APP Specialist
 
