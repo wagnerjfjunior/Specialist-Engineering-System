@@ -2,9 +2,9 @@
 
 > Registro autoritativo da próxima ação segura do SES quando este arquivo estiver em `main`.
 
-**Next action ID:** `runtime-enforcement-gateway-external-route-proof`  
+**Next action ID:** `runtime-enforcement-gateway-action-tool-integration`  
 **Primary target:** `SES Runtime Enforcement Gateway`  
-**Current phase:** `RUNTIME_ENFORCEMENT_GATEWAY_OPERATIONALIZATION / ROUTE_PROOF`
+**Current phase:** `RUNTIME_ENFORCEMENT_GATEWAY_OPERATIONALIZATION / ACTION_INTEGRATION`
 
 ## Current certified portfolio
 
@@ -31,45 +31,50 @@ HTTP_SERVICE_CODE = MERGED / H01-H08 PASS 8/8
 GIT_BOUND_MAIN_DEPLOYMENT_STATUS = VERCEL SUCCESS
 CANONICAL_HOST = https://ses-runtime-enforcement-gateway.vercel.app
 EXTERNAL_HEALTH = PASS
-EXTERNAL_ROUTE = NOT PROVEN
-OPENAPI = TEMPLATE / HOST NOT YET BOUND
-ACTION_TOOL = NOT PROVEN INVOCABLE
+EXTERNAL_ROUTE_ADOPTED_ROLE = PASS
+EXTERNAL_ROUTE_LEGACY_FAIL_CLOSED = PASS
+ROUTE_MUTATION_AUTHORIZED = false
+OPENAPI_BOUND_SCHEMA = runtime/specialist_gateway/RUNTIME_ENFORCEMENT_GATEWAY.openapi.yaml
+ACTION_TOOL_CONFIGURATION = NOT PROVEN
+ACTION_TOOL_INVOCATION = NOT PROVEN
 ```
 
-Deployment-object lookup through the available Vercel connector still returns `404` and remains a provenance limitation. It does not negate the independently observed external `/health` response.
+The route proof is pinned to SES ref `ea0e7a189be72261992249bcc357bc51dad5a4f7`. A later documentation/OpenAPI commit does not retroactively rewrite that receipt. The Vercel deployment-object lookup limitation remains preserved separately.
 
 Evidence:
 
 ```text
 tests/runtime/evidence/RUNTIME_ENFORCEMENT_GATEWAY_DEPLOYMENT_ATTEMPT_2026-08-20.md
 tests/runtime/evidence/RUNTIME_ENFORCEMENT_GATEWAY_EXTERNAL_HEALTH_2026-08-20.md
+tests/runtime/evidence/RUNTIME_ENFORCEMENT_GATEWAY_EXTERNAL_ROUTE_2026-08-20.md
 ```
 
 ## Next safe action
 
-Do not redesign or redeploy the Gateway merely because the next gate is still open. Validate the already deployed `POST /route` endpoint proportionally:
+Do not redesign or redeploy the Gateway merely because Action/tool integration remains open. Continue only through an authorized Action/tool configuration surface:
 
 ```text
-1. execute one authenticated POST /route against the canonical host using the externally configured SES_GATEWAY_API_KEY;
-2. use an exact adopted FECH.AI role and verify decision = ROUTABLE;
-3. verify mutation_authorized = false in the receipt;
-4. execute one authenticated fail-closed POST /route using a non-adopted/legacy role;
-5. verify the fail-closed decision is returned as domain output rather than transport failure;
-6. record both external responses without exposing the API key;
-7. bind the proven canonical host into the versioned OpenAPI schema;
-8. configure the Action/tool only through an actually available authorized surface;
-9. observe one external Action/tool invocation before claiming ACTION_TOOL_INTEGRATED.
+1. configure an Action/tool using runtime/specialist_gateway/RUNTIME_ENFORCEMENT_GATEWAY.openapi.yaml;
+2. configure the Action credential as the existing SES_GATEWAY_API_KEY without committing or exposing the secret;
+3. verify the configured tool exposes routeSpecialistRole and, where supported, getGatewayHealth;
+4. invoke routeSpecialistRole externally for an exact adopted FECH.AI role;
+5. verify the returned receipt remains ROUTABLE and mutation_authorized = false;
+6. invoke or otherwise verify one fail-closed case when the Action surface permits it;
+7. record the actual Action/tool operation invoked, target host, returned SES_REF and result;
+8. only after observed invocation set ACTION_TOOL_INTEGRATION = PASS.
 ```
+
+If no authorized Action/tool configuration surface is available, stop at `OPENAPI_BOUND / ACTION_CONFIGURATION_REQUIRED`. Do not substitute manual curl proof for Action invocation proof.
 
 Do not request, store, commit or expose `SES_GATEWAY_API_KEY` or `SES_GITHUB_TOKEN` as evidence.
 
-Controller, loader and HTTP local gates remain valid because no material runtime source change occurred.
+Controller, loader and HTTP local gates remain valid because this increment changes evidence/documentation/OpenAPI binding, not routing behavior.
 
 Do not add database, dashboard, Supabase dependency, semantic/fuzzy free-text routing, automatic specialist adoption, autonomous Builder creation or automatic project mutation.
 
 ```text
-DEPLOYED != INVOKED
-OPENAPI_TEMPLATE != ACTION_CONFIGURED
+OPENAPI_BOUND != ACTION_CONFIGURED
+ACTION_CONFIGURED != ACTION_INVOKED
 ROUTABLE != EXECUTED
 TOOL_CAPABILITY != AUTHORIZATION
 CERTIFIED_FOR_ANY_PROJECT != CONSUMER_PROJECT_ADOPTED
