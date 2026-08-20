@@ -12,7 +12,7 @@
 3. read `docs/PROJECT_STATUS.md`;
 4. read `docs/NEXT_SAFE_ACTION.md`;
 5. read `docs/BLOCKED_ACTIONS.md`;
-6. for Gateway work read `core/protocols/RUNTIME_ENFORCEMENT_GATEWAY_CONTRACT.md`, `core/protocols/PROJECT_ADAPTER_CONTRACT.md`, `runtime/specialist_gateway/README.md`, `runtime/specialist_gateway/controller.py`, `runtime/specialist_gateway/github_loader.py`, `runtime/specialist_gateway/http_api.py` and `runtime/specialist_gateway/RUNTIME_ENFORCEMENT_GATEWAY.openapi.yaml`;
+6. for Gateway work read `core/protocols/RUNTIME_ENFORCEMENT_GATEWAY_CONTRACT.md`, `core/protocols/PROJECT_ADAPTER_CONTRACT.md`, `runtime/specialist_gateway/README.md`, `runtime/specialist_gateway/controller.py`, `runtime/specialist_gateway/github_loader.py`, `runtime/specialist_gateway/http_api.py`, `runtime/specialist_gateway/RUNTIME_ENFORCEMENT_GATEWAY.openapi.yaml` and `runtime/specialist_gateway/CUSTOM_GPT_PROFILE.md`;
 7. read runtime/deployment/Action evidence before making operational claims:
    - `tests/runtime/evidence/RUNTIME_ENFORCEMENT_GATEWAY_DEPLOYMENT_ATTEMPT_2026-08-20.md`;
    - `tests/runtime/evidence/RUNTIME_ENFORCEMENT_GATEWAY_EXTERNAL_HEALTH_2026-08-20.md`;
@@ -38,7 +38,7 @@ RETROACTIVE_ERASURE = NO
 
 ## Runtime Enforcement Gateway
 
-Merged runtime foundation before this evidence increment:
+Merged runtime foundation:
 
 ```text
 PR #43 = contract v0.1
@@ -50,6 +50,7 @@ PR #48 = deployment blocker evidence
 PR #49 = post-Git-connection deployment trigger/evidence checkpoint
 PR #50 = Git-bound external health proof
 PR #51 = external route proof + host-bound OpenAPI
+PR #52 = GPT Action Preview integration proof
 ```
 
 Observed evidence:
@@ -87,12 +88,27 @@ OPENAPI TEMPLATE = PRESERVED
 OPENAPI BOUND HOST = https://ses-runtime-enforcement-gateway.vercel.app
 EXTERNAL DEPLOYMENT REACHABILITY = PROVEN
 GPT ACTION PREVIEW COMPATIBILITY = PROVEN
-VERCEL DEPLOYMENT OBJECT LOOKUP = 404 / CONNECTOR LIMITATION
+CUSTOM GPT OPERATIONAL PROFILE = runtime/specialist_gateway/CUSTOM_GPT_PROFILE.md
+RECOMMENDED CUSTOM GPT NAME = SES — Specialist Router
 ACTION PERSISTED/PUBLISHED CONFIGURATION = NOT PROVEN
-SFJM ACTION ADOPTION = NOT PROVEN
+OPERATIONAL CUSTOM GPT ADOPTION = NOT PROVEN
+SFJM CUSTOM GPT ASSUMPTION = USER_CORRECTED / INITIAL_OVERCLAIM
+VERCEL DEPLOYMENT OBJECT LOOKUP = 404 / CONNECTOR LIMITATION
 ```
 
-The Custom GPT shown in the Action proof was named `SES -Runtime-Enforcement-Gateway`. Its Action configuration and Preview calls prove the integration path, but the evidence showed an `Atualizar` control and an empty GPT instruction field. Treat it as a test harness unless explicitly authorized as the operational broker.
+## Consumer correction
+
+There is no separate `SFJM Custom GPT` in the current architecture. The existing Custom GPT was created specifically to host the Gateway Action; its initial name `SES -Runtime-Enforcement-Gateway` was a provisional alias because no name/profile had been specified. The prior handoff classification that treated it as a test harness awaiting SFJM adoption was an assistant inference later corrected by the user.
+
+Preserve that history as:
+
+```text
+INITIAL_ASSUMPTION = separate SFJM Custom GPT consumer
+ADJUDICATION = USER_CORRECTED / INITIAL_OVERCLAIM
+RETROACTIVE_ERASURE = NO
+```
+
+The Custom GPT frontend and the Runtime Enforcement Gateway backend are separate objects. The recommended human-facing identity is `SES — Specialist Router`; its exact Builder profile is versioned in `runtime/specialist_gateway/CUSTOM_GPT_PROFILE.md`.
 
 Required runtime secrets remain external and must not be requested or committed:
 
@@ -103,14 +119,14 @@ SES_GATEWAY_API_KEY
 
 ## Next objective
 
-No Gateway redesign is required. Adopt the proven Action surface in the explicitly chosen operational consumer GPT. If SFJM is the intended consumer, direct SFJM Action adoption is the minimum path; do not add another broker layer without demonstrated need.
+No Gateway redesign is required. Apply the versioned `SES — Specialist Router` profile to the existing Custom GPT, persist/update it, then prove the persisted configuration in a fresh conversation.
 
 ```text
 MINIMUM_OPERATIONAL_GATEWAY_RUNTIME = PASS
-→ explicit consumer selection/adoption
-→ persisted Action configuration
-→ fresh-session invocation proof
-→ consumer ACTION_ADOPTION PASS only if observed
+→ apply CUSTOM_GPT_PROFILE.md
+→ persist/update existing Custom GPT
+→ fresh-session positive + fail-closed Action proof
+→ OPERATIONAL_CUSTOM_GPT_ADOPTION PASS only if observed
 ```
 
 Preserve:
@@ -120,8 +136,9 @@ AS_IS != TARGET_STATE
 TOOL_CAPABILITY != AUTHORIZATION
 CERTIFIED_FOR_ANY_PROJECT != CONSUMER_PROJECT_ADOPTED
 ACTION_PREVIEW_INVOKED != ACTION_PUBLISHED
-TEST_HARNESS != CONSUMER_ADOPTION
+CUSTOM_GPT_PROFILE_DEFINED != CUSTOM_GPT_PROFILE_ADOPTED
 ROUTABLE != EXECUTED
 PROJECT_CONTEXT_READY != AUTHORIZED_TO_MUTATE
+USER_CORRECTED_INITIAL_OVERCLAIM != RETROACTIVE_ERASURE
 RETROACTIVE_PASS = NO
 ```

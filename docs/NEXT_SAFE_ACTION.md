@@ -2,9 +2,9 @@
 
 > Registro autoritativo da próxima ação segura do SES quando este arquivo estiver em `main`.
 
-**Next action ID:** `runtime-enforcement-gateway-consumer-action-adoption`  
-**Primary target:** `SES Runtime Enforcement Gateway consumer integration`  
-**Current phase:** `RUNTIME_ENFORCEMENT_GATEWAY_OPERATIONALIZATION / CONSUMER_ADOPTION`
+**Next action ID:** `runtime-enforcement-gateway-operational-custom-gpt-adoption`  
+**Primary target:** `SES — Specialist Router`  
+**Current phase:** `RUNTIME_ENFORCEMENT_GATEWAY_OPERATIONALIZATION / CUSTOM_GPT_ADOPTION`
 
 ## Current certified portfolio
 
@@ -40,8 +40,11 @@ GPT_ACTION_PREVIEW_POSITIVE_ROUTE = PASS
 GPT_ACTION_PREVIEW_FAIL_CLOSED_ROUTE = PASS
 GPT_ACTION_PROOF_SES_REF = 7234219a4859f7c31571371030aaad459886c0ad
 MINIMUM_OPERATIONAL_GATEWAY_RUNTIME = PASS
+CUSTOM_GPT_OPERATIONAL_PROFILE = runtime/specialist_gateway/CUSTOM_GPT_PROFILE.md
+RECOMMENDED_CUSTOM_GPT_NAME = SES — Specialist Router
 ACTION_PERSISTED_OR_PUBLISHED_CONFIGURATION = NOT PROVEN
-SFJM_ACTION_ADOPTION = NOT PROVEN
+OPERATIONAL_CUSTOM_GPT_ADOPTION = NOT PROVEN
+SFJM_CUSTOM_GPT_ASSUMPTION = USER_CORRECTED / INITIAL_OVERCLAIM
 ```
 
 Evidence:
@@ -53,36 +56,53 @@ tests/runtime/evidence/RUNTIME_ENFORCEMENT_GATEWAY_EXTERNAL_ROUTE_2026-08-20.md
 tests/runtime/evidence/RUNTIME_ENFORCEMENT_GATEWAY_GPT_ACTION_PREVIEW_2026-08-20.md
 ```
 
-## Next safe action
+## User-corrected consumer model
 
-Do not redesign the Gateway. The minimum operational runtime and GPT Action preview compatibility are proven. Continue only with explicit consumer adoption:
+There is no separate `SFJM Custom GPT` in the current design. The existing Custom GPT name `SES -Runtime-Enforcement-Gateway` was a provisional alias chosen during setup because the editor required a name. The prior assumption that a different SFJM Custom GPT must receive the Action is preserved as an initial overclaim corrected by the user.
+
+The minimum design is now:
 
 ```text
-1. identify the operational Custom GPT that must own the Gateway Action;
-2. if SFJM is the intended consumer, configure the existing host-bound OpenAPI schema directly in SFJM rather than creating another routing layer;
-3. use the existing SES_GATEWAY_API_KEY as a hidden custom-header credential named X-SES-Gateway-Key;
-4. add bounded consumer instructions defining when routeSpecialistRole must be called and forbidding invented project identifiers, semantic role translation and mutation-authority inference;
-5. persist/update the operational GPT configuration;
-6. open a fresh conversation in that operational GPT;
-7. observe one exact adopted-role invocation and verify ROUTABLE + mutation_authorized=false;
-8. observe one fail-closed case if proportionate;
-9. record the operational consumer identity and proof without exposing secrets;
-10. only then set that consumer's ACTION_ADOPTION = PASS.
+Human / project workflow
+→ SES — Specialist Router (Custom GPT)
+→ routeSpecialistRole Action
+→ SES Runtime Enforcement Gateway
+→ deterministic routing receipt
 ```
 
-The Custom GPT named `SES -Runtime-Enforcement-Gateway` used for the current Preview proof is a test harness unless explicitly authorized as the operational broker. Do not publish or elevate it solely because Preview tests passed.
+The Custom GPT is a routing client. The backend Gateway remains the enforcement service.
 
-No controller, loader, HTTP or deployment revalidation is required solely for consumer adoption unless runtime source changes materially.
+## Next safe action
+
+Do not redesign or redeploy the Gateway. Adopt the versioned Custom GPT profile already defined in `runtime/specialist_gateway/CUSTOM_GPT_PROFILE.md`:
+
+```text
+1. rename the existing Custom GPT from the provisional alias to `SES — Specialist Router`;
+2. replace its description with the versioned Description from CUSTOM_GPT_PROFILE.md;
+3. paste the exact versioned Instructions from CUSTOM_GPT_PROFILE.md into the Builder Instructions field;
+4. keep the already proven host-bound OpenAPI Action and hidden X-SES-Gateway-Key credential;
+5. persist/update the Custom GPT configuration;
+6. open a fresh conversation in that updated GPT;
+7. request one exact adopted FECH.AI role and verify routeSpecialistRole is actually invoked, decision = ROUTABLE and mutation_authorized = false;
+8. request one exact legacy/non-adopted role and verify no semantic translation occurs;
+9. record the returned SES_REF and operational GPT identity without exposing secrets;
+10. only then set OPERATIONAL_CUSTOM_GPT_ADOPTION = PASS.
+```
+
+Do not add a second broker GPT merely to represent SFJM. Do not embed consumer-project role maps in the GPT Instructions. If project_identifier or role is missing, the GPT must ask rather than guess.
+
+No controller, loader, HTTP or deployment revalidation is required solely for this consumer-profile adoption unless runtime source changes materially.
 
 Do not request, store, commit or expose `SES_GATEWAY_API_KEY` or `SES_GITHUB_TOKEN` as evidence.
 
 ```text
 MINIMUM_OPERATIONAL_GATEWAY_RUNTIME = PASS
+CUSTOM_GPT_PROFILE_DEFINED != CUSTOM_GPT_PROFILE_ADOPTED
 ACTION_PREVIEW_INVOKED != ACTION_PUBLISHED
-TEST_HARNESS != CONSUMER_ADOPTION
 ROUTABLE != EXECUTED
 TOOL_CAPABILITY != AUTHORIZATION
 CERTIFIED_FOR_ANY_PROJECT != CONSUMER_PROJECT_ADOPTED
 PROJECT_CONTEXT_READY != AUTHORIZED_TO_MUTATE
+USER_CORRECTED_INITIAL_OVERCLAIM != RETROACTIVE_ERASURE
 RETROACTIVE_PASS = NO
 ```

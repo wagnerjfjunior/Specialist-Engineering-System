@@ -55,8 +55,11 @@ GPT_ACTION_ROUTE_LEGACY_FAIL_CLOSED_PREVIEW = PASS / SPECIALIST_ROLE_NOT_ADOPTED
 GPT_ACTION_PROOF_SES_REF = 7234219a4859f7c31571371030aaad459886c0ad
 GPT_ACTION_MUTATION_AUTHORIZED = false
 MINIMUM_OPERATIONAL_GATEWAY_RUNTIME = PASS
+CUSTOM_GPT_OPERATIONAL_PROFILE = DEFINED / runtime/specialist_gateway/CUSTOM_GPT_PROFILE.md
+RECOMMENDED_CUSTOM_GPT_NAME = SES — Specialist Router
 ACTION_PERSISTED_OR_PUBLISHED_CONFIGURATION = NOT PROVEN
-SFJM_ACTION_ADOPTION = NOT PROVEN
+OPERATIONAL_CUSTOM_GPT_ADOPTION = NOT PROVEN
+SFJM_CUSTOM_GPT_ASSUMPTION = USER_CORRECTED / INITIAL_OVERCLAIM
 VERCEL_DEPLOYMENT_OBJECT_LOOKUP = 404 / CONNECTOR LIMITATION PRESERVED
 ```
 
@@ -76,7 +79,11 @@ SES_GITHUB_TOKEN = read-only private SES GitHub access
 SES_GATEWAY_API_KEY = route API authentication secret
 ```
 
-The minimum Gateway runtime is operational: canonical-source loading, external health, positive routing, fail-closed routing and Custom GPT Action preview invocation are proven. The Action proof was produced in a Custom GPT named `SES -Runtime-Enforcement-Gateway`; it proves Action/runtime compatibility but does not silently establish persistent publication or SFJM adoption. The Vercel deployment-object lookup limitation remains preserved separately.
+The minimum Gateway runtime is operational: canonical-source loading, external health, positive routing, fail-closed routing and Custom GPT Action preview invocation are proven.
+
+A subsequent user correction established that there is no separate `SFJM Custom GPT`. The Custom GPT name `SES -Runtime-Enforcement-Gateway` was a provisional alias chosen only because a name was required during Action setup, and no Builder Instructions had yet been supplied. The earlier assumption that this GPT was merely a test harness pending SFJM adoption is therefore preserved as `USER_CORRECTED / INITIAL_OVERCLAIM`, not silently rewritten.
+
+The operational Custom GPT profile is now explicitly defined in `runtime/specialist_gateway/CUSTOM_GPT_PROFILE.md`. Adoption remains unproven until that name/description/instruction profile is persisted in the actual Custom GPT and a fresh-session invocation is observed.
 
 Preserve:
 
@@ -84,9 +91,10 @@ Preserve:
 SPECIALIST_CERTIFICATION != GATEWAY_DEPLOYMENT
 REFERENCE_IMPLEMENTATION != UNIVERSAL PROJECT TRUTH
 ACTION_PREVIEW_INVOKED != ACTION_PUBLISHED
-TEST_HARNESS != CONSUMER_ADOPTION
+CUSTOM_GPT_PROFILE_DEFINED != CUSTOM_GPT_PROFILE_ADOPTED
 ROUTABLE != EXECUTED
 PROJECT_CONTEXT_READY != AUTHORIZED_TO_MUTATE
 TOOL_CAPABILITY != AUTHORIZATION
+USER_CORRECTED_INITIAL_OVERCLAIM != RETROACTIVE_ERASURE
 RETROACTIVE_PASS = NO
 ```
