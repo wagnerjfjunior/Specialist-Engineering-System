@@ -1,6 +1,6 @@
 # SES — Project Status
 
-**Status:** `RUNTIME_ENFORCEMENT_GATEWAY_OPERATIONALIZATION / ROUTE_PROVEN_ACTION_PENDING`  
+**Status:** `RUNTIME_ENFORCEMENT_GATEWAY_OPERATIONALIZATION / MINIMUM_OPERATIONAL_RUNTIME_PROVEN`  
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System`  
 **Authoritative next action:** `docs/NEXT_SAFE_ACTION.md`
 
@@ -47,22 +47,27 @@ ROUTE_MUTATION_AUTHORIZED = false
 OPENAPI_TEMPLATE = PRESERVED
 OPENAPI_BOUND_SCHEMA = runtime/specialist_gateway/RUNTIME_ENFORCEMENT_GATEWAY.openapi.yaml
 OPENAPI_BOUND_HOST = https://ses-runtime-enforcement-gateway.vercel.app
-ACTION_TOOL_CONFIGURATION = NOT PROVEN
-ACTION_TOOL_INVOCATION = NOT PROVEN
+GPT_ACTION_SCHEMA_COMPATIBILITY = PASS
+GPT_ACTION_AUTH_HEADER_CONFIGURATION = PASS / USER-UI OBSERVED
+GPT_ACTION_GET_HEALTH_PREVIEW = PASS
+GPT_ACTION_ROUTE_ADOPTED_ROLE_PREVIEW = PASS / ROUTABLE
+GPT_ACTION_ROUTE_LEGACY_FAIL_CLOSED_PREVIEW = PASS / SPECIALIST_ROLE_NOT_ADOPTED
+GPT_ACTION_PROOF_SES_REF = 7234219a4859f7c31571371030aaad459886c0ad
+GPT_ACTION_MUTATION_AUTHORIZED = false
+MINIMUM_OPERATIONAL_GATEWAY_RUNTIME = PASS
+ACTION_PERSISTED_OR_PUBLISHED_CONFIGURATION = NOT PROVEN
+SFJM_ACTION_ADOPTION = NOT PROVEN
 VERCEL_DEPLOYMENT_OBJECT_LOOKUP = 404 / CONNECTOR LIMITATION PRESERVED
 ```
 
-Deployment history remains preserved in:
+Evidence:
 
-`tests/runtime/evidence/RUNTIME_ENFORCEMENT_GATEWAY_DEPLOYMENT_ATTEMPT_2026-08-20.md`
-
-External health evidence:
-
-`tests/runtime/evidence/RUNTIME_ENFORCEMENT_GATEWAY_EXTERNAL_HEALTH_2026-08-20.md`
-
-External route evidence:
-
-`tests/runtime/evidence/RUNTIME_ENFORCEMENT_GATEWAY_EXTERNAL_ROUTE_2026-08-20.md`
+```text
+tests/runtime/evidence/RUNTIME_ENFORCEMENT_GATEWAY_DEPLOYMENT_ATTEMPT_2026-08-20.md
+tests/runtime/evidence/RUNTIME_ENFORCEMENT_GATEWAY_EXTERNAL_HEALTH_2026-08-20.md
+tests/runtime/evidence/RUNTIME_ENFORCEMENT_GATEWAY_EXTERNAL_ROUTE_2026-08-20.md
+tests/runtime/evidence/RUNTIME_ENFORCEMENT_GATEWAY_GPT_ACTION_PREVIEW_2026-08-20.md
+```
 
 Required runtime secrets remain external to SES:
 
@@ -71,17 +76,17 @@ SES_GITHUB_TOKEN = read-only private SES GitHub access
 SES_GATEWAY_API_KEY = route API authentication secret
 ```
 
-The external service is reachable and both positive and fail-closed routing behavior are proven. The Vercel connector still cannot resolve deployment objects associated with successful Git-bound statuses; that provenance limitation remains preserved and does not erase the independently observed HTTP evidence.
+The minimum Gateway runtime is operational: canonical-source loading, external health, positive routing, fail-closed routing and Custom GPT Action preview invocation are proven. The Action proof was produced in a Custom GPT named `SES -Runtime-Enforcement-Gateway`; it proves Action/runtime compatibility but does not silently establish persistent publication or SFJM adoption. The Vercel deployment-object lookup limitation remains preserved separately.
 
 Preserve:
 
 ```text
 SPECIALIST_CERTIFICATION != GATEWAY_DEPLOYMENT
 REFERENCE_IMPLEMENTATION != UNIVERSAL PROJECT TRUTH
-OPENAPI_BOUND != ACTION_CONFIGURED
-ACTION_CONFIGURED != ACTION_INVOKED
-DEPLOYED != INVOKED
+ACTION_PREVIEW_INVOKED != ACTION_PUBLISHED
+TEST_HARNESS != CONSUMER_ADOPTION
 ROUTABLE != EXECUTED
 PROJECT_CONTEXT_READY != AUTHORIZED_TO_MUTATE
+TOOL_CAPABILITY != AUTHORIZATION
 RETROACTIVE_PASS = NO
 ```

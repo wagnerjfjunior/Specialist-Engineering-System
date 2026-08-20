@@ -1,6 +1,6 @@
 # SES — Current Handoff
 
-**Status:** `RUNTIME_ENFORCEMENT_GATEWAY_OPERATIONALIZATION / ROUTE_PROVEN_ACTION_PENDING`  
+**Status:** `RUNTIME_ENFORCEMENT_GATEWAY_OPERATIONALIZATION / MINIMUM_OPERATIONAL_RUNTIME_PROVEN`  
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System`  
 **Canonical ref rule:** resolve `main` live before material work  
 **Authoritative next action:** `docs/NEXT_SAFE_ACTION.md`
@@ -13,10 +13,11 @@
 4. read `docs/NEXT_SAFE_ACTION.md`;
 5. read `docs/BLOCKED_ACTIONS.md`;
 6. for Gateway work read `core/protocols/RUNTIME_ENFORCEMENT_GATEWAY_CONTRACT.md`, `core/protocols/PROJECT_ADAPTER_CONTRACT.md`, `runtime/specialist_gateway/README.md`, `runtime/specialist_gateway/controller.py`, `runtime/specialist_gateway/github_loader.py`, `runtime/specialist_gateway/http_api.py` and `runtime/specialist_gateway/RUNTIME_ENFORCEMENT_GATEWAY.openapi.yaml`;
-7. read deployment/runtime evidence before making deployment/invocation claims:
+7. read runtime/deployment/Action evidence before making operational claims:
    - `tests/runtime/evidence/RUNTIME_ENFORCEMENT_GATEWAY_DEPLOYMENT_ATTEMPT_2026-08-20.md`;
    - `tests/runtime/evidence/RUNTIME_ENFORCEMENT_GATEWAY_EXTERNAL_HEALTH_2026-08-20.md`;
-   - `tests/runtime/evidence/RUNTIME_ENFORCEMENT_GATEWAY_EXTERNAL_ROUTE_2026-08-20.md`.
+   - `tests/runtime/evidence/RUNTIME_ENFORCEMENT_GATEWAY_EXTERNAL_ROUTE_2026-08-20.md`;
+   - `tests/runtime/evidence/RUNTIME_ENFORCEMENT_GATEWAY_GPT_ACTION_PREVIEW_2026-08-20.md`.
 
 ## Current certified portfolio
 
@@ -37,7 +38,7 @@ RETROACTIVE_ERASURE = NO
 
 ## Runtime Enforcement Gateway
 
-Merged runtime foundation before this evidence/OpenAPI increment:
+Merged runtime foundation before this evidence increment:
 
 ```text
 PR #43 = contract v0.1
@@ -48,6 +49,7 @@ PR #47 = minimum HTTP runtime + Vercel config + OpenAPI template
 PR #48 = deployment blocker evidence
 PR #49 = post-Git-connection deployment trigger/evidence checkpoint
 PR #50 = Git-bound external health proof
+PR #51 = external route proof + host-bound OpenAPI
 ```
 
 Observed evidence:
@@ -63,8 +65,13 @@ CANONICAL HOST = https://ses-runtime-enforcement-gateway.vercel.app
 EXTERNAL GET /health = PASS
 EXTERNAL POST /route documentation_audit = PASS / ROUTABLE
 EXTERNAL POST /route GPT0 = PASS / SPECIALIST_ROLE_NOT_ADOPTED
-ROUTE PROOF SES_REF = ea0e7a189be72261992249bcc357bc51dad5a4f7
-ROUTE MUTATION_AUTHORIZED = false
+OPENAPI BOUND SCHEMA = runtime/specialist_gateway/RUNTIME_ENFORCEMENT_GATEWAY.openapi.yaml
+GPT ACTION getGatewayHealth PREVIEW = PASS
+GPT ACTION routeSpecialistRole documentation_audit PREVIEW = PASS / ROUTABLE
+GPT ACTION routeSpecialistRole GPT0 PREVIEW = PASS / SPECIALIST_ROLE_NOT_ADOPTED
+GPT ACTION PROOF SES_REF = 7234219a4859f7c31571371030aaad459886c0ad
+GPT ACTION MUTATION_AUTHORIZED = false
+MINIMUM OPERATIONAL GATEWAY RUNTIME = PASS
 ```
 
 Current runtime boundary:
@@ -77,15 +84,15 @@ api/health.py = MERGED / EXTERNALLY PROVEN
 api/route.py = MERGED / EXTERNALLY PROVEN
 vercel.json = MERGED
 OPENAPI TEMPLATE = PRESERVED
-OPENAPI BOUND SCHEMA = runtime/specialist_gateway/RUNTIME_ENFORCEMENT_GATEWAY.openapi.yaml
 OPENAPI BOUND HOST = https://ses-runtime-enforcement-gateway.vercel.app
 EXTERNAL DEPLOYMENT REACHABILITY = PROVEN
+GPT ACTION PREVIEW COMPATIBILITY = PROVEN
 VERCEL DEPLOYMENT OBJECT LOOKUP = 404 / CONNECTOR LIMITATION
-ACTION/TOOL CONFIGURATION = NOT PROVEN
-ACTION/TOOL INVOCATION = NOT PROVEN
+ACTION PERSISTED/PUBLISHED CONFIGURATION = NOT PROVEN
+SFJM ACTION ADOPTION = NOT PROVEN
 ```
 
-Earlier Vercel deploy attempts and their failures remain preserved. They are not overwritten by the later successful Git-bound deployment/HTTP evidence.
+The Custom GPT shown in the Action proof was named `SES -Runtime-Enforcement-Gateway`. Its Action configuration and Preview calls prove the integration path, but the evidence showed an `Atualizar` control and an empty GPT instruction field. Treat it as a test harness unless explicitly authorized as the operational broker.
 
 Required runtime secrets remain external and must not be requested or committed:
 
@@ -96,14 +103,14 @@ SES_GATEWAY_API_KEY
 
 ## Next objective
 
-Configure the bound OpenAPI schema in an authorized Action/tool surface and prove one actual external invocation. Manual `curl` route proof cannot be relabeled as Action/tool proof.
+No Gateway redesign is required. Adopt the proven Action surface in the explicitly chosen operational consumer GPT. If SFJM is the intended consumer, direct SFJM Action adoption is the minimum path; do not add another broker layer without demonstrated need.
 
 ```text
-OPENAPI_BOUND
-→ ACTION_CONFIGURED
-→ routeSpecialistRole INVOKED
-→ receipt observed
-→ ACTION_TOOL_INTEGRATION PASS only if actually proven
+MINIMUM_OPERATIONAL_GATEWAY_RUNTIME = PASS
+→ explicit consumer selection/adoption
+→ persisted Action configuration
+→ fresh-session invocation proof
+→ consumer ACTION_ADOPTION PASS only if observed
 ```
 
 Preserve:
@@ -112,10 +119,9 @@ Preserve:
 AS_IS != TARGET_STATE
 TOOL_CAPABILITY != AUTHORIZATION
 CERTIFIED_FOR_ANY_PROJECT != CONSUMER_PROJECT_ADOPTED
-OPENAPI_BOUND != ACTION_CONFIGURED
-ACTION_CONFIGURED != ACTION_INVOKED
+ACTION_PREVIEW_INVOKED != ACTION_PUBLISHED
+TEST_HARNESS != CONSUMER_ADOPTION
 ROUTABLE != EXECUTED
 PROJECT_CONTEXT_READY != AUTHORIZED_TO_MUTATE
-DEPLOYED != INVOKED
 RETROACTIVE_PASS = NO
 ```
