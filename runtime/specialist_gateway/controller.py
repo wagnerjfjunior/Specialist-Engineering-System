@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from enum import Enum
 from typing import Mapping, Optional, Sequence, Tuple
 
@@ -220,7 +220,6 @@ class RuntimeEnforcementGateway:
             return self._receipt(
                 request,
                 **certification_fields,
-                project_bootstrap_entrypoint="NOT_RESOLVED",
                 decision=Decision.PROJECT_BOOTSTRAP_UNRESOLVED,
                 blocker="PROJECT_BOOTSTRAP_UNRESOLVED",
             )
