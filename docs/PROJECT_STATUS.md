@@ -1,6 +1,6 @@
 # SES — Project Status
 
-**Status:** `RUNTIME_ENFORCEMENT_GATEWAY_OPERATIONALIZATION / MINIMUM_OPERATIONAL_RUNTIME_PROVEN`  
+**Status:** `RUNTIME_ENFORCEMENT_GATEWAY / OPERATIONAL_MINIMUM_SCOPE_COMPLETE`  
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System`  
 **Authoritative next action:** `docs/NEXT_SAFE_ACTION.md`
 
@@ -57,10 +57,17 @@ GPT_ACTION_MUTATION_AUTHORIZED = false
 MINIMUM_OPERATIONAL_GATEWAY_RUNTIME = PASS
 CUSTOM_GPT_OPERATIONAL_PROFILE = DEFINED / runtime/specialist_gateway/CUSTOM_GPT_PROFILE.md
 RECOMMENDED_CUSTOM_GPT_NAME = SES — Specialist Router
-ACTION_PERSISTED_OR_PUBLISHED_CONFIGURATION = NOT PROVEN
-OPERATIONAL_CUSTOM_GPT_ADOPTION = NOT PROVEN
+OPERATIONAL_CUSTOM_GPT_ACTION_INVOCATION = PASS / USER-REPORTED ACTUAL INVOCATION
+OPERATIONAL_CUSTOM_GPT_POSITIVE_ROUTE = PASS / ROUTABLE
+OPERATIONAL_CUSTOM_GPT_FAIL_CLOSED_ROUTE = PASS / SPECIALIST_ROLE_NOT_ADOPTED
+OPERATIONAL_CUSTOM_GPT_MUTATION_AUTHORIZED = false
+OPERATIONAL_CUSTOM_GPT_PROOF_SES_REF = 4a2cf6acff0f05254fe2d2e76bebbc57cbc9cf29
+CUSTOM_GPT_PROFILE_BEHAVIORAL_ADOPTION = PASS
+OPERATIONAL_CUSTOM_GPT_ADOPTION = PASS
+BUILDER_UI_FIELD_PERSISTENCE = NOT INDEPENDENTLY OBSERVED / NON-BLOCKING TO BEHAVIORAL RUNTIME PROOF
 SFJM_CUSTOM_GPT_ASSUMPTION = USER_CORRECTED / INITIAL_OVERCLAIM
 VERCEL_DEPLOYMENT_OBJECT_LOOKUP = 404 / CONNECTOR LIMITATION PRESERVED
+APPROVED_MINIMUM_GATEWAY_SCOPE = COMPLETE
 ```
 
 Evidence:
@@ -70,6 +77,7 @@ tests/runtime/evidence/RUNTIME_ENFORCEMENT_GATEWAY_DEPLOYMENT_ATTEMPT_2026-08-20
 tests/runtime/evidence/RUNTIME_ENFORCEMENT_GATEWAY_EXTERNAL_HEALTH_2026-08-20.md
 tests/runtime/evidence/RUNTIME_ENFORCEMENT_GATEWAY_EXTERNAL_ROUTE_2026-08-20.md
 tests/runtime/evidence/RUNTIME_ENFORCEMENT_GATEWAY_GPT_ACTION_PREVIEW_2026-08-20.md
+tests/runtime/evidence/RUNTIME_ENFORCEMENT_GATEWAY_OPERATIONAL_CUSTOM_GPT_ADOPTION_2026-08-20.md
 ```
 
 Required runtime secrets remain external to SES:
@@ -79,19 +87,18 @@ SES_GITHUB_TOKEN = read-only private SES GitHub access
 SES_GATEWAY_API_KEY = route API authentication secret
 ```
 
-The minimum Gateway runtime is operational: canonical-source loading, external health, positive routing, fail-closed routing and Custom GPT Action preview invocation are proven.
+The approved minimum Gateway scope is operationally complete. Canonical-source loading, external health, positive routing, fail-closed routing, host-bound OpenAPI, Custom GPT Action compatibility, and actual operational Custom GPT routing invocation are proven within the recorded evidence boundaries.
 
-A subsequent user correction established that there is no separate `SFJM Custom GPT`. The Custom GPT name `SES -Runtime-Enforcement-Gateway` was a provisional alias chosen only because a name was required during Action setup, and no Builder Instructions had yet been supplied. The earlier assumption that this GPT was merely a test harness pending SFJM adoption is therefore preserved as `USER_CORRECTED / INITIAL_OVERCLAIM`, not silently rewritten.
+A prior assistant assumption that a separate `SFJM Custom GPT` existed remains preserved as `USER_CORRECTED / INITIAL_OVERCLAIM`; it is not silently erased.
 
-The operational Custom GPT profile is now explicitly defined in `runtime/specialist_gateway/CUSTOM_GPT_PROFILE.md`. Adoption remains unproven until that name/description/instruction profile is persisted in the actual Custom GPT and a fresh-session invocation is observed.
+No automatic expansion follows from this result. In particular, completion of the minimum runtime does not authorize automatic specialist execution, automatic project adoption, project mutation, database/dashboard infrastructure, semantic routing, or broader consumer rollout.
 
 Preserve:
 
 ```text
 SPECIALIST_CERTIFICATION != GATEWAY_DEPLOYMENT
 REFERENCE_IMPLEMENTATION != UNIVERSAL PROJECT TRUTH
-ACTION_PREVIEW_INVOKED != ACTION_PUBLISHED
-CUSTOM_GPT_PROFILE_DEFINED != CUSTOM_GPT_PROFILE_ADOPTED
+CUSTOM_GPT_PROFILE_ADOPTED != OTHER_PROJECTS_ADOPTED
 ROUTABLE != EXECUTED
 PROJECT_CONTEXT_READY != AUTHORIZED_TO_MUTATE
 TOOL_CAPABILITY != AUTHORIZATION
