@@ -1,6 +1,6 @@
 # SES — Current Handoff
 
-**Status:** `SPECIALIST_CERTIFICATION_NORMALIZATION / DOCUMENTATION_AUDITOR_V1_CANDIDATE`  
+**Status:** `RUNTIME_ENFORCEMENT_GATEWAY_V0_1 / FECHAI_REFERENCE_ACTIVE`  
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System`  
 **Canonical ref rule:** resolve `main` live before material work  
 **Authoritative next action:** `docs/NEXT_SAFE_ACTION.md`
@@ -12,8 +12,9 @@
 3. read `docs/PROJECT_STATUS.md`;
 4. read `docs/NEXT_SAFE_ACTION.md`;
 5. read `docs/BLOCKED_ACTIONS.md`;
-6. resolve `archetypes/REGISTRY.md` and exact archetype contract when specialist work is requested;
-7. for certification work read `core/protocols/SPECIALIST_CERTIFICATION_FOR_ANY_PROJECT_CONTRACT.md` and `docs/SPECIALIST_CERTIFICATION_STATUS.md`.
+6. for runtime routing read `core/protocols/RUNTIME_ENFORCEMENT_GATEWAY_CONTRACT.md` and `core/protocols/PROJECT_ADAPTER_CONTRACT.md`;
+7. resolve `archetypes/REGISTRY.md` and exact archetype contract when specialist work is requested;
+8. for certification work read `core/protocols/SPECIALIST_CERTIFICATION_FOR_ANY_PROJECT_CONTRACT.md` and `docs/SPECIALIST_CERTIFICATION_STATUS.md`.
 
 ## Current portfolio
 
@@ -22,43 +23,54 @@ UX/UI APP Specialist = CERTIFIED_FOR_ANY_PROJECT YES
 Backend & Data Platform Specialist = YES
 Application Security Assurance Specialist = YES
 Software Systems Architect = YES
-Documentation Auditor = NO / V1 CERTIFICATION CANDIDATE
+Documentation Auditor = YES / v1.1
 ```
 
-## Documentation Auditor v1.0
+## Runtime Enforcement Gateway v0.1
 
 ```text
-ARCHETYPE_ID = documentation-auditor
-KERNEL_BLOB = 90fcabe72ca5202b54f50ba48b695de00096afa6
-KERNEL_CHARACTERS = 7889
-BUILDER_PACKAGE = runtime/custom-gpt/DOCUMENTATION_AUDITOR_BUILDER_PACKAGE_V1_0.md
-C01/C05/C06/C13-C17 = PASS
-C02-C04 = PENDING EXECUTION
-C07-C10 = PENDING BUILDER/RUNTIME EVIDENCE
-C11-C12/C18 = PENDING
-CERTIFIED_FOR_ANY_PROJECT = NO
+CONTRACT = VERSIONED
+PROJECT_ADAPTER_ROLE_MAP = VERSIONED
+CONTROLLER = runtime/specialist_gateway/controller.py
+G01-G12 = 12/12 PASS after preserved initial G12 FAIL
+FECHAI_REFERENCE_F01-F07 = 7/7 PASS
 ```
 
-Historical v0.9 remains preserved:
+Merged SES lifecycle:
 
 ```text
-R03A = FAIL
-R05 = FAIL
-R06 = FAIL
-PROJECT_TARGET_REGRESSION = 4/7
-RETROACTIVE_PASS = NO
+PR #43 = Gateway contract + role-map semantics
+PR #44 = runtime controller + executable tests
+PR #45 = FECH.AI SES Project Adapter role adoption + reference tests
 ```
 
-The v1.0 candidate is a new fingerprint boundary and does not retroactively rewrite v0.9.
+FECH.AI consumer repository reconciliation:
+
+```text
+wagnerjfjunior/fecha.ai PR #122 = MERGED
+```
+
+## FECH.AI current adopted SES roles
+
+```text
+documentation_audit -> documentation-auditor
+architecture -> software-systems-architect
+ux_ui -> ux-ui-app-specialist
+backend_data -> backend-data-platform-specialist
+application_security -> application-security-assurance-specialist
+```
+
+Legacy GPT identities remain historical/project-local continuity. Unmapped FECH.AI specialist domains remain local until an applicable certified SES archetype is explicitly adopted.
 
 ## Next safe action
 
-Apply the exact v1.0 Builder Package/kernel to the private `SES — Documentation Auditor`, capture the external Builder/runtime fingerprint and execute `tests/runtime/DOCUMENTATION_AUDITOR_CERTIFICATION_L2_RUNBOOK_V1_0.md`. If all required runtime gates pass, perform readiness adjudication, obtain/confirm user READY for that exact fingerprint, and close C01-C18.
+Gateway v0.1 is closed for the current objective. Do not add more governance or runtime features without observed need.
 
-The Documentation Auditor Runtime Enforcement Gateway remains a separate second-phase track and is not a prerequisite for specialist certification.
+When another consumer project needs SES specialists, perform a bounded project-specific adoption: explicit role mapping, compatibility test, then consumer bootstrap/routing reconciliation under separate project authority.
 
 ```text
 CERTIFIED_FOR_ANY_PROJECT != CONSUMER_PROJECT_ADOPTED
+ROUTABLE != EXECUTED
 PROJECT_CONTEXT_READY != AUTHORIZED_TO_MUTATE
-SPECIALIST_CERTIFICATION != GATEWAY_DEPLOYMENT
+CENTRAL_EVOLUTION != AUTOMATIC_PROJECT_MUTATION
 ```
