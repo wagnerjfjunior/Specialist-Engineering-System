@@ -48,6 +48,7 @@ ux-ui-app-specialist = YES
 backend-data-platform-specialist = YES
 application-security-assurance-specialist = YES
 software-systems-architect = YES
+documentation-auditor = YES / v1.1 / KERNEL_BLOB 5bc10297d9e655cf169d2680f914e446232992e0
 ```
 
 For certified specialists, block without separate authority: publication/broader visibility, automatic project adoption, transfer of proof to a changed fingerprint, mutation authority, production approval, risk acceptance, or claims that every consumer project is correct/secure/production-ready.
@@ -62,51 +63,41 @@ Preserve legacy SaaS Architect evidence under its original identity/fingerprint;
 
 ## 5. Documentation Auditor
 
-Historical v0.9 remains:
+Historical v0.9 and v1.0 evidence remains immutable, including:
 
 ```text
-R01 = PASS
-R02 = PASS
-R03A = FAIL
-R03B = PASS
-R04 = PASS
-R05 = FAIL
-R06 = FAIL
-PROJECT_TARGET_REGRESSION = 4/7
-PROMPT_LEVEL_FIX_STOP_LOSS = TRIGGERED FOR V0_9 COSMETIC RETRY LOOP
+V0.9 R03A = FAIL
+V0.9 R05 = FAIL
+V0.9 R06 = FAIL
+V1.0 G01 ATTEMPT 1 = FAIL
+V1.0 G01 ATTEMPT 2 = FAIL
 RETROACTIVE_PASS = NO
-CERTIFIED_FOR_ANY_PROJECT = NO
+RETROACTIVE_ERASURE = NO
 ```
 
-Initial R03A/R05 PASS adjudications remain historical `INITIAL_OVERCLAIM` records.
-
-Current v1.0 certification candidate:
+Current certified v1.1 fingerprint:
 
 ```text
-KERNEL_BLOB = 90fcabe72ca5202b54f50ba48b695de00096afa6
+KERNEL = runtime/custom-gpt/DOCUMENTATION_AUDITOR_BUILDER_KERNEL_V1_1.md
+KERNEL_BLOB = 5bc10297d9e655cf169d2680f914e446232992e0
 BUILDER_PACKAGE = VERSIONED
-C01/C05/C06/C13-C17 = PASS
-C02-C04 = PENDING EXECUTION
-C07-C10 = PENDING BUILDER/RUNTIME EVIDENCE
-C11-C12/C18 = PENDING
-CERTIFIED_FOR_ANY_PROJECT = NO
+BUILDER_APPLIED = PASS
+RUNTIME_FINGERPRINT_CAPTURED = PASS_WITH_PROVENANCE_LIMITATION
+C01-C18 = PASS
+CERTIFIED_FOR_ANY_PROJECT = YES
 ```
 
 Block:
 
-- converting any v0.9 FAIL to retroactive PASS;
-- declaring v1.0 certified from design intent or repository artifacts alone;
-- C07/C08 without actual Builder application/fingerprint evidence;
-- C09/C10 without actual configured-runtime execution;
-- C11 before the required behavioral/runtime obligations close;
-- C12 without applicable user READY authorization for the exact final fingerprint;
-- certification while C18 has an unresolved blocker.
-
-The v0.9 prompt-level stop-loss forbids repeated wording-only retries on that same failed fingerprint. It does **not** prohibit a separately versioned new certification subject from being tested as a new fingerprint, provided historical failures remain preserved and all certification obligations are freshly satisfied where invalidated.
+- converting any historical FAIL to retroactive PASS;
+- transferring v1.1 certification to a materially changed fingerprint without proportional revalidation;
+- automatic consumer-project adoption merely because certification is YES;
+- treating certification as project readiness, mutation authority, production approval or risk acceptance;
+- reopening the closed certification without a material invalidation event.
 
 ```text
 OLD_FINGERPRINT_FAIL != NEW_FINGERPRINT_RESULT
-NEW_FINGERPRINT_RESULT REQUIRES NEW EVIDENCE
+CENTRAL_CERTIFICATION != AUTOMATIC_PROJECT_ADOPTION
 ```
 
 ## 6. Documentation Auditor Gateway boundary
@@ -128,7 +119,7 @@ CANDIDATE_LEARNING != UNIVERSAL_PRINCIPLE
 
 ## 7. Portfolio stop-loss
 
-Unless explicitly reprioritized, block creating large new specialist waves before the current Documentation Auditor normalization is closed. Continue to block collapsing Backend/Data implementation authority with independent AppSec assurance and universalizing FECH.AI-specific modules, Supabase specifics, MesaCliente, LeadOps or project routing without cross-domain evidence.
+The Documentation Auditor normalization is closed. Continue to block uncontrolled specialist waves without requirements/interview/challenge/evidence discipline, collapsing Backend/Data implementation authority with independent AppSec assurance, and universalizing consumer-specific modules or routing without cross-domain evidence.
 
 ## 8. Adoption/retirement boundary
 
