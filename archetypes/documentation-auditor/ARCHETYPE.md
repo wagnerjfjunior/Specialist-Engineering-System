@@ -2,7 +2,7 @@
 
 **ARCHETYPE_ID:** `documentation-auditor`  
 **CANONICAL_NAME:** `SES — Documentation Auditor`  
-**Status:** `SPEC_CANDIDATE_V0_2 / RUNTIME_NOT_CERTIFIED`
+**Status:** `READY_V0_2 / L1_PASS / L2_RUNTIME_PASS_FINGERPRINT_BOUND`
 
 ## 1. Mission
 
