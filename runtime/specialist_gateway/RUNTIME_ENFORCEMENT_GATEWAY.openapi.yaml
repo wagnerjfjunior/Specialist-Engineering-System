@@ -1,0 +1,147 @@
+openapi: 3.1.0
+info:
+  title: SES Runtime Enforcement Gateway
+  version: "0.1"
+  description: >-
+    Deterministic routing eligibility API for explicitly adopted SES specialist roles.
+    ROUTABLE means eligible to enter project bootstrap; it does not execute a specialist
+    and never grants mutation authority.
+servers:
+  - url: https://ses-runtime-enforcement-gateway.vercel.app
+paths:
+  /health:
+    get:
+      operationId: getGatewayHealth
+      summary: Check whether the Gateway can load current canonical SES routing sources.
+      responses:
+        "200":
+          description: Gateway dependencies are ready.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthResponse"
+        "503":
+          description: Required runtime configuration or canonical SES source is unavailable.
+  /route:
+    post:
+      operationId: routeSpecialistRole
+      summary: Resolve an explicit consumer project role to its current eligible SES specialist.
+      security:
+        - GatewayApiKey: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RouteRequest"
+      responses:
+        "200":
+          description: >-
+            Routing request was processed. Inspect receipt.decision for ROUTABLE or the
+            fail-closed domain blocker.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RouteResponse"
+        "400":
+          description: Invalid request shape or bounded input limits exceeded.
+        "401":
+          description: Missing or invalid Gateway API key.
+        "503":
+          description: Required runtime configuration or canonical SES source is unavailable.
+components:
+  securitySchemes:
+    GatewayApiKey:
+      type: apiKey
+      in: header
+      name: X-SES-Gateway-Key
+  schemas:
+    HealthResponse:
+      type: object
+      additionalProperties: false
+      required: [status, gateway, version]
+      properties:
+        status:
+          type: string
+          const: ok
+        gateway:
+          type: string
+        version:
+          type: string
+    RouteRequest:
+      type: object
+      additionalProperties: false
+      required: [project_identifier, role, task_scope]
+      properties:
+        project_identifier:
+          type: string
+          minLength: 1
+          maxLength: 256
+        role:
+          type: string
+          minLength: 1
+          maxLength: 128
+        task_scope:
+          type: string
+          minLength: 1
+          maxLength: 4096
+    RouteResponse:
+      type: object
+      additionalProperties: false
+      required: [status, receipt]
+      properties:
+        status:
+          type: string
+          const: ok
+        receipt:
+          $ref: "#/components/schemas/RoutingReceipt"
+    RoutingReceipt:
+      type: object
+      additionalProperties: false
+      required:
+        - ses_ref
+        - project_identifier_supplied
+        - project_id
+        - project_adapter_path
+        - role
+        - adoption_status
+        - archetype_id
+        - archetype_contract_path
+        - archetype_resolution_status
+        - certification_status
+        - certified_subject
+        - project_bootstrap_entrypoint
+        - decision
+        - blocker
+        - mutation_authorized
+      properties:
+        ses_ref: {type: string}
+        project_identifier_supplied: {type: string}
+        project_id: {type: string}
+        project_adapter_path: {type: string}
+        role: {type: string}
+        adoption_status: {type: string}
+        archetype_id: {type: string}
+        archetype_contract_path: {type: string}
+        archetype_resolution_status: {type: string}
+        certification_status: {type: string}
+        certified_subject: {type: string}
+        project_bootstrap_entrypoint: {type: string}
+        decision:
+          type: string
+          enum:
+            - ROUTABLE
+            - PROJECT_NOT_REGISTERED
+            - PROJECT_ID_AMBIGUOUS
+            - PROJECT_ADAPTER_UNRESOLVED
+            - SPECIALIST_ROLE_NOT_ADOPTED
+            - ARCHETYPE_NOT_RESOLVED
+            - ARCHETYPE_NOT_ACTIVE
+            - SPECIALIST_NOT_CERTIFIED
+            - PROJECT_BOOTSTRAP_UNRESOLVED
+            - RUNTIME_FINGERPRINT_STALE_OR_UNSUPPORTED
+            - BLOCKED
+        blocker: {type: string}
+        mutation_authorized:
+          type: boolean
+          const: false
