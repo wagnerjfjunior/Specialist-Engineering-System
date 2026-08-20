@@ -1,6 +1,6 @@
 # SES — Current Handoff
 
-**Status:** `RUNTIME_ENFORCEMENT_GATEWAY_OPERATIONALIZATION / DEPLOYED_HEALTH_PROVEN_ROUTE_PENDING`  
+**Status:** `RUNTIME_ENFORCEMENT_GATEWAY_OPERATIONALIZATION / ROUTE_PROVEN_ACTION_PENDING`  
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System`  
 **Canonical ref rule:** resolve `main` live before material work  
 **Authoritative next action:** `docs/NEXT_SAFE_ACTION.md`
@@ -12,10 +12,11 @@
 3. read `docs/PROJECT_STATUS.md`;
 4. read `docs/NEXT_SAFE_ACTION.md`;
 5. read `docs/BLOCKED_ACTIONS.md`;
-6. for Gateway work read `core/protocols/RUNTIME_ENFORCEMENT_GATEWAY_CONTRACT.md`, `core/protocols/PROJECT_ADAPTER_CONTRACT.md`, `runtime/specialist_gateway/README.md`, `runtime/specialist_gateway/controller.py`, `runtime/specialist_gateway/github_loader.py` and `runtime/specialist_gateway/http_api.py`;
-7. read both deployment evidence files before making deployment/invocation claims:
+6. for Gateway work read `core/protocols/RUNTIME_ENFORCEMENT_GATEWAY_CONTRACT.md`, `core/protocols/PROJECT_ADAPTER_CONTRACT.md`, `runtime/specialist_gateway/README.md`, `runtime/specialist_gateway/controller.py`, `runtime/specialist_gateway/github_loader.py`, `runtime/specialist_gateway/http_api.py` and `runtime/specialist_gateway/RUNTIME_ENFORCEMENT_GATEWAY.openapi.yaml`;
+7. read deployment/runtime evidence before making deployment/invocation claims:
    - `tests/runtime/evidence/RUNTIME_ENFORCEMENT_GATEWAY_DEPLOYMENT_ATTEMPT_2026-08-20.md`;
-   - `tests/runtime/evidence/RUNTIME_ENFORCEMENT_GATEWAY_EXTERNAL_HEALTH_2026-08-20.md`.
+   - `tests/runtime/evidence/RUNTIME_ENFORCEMENT_GATEWAY_EXTERNAL_HEALTH_2026-08-20.md`;
+   - `tests/runtime/evidence/RUNTIME_ENFORCEMENT_GATEWAY_EXTERNAL_ROUTE_2026-08-20.md`.
 
 ## Current certified portfolio
 
@@ -36,7 +37,7 @@ RETROACTIVE_ERASURE = NO
 
 ## Runtime Enforcement Gateway
 
-Merged runtime foundation:
+Merged runtime foundation before this evidence/OpenAPI increment:
 
 ```text
 PR #43 = contract v0.1
@@ -46,6 +47,7 @@ PR #46 = canonical GitHub loader + continuity reconciliation + explicit certifie
 PR #47 = minimum HTTP runtime + Vercel config + OpenAPI template
 PR #48 = deployment blocker evidence
 PR #49 = post-Git-connection deployment trigger/evidence checkpoint
+PR #50 = Git-bound external health proof
 ```
 
 Observed evidence:
@@ -57,10 +59,12 @@ FECHAI REFERENCE = 7/7 PASS
 CANONICAL LOADER L01-L08 = 8/8 PASS
 LOADER INITIAL YES_IMPLIES_CURRENT = CORRECTED / RETROACTIVE_PASS NO
 HTTP SERVICE H01-H08 = 8/8 PASS LOCAL
-GIT-BOUND MAIN COMMIT = c309cd39800d920b48c040ce928bd0f582528f0c
-VERCEL STATUS FOR MAIN COMMIT = SUCCESS
 CANONICAL HOST = https://ses-runtime-enforcement-gateway.vercel.app
-EXTERNAL GET /health = PASS / USER-BROWSER OBSERVED
+EXTERNAL GET /health = PASS
+EXTERNAL POST /route documentation_audit = PASS / ROUTABLE
+EXTERNAL POST /route GPT0 = PASS / SPECIALIST_ROLE_NOT_ADOPTED
+ROUTE PROOF SES_REF = ea0e7a189be72261992249bcc357bc51dad5a4f7
+ROUTE MUTATION_AUTHORIZED = false
 ```
 
 Current runtime boundary:
@@ -70,15 +74,18 @@ controller.py = IMPLEMENTED / PURE DECISION ENGINE
 github_loader.py = IMPLEMENTED / READ-ONLY CANONICAL MATERIALIZATION
 http_api.py = MERGED
 api/health.py = MERGED / EXTERNALLY PROVEN
-api/route.py = MERGED / EXTERNAL PROOF PENDING
+api/route.py = MERGED / EXTERNALLY PROVEN
 vercel.json = MERGED
-OPENAPI = TEMPLATE / HOST NOT YET BOUND
+OPENAPI TEMPLATE = PRESERVED
+OPENAPI BOUND SCHEMA = runtime/specialist_gateway/RUNTIME_ENFORCEMENT_GATEWAY.openapi.yaml
+OPENAPI BOUND HOST = https://ses-runtime-enforcement-gateway.vercel.app
 EXTERNAL DEPLOYMENT REACHABILITY = PROVEN
 VERCEL DEPLOYMENT OBJECT LOOKUP = 404 / CONNECTOR LIMITATION
+ACTION/TOOL CONFIGURATION = NOT PROVEN
 ACTION/TOOL INVOCATION = NOT PROVEN
 ```
 
-Earlier Vercel deploy attempts and their failures remain preserved. They are not overwritten by the later successful Git-bound deployment/health evidence.
+Earlier Vercel deploy attempts and their failures remain preserved. They are not overwritten by the later successful Git-bound deployment/HTTP evidence.
 
 Required runtime secrets remain external and must not be requested or committed:
 
@@ -89,18 +96,15 @@ SES_GATEWAY_API_KEY
 
 ## Next objective
 
-Validate the deployed `POST /route` endpoint using the already configured secret without exposing it:
+Configure the bound OpenAPI schema in an authorized Action/tool surface and prove one actual external invocation. Manual `curl` route proof cannot be relabeled as Action/tool proof.
 
 ```text
-authenticated exact adopted FECH.AI role
-→ decision = ROUTABLE
-→ mutation_authorized = false
-
-then authenticated legacy/non-adopted role
-→ fail-closed decision
+OPENAPI_BOUND
+→ ACTION_CONFIGURED
+→ routeSpecialistRole INVOKED
+→ receipt observed
+→ ACTION_TOOL_INTEGRATION PASS only if actually proven
 ```
-
-After those external route responses are recorded, bind the proven host into OpenAPI and proceed to Action/tool configuration and one observed external invocation.
 
 Preserve:
 
@@ -108,7 +112,8 @@ Preserve:
 AS_IS != TARGET_STATE
 TOOL_CAPABILITY != AUTHORIZATION
 CERTIFIED_FOR_ANY_PROJECT != CONSUMER_PROJECT_ADOPTED
-OPENAPI_TEMPLATE != ACTION_CONFIGURED
+OPENAPI_BOUND != ACTION_CONFIGURED
+ACTION_CONFIGURED != ACTION_INVOKED
 ROUTABLE != EXECUTED
 PROJECT_CONTEXT_READY != AUTHORIZED_TO_MUTATE
 DEPLOYED != INVOKED
