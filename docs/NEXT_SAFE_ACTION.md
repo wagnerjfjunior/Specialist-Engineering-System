@@ -2,9 +2,9 @@
 
 > Registro autoritativo da próxima ação segura do SES quando este arquivo estiver em `main`.
 
-**Next action ID:** `runtime-enforcement-gateway-operational-v0-1`  
+**Next action ID:** `runtime-enforcement-gateway-external-proof-v0-1`  
 **Primary target:** `SES Runtime Enforcement Gateway`  
-**Current phase:** `RUNTIME_ENFORCEMENT_GATEWAY_OPERATIONALIZATION / MINIMUM_RUNTIME`
+**Current phase:** `RUNTIME_ENFORCEMENT_GATEWAY_OPERATIONALIZATION / DEPLOYMENT_PROOF`
 
 ## Current certified portfolio
 
@@ -16,42 +16,46 @@ SOFTWARE SYSTEMS ARCHITECT = YES
 DOCUMENTATION AUDITOR = YES / v1.1
 ```
 
-Documentation Auditor certification is closed for the current exact fingerprint. Historical failures remain preserved; `RETROACTIVE_PASS = NO`.
+Historical failures remain preserved; `RETROACTIVE_PASS = NO`.
 
 ## Gateway current state
 
 ```text
 CONTRACT = IMPLEMENTED / MERGED
-CONTROLLER = IMPLEMENTED
-CONTROLLER_TESTS = G01-G12 PASS 12/12
+CONTROLLER = IMPLEMENTED / G01-G12 PASS 12/12
 G12_INITIAL = FAIL / PRESERVED
-FECHAI_SES_REFERENCE_ROUTING = PASS 7/7
+FECHAI_REFERENCE_ROUTING = PASS 7/7
 FECHAI_PROJECT_ROUTING_RECONCILIATION = IMPLEMENTED
-CANONICAL_GITHUB_LOADER = NEXT IMPLEMENTATION/VALIDATION SUBJECT
-HTTP_SERVICE = NOT YET PROVEN DEPLOYED
+CANONICAL_GITHUB_LOADER = IMPLEMENTED / L01-L08 PASS 8/8
+HTTP_SERVICE_CODE = IMPLEMENTATION CANDIDATE / H01-H08 PASS 8/8
+OPENAPI = TEMPLATE / HOST NOT YET BOUND
+DEPLOYMENT = NOT YET OBSERVED
 ACTION_TOOL = NOT YET PROVEN INVOCABLE
 ```
 
 ## Next safe action
 
-Complete the minimum operational runtime in proportional gates:
+After the HTTP candidate is reviewed and merged:
 
 ```text
-1. validate canonical GitHub read-only materialization against current SES formats;
-2. preserve controller.py as the pure deterministic decision engine;
-3. expose only GET /health and POST /route through a thin HTTP adapter;
-4. test fail-closed behavior, input validation and routing receipt serialization;
-5. deploy through the smallest available serverless surface;
-6. inject private GitHub access only as runtime secret/environment configuration;
-7. observe the deployed /health and /route responses before claiming deployment;
-8. version an OpenAPI Action/tool schema and prove at least one external invocation before claiming ACTION_TOOL_INTEGRATED.
+1. deploy the smallest serverless runtime available;
+2. configure SES_GITHUB_TOKEN as read-only runtime secret outside the repository;
+3. configure SES_GATEWAY_API_KEY outside the repository;
+4. observe GET /health on the deployed host;
+5. observe authenticated POST /route against at least one adopted FECH.AI role and one fail-closed case;
+6. bind the observed deployed host into a versioned OpenAPI schema;
+7. configure the Action/tool only through an actually available authorized configuration surface;
+8. observe one external Action/tool invocation before claiming ACTION_TOOL_INTEGRATED.
 ```
+
+If deployment or secret configuration cannot be performed through the available tools, record the exact blocker and stop at `DEPLOY_READY / EXTERNAL_CONFIGURATION_REQUIRED`. Do not substitute expected behavior for observed deployment.
 
 Do not add database, dashboard, Supabase dependency, semantic/fuzzy free-text routing, automatic specialist adoption, autonomous Builder creation, automatic project mutation or project-truth storage without a separately demonstrated requirement and authorization.
 
 ```text
 IMPLEMENTED != DEPLOYED
 DEPLOYED != INVOKED
+OPENAPI_TEMPLATE != ACTION_CONFIGURED
 ROUTABLE != EXECUTED
 TOOL_CAPABILITY != AUTHORIZATION
 CERTIFIED_FOR_ANY_PROJECT != CONSUMER_PROJECT_ADOPTED
