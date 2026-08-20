@@ -7,7 +7,7 @@
 
 ## Scope
 
-This evidence proves that the host-bound SES Gateway OpenAPI schema can be configured and invoked through a ChatGPT Custom GPT Action preview surface. It does not by itself prove persistent publication, SFJM adoption or specialist execution.
+This evidence proves that the host-bound SES Gateway OpenAPI schema can be configured and invoked through a ChatGPT Custom GPT Action preview surface. It does not by itself prove persistent publication or specialist execution.
 
 ## Configuration observations
 
@@ -99,7 +99,7 @@ ACTION_ROUTE_LEGACY_FAIL_CLOSED_PREVIEW = PASS
 SEMANTIC_ROLE_TRANSLATION = NOT OBSERVED
 ```
 
-## Bounded conclusion
+## Initial bounded conclusion recorded in PR #52
 
 ```text
 GPT_ACTION_SCHEMA_COMPATIBILITY = PASS
@@ -110,24 +110,68 @@ GPT_ACTION_PREVIEW_FAIL_CLOSED_ROUTE = PASS
 MINIMUM_OPERATIONAL_GATEWAY_RUNTIME = PASS
 ```
 
-However, the editor evidence also showed an `Atualizar` control and the GPT instruction field was empty. Therefore this evidence does not prove a persisted/published operational consumer configuration.
+The editor evidence showed an `Atualizar` control and the GPT instruction field was empty. The assistant initially inferred from this that the Custom GPT should be treated as a test harness pending adoption by a separate `SFJM Custom GPT`.
+
+That inference was not supplied by the user and was later corrected.
+
+## Subsequent user correction
+
+The user clarified after PR #52 that:
 
 ```text
+SFJM_CUSTOM_GPT = DOES_NOT_EXIST IN CURRENT DESIGN
+CUSTOM_GPT_CREATED_FOR_GATEWAY_ACTION = YES
+NAME `SES -Runtime-Enforcement-Gateway` = PROVISIONAL ALIAS CHOSEN BECAUSE A NAME WAS REQUIRED
+BUILDER_INSTRUCTIONS_SUPPLIED_BEFORE THIS CORRECTION = NO
+```
+
+Therefore:
+
+```text
+ASSISTANT_INITIAL_SEPARATE_SFJM_GPT_ASSUMPTION = INITIAL_OVERCLAIM
+USER_CORRECTION = ACCEPTED
+RETROACTIVE_ERASURE = NO
+```
+
+The Preview proof remains valid and unchanged. Only the architectural interpretation of the Custom GPT consumer is corrected.
+
+The operational profile for the existing Custom GPT is defined separately in:
+
+`runtime/specialist_gateway/CUSTOM_GPT_PROFILE.md`
+
+Recommended identity:
+
+```text
+CUSTOM_GPT_NAME = SES — Specialist Router
+BACKEND_SERVICE_NAME = SES Runtime Enforcement Gateway
+```
+
+The frontend GPT and backend service are separate objects.
+
+## Current bounded conclusion
+
+```text
+GPT_ACTION_SCHEMA_COMPATIBILITY = PASS
+GPT_ACTION_AUTH_HEADER_CONFIGURATION = PASS / USER-UI OBSERVED
+GPT_ACTION_PREVIEW_INVOCATION = PASS
+GPT_ACTION_PREVIEW_POSITIVE_ROUTE = PASS
+GPT_ACTION_PREVIEW_FAIL_CLOSED_ROUTE = PASS
+MINIMUM_OPERATIONAL_GATEWAY_RUNTIME = PASS
+CUSTOM_GPT_OPERATIONAL_PROFILE = DEFINED
 ACTION_PERSISTED_OR_PUBLISHED_CONFIGURATION = NOT_PROVEN
-SFJM_ACTION_ADOPTION = NOT_PROVEN
+OPERATIONAL_CUSTOM_GPT_PROFILE_ADOPTION = NOT_PROVEN
 SPECIALIST_EXECUTION = NOT_PROVEN
 PROJECT_MUTATION_AUTHORITY = NO
 ```
-
-The GPT used for this proof may be treated as a test harness unless it is explicitly authorized as the operational Gateway broker.
 
 Preserve:
 
 ```text
 ACTION_PREVIEW_INVOKED != ACTION_PUBLISHED
+CUSTOM_GPT_PROFILE_DEFINED != CUSTOM_GPT_PROFILE_ADOPTED
 ACTION_ROUTABLE != SPECIALIST_EXECUTED
 ROUTABLE != AUTHORIZED_TO_MUTATE
 TOOL_CAPABILITY != AUTHORIZATION
-TEST_HARNESS != CONSUMER_ADOPTION
+USER_CORRECTED_INITIAL_OVERCLAIM != RETROACTIVE_ERASURE
 RETROACTIVE_PASS = NO
 ```
