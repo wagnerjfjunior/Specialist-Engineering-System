@@ -102,20 +102,47 @@ EXTERNAL_CONFIGURATION_OR_WORKING_DEPLOYMENT_SURFACE_REQUIRED = YES
 
 This does not invalidate controller, canonical-loader or HTTP unit evidence because no runtime source behavior changed. It blocks only deployment/invocation gates.
 
-## Next proof obligation
+## Manual unblock checkpoint — Git connection and runtime secrets
 
-Using a working authorized Vercel project/deployment surface:
+After the persistence blocker above, the Vercel project UI was manually reconciled with the SES repository.
+
+Observed from user-supplied Vercel UI evidence:
 
 ```text
-1. create or associate a persistent Vercel project;
-2. configure SES_GITHUB_TOKEN read-only;
-3. configure SES_GATEWAY_API_KEY;
-4. deploy the current Gateway runtime;
-5. observe GET /health;
-6. observe authenticated POST /route for one ROUTABLE FECH.AI role;
-7. observe one fail-closed route;
-8. bind the verified host into the OpenAPI schema;
-9. configure and externally invoke the Action/tool before claiming integration.
+CONNECTED_GIT_REPOSITORY = wagnerjfjunior/Specialist-Engineering-System
+GIT_CONNECTION_STATUS = OBSERVED / CONNECTED
+PREVIOUS_PRODUCTION_SOURCE = vercel deploy / NOT GIT-BOUND
 ```
 
-No architecture redesign is required by this failure alone.
+The user then confirmed that the required runtime variables were created in Vercel:
+
+```text
+SES_GITHUB_TOKEN = USER_CONFIRMED CONFIGURED / SECRET VALUE NOT OBSERVED
+SES_GATEWAY_API_KEY = USER_CONFIRMED CONFIGURED / SECRET VALUE NOT OBSERVED
+```
+
+Secret values were not requested, read, stored or committed. Final Vercel secret scopes are not independently tool-verified in this evidence event.
+
+This evidence-only commit is intentionally used to create a new `main` commit after Git connection so Vercel can produce the first deployment attributable to the connected SES repository rather than replaying a historical `vercel deploy` artifact.
+
+```text
+RUNTIME_SOURCE_CHANGE = NO
+CONTROLLER_LOADER_HTTP_RETEST_REQUIRED = NO
+NEXT_AFFECTED_GATE = GIT_BOUND_DEPLOYMENT_OBSERVATION
+```
+
+## Next proof obligation
+
+Using the connected Vercel project/deployment surface:
+
+```text
+1. merge this evidence-only trigger into SES main;
+2. observe a new Vercel deployment sourced from the connected Git repository/main commit;
+3. observe GET /health;
+4. observe authenticated POST /route for one ROUTABLE FECH.AI role;
+5. observe one fail-closed route;
+6. bind the verified host into the OpenAPI schema;
+7. configure and externally invoke the Action/tool before claiming integration.
+```
+
+No architecture redesign is required by the earlier deployment-tool failure alone.
