@@ -1,6 +1,6 @@
 # SES — Project Status
 
-**Status:** `RUNTIME_ENFORCEMENT_GATEWAY_OPERATIONALIZATION / HTTP_RUNTIME_V0_1_CANDIDATE`  
+**Status:** `RUNTIME_ENFORCEMENT_GATEWAY_OPERATIONALIZATION / DEPLOY_READY_EXTERNAL_BLOCKER`  
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System`  
 **Authoritative next action:** `docs/NEXT_SAFE_ACTION.md`
 
@@ -20,7 +20,7 @@ All certification remains fingerprint-bound. Historical FAIL/BLOCKED/INVALID/ove
 
 ## Runtime Enforcement Gateway
 
-The Gateway originated as specialist-specific candidate learning during Documentation Auditor work. The merged contract now defines bounded universal SES routing/enforcement semantics; consumer-project role maps, truth, authority and adoption remain project-local.
+The Gateway contract defines bounded universal SES routing/enforcement semantics. Consumer-project role maps, truth, authority and adoption remain project-local.
 
 Current state:
 
@@ -33,22 +33,33 @@ FECHAI_SES_REFERENCE_ROUTING = PASS 7/7
 FECHAI_REPOSITORY_ROUTING_RECONCILIATION = IMPLEMENTED VIA FECH.AI PR #122
 CANONICAL_GITHUB_LOADER = IMPLEMENTED / LOCAL L01-L08 PASS 8/8
 LOADER_INITIAL_YES_IMPLIES_CURRENT_ASSUMPTION = CORRECTED / RETROACTIVE_PASS NO
-HTTP_SERVICE_CODE = IMPLEMENTATION CANDIDATE / LOCAL H01-H08 PASS 8/8
-GET_HEALTH = VERSIONED CANDIDATE
-POST_ROUTE = VERSIONED CANDIDATE / API KEY REQUIRED
+HTTP_SERVICE_CODE = MERGED / LOCAL H01-H08 PASS 8/8
+GET_HEALTH = MERGED
+POST_ROUTE = MERGED / API KEY REQUIRED
+VERCEL_CONFIG = MERGED
 OPENAPI_ACTION_SCHEMA = TEMPLATE / DEPLOYED HOST NOT BOUND
-EXTERNAL_DEPLOYMENT = NOT YET OBSERVED
-EXTERNAL_HEALTH = NOT YET OBSERVED
-EXTERNAL_ROUTE = NOT YET OBSERVED
-ACTION_TOOL_INVOCATION = NOT YET OBSERVED
+DEPLOYMENT_ATTEMPT_1 = REJECTED / PACKAGE PROVENANCE NOT CANONICAL-BOUND
+DEPLOYMENT_ATTEMPT_2 = REQUEST RESPONSE OBSERVED / PERSISTENCE NOT PROVEN
+VERCEL_DEPLOYMENT_LOOKUP = 404
+VERCEL_BUILD_LOG_LOOKUP = 404
+VERCEL_PROJECT_LIST_AFTER_ATTEMPT = EMPTY
+EXTERNAL_HEALTH = NOT PROVEN
+EXTERNAL_ROUTE = NOT PROVEN
+ACTION_TOOL_INVOCATION = NOT PROVEN
 ```
 
-Required deployment secrets remain external to SES:
+Deployment evidence:
+
+`tests/runtime/evidence/RUNTIME_ENFORCEMENT_GATEWAY_DEPLOYMENT_ATTEMPT_2026-08-20.md`
+
+Required runtime secrets remain external to SES:
 
 ```text
 SES_GITHUB_TOKEN = read-only private SES GitHub access
 SES_GATEWAY_API_KEY = route API authentication secret
 ```
+
+The observed Vercel tool surface does not provide a usable persisted deployment or environment-secret configuration path. This is an external deployment blocker, not evidence that the Gateway runtime logic failed.
 
 Preserve:
 
@@ -56,6 +67,7 @@ Preserve:
 SPECIALIST_CERTIFICATION != GATEWAY_DEPLOYMENT
 REFERENCE_IMPLEMENTATION != UNIVERSAL PROJECT TRUTH
 HTTP_CODE_VERSIONED != DEPLOYED_SERVICE
+DEPLOY_REQUEST_RESPONSE != PERSISTED_DEPLOYMENT
 OPENAPI_TEMPLATE != ACTION_CONFIGURED
 DEPLOYED != INVOKED
 ROUTABLE != EXECUTED
