@@ -92,6 +92,7 @@ class LoaderTests(unittest.TestCase):
         records = parse_certification_ledger(CERTIFICATIONS)
         self.assertEqual("YES", records["documentation-auditor"].certification)
         self.assertIn("documentation-auditor-v1.1", records["documentation-auditor"].certified_subject)
+        self.assertEqual("CURRENT", records["documentation-auditor"].fingerprint_status)
 
     def test_l04_adapter_role_map(self):
         adapter = parse_project_adapter(ADAPTER, "projects/fechai/PROJECT_ADAPTER.md")
@@ -113,6 +114,16 @@ class LoaderTests(unittest.TestCase):
     def test_l07_missing_registry_records_fail_closed(self):
         with self.assertRaises(CanonicalLoadError):
             parse_project_registry("no records")
+
+    def test_l08_yes_without_certified_subject_is_not_current(self):
+        text = '''
+| ARCHETYPE_ID | Certification | Current reason |
+|---|---|---|
+| `documentation-auditor` | `YES` | row only |
+'''
+        record = parse_certification_ledger(text)["documentation-auditor"]
+        self.assertEqual("NOT_CAPTURED", record.certified_subject)
+        self.assertEqual("UNSUPPORTED", record.fingerprint_status)
 
 
 if __name__ == "__main__":
