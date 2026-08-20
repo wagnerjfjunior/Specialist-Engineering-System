@@ -1,6 +1,6 @@
 # SES — Blocked Actions
 
-**Status:** `SPECIALIST_CERTIFICATION_NORMALIZATION / GATE_V0_1`  
+**Status:** `RUNTIME_ENFORCEMENT_GATEWAY_OPERATIONALIZATION / GATE_V0_1`  
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System`
 
 Absence from this document does not create authorization. Capability, certification, prior approval, conversation history or a derived summary do not substitute for current applicable authority.
@@ -87,34 +87,41 @@ C01-C18 = PASS
 CERTIFIED_FOR_ANY_PROJECT = YES
 ```
 
-Block:
+Block converting historical FAIL to retroactive PASS, transferring v1.1 certification to a changed fingerprint without proportional revalidation, automatic consumer-project adoption, or treating certification as project readiness/mutation authority/production approval/risk acceptance.
 
-- converting any historical FAIL to retroactive PASS;
-- transferring v1.1 certification to a materially changed fingerprint without proportional revalidation;
-- automatic consumer-project adoption merely because certification is YES;
-- treating certification as project readiness, mutation authority, production approval or risk acceptance;
-- reopening the closed certification without a material invalidation event.
+## 6. Runtime Enforcement Gateway boundary
+
+Historical origin:
 
 ```text
-OLD_FINGERPRINT_FAIL != NEW_FINGERPRINT_RESULT
-CENTRAL_CERTIFICATION != AUTOMATIC_PROJECT_ADOPTION
+DOCUMENTATION_AUDITOR_GATEWAY = SPECIALIST_SPECIFIC / CANDIDATE_LEARNING
 ```
 
-## 6. Documentation Auditor Gateway boundary
+Current contract scope:
 
-The Documentation Auditor Runtime Enforcement Gateway is separate second-phase runtime/enforcement research. Its design or proof-runtime implementation does not substitute for specialist runtime certification and is not a prerequisite imposed by `SPECIALIST_CERTIFICATION_FOR_ANY_PROJECT_CONTRACT.md`.
+```text
+RUNTIME_ENFORCEMENT_GATEWAY_CONTRACT = UNIVERSAL ROUTING/ENFORCEMENT SEMANTICS / CANDIDATE_V0_1
+```
+
+This promotion is limited to deterministic SES routing/enforcement semantics already captured in the merged contract. It does not universalize consumer-project role maps, local rules, authority, state or adoption.
 
 Block:
 
-- treating Gateway design as deployed enforcement;
-- treating local Gateway proof as Documentation Auditor C09;
-- universalizing the specialist-specific Gateway from a single-domain occurrence;
-- automatic consumer-project mutation/adoption from Gateway work.
+- treating Gateway design/controller/loader as deployed enforcement before an external deployment is observed;
+- treating Gateway proof as Documentation Auditor C09 or any specialist certification proof;
+- claiming Action/tool integration before an external invocation is observed;
+- hardcoding volatile certification/archetype/project truth into the HTTP wrapper;
+- reusing stale canonical snapshots as current after a material load failure;
+- semantic/fuzzy role guessing in Gateway v0.1;
+- automatic consumer-project mutation/adoption from Gateway work;
+- storing GitHub tokens or deployment secrets in SES artifacts.
 
 ```text
 SPECIALIST_CERTIFICATION != GATEWAY_DEPLOYMENT
-GATEWAY_PROOF != C09
-CANDIDATE_LEARNING != UNIVERSAL_PRINCIPLE
+GATEWAY_PROOF != SPECIALIST_CERTIFICATION_PROOF
+IMPLEMENTED != DEPLOYED
+DEPLOYED != INVOKED
+REFERENCE_IMPLEMENTATION != UNIVERSAL PROJECT TRUTH
 ```
 
 ## 7. Portfolio stop-loss

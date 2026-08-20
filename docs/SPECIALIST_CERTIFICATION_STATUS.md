@@ -1,6 +1,6 @@
 # SES — Specialist Certification Status
 
-**Status:** `CANONICAL_V0_1 / PORTFOLIO_CERTIFICATION_LEDGER`  
+**Status:** `CANONICAL_V0_2 / PORTFOLIO_CERTIFICATION_LEDGER / ROUTING_SUBJECTS_EXPLICIT`  
 **Gate:** `core/protocols/SPECIALIST_CERTIFICATION_FOR_ANY_PROJECT_CONTRACT.md`
 
 ## Current portfolio
@@ -16,6 +16,72 @@
 ```text
 CERTIFIED_FOR_ANY_PROJECT != CONSUMER_PROJECT_ADOPTED
 CERTIFIED_FOR_ANY_PROJECT != AUTHORIZED_TO_MUTATE
+```
+
+The Runtime Enforcement Gateway may use this ledger only when the current certified subject is explicit. `Certification = YES` without an identifiable current subject must fail closed as unsupported/stale for routing rather than silently transferring an old PASS.
+
+## UX/UI APP Specialist
+
+```text
+ARCHETYPE_ID = ux-ui-app-specialist
+CURRENT_CANDIDATE = ux-ui-app-specialist-v0.1
+CURRENT_KERNEL = runtime/custom-gpt/UX_UI_APP_SPECIALIST_BUILDER_KERNEL_V0_1.md
+CURRENT_KERNEL_BLOB = 8e988dceca962f608141cbef663fd4baea4cf86f
+CURRENT_RUNTIME_FINGERPRINT = CAPTURED / PASS
+BUILDER_APPLIED = YES
+L2_RUNTIME_FINGERPRINT_VALIDATION = PASS
+SPECIALIST_READINESS = READY / USER_AUTHORIZED
+CERTIFIED_FOR_ANY_PROJECT = YES
+```
+
+Primary runtime evidence: `tests/runtime/evidence/UX_UI_APP_SPECIALIST_L2_RUNTIME_PROOF_2026-08-16.md`.
+
+## Backend & Data Platform Specialist
+
+```text
+ARCHETYPE_ID = backend-data-platform-specialist
+CURRENT_CANDIDATE = backend-data-platform-specialist-v0.1
+CURRENT_KERNEL = runtime/custom-gpt/BACKEND_DATA_PLATFORM_SPECIALIST_BUILDER_KERNEL_V0_1.md
+CURRENT_KERNEL_BLOB = 0d3c264cc4367ed8671fb7b07c28de24bf821819
+CURRENT_RUNTIME_FINGERPRINT = CAPTURED / PASS
+BUILDER_APPLIED = YES
+L2_RUNTIME_FINGERPRINT_VALIDATION = PASS
+SPECIALIST_READINESS = READY / USER_AUTHORIZED
+CERTIFIED_FOR_ANY_PROJECT = YES
+```
+
+Primary runtime/readiness evidence:
+- `tests/runtime/evidence/BACKEND_DATA_PLATFORM_L2_FINAL_VERDICT_2026-08-17.md`
+- `tests/runtime/evidence/BACKEND_DATA_PLATFORM_SPECIALIST_READINESS_DECISION_2026-08-17.md`
+
+## Application Security Assurance Specialist
+
+```text
+ARCHETYPE_ID = application-security-assurance-specialist
+CURRENT_CANDIDATE = application-security-assurance-specialist-v0.1
+CURRENT_KERNEL = runtime/custom-gpt/APPLICATION_SECURITY_ASSURANCE_SPECIALIST_BUILDER_KERNEL_COMPACT_V0_2.md
+CURRENT_KERNEL_BLOB = bb4a776b8d67f16e89b30961a37c212ef2605c9f
+CURRENT_RUNTIME_FINGERPRINT = COMPACT_V0_2 / FINGERPRINT_BOUND / PASS
+L2_RUNTIME_FINGERPRINT_VALIDATION = PASS
+SPECIALIST_READINESS = READY / USER_AUTHORIZED
+CERTIFIED_FOR_ANY_PROJECT = YES
+```
+
+Primary runtime/readiness evidence:
+- `tests/runtime/evidence/APPLICATION_SECURITY_ASSURANCE_L2_FINAL_VERDICT_COMPACT_V0_2_2026-08-17.md`
+- `tests/runtime/evidence/APPLICATION_SECURITY_ASSURANCE_SPECIALIST_READINESS_DECISION_2026-08-17.md`
+
+Preserve AppSec chronology:
+
+```text
+A03_INITIAL = INVALID
+A07_INITIAL = FAIL
+A07_P14_INITIAL = FAIL
+R06_INITIAL = BLOCKED
+INITIAL_OVERCLAIM = YES
+USER_CORRECTED = YES
+RETROACTIVE_PASS = NO
+RETROACTIVE_ERASURE = NO
 ```
 
 ## Software Systems Architect
@@ -112,6 +178,4 @@ RETROACTIVE_ERASURE = NO
 
 The v1.1 result is a new fingerprint-bound certification and does not rewrite any earlier failure. Primary final evidence: `tests/runtime/evidence/DOCUMENTATION_AUDITOR_FINAL_CERTIFICATION_2026-08-20.md`.
 
-The Documentation Auditor Runtime Enforcement Gateway is a separate second-phase track and is not a certification prerequisite.
-
-Any material runtime fingerprint/tool/archetype/bootstrap change requires proportional revalidation; never silently preserve PASS across material drift.
+The Runtime Enforcement Gateway remains separate from specialist certification. Any material runtime fingerprint/tool/archetype/bootstrap change requires proportional revalidation; never silently preserve PASS across material drift.
