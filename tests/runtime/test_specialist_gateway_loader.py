@@ -64,6 +64,31 @@ SPECIALIST_ROLE_MAP:
 ```
 '''
 
+MORENUM_PROJECTS = PROJECTS + '''
+```text
+PROJECT_ID: morenumtegra
+CANONICAL_NAME: MoreNumTegra
+ALIASES:
+- MoreNunTegra
+- More Num Tegra
+ADAPTER_PATH: projects/morenumtegra/PROJECT_ADAPTER.md
+STATUS: ACTIVE
+```
+'''
+
+MORENUM_ADAPTER = '''
+```text
+PROJECT_ID: morenumtegra
+PROJECT_NAME: MoreNumTegra
+CANONICAL_SOURCE: GitHub repository wagnerjfjunior/MoreNumTegra
+BOOTSTRAP_ENTRYPOINT: bootstrap/BOOTSTRAP_CANONICO.md
+```
+
+```text
+SPECIALIST_ROLE_MAP:
+```
+'''
+
 
 class FakeClient:
     def resolve_ref(self, branch="main"):
@@ -75,6 +100,20 @@ class FakeClient:
             "archetypes/REGISTRY.md": ARCHETYPES,
             "docs/SPECIALIST_CERTIFICATION_STATUS.md": CERTIFICATIONS,
             "projects/fechai/PROJECT_ADAPTER.md": ADAPTER,
+        }[path]
+
+
+class MoreNumFakeClient:
+    def resolve_ref(self, branch="main"):
+        return "morenum123"
+
+    def read_text(self, path, ref):
+        return {
+            "projects/REGISTRY.md": MORENUM_PROJECTS,
+            "archetypes/REGISTRY.md": ARCHETYPES,
+            "docs/SPECIALIST_CERTIFICATION_STATUS.md": CERTIFICATIONS,
+            "projects/fechai/PROJECT_ADAPTER.md": ADAPTER,
+            "projects/morenumtegra/PROJECT_ADAPTER.md": MORENUM_ADAPTER,
         }[path]
 
 
@@ -124,6 +163,21 @@ class LoaderTests(unittest.TestCase):
         record = parse_certification_ledger(text)["documentation-auditor"]
         self.assertEqual("NOT_CAPTURED", record.certified_subject)
         self.assertEqual("UNSUPPORTED", record.fingerprint_status)
+
+    def test_l09_morenumtegra_registration_is_known_but_unadopted(self):
+        records = parse_project_registry(MORENUM_PROJECTS)
+        morenum = next(record for record in records if record.project_id == "morenumtegra")
+        self.assertIn("MoreNunTegra", morenum.aliases)
+        self.assertEqual("projects/morenumtegra/PROJECT_ADAPTER.md", morenum.adapter_path)
+
+        adapter = parse_project_adapter(MORENUM_ADAPTER, morenum.adapter_path)
+        self.assertEqual((), adapter.role_map)
+
+        snapshot = load_canonical_snapshot(MoreNumFakeClient())
+        receipt = snapshot.gateway.route(RoutingRequest("MoreNunTegra", "documentation_audit", "audit docs"))
+        self.assertEqual("morenum123", receipt.ses_ref)
+        self.assertEqual(Decision.SPECIALIST_ROLE_NOT_ADOPTED, receipt.decision)
+        self.assertFalse(receipt.mutation_authorized)
 
 
 if __name__ == "__main__":
