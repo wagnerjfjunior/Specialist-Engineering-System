@@ -36,6 +36,7 @@ Read when applicable:
 - `core/protocols/HYBRID_PROJECT_TARGET_RESOLUTION_CONTRACT.md` when target/project identity is missing, ambiguous, or project enumeration is requested
 - `core/protocols/EVIDENCE_RETRIEVAL_RESILIENCE_CONTRACT.md` when large-file, large-tree, truncation, incomplete transport or context-budget risk is material
 - `core/protocols/SPECIALIST_CERTIFICATION_FOR_ANY_PROJECT_CONTRACT.md` for specialist terminal lifecycle/certification decisions
+- `core/protocols/MANUAL_SPECIALIST_HANDOFF_CONTRACT.md` for the current SES-mediated specialist consultation/handoff path
 - `docs/SPECIALIST_CERTIFICATION_STATUS.md` for the current evidence-bound portfolio certification ledger
 
 Behavioral validation is defined, when applicable, in:
@@ -43,6 +44,7 @@ Behavioral validation is defined, when applicable, in:
 - `tests/behavioral/HYBRID_SPECIALIST_BOOTSTRAP_TESTS.md`
 - `tests/behavioral/HYBRID_PROJECT_TARGET_RESOLUTION_TESTS.md`
 - `tests/behavioral/SPECIALIST_CERTIFICATION_FOR_ANY_PROJECT_TESTS.md`
+- `tests/behavioral/MANUAL_SPECIALIST_HANDOFF_TESTS.md`
 
 For the `saas-architect` Custom GPT runtime candidate, also read when validating/applying/testing that candidate:
 
@@ -115,7 +117,7 @@ For its validated compact v0.2 runtime fingerprint, also read when configuring/a
 
 The active reusable specialists remain fingerprint-bound. Archetype activation does not imply automatic consumer-project adoption, project readiness, mutation authority, publication, production approval or risk acceptance.
 
-Future archetype, specialist, validation, certification and versioning contracts must be reached from this bootstrap rather than becoming independent entrypoints.
+Future archetype, specialist, validation, certification, handoff and versioning contracts must be reached from this bootstrap rather than becoming independent entrypoints.
 
 ## 3. Archetype resolution
 
@@ -186,6 +188,33 @@ PROJECT BOOTSTRAP
 Do not use fuzzy project-name guessing for material resolution. Zero matches = `PROJECT_NOT_REGISTERED`; multiple matches = `PROJECT_ID_AMBIGUOUS`.
 
 A conversation starter is UX only. It is not a security boundary and does not replace explicit target identity, registry/adapter/bootstrap resolution or readiness.
+
+## 4A. Current specialist handoff transport
+
+For SES-mediated specialist consultation, also apply `core/protocols/MANUAL_SPECIALIST_HANDOFF_CONTRACT.md`.
+
+Current accepted operational transport:
+
+```text
+SES
+-> Specialist Consultation Packet
+-> HUMAN COPY / PASTE
+-> target specialist Custom GPT
+-> Specialist Result Packet
+-> HUMAN COPY / PASTE
+-> SES adjudication
+```
+
+The Runtime Enforcement Gateway and `SES — Specialist Router` remain versioned historical/runtime-candidate assets but are not the accepted current specialist-consultation path. Historical PASS evidence remains preserved within its original proof boundary.
+
+```text
+CONSULTED != ADOPTED
+ADOPTED != EXECUTED
+EXECUTED != AUTHORIZED_TO_MUTATE
+HISTORICAL_GATEWAY_PASS != CURRENT_OPERATIONAL_ACCEPTANCE
+```
+
+An explicit ad-hoc consultation with a certified specialist is permitted without project adoption only when labeled as such. It must not silently create or imply a canonical project role mapping.
 
 ## 5. Task-bound readiness semantics
 
@@ -287,7 +316,7 @@ For hybrid specialists:
 
 ## 8. Source-of-truth and authority boundary
 
-SES owns reusable engineering contracts, archetype contracts, runtime-candidate configuration specifications, certification contracts/ledger and project registration metadata.
+SES owns reusable engineering contracts, archetype contracts, runtime-candidate configuration specifications, certification contracts/ledger, specialist-handoff semantics and project registration metadata.
 
 The consumer project owns its own:
 
@@ -301,7 +330,7 @@ The consumer project owns its own:
 
 The Project Registry maps identifiers to adapters. A Project Adapter points to project-owned sources. Neither may duplicate consumer-project truth.
 
-A successful bootstrap establishes context only. It does not grant mutation authority.
+A successful bootstrap or manual handoff establishes context/transport only. It does not grant mutation authority.
 
 ```text
 AUTHORITY_MODEL_STATUS

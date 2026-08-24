@@ -1,6 +1,6 @@
 # SES — Blocked Actions
 
-**Status:** `RUNTIME_ENFORCEMENT_GATEWAY_OPERATIONALIZATION / GATE_V0_1`  
+**Status:** `MANUAL_SPECIALIST_HANDOFF / CURRENT_OPERATIONAL_BOUNDARY`  
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System`
 
 Absence from this document does not create authorization. Capability, certification, prior approval, conversation history or a derived summary do not substitute for current applicable authority.
@@ -15,7 +15,7 @@ Without separate explicit applicable authorization, block:
 - automatic specialist adoption/propagation into consumer projects;
 - legacy retirement/deletion without mapping, evidence and explicit decision;
 - rewriting historical proof/adjudication;
-- storing secrets in SES artifacts;
+- storing secrets in SES artifacts or handoff packets;
 - treating tool capability as authority.
 
 ```text
@@ -61,6 +61,14 @@ Preserve historical Software Systems Architect failures/retests as recorded in i
 
 Preserve legacy SaaS Architect evidence under its original identity/fingerprint; do not transfer that historical runtime PASS to a changed current fingerprint or use legacy aliases to rewrite history.
 
+Preserve historical Runtime Enforcement Gateway and Specialist Router PASS evidence under its exact proof boundary. The current operational correction does not erase those results and does not allow them to prove current end-to-end workflow usability.
+
+```text
+HISTORICAL_GATEWAY_PASS != CURRENT_OPERATIONAL_ACCEPTANCE
+ENDPOINT_TEST_PASS != END_TO_END_WORKFLOW_USABLE
+RETROACTIVE_ERASURE = NO
+```
+
 ## 5. Documentation Auditor
 
 Historical v0.9 and v1.0 evidence remains immutable, including:
@@ -89,7 +97,34 @@ CERTIFIED_FOR_ANY_PROJECT = YES
 
 Block converting historical FAIL to retroactive PASS, transferring v1.1 certification to a changed fingerprint without proportional revalidation, automatic consumer-project adoption, or treating certification as project readiness/mutation authority/production approval/risk acceptance.
 
-## 6. Runtime Enforcement Gateway boundary
+## 6. Current manual specialist handoff boundary
+
+The current accepted specialist-consultation transport is human-mediated copy/paste governed by:
+
+`core/protocols/MANUAL_SPECIALIST_HANDOFF_CONTRACT.md`
+
+Block:
+
+- claiming the Router/Gateway is the current operational consultation path;
+- claiming `routeSpecialistRole`, an Action or a specialist executed when no such invocation occurred;
+- requiring a live Gateway receipt as a prerequisite for the current manual consultation path;
+- silently converting an ad-hoc consultation into project adoption;
+- treating a specialist recommendation/result as SES approval or project authorization;
+- treating a copied SHA/state as necessarily current when freshness is material;
+- embedding or requesting secrets in a handoff packet;
+- silently substituting a different project, role or specialist through fuzzy matching;
+- letting copy/paste transport expand project mutation authority;
+- automatically accepting pasted specialist output as canonical truth without proportional evidence review.
+
+```text
+CONSULTED != ADOPTED
+ADOPTED != EXECUTED
+EXECUTED != AUTHORIZED_TO_MUTATE
+SPECIALIST_OUTPUT != SES_APPROVAL
+COPIED_CONTEXT != LIVE_EVIDENCE
+```
+
+## 7. Runtime Enforcement Gateway boundary
 
 Historical origin:
 
@@ -97,19 +132,22 @@ Historical origin:
 DOCUMENTATION_AUDITOR_GATEWAY = SPECIALIST_SPECIFIC / CANDIDATE_LEARNING
 ```
 
-Current contract scope:
+Gateway contract scope:
 
 ```text
 RUNTIME_ENFORCEMENT_GATEWAY_CONTRACT = UNIVERSAL ROUTING/ENFORCEMENT SEMANTICS / CANDIDATE_V0_1
 ```
 
-This promotion is limited to deterministic SES routing/enforcement semantics already captured in the merged contract. It does not universalize consumer-project role maps, local rules, authority, state or adoption.
+This promotion remains limited to deterministic SES routing/enforcement semantics captured in the versioned contract. It does not universalize consumer-project role maps, local rules, authority, state or adoption.
+
+Gateway/Router are currently historical/runtime-candidate assets rather than the accepted operational specialist-consultation path.
 
 Block:
 
-- treating Gateway design/controller/loader as deployed enforcement before an external deployment is observed;
+- presenting historical Gateway/Router test evidence as current operational acceptance;
+- automatically re-adopting or redeploying the Gateway because manual handoff is now current;
 - treating Gateway proof as Documentation Auditor C09 or any specialist certification proof;
-- claiming Action/tool integration before an external invocation is observed;
+- claiming Action/tool integration before an actual invocation is observed;
 - hardcoding volatile certification/archetype/project truth into the HTTP wrapper;
 - reusing stale canonical snapshots as current after a material load failure;
 - semantic/fuzzy role guessing in Gateway v0.1;
@@ -121,14 +159,17 @@ SPECIALIST_CERTIFICATION != GATEWAY_DEPLOYMENT
 GATEWAY_PROOF != SPECIALIST_CERTIFICATION_PROOF
 IMPLEMENTED != DEPLOYED
 DEPLOYED != INVOKED
+INVOKED != END_TO_END_WORKFLOW_USABLE
 REFERENCE_IMPLEMENTATION != UNIVERSAL PROJECT TRUTH
 ```
 
-## 7. Portfolio stop-loss
+A future Router/Gateway re-adoption requires explicit SES approval and new end-to-end proof in the intended user workflow.
+
+## 8. Portfolio stop-loss
 
 The Documentation Auditor normalization is closed. Continue to block uncontrolled specialist waves without requirements/interview/challenge/evidence discipline, collapsing Backend/Data implementation authority with independent AppSec assurance, and universalizing consumer-specific modules or routing without cross-domain evidence.
 
-## 8. Adoption/retirement boundary
+## 9. Adoption/retirement boundary
 
 ```text
 CERTIFIED SES SPECIALIST
@@ -141,16 +182,23 @@ CERTIFIED SES SPECIALIST
 -> RETIREMENT DECISION
 ```
 
+Ad-hoc consultation is permitted when explicitly requested but does not traverse the `EXPLICIT PROJECT ADOPTION` state:
+
+```text
+EXPLICIT_AD_HOC_CONSULTATION != PROJECT_ADOPTION
+```
+
 ```text
 CENTRAL EVOLUTION != AUTOMATIC PROJECT MUTATION
 TARGET CONSOLIDATION != AUTHORIZED RETIREMENT
 ```
 
-## 9. Conflict and anti-loop
+## 10. Conflict and anti-loop
 
 If `docs/NEXT_SAFE_ACTION.md` conflicts materially with bootstrap, certification contract/ledger, live authority, archetype registry or newer evidence: stop and reconcile.
 
 ```text
 MATERIAL_CHANGE -> PROPORTIONAL_REVALIDATION
 NO_MATERIAL_CHANGE -> NO_REAUDIT_LOOP
+NEW_TRANSPORT_AVAILABLE != NEW_TRANSPORT_ADOPTED
 ```

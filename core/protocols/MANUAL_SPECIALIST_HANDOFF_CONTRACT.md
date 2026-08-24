@@ -1,0 +1,319 @@
+# SES — Manual Specialist Handoff Contract v0.1
+
+**Contract ID:** `manual-specialist-handoff-contract-v0.1`  
+**Status:** `CANDIDATE_V0_1 / CURRENT_OPERATIONAL_TRANSPORT`  
+**Scope:** SES-mediated consultation of reusable specialists when direct Router/Gateway composition is not an accepted operational path.
+
+## 1. Purpose
+
+This contract defines how SES prepares, transfers and receives a specialist consultation without pretending that one Custom GPT executed another specialist.
+
+The current accepted transport is human-mediated copy/paste:
+
+```text
+SES ORCHESTRATION
+-> SPECIALIST CONSULTATION PACKET
+-> HUMAN COPY
+-> TARGET SPECIALIST CUSTOM GPT
+-> HUMAN PASTE
+-> SPECIALIST WORK
+-> SPECIALIST RESULT PACKET
+-> HUMAN COPY
+-> SES
+-> SES ADJUDICATION / NEXT DECISION
+```
+
+The transport is deliberately separated from the consultation semantics. A future transport may replace manual copy/paste only after its own operational evidence and explicit adoption.
+
+```text
+HANDOFF_CONTRACT != TRANSPORT_IMPLEMENTATION
+TESTED_TRANSPORT != ACCEPTED_OPERATIONAL_TRANSPORT
+```
+
+## 2. Current operational status
+
+As of the correction that introduced this contract:
+
+```text
+CURRENT_SPECIALIST_TRANSPORT = MANUAL_COPY_PASTE
+SPECIALIST_ROUTER = NOT_CURRENT_OPERATIONAL_PATH
+RUNTIME_ENFORCEMENT_GATEWAY = NOT_CURRENT_OPERATIONAL_PATH
+```
+
+Historical Gateway/Router tests remain historical evidence for the exact tested objects and fingerprints. They are not erased and are not retroactively converted to failures.
+
+```text
+HISTORICAL_PASS != CURRENT_OPERATIONAL_ACCEPTANCE
+RETROACTIVE_PASS = NO
+RETROACTIVE_ERASURE = NO
+```
+
+## 3. Boundary classification
+
+### UNIVERSAL
+
+The following are reusable SES rules:
+
+- consultation must identify the intended project, specialist and task explicitly;
+- the handoff must preserve provenance and authority boundaries;
+- the receiving specialist must resolve material live state itself before substantive current-state claims;
+- a copied SHA or state snapshot is an anchor, not proof that it remains current;
+- consultation does not imply project adoption;
+- adoption does not imply execution;
+- execution does not imply mutation authority;
+- tool availability does not imply tool execution;
+- the specialist result returns to SES for adjudication rather than becoming automatically authoritative;
+- secrets must never be embedded in a handoff packet.
+
+### PROJECT-LOCAL
+
+The consumer project remains authoritative for:
+
+- project truth and live state;
+- canonical repository/source;
+- bootstrap and continuity;
+- authority and mutation permissions;
+- environments;
+- project-local specialist rules and overrides;
+- explicit role adoption.
+
+### SPECIALIST-SPECIFIC
+
+The selected specialist/archetype remains authoritative for its domain method, specialist-specific proof obligations, failure modes and tool/evidence requirements, subject to project-local boundaries.
+
+## 4. Consultation versus adoption
+
+SES must keep these states separate:
+
+```text
+CONSULTED != ADOPTED
+ADOPTED != EXECUTED
+EXECUTED != AUTHORIZED_TO_MUTATE
+CERTIFIED_FOR_ANY_PROJECT != CONSUMER_PROJECT_ADOPTED
+```
+
+A specialist may be consulted in either of two valid modes:
+
+### A. Adopted-role consultation
+
+The project adapter contains an exact adopted role mapping:
+
+```text
+ROLE -> ARCHETYPE_ID
+ADOPTION_STATUS: ADOPTED
+```
+
+The handoff may identify that specialist as the canonical adopted specialist for that role, subject to current certification eligibility and project-local rules.
+
+### B. Explicit ad-hoc consultation
+
+A user may explicitly request consultation with a certified SES specialist that the project has not adopted. SES may generate the handoff, but must label it:
+
+```text
+SELECTION_STATUS = EXPLICIT_AD_HOC_CONSULTATION
+PROJECT_ROLE_ADOPTION = NO
+```
+
+The consultation must not be described as the project's canonical role assignment and must not silently create an adoption mapping.
+
+SES may recommend a specialist, but recommendation alone does not authorize adoption or execution. If a material ambiguity exists between plausible specialists, resolve it before claiming a selected specialist.
+
+## 5. Preconditions
+
+Before emitting a project-specific handoff packet, SES must resolve or explicitly classify:
+
+1. `SES_EFFECTIVE_REF`;
+2. explicit `PROJECT_IDENTIFIER`;
+3. unique Project Registry record and Project Adapter;
+4. canonical consumer-project source;
+5. project bootstrap entrypoint;
+6. task scope;
+7. selected specialist/archetype and selection basis;
+8. applicable project-local specialist mapping/rules when material;
+9. authority sources when mutation, lifecycle or risk acceptance is material.
+
+Fail closed when a required item is unresolved.
+
+Do not use fuzzy project or role guessing for a material handoff.
+
+## 6. Specialist Consultation Packet
+
+The packet is the minimum transport object from SES to the receiving specialist.
+
+Use this schema semantically; formatting may vary without removing required meaning.
+
+```text
+SES SPECIALIST CONSULTATION PACKET
+
+PACKET_VERSION: manual-specialist-handoff-v0.1
+PROJECT_IDENTIFIER: <explicit project id/name>
+PROJECT_CANONICAL_NAME: <resolved canonical project name>
+CANONICAL_SOURCE: <project-owned canonical source>
+SES_EFFECTIVE_REF: <exact SES ref used to prepare packet>
+PROJECT_REF_RULE: <how receiving specialist must resolve current project ref>
+
+SPECIALIST_ARCHETYPE_ID: <resolved archetype id>
+SPECIALIST_RUNTIME_NAME: <human-facing specialist name when known>
+SELECTION_STATUS: <ADOPTED_ROLE | EXPLICIT_AD_HOC_CONSULTATION>
+PROJECT_ROLE: <exact adopted role or NOT_ADOPTED_FOR_THIS_CONSULTATION>
+
+TASK_SCOPE: <complete bounded request>
+TARGET_REF_OR_OBJECT: <explicit target or NOT_REQUIRED_FOR_THIS_TASK>
+ENVIRONMENT: <explicit environment or NOT_REQUIRED_FOR_THIS_TASK>
+
+BOOTSTRAP_ENTRYPOINT: <project-owned path>
+CONTINUITY_ENTRYPOINT: <project-owned path when applicable>
+AUTHORITY_ENTRYPOINT: <project-owned path(s) when applicable>
+PROJECT_LOCAL_SPECIALIST_RULES: <resolved pointer or NONE_DECLARED>
+
+MUTATION_AUTHORIZATION: <AUTHORIZED_EXACT_SCOPE | NOT_AUTHORIZED>
+
+REQUIRED_EXECUTION_RULES:
+- resolve material live state before substantive current-state claims;
+- follow project bootstrap and project-local authority;
+- distinguish FACT / EVIDENCE / ASSUMPTION / INFERENCE / PREFERENCE / UNKNOWN / MISSING_EVIDENCE;
+- do not claim a tool or Action was executed unless it was actually executed;
+- do not treat packet state as a substitute for live verification when freshness is material;
+- do not expand scope or mutation authority;
+- return a Specialist Result Packet.
+```
+
+The packet may include task-specific evidence pointers, acceptance criteria or proof obligations, but must not include secrets.
+
+## 7. Freshness and provenance
+
+The receiving specialist must not treat the handoff packet as a frozen mirror of live project state.
+
+If current state is material:
+
+```text
+PACKET_ANCHOR
+-> RESOLVE LIVE SOURCE
+-> RECORD RESOLVED REF
+-> READ REQUIRED SOURCES
+-> CONTEXT READINESS
+-> SUBSTANTIVE WORK
+```
+
+If the specialist cannot access a required live source, it must declare the limitation rather than simulate verification.
+
+```text
+ABSENCE_OF_FINDING != PROOF_OF_ABSENCE
+UNAVAILABLE_TOOL != EXECUTED_TOOL
+COPIED_CONTEXT != LIVE_EVIDENCE
+```
+
+## 8. Mutation authority
+
+Manual transport creates no authority.
+
+Default:
+
+```text
+MUTATION_AUTHORIZATION = NOT_AUTHORIZED
+```
+
+A mutation may be included only when the consumer project's applicable authority explicitly authorizes the exact scope. The packet must state that authorization explicitly. A general request for analysis, review, design or consultation is not mutation authority.
+
+The receiving specialist must preserve:
+
+```text
+TOOL_CAPABILITY != AUTHORIZATION
+PROJECT_CONTEXT_READY != AUTHORIZED_TO_MUTATE
+GENERATE != AUTHORIZE != PUBLISH
+```
+
+## 9. Specialist Result Packet
+
+The specialist should return a bounded result suitable for SES adjudication:
+
+```text
+SES SPECIALIST RESULT PACKET
+
+SPECIALIST_ARCHETYPE_ID: <id>
+SELECTION_STATUS: <value from consultation packet>
+PROJECT_IDENTIFIER: <project>
+TASK_SCOPE: <effective task scope>
+RESOLVED_PROJECT_REF: <exact ref or NOT_RESOLVED>
+RESOLVED_SES_REF: <exact ref when actually resolved, otherwise NOT_RESOLVED>
+
+CONTEXT_STATUS: <READY | LIMITED | BLOCKED>
+EFFECTIVE_SCOPE: <scope actually completed>
+GAPS: <material gaps>
+
+FINDINGS: <bounded findings>
+EVIDENCE: <provenance/pointers>
+ASSUMPTIONS: <explicit assumptions>
+INFERENCES: <explicit inferences>
+UNKNOWNS: <unknowns / missing evidence>
+BLOCKERS: <blockers>
+RECOMMENDATIONS: <recommendations, not automatic decisions>
+
+TOOLS_ACTUALLY_EXECUTED: <operations actually invoked>
+MUTATIONS_EXECUTED: <none or exact authorized mutations>
+AUTHORITY_STATUS: <what was and was not authorized>
+```
+
+A free-form specialist answer may still be consumed, but SES must not invent missing proof fields from silence.
+
+## 10. Return and adjudication
+
+When the result is copied back to SES:
+
+1. identify the consultation packet/task it belongs to;
+2. preserve the specialist's claimed evidence boundary;
+3. distinguish specialist findings from SES adjudication;
+4. verify material claims independently when the SES decision requires it and tools/evidence are available;
+5. identify contradictions, missing evidence and authority gaps;
+6. decide the next step without silently converting a recommendation into project authorization.
+
+```text
+SPECIALIST_OUTPUT != SES_APPROVAL
+SPECIALIST_RECOMMENDATION != PROJECT_DECISION
+SPECIALIST_RESULT != MUTATION_AUTHORIZATION
+```
+
+## 11. Router/Gateway relationship
+
+The Runtime Enforcement Gateway and `SES — Specialist Router` remain versioned historical/runtime-candidate assets. They are not deleted by this contract.
+
+While they are not the accepted operational path:
+
+- SES must not require a live Gateway receipt to prepare a manual consultation packet;
+- SES must not claim `routeSpecialistRole` was invoked when it was not;
+- a historical `ROUTABLE` proof does not substitute for current project/specialist resolution;
+- manual handoff must use Registry, Adapter, archetype/certification and project-owned sources directly;
+- no fallback from an unavailable Gateway may silently alter role or specialist selection.
+
+A future Router/Gateway re-adoption requires a material decision and new operational proof that the end-to-end workflow is usable in the intended ChatGPT project/runtime context.
+
+## 12. Acceptance criteria
+
+This contract is acceptable only if behavioral validation demonstrates at minimum:
+
+- exact project resolution;
+- adopted-role versus ad-hoc consultation distinction;
+- no automatic adoption;
+- live-state re-resolution requirement;
+- mutation fail-closed behavior;
+- tool-call honesty;
+- secret exclusion;
+- specialist result return/adjudication boundary;
+- Gateway/Router not required for the current manual path;
+- historical Gateway proof preserved without being presented as current operational acceptance.
+
+## 13. Invalidation
+
+Revisit this contract when a material transport capability changes, including:
+
+- reliable native specialist-to-specialist composition becomes available;
+- Router/Gateway end-to-end usability is re-proven and explicitly re-adopted;
+- project/adoption semantics change;
+- specialist runtime boundaries change materially.
+
+A new transport does not automatically supersede this one.
+
+```text
+CENTRAL_EVOLUTION != AUTOMATIC_PROJECT_MUTATION
+NEW_TRANSPORT_AVAILABLE != NEW_TRANSPORT_ADOPTED
+```

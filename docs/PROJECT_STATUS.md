@@ -1,6 +1,6 @@
 # SES — Project Status
 
-**Status:** `RUNTIME_ENFORCEMENT_GATEWAY / OPERATIONAL_MINIMUM_SCOPE_COMPLETE`  
+**Status:** `MANUAL_SPECIALIST_HANDOFF / CURRENT_OPERATIONAL_PATH`  
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System`  
 **Authoritative next action:** `docs/NEXT_SAFE_ACTION.md`
 
@@ -18,59 +18,79 @@ SES is project-agnostic specialist-engineering infrastructure. Consumer projects
 
 All certification remains fingerprint-bound. Historical FAIL/BLOCKED/INVALID/overclaim events remain preserved; `RETROACTIVE_PASS = NO`.
 
-## Runtime Enforcement Gateway
+## Current specialist consultation path
 
-The Gateway contract defines bounded universal SES routing/enforcement semantics. Consumer-project role maps, truth, authority and adoption remain project-local.
+A material operational correction was recorded after the prior Gateway/Router completion claim. The intended Router/Enforcement Gateway composition is not accepted as the current end-to-end specialist consultation workflow in the ChatGPT project context.
 
 Current state:
 
 ```text
-CONTRACT_V0_1 = MERGED / UNIVERSAL SEMANTICS CANDIDATE
-CONTROLLER_V0_1 = IMPLEMENTED
+CURRENT_SPECIALIST_TRANSPORT = MANUAL_COPY_PASTE
+MANUAL_HANDOFF_CONTRACT = core/protocols/MANUAL_SPECIALIST_HANDOFF_CONTRACT.md
+MANUAL_HANDOFF_BEHAVIORAL_SUITE = tests/behavioral/MANUAL_SPECIALIST_HANDOFF_TESTS.md
+
+SPECIALIST_ROUTER_CURRENT_STATUS = NOT_CURRENT_OPERATIONAL_PATH
+RUNTIME_ENFORCEMENT_GATEWAY_CURRENT_STATUS = NOT_CURRENT_OPERATIONAL_PATH_FOR_SPECIALIST_CONSULTATION
+
+CONSULTED != ADOPTED
+ADOPTED != EXECUTED
+EXECUTED != AUTHORIZED_TO_MUTATE
+```
+
+Operational flow:
+
+```text
+SES ORCHESTRATION
+-> resolve project / task / specialist
+-> generate Specialist Consultation Packet
+-> HUMAN COPY / PASTE to target specialist Custom GPT
+-> specialist resolves live project state and performs bounded work
+-> HUMAN COPY / PASTE result back to SES
+-> SES adjudicates / integrates / selects next action
+```
+
+Manual transport is the current operational constraint; it is not promoted to a permanent universal transport requirement. The universal contract is an explicit, provenance-preserving specialist handoff. Future transport replacement requires its own evidence and explicit adoption.
+
+## Runtime Enforcement Gateway — historical proof boundary
+
+Gateway and Router code, contracts, profiles and evidence remain versioned. Their historical tests are not erased or retroactively rewritten.
+
+Prior recorded evidence included:
+
+```text
+CONTRACT_V0_1 = MERGED
 CONTROLLER_G01_G12 = PASS 12/12
 G12_INITIAL = FAIL / PRESERVED
 FECHAI_SES_REFERENCE_ROUTING = PASS 7/7
-FECHAI_REPOSITORY_ROUTING_RECONCILIATION = IMPLEMENTED VIA FECH.AI PR #122
 CANONICAL_GITHUB_LOADER = IMPLEMENTED / LOCAL L01-L08 PASS 8/8
-LOADER_INITIAL_YES_IMPLIES_CURRENT_ASSUMPTION = CORRECTED / RETROACTIVE_PASS NO
 HTTP_SERVICE_CODE = MERGED / LOCAL H01-H08 PASS 8/8
-GET_HEALTH = MERGED / EXTERNAL PASS
-POST_ROUTE = MERGED / EXTERNAL PASS
-VERCEL_CONFIG = MERGED
-CANONICAL_HOST = https://ses-runtime-enforcement-gateway.vercel.app
-GIT_BOUND_VERCEL_STATUS = SUCCESS
-EXTERNAL_HEALTH = PASS / USER-BROWSER OBSERVED
-EXTERNAL_ROUTE_ADOPTED_ROLE = PASS / USER-TERMINAL OBSERVED
-EXTERNAL_ROUTE_LEGACY_FAIL_CLOSED = PASS / USER-TERMINAL OBSERVED
-ROUTE_PROOF_SES_REF = ea0e7a189be72261992249bcc357bc51dad5a4f7
-ROUTE_MUTATION_AUTHORIZED = false
-OPENAPI_TEMPLATE = PRESERVED
-OPENAPI_BOUND_SCHEMA = runtime/specialist_gateway/RUNTIME_ENFORCEMENT_GATEWAY.openapi.yaml
-OPENAPI_BOUND_HOST = https://ses-runtime-enforcement-gateway.vercel.app
-GPT_ACTION_SCHEMA_COMPATIBILITY = PASS
-GPT_ACTION_AUTH_HEADER_CONFIGURATION = PASS / USER-UI OBSERVED
-GPT_ACTION_GET_HEALTH_PREVIEW = PASS
-GPT_ACTION_ROUTE_ADOPTED_ROLE_PREVIEW = PASS / ROUTABLE
-GPT_ACTION_ROUTE_LEGACY_FAIL_CLOSED_PREVIEW = PASS / SPECIALIST_ROLE_NOT_ADOPTED
-GPT_ACTION_PROOF_SES_REF = 7234219a4859f7c31571371030aaad459886c0ad
-GPT_ACTION_MUTATION_AUTHORIZED = false
-MINIMUM_OPERATIONAL_GATEWAY_RUNTIME = PASS
-CUSTOM_GPT_OPERATIONAL_PROFILE = DEFINED / runtime/specialist_gateway/CUSTOM_GPT_PROFILE.md
-RECOMMENDED_CUSTOM_GPT_NAME = SES — Specialist Router
-OPERATIONAL_CUSTOM_GPT_ACTION_INVOCATION = PASS / USER-REPORTED ACTUAL INVOCATION
-OPERATIONAL_CUSTOM_GPT_POSITIVE_ROUTE = PASS / ROUTABLE
-OPERATIONAL_CUSTOM_GPT_FAIL_CLOSED_ROUTE = PASS / SPECIALIST_ROLE_NOT_ADOPTED
-OPERATIONAL_CUSTOM_GPT_MUTATION_AUTHORIZED = false
+GET_HEALTH = HISTORICAL EXTERNAL PASS
+POST_ROUTE = HISTORICAL EXTERNAL PASS
+GPT_ACTION_PREVIEW_INVOCATION = HISTORICAL PASS
+OPERATIONAL_CUSTOM_GPT_ACTION_INVOCATION = HISTORICAL USER-REPORTED PASS
 OPERATIONAL_CUSTOM_GPT_PROOF_SES_REF = 4a2cf6acff0f05254fe2d2e76bebbc57cbc9cf29
-CUSTOM_GPT_PROFILE_BEHAVIORAL_ADOPTION = PASS
-OPERATIONAL_CUSTOM_GPT_ADOPTION = PASS
-BUILDER_UI_FIELD_PERSISTENCE = NOT INDEPENDENTLY OBSERVED / NON-BLOCKING TO BEHAVIORAL RUNTIME PROOF
 SFJM_CUSTOM_GPT_ASSUMPTION = USER_CORRECTED / INITIAL_OVERCLAIM
-VERCEL_DEPLOYMENT_OBJECT_LOOKUP = 404 / CONNECTOR LIMITATION PRESERVED
-APPROVED_MINIMUM_GATEWAY_SCOPE = COMPLETE
 ```
 
-Evidence:
+Those observations prove only their recorded cases/fingerprints. The later operational usability finding prevents using them as proof that the Router/Gateway is the accepted current end-to-end workflow.
+
+```text
+HISTORICAL_GATEWAY_TEST_EVIDENCE = PRESERVED
+HISTORICAL_ROUTER_TEST_EVIDENCE = PRESERVED
+CURRENT_ROUTER_OPERATIONAL_ACCEPTANCE = WITHDRAWN
+CURRENT_GATEWAY_OPERATIONAL_ACCEPTANCE = WITHDRAWN_FOR_SPECIALIST_CONSULTATION_PATH
+RETROACTIVE_PASS = NO
+RETROACTIVE_ERASURE = NO
+
+ENDPOINT_TEST_PASS != END_TO_END_WORKFLOW_USABLE
+RUNTIME_COMPONENT_AVAILABLE != OPERATIONAL_PATH_ACCEPTED
+```
+
+Correction evidence:
+
+`tests/runtime/evidence/RUNTIME_ENFORCEMENT_GATEWAY_OPERATIONAL_MODEL_CORRECTION_2026-08-23.md`
+
+Historical evidence remains available at:
 
 ```text
 tests/runtime/evidence/RUNTIME_ENFORCEMENT_GATEWAY_DEPLOYMENT_ATTEMPT_2026-08-20.md
@@ -80,28 +100,20 @@ tests/runtime/evidence/RUNTIME_ENFORCEMENT_GATEWAY_GPT_ACTION_PREVIEW_2026-08-20
 tests/runtime/evidence/RUNTIME_ENFORCEMENT_GATEWAY_OPERATIONAL_CUSTOM_GPT_ADOPTION_2026-08-20.md
 ```
 
-Required runtime secrets remain external to SES:
+A future Router/Gateway operational re-adoption requires a deliberate SES decision plus new end-to-end proof in the intended usage context. It must not be inferred from historical endpoint/preview proof.
+
+## Authority and project isolation
+
+The manual handoff does not change authority:
 
 ```text
-SES_GITHUB_TOKEN = read-only private SES GitHub access
-SES_GATEWAY_API_KEY = route API authentication secret
-```
-
-The approved minimum Gateway scope is operationally complete. Canonical-source loading, external health, positive routing, fail-closed routing, host-bound OpenAPI, Custom GPT Action compatibility, and actual operational Custom GPT routing invocation are proven within the recorded evidence boundaries.
-
-A prior assistant assumption that a separate `SFJM Custom GPT` existed remains preserved as `USER_CORRECTED / INITIAL_OVERCLAIM`; it is not silently erased.
-
-No automatic expansion follows from this result. In particular, completion of the minimum runtime does not authorize automatic specialist execution, automatic project adoption, project mutation, database/dashboard infrastructure, semantic routing, or broader consumer rollout.
-
-Preserve:
-
-```text
-SPECIALIST_CERTIFICATION != GATEWAY_DEPLOYMENT
+SPECIALIST_CERTIFICATION != CONSUMER_PROJECT_ADOPTION
 REFERENCE_IMPLEMENTATION != UNIVERSAL PROJECT TRUTH
-CUSTOM_GPT_PROFILE_ADOPTED != OTHER_PROJECTS_ADOPTED
-ROUTABLE != EXECUTED
+CONSULTATION != ADOPTION
+SPECIALIST_OUTPUT != SES_APPROVAL
 PROJECT_CONTEXT_READY != AUTHORIZED_TO_MUTATE
 TOOL_CAPABILITY != AUTHORIZATION
-USER_CORRECTED_INITIAL_OVERCLAIM != RETROACTIVE_ERASURE
-RETROACTIVE_PASS = NO
+CENTRAL_EVOLUTION != AUTOMATIC_PROJECT_MUTATION
 ```
+
+No automatic specialist execution, project adoption, project mutation, database/dashboard infrastructure, semantic routing or broader rollout follows from this operational correction.
