@@ -2,9 +2,9 @@
 
 > Registro autoritativo da próxima ação segura do SES quando este arquivo estiver em `main`.
 
-**Next action ID:** `select-next-ses-objective`  
-**Primary target:** `SES project decision`  
-**Current phase:** `RUNTIME_ENFORCEMENT_GATEWAY / OPERATIONAL_MINIMUM_SCOPE_COMPLETE`
+**Next action ID:** `use-manual-specialist-handoff-until-transport-revalidated`  
+**Primary target:** `SES specialist consultation workflow`  
+**Current phase:** `MANUAL_SPECIALIST_HANDOFF / CURRENT_OPERATIONAL_PATH`
 
 ## Current certified portfolio
 
@@ -18,77 +18,99 @@ DOCUMENTATION AUDITOR = YES / v1.1
 
 Historical failures remain preserved; `RETROACTIVE_PASS = NO`.
 
-## Gateway completed scope
+## Material correction
+
+A later operational usability event invalidated the broader conclusion that the Runtime Enforcement Gateway + `SES — Specialist Router` is the accepted current end-to-end specialist consultation path.
+
+Historical Gateway/Router test evidence remains preserved. The correction does not convert those historical PASS results into retroactive FAIL.
 
 ```text
-CONTRACT = IMPLEMENTED / MERGED
-CONTROLLER = IMPLEMENTED / G01-G12 PASS 12/12
-G12_INITIAL = FAIL / PRESERVED
-FECHAI_REFERENCE_ROUTING = PASS 7/7
-FECHAI_PROJECT_ROUTING_RECONCILIATION = IMPLEMENTED
-CANONICAL_GITHUB_LOADER = IMPLEMENTED / L01-L08 PASS 8/8
-HTTP_SERVICE_CODE = MERGED / H01-H08 PASS 8/8
-GIT_BOUND_MAIN_DEPLOYMENT_STATUS = VERCEL SUCCESS
-CANONICAL_HOST = https://ses-runtime-enforcement-gateway.vercel.app
-EXTERNAL_HEALTH = PASS
-EXTERNAL_ROUTE_ADOPTED_ROLE = PASS
-EXTERNAL_ROUTE_LEGACY_FAIL_CLOSED = PASS
-OPENAPI_BOUND_SCHEMA = runtime/specialist_gateway/RUNTIME_ENFORCEMENT_GATEWAY.openapi.yaml
-GPT_ACTION_SCHEMA_COMPATIBILITY = PASS
-GPT_ACTION_PREVIEW_INVOCATION = PASS
-GPT_ACTION_PREVIEW_POSITIVE_ROUTE = PASS
-GPT_ACTION_PREVIEW_FAIL_CLOSED_ROUTE = PASS
-CUSTOM_GPT_OPERATIONAL_PROFILE = runtime/specialist_gateway/CUSTOM_GPT_PROFILE.md
-OPERATIONAL_CUSTOM_GPT_ACTION_INVOCATION = PASS
-OPERATIONAL_CUSTOM_GPT_POSITIVE_ROUTE = PASS / ROUTABLE
-OPERATIONAL_CUSTOM_GPT_FAIL_CLOSED_ROUTE = PASS / SPECIALIST_ROLE_NOT_ADOPTED
-OPERATIONAL_CUSTOM_GPT_MUTATION_AUTHORIZED = false
-OPERATIONAL_CUSTOM_GPT_PROOF_SES_REF = 4a2cf6acff0f05254fe2d2e76bebbc57cbc9cf29
-CUSTOM_GPT_PROFILE_BEHAVIORAL_ADOPTION = PASS
-OPERATIONAL_CUSTOM_GPT_ADOPTION = PASS
-MINIMUM_OPERATIONAL_GATEWAY_RUNTIME = PASS
-APPROVED_MINIMUM_GATEWAY_SCOPE = COMPLETE
-SFJM_CUSTOM_GPT_ASSUMPTION = USER_CORRECTED / INITIAL_OVERCLAIM
+HISTORICAL_GATEWAY_TEST_EVIDENCE = PRESERVED
+HISTORICAL_ROUTER_TEST_EVIDENCE = PRESERVED
+CURRENT_ROUTER_OPERATIONAL_ACCEPTANCE = WITHDRAWN
+CURRENT_GATEWAY_OPERATIONAL_ACCEPTANCE = WITHDRAWN_FOR_SPECIALIST_CONSULTATION_PATH
+RETROACTIVE_ERASURE = NO
 ```
 
-Evidence:
+Correction evidence:
+
+`tests/runtime/evidence/RUNTIME_ENFORCEMENT_GATEWAY_OPERATIONAL_MODEL_CORRECTION_2026-08-23.md`
+
+## Current safe specialist-consultation path
+
+For SES-mediated specialist consultation, use:
+
+`core/protocols/MANUAL_SPECIALIST_HANDOFF_CONTRACT.md`
+
+Behavioral specification:
+
+`tests/behavioral/MANUAL_SPECIALIST_HANDOFF_TESTS.md`
+
+Operational transport:
 
 ```text
-tests/runtime/evidence/RUNTIME_ENFORCEMENT_GATEWAY_DEPLOYMENT_ATTEMPT_2026-08-20.md
-tests/runtime/evidence/RUNTIME_ENFORCEMENT_GATEWAY_EXTERNAL_HEALTH_2026-08-20.md
-tests/runtime/evidence/RUNTIME_ENFORCEMENT_GATEWAY_EXTERNAL_ROUTE_2026-08-20.md
-tests/runtime/evidence/RUNTIME_ENFORCEMENT_GATEWAY_GPT_ACTION_PREVIEW_2026-08-20.md
-tests/runtime/evidence/RUNTIME_ENFORCEMENT_GATEWAY_OPERATIONAL_CUSTOM_GPT_ADOPTION_2026-08-20.md
+SES
+-> resolve project / task / selected specialist
+-> generate Specialist Consultation Packet
+-> USER COPY
+-> target specialist Custom GPT
+-> USER PASTE
+-> specialist resolves live context and performs bounded work
+-> USER COPY specialist result
+-> SES
+-> SES adjudication / next decision
 ```
 
-## Next safe action
+This workflow is transport-constrained, not a claim that copy/paste is the permanent architecture.
 
-There is no automatic next Gateway implementation action.
-
-Do not redesign, redeploy, re-certify, or expand the Gateway merely because time passes. Re-open Gateway work only after a material event, such as:
+## Required boundaries
 
 ```text
-- runtime/controller/loader/HTTP/OpenAPI source changes;
-- a certified specialist fingerprint or routing dependency changes in a way that affects eligibility;
-- a new consumer project is explicitly authorized for Gateway adoption;
-- a real operational failure is observed;
-- a deliberate Gateway v0.2 requirement is approved.
-```
-
-For SES itself, the next material objective must be selected explicitly from current project priorities rather than inferred from Gateway completion.
-
-Do not automatically create database, dashboard, Supabase dependency, semantic/fuzzy free-text routing, automatic specialist adoption, autonomous Builder creation, automatic project mutation, or broad consumer rollout.
-
-Do not request, store, commit or expose `SES_GATEWAY_API_KEY` or `SES_GITHUB_TOKEN` as evidence.
-
-```text
-APPROVED_MINIMUM_GATEWAY_SCOPE = COMPLETE
-NO_MATERIAL_EVENT = NO_GATEWAY_REAUDIT
-CUSTOM_GPT_PROFILE_ADOPTED != OTHER_PROJECTS_ADOPTED
-ROUTABLE != EXECUTED
+CONSULTED != ADOPTED
+ADOPTED != EXECUTED
+EXECUTED != AUTHORIZED_TO_MUTATE
+SPECIALIST_OUTPUT != SES_APPROVAL
 TOOL_CAPABILITY != AUTHORIZATION
 CERTIFIED_FOR_ANY_PROJECT != CONSUMER_PROJECT_ADOPTED
 PROJECT_CONTEXT_READY != AUTHORIZED_TO_MUTATE
-USER_CORRECTED_INITIAL_OVERCLAIM != RETROACTIVE_ERASURE
-RETROACTIVE_PASS = NO
+```
+
+An explicit user request may authorize an ad-hoc consultation with a certified specialist without creating project adoption. Such a packet must identify `EXPLICIT_AD_HOC_CONSULTATION` and must not describe the specialist as the project's canonical adopted role.
+
+## Gateway/Router next action
+
+Do not redesign, redeploy, re-certify or re-adopt the Router/Gateway merely because this correction exists.
+
+Re-open Router/Gateway operationalization only after an explicit SES objective and a material capability/evidence basis, for example:
+
+```text
+- reliable native specialist-to-specialist composition becomes available;
+- the intended ChatGPT project/@ interaction can expose the required specialist behavior and Actions end-to-end;
+- a deliberate alternative transport is approved;
+- new end-to-end tests can exercise the actual intended user workflow rather than only endpoint/preview behavior.
+```
+
+Any future re-adoption requires new end-to-end operational proof plus explicit SES adoption. Historical endpoint or preview PASS is insufficient by itself.
+
+## No automatic follow-on mutation
+
+Do not automatically:
+
+- delete Gateway/Router code or evidence;
+- reopen Gateway implementation;
+- adopt specialists into consumer projects;
+- mutate consumer projects;
+- create databases/dashboards/automation to replace copy/paste;
+- introduce semantic/fuzzy routing;
+- publish or merge a transport change without its own authorization.
+
+For ordinary specialist work, the next safe action is to generate the manual Specialist Consultation Packet using the live Registry/Adapter/archetype/project sources and let the user transfer it to the selected specialist.
+
+For SES architecture evolution beyond that operational use, select the next material objective explicitly rather than inferring it from the historical Gateway program.
+
+```text
+CURRENT_SPECIALIST_TRANSPORT = MANUAL_COPY_PASTE
+NEW_TRANSPORT_AVAILABLE != NEW_TRANSPORT_ADOPTED
+NO_MATERIAL_EVENT = NO_GATEWAY_REAUDIT
+CENTRAL_EVOLUTION != AUTOMATIC_PROJECT_MUTATION
 ```
