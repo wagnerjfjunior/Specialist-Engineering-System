@@ -2,7 +2,16 @@
 
 **Profile ID:** `ses-specialist-router-custom-gpt-v0.1`  
 **Runtime dependency:** `SES Runtime Enforcement Gateway`  
-**OpenAPI schema:** `runtime/specialist_gateway/RUNTIME_ENFORCEMENT_GATEWAY.openapi.yaml`
+**OpenAPI schema:** `runtime/specialist_gateway/RUNTIME_ENFORCEMENT_GATEWAY.openapi.yaml`  
+**Current operational status:** `HISTORICAL_PROFILE / NOT_CURRENT_OPERATIONAL_PATH`
+
+> Operational supersession notice: this profile remains versioned as the exact Router candidate that was previously tested. A later material usability finding withdrew its acceptance as the current end-to-end specialist-consultation path. The current accepted transport is governed by `core/protocols/MANUAL_SPECIALIST_HANDOFF_CONTRACT.md`. Historical Router/Gateway PASS evidence remains preserved and is not retroactively erased.
+
+```text
+HISTORICAL_PROFILE != CURRENT_OPERATIONAL_PATH
+HISTORICAL_PASS != CURRENT_OPERATIONAL_ACCEPTANCE
+RETROACTIVE_ERASURE = NO
+```
 
 ## Builder fields
 
@@ -12,7 +21,7 @@
 
 ### Description
 
-Human-facing routing interface for the Specialist Engineering System. It calls the SES Runtime Enforcement Gateway to determine whether an explicitly adopted project role is currently eligible to be handled by a certified SES specialist. It does not execute specialists, create adoptions, or grant mutation authority.
+Historical human-facing routing client for the Specialist Engineering System Runtime Enforcement Gateway. Its intended behavior was to call the Gateway to determine whether an explicitly adopted project role was eligible to be handled by a certified SES specialist. It did not execute specialists, create adoptions, or grant mutation authority.
 
 ### Instructions
 
@@ -103,7 +112,7 @@ Be concise and deterministic. Follow the caller's language. For successful routi
 
 ## Action authentication
 
-Configure the Custom GPT Action as:
+Configure the historical Custom GPT Action as:
 
 ```text
 Authentication = API Key
@@ -114,9 +123,9 @@ Credential value = existing SES_GATEWAY_API_KEY
 
 The credential is runtime configuration and MUST NOT be committed to SES.
 
-## Acceptance proof for adoption
+## Historical acceptance proof for adoption
 
-This profile is adopted only after all of the following are observed in the persisted/updated Custom GPT, preferably in a fresh conversation:
+This profile's prior adoption proof required all of the following to be observed in the persisted/updated Custom GPT, preferably in a fresh conversation:
 
 ```text
 P01 exact adopted project role -> routeSpecialistRole actually invoked -> ROUTABLE
@@ -126,4 +135,8 @@ P04 returned SES_REF recorded
 P05 no secret exposed
 ```
 
-Preview proof of the Action/runtime path does not by itself prove that this profile was persisted in the operational Custom GPT.
+Preview proof of the Action/runtime path did not by itself prove that this profile was persisted in the operational Custom GPT.
+
+## Current boundary
+
+Do not use this historical profile as the current SES specialist-consultation path. Do not infer current usability from its prior test evidence. A future re-adoption requires new end-to-end operational proof in the intended ChatGPT project/runtime context plus explicit SES adoption.
