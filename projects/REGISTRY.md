@@ -96,6 +96,20 @@ STATUS: ACTIVE
 
 This registration establishes only SES-side project discovery. `wagnerjfjunior/Blogs-sites-portais-seo` remains authoritative for its own state, specialist contracts, lifecycle, authority and runtime evidence.
 
+### MoreNumTegra
+
+```text
+PROJECT_ID: morenumtegra
+CANONICAL_NAME: MoreNumTegra
+ALIASES:
+- MoreNunTegra
+- More Num Tegra
+ADAPTER_PATH: projects/morenumtegra/PROJECT_ADAPTER.md
+STATUS: ACTIVE
+```
+
+This registration establishes only SES-side project discovery. `wagnerjfjunior/MoreNumTegra` remains authoritative for its own product truth, continuity, authority, environments and project-local specialist rules. Initial registration does not adopt any SES specialist role.
+
 ## 6. Change discipline
 
 Adding, removing, renaming or aliasing a project changes SES project-resolution behavior and must be reviewed as a versioned SES change.
