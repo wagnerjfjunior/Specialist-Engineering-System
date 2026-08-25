@@ -12,6 +12,7 @@
 | `application-security-assurance-specialist` | `YES` | compact fingerprint-bound L1/L2/tool/readiness proof PASS |
 | `software-systems-architect` | `YES` | C01-C18 PASS; current Builder/runtime fingerprint validated; user-authorized READY; historical failures preserved |
 | `documentation-auditor` | `YES` | v1.1 exact fingerprint; C01-C18 PASS; T01-T30/R/P/G/tool proof PASS; user-authorized READY; historical failures preserved |
+| `seo-strategy-governance-specialist` | `YES` | v0.3 fingerprint-bound L1/L2/tool/readiness proof PASS; user-authorized READY; historical R03/R07 failures preserved |
 
 ```text
 CERTIFIED_FOR_ANY_PROJECT != CONSUMER_PROJECT_ADOPTED
@@ -177,5 +178,43 @@ RETROACTIVE_ERASURE = NO
 ```
 
 The v1.1 result is a new fingerprint-bound certification and does not rewrite any earlier failure. Primary final evidence: `tests/runtime/evidence/DOCUMENTATION_AUDITOR_FINAL_CERTIFICATION_2026-08-20.md`.
+
+## SEO Strategy & Governance Specialist
+
+Current certified subject:
+
+```text
+ARCHETYPE_ID = seo-strategy-governance-specialist
+CANONICAL_NAME = SES — SEO Strategy & Governance Specialist
+RESOLUTION_STATUS = ACTIVE
+CURRENT_CANDIDATE = seo-strategy-governance-specialist-v0.1
+CURRENT_KERNEL = runtime/custom-gpt/SEO_STRATEGY_GOVERNANCE_SPECIALIST_BUILDER_KERNEL_V0_3.md
+CURRENT_KERNEL_BLOB = cdea4c87bcdf86eee44f2774c7cae0423a82528f
+BUILDER_PACKAGE = runtime/custom-gpt/SEO_STRATEGY_GOVERNANCE_SPECIALIST_BUILDER_PACKAGE_V0_3.md
+BUILDER_PACKAGE_BLOB = f4d99304d7b2aa54c2c1bf585d5dc8eaa09385b7
+CURRENT_BUILDER_APPLIED = PASS
+CURRENT_RUNTIME_FINGERPRINT = CAPTURED / PASS_WITH_UI_PROVENANCE_LIMITATION
+L1_CANONICAL = PASS
+R01-R10 = CURRENT PASS
+TOOL_HONESTY = PASS
+CURRENT_LIVE_CLAIM_PROVENANCE = PASS
+PROMPT_INVARIANCE = PASS
+DECISION_COMPARABILITY = PASS
+C01-C18 = PASS ON PROMOTION STATE
+C12 = USER_AUTHORIZED_READY / 2026-08-25
+CERTIFIED_FOR_ANY_PROJECT = YES
+```
+
+Historical integrity:
+
+```text
+R03_V0_1_INITIAL = FAIL
+R03_V0_1_RETEST = FAIL
+R07_V0_2 = FAIL
+RETROACTIVE_PASS = NO
+RETROACTIVE_ERASURE = NO
+```
+
+Primary final evidence: `tests/runtime/evidence/SEO_STRATEGY_GOVERNANCE_FINAL_CERTIFICATION_2026-08-25.md`.
 
 The Runtime Enforcement Gateway remains separate from specialist certification. Any material runtime fingerprint/tool/archetype/bootstrap change requires proportional revalidation; never silently preserve PASS across material drift.
