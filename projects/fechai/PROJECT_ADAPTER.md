@@ -1,6 +1,6 @@
 # SES Project Adapter — FECH.AI
 
-**Status:** REFERENCE_IMPLEMENTATION / FOUNDATION_V0_5 / SPECIALIST_ROLE_MAP_ACTIVE
+**Status:** REFERENCE_IMPLEMENTATION / FOUNDATION_V0_6 / SPECIALIST_ROLE_MAP_ACTIVE
 
 This adapter describes the FECH.AI project registered in the SES Project Registry and points to its project-owned canonical sources. It intentionally contains pointers, not copied FECH.AI operational truth.
 
@@ -70,6 +70,12 @@ SPECIALIST_ROLE_MAP:
   ARCHETYPE_ID: content-semantic-seo-specialist
   ADOPTION_STATUS: ADOPTED
   PROJECT_LOCAL_RULES: NOT_APPLICABLE; resolve FECH.AI content, brand, product, commercial, legal and factual truth through project bootstrap and current project sources
+  LEGACY_ALIASES: none
+
+- ROLE: seo_analytics_growth
+  ARCHETYPE_ID: seo-analytics-growth-specialist
+  ADOPTION_STATUS: ADOPTED
+  PROJECT_LOCAL_RULES: NOT_APPLICABLE; resolve FECH.AI KPIs, conversion definitions, analytics properties, consent/privacy/legal rules and business-value truth through project bootstrap and current project sources
   LEGACY_ALIASES: none
 ```
 
