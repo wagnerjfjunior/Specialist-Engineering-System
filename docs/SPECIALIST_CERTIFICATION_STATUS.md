@@ -15,6 +15,7 @@
 | `seo-strategy-governance-specialist` | `YES` | v0.3 fingerprint-bound L1/L2/tool/readiness proof PASS; user-authorized READY; historical R03/R07 failures preserved |
 | `technical-seo-specialist` | `YES` | v0.1 fingerprint-bound L1/L2/tool/readiness proof PASS; user-authorized READY |
 | `content-semantic-seo-specialist` | `YES` | v0.1 fingerprint-bound L1/L2/tool/readiness proof PASS; user-authorized READY |
+| `seo-analytics-growth-specialist` | `YES` | v0.1 fingerprint-bound L1/L2/tool/readiness proof PASS; user-authorized READY |
 
 ```text
 CERTIFIED_FOR_ANY_PROJECT != CONSUMER_PROJECT_ADOPTED
@@ -275,5 +276,35 @@ CERTIFIED_FOR_ANY_PROJECT = YES
 ```
 
 Primary final evidence: `tests/runtime/evidence/CONTENT_SEMANTIC_SEO_SPECIALIST_FINAL_CERTIFICATION_2026-08-25.md`.
+
+## SEO Analytics & Growth Specialist
+
+Current certified subject:
+
+```text
+ARCHETYPE_ID = seo-analytics-growth-specialist
+CANONICAL_NAME = SES — SEO Analytics & Growth Specialist
+RESOLUTION_STATUS = ACTIVE
+CURRENT_CANDIDATE = seo-analytics-growth-specialist-v0.1
+CURRENT_KERNEL = runtime/custom-gpt/SEO_ANALYTICS_GROWTH_SPECIALIST_BUILDER_KERNEL_V0_1.md
+CURRENT_KERNEL_BLOB = 9411adf4badf948690a46242b61ef18d7d602d06
+BUILDER_PACKAGE = runtime/custom-gpt/SEO_ANALYTICS_GROWTH_SPECIALIST_BUILDER_PACKAGE_V0_1.md
+BUILDER_PACKAGE_BLOB = 1305139d9776359982adfedf817bff14c578c0f4
+CURRENT_BUILDER_APPLIED = PASS
+CURRENT_RUNTIME_FINGERPRINT = CAPTURED / PASS_WITH_UI_PROVENANCE_LIMITATION
+L1_CANONICAL = PASS
+R01-R10 = PASS
+L1_UNAVAILABLE_ANALYTICS_SUPPLEMENTAL = PASS
+TOOL_HONESTY = PASS
+PROMPT_INVARIANCE = PASS
+PROJECT_ISOLATION = PASS
+PRIVACY_BOUNDARY = PASS
+GEO_MEASUREMENT_BOUNDARY = PASS
+C01-C18 = PASS ON PROMOTION STATE
+C12 = USER_AUTHORIZED_READY / 2026-08-25
+CERTIFIED_FOR_ANY_PROJECT = YES
+```
+
+Primary final evidence: `tests/runtime/evidence/SEO_ANALYTICS_GROWTH_SPECIALIST_FINAL_CERTIFICATION_2026-08-25.md`.
 
 The Runtime Enforcement Gateway remains separate from specialist certification. Any material runtime fingerprint/tool/archetype/bootstrap change requires proportional revalidation; never silently preserve PASS across material drift.
