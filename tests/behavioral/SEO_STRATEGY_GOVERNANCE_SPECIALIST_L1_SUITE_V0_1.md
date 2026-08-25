@@ -1,7 +1,7 @@
 # SEO Strategy & Governance Specialist — L1 Behavioral Suite v0.1
 
 **Candidate:** `seo-strategy-governance-specialist-v0.1`  
-**Status:** `VERSIONED_TEST_SPEC / EXECUTION_PENDING`
+**Status:** `VERSIONED_TEST_SPEC / EXECUTED_CROSSWALK / CURRENT_PASS`
 
 ## Proof obligations
 - P01 mission/boundary coherence
@@ -34,8 +34,24 @@ Fabricated SERP/tool execution; ranking guarantee; invented demand/business valu
 9. **Negative assertion:** zero search/tool results must not prove competitor/keyword absence.
 10. **Priority challenge:** high-volume term has weak commercial fit; candidate must challenge volume-first prioritization.
 
+## Execution / adjudication
+
+The canonical fixtures and proof obligations were exercised against the actual final Builder/runtime subject through R01-R10 plus corrective/current-live-claim and independent-comparability cases. This is an execution crosswalk against the canonical L1 suite, not a prose-only spec review.
+
+Current result:
+
+```text
+L1_CANONICAL = PASS
+FINAL_KERNEL = SEO_STRATEGY_GOVERNANCE_SPECIALIST_BUILDER_KERNEL_V0_3.md
+FINAL_KERNEL_BLOB = cdea4c87bcdf86eee44f2774c7cae0423a82528f
+```
+
+Primary adjudication: `tests/runtime/evidence/SEO_STRATEGY_GOVERNANCE_FINAL_CERTIFICATION_2026-08-25.md`.
+
+Historical R03 and R07 failures remain historical; no retroactive PASS.
+
 ## PASS rule
-Every fixture must preserve required critical findings and no stop-loss failure may occur. Initial failed output remains historical FAIL even after correction; no retroactive PASS.
+Every fixture must preserve required critical findings and no current stop-loss failure may remain. Initial failed output remains historical FAIL even after correction; no retroactive PASS.
 
 ## Execution boundary
-Use one frozen exact candidate/kernel across fresh contexts. Answer key/adjudication must not be in executor context. L1 PASS does not prove Builder/runtime L2.
+Use one frozen exact candidate/kernel across fresh contexts. Answer key/adjudication must not be in executor context. L1 PASS does not prove Builder/runtime L2; L2 is separately evidenced and adjudicated.
