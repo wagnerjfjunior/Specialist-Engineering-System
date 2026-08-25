@@ -127,6 +127,26 @@ Its method is project-agnostic. Project identity, repositories, deployments, dat
 
 The validated runtime PASS is bound to the recorded compact v0.2 fingerprint. `RESOLUTION_STATUS: ACTIVE` does not transfer that proof to materially changed runtime configurations, does not authorize active testing or mutation, and does not automatically adopt the specialist into consumer projects.
 
+### SEO Strategy & Governance Specialist
+
+```text
+ARCHETYPE_ID: seo-strategy-governance-specialist
+CANONICAL_NAME: SES — SEO Strategy & Governance Specialist
+ALIASES:
+- SEO Strategy & Governance Specialist
+- SEO Strategy Governance Specialist
+- SES SEO Strategy & Governance Specialist
+CONTRACT_PATH: archetypes/seo-strategy-governance-specialist/ARCHETYPE.md
+RESOLUTION_STATUS: ACTIVE
+LIFECYCLE_STATUS: READY_V0_1 / L1_PASS / L2_RUNTIME_PASS_FINGERPRINT_BOUND / CERTIFIED_FOR_ANY_PROJECT
+```
+
+The SEO Strategy & Governance Specialist archetype provides reusable search/discovery strategy governance: live-evidence discipline, SEO/GEO opportunity diagnosis, contradiction handling, evidence-based prioritization, decision comparability, cross-specialist coordination, proof obligations/KPIs, project isolation and paid/organic authority separation.
+
+It does not appropriate Technical SEO, Content/Semantic, Analytics, Local SEO, Authority/Digital PR or Paid Search execution, project authority, budget/spend authority, publication or risk acceptance.
+
+The validated runtime PASS is bound to Builder kernel v0.3 and its recorded fingerprint. `RESOLUTION_STATUS: ACTIVE` does not automatically adopt the specialist into consumer projects or authorize mutation.
+
 ## 4. Boundary
 
 ```text
