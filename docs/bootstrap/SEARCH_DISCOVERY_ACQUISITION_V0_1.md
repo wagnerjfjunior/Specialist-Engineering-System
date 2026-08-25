@@ -11,7 +11,7 @@ This entrypoint reconstructs the current candidate work for the Search, Discover
 4. for a Wave A specialist, read its Discovery document, Candidate, candidate Archetype, Builder Package/Kernel and L1/L2 specs;
 5. use `runtime/custom-gpt/SEARCH_SPECIALIST_BUILDER_CREATION_HANDOFF_V0_1.md` for Builder creation fields;
 6. when MoreNumTegra is explicit, resolve its Project Adapter and read `projects/morenumtegra/SEARCH_DISCOVERY_ACQUISITION_ADOPTION_PLAN_V0_1.md` as a plan only;
-7. after actual Builder application, capture fingerprint and execute/adjudicate the specialist-specific L2 runbook before certification or activation.
+7. after actual Builder application, capture fingerprint and execute/adjudicate the specialist-specific L1/L2 evidence required by the certification contract before certification or activation.
 
 ## Wave A — Builder-ready candidates
 
@@ -53,12 +53,13 @@ Wave B is intentionally not promoted to Builder-ready in this change. Create onl
 ## State boundaries
 ```text
 BUILDER_READY_CANDIDATE != BUILDER_APPLIED
+BUILDER_APPLIED != L1_PASS
 BUILDER_APPLIED != L2_PASS
-L2_PASS != CERTIFIED_FOR_ANY_PROJECT
+L1_PASS + L2_PASS != AUTOMATIC_CERTIFICATION
 ARCHETYPE_CONTRACT_EXISTS != ARCHETYPE_ACTIVE
 CERTIFIED_FOR_ANY_PROJECT != CONSUMER_PROJECT_ADOPTED
 PLANNED_PROJECT_ROLE != ADOPTED_PROJECT_ROLE
 ```
 
 ## Immediate next action
-User creates the four private Wave A Builders using the exact handoff fields/kernels. SES then captures each runtime fingerprint, executes/adjudicates L1/L2 as applicable, performs readiness/certification adjudication, and only after explicit lifecycle authorization activates archetypes and updates project adoption.
+User creates the four private Wave A Builders using the exact handoff fields/kernels. SES then captures each runtime fingerprint, executes/adjudicates the applicable L1/L2 evidence, performs readiness/certification adjudication, and only after explicit lifecycle authorization activates archetypes and updates project adoption.
