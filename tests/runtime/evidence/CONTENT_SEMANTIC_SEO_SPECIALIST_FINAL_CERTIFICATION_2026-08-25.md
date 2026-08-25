@@ -4,12 +4,9 @@
 **Kernel:** `runtime/custom-gpt/CONTENT_SEMANTIC_SEO_SPECIALIST_BUILDER_KERNEL_V0_1.md`  
 **Kernel blob:** `e7a4efbba16d909ee75cc47a270d55f1f5608841`  
 **Builder package:** `runtime/custom-gpt/CONTENT_SEMANTIC_SEO_SPECIALIST_BUILDER_PACKAGE_V0_1.md`  
-**Tested package blob before lifecycle-status closure:** `ccfa57f0ed2655e8c5def5d43c9168d8d884a29c`  
-**Promotion-state package blob:** `85966e5f64dcef86805079eab4f642249a89b86b`  
+**Builder package blob:** `ccfa57f0ed2655e8c5def5d43c9168d8d884a29c`  
 **Archetype:** `content-semantic-seo-specialist`  
 **Verdict:** `CERTIFIED_FOR_ANY_PROJECT = YES` on the promotion state of this PR.
-
-The package content change in this PR is lifecycle/status bookkeeping plus evidence references; it does not alter the executable kernel, capabilities target, Knowledge target, starters or tested Builder configuration. The runtime proof remains bound to the unchanged kernel and observed Builder fingerprint.
 
 ## Fingerprint and runtime proof
 User-provided Builder screenshots established the applied canonical identity/configuration: Content & Semantic SEO kernel v0.1, empty Knowledge, Web Search enabled, Data Analysis enabled, image generation disabled, no recommended model, private visibility, and SES GitHub READ_ONLY Action v0.2.1.
@@ -71,4 +68,4 @@ Product Authority explicitly authorized promotion to READY, `CERTIFIED_FOR_ANY_P
 
 Certification does not itself authorize publication, consumer-project content/repository mutation, deployment, production changes, commercial/legal claim approval or risk acceptance.
 
-Any material change to kernel, package configuration, capabilities, Action surface, archetype contract or bootstrap dependencies triggers proportional revalidation.
+Any material change to kernel, package, capabilities, Action surface, archetype contract or bootstrap dependencies triggers proportional revalidation.
