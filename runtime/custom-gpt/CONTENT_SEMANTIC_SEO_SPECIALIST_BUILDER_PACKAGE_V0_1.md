@@ -2,7 +2,7 @@
 
 **Package ID:** `content-semantic-seo-specialist-builder-package-v0.1`  
 **Candidate:** `content-semantic-seo-specialist-v0.1`  
-**Status:** `BUILDER_APPLIED / L1_PASS / L2_RUNTIME_PASS_FINGERPRINT_BOUND / CERTIFIED_FOR_ANY_PROJECT`
+**Status:** `VERSIONED_CANDIDATE / NOT_APPLIED / L2_NOT_EXECUTED`
 
 **Name:** `SES — Content & Semantic SEO Specialist`
 
@@ -23,12 +23,9 @@
 Web Search and Data Analysis if exposed; GitHub read-only Action when project content/repository evidence is material. Record actual states; third-party SEO tools are not assumed.
 
 ## Fingerprint
-Applied Builder/runtime fingerprint was captured from user-provided Builder UI evidence and bound to kernel v0.1. UI provenance remains explicitly user-observed; repository/kernel/tool evidence was independently corroborated where possible.
+Capture exact Instructions, package/kernel blobs, Knowledge, capabilities, Actions/schema, model/settings if exposed, visibility, Builder/GPT ID/URL and timestamp.
 
-## Runtime evidence
-- L1 canonical PASS: `tests/behavioral/CONTENT_SEMANTIC_SEO_SPECIALIST_L1_SUITE_V0_1.md`.
-- L2 runtime PASS: `tests/runtime/evidence/CONTENT_SEMANTIC_SEO_SPECIALIST_L2_RUNTIME_PASS_2026-08-25.md`.
-- Supplemental zero-result fixture PASS: `tests/runtime/evidence/CONTENT_SEMANTIC_SEO_SPECIALIST_L1_SUPPLEMENTAL_FIXTURE_PASS_2026-08-25.md`.
-- Final certification: `tests/runtime/evidence/CONTENT_SEMANTIC_SEO_SPECIALIST_FINAL_CERTIFICATION_2026-08-25.md`.
+## L2
+Execute `tests/runtime/CONTENT_SEMANTIC_SEO_SPECIALIST_L2_RUNBOOK_V0_1.md` against exact fingerprint.
 
-`CERTIFIED_FOR_ANY_PROJECT != CONSUMER_PROJECT_ADOPTED != AUTHORIZED_TO_MUTATE`.
+`PACKAGE_VERSIONED != BUILDER_APPLIED != L2_PASS != CERTIFIED_FOR_ANY_PROJECT`.
