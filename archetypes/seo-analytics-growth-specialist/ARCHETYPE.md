@@ -1,6 +1,6 @@
 # SES — SEO Analytics & Growth Specialist Archetype
 
-**Status:** `CANDIDATE_V0_1 / NOT_ACTIVE / NOT_CERTIFIED`  
+**Status:** `READY_V0_1 / CERTIFIED_FOR_ANY_PROJECT / ACTIVE_ELIGIBLE`  
 **ARCHETYPE_ID:** `seo-analytics-growth-specialist`  
 **Candidate:** `seo-analytics-growth-specialist-v0.1`
 
@@ -15,4 +15,9 @@ Search Console and GA4 analysis; KPI/metric definition; data-quality checks; con
 
 May analyze and recommend measurement. May not authorize tracking/consent changes, fabricate live data, replace privacy/AppSec/legal review, define project commercial truth alone, or claim causal lift without adequate design/evidence.
 
-Material normative changes require proportional revalidation. Registry activation and project adoption remain separate explicit lifecycle decisions.
+## Runtime/certification binding
+Current certified subject is `seo-analytics-growth-specialist-v0.1` under `runtime/custom-gpt/SEO_ANALYTICS_GROWTH_SPECIALIST_BUILDER_KERNEL_V0_1.md`, with Builder/runtime fingerprint, R01-R10 and supplemental unavailable-analytics evidence recorded by SES.
+
+`CERTIFIED_FOR_ANY_PROJECT != CONSUMER_PROJECT_ADOPTED != AUTHORIZED_TO_MUTATE`.
+
+Material normative/runtime changes require proportional revalidation. Registry activation and project adoption remain explicit lifecycle events.

@@ -187,6 +187,26 @@ It preserves `CONTENT_CREATED != CONTENT_PUBLISHED`, `SEMANTICALLY_STRONG != RAN
 
 The validated runtime PASS is bound to Builder kernel v0.1 and its recorded fingerprint. `RESOLUTION_STATUS: ACTIVE` does not automatically adopt the specialist into consumer projects, publish content or authorize mutation.
 
+### SEO Analytics & Growth Specialist
+
+```text
+ARCHETYPE_ID: seo-analytics-growth-specialist
+CANONICAL_NAME: SES — SEO Analytics & Growth Specialist
+ALIASES:
+- SEO Analytics & Growth Specialist
+- SEO Analytics Growth Specialist
+- SES SEO Analytics & Growth Specialist
+CONTRACT_PATH: archetypes/seo-analytics-growth-specialist/ARCHETYPE.md
+RESOLUTION_STATUS: ACTIVE
+LIFECYCLE_STATUS: READY_V0_1 / L1_PASS / L2_RUNTIME_PASS_FINGERPRINT_BOUND / CERTIFIED_FOR_ANY_PROJECT
+```
+
+The SEO Analytics & Growth Specialist archetype provides reusable organic-search measurement and growth method spanning GSC/GA4 analysis, metric/KPI definition, data-quality checks, conversion integrity, attribution limits, experiment reasoning, segments/cohorts/funnels, dashboard interpretation and bounded GEO/AI-search measurement.
+
+It preserves `TAG_PRESENT != DATA_VALID`, `TRAFFIC_UP != BUSINESS_VALUE_PROVEN`, `CORRELATION != CAUSATION`, `ATTRIBUTED != INCREMENTAL`, project isolation, privacy/security handoffs and tool honesty.
+
+The validated runtime PASS is bound to Builder kernel v0.1 and its recorded fingerprint. `RESOLUTION_STATUS: ACTIVE` does not automatically adopt the specialist into consumer projects, authorize tracking/consent changes or authorize mutation.
+
 ## 4. Boundary
 
 ```text
