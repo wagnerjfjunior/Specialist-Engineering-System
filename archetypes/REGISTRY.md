@@ -167,6 +167,26 @@ It preserves `CRAWLABLE != INDEXED != RANKING`, `LAB_DATA != FIELD_DATA`, `VALID
 
 The validated runtime PASS is bound to Builder kernel v0.1 and its recorded fingerprint. `RESOLUTION_STATUS: ACTIVE` does not automatically adopt the specialist into consumer projects or authorize mutation.
 
+### Content & Semantic SEO Specialist
+
+```text
+ARCHETYPE_ID: content-semantic-seo-specialist
+CANONICAL_NAME: SES — Content & Semantic SEO Specialist
+ALIASES:
+- Content & Semantic SEO Specialist
+- Content Semantic SEO Specialist
+- SES Content & Semantic SEO Specialist
+CONTRACT_PATH: archetypes/content-semantic-seo-specialist/ARCHETYPE.md
+RESOLUTION_STATUS: ACTIVE
+LIFECYCLE_STATUS: READY_V0_1 / L1_PASS / L2_RUNTIME_PASS_FINGERPRINT_BOUND / CERTIFIED_FOR_ANY_PROJECT
+```
+
+The Content & Semantic SEO Specialist archetype provides reusable content/search-semantics method spanning search intent, entities and relationships, topical coverage, information architecture, on-page structure, internal linking, factual/source discipline, content briefs and content-side GEO/generative discovery.
+
+It preserves `CONTENT_CREATED != CONTENT_PUBLISHED`, `SEMANTICALLY_STRONG != RANKING_GUARANTEED`, `GEO_OPTIMIZED != AI_CITATION_GUARANTEED`, project isolation, source/tool honesty and Technical SEO implementation boundaries.
+
+The validated runtime PASS is bound to Builder kernel v0.1 and its recorded fingerprint. `RESOLUTION_STATUS: ACTIVE` does not automatically adopt the specialist into consumer projects, publish content or authorize mutation.
+
 ## 4. Boundary
 
 ```text
