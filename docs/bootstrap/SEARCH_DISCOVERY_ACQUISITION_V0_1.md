@@ -7,7 +7,7 @@ This entrypoint reconstructs the current pre-runtime candidate work for the Sear
 ## Reading order
 1. resolve SES `main` live or preserve the exact candidate ref under review;
 2. read `docs/bootstrap/INDEX.md`;
-3. read `docs/architecture/SEARCH_DISCOVERY_ACQUISITION_DOMAIN_V0_1.md`;
+3. read `docs/architecture/SEARCH_DISCOVERY_ACQUISITION_DOMAIN_V0_2.md` (v0.1 remains historical initial architecture);
 4. for the selected specialist read its Discovery, Candidate, candidate Archetype, Builder Package/Kernel and L1/L2 specs;
 5. use `runtime/custom-gpt/SEARCH_SPECIALIST_BUILDER_CREATION_HANDOFF_V0_2.md` for current Builder creation fields;
 6. when MoreNumTegra is explicit, resolve its Project Adapter and read `projects/morenumtegra/SEARCH_DISCOVERY_ACQUISITION_ADOPTION_PLAN_V0_1.md` as a plan only;
