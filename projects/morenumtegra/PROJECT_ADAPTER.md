@@ -1,6 +1,6 @@
 # SES Project Adapter — MoreNumTegra
 
-**Status:** FOUNDATION_V0_2 / REGISTERED_CONSUMER_PROJECT / SPECIALIST_ROLE_MAP_ACTIVE
+**Status:** FOUNDATION_V0_3 / REGISTERED_CONSUMER_PROJECT / SPECIALIST_ROLE_MAP_ACTIVE
 
 This adapter describes the `morenumtegra` consumer project registered in the SES Project Registry and points to project-owned canonical sources. It stores stable locators only; MoreNumTegra remains authoritative for product truth, continuity, environments, authorization and runtime state.
 
@@ -19,7 +19,7 @@ ENVIRONMENT_ENTRYPOINT: docs/baseline/TECHNICAL_BASELINE_V1.md plus docs/PROJECT
 
 ## Specialist role map
 
-MoreNumTegra explicitly adopts the following certified SES archetype:
+MoreNumTegra explicitly adopts the following certified SES archetypes:
 
 ```text
 SPECIALIST_ROLE_MAP:
@@ -28,6 +28,11 @@ SPECIALIST_ROLE_MAP:
   ARCHETYPE_ID: seo-strategy-governance-specialist
   ADOPTION_STATUS: ADOPTED
   PROJECT_LOCAL_RULES: NOT_APPLICABLE; resolve MoreNumTegra product/search rules through project bootstrap and current project sources
+
+- ROLE: technical_seo
+  ARCHETYPE_ID: technical-seo-specialist
+  ADOPTION_STATUS: ADOPTED
+  PROJECT_LOCAL_RULES: NOT_APPLICABLE; resolve MoreNumTegra technical/search implementation truth through project bootstrap and current project sources
 ```
 
 Unmapped specialist roles remain not adopted and must fail closed as `SPECIALIST_ROLE_NOT_ADOPTED`. Do not infer adoption from project stack, product scope, archetype certification, specialist availability, role similarity or prior use in another project.
