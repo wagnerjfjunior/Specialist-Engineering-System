@@ -13,6 +13,7 @@
 | `software-systems-architect` | `YES` | C01-C18 PASS; current Builder/runtime fingerprint validated; user-authorized READY; historical failures preserved |
 | `documentation-auditor` | `YES` | v1.1 exact fingerprint; C01-C18 PASS; T01-T30/R/P/G/tool proof PASS; user-authorized READY; historical failures preserved |
 | `seo-strategy-governance-specialist` | `YES` | v0.3 fingerprint-bound L1/L2/tool/readiness proof PASS; user-authorized READY; historical R03/R07 failures preserved |
+| `technical-seo-specialist` | `YES` | v0.1 fingerprint-bound L1/L2/tool/readiness proof PASS; user-authorized READY |
 
 ```text
 CERTIFIED_FOR_ANY_PROJECT != CONSUMER_PROJECT_ADOPTED
@@ -216,5 +217,33 @@ RETROACTIVE_ERASURE = NO
 ```
 
 Primary final evidence: `tests/runtime/evidence/SEO_STRATEGY_GOVERNANCE_FINAL_CERTIFICATION_2026-08-25.md`.
+
+## Technical SEO Specialist
+
+Current certified subject:
+
+```text
+ARCHETYPE_ID = technical-seo-specialist
+CANONICAL_NAME = SES — Technical SEO Specialist
+RESOLUTION_STATUS = ACTIVE
+CURRENT_CANDIDATE = technical-seo-specialist-v0.1
+CURRENT_KERNEL = runtime/custom-gpt/TECHNICAL_SEO_SPECIALIST_BUILDER_KERNEL_V0_1.md
+CURRENT_KERNEL_BLOB = 662730906cb73e39e32795c5d04ebd4d4dedac54
+BUILDER_PACKAGE = runtime/custom-gpt/TECHNICAL_SEO_SPECIALIST_BUILDER_PACKAGE_V0_1.md
+BUILDER_PACKAGE_BLOB = a411030f82c464a9893f490bacdc26a7e80ff969
+CURRENT_BUILDER_APPLIED = PASS
+CURRENT_RUNTIME_FINGERPRINT = CAPTURED / PASS_WITH_UI_PROVENANCE_LIMITATION
+L1_CANONICAL = PASS
+R01-R10 = PASS
+TOOL_HONESTY = PASS
+PROMPT_INVARIANCE = PASS
+PROJECT_ISOLATION = PASS
+GEO_TECHNICAL_BOUNDARY = PASS
+C01-C18 = PASS ON PROMOTION STATE
+C12 = USER_AUTHORIZED_READY / 2026-08-25
+CERTIFIED_FOR_ANY_PROJECT = YES
+```
+
+Primary final evidence: `tests/runtime/evidence/TECHNICAL_SEO_SPECIALIST_FINAL_CERTIFICATION_2026-08-25.md`.
 
 The Runtime Enforcement Gateway remains separate from specialist certification. Any material runtime fingerprint/tool/archetype/bootstrap change requires proportional revalidation; never silently preserve PASS across material drift.

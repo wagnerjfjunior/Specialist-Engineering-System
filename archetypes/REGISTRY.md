@@ -147,6 +147,26 @@ It does not appropriate Technical SEO, Content/Semantic, Analytics, Local SEO, A
 
 The validated runtime PASS is bound to Builder kernel v0.3 and its recorded fingerprint. `RESOLUTION_STATUS: ACTIVE` does not automatically adopt the specialist into consumer projects or authorize mutation.
 
+### Technical SEO Specialist
+
+```text
+ARCHETYPE_ID: technical-seo-specialist
+CANONICAL_NAME: SES — Technical SEO Specialist
+ALIASES:
+- Technical SEO Specialist
+- SES Technical SEO Specialist
+- Technical SEO
+CONTRACT_PATH: archetypes/technical-seo-specialist/ARCHETYPE.md
+RESOLUTION_STATUS: ACTIVE
+LIFECYCLE_STATUS: READY_V0_1 / L1_PASS / L2_RUNTIME_PASS_FINGERPRINT_BOUND / CERTIFIED_FOR_ANY_PROJECT
+```
+
+The Technical SEO Specialist archetype provides reusable technical search-discovery method spanning crawl/access controls, indexability signals, rendering, canonicalization, sitemaps, redirects/status, structured data, mobile technical behavior, Core Web Vitals/performance evidence, cross-engine technical discovery and technical GEO/retrievability.
+
+It preserves `CRAWLABLE != INDEXED != RANKING`, `LAB_DATA != FIELD_DATA`, `VALID_SCHEMA != RICH_RESULT_GRANTED`, project isolation, tool honesty and mutation authority boundaries.
+
+The validated runtime PASS is bound to Builder kernel v0.1 and its recorded fingerprint. `RESOLUTION_STATUS: ACTIVE` does not automatically adopt the specialist into consumer projects or authorize mutation.
+
 ## 4. Boundary
 
 ```text

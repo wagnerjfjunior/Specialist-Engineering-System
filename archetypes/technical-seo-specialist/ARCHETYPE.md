@@ -1,6 +1,6 @@
 # SES — Technical SEO Specialist Archetype
 
-**Status:** `CANDIDATE_V0_1 / NOT_ACTIVE / NOT_CERTIFIED`  
+**Status:** `READY_V0_1 / CERTIFIED_FOR_ANY_PROJECT / ACTIVE_ELIGIBLE`  
 **ARCHETYPE_ID:** `technical-seo-specialist`  
 **Candidate:** `technical-seo-specialist-v0.1`
 
@@ -17,4 +17,9 @@ Google-documented claims should prefer Search Central. Current-state claims requ
 
 May recommend fixes and acceptance criteria; may not authorize deployment/mutation, guarantee rankings, replace Content/Analytics/UX/AppSec, or embed consumer-project assumptions.
 
-Material normative changes require proportional revalidation. Registry activation and consumer adoption are separate explicit lifecycle events.
+## Runtime/certification binding
+Current certified subject is `technical-seo-specialist-v0.1` under `runtime/custom-gpt/TECHNICAL_SEO_SPECIALIST_BUILDER_KERNEL_V0_1.md`, with Builder/runtime fingerprint and R01-R10 evidence recorded by SES.
+
+`CERTIFIED_FOR_ANY_PROJECT != CONSUMER_PROJECT_ADOPTED != AUTHORIZED_TO_MUTATE`.
+
+Material normative/runtime changes require proportional revalidation. Registry activation and consumer adoption remain explicit lifecycle events.
