@@ -1,6 +1,6 @@
 # SES Project Adapter — MoreNumTegra
 
-**Status:** FOUNDATION_V0_1 / REGISTERED_CONSUMER_PROJECT / NO_SPECIALIST_ROLES_ADOPTED
+**Status:** FOUNDATION_V0_2 / REGISTERED_CONSUMER_PROJECT / SPECIALIST_ROLE_MAP_ACTIVE
 
 This adapter describes the `morenumtegra` consumer project registered in the SES Project Registry and points to project-owned canonical sources. It stores stable locators only; MoreNumTegra remains authoritative for product truth, continuity, environments, authorization and runtime state.
 
@@ -19,22 +19,18 @@ ENVIRONMENT_ENTRYPOINT: docs/baseline/TECHNICAL_BASELINE_V1.md plus docs/PROJECT
 
 ## Specialist role map
 
-Registration does not adopt a specialist. No reusable SES archetype is adopted for MoreNumTegra in this initial registration.
+MoreNumTegra explicitly adopts the following certified SES archetype:
 
 ```text
 SPECIALIST_ROLE_MAP:
-```
 
-Until an explicit project decision adds one or more mappings in the form below, every requested SES role must fail closed as `SPECIALIST_ROLE_NOT_ADOPTED`:
-
-```text
-- ROLE: <project-facing-role>
-  ARCHETYPE_ID: <active-certified-archetype-id>
+- ROLE: seo_strategy
+  ARCHETYPE_ID: seo-strategy-governance-specialist
   ADOPTION_STATUS: ADOPTED
-  PROJECT_LOCAL_RULES: <project-owned pointer when applicable>
+  PROJECT_LOCAL_RULES: NOT_APPLICABLE; resolve MoreNumTegra product/search rules through project bootstrap and current project sources
 ```
 
-Do not infer adoption from project stack, product scope, archetype certification, specialist availability, role similarity or prior use in another project.
+Unmapped specialist roles remain not adopted and must fail closed as `SPECIALIST_ROLE_NOT_ADOPTED`. Do not infer adoption from project stack, product scope, archetype certification, specialist availability, role similarity or prior use in another project.
 
 ## Resolution flow
 
@@ -47,8 +43,9 @@ explicit PROJECT_IDENTIFIER = morenumtegra (or an explicit registered alias)
 → this Project Adapter
 → exact SPECIALIST_ROLE_MAP match
 → if absent: SPECIALIST_ROLE_NOT_ADOPTED
-→ if later adopted: resolve archetypes/REGISTRY.md
-→ resolve current certification eligibility
+→ if adopted: resolve archetypes/REGISTRY.md
+→ resolve docs/SPECIALIST_CERTIFICATION_STATUS.md
+→ require current certification eligibility
 → resolve wagnerjfjunior/MoreNumTegra main live
 → read bootstrap/BOOTSTRAP_CANONICO.md
 → follow the project bootstrap reading order
@@ -87,4 +84,4 @@ This adapter does not authorize implementation, Preview, Production, domain/DNS 
 
 ## Adoption rule
 
-Adding the first or any later `ROLE -> ARCHETYPE_ID` mapping is a separate project adoption decision. It must be explicit, versioned and proportionally validated. SES certification or Gateway availability never creates that decision automatically.
+Each `ROLE -> ARCHETYPE_ID` mapping is a separate explicit project adoption decision. Certification or Gateway availability never auto-adopts future roles. Future certified Search/Discovery specialists must be adopted individually when MoreNumTegra needs them.
