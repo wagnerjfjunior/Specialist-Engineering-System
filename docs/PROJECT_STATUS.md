@@ -8,13 +8,27 @@ SES is project-agnostic specialist-engineering infrastructure. Consumer projects
 
 ## Portfolio
 
-| Specialist | Archetype | Certification |
+Canonical portfolio architecture: `docs/architecture/CANONICAL_SPECIALIST_FRAMEWORK.md`.  
+Current certification authority: `docs/SPECIALIST_CERTIFICATION_STATUS.md`.
+
+| Specialist | Archetype state | Certification |
 |---|---|---|
+| Documentation Auditor | ACTIVE | `YES / v1.1` |
+| Software Systems Architect | ACTIVE | `YES` |
 | UX/UI APP Specialist | ACTIVE | `YES` |
 | Backend & Data Platform Specialist | ACTIVE | `YES` |
 | Application Security Assurance Specialist | ACTIVE | `YES` |
-| Software Systems Architect | ACTIVE | `YES` |
-| Documentation Auditor | ACTIVE | `YES / v1.1` |
+| SEO Strategy & Governance Specialist | ACTIVE | `YES` |
+| Technical SEO Specialist | ACTIVE | `YES` |
+| Content & Semantic SEO Specialist | ACTIVE | `YES` |
+| SEO Analytics & Growth Specialist | ACTIVE | `YES` |
+| Paid Search & SEM Specialist | ACTIVE | `YES` |
+| Local SEO Specialist | TARGET | `CERTIFICATION_PENDING` |
+| Authority & Digital PR Specialist | TARGET | `CERTIFICATION_PENDING` |
+
+The two TARGET specialists are part of the intended Search, Discovery & Acquisition framework but must not be represented as certified, active or adopted before their own evidence satisfies the lifecycle gates.
+
+Legacy names such as `GPT0`–`GPT8`, `SaaS Architect` and project-specific Builder labels are continuity/project-local identities only unless an applicable project source explicitly says otherwise. Canonical SES routing uses canonical names and `ARCHETYPE_ID` values. Migration policy: `docs/migrations/LEGACY_SPECIALIST_IDENTITY_MIGRATION_PLAN.md`.
 
 All certification remains fingerprint-bound. Historical FAIL/BLOCKED/INVALID/overclaim events remain preserved; `RETROACTIVE_PASS = NO`.
 
