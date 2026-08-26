@@ -1,6 +1,6 @@
 # SES Project Adapter — MoreNumTegra
 
-**Status:** FOUNDATION_V0_5 / REGISTERED_CONSUMER_PROJECT / SPECIALIST_ROLE_MAP_ACTIVE
+**Status:** FOUNDATION_V0_6 / REGISTERED_CONSUMER_PROJECT / SPECIALIST_ROLE_MAP_ACTIVE
 
 This adapter describes the `morenumtegra` consumer project registered in the SES Project Registry and points to project-owned canonical sources. It stores stable locators only; MoreNumTegra remains authoritative for product truth, continuity, environments, authorization and runtime state.
 
@@ -43,6 +43,11 @@ SPECIALIST_ROLE_MAP:
   ARCHETYPE_ID: seo-analytics-growth-specialist
   ADOPTION_STATUS: ADOPTED
   PROJECT_LOCAL_RULES: NOT_APPLICABLE; resolve MoreNumTegra KPIs, conversion definitions, analytics properties, consent/privacy rules and business-value truth through project bootstrap and current project sources
+
+- ROLE: paid_search_sem
+  ARCHETYPE_ID: paid-search-sem-specialist
+  ADOPTION_STATUS: ADOPTED
+  PROJECT_LOCAL_RULES: NOT_APPLICABLE; resolve MoreNumTegra ad accounts, budgets, billing, conversion definitions, tracking/consent rules, campaign targets and spend/publication authority through project bootstrap and current project sources
 ```
 
 Unmapped specialist roles remain not adopted and must fail closed as `SPECIALIST_ROLE_NOT_ADOPTED`. Do not infer adoption from project stack, product scope, archetype certification, specialist availability, role similarity or prior use in another project.
@@ -95,7 +100,7 @@ PROJECT_CONTEXT_READY != AUTHORIZED_TO_MUTATE
 TOOL_CAPABILITY != AUTHORIZATION
 ```
 
-This adapter does not authorize implementation, Preview, Production, domain/DNS changes, data processing, campaigns, merges or any consumer-project mutation.
+This adapter does not authorize implementation, Preview, Production, domain/DNS changes, data processing, campaigns, spend, billing, publication, merges or any consumer-project mutation.
 
 ## Adoption rule
 
