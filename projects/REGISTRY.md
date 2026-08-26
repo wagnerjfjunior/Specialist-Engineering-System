@@ -108,7 +108,9 @@ ADAPTER_PATH: projects/morenumtegra/PROJECT_ADAPTER.md
 STATUS: ACTIVE
 ```
 
-This registration establishes only SES-side project discovery. `wagnerjfjunior/MoreNumTegra` remains authoritative for its own product truth, continuity, authority, environments and project-local specialist rules. Initial registration does not adopt any SES specialist role.
+This registration establishes only SES-side project discovery. `wagnerjfjunior/MoreNumTegra` remains authoritative for its own product truth, continuity, authority, environments and project-local specialist rules.
+
+Registration itself does not adopt specialist roles. Any current MoreNumTegra specialist adoption must be resolved exclusively from `projects/morenumtegra/PROJECT_ADAPTER.md` and its exact `SPECIALIST_ROLE_MAP`.
 
 ## 6. Change discipline
 
