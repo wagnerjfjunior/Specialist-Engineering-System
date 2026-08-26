@@ -15,22 +15,28 @@
 6. for SES-mediated specialist consultation, read `core/protocols/MANUAL_SPECIALIST_HANDOFF_CONTRACT.md` and `tests/behavioral/MANUAL_SPECIALIST_HANDOFF_TESTS.md`;
 7. for historical or deliberately reopened Gateway work, read `core/protocols/RUNTIME_ENFORCEMENT_GATEWAY_CONTRACT.md`, `runtime/specialist_gateway/CUSTOM_GPT_PROFILE.md` and the applicable runtime/deployment evidence before making any Gateway operational claim.
 
-## Current certified portfolio
+## Portfolio source authority
+
+Do not maintain a duplicate specialist list in this handoff.
+
+Resolve the current portfolio from:
+
+- `docs/architecture/CANONICAL_SPECIALIST_FRAMEWORK.md` for canonical domains, names, CURRENT vs TARGET state and portfolio relationships;
+- `docs/SPECIALIST_CERTIFICATION_STATUS.md` for the current fingerprint-bound certification ledger;
+- `archetypes/REGISTRY.md` for active archetype resolution.
+
+At the current framework version, Local SEO and Authority & Digital PR are TARGET / CERTIFICATION_PENDING and must not be inferred as active or certified from their presence in the framework.
 
 ```text
-UX/UI APP Specialist = CERTIFIED_FOR_ANY_PROJECT YES
-Backend & Data Platform Specialist = YES
-Application Security Assurance Specialist = YES
-Software Systems Architect = YES
-Documentation Auditor = YES / v1.1
-```
-
-All certification remains fingerprint-bound. Historical FAIL/BLOCKED/INVALID/overclaim events remain preserved.
-
-```text
+FRAMEWORK_PORTFOLIO != CERTIFICATION_LEDGER
+TARGET != ACTIVE
+TARGET != CERTIFIED_FOR_ANY_PROJECT
+LEGACY_ALIAS != CANONICAL_IDENTITY
 RETROACTIVE_PASS = NO
 RETROACTIVE_ERASURE = NO
 ```
+
+Historical FAIL/BLOCKED/INVALID/overclaim events remain preserved.
 
 ## Current specialist consultation model
 
