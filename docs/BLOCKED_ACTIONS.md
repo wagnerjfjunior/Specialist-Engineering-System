@@ -43,15 +43,24 @@ ABSENCE_OF_FINDING != PROOF_OF_ABSENCE
 
 ## 3. Certified reusable specialists
 
-```text
-ux-ui-app-specialist = YES
-backend-data-platform-specialist = YES
-application-security-assurance-specialist = YES
-software-systems-architect = YES
-documentation-auditor = YES / v1.1 / KERNEL_BLOB 5bc10297d9e655cf169d2680f914e446232992e0
-```
+Do not maintain a duplicated certification list in this boundary document.
+
+Current certification must be resolved from `docs/SPECIALIST_CERTIFICATION_STATUS.md`; canonical portfolio/domain state must be resolved from `docs/architecture/CANONICAL_SPECIALIST_FRAMEWORK.md`; active resolution eligibility must be resolved from `archetypes/REGISTRY.md`.
+
+Block any attempt to:
+- treat a TARGET / CERTIFICATION_PENDING framework entry as certified or active;
+- infer certification from framework inclusion, naming, prior conversation or project adoption;
+- use a legacy GPT-number/name as a current canonical SES identity;
+- transfer a certification PASS to a changed fingerprint.
 
 For certified specialists, block without separate authority: publication/broader visibility, automatic project adoption, transfer of proof to a changed fingerprint, mutation authority, production approval, risk acceptance, or claims that every consumer project is correct/secure/production-ready.
+
+```text
+FRAMEWORK_ENTRY != CERTIFICATION
+TARGET != ACTIVE
+TARGET != CERTIFIED_FOR_ANY_PROJECT
+CERTIFIED_FOR_ANY_PROJECT != CONSUMER_PROJECT_ADOPTED
+```
 
 ## 4. Historical integrity
 
