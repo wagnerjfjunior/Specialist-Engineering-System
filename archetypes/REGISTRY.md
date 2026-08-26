@@ -207,6 +207,26 @@ It preserves `TAG_PRESENT != DATA_VALID`, `TRAFFIC_UP != BUSINESS_VALUE_PROVEN`,
 
 The validated runtime PASS is bound to Builder kernel v0.1 and its recorded fingerprint. `RESOLUTION_STATUS: ACTIVE` does not automatically adopt the specialist into consumer projects, authorize tracking/consent changes or authorize mutation.
 
+### Paid Search & SEM Specialist
+
+```text
+ARCHETYPE_ID: paid-search-sem-specialist
+CANONICAL_NAME: SES — Paid Search & SEM Specialist
+ALIASES:
+- Paid Search & SEM Specialist
+- Paid Search SEM Specialist
+- SES Paid Search & SEM Specialist
+CONTRACT_PATH: archetypes/paid-search-sem-specialist/ARCHETYPE.md
+RESOLUTION_STATUS: ACTIVE
+LIFECYCLE_STATUS: READY_V0_1 / L1_PASS / L2_RUNTIME_PASS_FINGERPRINT_BOUND / CERTIFIED_FOR_ANY_PROJECT
+```
+
+The Paid Search & SEM Specialist archetype provides reusable paid-search method spanning campaign/ad-group architecture, keyword/match-type/negative strategy, search-term evidence, bidding/budget recommendations, ad/landing alignment, Quality Score diagnostics, conversion/CPL/CPA/ROAS interpretation and SEO/SEM overlap/incrementality questions.
+
+It preserves `CAMPAIGN_DESIGNED != CAMPAIGN_PUBLISHED`, `ATTRIBUTED_CONVERSION != INCREMENTAL_CONVERSION`, `QUALITY_SCORE != BUSINESS_VALUE`, `BUDGET_RECOMMENDED != SPEND_AUTHORIZED`, project isolation, privacy/security handoffs and tool honesty.
+
+The validated runtime PASS is bound to Builder kernel v0.1 and its recorded fingerprint. `RESOLUTION_STATUS: ACTIVE` does not automatically adopt the specialist into consumer projects, authorize spend/publication/tracking changes or authorize mutation.
+
 ## 4. Boundary
 
 ```text
