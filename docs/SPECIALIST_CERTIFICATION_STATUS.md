@@ -16,6 +16,7 @@
 | `technical-seo-specialist` | `YES` | v0.1 fingerprint-bound L1/L2/tool/readiness proof PASS; user-authorized READY |
 | `content-semantic-seo-specialist` | `YES` | v0.1 fingerprint-bound L1/L2/tool/readiness proof PASS; user-authorized READY |
 | `seo-analytics-growth-specialist` | `YES` | v0.1 fingerprint-bound L1/L2/tool/readiness proof PASS; user-authorized READY |
+| `paid-search-sem-specialist` | `YES` | v0.1 fingerprint-bound L1/L2/tool/readiness proof PASS; user-authorized READY; pre-test starter mismatch corrected before fingerprint freeze |
 
 ```text
 CERTIFIED_FOR_ANY_PROJECT != CONSUMER_PROJECT_ADOPTED
@@ -306,5 +307,42 @@ CERTIFIED_FOR_ANY_PROJECT = YES
 ```
 
 Primary final evidence: `tests/runtime/evidence/SEO_ANALYTICS_GROWTH_SPECIALIST_FINAL_CERTIFICATION_2026-08-25.md`.
+
+## Paid Search & SEM Specialist
+
+Current certified subject:
+
+```text
+ARCHETYPE_ID = paid-search-sem-specialist
+CANONICAL_NAME = SES — Paid Search & SEM Specialist
+RESOLUTION_STATUS = ACTIVE
+CURRENT_CANDIDATE = paid-search-sem-specialist-v0.1
+CURRENT_KERNEL = runtime/custom-gpt/PAID_SEARCH_SEM_SPECIALIST_BUILDER_KERNEL_V0_1.md
+CURRENT_KERNEL_BLOB = 098b55d917014e896144d4727010ff296628e529
+BUILDER_PACKAGE = runtime/custom-gpt/PAID_SEARCH_SEM_SPECIALIST_BUILDER_PACKAGE_V0_1.md
+BUILDER_PACKAGE_BLOB = 3cecfe6a4d12a5db748f4b861fd0082f75228a35
+CURRENT_BUILDER_APPLIED = PASS
+CURRENT_RUNTIME_FINGERPRINT = CAPTURED / PASS_WITH_UI_PROVENANCE_LIMITATION
+L1_CANONICAL = PASS
+R01-R10 = PASS
+L1_UNAVAILABLE_GOOGLE_ADS_SUPPLEMENTAL = PASS
+TOOL_HONESTY = PASS
+PROMPT_INVARIANCE = PASS
+PROJECT_ISOLATION = PASS
+PRIVACY_BOUNDARY = PASS
+SEO_SEM_OVERLAP_BOUNDARY = PASS
+C01-C18 = PASS ON PROMOTION STATE
+C12 = USER_AUTHORIZED_READY / 2026-08-25
+CERTIFIED_FOR_ANY_PROJECT = YES
+```
+
+Pre-test configuration chronology:
+```text
+CONVERSATION_STARTERS_INITIAL = FAIL / WRONG_SPECIALIST
+USER_CORRECTED_BEFORE_FINGERPRINT_FREEZE = YES
+RETROACTIVE_PASS_FOR_INITIAL_CONFIGURATION = NO
+```
+
+Primary final evidence: `tests/runtime/evidence/PAID_SEARCH_SEM_SPECIALIST_FINAL_CERTIFICATION_2026-08-25.md`.
 
 The Runtime Enforcement Gateway remains separate from specialist certification. Any material runtime fingerprint/tool/archetype/bootstrap change requires proportional revalidation; never silently preserve PASS across material drift.
