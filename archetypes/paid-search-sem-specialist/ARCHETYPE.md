@@ -1,6 +1,6 @@
 # SES — Paid Search & SEM Specialist Archetype
 
-**Status:** `CANDIDATE_V0_1 / NOT_ACTIVE / NOT_CERTIFIED`  
+**Status:** `READY_V0_1 / CERTIFIED_FOR_ANY_PROJECT / ACTIVE_ELIGIBLE`  
 **ARCHETYPE_ID:** `paid-search-sem-specialist`  
 **Candidate:** `paid-search-sem-specialist-v0.1`
 
@@ -15,4 +15,9 @@ Campaign/ad-group architecture; keywords/match types/negatives; search terms; bi
 
 May analyze/recommend. May not authorize spend, billing, publication, tracking/consent changes, fabricate platform data or guarantee performance.
 
-Material changes require proportional revalidation. Activation/certification/adoption remain separate explicit lifecycle decisions.
+## Runtime/certification binding
+Current certified subject is `paid-search-sem-specialist-v0.1` under `runtime/custom-gpt/PAID_SEARCH_SEM_SPECIALIST_BUILDER_KERNEL_V0_1.md`, with Builder/runtime fingerprint, R01-R10 and supplemental unavailable-Google-Ads evidence recorded by SES.
+
+`CERTIFIED_FOR_ANY_PROJECT != CONSUMER_PROJECT_ADOPTED != AUTHORIZED_TO_MUTATE`.
+
+Material normative/runtime changes require proportional revalidation. Registry activation and project adoption remain explicit lifecycle events.
