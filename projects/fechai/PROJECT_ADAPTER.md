@@ -1,6 +1,6 @@
 # SES Project Adapter — FECH.AI
 
-**Status:** REFERENCE_IMPLEMENTATION / FOUNDATION_V0_6 / SPECIALIST_ROLE_MAP_ACTIVE
+**Status:** REFERENCE_IMPLEMENTATION / FOUNDATION_V0_7 / SPECIALIST_ROLE_MAP_ACTIVE
 
 This adapter describes the FECH.AI project registered in the SES Project Registry and points to its project-owned canonical sources. It intentionally contains pointers, not copied FECH.AI operational truth.
 
@@ -77,11 +77,17 @@ SPECIALIST_ROLE_MAP:
   ADOPTION_STATUS: ADOPTED
   PROJECT_LOCAL_RULES: NOT_APPLICABLE; resolve FECH.AI KPIs, conversion definitions, analytics properties, consent/privacy/legal rules and business-value truth through project bootstrap and current project sources
   LEGACY_ALIASES: none
+
+- ROLE: paid_search_sem
+  ARCHETYPE_ID: paid-search-sem-specialist
+  ADOPTION_STATUS: ADOPTED
+  PROJECT_LOCAL_RULES: NOT_APPLICABLE; resolve FECH.AI ad accounts, budgets, billing, conversion definitions, tracking/consent/privacy/legal rules, campaign targets and spend/publication authority through project bootstrap and current project sources
+  LEGACY_ALIASES: none
 ```
 
 The GPT labels above are continuity/history pointers, not current SES archetype identities. They do not override the explicit role map.
 
-Unmapped FECH.AI-local specialist domains (for example current CI/CD, SRE/observability, Ads/tracking, LeadOps, MesaCliente, integrations and monetization roles) remain project-local until FECH.AI explicitly adopts an applicable certified SES archetype. The Gateway must not infer or auto-adopt a replacement.
+Unmapped FECH.AI-local specialist domains (for example current CI/CD, SRE/observability, non-Search paid media/tracking implementation, LeadOps, MesaCliente, integrations and monetization roles) remain project-local until FECH.AI explicitly adopts an applicable certified SES archetype. The Gateway must not infer or auto-adopt a replacement.
 
 ## Resolution flow
 
