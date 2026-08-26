@@ -1,6 +1,6 @@
 # SES Project Adapter — MoreNumTegra
 
-**Status:** FOUNDATION_V0_6 / REGISTERED_CONSUMER_PROJECT / SPECIALIST_ROLE_MAP_ACTIVE
+**Status:** FOUNDATION_V0_7 / REGISTERED_CONSUMER_PROJECT / SPECIALIST_ROLE_MAP_ACTIVE / CERTIFIED_PORTFOLIO_MATRIX_APPLIED
 
 This adapter describes the `morenumtegra` consumer project registered in the SES Project Registry and points to project-owned canonical sources. It stores stable locators only; MoreNumTegra remains authoritative for product truth, continuity, environments, authorization and runtime state.
 
@@ -23,6 +23,26 @@ MoreNumTegra explicitly adopts the following certified SES archetypes:
 
 ```text
 SPECIALIST_ROLE_MAP:
+
+- ROLE: documentation_audit
+  ARCHETYPE_ID: documentation-auditor
+  ADOPTION_STATUS: ADOPTED
+  PROJECT_LOCAL_RULES: NOT_APPLICABLE; resolve MoreNumTegra documentation, evidence, lifecycle and authority truth through project bootstrap and current project sources
+
+- ROLE: architecture
+  ARCHETYPE_ID: software-systems-architect
+  ADOPTION_STATUS: ADOPTED
+  PROJECT_LOCAL_RULES: NOT_APPLICABLE; resolve MoreNumTegra architecture, environments, deployment topology and target-state authority through project bootstrap and current project sources
+
+- ROLE: ux_ui
+  ARCHETYPE_ID: ux-ui-app-specialist
+  ADOPTION_STATUS: ADOPTED
+  PROJECT_LOCAL_RULES: NOT_APPLICABLE; resolve MoreNumTegra product, brand, UX, accessibility, mobile and implementation truth through project bootstrap and current project sources
+
+- ROLE: application_security
+  ARCHETYPE_ID: application-security-assurance-specialist
+  ADOPTION_STATUS: ADOPTED
+  PROJECT_LOCAL_RULES: NOT_APPLICABLE; resolve MoreNumTegra security scope, data handling, active-test authority, risk acceptance and implementation truth through project bootstrap and current project sources
 
 - ROLE: seo_strategy
   ARCHETYPE_ID: seo-strategy-governance-specialist
@@ -48,6 +68,17 @@ SPECIALIST_ROLE_MAP:
   ARCHETYPE_ID: paid-search-sem-specialist
   ADOPTION_STATUS: ADOPTED
   PROJECT_LOCAL_RULES: NOT_APPLICABLE; resolve MoreNumTegra ad accounts, budgets, billing, conversion definitions, tracking/consent rules, campaign targets and spend/publication authority through project bootstrap and current project sources
+```
+
+## Portfolio coverage decision
+
+The matrix decision applies only to the certified portfolio existing at the time of this adoption. It does not auto-adopt future specialists.
+
+```text
+CURRENT_CERTIFIED_PORTFOLIO_COVERAGE: ALL_APPLICABLE_EXCEPT_BACKEND_DATA
+backend-data-platform-specialist: EXPLICITLY_NOT_ADOPTED
+REASON: current MoreNumTegra V1 baseline does not require a project-owned backend/data-platform specialist; re-evaluate only after a material architecture change or explicit Product Authority decision
+FUTURE_CERTIFIED_SPECIALIST: NOT_AUTO_ADOPTED
 ```
 
 Unmapped specialist roles remain not adopted and must fail closed as `SPECIALIST_ROLE_NOT_ADOPTED`. Do not infer adoption from project stack, product scope, archetype certification, specialist availability, role similarity or prior use in another project.
@@ -104,4 +135,4 @@ This adapter does not authorize implementation, Preview, Production, domain/DNS 
 
 ## Adoption rule
 
-Each `ROLE -> ARCHETYPE_ID` mapping is a separate explicit project adoption decision. Certification or Gateway availability never auto-adopts future roles. Future certified Search/Discovery specialists must be adopted individually when MoreNumTegra needs them.
+Each `ROLE -> ARCHETYPE_ID` mapping is a separate explicit project adoption decision. Certification or Gateway availability never auto-adopts future roles. Future certified specialists must be adopted individually when MoreNumTegra needs them.
