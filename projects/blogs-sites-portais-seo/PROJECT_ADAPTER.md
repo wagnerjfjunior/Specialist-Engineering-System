@@ -8,7 +8,7 @@ This adapter describes the `blogs-sites-portais-seo` consumer project registered
 PROJECT_ID: blogs-sites-portais-seo
 PROJECT_NAME: Ecossistema de Blogs, Sites, Portais e SEO
 CANONICAL_SOURCE: GitHub repository wagnerjfjunior/Blogs-sites-portais-seo
-DEFAULT_REF_OR_RESOLUTION_RULE: resolve live main before material work
+DEFAULT_REF_OR_RESOLUTION_RULE: resolve the exact consumer-project TARGET_REF required by the task; resolve live main when main is the intended target and do not substitute main for an explicitly identified PR/head/immutable ref
 BOOTSTRAP_ENTRYPOINT: bootstrap/BOOTSTRAP_CANONICO.md
 CONTINUITY_ENTRYPOINT: handoffs/CURRENT.md
 SPECIALIST_ENTRYPOINT_OR_RESOLUTION_RULE: resolve exact ROLE through this adapter SPECIALIST_ROLE_MAP; on the resolved consumer-project ref, use config/specialists.yaml when present as project-local adoption authority; use config/gpts.yaml only as explicit legacy compatibility/history when config/specialists.yaml is absent or when legacy Builder retirement/equivalence evidence is required
