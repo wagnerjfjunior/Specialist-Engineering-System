@@ -29,6 +29,8 @@ Read when applicable:
 - `docs/architecture/CANONICAL_SPECIALIST_FRAMEWORK.md` for the canonical portfolio/domain/nomenclature model
 - `docs/migrations/LEGACY_SPECIALIST_IDENTITY_MIGRATION_PLAN.md` when legacy GPT-number labels, obsolete names, Builder retirement or identity normalization is material
 - `projects/REGISTRY.md`
+- `projects/SPECIALIST_ADOPTION_MATRIX_CURRENT.md` when current cross-project/project-adoption state is material; follow its exact `CURRENT_PATH` rather than assuming the highest filename version
+- the registered Project Adapter for the exact consumer project; the adapter remains the detailed SES-side project adoption/routing authority
 - `archetypes/REGISTRY.md` for specialist/archetype resolution
 - the exact archetype contract resolved by `archetypes/REGISTRY.md`
 - `core/protocols/PROJECT_ADAPTER_CONTRACT.md`
@@ -167,15 +169,16 @@ Once a consumer project is explicit, continue:
 4. resolve the project identifier through `projects/REGISTRY.md`;
 5. obtain one unique `PROJECT_ID` and `ADAPTER_PATH` from the registry;
 6. read the registered Project Adapter at that exact path;
-7. use the adapter only to locate the consumer project's canonical source and entrypoints;
-8. resolve the consumer project's live canonical ref;
-9. execute the project-local bootstrap protocol;
-10. resolve the applicable specialist/project-local rules and overrides;
-11. read project-local common rules and authority/governance sources when applicable;
-12. execute the project-local continuity protocol when current-state continuity is material;
-13. resolve live evidence material to the exact task/target/environment;
-14. for hybrid specialists, emit the task-bound Context Readiness Receipt required by `core/protocols/HYBRID_SPECIALIST_BOOTSTRAP_CONTRACT.md`;
-15. only then perform project-specific substantive work within the receipt's effective scope.
+7. when current adoption mode, provider relationship or cross-project service is material, resolve `projects/SPECIALIST_ADOPTION_MATRIX_CURRENT.md` and its exact `CURRENT_PATH` as the consolidated decision snapshot; do not use the matrix as runtime authority;
+8. use the adapter to resolve the detailed SES-side role/adoption/provider mapping and to locate the consumer project's canonical source and entrypoints;
+9. resolve the consumer project's live canonical ref;
+10. execute the project-local bootstrap protocol;
+11. resolve the applicable specialist/project-local rules and overrides;
+12. read project-local common rules and authority/governance sources when applicable;
+13. execute the project-local continuity protocol when current-state continuity is material;
+14. resolve live evidence material to the exact task/target/environment;
+15. for hybrid specialists, emit the task-bound Context Readiness Receipt required by `core/protocols/HYBRID_SPECIALIST_BOOTSTRAP_CONTRACT.md`;
+16. only then perform project-specific substantive work within the receipt's effective scope.
 
 This order is normative for hybrid SES-mediated work and aligns with `core/protocols/PROJECT_BOOTSTRAP_CONTRACT.md`:
 
@@ -330,7 +333,7 @@ The consumer project owns its own:
 - runtime evidence;
 - project-local specialist rules.
 
-The Project Registry maps identifiers to adapters. A Project Adapter points to project-owned sources. Neither may duplicate consumer-project truth.
+The Project Registry maps identifiers to adapters. The current-adoption pointer locates the latest consolidated adoption snapshot. A Project Adapter owns detailed SES-side project role/adoption/provider mapping and points to project-owned sources. The matrix is a governance snapshot, not runtime authority; none of these SES-side artifacts replace consumer-project truth.
 
 A successful bootstrap or manual handoff establishes context/transport only. It does not grant mutation authority.
 
