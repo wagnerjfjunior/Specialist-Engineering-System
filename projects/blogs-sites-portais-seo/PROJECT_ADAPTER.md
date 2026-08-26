@@ -1,6 +1,6 @@
 # SES Project Adapter — Ecossistema de Blogs, Sites, Portais e SEO
 
-**Status:** FOUNDATION_V0_2 / REGISTERED_CONSUMER_PROJECT / SPECIALIST_ROLE_MAP_ACTIVE / CERTIFIED_PORTFOLIO_MATRIX_APPLIED
+**Status:** FOUNDATION_V0_3 / REGISTERED_CONSUMER_PROJECT / SPECIALIST_ROLE_MAP_ACTIVE / SEARCH_SERVICE_PROVIDER_FOR_MORENUMTEGRA
 
 This adapter describes the `blogs-sites-portais-seo` consumer project registered in the SES Project Registry and points to project-owned canonical sources. It intentionally contains stable locators only; it does not copy or freeze project operational truth.
 
@@ -83,6 +83,34 @@ FUTURE_CERTIFIED_SPECIALIST: NOT_AUTO_ADOPTED
 
 Unmapped specialist roles remain not adopted and must fail closed as `SPECIALIST_ROLE_NOT_ADOPTED`.
 
+## Cross-project service-provider role for MoreNumTegra
+
+By explicit product decision, this project is the Search Center of Expertise / specialist-service provider for `morenumtegra` for the currently certified Search roles:
+
+```text
+seo_strategy
+technical_seo
+content_semantic_seo
+seo_analytics_growth
+paid_search_sem
+```
+
+Future service intent includes Local SEO and Authority & Digital PR only after their SES certification and a later explicit activation/adoption decision. No future specialist is auto-adopted.
+
+For MoreNumTegra service work, this project may perform Search diagnosis, research, strategy, recommendations, measurement and optimization analysis. It does not acquire MoreNumTegra product, repository, deployment, budget, campaign-publication or risk-acceptance authority.
+
+```text
+SERVICE_PROVIDER_PROJECT_ID = blogs-sites-portais-seo
+CONSUMER_PROJECT_ID = morenumtegra
+
+PROVIDER_SPECIALIST_WORK != CONSUMER_PROJECT_MUTATION
+BLOGS_BUDGET_RECOMMENDATION != MORENUMTEGRA_SPEND_AUTHORIZATION
+BLOGS_CAMPAIGN_DESIGN != MORENUMTEGRA_CAMPAIGN_PUBLICATION
+BLOGS_TECHNICAL_SEO_FINDING != MORENUMTEGRA_CODE_CHANGE_AUTHORIZATION
+CROSS_PROJECT_SERVICE != PROJECT_OWNERSHIP_TRANSFER
+```
+
+The provider must preserve dual provenance: its own project context for Search method/rules and the exact MoreNumTegra target/evidence supplied or resolved for the service task. Copied context must not be represented as live evidence unless independently resolved.
 ## Resolution flow
 
 For project-specific specialist work:
