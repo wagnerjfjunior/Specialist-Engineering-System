@@ -6,17 +6,25 @@
 **Primary target:** `SES specialist consultation workflow`  
 **Current phase:** `MANUAL_SPECIALIST_HANDOFF / CURRENT_OPERATIONAL_PATH`
 
-## Current certified portfolio
+## Portfolio source authority
 
-```text
-UX/UI APP = CERTIFIED_FOR_ANY_PROJECT YES
-BACKEND & DATA PLATFORM = YES
-APPLICATION SECURITY ASSURANCE = YES
-SOFTWARE SYSTEMS ARCHITECT = YES
-DOCUMENTATION AUDITOR = YES / v1.1
-```
+This file does not duplicate the current specialist portfolio.
+
+For portfolio state, resolve:
+
+- `docs/architecture/CANONICAL_SPECIALIST_FRAMEWORK.md` for canonical portfolio architecture and CURRENT/TARGET classification;
+- `docs/SPECIALIST_CERTIFICATION_STATUS.md` for current certification;
+- `archetypes/REGISTRY.md` for active archetype resolution.
+
+Local SEO and Authority & Digital PR are currently TARGET / CERTIFICATION_PENDING in the framework and are not current certified/active specialists until their own lifecycle gates are satisfied.
 
 Historical failures remain preserved; `RETROACTIVE_PASS = NO`.
+
+```text
+CURRENT_STATE != TARGET_STATE
+FRAMEWORK_ENTRY != CERTIFICATION
+CERTIFICATION != PROJECT_ADOPTION
+```
 
 ## Material correction
 
