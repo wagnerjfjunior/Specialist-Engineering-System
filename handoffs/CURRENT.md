@@ -38,6 +38,29 @@ RETROACTIVE_ERASURE = NO
 
 Historical FAIL/BLOCKED/INVALID/overclaim events remain preserved.
 
+## Project adoption and cross-project service authority
+
+Do not infer project adoption from portfolio certification.
+
+Resolve project-adoption state through:
+
+- `projects/SPECIALIST_ADOPTION_MATRIX_CURRENT.md` -> exact current matrix snapshot;
+- `projects/REGISTRY.md` -> exact Project Adapter;
+- the Project Adapter -> detailed `ROLE -> ARCHETYPE_ID`, adoption mode and provider relationship;
+- the consumer project's own bootstrap/continuity -> project truth, state and authority.
+
+The matrix is a consolidated decision ledger/snapshot. It does not command runtime execution.
+
+```text
+MATRIX_SNAPSHOT != RUNTIME_AUTHORITY
+PROJECT_ADAPTER = DETAILED_SES_SIDE_PROJECT_ROUTING_AUTHORITY
+PROJECT_ADAPTER != CONSUMER_PROJECT_TRUTH
+ADOPTED_VIA_CROSS_PROJECT_SERVICE != PROVIDER_RUNTIME_PROOF
+CROSS_PROJECT_SERVICE != PROJECT_OWNERSHIP_TRANSFER
+```
+
+Current reference implementation candidate: MoreNumTegra Search roles are adopted via `blogs-sites-portais-seo` as recorded by the current matrix and the two applicable Project Adapters. This remains PROJECT-LOCAL and must not be generalized to a universal contract from one occurrence.
+
 ## Current specialist consultation model
 
 The accepted current operational transport is manual human-mediated copy/paste.
