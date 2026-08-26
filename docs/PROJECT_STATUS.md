@@ -32,6 +32,22 @@ Legacy names such as `GPT0`–`GPT8`, `SaaS Architect` and project-specific Buil
 
 All certification remains fingerprint-bound. Historical FAIL/BLOCKED/INVALID/overclaim events remain preserved; `RETROACTIVE_PASS = NO`.
 
+## Central project-adoption governance
+
+Current project-adoption discovery is now explicit and version-preserving:
+
+```text
+projects/SPECIALIST_ADOPTION_MATRIX_CURRENT.md
+-> current versioned matrix snapshot
+-> projects/REGISTRY.md
+-> exact Project Adapter
+-> consumer-project bootstrap / continuity
+```
+
+The current matrix snapshot records MoreNumTegra Search capability via the `blogs-sites-portais-seo` provider while MoreNumTegra retains product, implementation, deploy, spend/publication and risk authority.
+
+This is a PROJECT-LOCAL reference-implementation candidate, not a universal cross-project-service contract.
+
 ## Current specialist consultation path
 
 A material operational correction was recorded after the prior Gateway/Router completion claim. The intended Router/Enforcement Gateway composition is not accepted as the current end-to-end specialist consultation workflow in the ChatGPT project context.
