@@ -1,6 +1,6 @@
 # SES Project Adapter — MoreNumTegra
 
-**Status:** FOUNDATION_V0_8 / REGISTERED_CONSUMER_PROJECT / SPECIALIST_ROLE_MAP_ACTIVE / CROSS_PROJECT_SEARCH_SERVICE_ACTIVE
+**Status:** FOUNDATION_V0_8 / REGISTERED_CONSUMER_PROJECT / SPECIALIST_ROLE_MAP_ACTIVE / CROSS_PROJECT_SEARCH_SERVICE_MODEL_APPLIED
 
 This adapter describes the `morenumtegra` consumer project registered in the SES Project Registry and points to project-owned canonical sources. It stores stable locators only; MoreNumTegra remains authoritative for product truth, continuity, environments, authorization and runtime state.
 
@@ -77,7 +77,7 @@ SPECIALIST_ROLE_MAP:
 
 ## Cross-project Search service
 
-This is a PROJECT-LOCAL integration decision and a reference-implementation candidate, not a universal SES rule.
+This is a PROJECT-LOCAL integration decision and a reference-implementation candidate, not a universal SES rule. `ADOPTED_VIA_CROSS_PROJECT_SERVICE` is a project-local adoption-state label in this adapter; it does not by itself prove provider runtime execution.
 
 ```text
 CONSUMER_PROJECT: morenumtegra
@@ -146,19 +146,21 @@ explicit PROJECT_IDENTIFIER = morenumtegra (or an explicit registered alias)
 → this Project Adapter
 → exact SPECIALIST_ROLE_MAP match
 → if absent: SPECIALIST_ROLE_NOT_ADOPTED
-→ if ADOPTED: resolve archetypes/REGISTRY.md directly for MoreNumTegra work
-→ if ADOPTED_VIA_CROSS_PROJECT_SERVICE: resolve SERVICE_PROVIDER_PROJECT_ID = blogs-sites-portais-seo through projects/REGISTRY.md and its Project Adapter; establish an explicit provenance-preserving cross-project handoff before specialist execution
 → resolve docs/SPECIALIST_CERTIFICATION_STATUS.md
-→ require current certification eligibility
+→ require current certification eligibility for the exact ARCHETYPE_ID
 → resolve wagnerjfjunior/MoreNumTegra main live
 → read bootstrap/BOOTSTRAP_CANONICO.md
 → follow the project bootstrap reading order
 → read project-local specialist rules/overrides if later established and applicable
 → read continuity/authority sources when material
-→ resolve material live evidence
-→ Context Readiness
-→ for direct roles: bounded specialist work in MoreNumTegra context
-→ for cross-project Search roles: bounded provider work + returned result; any MoreNumTegra mutation requires separate MoreNumTegra authority
+→ resolve material MoreNumTegra live evidence and authority boundaries
+→ MoreNumTegra Context Readiness
+→ if ADOPTED: bounded specialist work in MoreNumTegra context
+→ if ADOPTED_VIA_CROSS_PROJECT_SERVICE: resolve SERVICE_PROVIDER_PROJECT_ID = blogs-sites-portais-seo through projects/REGISTRY.md and its Project Adapter
+→ resolve the provider project's own live bootstrap/context required for the Search service
+→ create an explicit provenance-preserving cross-project handoff bound to the MoreNumTegra task/target/evidence/authority boundary
+→ bounded provider work + returned result
+→ any MoreNumTegra mutation requires separate MoreNumTegra authority
 ```
 
 ## Project-owned boundaries
