@@ -11,7 +11,7 @@ CANONICAL_SOURCE: GitHub repository wagnerjfjunior/Blogs-sites-portais-seo
 DEFAULT_REF_OR_RESOLUTION_RULE: resolve live main before material work
 BOOTSTRAP_ENTRYPOINT: bootstrap/BOOTSTRAP_CANONICO.md
 CONTINUITY_ENTRYPOINT: handoffs/CURRENT.md
-SPECIALIST_ENTRYPOINT_OR_RESOLUTION_RULE: config/gpts.yaml plus this adapter SPECIALIST_ROLE_MAP
+SPECIALIST_ENTRYPOINT_OR_RESOLUTION_RULE: resolve exact ROLE through this adapter SPECIALIST_ROLE_MAP; on the resolved consumer-project ref, use config/specialists.yaml when present as project-local adoption authority; use config/gpts.yaml only as explicit legacy compatibility/history when config/specialists.yaml is absent or when legacy Builder retirement/equivalence evidence is required
 GOVERNANCE_ENTRYPOINT: resolve through bootstrap/BOOTSTRAP_CANONICO.md and applicable docs/governance sources
 AUTHORITY_ENTRYPOINT: bootstrap/BOOTSTRAP_CANONICO.md plus docs/NEXT_SAFE_ACTION.md and docs/BLOCKED_ACTIONS.md when mutation/lifecycle authority is material
 ENVIRONMENT_ENTRYPOINT: config/project.yaml plus docs/PROJECT_STATUS.md when environment/project-state evidence is material
@@ -19,7 +19,7 @@ ENVIRONMENT_ENTRYPOINT: config/project.yaml plus docs/PROJECT_STATUS.md when env
 
 ## Specialist role map
 
-The project explicitly adopts the following certified SES archetypes while preserving its project-local GPT registry and specialist contracts:
+The project explicitly adopts the following certified SES archetypes. Project-local adoption/routing is ref-aware: migrated refs use `config/specialists.yaml` when present; pre-migration refs may consult `config/gpts.yaml` only as legacy compatibility/history. Legacy GPT assets remain preserved for continuity and retirement evidence.
 
 ```text
 SPECIALIST_ROLE_MAP:
@@ -27,7 +27,7 @@ SPECIALIST_ROLE_MAP:
 - ROLE: documentation_audit
   ARCHETYPE_ID: documentation-auditor
   ADOPTION_STATUS: ADOPTED
-  PROJECT_LOCAL_RULES: resolve applicable project-local documentation/audit contract through config/gpts.yaml and bootstrap
+  PROJECT_LOCAL_RULES: resolve applicable project-local documentation/audit rules through config/specialists.yaml when present on the resolved ref plus bootstrap; use config/gpts.yaml only for pre-migration compatibility/history or legacy retirement evidence
 
 - ROLE: architecture
   ARCHETYPE_ID: software-systems-architect
@@ -37,7 +37,7 @@ SPECIALIST_ROLE_MAP:
 - ROLE: ux_ui
   ARCHETYPE_ID: ux-ui-app-specialist
   ADOPTION_STATUS: ADOPTED
-  PROJECT_LOCAL_RULES: resolve project-local UX/UI, brand, publishing-surface and experience rules through config/gpts.yaml and applicable project sources
+  PROJECT_LOCAL_RULES: resolve project-local UX/UI, brand, publishing-surface and experience rules through config/specialists.yaml when present on the resolved ref plus applicable project sources; legacy GPT sources are continuity/history only
 
 - ROLE: application_security
   ARCHETYPE_ID: application-security-assurance-specialist
@@ -47,27 +47,27 @@ SPECIALIST_ROLE_MAP:
 - ROLE: seo_strategy
   ARCHETYPE_ID: seo-strategy-governance-specialist
   ADOPTION_STATUS: ADOPTED
-  PROJECT_LOCAL_RULES: resolve project-local SEO strategy/governance contract through config/gpts.yaml and applicable project sources
+  PROJECT_LOCAL_RULES: resolve project-local SEO strategy/governance rules through config/specialists.yaml when present on the resolved ref plus applicable project sources; legacy GPT sources are continuity/history only
 
 - ROLE: technical_seo
   ARCHETYPE_ID: technical-seo-specialist
   ADOPTION_STATUS: ADOPTED
-  PROJECT_LOCAL_RULES: resolve project-local technical SEO contract through config/gpts.yaml and applicable project sources
+  PROJECT_LOCAL_RULES: resolve project-local technical SEO rules through config/specialists.yaml when present on the resolved ref plus applicable project sources; legacy GPT sources are continuity/history only
 
 - ROLE: content_semantic_seo
   ARCHETYPE_ID: content-semantic-seo-specialist
   ADOPTION_STATUS: ADOPTED
-  PROJECT_LOCAL_RULES: resolve project-local content/semantic/GEO contract through config/gpts.yaml and applicable project sources
+  PROJECT_LOCAL_RULES: resolve project-local content/semantic/GEO rules through config/specialists.yaml when present on the resolved ref plus applicable project sources; legacy GPT sources are continuity/history only
 
 - ROLE: seo_analytics_growth
   ARCHETYPE_ID: seo-analytics-growth-specialist
   ADOPTION_STATUS: ADOPTED
-  PROJECT_LOCAL_RULES: resolve project-local analytics/growth/conversion definitions and data rules through config/gpts.yaml and applicable project sources
+  PROJECT_LOCAL_RULES: resolve project-local analytics/growth/conversion definitions and data rules through config/specialists.yaml when present on the resolved ref plus applicable project sources; legacy GPT sources are continuity/history only
 
 - ROLE: paid_search_sem
   ARCHETYPE_ID: paid-search-sem-specialist
   ADOPTION_STATUS: ADOPTED
-  PROJECT_LOCAL_RULES: resolve project-local paid-search accounts, budgets, conversion definitions, tracking/privacy/legal rules and spend/publication authority through bootstrap, config/gpts.yaml and applicable project sources
+  PROJECT_LOCAL_RULES: resolve project-local paid-search accounts, budgets, conversion definitions, tracking/privacy/legal rules and spend/publication authority through bootstrap, config/specialists.yaml when present on the resolved ref and applicable project sources; legacy GPT sources are continuity/history only
 ```
 
 ## Portfolio coverage decision
@@ -97,16 +97,18 @@ explicit PROJECT_IDENTIFIER = blogs-sites-portais-seo
 → if adopted: resolve archetypes/REGISTRY.md
 → resolve docs/SPECIALIST_CERTIFICATION_STATUS.md
 → require current certification eligibility
-→ resolve wagnerjfjunior/Blogs-sites-portais-seo main live
-→ read bootstrap/BOOTSTRAP_CANONICO.md
+→ resolve the exact consumer-project TARGET_REF required by the task; use live main only when main is the intended target
+→ read bootstrap/BOOTSTRAP_CANONICO.md on that exact resolved ref
 → follow its mandatory reading order
 → read handoffs/CURRENT.md
 → read docs/PROJECT_STATUS.md
 → read docs/NEXT_SAFE_ACTION.md
 → read docs/BLOCKED_ACTIONS.md
 → read config/project.yaml
-→ resolve the applicable local specialist through config/gpts.yaml
-→ for a specific GPT, read its canonical document, skill, Builder instructions/manifest and tests as required by project bootstrap
+→ if config/specialists.yaml exists on the resolved ref: use it as project-local specialist adoption/routing authority
+→ if config/specialists.yaml does not exist on that ref: enter explicit PRE_MIGRATION_LEGACY_COMPATIBILITY and consult config/gpts.yaml only as legacy project-local evidence
+→ never infer GPT<number> -> ARCHETYPE_ID semantically or by list position
+→ read legacy GPT canonical document/skill/Builder manifest/instructions/tests only when required for pre-migration compatibility, historical evidence, equivalence analysis or Builder retirement
 → resolve live GitHub/environment evidence material to the requested decision
 → Context Readiness
 → perform only bounded work permitted by project-local authority
@@ -114,9 +116,21 @@ explicit PROJECT_IDENTIFIER = blogs-sites-portais-seo
 
 ## Project-owned boundaries
 
-The project currently defines its own specialist registry (`config/gpts.yaml`), project manifest (`config/project.yaml`), bootstrap, lifecycle/SFJM continuity and authorization semantics. SES must consume those sources through this adapter rather than duplicate them.
+The project owns its specialist-adoption state, project manifest (`config/project.yaml`), bootstrap, lifecycle/SFJM continuity and authorization semantics. SES must consume those sources through this adapter rather than duplicate them.
 
-The project-local registry currently includes `gpt0` through `gpt8`. Their external Builder identities and project-specific contracts remain project-owned until an explicitly validated SES migration retires a legacy Builder.
+Routing/adoption authority is ref-aware:
+
+```text
+MIGRATED_REF_WITH_config/specialists.yaml
+→ config/specialists.yaml = project-local specialist adoption/routing authority
+
+PRE_MIGRATION_REF_WITHOUT_config/specialists.yaml
+→ config/gpts.yaml = explicit legacy compatibility/history source only
+```
+
+The legacy project-local registry `config/gpts.yaml`, GPT0–GPT8 identities, external Builder IDs/URLs, manifests, skills, instructions and tests remain project-owned continuity/history artifacts until an explicitly validated migration and separately authorized Builder retirement occur.
+
+`LEGACY_GPT_LABEL != CURRENT_SES_IDENTITY`
 
 ## Boundary
 
@@ -147,3 +161,12 @@ The consumer project's current policy is READ_ONLY by default for the GitHub spe
 ## Migration rule
 
 Adoption of an SES archetype does not retire or silently replace any existing project-bound GPT. A legacy Builder may be retired only after the relevant SES archetype is independently validated for project-local equivalence where required and the retirement gate is explicitly authorized.
+
+Preserve:
+
+```text
+SES_ADOPTION != LEGACY_BUILDER_RETIREMENT
+RENAME != BEHAVIORAL_EQUIVALENCE
+PRE_MIGRATION_REF != MIGRATED_REF
+CONFIG_SPECIALISTS_PRESENT != LEGACY_BUILDER_RETIRED
+```
