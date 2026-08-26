@@ -25,7 +25,7 @@ Current certified portfolio at the decision point:
 |---|---|
 | `wagnerjfjunior/fecha.ai` / `fechai` | adopt all currently certified specialists |
 | `wagnerjfjunior/Blogs-sites-portais-seo` / `blogs-sites-portais-seo` | adopt all currently certified specialists except `backend-data-platform-specialist` |
-| `wagnerjfjunior/MoreNumTegra` / `morenumtegra` | adopt all currently certified specialists except `backend-data-platform-specialist` |
+| `wagnerjfjunior/MoreNumTegra` / `morenumtegra` | direct adoption for Documentation Auditor, Software Systems Architect, UX/UI and AppSec; Search roles (`seo_strategy`, `technical_seo`, `content_semantic_seo`, `seo_analytics_growth`, `paid_search_sem`) are `ADOPTED_VIA_CROSS_PROJECT_SERVICE` with provider `blogs-sites-portais-seo`; `backend-data-platform-specialist` remains not adopted |
 | `wagnerjfjunior/StopJuniorMode` | `PENDING_PROJECT_CLASSIFICATION`; no consumer adoption inferred |
 | `wagnerjfjunior/sfjm-workspace` | `PENDING_PROJECT_CLASSIFICATION`; no consumer adoption inferred |
 | `wagnerjfjunior/orquestrador-ai` | `PENDING_PROJECT_CLASSIFICATION / ROLE_FIT`; no consumer adoption inferred |
@@ -35,9 +35,11 @@ Current certified portfolio at the decision point:
 
 FECH.AI already satisfied the authorized matrix before this change and therefore requires no no-op adapter mutation.
 
-MoreNumTegra and Blogs/Sites/Portais/SEO require adapter expansion to reach the authorized matrix.
+Blogs/Sites/Portais/SEO is the explicit Search Center of Expertise / provider for MoreNumTegra's currently certified Search roles. MoreNumTegra retains product, implementation, deploy, budget, publication and risk authority.
 
-Backend/Data remains explicitly not adopted in those two projects. This is a current product/project decision, not a universal claim that those repositories can never need backend/data specialization.
+Local SEO and Authority & Digital PR are future service intent only; they are not current certification/adoption and require a later explicit activation decision after certification.
+
+Backend/Data remains explicitly not adopted in MoreNumTegra and Blogs/Sites/Portais/SEO. This is a current product/project decision, not a universal claim that those repositories can never need backend/data specialization.
 
 ## Boundaries
 
@@ -49,6 +51,9 @@ PROJECT_CONTEXT_READY != AUTHORIZED_TO_MUTATE
 CURRENT_MATRIX != FUTURE_AUTO_ADOPTION
 PENDING_PROJECT_CLASSIFICATION != PROJECT_REGISTERED
 SES_ENGINEERING_USE != SES_CONSUMER_ADOPTION
+CROSS_PROJECT_SERVICE != PROJECT_OWNERSHIP_TRANSFER
+PROVIDER_SPECIALIST_WORK != CONSUMER_PROJECT_MUTATION
+FUTURE_SERVICE_INTENT != CURRENT_ADOPTION
 ```
 
 Future portfolio changes require an explicit adoption decision; they do not mutate this matrix automatically.
