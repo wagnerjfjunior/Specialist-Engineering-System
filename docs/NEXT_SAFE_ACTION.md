@@ -14,7 +14,9 @@ For portfolio state, resolve:
 
 - `docs/architecture/CANONICAL_SPECIALIST_FRAMEWORK.md` for canonical portfolio architecture and CURRENT/TARGET classification;
 - `docs/SPECIALIST_CERTIFICATION_STATUS.md` for current certification;
-- `archetypes/REGISTRY.md` for active archetype resolution.
+- `archetypes/REGISTRY.md` for active archetype resolution;
+- `projects/SPECIALIST_ADOPTION_MATRIX_CURRENT.md` plus its exact `CURRENT_PATH` when current project-adoption/provider state is material;
+- the exact Project Adapter for detailed project role/adoption/provider resolution.
 
 Local SEO and Authority & Digital PR are currently TARGET / CERTIFICATION_PENDING in the framework and are not current certified/active specialists until their own lifecycle gates are satisfied.
 
@@ -24,6 +26,8 @@ Historical failures remain preserved; `RETROACTIVE_PASS = NO`.
 CURRENT_STATE != TARGET_STATE
 FRAMEWORK_ENTRY != CERTIFICATION
 CERTIFICATION != PROJECT_ADOPTION
+MATRIX_SNAPSHOT != RUNTIME_AUTHORITY
+ADOPTED_VIA_CROSS_PROJECT_SERVICE != PROVIDER_RUNTIME_PROOF
 ```
 
 ## Material correction
