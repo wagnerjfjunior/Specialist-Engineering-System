@@ -62,11 +62,11 @@ Legacy continuity aliases for Software Systems Architect may include `SaaS Archi
 | 2 | SES — Technical SEO Specialist | `technical-seo-specialist` | ACTIVE / CERTIFIED | crawling, indexation, robots, sitemaps, canonicals, rendering/JS SEO, Core Web Vitals, redirects, hreflang, structured data, logs and retrievability |
 | 3 | SES — Content & Semantic SEO Specialist | `content-semantic-seo-specialist` | ACTIVE / CERTIFIED | search intent, entities, topical coverage, on-page SEO, internal linking, answerability, citability, GEO capability, factuality and E-E-A-T |
 | 4 | SES — SEO Analytics & Growth Specialist | `seo-analytics-growth-specialist` | ACTIVE / CERTIFIED | GSC/GA4 measurement, conversions, dashboards, KPIs, attribution, incrementalidade, experiments and growth analysis |
-| 5 | SES — Local SEO Specialist | `local-seo-specialist` | TARGET / CERTIFICATION_PENDING | Google Business Profile, NAP, reviews, reputation, local citations, local landing pages, local schema, Apple Maps, Bing Places and local discovery |
-| 6 | SES — Authority & Digital PR Specialist | `authority-digital-pr-specialist` | TARGET / CERTIFICATION_PENDING | backlink strategy, link earning/acquisition, Digital PR, brand mentions, outreach, publisher relationships, authority signals, toxic-link risk and off-page reputation |
+| 5 | SES — Local SEO Specialist | `PROPOSED: local-seo-specialist / NOT_YET_REGISTERED` | TARGET / CERTIFICATION_PENDING | Google Business Profile, NAP, reviews, reputation, local citations, local landing pages, local schema, Apple Maps, Bing Places and local discovery |
+| 6 | SES — Authority & Digital PR Specialist | `PROPOSED: authority-digital-pr-specialist / NOT_YET_REGISTERED` | TARGET / CERTIFICATION_PENDING | backlink strategy, link earning/acquisition, Digital PR, brand mentions, outreach, publisher relationships, authority signals, toxic-link risk and off-page reputation |
 | 7 | SES — Paid Search & SEM Specialist | `paid-search-sem-specialist` | ACTIVE / CERTIFIED | Google Ads Search, Microsoft Ads, campaign/ad-group structure, keywords, match types, negatives, search terms, bidding, budget, Quality Score, landing alignment, CPL/CPA/ROAS and SEO/SEM overlap |
 
-The two TARGET rows are architecture targets only until their own lifecycle evidence satisfies the certification contract. Their presence here must not be interpreted as current certification, active archetype resolution or project adoption.
+The two TARGET rows are architecture targets only. Their proposed identifiers are not registry entries and become canonical `ARCHETYPE_ID` values only after explicit archetype design/registration. Their presence here must not be interpreted as current certification, active archetype resolution or project adoption.
 
 GEO is a cross-cutting capability primarily spanning Strategy, Content/Semantic, Technical and Analytics. It is not currently a separate canonical specialist.
 
