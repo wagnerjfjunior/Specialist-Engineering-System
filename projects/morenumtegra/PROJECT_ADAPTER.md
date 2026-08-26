@@ -11,10 +11,10 @@ CANONICAL_SOURCE: GitHub repository wagnerjfjunior/MoreNumTegra
 DEFAULT_REF_OR_RESOLUTION_RULE: resolve live main before material work
 BOOTSTRAP_ENTRYPOINT: bootstrap/BOOTSTRAP_CANONICO.md
 CONTINUITY_ENTRYPOINT: handoffs/CURRENT.md
-SPECIALIST_ENTRYPOINT_OR_RESOLUTION_RULE: bootstrap/BOOTSTRAP_CANONICO.md section "Integração SES e resolução de especialistas" plus this adapter SPECIALIST_ROLE_MAP
+SPECIALIST_ENTRYPOINT_OR_RESOLUTION_RULE: bootstrap/BOOTSTRAP_CANONICO.md section 10 "Integração SES / SFJM" plus this adapter SPECIALIST_ROLE_MAP
 GOVERNANCE_ENTRYPOINT: bootstrap/BOOTSTRAP_CANONICO.md plus docs/PROJECT_STATUS.md when project governance/state is material
 AUTHORITY_ENTRYPOINT: bootstrap/BOOTSTRAP_CANONICO.md plus docs/NEXT_SAFE_ACTION.md and docs/BLOCKED_ACTIONS.md when mutation/lifecycle authority is material
-ENVIRONMENT_ENTRYPOINT: docs/baseline/TECHNICAL_BASELINE_V1.md plus docs/PROJECT_STATUS.md when environment/architecture state is material
+ENVIRONMENT_ENTRYPOINT: docs/baseline/TECHNICAL_BASELINE_V2_2.md plus docs/PROJECT_STATUS.md when environment/architecture state is material
 ```
 
 ## Specialist role map
