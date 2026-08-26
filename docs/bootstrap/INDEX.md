@@ -26,6 +26,8 @@ If the required SES bootstrap cannot be resolved on the applicable effective ref
 Read when applicable:
 
 - `docs/architecture/ARCHITECTURE_BOUNDARY.md`
+- `docs/architecture/CANONICAL_SPECIALIST_FRAMEWORK.md` for the canonical portfolio/domain/nomenclature model
+- `docs/migrations/LEGACY_SPECIALIST_IDENTITY_MIGRATION_PLAN.md` when legacy GPT-number labels, obsolete names, Builder retirement or identity normalization is material
 - `projects/REGISTRY.md`
 - `archetypes/REGISTRY.md` for specialist/archetype resolution
 - the exact archetype contract resolved by `archetypes/REGISTRY.md`
@@ -46,7 +48,7 @@ Behavioral validation is defined, when applicable, in:
 - `tests/behavioral/SPECIALIST_CERTIFICATION_FOR_ANY_PROJECT_TESTS.md`
 - `tests/behavioral/MANUAL_SPECIALIST_HANDOFF_TESTS.md`
 
-For the `saas-architect` Custom GPT runtime candidate, also read when validating/applying/testing that candidate:
+For the `software-systems-architect` specialist, whose historical runtime assets retain the legacy `saas-architect` filenames, also read when validating/applying/testing that recorded runtime fingerprint:
 
 - `runtime/custom-gpt/SAAS_ARCHITECT_BUILDER_PROFILE.md`
 - `runtime/custom-gpt/SAAS_ARCHITECT_BUILDER_KERNEL.md`
@@ -342,7 +344,7 @@ MUTATION_AUTHORIZATION_STATUS
 
 A write-capable tool does not authorize a mutation. A requested mutation without explicit applicable authorization must not execute.
 
-The first `SES — SaaS Architect` runtime candidate intentionally uses a GitHub READ_ONLY Action; its schema contains no write operations.
+The historical Software Systems Architect runtime candidate recorded under the legacy `SES — SaaS Architect` identity intentionally uses a GitHub READ_ONLY Action; the legacy label is continuity-only and its schema contains no write operations.
 
 ## 9. Runtime-candidate integrity
 
