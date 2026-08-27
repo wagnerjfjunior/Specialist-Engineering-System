@@ -1,6 +1,6 @@
 # SES — Project Adapter Contract
 
-**Status:** FOUNDATION_V0_2 / CONTRACT
+**Status:** FOUNDATION_V0_3 / CONTRACT
 
 ## 1. Purpose
 
@@ -50,7 +50,9 @@ ARCHETYPE_ID
 ADOPTION_STATUS: ADOPTED
 ```
 
-Optional project-local metadata may include a pointer to local specialist rules/overrides and explicit legacy aliases. It must not copy the SES archetype contract, Builder package, runtime fingerprint or volatile certification state.
+`ADOPTION_STATUS` is intentionally narrow. Do not invent a new adoption state to encode execution topology, provider relationships, transport or delegation. Those concerns may be represented as clearly project-local metadata while the underlying capability adoption remains `ADOPTED`.
+
+Optional project-local metadata may include a pointer to local specialist rules/overrides, explicit legacy aliases and bounded execution/delegation metadata. Such metadata must not be interpreted as a universal SES execution mode unless a separate universal contract is later established from sufficient evidence. It must not copy the SES archetype contract, Builder package, runtime fingerprint or volatile certification state.
 
 Example shape:
 
@@ -67,7 +69,7 @@ Semantics:
 ```text
 ROLE = stable project-facing capability key
 ARCHETYPE_ID = deterministic SES archetype identifier
-ADOPTED = explicit project routing decision
+ADOPTED = explicit project capability/routing decision
 ```
 
 A role name is project-local. SES does not impose a universal catalog of project roles.
@@ -84,6 +86,8 @@ PROJECT_CONTEXT_READY != AUTHORIZED_TO_MUTATE
 ```
 
 Missing mapping for a requested role is `SPECIALIST_ROLE_NOT_ADOPTED`; do not guess a nearby archetype.
+
+A project-local provider/delegation relationship does not create a second universal adoption status and does not by itself prove runtime execution, provider readiness or mutation authority.
 
 A mapped archetype that is missing, inactive or not certification-eligible for the applicable gateway policy must fail closed at runtime. The adapter must not cache those volatile states.
 

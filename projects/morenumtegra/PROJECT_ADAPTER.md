@@ -1,6 +1,6 @@
 # SES Project Adapter — MoreNumTegra
 
-**Status:** FOUNDATION_V0_8 / REGISTERED_CONSUMER_PROJECT / SPECIALIST_ROLE_MAP_ACTIVE / CROSS_PROJECT_SEARCH_SERVICE_MODEL_APPLIED
+**Status:** FOUNDATION_V0_9 / REGISTERED_CONSUMER_PROJECT / SPECIALIST_ROLE_MAP_ACTIVE / PROJECT_LOCAL_SEARCH_PROVIDER_MODEL_APPLIED
 
 This adapter describes the `morenumtegra` consumer project registered in the SES Project Registry and points to project-owned canonical sources. It stores stable locators only; MoreNumTegra remains authoritative for product truth, continuity, environments, authorization and runtime state.
 
@@ -46,38 +46,43 @@ SPECIALIST_ROLE_MAP:
 
 - ROLE: seo_strategy
   ARCHETYPE_ID: seo-strategy-governance-specialist
-  ADOPTION_STATUS: ADOPTED_VIA_CROSS_PROJECT_SERVICE
+  ADOPTION_STATUS: ADOPTED
+  EXECUTION_MODE: PROJECT_LOCAL_CROSS_PROJECT_SERVICE
   SERVICE_PROVIDER_PROJECT_ID: blogs-sites-portais-seo
   PROJECT_LOCAL_RULES: MoreNumTegra owns product/search objectives, implementation authority and acceptance boundaries; provider resolves Search method/evidence through its own project context and returns bounded recommendations/results
 
 - ROLE: technical_seo
   ARCHETYPE_ID: technical-seo-specialist
-  ADOPTION_STATUS: ADOPTED_VIA_CROSS_PROJECT_SERVICE
+  ADOPTION_STATUS: ADOPTED
+  EXECUTION_MODE: PROJECT_LOCAL_CROSS_PROJECT_SERVICE
   SERVICE_PROVIDER_PROJECT_ID: blogs-sites-portais-seo
   PROJECT_LOCAL_RULES: MoreNumTegra owns implementation/runtime truth; provider may diagnose/recommend Technical SEO changes but cannot mutate MoreNumTegra without separate authorization
 
 - ROLE: content_semantic_seo
   ARCHETYPE_ID: content-semantic-seo-specialist
-  ADOPTION_STATUS: ADOPTED_VIA_CROSS_PROJECT_SERVICE
+  ADOPTION_STATUS: ADOPTED
+  EXECUTION_MODE: PROJECT_LOCAL_CROSS_PROJECT_SERVICE
   SERVICE_PROVIDER_PROJECT_ID: blogs-sites-portais-seo
   PROJECT_LOCAL_RULES: MoreNumTegra owns brand/product/commercial/factual truth and publication authority; provider performs Content/Semantic SEO analysis and recommendations against supplied/live evidence
 
 - ROLE: seo_analytics_growth
   ARCHETYPE_ID: seo-analytics-growth-specialist
-  ADOPTION_STATUS: ADOPTED_VIA_CROSS_PROJECT_SERVICE
+  ADOPTION_STATUS: ADOPTED
+  EXECUTION_MODE: PROJECT_LOCAL_CROSS_PROJECT_SERVICE
   SERVICE_PROVIDER_PROJECT_ID: blogs-sites-portais-seo
   PROJECT_LOCAL_RULES: MoreNumTegra owns KPI/conversion definitions, consent/privacy constraints and business-value truth; provider performs Search analytics/growth analysis without redefining project truth
 
 - ROLE: paid_search_sem
   ARCHETYPE_ID: paid-search-sem-specialist
-  ADOPTION_STATUS: ADOPTED_VIA_CROSS_PROJECT_SERVICE
+  ADOPTION_STATUS: ADOPTED
+  EXECUTION_MODE: PROJECT_LOCAL_CROSS_PROJECT_SERVICE
   SERVICE_PROVIDER_PROJECT_ID: blogs-sites-portais-seo
   PROJECT_LOCAL_RULES: MoreNumTegra owns ad accounts, billing, budgets, conversion definitions, tracking/consent constraints and spend/publication authority; provider may design/recommend/measure campaigns but cannot spend or publish without separate MoreNumTegra authorization
 ```
 
 ## Cross-project Search service
 
-This is a PROJECT-LOCAL integration decision and a reference-implementation candidate, not a universal SES rule. `ADOPTED_VIA_CROSS_PROJECT_SERVICE` is a project-local adoption-state label in this adapter; it does not by itself prove provider runtime execution.
+This is a PROJECT-LOCAL integration decision and a reference-implementation candidate, not a universal SES rule. The Search capabilities remain canonically `ADOPTED`; `EXECUTION_MODE: PROJECT_LOCAL_CROSS_PROJECT_SERVICE` is local execution/delegation metadata only and does not create a new SES adoption status or prove provider runtime execution.
 
 ```text
 CONSUMER_PROJECT: morenumtegra
@@ -155,8 +160,8 @@ explicit PROJECT_IDENTIFIER = morenumtegra (or an explicit registered alias)
 → read continuity/authority sources when material
 → resolve material MoreNumTegra live evidence and authority boundaries
 → MoreNumTegra Context Readiness
-→ if ADOPTED: bounded specialist work in MoreNumTegra context
-→ if ADOPTED_VIA_CROSS_PROJECT_SERVICE: resolve SERVICE_PROVIDER_PROJECT_ID = blogs-sites-portais-seo through projects/REGISTRY.md and its Project Adapter
+→ if ADOPTED and no project-local delegated execution mode applies: bounded specialist work in MoreNumTegra context
+→ if ADOPTED with EXECUTION_MODE = PROJECT_LOCAL_CROSS_PROJECT_SERVICE: resolve SERVICE_PROVIDER_PROJECT_ID = blogs-sites-portais-seo through projects/REGISTRY.md and its Project Adapter
 → resolve the provider project's own live bootstrap/context required for the Search service
 → create an explicit provenance-preserving cross-project handoff bound to the MoreNumTegra task/target/evidence/authority boundary
 → bounded provider work + returned result
@@ -191,4 +196,4 @@ This adapter does not authorize implementation, Preview, Production, domain/DNS 
 
 ## Adoption rule
 
-Each `ROLE -> ARCHETYPE_ID` mapping is a separate explicit project adoption decision. A Search role marked `ADOPTED_VIA_CROSS_PROJECT_SERVICE` remains adopted by MoreNumTegra for capability coverage but is executed through the named provider project; this does not transfer MoreNumTegra authority. Certification or availability never auto-adopts future roles. Local SEO and Authority & Digital PR are recorded only as future service intent until they are certified and a later explicit activation/adoption decision is made.
+Each `ROLE -> ARCHETYPE_ID` mapping is a separate explicit project adoption decision. A Search role remains `ADOPTED`; when it carries `EXECUTION_MODE: PROJECT_LOCAL_CROSS_PROJECT_SERVICE`, execution is delegated through the named provider project without transferring MoreNumTegra authority. Certification or availability never auto-adopts future roles. Local SEO and Authority & Digital PR are recorded only as future service intent until they are certified and a later explicit activation/adoption decision is made.
