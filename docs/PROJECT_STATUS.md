@@ -44,7 +44,7 @@ projects/SPECIALIST_ADOPTION_MATRIX_CURRENT.md
 -> consumer-project bootstrap / continuity
 ```
 
-The current matrix snapshot records MoreNumTegra Search capability via the `blogs-sites-portais-seo` provider while MoreNumTegra retains product, implementation, deploy, spend/publication and risk authority.
+The current matrix snapshot records MoreNumTegra Search capabilities as adopted while project-local execution metadata delegates Search work to the `blogs-sites-portais-seo` provider; MoreNumTegra retains product, implementation, deploy, spend/publication and risk authority.
 
 This is a PROJECT-LOCAL reference-implementation candidate, not a universal cross-project-service contract.
 
