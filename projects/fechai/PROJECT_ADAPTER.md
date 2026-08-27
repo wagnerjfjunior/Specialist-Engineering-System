@@ -1,6 +1,6 @@
 # SES Project Adapter — FECH.AI
 
-**Status:** REFERENCE_IMPLEMENTATION / FOUNDATION_V0_7 / SPECIALIST_ROLE_MAP_ACTIVE
+**Status:** REFERENCE_IMPLEMENTATION / FOUNDATION_V0_8 / SPECIALIST_ROLE_MAP_ACTIVE / CURRENT_SES_ROUTING_ENTRYPOINT
 
 This adapter describes the FECH.AI project registered in the SES Project Registry and points to its project-owned canonical sources. It intentionally contains pointers, not copied FECH.AI operational truth.
 
@@ -11,7 +11,7 @@ CANONICAL_SOURCE: GitHub repository wagnerjfjunior/fecha.ai
 DEFAULT_REF_OR_RESOLUTION_RULE: resolve live main before material work
 BOOTSTRAP_ENTRYPOINT: docs/bootstrap/INDEX.md
 CONTINUITY_ENTRYPOINT: docs/sfjm/INDEX.md
-SPECIALIST_ENTRYPOINT_OR_RESOLUTION_RULE: docs/skills/fechai-gpt-registry.md
+SPECIALIST_ENTRYPOINT_OR_RESOLUTION_RULE: docs/skills/SES_SPECIALIST_ROUTING.md for SES-adopted roles; docs/skills/fechai-gpt-registry.md only for unmapped project-local domains and explicit legacy continuity
 GOVERNANCE_ENTRYPOINT: docs/governance/INDEX.md when applicable
 AUTHORITY_ENTRYPOINT: resolve through the FECH.AI bootstrap and applicable canonical governance/continuity sources
 ENVIRONMENT_ENTRYPOINT: docs/bootstrap/2026-06-10-fechai-saas-current-state-index.md
@@ -91,7 +91,7 @@ Unmapped FECH.AI-local specialist domains (for example current CI/CD, SRE/observ
 
 ## Resolution flow
 
-For FECH.AI project-specific specialist work routed through the Runtime Enforcement Gateway:
+For FECH.AI project-specific specialist work:
 
 ```text
 explicit PROJECT_IDENTIFIER = fechai
@@ -103,7 +103,7 @@ explicit PROJECT_IDENTIFIER = fechai
 → ACTIVE archetype
 → docs/SPECIALIST_CERTIFICATION_STATUS.md
 → current certification eligibility
-→ ROUTABLE
+→ resolve current SES handoff/transport semantics when consultation is material
 → resolve wagnerjfjunior/fecha.ai main live
 → read docs/bootstrap/INDEX.md
 → read PROJECT_LOCAL_RULES when mapped/applicable
@@ -115,7 +115,7 @@ explicit PROJECT_IDENTIFIER = fechai
 → bounded specialist work
 ```
 
-For FECH.AI-local domains not adopted through the role map, continue using the project-owned specialist registry/rules. `SPECIALIST_ROLE_NOT_ADOPTED` must not trigger semantic guessing.
+For FECH.AI-local domains not adopted through the role map, continue using the project-owned specialist registry/rules. The legacy registry must not override any SES-adopted role. `SPECIALIST_ROLE_NOT_ADOPTED` must not trigger semantic guessing.
 
 ## Boundary
 
@@ -138,7 +138,8 @@ Preserve:
 ```text
 ADOPTED != PROJECT_CONTEXT_READY
 PROJECT_CONTEXT_READY != AUTHORIZED_TO_MUTATE
-ROUTABLE != EXECUTED
+SPECIALIST_AVAILABLE != EXECUTED
+ADOPTED != EXECUTED
 ```
 
 ## Reference-implementation rule
