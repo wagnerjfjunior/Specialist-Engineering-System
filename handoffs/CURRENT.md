@@ -55,11 +55,12 @@ The matrix is a consolidated decision ledger/snapshot. It does not command runti
 MATRIX_SNAPSHOT != RUNTIME_AUTHORITY
 PROJECT_ADAPTER = DETAILED_SES_SIDE_PROJECT_ROUTING_AUTHORITY
 PROJECT_ADAPTER != CONSUMER_PROJECT_TRUTH
-ADOPTED_VIA_CROSS_PROJECT_SERVICE != PROVIDER_RUNTIME_PROOF
+PROJECT_LOCAL_EXECUTION_MODE != UNIVERSAL_ADOPTION_STATUS
+PROJECT_LOCAL_CROSS_PROJECT_SERVICE != PROVIDER_RUNTIME_PROOF
 CROSS_PROJECT_SERVICE != PROJECT_OWNERSHIP_TRANSFER
 ```
 
-Current reference implementation candidate: MoreNumTegra Search roles are adopted via `blogs-sites-portais-seo` as recorded by the current matrix and the two applicable Project Adapters. This remains PROJECT-LOCAL and must not be generalized to a universal contract from one occurrence.
+Current reference implementation candidate: MoreNumTegra Search roles remain canonically `ADOPTED`; project-local execution metadata delegates those Search tasks to `blogs-sites-portais-seo`, as recorded by the current matrix and the two applicable Project Adapters. This remains PROJECT-LOCAL and must not be generalized to a universal contract from one occurrence.
 
 ## Current specialist consultation model
 
