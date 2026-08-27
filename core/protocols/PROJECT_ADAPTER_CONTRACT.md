@@ -1,6 +1,6 @@
 # SES — Project Adapter Contract
 
-**Status:** FOUNDATION_V0_2 / CONTRACT
+**Status:** FOUNDATION_V0_3 / CONTRACT
 
 ## 1. Purpose
 
