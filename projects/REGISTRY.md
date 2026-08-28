@@ -112,6 +112,23 @@ This registration establishes only SES-side project discovery. `wagnerjfjunior/M
 
 Registration itself does not adopt specialist roles. Any current MoreNumTegra specialist adoption must be resolved exclusively from `projects/morenumtegra/PROJECT_ADAPTER.md` and its exact `SPECIALIST_ROLE_MAP`.
 
+### SFJM Workspace
+
+```text
+PROJECT_ID: sfjm-workspace
+CANONICAL_NAME: SFJM Workspace
+ALIASES:
+- sfjm-workspace
+ADAPTER_PATH: projects/sfjm-workspace/PROJECT_ADAPTER.md
+STATUS: ACTIVE
+```
+
+This registration establishes only SES-side project discovery for `wagnerjfjunior/sfjm-workspace`.
+
+SFJM Workspace remains authoritative for its own product state. The separate `wagnerjfjunior/StopJuniorMode` repository remains authoritative for the SFJM protocol. External projects represented by SFJM Workspace remain authoritative for their own product, lifecycle, security, runtime and authorization truth.
+
+Registration itself does not authorize mutation and does not imply adoption of every certified specialist. Current SFJM Workspace specialist adoption must be resolved from `projects/sfjm-workspace/PROJECT_ADAPTER.md` and the current adoption matrix.
+
 ## 6. Change discipline
 
 Adding, removing, renaming or aliasing a project changes SES project-resolution behavior and must be reviewed as a versioned SES change.
