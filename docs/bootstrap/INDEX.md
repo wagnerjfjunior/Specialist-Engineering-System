@@ -27,6 +27,7 @@ Read when applicable:
 
 - `docs/architecture/ARCHITECTURE_BOUNDARY.md`
 - `docs/architecture/CANONICAL_SPECIALIST_FRAMEWORK.md` for the canonical portfolio/domain/nomenclature model
+- `docs/architecture/INTEGRATED_MARKETING_DOMAIN_V0_1.md` and `docs/bootstrap/INTEGRATED_MARKETING_V0_1.md` when the Integrated Marketing Strategist candidate lifecycle is material
 - `docs/migrations/LEGACY_SPECIALIST_IDENTITY_MIGRATION_PLAN.md` when legacy GPT-number labels, obsolete names, Builder retirement or identity normalization is material
 - `projects/REGISTRY.md`
 - `projects/SPECIALIST_ADOPTION_MATRIX_CURRENT.md` when current cross-project/project-adoption state is material; follow its exact `CURRENT_PATH` rather than assuming the highest filename version
@@ -118,6 +119,21 @@ For its validated compact v0.2 runtime fingerprint, also read when configuring/a
 - `tests/runtime/evidence/APPLICATION_SECURITY_ASSURANCE_SPECIALIST_READINESS_DECISION_2026-08-17.md`
 - `tests/behavioral/APPLICATION_SECURITY_ASSURANCE_SPECIALIST_ARCHETYPE_RESOLUTION_V0_1.md`
 - `tests/behavioral/evidence/APPLICATION_SECURITY_ASSURANCE_ARCHETYPE_ACTIVATION_2026-08-17.md`
+
+For the `integrated-marketing-strategist-v0.1` Builder-ready candidate, read when designing, applying, testing or auditing that candidate:
+
+- `docs/architecture/INTEGRATED_MARKETING_DOMAIN_V0_1.md`
+- `docs/bootstrap/INTEGRATED_MARKETING_V0_1.md`
+- `docs/specialists/INTEGRATED_MARKETING_STRATEGIST_DISCOVERY_V0_1.md`
+- `docs/specialists/INTEGRATED_MARKETING_STRATEGIST_CANDIDATE_V0_1.md`
+- `archetypes/integrated-marketing-strategist/ARCHETYPE.md`
+- `runtime/custom-gpt/INTEGRATED_MARKETING_STRATEGIST_BUILDER_PACKAGE_V0_1.md`
+- `runtime/custom-gpt/INTEGRATED_MARKETING_STRATEGIST_BUILDER_KERNEL_V0_1.md`
+- `runtime/custom-gpt/INTEGRATED_MARKETING_STRATEGIST_BUILDER_CREATION_HANDOFF_V0_1.md`
+- `tests/behavioral/INTEGRATED_MARKETING_STRATEGIST_L1_SUITE_V0_1.md`
+- `tests/runtime/INTEGRATED_MARKETING_STRATEGIST_L2_RUNBOOK_V0_1.md`
+
+This candidate is not in `archetypes/REGISTRY.md`, is not ACTIVE and is not certified. Candidate design/application must not be treated as active archetype resolution.
 
 The active reusable specialists remain fingerprint-bound. Archetype activation does not imply automatic consumer-project adoption, project readiness, mutation authority, publication, production approval or risk acceptance.
 

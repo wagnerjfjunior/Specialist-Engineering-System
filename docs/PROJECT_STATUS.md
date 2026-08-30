@@ -25,12 +25,31 @@ Current certification authority: `docs/SPECIALIST_CERTIFICATION_STATUS.md`.
 | Paid Search & SEM Specialist | ACTIVE | `YES` |
 | Local SEO Specialist | TARGET | `CERTIFICATION_PENDING` |
 | Authority & Digital PR Specialist | TARGET | `CERTIFICATION_PENDING` |
+| Integrated Marketing Strategist | TARGET / BUILDER_READY_CANDIDATE | `CERTIFICATION_PENDING` |
 
-The two TARGET specialists are part of the intended Search, Discovery & Acquisition framework but must not be represented as certified, active or adopted before their own evidence satisfies the lifecycle gates.
+Local SEO and Authority & Digital PR remain TARGET specialists inside Search, Discovery & Acquisition. Integrated Marketing Strategist is a separate Marketing/GTM discipline and is now a TARGET / BUILDER_READY_CANDIDATE. None may be represented as certified, active or adopted before its own evidence satisfies the lifecycle gates.
 
 Legacy names such as `GPT0`–`GPT8`, `SaaS Architect` and project-specific Builder labels are continuity/project-local identities only unless an applicable project source explicitly says otherwise. Canonical SES routing uses canonical names and `ARCHETYPE_ID` values. Migration policy: `docs/migrations/LEGACY_SPECIALIST_IDENTITY_MIGRATION_PLAN.md`.
 
 All certification remains fingerprint-bound. Historical FAIL/BLOCKED/INVALID/overclaim events remain preserved; `RETROACTIVE_PASS = NO`.
+
+## Integrated Marketing Strategist candidate
+
+The explicitly selected architecture objective is now versioned as `integrated-marketing-strategist-v0.1`: a project-agnostic Marketing 360° / GTM strategist spanning conventional and digital channel strategy while preserving specialist and project-local authority boundaries.
+
+Current intended post-merge state:
+
+```text
+BUILDER_READY_CANDIDATE = YES
+BUILDER_APPLIED = NO
+L1_EXECUTED = NO
+L2_EXECUTED = NO
+ARCHETYPE_REGISTRY_ACTIVE = NO
+CERTIFIED_FOR_ANY_PROJECT = NO
+CONSUMER_PROJECT_ADOPTED = NO
+```
+
+The next lifecycle gate is exact private Builder application + fingerprint capture + L1/L2 execution. No consumer project is adopted by this central addition.
 
 ## Central project-adoption governance
 
