@@ -1,6 +1,6 @@
-# SES — Canonical Specialist Framework v0.1
+# SES — Canonical Specialist Framework v0.2
 
-**Status:** `CANONICAL_V0_1 / PORTFOLIO_ARCHITECTURE_AUTHORITY`  
+**Status:** `CANONICAL_V0_2 / PORTFOLIO_ARCHITECTURE_AUTHORITY`  
 **Scope:** canonical specialist domains, names, archetype identifiers, lifecycle, transversal capabilities, project-adoption semantics and legacy-identity boundaries.
 
 ## 1. Purpose
@@ -69,6 +69,18 @@ Legacy continuity aliases for Software Systems Architect may include `SaaS Archi
 The two TARGET rows are architecture targets only. Their proposed identifiers are not registry entries and become canonical `ARCHETYPE_ID` values only after explicit archetype design/registration. Their presence here must not be interpreted as current certification, active archetype resolution or project adoption.
 
 GEO is a cross-cutting capability primarily spanning Strategy, Content/Semantic, Technical and Analytics. It is not currently a separate canonical specialist.
+
+### 3.5 Marketing, Go-to-Market & Integrated Campaigns
+
+| Canonical specialist | ARCHETYPE_ID | Current state | Scope summary |
+|---|---|---|---|
+| SES — Integrated Marketing Strategist | `PROPOSED: integrated-marketing-strategist / NOT_YET_REGISTERED` | TARGET / BUILDER_READY_CANDIDATE | market/customer diagnosis, segmentation, positioning, value proposition, offer strategy, GTM, integrated digital + conventional campaigns, channel mix, media-allocation scenarios, journey/funnel, KPI governance and Marketing → Sales alignment |
+
+This TARGET specialist is a Builder-ready candidate only. Its candidate archetype contract may exist outside the active registry while L1/L2/runtime certification remains pending.
+
+`TARGET != ACTIVE != CERTIFIED_FOR_ANY_PROJECT != CONSUMER_PROJECT_ADOPTED`
+
+Its role is integrative rather than monolithic: it coordinates Search, UX, Analytics, CRM/Data, Security/Privacy/Legal and Sales handoffs without appropriating those specialist or project-local authorities.
 
 ## 4. Transversal capabilities and evidence layers
 
@@ -144,6 +156,7 @@ Examples of intended separation:
 - Software Systems Architect defines system boundaries and target architecture; Backend/Data owns backend/data engineering method; AppSec independently assures security.
 - SEO Strategy coordinates the Search portfolio without replacing Technical SEO, Content/Semantic, Analytics, Local, Authority/Digital PR or Paid Search.
 - Paid Search may hand landing-page issues to UX/UI or Content; Analytics may hand tracking defects to GTM/Backend/Privacy; Technical SEO may hand rendering/platform defects to Architecture/Backend.
+- Integrated Marketing Strategist owns cross-channel marketing strategy and may coordinate Search, UX, Analytics, CRM/Data, Privacy/Legal and Sales handoffs; channel coordination does not transfer specialist execution authority, spend authority, pricing authority or publication authority.
 - AppSec may return implementation findings to Backend/Data and architecture findings to Software Systems Architect.
 
 `HANDOFF != AUTHORITY_TRANSFER`.
@@ -193,10 +206,19 @@ flowchart TB
       S7["Paid Search & SEM<br/>ACTIVE / CERTIFIED"]
     end
 
+    subgraph D5["Marketing, Go-to-Market & Integrated Campaigns"]
+      IMS["Integrated Marketing Strategist<br/>TARGET / BUILDER_READY_CANDIDATE"]
+    end
+
     SES --> D1
     SES --> D2
     SES --> D3
     SES --> D4
+    SES --> D5
+
+    IMS --> S1
+    IMS --> S7
+    IMS --> UX
 
     S1 --> S2
     S1 --> S3
@@ -223,12 +245,14 @@ flowchart TB
     E -. evidence/data .-> S5
     E -. evidence/data .-> S6
     E -. evidence/data .-> S7
+    E -. evidence/data .-> IMS
 
     P["Project Registry + Project Adapter + Project Bootstrap"]
     D1 --> P
     D2 --> P
     D3 --> P
     D4 --> P
+    D5 --> P
 ```
 
 ## 10. Legacy-identity policy

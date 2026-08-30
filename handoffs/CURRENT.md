@@ -25,7 +25,7 @@ Resolve the current portfolio from:
 - `docs/SPECIALIST_CERTIFICATION_STATUS.md` for the current fingerprint-bound certification ledger;
 - `archetypes/REGISTRY.md` for active archetype resolution.
 
-At the current framework version, Local SEO and Authority & Digital PR are TARGET / CERTIFICATION_PENDING and must not be inferred as active or certified from their presence in the framework.
+At the current framework version, Local SEO and Authority & Digital PR are TARGET / CERTIFICATION_PENDING, and Integrated Marketing Strategist is TARGET / BUILDER_READY_CANDIDATE. None may be inferred as active or certified from framework inclusion.
 
 ```text
 FRAMEWORK_PORTFOLIO != CERTIFICATION_LEDGER
@@ -156,7 +156,9 @@ SES_GATEWAY_API_KEY
 
 ## Next objective
 
-For ordinary specialist consultation, use the manual handoff path. Do not reopen Gateway work automatically.
+The user explicitly selected a new SES architecture objective: `integrated-marketing-strategist-v0.1`. The candidate package is intended to reach `BUILDER_READY_CANDIDATE` without registry activation or certification. After merge, the next lifecycle action is private Builder application, fingerprint capture and L1/L2 execution.
+
+For ordinary specialist consultation, the manual handoff path remains current. Do not reopen Gateway work automatically.
 
 A future Router/Gateway transport may be reconsidered only after a deliberate SES objective, new end-to-end evidence in the intended user workflow and explicit adoption.
 

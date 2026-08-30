@@ -2,9 +2,9 @@
 
 > Registro autoritativo da próxima ação segura do SES quando este arquivo estiver em `main`.
 
-**Next action ID:** `use-manual-specialist-handoff-until-transport-revalidated`  
-**Primary target:** `SES specialist consultation workflow`  
-**Current phase:** `MANUAL_SPECIALIST_HANDOFF / CURRENT_OPERATIONAL_PATH`
+**Next action ID:** `apply-integrated-marketing-strategist-builder-v0-1`  
+**Primary target:** `integrated-marketing-strategist-v0.1`  
+**Current phase:** `BUILDER_READY_CANDIDATE / BUILDER_APPLICATION_PENDING`
 
 ## Portfolio source authority
 
@@ -18,7 +18,7 @@ For portfolio state, resolve:
 - `projects/SPECIALIST_ADOPTION_MATRIX_CURRENT.md` plus its exact `CURRENT_PATH` when current project-adoption/provider state is material;
 - the exact Project Adapter for detailed project role/adoption/provider resolution.
 
-Local SEO and Authority & Digital PR are currently TARGET / CERTIFICATION_PENDING in the framework and are not current certified/active specialists until their own lifecycle gates are satisfied.
+Local SEO and Authority & Digital PR are currently TARGET / CERTIFICATION_PENDING. Integrated Marketing Strategist is TARGET / BUILDER_READY_CANDIDATE. None is current certified/active until its own lifecycle gates are satisfied.
 
 Historical failures remain preserved; `RETROACTIVE_PASS = NO`.
 
@@ -30,6 +30,23 @@ MATRIX_SNAPSHOT != RUNTIME_AUTHORITY
 PROJECT_LOCAL_EXECUTION_MODE != UNIVERSAL_ADOPTION_STATUS
 PROJECT_LOCAL_CROSS_PROJECT_SERVICE != PROVIDER_RUNTIME_PROOF
 ```
+
+## Explicitly selected architecture objective
+
+The user selected `SES — Integrated Marketing Strategist` as the next material SES specialist objective.
+
+After the Builder-ready candidate artifacts are merged, the next safe lifecycle action is:
+
+```text
+1. create/apply the private Builder from the exact versioned package/kernel;
+2. capture and freeze the applied runtime fingerprint;
+3. execute/adjudicate the canonical L1 and L2 suites;
+4. preserve initial failures/retests chronologically;
+5. perform readiness evaluation;
+6. obtain explicit user READY authorization before registry activation/certification work.
+```
+
+Do not activate `archetypes/REGISTRY.md`, update the certification ledger, adopt the specialist into any consumer project, authorize media spend or publish campaigns merely because the candidate is Builder-ready.
 
 ## Material correction
 
@@ -117,9 +134,11 @@ Do not automatically:
 - introduce semantic/fuzzy routing;
 - publish or merge a transport change without its own authorization.
 
-For ordinary specialist work, the next safe action is to generate the manual Specialist Consultation Packet using the live Registry/Adapter/archetype/project sources and let the user transfer it to the selected specialist.
+For the current explicitly selected SES architecture objective, the next safe action is Builder application and fingerprint capture for `integrated-marketing-strategist-v0.1`; repository versioning alone is not Builder application.
 
-For SES architecture evolution beyond that operational use, select the next material objective explicitly rather than inferring it from the historical Gateway program.
+For unrelated ordinary specialist consultation, continue to generate the manual Specialist Consultation Packet using the live Registry/Adapter/archetype/project sources and let the user transfer it to the selected specialist.
+
+The manual handoff remains the current consultation transport; this new specialist lifecycle objective does not reopen or re-adopt the historical Gateway/Router.
 
 ```text
 CURRENT_SPECIALIST_TRANSPORT = MANUAL_COPY_PASTE
