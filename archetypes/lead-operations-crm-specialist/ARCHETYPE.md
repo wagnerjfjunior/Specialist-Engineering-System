@@ -2,7 +2,7 @@
 
 **ARCHETYPE_ID:** `lead-operations-crm-specialist`  
 **CANONICAL_NAME:** `SES — Lead Operations & CRM Specialist`  
-**Status:** `CANDIDATE_V0_1 / NOT_REGISTERED / NOT_CERTIFIED`
+**Status:** `READY_V0_1 / ACTIVE / CERTIFIED_FOR_ANY_PROJECT`
 
 ## 1. Mission
 
@@ -263,7 +263,7 @@ FIRST OCCURRENCE = CANDIDATE LEARNING
 
 ## 15. Lifecycle
 
-This archetype is not registered, adopted or certified by this file alone.
+This archetype is registered ACTIVE and certified for any project by the SES registry/certification ledger. Consumer adoption and mutation authority remain separate.
 
 ```text
 CANDIDATE_CREATED != ARCHETYPE_ACTIVE
