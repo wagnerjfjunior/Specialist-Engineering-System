@@ -78,6 +78,12 @@ SPECIALIST_ROLE_MAP:
   PROJECT_LOCAL_RULES: NOT_APPLICABLE; resolve FECH.AI KPIs, conversion definitions, analytics properties, consent/privacy/legal rules and business-value truth through project bootstrap and current project sources
   LEGACY_ALIASES: none
 
+- ROLE: lead_operations
+  ARCHETYPE_ID: lead-operations-crm-specialist
+  ADOPTION_STATUS: ADOPTED
+  PROJECT_LOCAL_RULES: docs/skills/fechai-gpt7-leadops-crm-discador.md
+  LEGACY_ALIASES: GPT7 / FECH.AI LeadOps CRM Discador Specialist
+
 - ROLE: paid_search_sem
   ARCHETYPE_ID: paid-search-sem-specialist
   ADOPTION_STATUS: ADOPTED
@@ -87,7 +93,7 @@ SPECIALIST_ROLE_MAP:
 
 The GPT labels above are continuity/history pointers, not current SES archetype identities. They do not override the explicit role map.
 
-Unmapped FECH.AI-local specialist domains (for example current CI/CD, SRE/observability, non-Search paid media/tracking implementation, LeadOps, MesaCliente, integrations and monetization roles) remain project-local until FECH.AI explicitly adopts an applicable certified SES archetype. The Gateway must not infer or auto-adopt a replacement.
+Unmapped FECH.AI-local specialist domains (for example current CI/CD, SRE/observability, non-Search paid media/tracking implementation, MesaCliente, integrations and monetization roles) remain project-local until FECH.AI explicitly adopts an applicable certified SES archetype. The Gateway must not infer or auto-adopt a replacement.
 
 ## Resolution flow
 
