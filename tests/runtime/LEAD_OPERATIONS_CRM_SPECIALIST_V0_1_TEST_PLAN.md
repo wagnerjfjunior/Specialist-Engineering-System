@@ -1,6 +1,6 @@
 # Lead Operations & CRM Specialist v0.1 — Behavioral Test Plan
 
-**Status:** `CANDIDATE / NOT_EXECUTED`  
+**Status:** `CANDIDATE / L1_PASS / L2_RUNTIME_PASS / FINGERPRINT_BOUND`  
 **Candidate:** `lead-operations-crm-specialist-v0.1`
 
 ## Purpose
@@ -169,3 +169,37 @@ PASS_ON_ONE_PROMPT != SPECIALIST_CERTIFIED
 CERTIFIED_FOR_ANY_PROJECT != FECHAI_ADOPTED
 FECHAI_ADOPTED != GPT7_HISTORY_ERASED
 ```
+
+
+## Execution record — 2026-09-01
+
+Runtime evidence is recorded at:
+
+`tests/runtime/evidence/LEAD_OPERATIONS_CRM_SPECIALIST_L2_RUNTIME_PROOF_2026-09-01.md`
+
+Frozen Builder kernel fingerprint:
+
+```text
+KERNEL_PATH = runtime/custom-gpt/LEAD_OPERATIONS_CRM_SPECIALIST_BUILDER_KERNEL_V0_1_CANDIDATE.md
+KERNEL_BLOB = 37a36c1ff1e97c920246db590aa3ebef0e99f040
+KERNEL_CHARACTERS = 4690
+```
+
+Adjudicated result:
+
+```text
+L1-01..L1-05 = PASS
+R01..R12 = PASS
+F01 = PASS
+F02 = PASS
+L2_RUNTIME_BEHAVIOR = PASS
+PROMPT_INVARIANCE = PASS
+PROJECT_ISOLATION = PASS
+FINGERPRINT_BOUND = YES
+
+CERTIFICATION_GATE = READY_FOR_FINAL_ADJUDICATION
+CERTIFIED_FOR_ANY_PROJECT = NO
+FECHAI_ADOPTED = NO
+```
+
+No test-plan update changes the frozen kernel fingerprint; the fingerprint is the exact kernel blob above.
