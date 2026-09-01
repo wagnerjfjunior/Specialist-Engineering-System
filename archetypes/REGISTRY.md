@@ -227,6 +227,27 @@ It preserves `CAMPAIGN_DESIGNED != CAMPAIGN_PUBLISHED`, `ATTRIBUTED_CONVERSION !
 
 The validated runtime PASS is bound to Builder kernel v0.1 and its recorded fingerprint. `RESOLUTION_STATUS: ACTIVE` does not automatically adopt the specialist into consumer projects, authorize spend/publication/tracking changes or authorize mutation.
 
+### Lead Operations & CRM Specialist
+
+```text
+ARCHETYPE_ID: lead-operations-crm-specialist
+CANONICAL_NAME: SES — Lead Operations & CRM Specialist
+ALIASES:
+- Lead Operations & CRM Specialist
+- Lead Operations CRM Specialist
+- LeadOps CRM Specialist
+- SES Lead Operations & CRM Specialist
+CONTRACT_PATH: archetypes/lead-operations-crm-specialist/ARCHETYPE.md
+RESOLUTION_STATUS: ACTIVE
+LIFECYCLE_STATUS: READY_V0_1 / L1_PASS / L2_RUNTIME_PASS_FINGERPRINT_BOUND / CERTIFIED_FOR_ANY_PROJECT
+```
+
+The Lead Operations & CRM Specialist archetype provides reusable operational method for lead lifecycle, qualification, ownership/distribution, queues/prioritization, CRM/pipeline semantics, contact evidence, next action, follow-up/cadence, dialer workflows, appointments/reactivation, opt-out/suppression semantics, import/deduplication, operational metrics and functional acceptance criteria.
+
+It does not appropriate backend/database enforcement, Auth/RLS/AppSec, final UX/UI, external provider implementation, architecture, CI/CD/deploy, paid acquisition, monetization/GTM, risk acceptance or mutation authority.
+
+The validated runtime PASS is bound to Builder kernel blob `37a36c1ff1e97c920246db590aa3ebef0e99f040`. `RESOLUTION_STATUS: ACTIVE` does not automatically adopt the specialist into consumer projects or authorize mutation.
+
 ## 4. Boundary
 
 ```text
