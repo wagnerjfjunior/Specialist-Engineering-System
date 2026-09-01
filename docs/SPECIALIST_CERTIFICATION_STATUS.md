@@ -17,6 +17,7 @@
 | `content-semantic-seo-specialist` | `YES` | v0.1 fingerprint-bound L1/L2/tool/readiness proof PASS; user-authorized READY |
 | `seo-analytics-growth-specialist` | `YES` | v0.1 fingerprint-bound L1/L2/tool/readiness proof PASS; user-authorized READY |
 | `paid-search-sem-specialist` | `YES` | v0.1 fingerprint-bound L1/L2/tool/readiness proof PASS; user-authorized READY; pre-test starter mismatch corrected before fingerprint freeze |
+| `lead-operations-crm-specialist` | `YES` | v0.1 C01-C18 PASS; fingerprint-bound L1/L2/tool/readiness proof PASS; user-authorized READY |
 
 ```text
 CERTIFIED_FOR_ANY_PROJECT != CONSUMER_PROJECT_ADOPTED
@@ -346,3 +347,36 @@ RETROACTIVE_PASS_FOR_INITIAL_CONFIGURATION = NO
 Primary final evidence: `tests/runtime/evidence/PAID_SEARCH_SEM_SPECIALIST_FINAL_CERTIFICATION_2026-08-25.md`.
 
 The Runtime Enforcement Gateway remains separate from specialist certification. Any material runtime fingerprint/tool/archetype/bootstrap change requires proportional revalidation; never silently preserve PASS across material drift.
+
+## Lead Operations & CRM Specialist
+
+Current certified subject:
+
+```text
+ARCHETYPE_ID = lead-operations-crm-specialist
+CANONICAL_NAME = SES — Lead Operations & CRM Specialist
+RESOLUTION_STATUS = ACTIVE
+CURRENT_CANDIDATE = lead-operations-crm-specialist-v0.1
+CURRENT_KERNEL = runtime/custom-gpt/LEAD_OPERATIONS_CRM_SPECIALIST_BUILDER_KERNEL_V0_1.md
+CURRENT_KERNEL_BLOB = 37a36c1ff1e97c920246db590aa3ebef0e99f040
+BUILDER_PACKAGE = runtime/custom-gpt/LEAD_OPERATIONS_CRM_SPECIALIST_BUILDER_PACKAGE_V0_1.md
+BUILDER_PACKAGE_BLOB = 1da3fbd2809fa820bb9dae71a04fa628963b0033
+CURRENT_BUILDER_APPLIED = PASS / USER-SUPPLIED UI EVIDENCE
+CURRENT_RUNTIME_FINGERPRINT = CAPTURED / FINGERPRINT_BOUND
+L1 = PASS
+R01-R12 = PASS
+F01-F02 = PASS
+PROJECT_ISOLATION = PASS
+PROMPT_INVARIANCE = PASS
+TOOL_HONESTY = PASS_WITH_UI_PROVENANCE_LIMITATION
+C01-C18 = PASS
+SPECIALIST_READINESS = READY / USER_AUTHORIZED / 2026-09-01
+CERTIFIED_FOR_ANY_PROJECT = YES
+```
+
+Primary evidence:
+- `tests/runtime/evidence/LEAD_OPERATIONS_CRM_SPECIALIST_L2_RUNTIME_PROOF_2026-09-01.md`
+- `tests/runtime/evidence/LEAD_OPERATIONS_CRM_SPECIALIST_READINESS_DECISION_2026-09-01.md`
+- `tests/runtime/evidence/LEAD_OPERATIONS_CRM_SPECIALIST_FINAL_CERTIFICATION_2026-09-01.md`
+
+The external Builder UI remains a provenance limitation: SES cannot independently fetch its full configuration. The certification is bound to the exact versioned kernel fingerprint and the runtime evidence supplied and observed during the test cycle.
