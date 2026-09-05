@@ -1,7 +1,7 @@
-# SES — Manual Specialist Handoff Contract v0.1
+# SES — Manual Specialist Handoff Contract v0.2
 
-**Contract ID:** `manual-specialist-handoff-contract-v0.1`  
-**Status:** `CANDIDATE_V0_1 / CURRENT_OPERATIONAL_TRANSPORT`  
+**Contract ID:** `manual-specialist-handoff-contract-v0.2`  
+**Status:** `CANONICAL_V0_2 / CURRENT_OPERATIONAL_TRANSPORT / CANONICAL_TARGET_IDENTITY_ENFORCED`  
 **Scope:** SES-mediated consultation of reusable specialists when direct Router/Gateway composition is not an accepted operational path.
 
 ## 1. Purpose
@@ -55,6 +55,7 @@ RETROACTIVE_ERASURE = NO
 The following are reusable SES rules:
 
 - consultation must identify the intended project, specialist and task explicitly;
+- for any SES archetype selected for consultation, the human-facing operational target name must be resolved from `archetypes/REGISTRY.md` `CANONICAL_NAME`; project-local or legacy aliases are continuity only and must not replace the canonical target identity;
 - the handoff must preserve provenance and authority boundaries;
 - the receiving specialist must resolve material live state itself before substantive current-state claims;
 - a copied SHA or state snapshot is an anchor, not proof that it remains current;
@@ -136,6 +137,19 @@ Fail closed when a required item is unresolved.
 
 Do not use fuzzy project or role guessing for a material handoff.
 
+Before rendering any instruction such as "send to", "paste into", "consult", "open the specialist" or equivalent, resolve the selected `ARCHETYPE_ID` in `archetypes/REGISTRY.md` and obtain its exact `CANONICAL_NAME`.
+
+For an SES-selected specialist:
+
+```text
+SPECIALIST_TARGET_NAME = ARCHETYPE_REGISTRY.CANONICAL_NAME
+LEGACY_ALIAS != SPECIALIST_TARGET_NAME
+PROJECT_LOCAL_SKILL_TITLE != SPECIALIST_TARGET_NAME
+BUILDER_HISTORY_LABEL != SPECIALIST_TARGET_NAME
+```
+
+A project-local identity may be the operational target only when no SES archetype is selected for that consultation, for example an unmapped project-local role or explicitly project-local specialist with no adopted/certified SES replacement. Do not fabricate an SES identity for such a case.
+
 ## 6. Specialist Consultation Packet
 
 The packet is the minimum transport object from SES to the receiving specialist.
@@ -145,7 +159,7 @@ Use this schema semantically; formatting may vary without removing required mean
 ```text
 SES SPECIALIST CONSULTATION PACKET
 
-PACKET_VERSION: manual-specialist-handoff-v0.1
+PACKET_VERSION: manual-specialist-handoff-v0.2
 PROJECT_IDENTIFIER: <explicit project id/name>
 PROJECT_CANONICAL_NAME: <resolved canonical project name>
 CANONICAL_SOURCE: <project-owned canonical source>
@@ -153,7 +167,10 @@ SES_EFFECTIVE_REF: <exact SES ref used to prepare packet>
 PROJECT_REF_RULE: <how receiving specialist must resolve current project ref>
 
 SPECIALIST_ARCHETYPE_ID: <resolved archetype id>
-SPECIALIST_RUNTIME_NAME: <human-facing specialist name when known>
+SPECIALIST_CANONICAL_NAME: <exact CANONICAL_NAME from archetypes/REGISTRY.md>
+SPECIALIST_TARGET_NAME: <must equal SPECIALIST_CANONICAL_NAME for SES-selected specialist>
+LEGACY_ALIASES: <continuity/history aliases or NONE>
+SPECIALIST_RUNTIME_NAME: <optional external Builder display name; informational only and never routing authority>
 SELECTION_STATUS: <ADOPTED_ROLE | EXPLICIT_AD_HOC_CONSULTATION>
 PROJECT_ROLE: <exact adopted role or NOT_ADOPTED_FOR_THIS_CONSULTATION>
 
@@ -179,6 +196,31 @@ REQUIRED_EXECUTION_RULES:
 ```
 
 The packet may include task-specific evidence pointers, acceptance criteria or proof obligations, but must not include secrets.
+
+### 6.1 Canonical target rendering rule
+
+When the handoff is rendered for a human, all operational destination language must use `SPECIALIST_TARGET_NAME`.
+
+Allowed example:
+
+```text
+Send this packet to: SES — Software Systems Architect
+```
+
+Disallowed when `software-systems-architect` is the selected SES archetype:
+
+```text
+Send this packet to: GPT1.5 — FECH.AI Arquiteto SaaS
+```
+
+A legacy or project-local label may appear only as explicitly labeled continuity/context, never as the destination identity.
+
+```text
+CANONICAL_TARGET_IDENTITY = UNIVERSAL
+PROJECT_LOCAL_RULES = PROJECT_LOCAL
+LEGACY_CONTINUITY = HISTORICAL / PROJECT_LOCAL
+TRANSPORT = MANUAL_COPY_PASTE
+```
 
 ## 7. Freshness and provenance
 
@@ -300,9 +342,33 @@ This contract is acceptable only if behavioral validation demonstrates at minimu
 - secret exclusion;
 - specialist result return/adjudication boundary;
 - Gateway/Router not required for the current manual path;
-- historical Gateway proof preserved without being presented as current operational acceptance.
+- historical Gateway proof preserved without being presented as current operational acceptance;
+- canonical target identity resolved from the Archetype Registry;
+- legacy/project-local aliases never emitted as operational destinations for SES-selected specialists;
+- same archetype renders the same canonical target name across consumer projects while project-local rules remain different;
+- unmapped project-local roles remain project-local and are not forcibly renamed to SES.
 
-## 13. Invalidation
+## 13. Cross-project consistency
+
+The canonical specialist identity is SES-wide, not consumer-project-specific.
+
+For the same selected `ARCHETYPE_ID`, different projects may supply different bootstrap, authority and project-local rules, but the operational target name remains the same canonical SES identity.
+
+```text
+SAME ARCHETYPE_ID
++ DIFFERENT PROJECT_CONTEXT
+→ SAME SPECIALIST_TARGET_NAME
+→ DIFFERENT PROJECT_LOCAL_RULES MAY APPLY
+```
+
+This rule does not mean every certified specialist is automatically adopted by every project. Availability/certification, project adoption and ad-hoc consultation remain separate states.
+
+```text
+CERTIFIED_FOR_ANY_PROJECT != CONSUMER_PROJECT_ADOPTED
+CANONICAL_IDENTITY != AUTOMATIC_ADOPTION
+```
+
+## 14. Invalidation
 
 Revisit this contract when a material transport capability changes, including:
 
