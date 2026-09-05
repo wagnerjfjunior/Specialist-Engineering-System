@@ -129,6 +129,27 @@ SFJM Workspace remains authoritative for its own product state. The separate `wa
 
 Registration itself does not authorize mutation and does not imply adoption of every certified specialist. Current SFJM Workspace specialist adoption must be resolved from `projects/sfjm-workspace/PROJECT_ADAPTER.md` and the current adoption matrix.
 
+
+### StopJuniorMode / SFJM Protocol
+
+```text
+PROJECT_ID: stopjuniormode
+CANONICAL_NAME: StopJuniorMode
+ALIASES:
+- Stop Junior Mode
+- SFJM Protocol
+- StopJuniorMode / SFJM Protocol
+- wagnerjfjunior/StopJuniorMode
+ADAPTER_PATH: projects/stopjuniormode/PROJECT_ADAPTER.md
+STATUS: ACTIVE
+```
+
+This registration establishes only SES-side project discovery for `wagnerjfjunior/StopJuniorMode`.
+
+The StopJuniorMode repository remains authoritative for SFJM protocol, protocol governance, research, continuity contracts and canonical protocol evidence. It is separate from `sfjm-workspace`, which remains the SFJM Workspace product repository.
+
+Registration itself does not authorize mutation and does not imply adoption of every certified specialist. Current StopJuniorMode specialist adoption must be resolved from `projects/stopjuniormode/PROJECT_ADAPTER.md`.
+
 ## 6. Change discipline
 
 Adding, removing, renaming or aliasing a project changes SES project-resolution behavior and must be reviewed as a versioned SES change.
