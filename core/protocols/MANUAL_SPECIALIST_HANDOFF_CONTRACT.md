@@ -1,7 +1,7 @@
-# SES — Manual Specialist Handoff Contract v0.2
+# SES — Manual Specialist Handoff Contract v0.3
 
-**Contract ID:** `manual-specialist-handoff-contract-v0.2`  
-**Status:** `CANONICAL_V0_2 / CURRENT_OPERATIONAL_TRANSPORT / CANONICAL_TARGET_IDENTITY_ENFORCED`  
+**Contract ID:** `manual-specialist-handoff-contract-v0.3`  
+**Status:** `CANONICAL_V0_3 / CURRENT_OPERATIONAL_TRANSPORT / CANONICAL_TARGET_IDENTITY_ENFORCED / CONSUMER_RECERTIFICATION_DETOUR_FORBIDDEN`  
 **Scope:** SES-mediated consultation of reusable specialists when direct Router/Gateway composition is not an accepted operational path.
 
 ## 1. Purpose
@@ -150,6 +150,59 @@ BUILDER_HISTORY_LABEL != SPECIALIST_TARGET_NAME
 
 A project-local identity may be the operational target only when no SES archetype is selected for that consultation, for example an unmapped project-local role or explicitly project-local specialist with no adopted/certified SES replacement. Do not fabricate an SES identity for such a case.
 
+
+## 5.1 Consumer consultation admission versus SES release lifecycle
+
+A consumer project must not hijack its own task/lifecycle to close an internal SES candidate-release certification gap unless the consumer task explicitly requires that exact candidate fingerprint as a certification precondition.
+
+For ordinary manual consultation of an adopted SES role, admission is based on:
+
+```text
+PROJECT ROLE = ADOPTED
++ ARCHETYPE = ACTIVE
++ CURRENT SES LEDGER CERTIFICATION = YES
+→ CONSULTATION ELIGIBLE
+```
+
+The consumer project must not scan unrelated SES candidate kernels/packages and convert their existence, application history or pending proportional certification into a project blocker.
+
+```text
+CERTIFIED ARCHETYPE EXISTS
++ UNPUBLISHED / NONCURRENT SES CANDIDATE EXISTS
+!= CONSUMER PROJECT BLOCKED
+```
+
+If the external Custom GPT currently carries a runtime delta that is not the current certified SES release, its output may still be consumed as bounded specialist evidence under the normal result-packet/adjudication rules, provided the output truthfully records the evidence/tool boundary. That runtime delta must not be represented as universally certified merely because it was used.
+
+```text
+SPECIALIST_OUTPUT_USABLE_AS_BOUNDED_EVIDENCE
+!= EXACT_RUNTIME_CERTIFIED_FOR_ANY_PROJECT
+```
+
+An exact runtime fingerprint becomes a consumer admission blocker only when at least one of these is true:
+
+1. the consumer project's own authority explicitly requires a certified exact runtime/fingerprint for the task;
+2. the task's proof obligation materially depends on a runtime capability whose use is allowed only by a certified exact-runtime contract;
+3. the handoff explicitly selects a particular SES release/fingerprint rather than the archetype generally.
+
+Otherwise, the consumer project continues its own lifecycle and SES release closure remains an SES lifecycle concern.
+
+For project-local tool bindings, distinguish:
+
+```text
+PROJECT_LOCAL_TOOL_CONTRACT
++ ACTUAL TOOL INVOCATION / VERIFIED RESULT
+→ PROJECT-LOCAL EVIDENCE CHANNEL
+
+PROJECT_LOCAL_TOOL_PROOF
+!= UNIVERSAL SES RUNTIME CERTIFICATION
+
+UNIVERSAL RUNTIME CERTIFICATION GAP
+!= PROJECT-LOCAL TOOL UNUSABLE
+```
+
+This rule does not weaken tool honesty, result provenance, project authority, risk acceptance or certification semantics. It only prevents consumer projects from inserting an unrelated SES release-certification workflow into their own next-safe-action chain.
+
 ## 6. Specialist Consultation Packet
 
 The packet is the minimum transport object from SES to the receiving specialist.
@@ -159,7 +212,7 @@ Use this schema semantically; formatting may vary without removing required mean
 ```text
 SES SPECIALIST CONSULTATION PACKET
 
-PACKET_VERSION: manual-specialist-handoff-v0.2
+PACKET_VERSION: manual-specialist-handoff-v0.3
 PROJECT_IDENTIFIER: <explicit project id/name>
 PROJECT_CANONICAL_NAME: <resolved canonical project name>
 CANONICAL_SOURCE: <project-owned canonical source>
@@ -169,6 +222,9 @@ PROJECT_REF_RULE: <how receiving specialist must resolve current project ref>
 SPECIALIST_ARCHETYPE_ID: <resolved archetype id>
 SPECIALIST_CANONICAL_NAME: <exact CANONICAL_NAME from archetypes/REGISTRY.md>
 SPECIALIST_TARGET_NAME: <must equal SPECIALIST_CANONICAL_NAME for SES-selected specialist>
+SES_CERTIFICATION_STATUS: <current ledger state for selected archetype>
+SES_CERTIFIED_SUBJECT: <current certified subject/fingerprint when material>
+CONSUMER_RUNTIME_VARIANT_STATUS: <NOT_REQUIRED | CURRENT_CERTIFIED_SUBJECT | NONCURRENT_VARIANT_BOUNDED_EVIDENCE>
 LEGACY_ALIASES: <continuity/history aliases or NONE>
 SPECIALIST_RUNTIME_NAME: <optional external Builder display name; informational only and never routing authority>
 SELECTION_STATUS: <ADOPTED_ROLE | EXPLICIT_AD_HOC_CONSULTATION>
