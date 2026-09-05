@@ -12,6 +12,7 @@ DEFAULT_REF_OR_RESOLUTION_RULE: resolve live main before material work
 BOOTSTRAP_ENTRYPOINT: docs/bootstrap/INDEX.md
 CONTINUITY_ENTRYPOINT: docs/sfjm/INDEX.md
 SPECIALIST_ENTRYPOINT_OR_RESOLUTION_RULE: docs/skills/SES_SPECIALIST_ROUTING.md for SES-adopted roles; docs/skills/fechai-gpt-registry.md only for unmapped project-local domains and explicit legacy continuity
+MANUAL_HANDOFF_CONTRACT: core/protocols/MANUAL_SPECIALIST_HANDOFF_CONTRACT.md
 GOVERNANCE_ENTRYPOINT: docs/governance/INDEX.md when applicable
 AUTHORITY_ENTRYPOINT: resolve through the FECH.AI bootstrap and applicable canonical governance/continuity sources
 ENVIRONMENT_ENTRYPOINT: docs/bootstrap/2026-06-10-fechai-saas-current-state-index.md
@@ -122,6 +123,24 @@ explicit PROJECT_IDENTIFIER = fechai
 ```
 
 For FECH.AI-local domains not adopted through the role map, continue using the project-owned specialist registry/rules. The legacy registry must not override any SES-adopted role. `SPECIALIST_ROLE_NOT_ADOPTED` must not trigger semantic guessing.
+
+
+## Manual handoff identity rule
+
+For any SES-selected specialist consultation, apply the universal manual handoff contract before rendering the human copy/paste destination.
+
+```text
+ARCHETYPE_ID
+→ archetypes/REGISTRY.md
+→ CANONICAL_NAME
+→ SPECIALIST_TARGET_NAME
+
+SPECIALIST_TARGET_NAME = ARCHETYPE_REGISTRY.CANONICAL_NAME
+LEGACY_ALIAS != SPECIALIST_TARGET_NAME
+PROJECT_LOCAL_RULES != SPECIALIST_TARGET_NAME
+```
+
+Project-local rules, legacy aliases and continuity remain valid context, but they must not replace the canonical SES destination identity. An unmapped project-local role remains project-local and must not be forced into an SES archetype.
 
 ## Boundary
 
