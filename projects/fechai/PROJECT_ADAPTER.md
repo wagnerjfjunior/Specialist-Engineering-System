@@ -142,6 +142,25 @@ PROJECT_LOCAL_RULES != SPECIALIST_TARGET_NAME
 
 Project-local rules, legacy aliases and continuity remain valid context, but they must not replace the canonical SES destination identity. An unmapped project-local role remains project-local and must not be forced into an SES archetype.
 
+
+## Consumer handoff / certification boundary
+
+Manual consultation of an adopted SES role follows the current SES Manual Specialist Handoff Contract.
+
+```text
+ADOPTED ROLE
++ ACTIVE ARCHETYPE
++ CURRENT SES LEDGER CERTIFICATION = YES
+→ CONSUMER CONSULTATION ELIGIBLE
+
+NONCURRENT SES CANDIDATE EXISTS
+!= CONSUMER PROJECT BLOCKED
+
+CONSUMER_RECERTIFICATION_DETOUR_FORBIDDEN = YES
+```
+
+A noncurrent Builder/runtime candidate must not become this consumer project's next safe action unless the project task explicitly requires that exact candidate fingerprint as a certified dependency. Project-local tool evidence remains usable within its own tool/evidence contract and must not be promoted to universal runtime certification.
+
 ## Boundary
 
 This file does not own or freeze:
