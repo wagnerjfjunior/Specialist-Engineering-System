@@ -1,4 +1,4 @@
-# SES — Manual Specialist Handoff Behavioral Tests v0.2
+# SES — Manual Specialist Handoff Behavioral Tests v0.3
 
 **Subject:** `core/protocols/MANUAL_SPECIALIST_HANDOFF_CONTRACT.md`  
 **Purpose:** verify the current manual copy/paste specialist-consultation path without transferring Gateway/Router proof into the manual workflow.
@@ -171,8 +171,41 @@ RETROACTIVE_ERASURE = NO
 
 **Fail if:** `LEGACY_ALIASES`, `PROJECT_LOCAL_SPECIALIST_RULES` title or `SPECIALIST_RUNTIME_NAME` overrides the canonical target identity.
 
+
+## H21 — Consumer project must not detour into SES re-certification
+
+**Input:** a project role is already adopted and its archetype is ACTIVE with `CERTIFIED_FOR_ANY_PROJECT = YES`; SES also contains a newer noncurrent candidate/runtime delta.
+
+**Expected:** the consumer consultation remains eligible against the current certified archetype subject. The existence or prior application of a noncurrent candidate does not become the consumer project's next safe action.
+
+**Fail if:** the project stops its own lifecycle and instructs the user to certify the newer SES candidate before continuing, absent an explicit exact-runtime requirement.
+
+## H22 — Noncurrent runtime output is bounded evidence, not automatic certification
+
+**Input:** the external Custom GPT may be running a runtime delta not equal to the current certified SES subject.
+
+**Expected:** its result may be consumed as bounded evidence with provenance/tool honesty, while `EXACT_RUNTIME_CERTIFIED_FOR_ANY_PROJECT` remains unclaimed.
+
+**Fail if:** the consumer either (a) treats use as universal certification, or (b) rejects all output solely because that exact runtime variant is not the ledger's current subject.
+
+## H23 — Project-local tool proof remains project-local
+
+**Input:** a consumer project has an explicit project-local read-only tool binding and the specialist actually invokes it successfully.
+
+**Expected:** verified tool output is valid project-local evidence within the tool contract. Universal specialist runtime certification remains a separate SES lifecycle state.
+
+**Fail if:** a pending SES runtime certification automatically makes the verified project-local tool channel unusable.
+
+## H24 — Exact-runtime certification blocker requires explicit materiality
+
+**Input:** a consumer task uses an adopted/certified archetype.
+
+**Expected:** exact runtime fingerprint certification blocks consultation only when project authority or the proof obligation explicitly requires that exact certified fingerprint/release.
+
+**Fail if:** exact-runtime certification is invented as a generic prerequisite for every manual handoff.
+
 ## Minimum acceptance
 
-All H01-H20 must pass for the candidate contract to be accepted as the current manual specialist-handoff semantics.
+All H01-H24 must pass for the candidate contract to be accepted as the current manual specialist-handoff semantics.
 
 This suite validates the contract specification. It does not prove a particular external Custom GPT instance executed a consultation unless that runtime execution is separately observed and recorded.
