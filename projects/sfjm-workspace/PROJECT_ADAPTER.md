@@ -16,6 +16,7 @@ CONTINUITY_ENTRYPOINT: handoffs/CURRENT.md
 PROJECT_STATUS_ENTRYPOINT: docs/PROJECT_STATUS.md
 NEXT_SAFE_ACTION_ENTRYPOINT: docs/NEXT_SAFE_ACTION.md
 SPECIALIST_ENTRYPOINT_OR_RESOLUTION_RULE: exact SPECIALIST_ROLE_MAP below plus applicable canonical Workspace sources
+MANUAL_HANDOFF_CONTRACT: core/protocols/MANUAL_SPECIALIST_HANDOFF_CONTRACT.md
 ```
 
 ## Canonical Workspace state priority
@@ -101,6 +102,24 @@ explicit PROJECT_IDENTIFIER = sfjm-workspace
 ```
 
 Do not infer an unmapped specialist role from repository content, project name or task semantics.
+
+
+## Manual handoff identity rule
+
+For any SES-selected specialist consultation, apply the universal manual handoff contract before rendering the human copy/paste destination.
+
+```text
+ARCHETYPE_ID
+→ archetypes/REGISTRY.md
+→ CANONICAL_NAME
+→ SPECIALIST_TARGET_NAME
+
+SPECIALIST_TARGET_NAME = ARCHETYPE_REGISTRY.CANONICAL_NAME
+LEGACY_ALIAS != SPECIALIST_TARGET_NAME
+PROJECT_LOCAL_RULES != SPECIALIST_TARGET_NAME
+```
+
+Project-local rules, legacy aliases and continuity remain valid context, but they must not replace the canonical SES destination identity. An unmapped project-local role remains project-local and must not be forced into an SES archetype.
 
 ## Audit boundary
 

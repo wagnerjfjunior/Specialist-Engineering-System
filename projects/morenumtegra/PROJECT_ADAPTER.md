@@ -12,6 +12,7 @@ DEFAULT_REF_OR_RESOLUTION_RULE: resolve live main before material work
 BOOTSTRAP_ENTRYPOINT: bootstrap/BOOTSTRAP_CANONICO.md
 CONTINUITY_ENTRYPOINT: handoffs/CURRENT.md
 SPECIALIST_ENTRYPOINT_OR_RESOLUTION_RULE: bootstrap/BOOTSTRAP_CANONICO.md section 10 "Integração SES / SFJM" plus this adapter SPECIALIST_ROLE_MAP
+MANUAL_HANDOFF_CONTRACT: core/protocols/MANUAL_SPECIALIST_HANDOFF_CONTRACT.md
 GOVERNANCE_ENTRYPOINT: bootstrap/BOOTSTRAP_CANONICO.md plus docs/PROJECT_STATUS.md when project governance/state is material
 AUTHORITY_ENTRYPOINT: bootstrap/BOOTSTRAP_CANONICO.md plus docs/NEXT_SAFE_ACTION.md and docs/BLOCKED_ACTIONS.md when mutation/lifecycle authority is material
 ENVIRONMENT_ENTRYPOINT: docs/baseline/TECHNICAL_BASELINE_V2_2.md plus docs/PROJECT_STATUS.md when environment/architecture state is material
@@ -167,6 +168,24 @@ explicit PROJECT_IDENTIFIER = morenumtegra (or an explicit registered alias)
 → bounded provider work + returned result
 → any MoreNumTegra mutation requires separate MoreNumTegra authority
 ```
+
+
+## Manual handoff identity rule
+
+For any SES-selected specialist consultation, apply the universal manual handoff contract before rendering the human copy/paste destination.
+
+```text
+ARCHETYPE_ID
+→ archetypes/REGISTRY.md
+→ CANONICAL_NAME
+→ SPECIALIST_TARGET_NAME
+
+SPECIALIST_TARGET_NAME = ARCHETYPE_REGISTRY.CANONICAL_NAME
+LEGACY_ALIAS != SPECIALIST_TARGET_NAME
+PROJECT_LOCAL_RULES != SPECIALIST_TARGET_NAME
+```
+
+Project-local rules, legacy aliases and continuity remain valid context, but they must not replace the canonical SES destination identity. An unmapped project-local role remains project-local and must not be forced into an SES archetype.
 
 ## Project-owned boundaries
 
