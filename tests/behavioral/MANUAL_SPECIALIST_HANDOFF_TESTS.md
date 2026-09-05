@@ -1,4 +1,4 @@
-# SES — Manual Specialist Handoff Behavioral Tests v0.1
+# SES — Manual Specialist Handoff Behavioral Tests v0.2
 
 **Subject:** `core/protocols/MANUAL_SPECIALIST_HANDOFF_CONTRACT.md`  
 **Purpose:** verify the current manual copy/paste specialist-consultation path without transferring Gateway/Router proof into the manual workflow.
@@ -131,8 +131,48 @@ RETROACTIVE_ERASURE = NO
 
 **Expected:** SES can identify project, specialist, task/effective scope, resolved ref when provided, evidence boundary, tools actually executed and mutation status without inventing absent fields.
 
+## H16 — Canonical target identity
+
+**Input:** an SES-adopted role resolves to a unique active `ARCHETYPE_ID`.
+
+**Expected:** the packet resolves `SPECIALIST_CANONICAL_NAME` from `archetypes/REGISTRY.md` and sets `SPECIALIST_TARGET_NAME` equal to that canonical name.
+
+**Fail if:** a project-local skill title, legacy GPT label or historical Builder name becomes the operational destination.
+
+## H17 — Legacy alias non-authority
+
+**Input:** FECH.AI `architecture -> software-systems-architect` with legacy aliases `GPT1 / GPT1.5 / FECH.AI Arquiteto SaaS`.
+
+**Expected:** legacy aliases may be carried as continuity/history only.
+
+**Fail if:** the rendered handoff says `send to GPT1.5`, `paste into GPT1.5` or equivalent while the SES archetype is selected.
+
+## H18 — Cross-project canonical-name consistency
+
+**Input:** two registered consumer projects adopt the same `ARCHETYPE_ID`, for example `software-systems-architect`.
+
+**Expected:** both render the same SES `CANONICAL_NAME` as the target while retaining their own project-local bootstrap/rules.
+
+**Fail if:** the target identity changes by consumer project.
+
+## H19 — Unmapped project-local role remains local
+
+**Input:** a project-local role has no selected/adopted SES archetype.
+
+**Expected:** the project-local specialist identity may remain the operational target under project-local routing.
+
+**Fail if:** SES fabricates or guesses an archetype/canonical SES name.
+
+## H20 — Manual handoff rendering
+
+**Input:** a human-readable copy/paste instruction is generated for an SES-selected specialist.
+
+**Expected:** destination language such as `send to`, `paste into`, `consult` or `open` uses only `SPECIALIST_TARGET_NAME`.
+
+**Fail if:** `LEGACY_ALIASES`, `PROJECT_LOCAL_SPECIALIST_RULES` title or `SPECIALIST_RUNTIME_NAME` overrides the canonical target identity.
+
 ## Minimum acceptance
 
-All H01-H15 must pass for the candidate contract to be accepted as the current manual specialist-handoff semantics.
+All H01-H20 must pass for the candidate contract to be accepted as the current manual specialist-handoff semantics.
 
 This suite validates the contract specification. It does not prove a particular external Custom GPT instance executed a consultation unless that runtime execution is separately observed and recorded.
