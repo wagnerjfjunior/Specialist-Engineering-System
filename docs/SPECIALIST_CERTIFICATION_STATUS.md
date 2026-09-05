@@ -54,11 +54,27 @@ BUILDER_APPLIED = YES
 L2_RUNTIME_FINGERPRINT_VALIDATION = PASS
 SPECIALIST_READINESS = READY / USER_AUTHORIZED
 CERTIFIED_FOR_ANY_PROJECT = YES
+CONSUMER_HANDOFF_ELIGIBILITY = YES
+NONCURRENT_V0_2_CANDIDATE = SES_LIFECYCLE_INTERNAL / NOT_CONSUMER_BLOCKER
 ```
 
 Primary runtime/readiness evidence:
 - `tests/runtime/evidence/BACKEND_DATA_PLATFORM_L2_FINAL_VERDICT_2026-08-17.md`
 - `tests/runtime/evidence/BACKEND_DATA_PLATFORM_SPECIALIST_READINESS_DECISION_2026-08-17.md`
+
+
+Consumer-handoff rule:
+
+```text
+CURRENT_CERTIFIED_SUBJECT = v0.1
+NONCURRENT_V0_2_CANDIDATE_EXISTS = YES
+NONCURRENT_V0_2_CANDIDATE_AUTO_INVALIDATES_V0_1_CERTIFICATION = NO
+CONSUMER_PROJECT_MUST_CERTIFY_V0_2_BEFORE_CONSULTATION = NO
+```
+
+The v0.2 candidate remains a separate SES release-lifecycle subject until SES explicitly closes it. Its existence or prior runtime use must not cause a registered consumer project to abandon its own lifecycle and initiate SES certification work unless that consumer task explicitly requires the exact v0.2 fingerprint as a certified proof dependency.
+
+Project-local tool results may be consumed within their exact project-local contract and provenance boundary without promoting the v0.2 candidate to universal certification.
 
 ## Application Security Assurance Specialist
 
