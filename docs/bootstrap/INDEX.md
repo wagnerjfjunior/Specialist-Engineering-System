@@ -5,6 +5,10 @@
 
 This index defines the minimum reconstruction order for material work on SES itself and for SES-mediated work on a registered consumer project.
 
+It is not a mandatory central-runtime dependency for ordinary consumer-project execution by an exact Certified Specialist Package. Portable execution is governed by `core/protocols/CERTIFIED_SPECIALIST_PACKAGE_CONTRACT.md`, `core/protocols/HYBRID_SPECIALIST_BOOTSTRAP_CONTRACT.md` and `tests/behavioral/CERTIFIED_SPECIALIST_PORTABLE_EXECUTION_TESTS.md`.
+
+`SES CONTROL PLANE != MANDATORY CENTRAL RUNTIME DEPENDENCY`
+
 ## 1. Resolve SES live state
 
 Before material architecture, protocol, specialist, validation, project-adapter or release decisions:
@@ -41,6 +45,7 @@ Read when applicable:
 - `core/protocols/EVIDENCE_RETRIEVAL_RESILIENCE_CONTRACT.md` when large-file, large-tree, truncation, incomplete transport or context-budget risk is material
 - `core/protocols/EVIDENCE_PROVENANCE_ADMISSION_CONTRACT.md` when evidence durability, repository admission/disposition, reconstructibility or anti-chat-dump semantics are material
 - `core/protocols/SPECIALIST_CERTIFICATION_FOR_ANY_PROJECT_CONTRACT.md` for specialist terminal lifecycle/certification decisions
+- `core/protocols/CERTIFIED_SPECIALIST_PACKAGE_CONTRACT.md` for immutable certified package identity, portable-execution eligibility and migration safety
 - `core/protocols/MANUAL_SPECIALIST_HANDOFF_CONTRACT.md` for the current SES-mediated specialist consultation/handoff path
 - `docs/SPECIALIST_CERTIFICATION_STATUS.md` for the current evidence-bound portfolio certification ledger
 
@@ -49,6 +54,7 @@ Behavioral validation is defined, when applicable, in:
 - `tests/behavioral/HYBRID_SPECIALIST_BOOTSTRAP_TESTS.md`
 - `tests/behavioral/HYBRID_PROJECT_TARGET_RESOLUTION_TESTS.md`
 - `tests/behavioral/SPECIALIST_CERTIFICATION_FOR_ANY_PROJECT_TESTS.md`
+- `tests/behavioral/CERTIFIED_SPECIALIST_PORTABLE_EXECUTION_TESTS.md`
 - `tests/behavioral/MANUAL_SPECIALIST_HANDOFF_TESTS.md`
 - `tests/behavioral/EVIDENCE_PROVENANCE_ADMISSION_TESTS.md`
 
@@ -127,7 +133,7 @@ Future archetype, specialist, validation, certification, handoff and versioning 
 
 ## 3. Archetype resolution
 
-Before a reusable SES specialist performs material specialist work:
+Before SES-mediated resolution or SES/specialist lifecycle work involving a reusable specialist:
 
 1. read `archetypes/REGISTRY.md` on `SES_EFFECTIVE_REF`;
 2. resolve the requested `ARCHETYPE_ID` deterministically;
@@ -182,7 +188,7 @@ Once a consumer project is explicit, continue:
 15. for hybrid specialists, emit the task-bound Context Readiness Receipt required by `core/protocols/HYBRID_SPECIALIST_BOOTSTRAP_CONTRACT.md`;
 16. only then perform project-specific substantive work within the receipt's effective scope.
 
-This order is normative for hybrid SES-mediated work and aligns with `core/protocols/PROJECT_BOOTSTRAP_CONTRACT.md`:
+This order is normative for `SES_MEDIATED_EXECUTION`. It is not a precondition for `CERTIFIED_PORTABLE_EXECUTION`, where the exact package binds reusable specialist semantics and the consumer project supplies project truth. The project-local sequence still aligns with `core/protocols/PROJECT_BOOTSTRAP_CONTRACT.md`:
 
 ```text
 PROJECT BOOTSTRAP
@@ -261,7 +267,7 @@ When any of the following becomes material, re-evaluate the receipt and revalida
 - material task/effective-scope change;
 - target ref/object change;
 - environment change;
-- SES canonical/effective contract/ref change affecting the task;
+- SES canonical/effective contract/ref change affecting the task in SES-mediated/lifecycle mode; unrelated SES main drift does not invalidate an exact portable package;
 - consumer-project live-ref change affecting current-state work;
 - specialist source/ref change;
 - continuity invalidation event;
@@ -283,7 +289,7 @@ Revalidation must be proportional. Do not replay unrelated gates or reread immut
 
 Project-specific work must not proceed as established project context when any of the following is unresolved and material to the task:
 
-- SES bootstrap on the applicable effective ref;
+- SES bootstrap on the applicable effective ref when the selected mode materially requires SES live state;
 - requested archetype when archetype behavior is required;
 - explicit target/project identity;
 - project registry mapping;
