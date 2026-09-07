@@ -1,6 +1,6 @@
 # SES — Certified Specialist Portable Execution Behavioral Tests
 
-**Status:** FOUNDATION_V0_1 / TEST_SPEC
+**Status:** FOUNDATION_V0_2 / TEST_SPEC
 **Contracts:** `CERTIFIED_SPECIALIST_PACKAGE_CONTRACT.md` + `HYBRID_SPECIALIST_BOOTSTRAP_CONTRACT.md`
 
 ## Purpose
@@ -123,3 +123,28 @@ NOT-YET-PACKAGE-BOUND SPECIALIST -> existing certified path remains valid
 ```
 
 A migration event invalidates only evidence made material by the exact package/fingerprint change.
+
+
+## T11 — runtime must not invent its own fingerprint
+
+Fixture: the specialist knows its exact declared package ID/version/baseline, but the runtime does not expose independently verified metadata containing the exact applied Instructions/runtime fingerprint.
+
+Expected:
+
+```text
+CERTIFIED_SPECIALIST_PACKAGE_ID = exact declared constant
+CERTIFIED_SPECIALIST_PACKAGE_BINDING_VERSION = exact declared constant
+CERTIFIED_SPECIALIST_PACKAGE_SES_BASELINE = exact declared constant
+CERTIFIED_SPECIALIST_PACKAGE_FINGERPRINT = NOT_CAPTURED_IN_RUNTIME
+CERTIFIED_SPECIALIST_PACKAGE_FINGERPRINT_STATUS = EXTERNAL_PROOF_REQUIRED
+```
+
+The specialist must not invent a descriptive pseudo-fingerprint, reuse a parent fingerprint as the current candidate fingerprint, or claim self-verification from its own text.
+
+External Builder/artifact evidence remains required before final exact-fingerprint PASS.
+
+```text
+SELF-ASSERTED HASH != FINGERPRINT PROOF
+NOT_CAPTURED != FAILURE
+INVENTED FINGERPRINT = FAIL
+```
