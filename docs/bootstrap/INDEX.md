@@ -46,6 +46,7 @@ Read when applicable:
 - `core/protocols/EVIDENCE_PROVENANCE_ADMISSION_CONTRACT.md` when evidence durability, repository admission/disposition, reconstructibility or anti-chat-dump semantics are material
 - `core/protocols/SPECIALIST_CERTIFICATION_FOR_ANY_PROJECT_CONTRACT.md` for specialist terminal lifecycle/certification decisions
 - `core/protocols/CERTIFIED_SPECIALIST_PACKAGE_CONTRACT.md` for immutable certified package identity, portable-execution eligibility and migration safety
+- `runtime/packages/CERTIFIED_SPECIALIST_PACKAGE_REGISTRY_V0_1.md` for the current migration binding status of certified specialists
 - `core/protocols/MANUAL_SPECIALIST_HANDOFF_CONTRACT.md` for the current SES-mediated specialist consultation/handoff path
 - `docs/SPECIALIST_CERTIFICATION_STATUS.md` for the current evidence-bound portfolio certification ledger
 
