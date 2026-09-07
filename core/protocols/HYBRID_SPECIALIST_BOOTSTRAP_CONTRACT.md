@@ -1,6 +1,6 @@
 # SES — Hybrid Specialist Bootstrap Contract
 
-**Status:** FOUNDATION_V0_2 / CONTRACT / BACKWARD_COMPATIBLE_DUAL_MODE
+**Status:** FOUNDATION_V0_3 / CONTRACT / BACKWARD_COMPATIBLE_DUAL_MODE
 
 ## 1. Purpose
 
@@ -70,9 +70,11 @@ In this mode:
 SES_CANONICAL_MAIN_REF: NOT_REQUIRED_FOR_THIS_TASK
 SES_CANDIDATE_REF: NOT_APPLICABLE
 SES_EFFECTIVE_REF: NOT_REQUIRED_FOR_THIS_TASK
-CERTIFIED_SPECIALIST_PACKAGE_ID: exact package
-CERTIFIED_SPECIALIST_PACKAGE_FINGERPRINT: exact fingerprint
-CERTIFIED_SPECIALIST_PACKAGE_SES_BASELINE: provenance only
+CERTIFIED_SPECIALIST_PACKAGE_ID: exact declared package constant
+CERTIFIED_SPECIALIST_PACKAGE_BINDING_VERSION: exact declared binding/version
+CERTIFIED_SPECIALIST_PACKAGE_SES_BASELINE: exact declared provenance baseline
+CERTIFIED_SPECIALIST_PACKAGE_FINGERPRINT: exact value only when independently available; otherwise NOT_CAPTURED_IN_RUNTIME
+CERTIFIED_SPECIALIST_PACKAGE_FINGERPRINT_STATUS: VERIFIED or EXTERNAL_PROOF_REQUIRED
 ```
 
 The package baseline does not require reading current SES `main`.
@@ -148,7 +150,9 @@ Before substantive project-specific work, the specialist must be able to state a
 PROOF_LEVEL
 EXECUTION_MODE
 CERTIFIED_SPECIALIST_PACKAGE_ID
+CERTIFIED_SPECIALIST_PACKAGE_BINDING_VERSION
 CERTIFIED_SPECIALIST_PACKAGE_FINGERPRINT
+CERTIFIED_SPECIALIST_PACKAGE_FINGERPRINT_STATUS
 CERTIFIED_SPECIALIST_PACKAGE_SES_BASELINE
 TASK_SCOPE
 EFFECTIVE_SCOPE
@@ -181,6 +185,8 @@ GAPS
 ```
 
 The representation may be prose, structured text or machine-readable output, but the semantics are mandatory. A field may be `NOT_REQUIRED_FOR_THIS_TASK`, `NOT_REQUESTED` or `NOT_APPLICABLE` only when justified by the exact task/proof level. Portable mode may mark SES live/Registry/Adapter fields not required only when exact package binding and project-owned resolution are present.
+
+For portable runtime receipts, package ID/binding version/baseline must come from exact embedded package constants. A cryptographic fingerprint must never be guessed, paraphrased or synthesized. If the runtime cannot independently know the exact applied fingerprint, use `CERTIFIED_SPECIALIST_PACKAGE_FINGERPRINT = NOT_CAPTURED_IN_RUNTIME` and `CERTIFIED_SPECIALIST_PACKAGE_FINGERPRINT_STATUS = EXTERNAL_PROOF_REQUIRED`. External Builder/artifact evidence may satisfy the exact fingerprint proof separately.
 
 A receipt proves readiness only for the task, effective scope, target, environment and evidence set to which it is bound.
 
@@ -296,7 +302,7 @@ For an explicitly multi-project task, each project must be resolved independentl
 
 ## 10. Evidence binding
 
-A readiness claim must be bound to concrete evidence sufficient for the task. SES-mediated work preserves exact SES refs plus the project live ref. Portable work preserves exact package identity/fingerprint/baseline plus the project live ref; current SES live refs are not required unless material.
+A readiness claim must be bound to concrete evidence sufficient for the task. SES-mediated work preserves exact SES refs plus the project live ref. Portable work preserves exact declared package identity/binding/baseline plus the project live ref; exact cryptographic fingerprint proof may be joined from external Builder/artifact evidence and must not be invented by the runtime. Current SES live refs are not required unless material.
 
 When target or environment is material, the receipt must bind the exact target/ref/object and environment. A change to either is an invalidation event unless the evidence establishes that the change is immaterial to the task.
 
@@ -381,6 +387,6 @@ A hybrid specialist bootstrap is behaviorally acceptable only if it can demonstr
 12. fresh-conversation repeatability;
 13. explicit separation between spec/candidate-head proof and runtime behavioral proof;
 14. no runtime PASS while any runtime-required canonical case remains unexecuted or failed;
-15. any portable-execution claim satisfies `tests/behavioral/CERTIFIED_SPECIALIST_PORTABLE_EXECUTION_TESTS.md`, including operation without central SES availability and no automatic behavior change from SES main drift.
+15. any portable-execution claim satisfies `tests/behavioral/CERTIFIED_SPECIALIST_PORTABLE_EXECUTION_TESTS.md`, including operation without central SES availability, no automatic behavior change from SES main drift, and no invented runtime fingerprint.
 
 The canonical behavioral cases are defined in `tests/behavioral/HYBRID_SPECIALIST_BOOTSTRAP_TESTS.md`.
