@@ -29,6 +29,10 @@ project-local decisions
 
 `CENTRAL EVOLUTION != AUTOMATIC PROJECT MUTATION`
 
+`SES AUTHORING DEPENDENCY != SES RUNTIME DEPENDENCY`
+
+For exact certified packages, ordinary consumer-project execution should remain possible without central SES live availability. SES live remains required when SES state itself is material: specialist lifecycle, certification, package creation/upgrade, candidate validation, SES governance or other explicit SES-state decisions.
+
 ## 2. Layer model
 
 ```text
@@ -52,6 +56,25 @@ The roles are distinct:
 - **Project Continuity positions the project in time.**
 - **Specialist Archetype supplies domain method and competence model.**
 - **Task Context scopes the current request.**
+
+## 2A. Control plane versus execution plane
+
+SES is the engineering control plane for reusable specialist lifecycle. It must not become an unnecessary online dependency for every ordinary consumer-project task.
+
+```text
+CONTROL PLANE
+SES -> design -> test -> certify -> package -> version -> publish/adopt
+
+EXECUTION PLANE
+EXACT CERTIFIED SPECIALIST PACKAGE
++ CONSUMER PROJECT BOOTSTRAP
++ PROJECT-OWNED LIVE EVIDENCE
+-> BOUNDED PROJECT WORK
+```
+
+During migration, non-package-bound specialists retain the existing SES-mediated path; exact package-bound specialists may use certified portable execution.
+
+`PARTIAL MIGRATION != EXISTING SPECIALIST INVALIDATION`
 
 ## 3. Project registration
 
@@ -99,7 +122,19 @@ When continuity is material, also require:
 
 `PROJECT CONTINUITY RESOLUTION`
 
-## 6. Runtime loading is not yet implemented
+## 6. Runtime loading and distribution boundary
+
+A Certified Specialist Package is the canonical portable specialist artifact. A public GPT, private GPT, API/runtime or future platform is a distribution channel, not the canonical specialist itself.
+
+```text
+CERTIFIED SPECIALIST PACKAGE != PUBLIC GPT
+GPT PUBLICATION = DISTRIBUTION CHANNEL
+PACKAGE PORTABILITY != MENTION-BASED COMPOSITION PROOF
+```
+
+Mention-based invocation, Actions visibility and specialist-to-specialist composition remain runtime/transport questions and require their own end-to-end evidence.
+
+## 6A. Runtime loading is not yet implemented
 
 This foundation defines the contract, not the final loading mechanism.
 
