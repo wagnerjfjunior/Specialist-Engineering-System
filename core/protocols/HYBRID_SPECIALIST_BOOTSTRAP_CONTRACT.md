@@ -1,6 +1,6 @@
 # SES — Hybrid Specialist Bootstrap Contract
 
-**Status:** FOUNDATION_V0_1 / CONTRACT
+**Status:** FOUNDATION_V0_2 / CONTRACT / BACKWARD_COMPATIBLE_DUAL_MODE
 
 ## 1. Purpose
 
@@ -9,6 +9,20 @@ This contract defines the mandatory pre-work protocol for a hybrid SES specialis
 Its primary safety property is:
 
 `NO VERIFIED PROJECT CONTEXT -> NO PROJECT-SPECIFIC SUBSTANTIVE WORK`
+
+Two modes are valid:
+
+```text
+SES_MEDIATED_EXECUTION
+CERTIFIED_PORTABLE_EXECUTION
+```
+
+The existing SES-mediated Registry/Adapter path remains valid for non-migrated specialists. `CERTIFIED_PORTABLE_EXECUTION` is available only to an exact package governed by `core/protocols/CERTIFIED_SPECIALIST_PACKAGE_CONTRACT.md`.
+
+```text
+SES AUTHORING / LIFECYCLE DEPENDENCY != SES RUNTIME DEPENDENCY
+PARTIAL MIGRATION MUST NOT BREAK EXISTING CERTIFIED SPECIALISTS
+```
 
 A hybrid specialist must not treat a user-supplied project name, conversation starter, prior chat, memory, copied context, prior readiness receipt or tool capability as proof that the correct project configuration is ready for the current task.
 
@@ -36,68 +50,82 @@ Use `NOT_REQUIRED_FOR_THIS_TASK` when either dimension is genuinely immaterial. 
 
 Optional inputs may include mode or additional bounded-scope detail, but they never override project-owned authority or source precedence.
 
-## 3. Proof-ref resolution
+## 3. Execution mode and proof-ref resolution
 
-SES canonical state and a candidate PR/head are different evidence classes.
+Classify `EXECUTION_MODE` before substantive work.
 
-Every material bootstrap must first resolve:
+### SES-mediated / lifecycle mode
+
+Use `SES_MEDIATED_EXECUTION` when current SES state is material: SES governance, specialist lifecycle/certification, package creation/upgrade, candidate validation, Registry/Adapter/adoption state, or explicit comparison against current SES.
+
+Resolve `SES_CANONICAL_MAIN_REF`. Candidate-head proof must preserve `SES_CANDIDATE_REF` separately and may use it as `SES_EFFECTIVE_REF` without calling it canonical main.
+
+### Certified portable mode
+
+Use `CERTIFIED_PORTABLE_EXECUTION` only when an exact valid Certified Specialist Package is bound to the running specialist and the task is ordinary consumer-project work.
+
+In this mode:
 
 ```text
-SES_CANONICAL_MAIN_REF
-```
-
-For ordinary canonical/runtime work:
-
-```text
-PROOF_LEVEL: RUNTIME_BEHAVIORAL_PROOF or ordinary task work
-SES_EFFECTIVE_REF: SES_CANONICAL_MAIN_REF
+SES_CANONICAL_MAIN_REF: NOT_REQUIRED_FOR_THIS_TASK
 SES_CANDIDATE_REF: NOT_APPLICABLE
+SES_EFFECTIVE_REF: NOT_REQUIRED_FOR_THIS_TASK
+CERTIFIED_SPECIALIST_PACKAGE_ID: exact package
+CERTIFIED_SPECIALIST_PACKAGE_FINGERPRINT: exact fingerprint
+CERTIFIED_SPECIALIST_PACKAGE_SES_BASELINE: provenance only
 ```
 
-For candidate-head protocol validation:
+The package baseline does not require reading current SES `main`.
 
 ```text
-PROOF_LEVEL: CANDIDATE_HEAD_PROTOCOL_PROOF
-SES_CANONICAL_MAIN_REF: <resolved live main>
-SES_CANDIDATE_REF: <exact candidate PR/head>
-SES_EFFECTIVE_REF: SES_CANDIDATE_REF
+CURRENT SES MAIN MOVES
+!= AUTOMATIC PACKAGE UPGRADE
+!= AUTOMATIC PROJECT BEHAVIOR CHANGE
 ```
 
-The candidate ref may be used to read the candidate contract/bootstrap under review, but it must never be mislabeled as canonical SES `main`. Both refs must remain visible in the evidence record when they differ.
+If the task becomes SES-lifecycle-dependent, switch modes and resolve the required SES live state.
 
 `CANDIDATE_HEAD != CANONICAL_MAIN`
 
 ## 4. Mandatory resolution flow
 
-For project-specific work, execute the following in order:
+### 4.1 SES-mediated execution
 
 ```text
 RESOLVE SES CANONICAL MAIN LIVE
--> SELECT SES EFFECTIVE REF FOR THE DECLARED PROOF LEVEL
--> READ SES BOOTSTRAP ON SES EFFECTIVE REF
--> READ SES ARCHETYPE REGISTRY ON SES EFFECTIVE REF
--> RESOLVE UNIQUE ACTIVE SPECIALIST_ID_OR_ARCHETYPE + CONTRACT_PATH
--> READ RESOLVED SES ARCHETYPE CONTRACT
--> READ SES PROJECT REGISTRY ON SES EFFECTIVE REF
--> RESOLVE UNIQUE PROJECT_ID + ADAPTER_PATH
--> READ PROJECT ADAPTER
--> RESOLVE CONSUMER PROJECT CANONICAL SOURCE LIVE
--> READ PROJECT-LOCAL BOOTSTRAP
--> RESOLVE PROJECT-LOCAL SPECIALIST RULES / OVERRIDES
--> READ PROJECT-LOCAL COMMON RULES AND AUTHORITY SOURCES WHEN APPLICABLE
--> READ PROJECT CONTINUITY WHEN CURRENT STATE IS MATERIAL
--> RESOLVE LIVE OBJECTS MATERIAL TO THE TASK/TARGET/ENVIRONMENT
--> EMIT TASK-BOUND CONTEXT READINESS RECEIPT
--> ONLY THEN BEGIN PROJECT-SPECIFIC SUBSTANTIVE WORK
+-> SELECT SES EFFECTIVE REF
+-> READ SES BOOTSTRAP / ARCHETYPE REGISTRY / ARCHETYPE
+-> READ SES PROJECT REGISTRY / PROJECT ADAPTER
+-> RESOLVE CONSUMER PROJECT LIVE
+-> READ PROJECT BOOTSTRAP / LOCAL RULES / AUTHORITY / CONTINUITY
+-> RESOLVE MATERIAL LIVE OBJECTS
+-> EMIT TASK-BOUND RECEIPT
+-> WORK
 ```
 
-The SES Archetype Registry and resolved archetype contract govern reusable specialist behavior. `SPECIALIST_ID_OR_ARCHETYPE` must resolve deterministically to one active archetype before project resolution. If it does not, fail closed with `SPECIALIST_ARCHETYPE_UNRESOLVED`; do not proceed to the Project Registry as if specialist behavior were established.
+This remains the backward-compatible path for specialists not yet package-bound.
 
-The Project Registry remains the SES-side authority for name/ID/alias mapping. The Project Adapter remains a locator, not project truth.
+### 4.2 Certified portable execution
+
+```text
+VERIFY EXACT CERTIFIED PACKAGE BINDING
+-> RESOLVE EXPLICIT OR DETERMINISTIC CONSUMER PROJECT SOURCE
+-> RESOLVE PROJECT LIVE REF
+-> READ PROJECT BOOTSTRAP / LOCAL RULES / AUTHORITY / CONTINUITY
+-> RESOLVE MATERIAL LIVE OBJECTS
+-> EMIT TASK-BOUND RECEIPT
+-> WORK
+```
+
+Central SES Registry, Archetype Registry and Project Adapter reads are not runtime preconditions in this mode. Reusable specialist semantics are package-bound; project truth remains project-owned.
+
+Portable mode does not permit fuzzy project guessing. If package binding or required project-owned context is unresolved, fail closed.
 
 ## 5. Project resolver semantics
 
-The hybrid specialist must apply the registry rules exactly:
+In `SES_MEDIATED_EXECUTION`, the hybrid specialist must apply the Registry rules exactly. In `CERTIFIED_PORTABLE_EXECUTION`, SES Registry resolution is `NOT_REQUIRED_FOR_THIS_TASK`; project identity must instead be explicit or deterministically project-owned.
+
+For SES-mediated resolution:
 
 1. trim surrounding whitespace;
 2. match exact `PROJECT_ID` first;
@@ -118,6 +146,10 @@ Before substantive project-specific work, the specialist must be able to state a
 
 ```text
 PROOF_LEVEL
+EXECUTION_MODE
+CERTIFIED_SPECIALIST_PACKAGE_ID
+CERTIFIED_SPECIALIST_PACKAGE_FINGERPRINT
+CERTIFIED_SPECIALIST_PACKAGE_SES_BASELINE
 TASK_SCOPE
 EFFECTIVE_SCOPE
 TARGET_REF_OR_OBJECT
@@ -148,7 +180,7 @@ RECEIPT_VALIDITY
 GAPS
 ```
 
-The representation may be prose, structured text or machine-readable output, but the semantics are mandatory. A field may be `NOT_REQUIRED_FOR_THIS_TASK`, `NOT_REQUESTED` or `NOT_APPLICABLE` only when that classification is justified by the exact task/proof level.
+The representation may be prose, structured text or machine-readable output, but the semantics are mandatory. A field may be `NOT_REQUIRED_FOR_THIS_TASK`, `NOT_REQUESTED` or `NOT_APPLICABLE` only when justified by the exact task/proof level. Portable mode may mark SES live/Registry/Adapter fields not required only when exact package binding and project-owned resolution are present.
 
 A receipt proves readiness only for the task, effective scope, target, environment and evidence set to which it is bound.
 
@@ -208,7 +240,7 @@ Mandatory revalidation triggers include, when material:
 - material change in `TASK_SCOPE` or `EFFECTIVE_SCOPE`;
 - material change in `TARGET_REF_OR_OBJECT`;
 - material change in `ENVIRONMENT`;
-- SES canonical/effective ref change affecting a contract used by the task;
+- SES canonical/effective ref change affecting a contract used by the task in SES-mediated/lifecycle mode; a central SES ref change alone does not invalidate an exact portable package;
 - consumer-project live ref change when the task depends on current state or changed content;
 - specialist source/ref change;
 - continuity invalidation event;
@@ -222,7 +254,7 @@ A stale receipt must not be silently reused. Revalidate only the sources invalid
 
 ## 8. Mandatory fail-closed states
 
-Use explicit states when applicable:
+Use explicit states when applicable. SES bootstrap/Registry/Adapter failures block only when the selected mode materially requires those SES sources. Valid portable execution must not be blocked merely because central SES is unavailable.
 
 - `SES_BOOTSTRAP_UNAVAILABLE`
 - `SPECIALIST_ARCHETYPE_UNRESOLVED`
@@ -264,7 +296,7 @@ For an explicitly multi-project task, each project must be resolved independentl
 
 ## 10. Evidence binding
 
-A readiness claim must be bound to concrete evidence sufficient for the task. Material work must preserve the exact SES canonical/effective refs and exact consumer-project live ref used.
+A readiness claim must be bound to concrete evidence sufficient for the task. SES-mediated work preserves exact SES refs plus the project live ref. Portable work preserves exact package identity/fingerprint/baseline plus the project live ref; current SES live refs are not required unless material.
 
 When target or environment is material, the receipt must bind the exact target/ref/object and environment. A change to either is an invalidation event unless the evidence establishes that the change is immaterial to the task.
 
@@ -313,7 +345,7 @@ Mutation authority must still be resolved from the consumer project's own author
 
 This contract defines required behavior, not the final loading technology.
 
-Potential implementations may include external API/Action loading, generated project-bound instances or another deterministic loader. Knowledge retrieval alone must not be assumed equivalent to fixed project authority or safety configuration.
+Potential implementations may include an exact Certified Specialist Package applied to a public/private GPT, external API/Action loading, generated project-bound instances or another deterministic loader. Knowledge retrieval alone must not be assumed equivalent to fixed project authority or safety configuration.
 
 Evidence must distinguish:
 
@@ -348,6 +380,7 @@ A hybrid specialist bootstrap is behaviorally acceptable only if it can demonstr
 11. explicit dual-ref treatment for candidate-head proof;
 12. fresh-conversation repeatability;
 13. explicit separation between spec/candidate-head proof and runtime behavioral proof;
-14. no runtime PASS while any runtime-required canonical case remains unexecuted or failed.
+14. no runtime PASS while any runtime-required canonical case remains unexecuted or failed;
+15. any portable-execution claim satisfies `tests/behavioral/CERTIFIED_SPECIALIST_PORTABLE_EXECUTION_TESTS.md`, including operation without central SES availability and no automatic behavior change from SES main drift.
 
 The canonical behavioral cases are defined in `tests/behavioral/HYBRID_SPECIALIST_BOOTSTRAP_TESTS.md`.
