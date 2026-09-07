@@ -48,8 +48,8 @@ No migration state below retroactively changes certification.
 | `seo-analytics-growth-specialist` | `seo-analytics-growth-specialist-v0.1` | `9411adf4badf948690a46242b61ef18d7d602d06` | `1305139d9776359982adfedf817bff14c578c0f4` | `EXACT_BINDING / PORTABLE_RUNTIME_PROOF_PENDING` |
 | `paid-search-sem-specialist` | `paid-search-sem-specialist-v0.1` | `098b55d917014e896144d4727010ff296628e529` | `3cecfe6a4d12a5db748f4b861fd0082f75228a35` | `EXACT_BINDING / PORTABLE_RUNTIME_PROOF_PENDING` |
 | `lead-operations-crm-specialist` | `lead-operations-crm-specialist-v0.1` | `37a36c1ff1e97c920246db590aa3ebef0e99f040` | `1da3fbd2809fa820bb9dae71a04fa628963b0033` | `EXACT_BINDING / PORTABLE_RUNTIME_PROOF_PENDING` |
-| `software-systems-architect` | current certified fingerprint | `791dc63165518d16713bbaa2d869c12ac09ec2f7` | `09289e4df7e4576d06a70908963a329294569b0b` | `PORTABLE_VNEXT_REQUIRED / CURRENT_CERTIFICATION_PRESERVED` |
-| `documentation-auditor` | `documentation-auditor-v1.1` | `5bc10297d9e655cf169d2680f914e446232992e0` | `9864de26d8c2c3de154e0e6804309394efd75237` | `PORTABLE_VNEXT_REQUIRED / CURRENT_CERTIFICATION_PRESERVED` |
+| `software-systems-architect` | current certified fingerprint | `791dc63165518d16713bbaa2d869c12ac09ec2f7` | `09289e4df7e4576d06a70908963a329294569b0b` | `PORTABLE_VNEXT_CANDIDATE_VERSIONED / BUILDER_NOT_APPLIED / CURRENT_CERTIFICATION_PRESERVED` |
+| `documentation-auditor` | `documentation-auditor-v1.1` | `5bc10297d9e655cf169d2680f914e446232992e0` | `9864de26d8c2c3de154e0e6804309394efd75237` | `PORTABLE_VNEXT_CANDIDATE_VERSIONED / BUILDER_NOT_APPLIED / CURRENT_CERTIFICATION_PRESERVED` |
 
 ## 4. Exact paths
 
@@ -169,9 +169,30 @@ Public/private GPT publication is a separate distribution decision.
 ```text
 CURRENT CERTIFIED SPECIALISTS: 11
 EXACT_BINDING / PORTABLE_RUNTIME_PROOF_PENDING: 9
-PORTABLE_VNEXT_REQUIRED: 2
+PORTABLE_VNEXT_CANDIDATE_VERSIONED / BUILDER_NOT_APPLIED: 2
 
 CURRENT SPECIALIST CERTIFICATION INVALIDATED: 0
 CURRENT GPT MUTATIONS: 0
 CONSUMER PROJECT MUTATIONS: 0
 ```
+
+
+## 9. Parallel vNext candidates
+
+```text
+software-systems-architect
+  candidate kernel:
+  runtime/custom-gpt/SOFTWARE_SYSTEMS_ARCHITECT_BUILDER_KERNEL_V0_2_PORTABLE_CANDIDATE.md
+  kernel blob: 1b5195362a10f5732dc2f81335c035dc29c46b40
+  candidate package:
+  runtime/custom-gpt/SOFTWARE_SYSTEMS_ARCHITECT_BUILDER_PACKAGE_V0_2_PORTABLE_CANDIDATE.md
+
+documentation-auditor
+  candidate kernel:
+  runtime/custom-gpt/DOCUMENTATION_AUDITOR_BUILDER_KERNEL_V1_2_PORTABLE_CANDIDATE.md
+  kernel blob: 98c6df641e1ffaf6650f4d3075f31e2aba602dc4
+  candidate package:
+  runtime/custom-gpt/DOCUMENTATION_AUDITOR_BUILDER_PACKAGE_V1_2_PORTABLE_CANDIDATE.md
+```
+
+Both are repository candidates only. Neither has been applied to the current certified GPT.
