@@ -39,6 +39,7 @@ Read when applicable:
 - `core/protocols/HYBRID_SPECIALIST_BOOTSTRAP_CONTRACT.md` for hybrid/multi-project specialist work
 - `core/protocols/HYBRID_PROJECT_TARGET_RESOLUTION_CONTRACT.md` when target/project identity is missing, ambiguous, or project enumeration is requested
 - `core/protocols/EVIDENCE_RETRIEVAL_RESILIENCE_CONTRACT.md` when large-file, large-tree, truncation, incomplete transport or context-budget risk is material
+- `core/protocols/EVIDENCE_PROVENANCE_ADMISSION_CONTRACT.md` when evidence durability, repository admission/disposition, reconstructibility or anti-chat-dump semantics are material
 - `core/protocols/SPECIALIST_CERTIFICATION_FOR_ANY_PROJECT_CONTRACT.md` for specialist terminal lifecycle/certification decisions
 - `core/protocols/MANUAL_SPECIALIST_HANDOFF_CONTRACT.md` for the current SES-mediated specialist consultation/handoff path
 - `docs/SPECIALIST_CERTIFICATION_STATUS.md` for the current evidence-bound portfolio certification ledger
@@ -49,6 +50,7 @@ Behavioral validation is defined, when applicable, in:
 - `tests/behavioral/HYBRID_PROJECT_TARGET_RESOLUTION_TESTS.md`
 - `tests/behavioral/SPECIALIST_CERTIFICATION_FOR_ANY_PROJECT_TESTS.md`
 - `tests/behavioral/MANUAL_SPECIALIST_HANDOFF_TESTS.md`
+- `tests/behavioral/EVIDENCE_PROVENANCE_ADMISSION_TESTS.md`
 
 For the `software-systems-architect` specialist, whose historical runtime assets retain the legacy `saas-architect` filenames, also read when validating/applying/testing that recorded runtime fingerprint:
 
