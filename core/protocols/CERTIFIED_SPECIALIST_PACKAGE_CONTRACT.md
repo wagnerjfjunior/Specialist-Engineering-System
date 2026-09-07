@@ -1,6 +1,6 @@
 # SES — Certified Specialist Package Contract
 
-**Status:** FOUNDATION_V0_1 / CORE_PROTOCOL / PORTABLE_EXECUTION_CANDIDATE
+**Status:** FOUNDATION_V0_2 / CORE_PROTOCOL / PORTABLE_EXECUTION_CANDIDATE
 
 ## 1. Purpose
 
@@ -39,6 +39,47 @@ PUBLICATION_STATUS
 ```
 
 The binding must be sufficient to determine whether a running distribution still matches the certified subject.
+
+### 3.1 Runtime declaration versus external fingerprint proof
+
+A runtime may safely self-declare only stable package constants intentionally embedded in its applied Instructions/configuration, for example:
+
+```text
+PACKAGE_ID
+PACKAGE_VERSION / BINDING_VERSION
+SES_BASELINE_REF
+KERNEL_ID
+```
+
+The exact cryptographic fingerprint of the applied Instructions/runtime is a separate proof obligation.
+
+```text
+DECLARED_RUNTIME_BINDING
+!=
+EXTERNAL_FINGERPRINT_PROOF
+```
+
+A kernel cannot reliably prove its own full-content hash by merely asserting a hash inside itself; embedding a self-hash changes the hashed content. Therefore SES must not require a model to manufacture or infer its own Git blob/SHA/fingerprint.
+
+If the exact fingerprint is not supplied through independently verified, non-self-referential runtime metadata, the runtime receipt must use an explicit state such as:
+
+```text
+CERTIFIED_SPECIALIST_PACKAGE_FINGERPRINT = NOT_CAPTURED_IN_RUNTIME
+CERTIFIED_SPECIALIST_PACKAGE_FINGERPRINT_STATUS = EXTERNAL_PROOF_REQUIRED
+```
+
+and must not synthesize a descriptive pseudo-fingerprint.
+
+Final portable certification/behavioral proof still requires external evidence that the applied Builder/runtime matches the intended package fingerprint.
+
+```text
+RUNTIME DOES NOT KNOW HASH
+-> REPORT NOT_CAPTURED
+-> DO NOT INVENT HASH
+
+EXTERNAL BUILDER / ARTIFACT EVIDENCE
+-> PROVES EXACT FINGERPRINT
+```
 
 ## 4. Fingerprint discipline
 
