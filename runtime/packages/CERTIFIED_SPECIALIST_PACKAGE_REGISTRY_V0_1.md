@@ -48,8 +48,8 @@ No migration state below retroactively changes certification.
 | `seo-analytics-growth-specialist` | `seo-analytics-growth-specialist-v0.1` | `9411adf4badf948690a46242b61ef18d7d602d06` | `1305139d9776359982adfedf817bff14c578c0f4` | `EXACT_BINDING / PORTABLE_RUNTIME_PROOF_PENDING` |
 | `paid-search-sem-specialist` | `paid-search-sem-specialist-v0.1` | `098b55d917014e896144d4727010ff296628e529` | `3cecfe6a4d12a5db748f4b861fd0082f75228a35` | `EXACT_BINDING / PORTABLE_RUNTIME_PROOF_PENDING` |
 | `lead-operations-crm-specialist` | `lead-operations-crm-specialist-v0.1` | `37a36c1ff1e97c920246db590aa3ebef0e99f040` | `1da3fbd2809fa820bb9dae71a04fa628963b0033` | `EXACT_BINDING / PORTABLE_RUNTIME_PROOF_PENDING` |
-| `software-systems-architect` | current certified fingerprint | `791dc63165518d16713bbaa2d869c12ac09ec2f7` | `09289e4df7e4576d06a70908963a329294569b0b` | `PORTABLE_VNEXT_CANDIDATE_VERSIONED / BUILDER_NOT_APPLIED / CURRENT_CERTIFICATION_PRESERVED` |
-| `documentation-auditor` | `documentation-auditor-v1.1` | `5bc10297d9e655cf169d2680f914e446232992e0` | `9864de26d8c2c3de154e0e6804309394efd75237` | `PORTABLE_VNEXT_CANDIDATE_VERSIONED / BUILDER_NOT_APPLIED / CURRENT_CERTIFICATION_PRESERVED` |
+| `software-systems-architect` | current certified fingerprint | `791dc63165518d16713bbaa2d869c12ac09ec2f7` | `09289e4df7e4576d06a70908963a329294569b0b` | `PORTABLE_VNEXT_CANDIDATE_VERSIONED / BUILDER_UI_PARTIAL_EVIDENCE / FULL_FINGERPRINT_PENDING / CURRENT_CERTIFICATION_PRESERVED` |
+| `documentation-auditor` | `documentation-auditor-v1.1` | `5bc10297d9e655cf169d2680f914e446232992e0` | `9864de26d8c2c3de154e0e6804309394efd75237` | `PORTABLE_VNEXT_CANDIDATE_VERSIONED / BUILDER_UI_PARTIAL_EVIDENCE / FULL_FINGERPRINT_PENDING / CURRENT_CERTIFICATION_PRESERVED` |
 
 ## 4. Exact paths
 
@@ -169,7 +169,7 @@ Public/private GPT publication is a separate distribution decision.
 ```text
 CURRENT CERTIFIED SPECIALISTS: 11
 EXACT_BINDING / PORTABLE_RUNTIME_PROOF_PENDING: 9
-PORTABLE_VNEXT_CANDIDATE_VERSIONED / BUILDER_NOT_APPLIED: 2
+PORTABLE_VNEXT_CANDIDATE_VERSIONED / BUILDER_UI_PARTIAL_EVIDENCE / FULL_FINGERPRINT_PENDING: 2
 
 CURRENT SPECIALIST CERTIFICATION INVALIDATED: 0
 CURRENT GPT MUTATIONS: 0
@@ -196,3 +196,24 @@ documentation-auditor
 ```
 
 Both are repository candidates only. Neither has been applied to the current certified GPT.
+
+
+## 10. Builder UI evidence update
+
+Product Authority supplied Builder screenshots for both portable vNext candidates.
+
+For each candidate, the visible editor positively matches the expected candidate identity and leading portable-bootstrap semantics.
+
+Current bounded state:
+
+```text
+BUILDER_UI_CANDIDATE_PRESENT = YES
+VISIBLE_INSTRUCTIONS_IDENTITY = MATCH
+VISIBLE_PORTABLE_BOOTSTRAP = MATCH
+FULL_INSTRUCTIONS_MATCH = NOT_DETERMINED
+MODEL / CAPABILITIES / KNOWLEDGE / ACTIONS = NOT_CAPTURED
+PORTABLE_RUNTIME_PROOF = NOT_EXECUTED
+PUBLIC_VISIBILITY = NO EVIDENCE; UI SHOWS "APENAS PARA MIM"
+```
+
+No current certified parent fingerprint is invalidated by this evidence update.
