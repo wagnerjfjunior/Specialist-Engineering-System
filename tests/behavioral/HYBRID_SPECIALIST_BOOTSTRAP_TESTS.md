@@ -1,11 +1,11 @@
 # SES — Hybrid Specialist Bootstrap Behavioral Tests
 
-**Status:** FOUNDATION_V0_1 / TEST_SPEC
+**Status:** FOUNDATION_V0_2 / TEST_SPEC / SES_MEDIATED_COMPATIBILITY_SUITE
 **Contract under test:** `core/protocols/HYBRID_SPECIALIST_BOOTSTRAP_CONTRACT.md`
 
 ## 1. Purpose
 
-These cases validate whether a hybrid specialist resolves the correct project context, binds readiness to the current task/target/environment, fails closed when required evidence is unavailable, denies unauthorized mutations and prevents cross-project contamination.
+These cases validate the backward-compatible `SES_MEDIATED_EXECUTION` path: SES Registry/Adapter resolution, task-bound readiness, fail-closed evidence handling, denied unauthorized mutations and cross-project isolation. Certified portable execution is validated separately by `tests/behavioral/CERTIFIED_SPECIALIST_PORTABLE_EXECUTION_TESTS.md`.
 
 A passing test requires behavior, not merely recitation of the contract.
 
@@ -344,7 +344,7 @@ Do not replay unrelated gates or immutable sources that remain valid; revalidate
 
 ### T24 — SES bootstrap unavailable
 
-Fixture: the applicable SES bootstrap cannot be read from `SES_EFFECTIVE_REF`.
+Fixture: `EXECUTION_MODE = SES_MEDIATED_EXECUTION` and the applicable SES bootstrap cannot be read from `SES_EFFECTIVE_REF`.
 
 Expected:
 
@@ -442,7 +442,7 @@ SES_EFFECTIVE_REF: SES_CANDIDATE_REF
 
 The candidate contract/bootstrap is read from the candidate ref. The report must not call the candidate ref canonical `main` and must preserve the canonical-main ref separately.
 
-## 14. FECH.AI end-to-end proof obligation
+## 14. FECH.AI SES-mediated reference proof obligation
 
 Before declaring the first hybrid specialist operational against FECH.AI, execute a real read-only proof equivalent to:
 
@@ -467,10 +467,15 @@ Pre-merge execution against the PR head may establish only:
 CANDIDATE_HEAD_PROTOCOL_PROOF
 ```
 
-After the contract is canonical on SES `main`, the actual specialist/loading mechanism must execute **all T01-T29** before:
+After the contract is canonical on SES `main`, a runtime claiming the SES-mediated path must execute **all T01-T29** before:
 
 ```text
 RUNTIME_BEHAVIORAL_PROOF = PASS
 ```
 
 T21 must be performed from a true fresh conversation/cold start. This specification does not itself prove runtime behavior.
+
+
+## 15. Portable execution boundary
+
+T01-T30 in this file do not require a package-bound specialist to fetch central SES during ordinary consumer-project work. A runtime claiming `CERTIFIED_PORTABLE_EXECUTION` must instead pass `tests/behavioral/CERTIFIED_SPECIALIST_PORTABLE_EXECUTION_TESTS.md` for the exact package fingerprint. The two suites preserve different execution modes and must not be combined into a false requirement that every portable task replays SES-mediated resolution.
