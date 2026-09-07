@@ -18,7 +18,7 @@ A project bootstrap must make the following resolvable:
 4. **Bootstrap order** — the minimum ordered set of project-owned sources to read before substantive work.
 5. **Authority model** — who can decide, authorize, accept risk and mutate material state.
 6. **Specialist resolution** — how a specialist finds project-local rules, skills or overrides when they exist.
-7. **Evidence rules** — how live evidence, versioned documentation, supplied information, inference and memory are ranked.
+7. **Evidence rules** — how live evidence, versioned documentation, supplied information, inference and memory are ranked, including evidence/provenance admission semantics compatible with `core/protocols/EVIDENCE_PROVENANCE_ADMISSION_CONTRACT.md`.
 8. **Environment/boundary model** — material environments and restrictions relevant to safe work.
 9. **Continuity entrypoint** — how to recover durable current state when temporal continuity matters.
 10. **Fail-closed behavior** — what to do when required context cannot be resolved.
@@ -51,6 +51,25 @@ RESOLVE CANONICAL LIVE SOURCE
 ```
 
 The exact filenames may differ by project.
+
+### 4.1 Evidence/provenance admission inheritance
+
+A SES-compatible project bootstrap must make its evidence handling compatible with:
+
+`core/protocols/EVIDENCE_PROVENANCE_ADMISSION_CONTRACT.md`
+
+The project does not need to copy that contract or use a prescribed evidence directory.
+
+At minimum, project-local bootstrap/evidence rules must preserve:
+
+```text
+CONVERSATION != CANONICAL PROJECT EVIDENCE
+MATERIAL DECISION -> DURABLE RECONSTRUCTIBLE MEANING
+RAW SOURCE -> ADMIT ONLY WHEN BOUNDED / PROBATIVE / NON-DUPLICATIVE
+PROJECT OWNS ACTUAL EVIDENCE / RETENTION / SENSITIVE-DATA POLICY
+```
+
+For newly registered projects, these semantics are part of SES compatibility. Existing registered projects are reviewed proportionally when materially relevant; SES evolution does not itself authorize project-side mutation.
 
 ## 5. Proportionality
 

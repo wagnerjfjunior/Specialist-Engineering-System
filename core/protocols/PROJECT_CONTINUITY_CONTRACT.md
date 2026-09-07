@@ -41,6 +41,8 @@ A project continuity implementation must make the following recoverable when app
 - handoff/ownership meaning;
 - invalidation events that require revalidation.
 
+When a material accepted decision would otherwise exist only in conversation or another non-durable surface, continuity must preserve enough project-owned decision-grade meaning/provenance to make continuation reconstructible.
+
 The project may implement these in one compact document or multiple specialized ledgers.
 
 ## 4. Proportional implementation
@@ -63,6 +65,22 @@ HANDOFFS
 ```
 
 SES standardizes continuity semantics, not a mandatory SFJM-shaped directory.
+
+### 4.1 Evidence admission boundary
+
+Continuity is a durable meaning surface, not a conversation warehouse.
+
+Raw/source admission and anti-duplication semantics are governed by:
+
+`core/protocols/EVIDENCE_PROVENANCE_ADMISSION_CONTRACT.md`
+
+```text
+CONTINUITY PRESERVES MATERIAL OPERATIONAL MEANING
+!=
+ARCHIVE ALL CONVERSATION / RAW SOURCE MATERIAL
+```
+
+A raw source may be separately admitted when it has bounded decision-grade unique value and the applicable provenance/sensitivity/project-policy checks are satisfied.
 
 ## 5. Reference implementation: SFJM
 
@@ -93,6 +111,14 @@ A new conversation, ordinary commit, documentation-only closure or lifecycle tra
 Update continuity when evidence or a decision materially changes the meaning required for safe continuation.
 
 `NEW EVENT != AUTOMATIC CONTINUITY MUTATION`
+
+When an artifact's canonicality can be objectively derived from its presence on the resolved canonical project ref, do not require a recursive continuity/documentation mutation solely to restate `candidate -> merged` if no material semantic state changed.
+
+```text
+LIFECYCLE-ONLY EVENT
++ NO MATERIAL SEMANTIC CHANGE
+→ NO RECURSIVE DOCUMENTATION RECONCILIATION
+```
 
 ## 8. Historical integrity
 
