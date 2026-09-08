@@ -103,9 +103,17 @@ The explicit re-mention rule is now a PROBABLE SHARED PRINCIPLE CANDIDATE:
 
 Do not adopt `@` as the portfolio-wide operational transport yet.
 
-Next safe action: complete Documentation Auditor direct-vs-@ cognitive equivalence using a Documentation-Auditor-specific controlled document and fixed scorecard. If no material cognitive degradation is observed, prepare an explicit transport-adoption decision.
+Documentation Auditor primary @ cognition has now passed 24/24 required gates, and the direct-vs-@ control shows no material cognitive degradation.
 
-Until that explicit decision: `CURRENT_SPECIALIST_TRANSPORT = MANUAL_COPY_PASTE`; `MENTION_TRANSPORT = TWO_SPECIALIST_CANARY_VALIDATED / ADOPTION_PENDING`.
+Next safe action: make the explicit transport-adoption decision for ChatGPT project specialist consultation.
+
+Decision candidate:
+`PREFERRED_CHATGPT_SPECIALIST_TRANSPORT = PROJECT_LEVEL_@`
+
+Operational constraint:
+`ACTION-DEPENDENT SPECIALIST TURN -> EXPLICIT @ MENTION IN THAT TURN`
+
+Until that explicit adoption decision is made: `CURRENT_SPECIALIST_TRANSPORT = MANUAL_COPY_PASTE`; `MENTION_TRANSPORT = TWO_SPECIALIST_ACTION_AND_COGNITIVE_CANARIES_VALIDATED / ADOPTION_READY`.
 
 ## Gateway/Router next action
 
