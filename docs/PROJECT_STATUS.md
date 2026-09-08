@@ -81,6 +81,18 @@ SES ORCHESTRATION
 
 Manual transport is the current operational constraint; it is not promoted to a permanent universal transport requirement. The universal contract is an explicit, provenance-preserving specialist handoff. Future transport replacement requires its own evidence and explicit adoption.
 
+## Mention transport canary — current evidence
+
+A project-level `@` mention canary passed for Software Systems Architect portable v0.3 inside the FECH.AI ChatGPT Project.
+
+Observed: mention identity PASS; package binding PASS; GitHub Action via `@` PASS; second same-chat `@` call PASS; fresh-chat repeatability PASS; no-`@` Action persistence NOT RELIABLE; re-mention restores Action PASS.
+
+Tested operational pattern: `ACTION-DEPENDENT TURN -> EXPLICIT @ MENTION IN THAT TURN`.
+
+This remains a CANDIDATE LEARNING, not yet a universal transport rule. Portfolio-wide specialist transport remains manual copy/paste until a second independent specialist/runtime canary and explicit transport-adoption decision close the generalization gap.
+
+Evidence: `tests/runtime/evidence/MENTION_TRANSPORT_M5_RECOVERY_PASS_2026-09-07.md`
+
 ## Runtime Enforcement Gateway — historical proof boundary
 
 Gateway and Router code, contracts, profiles and evidence remain versioned. Their historical tests are not erased or retroactively rewritten.
