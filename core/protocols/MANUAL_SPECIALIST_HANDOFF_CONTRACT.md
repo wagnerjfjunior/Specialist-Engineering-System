@@ -1,14 +1,14 @@
 # SES — Manual Specialist Handoff Contract v0.3
 
 **Contract ID:** `manual-specialist-handoff-contract-v0.3`  
-**Status:** `CANONICAL_V0_3 / CURRENT_OPERATIONAL_TRANSPORT / CANONICAL_TARGET_IDENTITY_ENFORCED / CONSUMER_RECERTIFICATION_DETOUR_FORBIDDEN`  
+**Status:** `CANONICAL_V0_3 / SUPPORTED_FALLBACK_TRANSPORT / CANONICAL_TARGET_IDENTITY_ENFORCED / CONSUMER_RECERTIFICATION_DETOUR_FORBIDDEN`  
 **Scope:** SES-mediated consultation of reusable specialists when direct Router/Gateway composition is not an accepted operational path.
 
 ## 1. Purpose
 
 This contract defines how SES prepares, transfers and receives a specialist consultation without pretending that one Custom GPT executed another specialist.
 
-The current accepted transport is human-mediated copy/paste:
+This contract defines the fully supported manual copy/paste transport path:
 
 ```text
 SES ORCHESTRATION
@@ -23,7 +23,7 @@ SES ORCHESTRATION
 -> SES ADJUDICATION / NEXT DECISION
 ```
 
-The transport is deliberately separated from the consultation semantics. A future transport may replace manual copy/paste only after its own operational evidence and explicit adoption.
+The transport is deliberately separated from the consultation semantics. Project-level `@` is now separately adopted as the preferred ChatGPT Project transport under `SPECIALIST_CONSULTATION_TRANSPORT_CONTRACT.md`; manual copy/paste remains supported and is not deprecated.
 
 ```text
 HANDOFF_CONTRACT != TRANSPORT_IMPLEMENTATION
@@ -35,7 +35,8 @@ TESTED_TRANSPORT != ACCEPTED_OPERATIONAL_TRANSPORT
 As of the correction that introduced this contract:
 
 ```text
-CURRENT_SPECIALIST_TRANSPORT = MANUAL_COPY_PASTE
+CURRENT_SPECIALIST_TRANSPORT_MODE = DUAL
+THIS_CONTRACT_TRANSPORT = MANUAL_COPY_PASTE / SUPPORTED_FALLBACK / SUPPORTED_FALLBACK
 SPECIALIST_ROUTER = NOT_CURRENT_OPERATIONAL_PATH
 RUNTIME_ENFORCEMENT_GATEWAY = NOT_CURRENT_OPERATIONAL_PATH
 ```
