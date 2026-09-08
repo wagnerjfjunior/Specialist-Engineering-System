@@ -89,7 +89,7 @@ Observed: mention identity PASS; package binding PASS; GitHub Action via `@` PAS
 
 Tested operational pattern: `ACTION-DEPENDENT TURN -> EXPLICIT @ MENTION IN THAT TURN`.
 
-A second independent specialist/runtime canary (Documentation Auditor portable v1.3) has now reproduced the same Action-transport pattern. The explicit re-mention rule is therefore a PROBABLE SHARED PRINCIPLE CANDIDATE, not a UNIVERSAL PRINCIPLE. Portfolio-wide specialist transport remains manual copy/paste until Documentation Auditor cognitive direct-vs-@ equivalence and an explicit transport-adoption decision close the remaining gap.
+A second independent specialist/runtime canary (Documentation Auditor portable v1.3) has reproduced the same Action-transport pattern and has now also passed the primary @ cognitive canary 24/24 plus a materially equivalent direct-vs-@ control. The explicit re-mention rule and observed no-material-cognitive-degradation behavior are therefore PROBABLE SHARED PRINCIPLE CANDIDATES, not UNIVERSAL PRINCIPLES. Portfolio-wide specialist transport remains manual copy/paste only until an explicit transport-adoption decision is made.
 
 Evidence: `tests/runtime/evidence/MENTION_TRANSPORT_M5_RECOVERY_PASS_2026-09-07.md`
 
