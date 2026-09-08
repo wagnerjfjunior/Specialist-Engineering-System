@@ -85,7 +85,7 @@ Manual transport is the current operational constraint; it is not promoted to a 
 
 A project-level `@` mention canary passed for Software Systems Architect portable v0.3 inside the FECH.AI ChatGPT Project.
 
-Observed: mention identity PASS; package binding PASS; GitHub Action via `@` PASS; second same-chat `@` call PASS; fresh-chat repeatability PASS; no-`@` Action persistence NOT RELIABLE; re-mention restores Action PASS.
+Observed: mention identity PASS; package binding PASS; GitHub Action via `@` PASS; second same-chat `@` call PASS; fresh-chat repeatability PASS; attachment beginning/middle/end sampled coverage PASS; full 13-block cognitive transport equivalence PASS for the observed runtime; no-`@` Action persistence NOT RELIABLE; re-mention restores Action PASS.
 
 Tested operational pattern: `ACTION-DEPENDENT TURN -> EXPLICIT @ MENTION IN THAT TURN`.
 
