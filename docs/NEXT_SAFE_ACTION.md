@@ -90,6 +90,18 @@ PROJECT_CONTEXT_READY != AUTHORIZED_TO_MUTATE
 
 An explicit user request may authorize an ad-hoc consultation with a certified specialist without creating project adoption. Such a packet must identify `EXPLICIT_AD_HOC_CONSULTATION` and must not describe the specialist as the project's canonical adopted role.
 
+## Native @ transport validation — current next safe action
+
+A first end-to-end mention canary passed for Software Systems Architect portable v0.3 in the FECH.AI Project, including Action recovery after explicit re-mention.
+
+Do not adopt `@` as the portfolio-wide operational transport yet.
+
+Next safe action: test the Documentation Auditor portable v1.3 candidate in the FECH.AI Project using explicit `@`, exact package binding, GitHub read-only Action execution and a second same-chat `@` call.
+
+If the second specialist independently reproduces the same transport behavior, classify the explicit-remention rule as a PROBABLE SHARED PRINCIPLE and prepare a separate transport-adoption decision.
+
+Until then: `CURRENT_SPECIALIST_TRANSPORT = MANUAL_COPY_PASTE`; `MENTION_TRANSPORT = CANARY_VALIDATED_FOR_SOFTWARE_SYSTEMS_ARCHITECT_ONLY`.
+
 ## Gateway/Router next action
 
 Do not redesign, redeploy, re-certify or re-adopt the Router/Gateway merely because this correction exists.
