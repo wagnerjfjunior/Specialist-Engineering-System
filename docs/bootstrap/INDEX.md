@@ -47,7 +47,8 @@ Read when applicable:
 - `core/protocols/SPECIALIST_CERTIFICATION_FOR_ANY_PROJECT_CONTRACT.md` for specialist terminal lifecycle/certification decisions
 - `core/protocols/CERTIFIED_SPECIALIST_PACKAGE_CONTRACT.md` for immutable certified package identity, portable-execution eligibility and migration safety
 - `runtime/packages/CERTIFIED_SPECIALIST_PACKAGE_REGISTRY_V0_1.md` for the current migration binding status of certified specialists
-- `core/protocols/MANUAL_SPECIALIST_HANDOFF_CONTRACT.md` for the current SES-mediated specialist consultation/handoff path
+- `core/protocols/SPECIALIST_CONSULTATION_TRANSPORT_CONTRACT.md` for current dual transport selection and boundaries
+- `core/protocols/MANUAL_SPECIALIST_HANDOFF_CONTRACT.md` for the supported manual fallback path
 - `docs/SPECIALIST_CERTIFICATION_STATUS.md` for the current evidence-bound portfolio certification ledger
 
 Behavioral validation is defined, when applicable, in:
@@ -56,6 +57,7 @@ Behavioral validation is defined, when applicable, in:
 - `tests/behavioral/HYBRID_PROJECT_TARGET_RESOLUTION_TESTS.md`
 - `tests/behavioral/SPECIALIST_CERTIFICATION_FOR_ANY_PROJECT_TESTS.md`
 - `tests/behavioral/CERTIFIED_SPECIALIST_PORTABLE_EXECUTION_TESTS.md`
+- `tests/behavioral/DUAL_SPECIALIST_TRANSPORT_TESTS.md`
 - `tests/behavioral/MANUAL_SPECIALIST_HANDOFF_TESTS.md`
 - `tests/behavioral/EVIDENCE_PROVENANCE_ADMISSION_TESTS.md`
 
@@ -205,19 +207,23 @@ A conversation starter is UX only. It is not a security boundary and does not re
 
 ## 4A. Current specialist handoff transport
 
-For SES-mediated specialist consultation, also apply `core/protocols/MANUAL_SPECIALIST_HANDOFF_CONTRACT.md`.
+For SES-mediated specialist consultation, apply `core/protocols/SPECIALIST_CONSULTATION_TRANSPORT_CONTRACT.md`.
 
-Current accepted operational transport:
+Current dual transport:
 
 ```text
-SES
--> Specialist Consultation Packet
--> HUMAN COPY / PASTE
--> target specialist Custom GPT
--> Specialist Result Packet
--> HUMAN COPY / PASTE
--> SES adjudication
+PREFERRED_CHATGPT_SPECIALIST_TRANSPORT = PROJECT_LEVEL_@
+SUPPORTED_FALLBACK_TRANSPORT = MANUAL_COPY_PASTE
 ```
+
+For Action-dependent turns through `@`:
+
+```text
+ACTION-DEPENDENT SPECIALIST TURN
+-> EXPLICIT @ MENTION IN THAT TURN
+```
+
+For manual fallback, also apply `core/protocols/MANUAL_SPECIALIST_HANDOFF_CONTRACT.md`.
 
 The Runtime Enforcement Gateway and `SES — Specialist Router` remain versioned historical/runtime-candidate assets but are not the accepted current specialist-consultation path. Historical PASS evidence remains preserved within its original proof boundary.
 

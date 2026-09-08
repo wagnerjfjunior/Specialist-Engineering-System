@@ -1,6 +1,6 @@
 # SES — Project Status
 
-**Status:** `MANUAL_SPECIALIST_HANDOFF / CURRENT_OPERATIONAL_PATH`  
+**Status:** `DUAL_SPECIALIST_TRANSPORT / CURRENT_OPERATIONAL_PATH`  
 **Canonical source:** `wagnerjfjunior/Specialist-Engineering-System`  
 **Authoritative next action:** `docs/NEXT_SAFE_ACTION.md`
 
@@ -55,9 +55,11 @@ A material operational correction was recorded after the prior Gateway/Router co
 Current state:
 
 ```text
-CURRENT_SPECIALIST_TRANSPORT = MANUAL_COPY_PASTE
+CURRENT_SPECIALIST_TRANSPORT_MODE = DUAL
+PREFERRED_CHATGPT_SPECIALIST_TRANSPORT = PROJECT_LEVEL_@
+SUPPORTED_FALLBACK_TRANSPORT = MANUAL_COPY_PASTE
+TRANSPORT_CONTRACT = core/protocols/SPECIALIST_CONSULTATION_TRANSPORT_CONTRACT.md
 MANUAL_HANDOFF_CONTRACT = core/protocols/MANUAL_SPECIALIST_HANDOFF_CONTRACT.md
-MANUAL_HANDOFF_BEHAVIORAL_SUITE = tests/behavioral/MANUAL_SPECIALIST_HANDOFF_TESTS.md
 
 SPECIALIST_ROUTER_CURRENT_STATUS = NOT_CURRENT_OPERATIONAL_PATH
 RUNTIME_ENFORCEMENT_GATEWAY_CURRENT_STATUS = NOT_CURRENT_OPERATIONAL_PATH_FOR_SPECIALIST_CONSULTATION
@@ -70,16 +72,21 @@ EXECUTED != AUTHORIZED_TO_MUTATE
 Operational flow:
 
 ```text
-SES ORCHESTRATION
--> resolve project / task / specialist
--> generate Specialist Consultation Packet
+CHATGPT PROJECT
+-> explicit @ target specialist when available
+-> specialist performs bounded work in-project
+-> for Action-dependent turns, repeat explicit @ in that turn
+
+OR
+
+SES / PROJECT
+-> manual Specialist Consultation Packet
 -> HUMAN COPY / PASTE to target specialist Custom GPT
--> specialist resolves live project state and performs bounded work
--> HUMAN COPY / PASTE result back to SES
--> SES adjudicates / integrates / selects next action
+-> specialist work
+-> HUMAN COPY / PASTE result back
 ```
 
-Manual transport is the current operational constraint; it is not promoted to a permanent universal transport requirement. The universal contract is an explicit, provenance-preserving specialist handoff. Future transport replacement requires its own evidence and explicit adoption.
+Project-level `@` is preferred in ChatGPT Projects when available; manual copy/paste remains a fully supported fallback and portability/recovery path. `PREFERRED != EXCLUSIVE`; `FALLBACK != DEPRECATED`.
 
 ## Mention transport canary — current evidence
 
@@ -89,7 +96,7 @@ Observed: mention identity PASS; package binding PASS; GitHub Action via `@` PAS
 
 Tested operational pattern: `ACTION-DEPENDENT TURN -> EXPLICIT @ MENTION IN THAT TURN`.
 
-A second independent specialist/runtime canary (Documentation Auditor portable v1.3) has reproduced the same Action-transport pattern and has now also passed the primary @ cognitive canary 24/24 plus a materially equivalent direct-vs-@ control. The explicit re-mention rule and observed no-material-cognitive-degradation behavior are therefore PROBABLE SHARED PRINCIPLE CANDIDATES, not UNIVERSAL PRINCIPLES. Portfolio-wide specialist transport remains manual copy/paste only until an explicit transport-adoption decision is made.
+A second independent specialist/runtime canary (Documentation Auditor portable v1.3) has reproduced the same Action-transport pattern and has now also passed the primary @ cognitive canary 24/24 plus a materially equivalent direct-vs-@ control. The explicit re-mention rule and observed no-material-cognitive-degradation behavior are therefore PROBABLE SHARED PRINCIPLE CANDIDATES, not UNIVERSAL PRINCIPLES. The explicit transport-adoption decision has now been made: project-level `@` is preferred in ChatGPT Projects, while manual copy/paste remains fully supported as fallback. This does not promote either transport to a universal cross-platform requirement.
 
 Evidence: `tests/runtime/evidence/MENTION_TRANSPORT_M5_RECOVERY_PASS_2026-09-07.md`
 

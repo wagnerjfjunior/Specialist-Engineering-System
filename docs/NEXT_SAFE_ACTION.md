@@ -2,9 +2,9 @@
 
 > Registro autoritativo da próxima ação segura do SES quando este arquivo estiver em `main`.
 
-**Next action ID:** `use-manual-specialist-handoff-until-transport-revalidated`  
+**Next action ID:** `operate-dual-specialist-transport`  
 **Primary target:** `SES specialist consultation workflow`  
-**Current phase:** `MANUAL_SPECIALIST_HANDOFF / CURRENT_OPERATIONAL_PATH`
+**Current phase:** `DUAL_SPECIALIST_TRANSPORT / CURRENT_OPERATIONAL_PATH`
 
 ## Portfolio source authority
 
@@ -51,30 +51,22 @@ Correction evidence:
 
 ## Current safe specialist-consultation path
 
-For SES-mediated specialist consultation, use:
+Apply:
 
-`core/protocols/MANUAL_SPECIALIST_HANDOFF_CONTRACT.md`
+`core/protocols/SPECIALIST_CONSULTATION_TRANSPORT_CONTRACT.md`
 
-Behavioral specification:
-
-`tests/behavioral/MANUAL_SPECIALIST_HANDOFF_TESTS.md`
-
-Operational transport:
+Current dual transport:
 
 ```text
-SES
--> resolve project / task / selected specialist
--> generate Specialist Consultation Packet
--> USER COPY
--> target specialist Custom GPT
--> USER PASTE
--> specialist resolves live context and performs bounded work
--> USER COPY specialist result
--> SES
--> SES adjudication / next decision
+PREFERRED_CHATGPT_SPECIALIST_TRANSPORT = PROJECT_LEVEL_@
+SUPPORTED_FALLBACK_TRANSPORT = MANUAL_COPY_PASTE
 ```
 
-This workflow is transport-constrained, not a claim that copy/paste is the permanent architecture.
+For Action-dependent turns in ChatGPT Projects:
+
+`ACTION-DEPENDENT SPECIALIST TURN -> EXPLICIT @ MENTION IN THAT TURN`
+
+For manual fallback, continue to apply `core/protocols/MANUAL_SPECIALIST_HANDOFF_CONTRACT.md` and `tests/behavioral/MANUAL_SPECIALIST_HANDOFF_TESTS.md`.
 
 ## Required boundaries
 
@@ -101,19 +93,19 @@ The explicit re-mention rule is now a PROBABLE SHARED PRINCIPLE CANDIDATE:
 
 `ACTION-DEPENDENT SPECIALIST TURN -> EXPLICIT @ MENTION IN THAT TURN`
 
-Do not adopt `@` as the portfolio-wide operational transport yet.
+Project-level `@` is now adopted as the preferred ChatGPT Project transport, while manual copy/paste remains supported fallback.
 
 Documentation Auditor primary @ cognition has now passed 24/24 required gates, and the direct-vs-@ control shows no material cognitive degradation.
 
-Next safe action: make the explicit transport-adoption decision for ChatGPT project specialist consultation.
-
-Decision candidate:
+Adoption decision:
+`CURRENT_SPECIALIST_TRANSPORT_MODE = DUAL`
 `PREFERRED_CHATGPT_SPECIALIST_TRANSPORT = PROJECT_LEVEL_@`
+`SUPPORTED_FALLBACK_TRANSPORT = MANUAL_COPY_PASTE`
 
 Operational constraint:
 `ACTION-DEPENDENT SPECIALIST TURN -> EXPLICIT @ MENTION IN THAT TURN`
 
-Until that explicit adoption decision is made: `CURRENT_SPECIALIST_TRANSPORT = MANUAL_COPY_PASTE`; `MENTION_TRANSPORT = TWO_SPECIALIST_ACTION_AND_COGNITIVE_CANARIES_VALIDATED / ADOPTION_READY`.
+Next safe action: use either supported transport according to runtime/user preference; prefer `@` in ChatGPT Projects when available and fall back manually without treating fallback as degradation or specialist failure.
 
 ## Gateway/Router next action
 
@@ -142,13 +134,15 @@ Do not automatically:
 - introduce semantic/fuzzy routing;
 - publish or merge a transport change without its own authorization.
 
-For ordinary specialist work, the next safe action is to generate the manual Specialist Consultation Packet using the live Registry/Adapter/archetype/project sources and let the user transfer it to the selected specialist.
+For ordinary specialist work, prefer project-level `@` in ChatGPT Projects when available. Use the manual Specialist Consultation Packet when `@` is unavailable, unstable, unsupported, or explicitly not preferred.
 
 For SES architecture evolution beyond that operational use, select the next material objective explicitly rather than inferring it from the historical Gateway program.
 
 ```text
-CURRENT_SPECIALIST_TRANSPORT = MANUAL_COPY_PASTE
-NEW_TRANSPORT_AVAILABLE != NEW_TRANSPORT_ADOPTED
+CURRENT_SPECIALIST_TRANSPORT_MODE = DUAL
+PREFERRED_CHATGPT_SPECIALIST_TRANSPORT = PROJECT_LEVEL_@
+SUPPORTED_FALLBACK_TRANSPORT = MANUAL_COPY_PASTE
+PREFERRED != EXCLUSIVE
 NO_MATERIAL_EVENT = NO_GATEWAY_REAUDIT
 CENTRAL_EVOLUTION != AUTOMATIC_PROJECT_MUTATION
 ```
