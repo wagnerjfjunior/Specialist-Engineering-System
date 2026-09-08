@@ -92,15 +92,20 @@ An explicit user request may authorize an ad-hoc consultation with a certified s
 
 ## Native @ transport validation — current next safe action
 
-A first end-to-end mention canary passed for Software Systems Architect portable v0.3 in the FECH.AI Project, including Action recovery after explicit re-mention.
+Two independent end-to-end mention canaries now reproduce the same Action-transport behavior in the FECH.AI Project:
+
+- Software Systems Architect portable v0.3;
+- Documentation Auditor portable v1.3.
+
+The explicit re-mention rule is now a PROBABLE SHARED PRINCIPLE CANDIDATE:
+
+`ACTION-DEPENDENT SPECIALIST TURN -> EXPLICIT @ MENTION IN THAT TURN`
 
 Do not adopt `@` as the portfolio-wide operational transport yet.
 
-Next safe action: test the Documentation Auditor portable v1.3 candidate in the FECH.AI Project using explicit `@`, exact package binding, GitHub read-only Action execution and a second same-chat `@` call.
+Next safe action: complete Documentation Auditor direct-vs-@ cognitive equivalence using a Documentation-Auditor-specific controlled document and fixed scorecard. If no material cognitive degradation is observed, prepare an explicit transport-adoption decision.
 
-If the second specialist independently reproduces the same transport behavior, classify the explicit-remention rule as a PROBABLE SHARED PRINCIPLE and prepare a separate transport-adoption decision.
-
-Until then: `CURRENT_SPECIALIST_TRANSPORT = MANUAL_COPY_PASTE`; `MENTION_TRANSPORT = CANARY_VALIDATED_FOR_SOFTWARE_SYSTEMS_ARCHITECT_ONLY`.
+Until that explicit decision: `CURRENT_SPECIALIST_TRANSPORT = MANUAL_COPY_PASTE`; `MENTION_TRANSPORT = TWO_SPECIALIST_CANARY_VALIDATED / ADOPTION_PENDING`.
 
 ## Gateway/Router next action
 
