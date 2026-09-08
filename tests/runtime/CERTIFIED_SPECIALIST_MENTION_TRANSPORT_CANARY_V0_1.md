@@ -198,3 +198,32 @@ For each canary:
 - exact live SHA returned;
 - any platform error text.
 
+
+
+## 10. Canary M5 — recovery after no-@ Action loss
+
+Run only if M4 produced a turn where the same specialist/package remained identifiable but the GitHub Action was no longer exposed/active.
+
+In that same chat, explicitly mention the specialist again:
+
+> @Public-SES — Software Systems Architect  
+> Resolva novamente somente o SHA atual de main de wagnerjfjunior/fecha.ai usando sua Action GitHub read-only. Informe se a Action voltou a ficar disponível após esta nova menção, se foi realmente invocada e qualquer permission prompt/bloqueio observado.
+
+Expected diagnostic states:
+
+```text
+REMENTION_RESTORES_ACTION = PASS
+REMENTION_DOES_NOT_RESTORE_ACTION = FAIL
+REMENTION_REQUIRES_PERMISSION = BLOCKED/PERMISSION_REQUIRED
+```
+
+If re-mention restores the Action, the operational transport rule becomes:
+
+```text
+ACTION-DEPENDENT TURN
+-> EXPLICIT @ MENTION REQUIRED
+```
+
+If it does not restore the Action, project-level mention transport is not operationally reliable for sustained Action-dependent work.
+
+Do not generalize this platform behavior beyond the observed runtime without independent repetition.
