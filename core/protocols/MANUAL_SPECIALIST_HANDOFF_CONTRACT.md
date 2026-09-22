@@ -254,6 +254,29 @@ REQUIRED_EXECUTION_RULES:
 
 The packet may include task-specific evidence pointers, acceptance criteria or proof obligations, but must not include secrets.
 
+### 6.2 Execution-mode boundary
+
+A manual handoff packet may contain SES routing provenance such as `SES_EFFECTIVE_REF`, archetype identity, certification status or selection basis. Those fields do not by themselves require the receiving specialist to enter `SES_MEDIATED_EXECUTION`.
+
+For ordinary consumer-project work performed by an exact portable specialist package:
+
+```text
+CONSUMER PROJECT TASK
++ PORTABLE PACKAGE
++ EXPLICIT PROJECT / CANONICAL SOURCE
++ NO SES LIFECYCLE/CERTIFICATION/ADOPTION QUESTION
+-> CERTIFIED_PORTABLE_EXECUTION
+-> SES LIVE / REGISTRY / ADAPTER = NOT_REQUIRED_FOR_THIS_TASK
+```
+
+Use `SES_MEDIATED_EXECUTION` only when the task materially depends on SES lifecycle, certification, package upgrade/current compatibility, Registry/Adapter state, adoption or another SES-owned current-state decision.
+
+```text
+SES ROUTING METADATA != SES RUNTIME DEPENDENCY
+PACKET PROVENANCE != EXECUTION MODE
+```
+
+
 ### 6.1 Canonical target rendering rule
 
 When the handoff is rendered for a human, all operational destination language must use `SPECIALIST_TARGET_NAME`.
