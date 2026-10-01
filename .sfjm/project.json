@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "project": "Specialist-Engineering-System",
+  "repository": {
+    "fullName": "wagnerjfjunior/Specialist-Engineering-System",
+    "defaultBranch": "main"
+  },
+  "local": {
+    "preferredPort": 8097,
+    "route": "/"
+  },
+  "runtime": {
+    "mode": "auto"
+  },
+  "validation": {
+    "commands": []
+  },
+  "promotion": {
+    "policy": "local-first-remote-on-promotion",
+    "remoteIterationAllowed": false,
+    "pushRequiresExplicitIntent": true,
+    "deployRequiresExplicitIntent": true
+  }
+}
