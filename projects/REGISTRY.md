@@ -112,6 +112,25 @@ This registration establishes only SES-side project discovery. `wagnerjfjunior/M
 
 Registration itself does not adopt specialist roles. Any current MoreNumTegra specialist adoption must be resolved exclusively from `projects/morenumtegra/PROJECT_ADAPTER.md` and its exact `SPECIALIST_ROLE_MAP`.
 
+### Projetos Cyrela
+
+```text
+PROJECT_ID: projetos-cyrela
+CANONICAL_NAME: Projetos Cyrela
+ALIASES:
+- Cyrela Site
+- ProjetosCyrela
+- Jordana Cyrela
+- Jordana da Cyrela
+- jordanacyrela.com.br
+ADAPTER_PATH: projects/projetos-cyrela/PROJECT_ADAPTER.md
+STATUS: ACTIVE
+```
+
+This registration establishes only SES-side project discovery for `wagnerjfjunior/ProjetosCyrela`. The consumer repository remains authoritative for project truth, recovery status, sites, SEO/GEO/AI evidence, tracking, environments, continuity, specialist adoption and mutation authority.
+
+Registration does not convert historical chat/document evidence into current production truth and does not authorize Vercel, Supabase, DNS, GTM, Ads, CRM or other production mutations.
+
 ### SFJM Workspace
 
 ```text
